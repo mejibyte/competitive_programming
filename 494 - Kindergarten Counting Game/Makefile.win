@@ -1,0 +1,30 @@
+# Project: 494
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = p494.o $(RES)
+LINKOBJ  = p494.o $(RES)
+LIBS =  -L"D:/Programs/Dev-Cpp/lib"  
+INCS =  -I"D:/Programs/Dev-Cpp/include" 
+CXXINCS =  -I"D:/Programs/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/Programs/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/Programs/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/Programs/Dev-Cpp/include/c++/3.4.2"  -I"D:/Programs/Dev-Cpp/include" 
+BIN  = 494.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before 494.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "494.exe" $(LIBS)
+
+p494.o: p494.cpp
+	$(CPP) -c p494.cpp -o p494.o $(CXXFLAGS)

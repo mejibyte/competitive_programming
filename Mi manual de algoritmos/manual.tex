@@ -1,0 +1,80 @@
+\documentclass[10pt,a4paper,twoside]{article}
+
+%---------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{color}
+%---------------------------------------------------------------
+
+\begin{document}
+
+%---------------------------------------------------------------
+\title{Resumen de algoritmos para torneos de programación}
+\author{Andrés Mejía}
+\date{\today}
+\maketitle
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\tableofcontents
+\lstlistoflistings
+\lstloadlanguages{C++}
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\definecolor{colorkeywords}{rgb}{0.5, 0.0, 0.3}
+\definecolor{colorcomments}{rgb}{0.2, 0.4, 0.3}
+\definecolor{colorstrings}{rgb}{0.2, 0.0, 1.0}
+\lstset{frame=tRBl}
+\lstset{keywordstyle=\color{colorkeywords}\bfseries}
+\lstset{commentstyle=\color{colorcomments}\textit}
+\lstset{stringstyle=\color{colorstrings}}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt}
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\section{Teoría de números}
+%---------------------------------------------------------------
+\subsection{Big mod}
+\lstset{language=c++}
+%\lstset{backgroundcolor=listinggray,framerulecolor=blue}
+%\lstset{backgroundcolor=listinggray,rulecolor=blue}
+%\lstset{backgroundcolor=\color{listinggray},rulecolor=\color{blue}}
+%\lstset{linewidth=\textwidth}
+%\lstset{labelstep=10}
+%\lstset{commentstyle=\textit, stringstyle=\upshape,stringspaces=false}
+%\lstset{commentstyle=\textit, stringstyle=\upshape,showspaces=false}
+\lstinputlisting[caption=Big mod]{./src/number_theory/bigmod.cpp}
+
+\subsection{Criba de Eratóstenes}
+Marca los números primos en un arreglo. Algunos tiempos de ejecución:
+\centering
+\begin{tabular}{c c}
+\hline\hline
+SIZE & Tiempo (s) \\ [0.5ex]
+\hline
+100000 & 0.004 \\
+1000000 & 0.078 \\
+10000000 & 1.550 \\
+100000000 & 14.319 \\ [1ex]
+\hline
+\end{tabular}
+\lstinputlisting[caption=Criba de Eratóstenes]{./src/number_theory/criba.cpp}
+
+\subsection{Divisores de un número}
+Este algoritmo imprime todos los divisores de un número (en desorden) en O($\sqrt{n}$).
+Hasta 4294967295 (máximo \textit{unsigned long}) responde instantaneamente. Se puede
+forzar un poco más usando \textit{unsigned long long} pero más allá de $10^{12}$ empieza a
+responder muy lento.
+
+\lstinputlisting[caption=Divisores]{./src/number_theory/divisores.cpp}
+
+
+\section{Programación dinámica}
+\subsection{Longest common subsequence}
+\lstinputlisting[caption=Longest common subsequence]{./src/dp/lcs.cpp}
+
+
+\end{document}
+%---------------------------------------------------------------

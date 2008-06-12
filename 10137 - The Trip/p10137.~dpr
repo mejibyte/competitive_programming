@@ -1,0 +1,15 @@
+program p10137;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+function isInt(d : double) : boolean;
+begin
+result := (floor(d) = double);
+end;
+
+begin
+
+end.

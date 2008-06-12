@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# File:    pc2admin
+# Purpose: start client script
+# Author:  pc2 group
+# E-mail:  mailto:pc2@ecs.csus.edu
+# Revised: Tue Apr 19 20:13:36 PDT 2005
+#
+# Send e-mail to us if you have questions.. thanks.
+#
+
+echo
+echo "admin - Starting Client (Admin)"
+echo
+
+#
+# Set the path to where Java is installed
+# (ie the directory that has the bin/ and lib/ directories)
+#
+
+#
+# PATH=
+# CLASSPATH=
+#
+
+echo
+export PATH
+export CLASSPATH
+
+echo PATH=$PATH
+echo CLASSPATH=$CLASSPATH
+echo
+echo Starting pc2...
+echo
+echo java -Djava.security.policy=policy.ini pc2.client.Client $*
+java -Djava.security.policy=policy.ini pc2.client.Client $*
+
+# eof pc2admin

@@ -1,0 +1,1032 @@
+Fri Mar 21 16:31:55 GMT 2008 |2| main Debug level initially set to 2
+Fri Mar 21 16:31:55 GMT 2008 |2| main Console level initially set to 2
+Fri Mar 21 16:31:55 GMT 2008 |2| main Debug level set to 13
+Fri Mar 21 16:31:55 GMT 2008 |2| main Console level set to 5
+Fri Mar 21 16:31:55 GMT 2008 ||
+Fri Mar 21 16:31:55 GMT 2008 |-1| main CSUS Programming Contest Control System
+Fri Mar 21 16:31:55 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Fri Mar 21 16:31:55 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Fri Mar 21 16:31:55 GMT 2008 ||
+Fri Mar 21 16:31:55 GMT 2008 || main CSUS Programming Contest Control System Version judge 8.7 20051115 03 (November 15th, 2005 9:40pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Fri Mar 21 16:31:55 GMT 2008 ||
+Fri Mar 21 16:31:55 GMT 2008 || main Java freeMemory   3637568 3637k
+Fri Mar 21 16:31:55 GMT 2008 || main Java totalMemory  5177344 5177k
+Fri Mar 21 16:31:55 GMT 2008 ||
+Fri Mar 21 16:31:55 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/pc2v8.ini
+Fri Mar 21 16:31:55 GMT 2008 || main Starting in dir: /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge
+Fri Mar 21 16:32:01 GMT 2008 || AWT-EventQueue-0 Contacting server: localhost port 50002
+Fri Mar 21 16:32:01 GMT 2008 || AWT-EventQueue-0 pc2.judge.JudgeFrame using 127.0.1.1.
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 9=global_property_updated 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 23=clarification_selected 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 10=clarification_submitted 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 11=clarification_answered 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 1=run_submitted 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 4=run_available 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 3=run_selected 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 5=run_completed 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 18=run_status_update 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 14=contest_started 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 15=contest_stopped 
+Fri Mar 21 16:32:01 GMT 2008 |12| AWT-EventQueue-0 Registered for 20=contest_reset_refresh 
+Fri Mar 21 16:32:01 GMT 2008 || AWT-EventQueue-0 Logging on as judge1
+Fri Mar 21 16:32:01 GMT 2008 || AWT-EventQueue-0 judge 8.7 20051115 03 November 15th, 2005 9:40pm
+Fri Mar 21 16:32:02 GMT 2008 |9| AWT-EventQueue-0 refreshClars - There are no clarifications, yet
+Fri Mar 21 16:32:02 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() begin
+Fri Mar 21 16:32:02 GMT 2008 || AWT-EventQueue-0 server.getAllUnjudgedRuns() returned nothing
+Fri Mar 21 16:32:02 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() end
+Fri Mar 21 16:32:02 GMT 2008 || Thread-2 BaseClient: handleContestStartStop <Contest started>
+Fri Mar 21 16:44:20 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [10] clarification_submitted 
+Fri Mar 21 16:44:20 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:44:20 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addClarification(Clar: 1:1) begin
+Fri Mar 21 16:44:20 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addClarification() end
+Fri Mar 21 16:44:54 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Event: [23] clarification_selected 
+Fri Mar 21 16:44:54 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:44:54 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeClarification(Clar: 1:1) begin
+Fri Mar 21 16:44:54 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeClarification() end
+Fri Mar 21 16:45:12 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.answerClarification() begin
+Fri Mar 21 16:45:12 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.answerClarification() end
+Fri Mar 21 16:45:12 GMT 2008 |12| RMI TCP Connection(6)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Fri Mar 21 16:45:12 GMT 2008 |12| RMI TCP Connection(6)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:45:12 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() begin
+Fri Mar 21 16:45:12 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() end
+Fri Mar 21 16:45:57 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Event: [10] clarification_submitted 
+Fri Mar 21 16:45:57 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:45:57 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addClarification(Clar: 1:2) begin
+Fri Mar 21 16:45:57 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addClarification() end
+Fri Mar 21 16:46:01 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Event: [23] clarification_selected 
+Fri Mar 21 16:46:01 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:46:01 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeClarification(Clar: 1:2) begin
+Fri Mar 21 16:46:01 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeClarification() end
+Fri Mar 21 16:46:06 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.answerClarification() begin
+Fri Mar 21 16:46:07 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.answerClarification() end
+Fri Mar 21 16:46:07 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Fri Mar 21 16:46:07 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:46:07 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() begin
+Fri Mar 21 16:46:07 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() end
+Fri Mar 21 16:46:59 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 16:46:59 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:46:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:1) begin
+Fri Mar 21 16:46:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 16:47:24 GMT 2008 |13| AWT-EventQueue-0 Request run 1:1 prox=0
+Fri Mar 21 16:47:24 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 16:47:24 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 16:47:24 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:1) begin 
+Fri Mar 21 16:47:24 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 16:47:29 GMT 2008 || AWT-EventQueue-0 View source file: execute/ser.cpp
+Fri Mar 21 16:47:35 GMT 2008 || AWT-EventQueue-0 View answer file execute/out.txt
+Fri Mar 21 16:47:37 GMT 2008 || AWT-EventQueue-0 View data file execute/in.txt
+Fri Mar 21 16:47:50 GMT 2008 |9| Thread-13 Executable.newExecute(RunData) begin
+Fri Mar 21 16:47:50 GMT 2008 || Thread-13 before substitution {:basename}
+Fri Mar 21 16:47:50 GMT 2008 || Thread-13 after substitution ser
+Fri Mar 21 16:47:50 GMT 2008 || Thread-13 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 16:47:50 GMT 2008 |9| Thread-13 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:47:50 GMT 2008 || Thread-13 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:47:50 GMT 2008 || Thread-13 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:47:50 GMT 2008 || Thread-13 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:47:51 GMT 2008 |11| Thread-13 Executable.compilerCall(RunData) end
+Fri Mar 21 16:47:51 GMT 2008 |9| Thread-13 Executable.executionCall(RunData) begin
+Fri Mar 21 16:47:51 GMT 2008 || Thread-13 before substitution ./{:basename}
+Fri Mar 21 16:47:51 GMT 2008 || Thread-13 after substitution ./ser
+Fri Mar 21 16:47:51 GMT 2008 || Thread-13 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 16:47:51 GMT 2008 || Thread-13 executionCall() team program exitValue = 0
+Fri Mar 21 16:47:51 GMT 2008 |11| Thread-13 Executable.executionCall(RunData) end
+Fri Mar 21 16:47:51 GMT 2008 || Thread-13 Execution returned true
+Fri Mar 21 16:47:51 GMT 2008 |11| Thread-13 Executable.execute() end
+Fri Mar 21 16:47:54 GMT 2008 || AWT-EventQueue-0 View answer file execute/out.txt
+Fri Mar 21 16:48:02 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 0
+Fri Mar 21 16:48:02 GMT 2008 || AWT-EventQueue-0 FileDiffPane::ShowFiles(execute/estdout.pc2,execute/out.txt) Begin
+Fri Mar 21 16:48:02 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Fri Mar 21 16:48:02 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Fri Mar 21 16:48:24 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Fri Mar 21 16:48:24 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:1 | No - Wrong Answer
+Fri Mar 21 16:48:24 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:48:24 GMT 2008 || Thread-20 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 16:48:24 GMT 2008 || Thread-20 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 16:48:24 GMT 2008 || Thread-20 debug is judged true
+Fri Mar 21 16:48:24 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:48:24 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:48:47 GMT 2008 || AWT-EventQueue-0 requestRun: aborted, no run selected (index=-1) 
+Fri Mar 21 16:49:39 GMT 2008 |13| AWT-EventQueue-0 showAJMonitor new ajSettings 
+Fri Mar 21 16:49:39 GMT 2008 |9| AWT-EventQueue-0 showAutoJudgingDialog() begin 
+Fri Mar 21 16:49:39 GMT 2008 |11| AWT-EventQueue-0 showAutoJudgingDialog() end 
+Fri Mar 21 16:49:40 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 0 probs to auto judge 
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1361 ms.
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:49:40 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 startRunningThread 
+Fri Mar 21 16:49:40 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 0 probs to auto judge 
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1004 ms.
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:49:40 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:49:40 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Fri Mar 21 16:49:40 GMT 2008 |9| Thread-23 AJMonitorThread.run () begin 
+Fri Mar 21 16:49:41 GMT 2008 || Thread-23 autoJudgeRunNow() no runs to autojudge 
+Fri Mar 21 16:49:41 GMT 2008 || Thread-23 stopRunningThread 
+Fri Mar 21 16:49:41 GMT 2008 |11| Thread-23 AJMonitorThread.run () end 
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 saveValuesToDisk() Save to disk
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0  debug - saveValuesToDisk run updateRunner
+Fri Mar 21 16:49:46 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 0 probs to auto judge 
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1004 ms.
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:49:46 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 startRunningThread 
+Fri Mar 21 16:49:46 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 0 probs to auto judge 
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1934 ms.
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:49:46 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:49:46 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Fri Mar 21 16:49:46 GMT 2008 |9| Thread-24 AJMonitorThread.run () begin 
+Fri Mar 21 16:49:48 GMT 2008 || Thread-24 autoJudgeRunNow() no runs to autojudge 
+Fri Mar 21 16:49:48 GMT 2008 || Thread-24 stopRunningThread 
+Fri Mar 21 16:49:48 GMT 2008 |11| Thread-24 AJMonitorThread.run () end 
+Fri Mar 21 16:50:04 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 16:50:04 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:50:04 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:2) begin
+Fri Mar 21 16:50:04 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 16:50:16 GMT 2008 || AWT-EventQueue-0 Cannot choose 'Ser o no ser': no configured validator
+Fri Mar 21 16:50:25 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 0 probs to auto judge 
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : false
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1934 ms.
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:50:25 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 AJMonitor: Already not watching...
+Fri Mar 21 16:50:25 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 0 probs to auto judge 
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : false
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 412 ms.
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:50:25 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:50:25 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Fri Mar 21 16:50:30 GMT 2008 |13| AWT-EventQueue-0 Request run 1:2 prox=0
+Fri Mar 21 16:50:30 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 16:50:30 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 16:50:30 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:2) begin 
+Fri Mar 21 16:50:30 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 16:50:32 GMT 2008 |9| Thread-27 Executable.newExecute(RunData) begin
+Fri Mar 21 16:50:32 GMT 2008 || Thread-27 before substitution {:basename}
+Fri Mar 21 16:50:32 GMT 2008 || Thread-27 after substitution ser
+Fri Mar 21 16:50:32 GMT 2008 || Thread-27 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 16:50:32 GMT 2008 |9| Thread-27 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:50:32 GMT 2008 || Thread-27 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:50:32 GMT 2008 || Thread-27 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:50:32 GMT 2008 || Thread-27 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:50:33 GMT 2008 |11| Thread-27 Executable.compilerCall(RunData) end
+Fri Mar 21 16:50:33 GMT 2008 |9| Thread-27 Executable.executionCall(RunData) begin
+Fri Mar 21 16:50:33 GMT 2008 || Thread-27 before substitution ./{:basename}
+Fri Mar 21 16:50:33 GMT 2008 || Thread-27 after substitution ./ser
+Fri Mar 21 16:50:33 GMT 2008 || Thread-27 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 16:50:33 GMT 2008 || Thread-27 executionCall() team program exitValue = 0
+Fri Mar 21 16:50:33 GMT 2008 |11| Thread-27 Executable.executionCall(RunData) end
+Fri Mar 21 16:50:33 GMT 2008 || Thread-27 Execution returned true
+Fri Mar 21 16:50:34 GMT 2008 |11| Thread-27 Executable.execute() end
+Fri Mar 21 16:50:37 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 0
+Fri Mar 21 16:50:37 GMT 2008 || AWT-EventQueue-0 FileDiffPane::ShowFiles(execute/estdout.pc2,execute/out.txt) Begin
+Fri Mar 21 16:50:37 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Fri Mar 21 16:50:37 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Fri Mar 21 16:50:45 GMT 2008 || AWT-EventQueue-0 cancelRun returning run 1:2
+Fri Mar 21 16:50:45 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 16:50:45 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:50:45 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:2) begin
+Fri Mar 21 16:50:45 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 16:50:47 GMT 2008 |13| AWT-EventQueue-0 Request run 1:2 prox=0
+Fri Mar 21 16:50:47 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 16:50:47 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 16:50:47 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:2) begin 
+Fri Mar 21 16:50:47 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 16:50:57 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Fri Mar 21 16:50:57 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:2 | No - Wrong Answer
+Fri Mar 21 16:50:58 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:50:58 GMT 2008 || Thread-37 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 16:50:58 GMT 2008 || Thread-37 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 16:50:58 GMT 2008 || Thread-37 debug is judged true
+Fri Mar 21 16:50:58 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:50:58 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:54:26 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 16:54:26 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:54:26 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:3) begin
+Fri Mar 21 16:54:26 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 16:54:49 GMT 2008 |13| AWT-EventQueue-0 Request run 1:3 prox=0
+Fri Mar 21 16:54:50 GMT 2008 |12| RMI TCP Connection(14)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 16:54:50 GMT 2008 |12| RMI TCP Connection(14)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 16:54:50 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:3) begin 
+Fri Mar 21 16:54:50 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 16:54:53 GMT 2008 |9| Thread-40 Executable.newExecute(RunData) begin
+Fri Mar 21 16:54:53 GMT 2008 || Thread-40 before substitution {:basename}
+Fri Mar 21 16:54:53 GMT 2008 || Thread-40 after substitution ser
+Fri Mar 21 16:54:53 GMT 2008 || Thread-40 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 16:54:53 GMT 2008 |9| Thread-40 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:54:53 GMT 2008 || Thread-40 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:54:53 GMT 2008 || Thread-40 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:54:53 GMT 2008 || Thread-40 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:54:54 GMT 2008 |11| Thread-40 Executable.compilerCall(RunData) end
+Fri Mar 21 16:54:54 GMT 2008 |9| Thread-40 Executable.executionCall(RunData) begin
+Fri Mar 21 16:54:54 GMT 2008 || Thread-40 before substitution ./{:basename}
+Fri Mar 21 16:54:54 GMT 2008 || Thread-40 after substitution ./ser
+Fri Mar 21 16:54:54 GMT 2008 || Thread-40 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 16:55:20 GMT 2008 |12| RMI TCP Connection(15)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Fri Mar 21 16:55:20 GMT 2008 |12| RMI TCP Connection(15)-127.0.1.1 Base update() Class: pc2.Settings
+Fri Mar 21 16:55:20 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() begin
+Fri Mar 21 16:55:20 GMT 2008 || AWT-EventQueue-0 server.getAllUnjudgedRuns() returned nothing
+Fri Mar 21 16:55:20 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() end
+Fri Mar 21 16:55:20 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:55:20 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:55:20 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:55:20 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:55:22 GMT 2008 || AWT-EventQueue-0 ExecuteTimer: attempting to destroy process
+Fri Mar 21 16:55:22 GMT 2008 || Thread-40 executionCall() team program exitValue = 143
+Fri Mar 21 16:55:22 GMT 2008 |11| Thread-40 Executable.executionCall(RunData) end
+Fri Mar 21 16:55:22 GMT 2008 || Thread-40 Execution returned true
+Fri Mar 21 16:55:22 GMT 2008 |11| Thread-40 Executable.execute() end
+Fri Mar 21 16:55:25 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 0
+Fri Mar 21 16:55:25 GMT 2008 || AWT-EventQueue-0 FileDiffPane::ShowFiles(execute/estdout.pc2,execute/out.txt) Begin
+Fri Mar 21 16:55:25 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Fri Mar 21 16:55:25 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Fri Mar 21 16:55:31 GMT 2008 |9| Thread-48 Executable.newExecute(RunData) begin
+Fri Mar 21 16:55:31 GMT 2008 || Thread-48 before substitution {:basename}
+Fri Mar 21 16:55:31 GMT 2008 || Thread-48 after substitution ser
+Fri Mar 21 16:55:31 GMT 2008 || Thread-48 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 16:55:31 GMT 2008 |9| Thread-48 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:55:31 GMT 2008 || Thread-48 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:55:31 GMT 2008 || Thread-48 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:55:31 GMT 2008 || Thread-48 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:55:32 GMT 2008 |11| Thread-48 Executable.compilerCall(RunData) end
+Fri Mar 21 16:55:32 GMT 2008 |9| Thread-48 Executable.executionCall(RunData) begin
+Fri Mar 21 16:55:32 GMT 2008 || Thread-48 before substitution ./{:basename}
+Fri Mar 21 16:55:32 GMT 2008 || Thread-48 after substitution ./ser
+Fri Mar 21 16:55:32 GMT 2008 || Thread-48 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 16:55:48 GMT 2008 || AWT-EventQueue-0 ExecuteTimer: attempting to destroy process
+Fri Mar 21 16:55:48 GMT 2008 || Thread-48 executionCall() team program exitValue = 143
+Fri Mar 21 16:55:48 GMT 2008 |11| Thread-48 Executable.executionCall(RunData) end
+Fri Mar 21 16:55:48 GMT 2008 || Thread-48 Execution returned true
+Fri Mar 21 16:55:48 GMT 2008 |11| Thread-48 Executable.execute() end
+Fri Mar 21 16:55:52 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Fri Mar 21 16:55:52 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:3 | No - Time-limit Exceeded
+Fri Mar 21 16:55:52 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(16)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(16)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:55:52 GMT 2008 || Thread-55 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 16:55:52 GMT 2008 || Thread-55 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 16:55:52 GMT 2008 || Thread-55 debug is judged true
+Fri Mar 21 16:55:52 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:55:52 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(16)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(16)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:56:40 GMT 2008 |12| RMI TCP Connection(17)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Fri Mar 21 16:56:40 GMT 2008 |12| RMI TCP Connection(17)-127.0.1.1 Base update() Class: pc2.Settings
+Fri Mar 21 16:56:40 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() begin
+Fri Mar 21 16:56:40 GMT 2008 || AWT-EventQueue-0 server.getAllUnjudgedRuns() returned nothing
+Fri Mar 21 16:56:40 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() end
+Fri Mar 21 16:56:40 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:56:40 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:56:40 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:56:40 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:56:40 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:56:40 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:57:52 GMT 2008 |12| RMI TCP Connection(19)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Fri Mar 21 16:57:52 GMT 2008 |12| RMI TCP Connection(19)-127.0.1.1 Base update() Class: pc2.Settings
+Fri Mar 21 16:57:52 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() begin
+Fri Mar 21 16:57:52 GMT 2008 || AWT-EventQueue-0 server.getAllUnjudgedRuns() returned nothing
+Fri Mar 21 16:57:52 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() end
+Fri Mar 21 16:57:52 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:57:52 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:57:52 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:57:52 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:57:52 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:57:52 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:58:47 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 16:58:47 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:58:47 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:4) begin
+Fri Mar 21 16:58:47 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 16:58:54 GMT 2008 |9| AWT-EventQueue-0 showAutoJudgingDialog() begin 
+Fri Mar 21 16:58:54 GMT 2008 |11| AWT-EventQueue-0 showAutoJudgingDialog() end 
+Fri Mar 21 16:58:54 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 startRunningThread 
+Fri Mar 21 16:58:54 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Fri Mar 21 16:58:54 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 0 probs to auto judge 
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 917 ms.
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:58:54 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 AJMonitor: Already watching...
+Fri Mar 21 16:58:54 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 0 probs to auto judge 
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1478 ms.
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Fri Mar 21 16:58:54 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:58:54 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Fri Mar 21 16:58:54 GMT 2008 |9| Thread-60 AJMonitorThread.run () begin 
+Fri Mar 21 16:58:55 GMT 2008 || Thread-60 autoJudgeRunNow() no runs to autojudge 
+Fri Mar 21 16:58:55 GMT 2008 || Thread-60 stopRunningThread 
+Fri Mar 21 16:58:55 GMT 2008 |11| Thread-60 AJMonitorThread.run () end 
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 saveValuesToDisk() Save to disk
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0  debug - saveValuesToDisk run updateRunner
+Fri Mar 21 16:58:59 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 1 probs to auto judge 
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1478 ms.
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Auto Judging:  Problem 1 Ser o no ser
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Autojudging 1 problems
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:58:59 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 startRunningThread 
+Fri Mar 21 16:58:59 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 1 probs to auto judge 
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1811 ms.
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Auto Judging:  Problem 1 Ser o no ser
+Fri Mar 21 16:58:59 GMT 2008 |9| Thread-61 AJMonitorThread.run () begin 
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 Autojudging 1 problems
+Fri Mar 21 16:58:59 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 16:58:59 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Fri Mar 21 16:59:01 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Fetching 1:4
+Fri Mar 21 16:59:01 GMT 2008 |9| Thread-61 Executable.newExecute(RunData) begin
+Fri Mar 21 16:59:01 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Judging 4 (Ser o no ser)
+Fri Mar 21 16:59:01 GMT 2008 || Thread-61 before substitution {:basename}
+Fri Mar 21 16:59:01 GMT 2008 || Thread-61 after substitution ser
+Fri Mar 21 16:59:01 GMT 2008 || Thread-61 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 16:59:01 GMT 2008 |9| Thread-61 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:59:01 GMT 2008 || Thread-61 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:59:01 GMT 2008 || Thread-61 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:59:01 GMT 2008 || Thread-61 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:59:01 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 16:59:01 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 16:59:01 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:4) begin 
+Fri Mar 21 16:59:01 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 16:59:02 GMT 2008 |11| Thread-61 Executable.compilerCall(RunData) end
+Fri Mar 21 16:59:02 GMT 2008 |9| Thread-61 Executable.executionCall(RunData) begin
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 before substitution ./{:basename}
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 after substitution ./ser
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 executionCall() team program exitValue = 0
+Fri Mar 21 16:59:02 GMT 2008 |11| Thread-61 Executable.executionCall(RunData) end
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 Execution returned true
+Fri Mar 21 16:59:02 GMT 2008 |9| Thread-61 validationCall begin
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 1 false
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 4751XSAM.txt -pc2 1 false
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 4751XSAM.txt -pc2 1 false'
+Fri Mar 21 16:59:02 GMT 2008 |9| Thread-61 parseResultXML(4751XSAM.txt, atts) begin
+Fri Mar 21 16:59:02 GMT 2008 |9| Thread-61 parseResultXML(4751XSAM.txt, atts) end
+Fri Mar 21 16:59:02 GMT 2008 || Thread-61 done=true
+Fri Mar 21 16:59:03 GMT 2008 |11| Thread-61 Executable.execute() end
+Fri Mar 21 16:59:03 GMT 2008 || Thread-61 Auto Judge results for 1:4 is No - Wrong Answer
+Fri Mar 21 16:59:03 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Sending result 4 (Ser o no ser)
+Fri Mar 21 16:59:03 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Waiting for run...
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(21)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(21)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:59:03 GMT 2008 || Thread-71 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 16:59:03 GMT 2008 || Thread-71 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 16:59:03 GMT 2008 || Thread-71 debug is judged true
+Fri Mar 21 16:59:03 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 16:59:03 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 16:59:05 GMT 2008 || Thread-61 autoJudgeRunNow() no runs to autojudge 
+Fri Mar 21 16:59:05 GMT 2008 || Thread-61 stopRunningThread 
+Fri Mar 21 16:59:05 GMT 2008 |11| Thread-61 AJMonitorThread.run () end 
+Fri Mar 21 17:00:23 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 1 probs to auto judge 
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : false
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 1811 ms.
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 Autojudging 1 problems
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 17:00:23 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 AJMonitor: Already not watching...
+Fri Mar 21 17:00:23 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 1 probs to auto judge 
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : false
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 240 ms.
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 Autojudging 1 problems
+Fri Mar 21 17:00:23 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Fri Mar 21 17:00:23 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Fri Mar 21 17:00:35 GMT 2008 |12| RMI TCP Connection(22)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 17:00:35 GMT 2008 |12| RMI TCP Connection(22)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:00:35 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:5) begin
+Fri Mar 21 17:00:35 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 17:00:41 GMT 2008 |13| AWT-EventQueue-0 Request run 1:5 prox=0
+Fri Mar 21 17:00:41 GMT 2008 |12| RMI TCP Connection(22)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 17:00:41 GMT 2008 |12| RMI TCP Connection(22)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 17:00:41 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:5) begin 
+Fri Mar 21 17:00:41 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 17:00:46 GMT 2008 |9| Thread-74 Executable.newExecute(RunData) begin
+Fri Mar 21 17:00:46 GMT 2008 || Thread-74 before substitution {:basename}
+Fri Mar 21 17:00:46 GMT 2008 || Thread-74 after substitution ser
+Fri Mar 21 17:00:46 GMT 2008 || Thread-74 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 17:00:46 GMT 2008 |9| Thread-74 Executable.compilerCall(RunData) begin
+Fri Mar 21 17:00:46 GMT 2008 || Thread-74 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 17:00:46 GMT 2008 || Thread-74 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 17:00:46 GMT 2008 || Thread-74 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 17:00:47 GMT 2008 |11| Thread-74 Executable.compilerCall(RunData) end
+Fri Mar 21 17:00:47 GMT 2008 |9| Thread-74 Executable.executionCall(RunData) begin
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 before substitution ./{:basename}
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 after substitution ./ser
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 executionCall() team program exitValue = 0
+Fri Mar 21 17:00:47 GMT 2008 |11| Thread-74 Executable.executionCall(RunData) end
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 Execution returned true
+Fri Mar 21 17:00:47 GMT 2008 |9| Thread-74 validationCall begin
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 1 false
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 5101XSAM.txt -pc2 1 false
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 5101XSAM.txt -pc2 1 false'
+Fri Mar 21 17:00:47 GMT 2008 |9| Thread-74 parseResultXML(5101XSAM.txt, atts) begin
+Fri Mar 21 17:00:47 GMT 2008 |9| Thread-74 parseResultXML(5101XSAM.txt, atts) end
+Fri Mar 21 17:00:47 GMT 2008 || Thread-74 done=true
+Fri Mar 21 17:00:48 GMT 2008 |11| Thread-74 Executable.execute() end
+Fri Mar 21 17:00:54 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 0
+Fri Mar 21 17:00:54 GMT 2008 || AWT-EventQueue-0 FileDiffPane::ShowFiles(execute/estdout.pc2,execute/out.txt) Begin
+Fri Mar 21 17:00:54 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Fri Mar 21 17:00:54 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Fri Mar 21 17:01:15 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Fri Mar 21 17:01:15 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:5 | No - Wrong Answer
+Fri Mar 21 17:01:16 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(23)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(23)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(23)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(23)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:01:16 GMT 2008 || Thread-84 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 17:01:16 GMT 2008 || Thread-84 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 17:01:16 GMT 2008 || Thread-84 debug is judged true
+Fri Mar 21 17:01:16 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 17:01:16 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 17:01:55 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 17:01:55 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:01:55 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:6) begin
+Fri Mar 21 17:01:55 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 17:02:14 GMT 2008 |13| AWT-EventQueue-0 Request run 1:6 prox=0
+Fri Mar 21 17:02:14 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 17:02:14 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 17:02:14 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:6) begin 
+Fri Mar 21 17:02:14 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 17:02:18 GMT 2008 |9| Thread-87 Executable.newExecute(RunData) begin
+Fri Mar 21 17:02:18 GMT 2008 || Thread-87 before substitution {:basename}
+Fri Mar 21 17:02:18 GMT 2008 || Thread-87 after substitution ser
+Fri Mar 21 17:02:18 GMT 2008 || Thread-87 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 17:02:18 GMT 2008 |9| Thread-87 Executable.compilerCall(RunData) begin
+Fri Mar 21 17:02:18 GMT 2008 || Thread-87 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 17:02:18 GMT 2008 || Thread-87 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 17:02:18 GMT 2008 || Thread-87 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 17:02:19 GMT 2008 |11| Thread-87 Executable.compilerCall(RunData) end
+Fri Mar 21 17:02:19 GMT 2008 |9| Thread-87 Executable.executionCall(RunData) begin
+Fri Mar 21 17:02:19 GMT 2008 || Thread-87 before substitution ./{:basename}
+Fri Mar 21 17:02:19 GMT 2008 || Thread-87 after substitution ./ser
+Fri Mar 21 17:02:19 GMT 2008 || Thread-87 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 executionCall() team program exitValue = 0
+Fri Mar 21 17:02:20 GMT 2008 |11| Thread-87 Executable.executionCall(RunData) end
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 Execution returned true
+Fri Mar 21 17:02:20 GMT 2008 |9| Thread-87 validationCall begin
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 1 false
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 6681XSAM.txt -pc2 1 false
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 6681XSAM.txt -pc2 1 false'
+Fri Mar 21 17:02:20 GMT 2008 |9| Thread-87 parseResultXML(6681XSAM.txt, atts) begin
+Fri Mar 21 17:02:20 GMT 2008 |9| Thread-87 parseResultXML(6681XSAM.txt, atts) end
+Fri Mar 21 17:02:20 GMT 2008 || Thread-87 done=true
+Fri Mar 21 17:02:20 GMT 2008 |11| Thread-87 Executable.execute() end
+Fri Mar 21 17:02:23 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 0
+Fri Mar 21 17:02:23 GMT 2008 || AWT-EventQueue-0 FileDiffPane::ShowFiles(execute/estdout.pc2,execute/out.txt) Begin
+Fri Mar 21 17:02:23 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Fri Mar 21 17:02:23 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Fri Mar 21 17:02:30 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Fri Mar 21 17:02:30 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:6 | Yes
+Fri Mar 21 17:02:30 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Fri Mar 21 17:02:30 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:02:30 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:02:30 GMT 2008 || Thread-96 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 17:02:30 GMT 2008 || Thread-96 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 17:02:30 GMT 2008 || Thread-96 debug is judged true
+Fri Mar 21 17:02:30 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 17:02:30 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 17:02:30 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:02:30 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:03:17 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Event: [23] clarification_selected 
+Fri Mar 21 17:03:17 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 17:03:17 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeClarification(Clar: 1:1) begin
+Fri Mar 21 17:03:17 GMT 2008 || AWT-EventQueue-0 removeClarification getIndexByKey() returned -1
+Fri Mar 21 17:03:17 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeClarification() end
+Fri Mar 21 17:03:20 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Fri Mar 21 17:03:20 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 17:03:20 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() begin
+Fri Mar 21 17:03:20 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() end
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(26)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(26)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(26)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(26)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:05:30 GMT 2008 || Thread-101 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 17:05:30 GMT 2008 || Thread-101 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 17:05:30 GMT 2008 || Thread-101 debug is judged true
+Fri Mar 21 17:05:30 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 17:05:30 GMT 2008 || AWT-EventQueue-0 addJudgement() found this run at row 5 replacing with new run
+Fri Mar 21 17:05:30 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 17:06:42 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Event: [4] run_available 
+Fri Mar 21 17:06:42 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:06:42 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:7) begin
+Fri Mar 21 17:06:42 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Fri Mar 21 17:06:48 GMT 2008 |13| AWT-EventQueue-0 Request run 1:7 prox=0
+Fri Mar 21 17:06:48 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Event: [3] run_selected 
+Fri Mar 21 17:06:48 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Class: pc2.RunInfo
+Fri Mar 21 17:06:48 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:7) begin 
+Fri Mar 21 17:06:48 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Fri Mar 21 17:06:49 GMT 2008 |9| Thread-104 Executable.newExecute(RunData) begin
+Fri Mar 21 17:06:49 GMT 2008 || Thread-104 before substitution {:basename}
+Fri Mar 21 17:06:49 GMT 2008 || Thread-104 after substitution ser
+Fri Mar 21 17:06:49 GMT 2008 || Thread-104 Executable.execute(): 'additional files' list is empty
+Fri Mar 21 17:06:49 GMT 2008 |9| Thread-104 Executable.compilerCall(RunData) begin
+Fri Mar 21 17:06:49 GMT 2008 || Thread-104 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 17:06:49 GMT 2008 || Thread-104 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 17:06:49 GMT 2008 || Thread-104 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 17:06:50 GMT 2008 |11| Thread-104 Executable.compilerCall(RunData) end
+Fri Mar 21 17:06:50 GMT 2008 |9| Thread-104 Executable.executionCall(RunData) begin
+Fri Mar 21 17:06:50 GMT 2008 || Thread-104 before substitution ./{:basename}
+Fri Mar 21 17:06:50 GMT 2008 || Thread-104 after substitution ./ser
+Fri Mar 21 17:06:50 GMT 2008 || Thread-104 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 executionCall() team program exitValue = 0
+Fri Mar 21 17:06:51 GMT 2008 |11| Thread-104 Executable.executionCall(RunData) end
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 Execution returned true
+Fri Mar 21 17:06:51 GMT 2008 |9| Thread-104 validationCall begin
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 1 false
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 701XSAM.txt -pc2 1 false
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 701XSAM.txt -pc2 1 false'
+Fri Mar 21 17:06:51 GMT 2008 |9| Thread-104 parseResultXML(701XSAM.txt, atts) begin
+Fri Mar 21 17:06:51 GMT 2008 |9| Thread-104 parseResultXML(701XSAM.txt, atts) end
+Fri Mar 21 17:06:51 GMT 2008 || Thread-104 done=true
+Fri Mar 21 17:06:51 GMT 2008 |11| Thread-104 Executable.execute() end
+Fri Mar 21 17:06:56 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 0
+Fri Mar 21 17:06:56 GMT 2008 || AWT-EventQueue-0 FileDiffPane::ShowFiles(execute/estdout.pc2,execute/out.txt) Begin
+Fri Mar 21 17:06:56 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Fri Mar 21 17:06:56 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Fri Mar 21 17:06:57 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Fri Mar 21 17:06:57 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Fri Mar 21 17:07:20 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Fri Mar 21 17:07:20 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:7 | No - Output Format Error
+Fri Mar 21 17:07:21 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:07:21 GMT 2008 || Thread-113 debug handleRunStatusUpdated - run    Site 1 judge1
+Fri Mar 21 17:07:21 GMT 2008 || Thread-113 debug handleRunStatusUpdated - client Site 1 judge1
+Fri Mar 21 17:07:21 GMT 2008 || Thread-113 debug is judged true
+Fri Mar 21 17:07:21 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Fri Mar 21 17:07:21 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:11:58 GMT 2008 || AWT-EventQueue-0 1 - Client LOGOFF
+Fri Mar 21 17:11:58 GMT 2008 || AWT-EventQueue-0 Nothing to cancel
+Fri Mar 21 17:11:58 GMT 2008 || AWT-EventQueue-0 JudgeFrame.cancelClarification() invoked but we are not nowAnsweringClar
+Fri Mar 21 17:11:58 GMT 2008 || AWT-EventQueue-0 Logged off 1
+Sat Mar 22 19:37:48 GMT 2008 |2| main Debug level initially set to 2
+Sat Mar 22 19:37:48 GMT 2008 |2| main Console level initially set to 2
+Sat Mar 22 19:37:48 GMT 2008 |2| main Debug level set to 13
+Sat Mar 22 19:37:48 GMT 2008 |2| main Console level set to 5
+Sat Mar 22 19:37:48 GMT 2008 ||
+Sat Mar 22 19:37:48 GMT 2008 |-1| main CSUS Programming Contest Control System
+Sat Mar 22 19:37:48 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Sat Mar 22 19:37:48 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Sat Mar 22 19:37:48 GMT 2008 ||
+Sat Mar 22 19:37:48 GMT 2008 || main CSUS Programming Contest Control System Version judge 8.7 20051115 03 (November 15th, 2005 9:40pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Sat Mar 22 19:37:48 GMT 2008 ||
+Sat Mar 22 19:37:48 GMT 2008 || main Java freeMemory   3616000 3616k
+Sat Mar 22 19:37:48 GMT 2008 || main Java totalMemory  5177344 5177k
+Sat Mar 22 19:37:48 GMT 2008 ||
+Sat Mar 22 19:37:48 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/pc2v8.ini
+Sat Mar 22 19:37:48 GMT 2008 || main Starting in dir: /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge
+Sat Mar 22 19:37:55 GMT 2008 || AWT-EventQueue-0 Contacting server: localhost port 50002
+Sat Mar 22 19:37:55 GMT 2008 || AWT-EventQueue-0 pc2.judge.JudgeFrame using 127.0.1.1.
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 9=global_property_updated 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 23=clarification_selected 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 10=clarification_submitted 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 11=clarification_answered 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 1=run_submitted 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 4=run_available 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 3=run_selected 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 5=run_completed 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 18=run_status_update 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 14=contest_started 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 15=contest_stopped 
+Sat Mar 22 19:37:55 GMT 2008 |12| AWT-EventQueue-0 Registered for 20=contest_reset_refresh 
+Sat Mar 22 19:37:55 GMT 2008 || AWT-EventQueue-0 Logging on as judge1
+Sat Mar 22 19:37:55 GMT 2008 || AWT-EventQueue-0 judge 8.7 20051115 03 November 15th, 2005 9:40pm
+Sat Mar 22 19:37:56 GMT 2008 || Thread-2 BaseClient: handleContestStartStop <Contest started>
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() begin
+Sat Mar 22 19:37:56 GMT 2008 || AWT-EventQueue-0 server.getAllUnjudgedRuns() returned nothing
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() end
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:37:56 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:37:56 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:40:08 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Event: [10] clarification_submitted 
+Sat Mar 22 19:40:08 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Sat Mar 22 19:40:08 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addClarification(Clar: 1:3) begin
+Sat Mar 22 19:40:08 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addClarification() end
+Sat Mar 22 19:40:20 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Event: [23] clarification_selected 
+Sat Mar 22 19:40:20 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Sat Mar 22 19:40:20 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeClarification(Clar: 1:3) begin
+Sat Mar 22 19:40:20 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeClarification() end
+Sat Mar 22 19:40:43 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.answerClarification() begin
+Sat Mar 22 19:40:43 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.answerClarification() end
+Sat Mar 22 19:40:43 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Sat Mar 22 19:40:43 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Sat Mar 22 19:40:43 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() begin
+Sat Mar 22 19:40:43 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.updateAnsweredClarListBox() end
+Sat Mar 22 19:42:12 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [4] run_available 
+Sat Mar 22 19:42:12 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:42:12 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:8) begin
+Sat Mar 22 19:42:12 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Sat Mar 22 19:42:45 GMT 2008 |13| AWT-EventQueue-0 Request run 1:8 prox=0
+Sat Mar 22 19:42:45 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Event: [3] run_selected 
+Sat Mar 22 19:42:45 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Class: pc2.RunInfo
+Sat Mar 22 19:42:45 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:8) begin 
+Sat Mar 22 19:42:45 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Sat Mar 22 19:42:52 GMT 2008 |9| Thread-10 Executable.newExecute(RunData) begin
+Sat Mar 22 19:42:52 GMT 2008 || Thread-10 before substitution {:basename}
+Sat Mar 22 19:42:52 GMT 2008 || Thread-10 after substitution ser
+Sat Mar 22 19:42:52 GMT 2008 || Thread-10 Executable.execute(): 'additional files' list is empty
+Sat Mar 22 19:42:52 GMT 2008 |9| Thread-10 Executable.compilerCall(RunData) begin
+Sat Mar 22 19:42:52 GMT 2008 || Thread-10 before substitution g++ -lm -o {:basename} {:mainfile}
+Sat Mar 22 19:42:52 GMT 2008 || Thread-10 after substitution g++ -lm -o ser ser.cpp
+Sat Mar 22 19:42:52 GMT 2008 || Thread-10 executing: 'g++ -lm -o ser ser.cpp'
+Sat Mar 22 19:42:53 GMT 2008 |11| Thread-10 Executable.compilerCall(RunData) end
+Sat Mar 22 19:42:53 GMT 2008 |9| Thread-10 Executable.executionCall(RunData) begin
+Sat Mar 22 19:42:53 GMT 2008 || Thread-10 before substitution ./{:basename}
+Sat Mar 22 19:42:53 GMT 2008 || Thread-10 after substitution ./ser
+Sat Mar 22 19:42:53 GMT 2008 || Thread-10 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 executionCall() team program exitValue = 0
+Sat Mar 22 19:42:54 GMT 2008 |11| Thread-10 Executable.executionCall(RunData) end
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 Execution returned true
+Sat Mar 22 19:42:54 GMT 2008 |9| Thread-10 validationCall begin
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 1 false
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 8301XSAM.txt -pc2 1 false
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 8301XSAM.txt -pc2 1 false'
+Sat Mar 22 19:42:54 GMT 2008 |9| Thread-10 parseResultXML(8301XSAM.txt, atts) begin
+Sat Mar 22 19:42:54 GMT 2008 |9| Thread-10 parseResultXML(8301XSAM.txt, atts) end
+Sat Mar 22 19:42:54 GMT 2008 || Thread-10 done=true
+Sat Mar 22 19:42:54 GMT 2008 |11| Thread-10 Executable.execute() end
+Sat Mar 22 19:42:59 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 0
+Sat Mar 22 19:42:59 GMT 2008 || AWT-EventQueue-0 FileDiffPane::ShowFiles(execute/estdout.pc2,execute/out.txt) Begin
+Sat Mar 22 19:43:00 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 805
+Sat Mar 22 19:43:00 GMT 2008 || AWT-EventQueue-0 debug setDividerInMiddle 807
+Sat Mar 22 19:43:37 GMT 2008 |12| RMI TCP Connection(6)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Sat Mar 22 19:43:37 GMT 2008 |12| RMI TCP Connection(6)-127.0.1.1 Base update() Class: pc2.Settings
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() begin
+Sat Mar 22 19:43:37 GMT 2008 || AWT-EventQueue-0 server.getAllUnjudgedRuns() returned nothing
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() end
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:43:44 GMT 2008 |9| Thread-20 Executable.newExecute(RunData) begin
+Sat Mar 22 19:43:44 GMT 2008 || Thread-20 before substitution {:basename}
+Sat Mar 22 19:43:44 GMT 2008 || Thread-20 after substitution ser
+Sat Mar 22 19:43:44 GMT 2008 || Thread-20 Executable.execute(): 'additional files' list is empty
+Sat Mar 22 19:43:44 GMT 2008 |9| Thread-20 Executable.compilerCall(RunData) begin
+Sat Mar 22 19:43:44 GMT 2008 || Thread-20 before substitution g++ -lm -o {:basename} {:mainfile}
+Sat Mar 22 19:43:44 GMT 2008 || Thread-20 after substitution g++ -lm -o ser ser.cpp
+Sat Mar 22 19:43:44 GMT 2008 || Thread-20 executing: 'g++ -lm -o ser ser.cpp'
+Sat Mar 22 19:43:45 GMT 2008 |11| Thread-20 Executable.compilerCall(RunData) end
+Sat Mar 22 19:43:45 GMT 2008 |9| Thread-20 Executable.executionCall(RunData) begin
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 before substitution ./{:basename}
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 after substitution ./ser
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 executionCall() team program exitValue = 0
+Sat Mar 22 19:43:45 GMT 2008 |11| Thread-20 Executable.executionCall(RunData) end
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 Execution returned true
+Sat Mar 22 19:43:45 GMT 2008 |9| Thread-20 validationCall begin
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 5 false
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 5 false
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 5 false
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 8421XSAM.txt -pc2 5 false
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 8421XSAM.txt -pc2 5 false'
+Sat Mar 22 19:43:45 GMT 2008 |9| Thread-20 parseResultXML(8421XSAM.txt, atts) begin
+Sat Mar 22 19:43:45 GMT 2008 |9| Thread-20 parseResultXML(8421XSAM.txt, atts) end
+Sat Mar 22 19:43:45 GMT 2008 || Thread-20 done=true
+Sat Mar 22 19:43:46 GMT 2008 |11| Thread-20 Executable.execute() end
+Sat Mar 22 19:43:57 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Sat Mar 22 19:43:57 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:8 | No - Time-limit Exceeded
+Sat Mar 22 19:43:57 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:43:57 GMT 2008 || Thread-30 debug handleRunStatusUpdated - run    Site 1 judge1
+Sat Mar 22 19:43:57 GMT 2008 || Thread-30 debug handleRunStatusUpdated - client Site 1 judge1
+Sat Mar 22 19:43:57 GMT 2008 || Thread-30 debug is judged true
+Sat Mar 22 19:43:57 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:43:57 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:46:30 GMT 2008 || Thread-32 debug handleRunStatusUpdated - run    Site 1 judge1
+Sat Mar 22 19:46:30 GMT 2008 || Thread-32 debug handleRunStatusUpdated - client Site 1 judge1
+Sat Mar 22 19:46:30 GMT 2008 || Thread-32 debug is judged true
+Sat Mar 22 19:46:30 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:46:30 GMT 2008 || AWT-EventQueue-0 addJudgement() found this run at row 7 replacing with new run
+Sat Mar 22 19:46:30 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:47:16 GMT 2008 || Thread-34 debug handleRunStatusUpdated - run    Site 1 judge1
+Sat Mar 22 19:47:16 GMT 2008 || Thread-34 debug handleRunStatusUpdated - client Site 1 judge1
+Sat Mar 22 19:47:16 GMT 2008 || Thread-34 debug is judged true
+Sat Mar 22 19:47:16 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:47:16 GMT 2008 || AWT-EventQueue-0 addJudgement() found this run at row 7 replacing with new run
+Sat Mar 22 19:47:16 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:47:22 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Event: [4] run_available 
+Sat Mar 22 19:47:22 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:47:22 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:9) begin
+Sat Mar 22 19:47:22 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Sat Mar 22 19:47:29 GMT 2008 |13| AWT-EventQueue-0 Request run 1:9 prox=0
+Sat Mar 22 19:47:30 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Event: [3] run_selected 
+Sat Mar 22 19:47:30 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Class: pc2.RunInfo
+Sat Mar 22 19:47:30 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:9) begin 
+Sat Mar 22 19:47:30 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Sat Mar 22 19:47:35 GMT 2008 |9| Thread-37 Executable.newExecute(RunData) begin
+Sat Mar 22 19:47:35 GMT 2008 || Thread-37 before substitution {:basename}
+Sat Mar 22 19:47:35 GMT 2008 || Thread-37 after substitution ser
+Sat Mar 22 19:47:35 GMT 2008 || Thread-37 Executable.execute(): 'additional files' list is empty
+Sat Mar 22 19:47:35 GMT 2008 |9| Thread-37 Executable.compilerCall(RunData) begin
+Sat Mar 22 19:47:35 GMT 2008 || Thread-37 before substitution g++ -lm -o {:basename} {:mainfile}
+Sat Mar 22 19:47:35 GMT 2008 || Thread-37 after substitution g++ -lm -o ser ser.cpp
+Sat Mar 22 19:47:35 GMT 2008 || Thread-37 executing: 'g++ -lm -o ser ser.cpp'
+Sat Mar 22 19:47:36 GMT 2008 |11| Thread-37 Executable.compilerCall(RunData) end
+Sat Mar 22 19:47:36 GMT 2008 |9| Thread-37 Executable.executionCall(RunData) begin
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 before substitution ./{:basename}
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 after substitution ./ser
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 executionCall() team program exitValue = 0
+Sat Mar 22 19:47:36 GMT 2008 |11| Thread-37 Executable.executionCall(RunData) end
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 Execution returned true
+Sat Mar 22 19:47:36 GMT 2008 |9| Thread-37 validationCall begin
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 5 false
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 5 false
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 5 false
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 9451XSAM.txt -pc2 5 false
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 9451XSAM.txt -pc2 5 false'
+Sat Mar 22 19:47:36 GMT 2008 |9| Thread-37 parseResultXML(9451XSAM.txt, atts) begin
+Sat Mar 22 19:47:36 GMT 2008 |9| Thread-37 parseResultXML(9451XSAM.txt, atts) end
+Sat Mar 22 19:47:36 GMT 2008 || Thread-37 done=true
+Sat Mar 22 19:47:36 GMT 2008 |11| Thread-37 Executable.execute() end
+Sat Mar 22 19:47:46 GMT 2008 || AWT-EventQueue-0 View answer file execute/out.txt
+Sat Mar 22 19:47:48 GMT 2008 || AWT-EventQueue-0 View data file execute/in.txt
+Sat Mar 22 19:47:51 GMT 2008 || AWT-EventQueue-0 View source file: execute/ser.cpp
+Sat Mar 22 19:47:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Sat Mar 22 19:47:59 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:9 | No - Compilation Error
+Sat Mar 22 19:47:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Sat Mar 22 19:47:59 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:47:59 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:47:59 GMT 2008 || Thread-46 debug handleRunStatusUpdated - run    Site 1 judge1
+Sat Mar 22 19:47:59 GMT 2008 || Thread-46 debug handleRunStatusUpdated - client Site 1 judge1
+Sat Mar 22 19:47:59 GMT 2008 || Thread-46 debug is judged true
+Sat Mar 22 19:47:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:47:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:48:00 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:48:00 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:15 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [4] run_available 
+Sat Mar 22 19:48:15 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:15 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:10) begin
+Sat Mar 22 19:48:15 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Sat Mar 22 19:48:19 GMT 2008 |13| AWT-EventQueue-0 Request run 1:10 prox=0
+Sat Mar 22 19:48:19 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [3] run_selected 
+Sat Mar 22 19:48:19 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunInfo
+Sat Mar 22 19:48:19 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:10) begin 
+Sat Mar 22 19:48:19 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Sat Mar 22 19:48:23 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) begin
+Sat Mar 22 19:48:23 GMT 2008 || AWT-EventQueue-0 JUDGEMENT - Run key 1:10 | Yes
+Sat Mar 22 19:48:23 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.evaluate(String,boolean) end
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:23 GMT 2008 || Thread-50 debug handleRunStatusUpdated - run    Site 1 judge1
+Sat Mar 22 19:48:23 GMT 2008 || Thread-50 debug handleRunStatusUpdated - client Site 1 judge1
+Sat Mar 22 19:48:23 GMT 2008 || Thread-50 debug is judged true
+Sat Mar 22 19:48:23 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Sat Mar 22 19:48:23 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:44 GMT 2008 || AWT-EventQueue-0 1 - Client LOGOFF
+Sat Mar 22 19:48:44 GMT 2008 || AWT-EventQueue-0 Nothing to cancel
+Sat Mar 22 19:48:44 GMT 2008 || AWT-EventQueue-0 JudgeFrame.cancelClarification() invoked but we are not nowAnsweringClar
+Sat Mar 22 19:48:44 GMT 2008 || AWT-EventQueue-0 Logged off 1
+Tue Apr 22 02:30:51 GMT 2008 |2| main Debug level initially set to 2
+Tue Apr 22 02:30:51 GMT 2008 |2| main Console level initially set to 2
+Tue Apr 22 02:30:51 GMT 2008 |2| main Debug level set to 13
+Tue Apr 22 02:30:51 GMT 2008 |2| main Console level set to 5
+Tue Apr 22 02:30:51 GMT 2008 ||
+Tue Apr 22 02:30:51 GMT 2008 |-1| main CSUS Programming Contest Control System
+Tue Apr 22 02:30:51 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:30:51 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Tue Apr 22 02:30:51 GMT 2008 ||
+Tue Apr 22 02:30:51 GMT 2008 || main CSUS Programming Contest Control System Version judge 8.7 20051115 03 (November 15th, 2005 9:40pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:30:51 GMT 2008 ||
+Tue Apr 22 02:30:51 GMT 2008 || main Java freeMemory   3655256 3655k
+Tue Apr 22 02:30:51 GMT 2008 || main Java totalMemory  5177344 5177k
+Tue Apr 22 02:30:51 GMT 2008 ||
+Tue Apr 22 02:30:51 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/pc2v8.ini
+Tue Apr 22 02:30:51 GMT 2008 || main Starting in dir: /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge
+Tue Apr 22 02:30:58 GMT 2008 || AWT-EventQueue-0 Contacting server: localhost port 50002
+Tue Apr 22 02:30:58 GMT 2008 || AWT-EventQueue-0 pc2.judge.JudgeFrame using 127.0.1.1.
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 9=global_property_updated 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 23=clarification_selected 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 10=clarification_submitted 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 11=clarification_answered 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 1=run_submitted 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 4=run_available 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 3=run_selected 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 5=run_completed 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 18=run_status_update 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 14=contest_started 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 15=contest_stopped 
+Tue Apr 22 02:30:59 GMT 2008 |12| AWT-EventQueue-0 Registered for 20=contest_reset_refresh 
+Tue Apr 22 02:30:59 GMT 2008 || AWT-EventQueue-0 Logging on as judge1
+Tue Apr 22 02:30:59 GMT 2008 || AWT-EventQueue-0 judge 8.7 20051115 03 November 15th, 2005 9:40pm
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() begin
+Tue Apr 22 02:30:59 GMT 2008 || AWT-EventQueue-0 server.getAllUnjudgedRuns() returned nothing
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.getUnjudgedRuns() end
+Tue Apr 22 02:30:59 GMT 2008 || Thread-2 BaseClient: handleContestStartStop <Contest stopped>
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:30:59 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:30:59 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:32:33 GMT 2008 |13| AWT-EventQueue-0 showAJMonitor new ajSettings 
+Tue Apr 22 02:32:34 GMT 2008 |9| AWT-EventQueue-0 showAutoJudgingDialog() begin 
+Tue Apr 22 02:32:34 GMT 2008 |11| AWT-EventQueue-0 showAutoJudgingDialog() end 
+Tue Apr 22 02:32:34 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 0 probs to auto judge 
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 321 ms.
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Tue Apr 22 02:32:34 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 startRunningThread 
+Tue Apr 22 02:32:34 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 0 probs to auto judge 
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 101 ms.
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0                Problem 1 Ser o no ser
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 Autojudging 0 problems
+Tue Apr 22 02:32:34 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Tue Apr 22 02:32:34 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Tue Apr 22 02:32:34 GMT 2008 |9| Thread-5 AJMonitorThread.run () begin 
+Tue Apr 22 02:32:34 GMT 2008 || Thread-5 autoJudgeRunNow() no runs to autojudge 
+Tue Apr 22 02:32:34 GMT 2008 || Thread-5 stopRunningThread 
+Tue Apr 22 02:32:34 GMT 2008 |11| Thread-5 AJMonitorThread.run () end 
+Tue Apr 22 02:33:47 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Event: [14] contest_started 
+Tue Apr 22 02:33:47 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Class: <NULL>
+Tue Apr 22 02:33:47 GMT 2008 || Thread-6 BaseClient: handleContestStartStop <Contest started>
+Tue Apr 22 02:33:48 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Event: [15] contest_stopped 
+Tue Apr 22 02:33:48 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Class: <NULL>
+Tue Apr 22 02:33:48 GMT 2008 || Thread-8 BaseClient: handleContestStartStop <Contest stopped>
+Tue Apr 22 02:34:25 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Event: [14] contest_started 
+Tue Apr 22 02:34:25 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Class: <NULL>
+Tue Apr 22 02:34:25 GMT 2008 || Thread-9 BaseClient: handleContestStartStop <Contest started>
+Tue Apr 22 02:36:03 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [4] run_available 
+Tue Apr 22 02:36:03 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.RunData
+Tue Apr 22 02:36:03 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addRun(Run: 1:11) begin
+Tue Apr 22 02:36:03 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addRun() end
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 saveValuesToDisk() Save to disk
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0  debug - saveValuesToDisk run updateRunner
+Tue Apr 22 02:36:16 GMT 2008 |9| AWT-EventQueue-0 updateAJSettings() begin 
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings) there are 1 probs to auto judge 
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 101 ms.
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Auto Judging:  Problem 1 Ser o no ser
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Autojudging 1 problems
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Tue Apr 22 02:36:16 GMT 2008 |9| AWT-EventQueue-0 AJMonitor.updateSettings begin 
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 startRunningThread 
+Tue Apr 22 02:36:16 GMT 2008 |11| AWT-EventQueue-0 AJMonitor.updateSettings end 
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump(updateAJSettings TWO) there are 1 probs to auto judge 
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Auto Judging enabled : true
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Auto Judging after   : 791 ms.
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Auto Judging:  Problem 1 Ser o no ser
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 Autojudging 1 problems
+Tue Apr 22 02:36:16 GMT 2008 || AWT-EventQueue-0 AutoJudgeSettings.dump() done 
+Tue Apr 22 02:36:16 GMT 2008 |11| AWT-EventQueue-0 updateAJSettings() end
+Tue Apr 22 02:36:16 GMT 2008 |9| Thread-12 AJMonitorThread.run () begin 
+Tue Apr 22 02:36:17 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Fetching 1:11
+Tue Apr 22 02:36:17 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Judging 11 (Ser o no ser)
+Tue Apr 22 02:36:17 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [3] run_selected 
+Tue Apr 22 02:36:17 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.RunInfo
+Tue Apr 22 02:36:17 GMT 2008 |9| Thread-12 Executable.newExecute(RunData) begin
+Tue Apr 22 02:36:17 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.removeRun(Run: 1:11) begin 
+Tue Apr 22 02:36:17 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.removeRun() end
+Tue Apr 22 02:36:17 GMT 2008 || Thread-12 before substitution {:basename}
+Tue Apr 22 02:36:17 GMT 2008 || Thread-12 after substitution ser
+Tue Apr 22 02:36:17 GMT 2008 || Thread-12 Executable.execute(): 'additional files' list is empty
+Tue Apr 22 02:36:17 GMT 2008 |9| Thread-12 Executable.compilerCall(RunData) begin
+Tue Apr 22 02:36:17 GMT 2008 || Thread-12 before substitution g++ -lm -o {:basename} {:mainfile}
+Tue Apr 22 02:36:17 GMT 2008 || Thread-12 after substitution g++ -lm -o ser ser.cpp
+Tue Apr 22 02:36:17 GMT 2008 || Thread-12 executing: 'g++ -lm -o ser ser.cpp'
+Tue Apr 22 02:36:18 GMT 2008 |11| Thread-12 Executable.compilerCall(RunData) end
+Tue Apr 22 02:36:18 GMT 2008 |9| Thread-12 Executable.executionCall(RunData) begin
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 before substitution ./{:basename}
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 after substitution ./ser
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2judge/execute/./ser'
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 executionCall() team program exitValue = 0
+Tue Apr 22 02:36:18 GMT 2008 |11| Thread-12 Executable.executionCall(RunData) end
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 Execution returned true
+Tue Apr 22 02:36:18 GMT 2008 |9| Thread-12 validationCall begin
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 Orig command: java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 5 false
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 before substitution java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 5 false
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 after substitution java -cp Validator.jar Validator in.txt estdout.pc2 out.txt {:resfile} -pc2 5 false
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 Validator command: java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 1121XSAM.txt -pc2 5 false
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 executing: 'java -cp Validator.jar Validator in.txt estdout.pc2 out.txt 1121XSAM.txt -pc2 5 false'
+Tue Apr 22 02:36:18 GMT 2008 |9| Thread-12 parseResultXML(1121XSAM.txt, atts) begin
+Tue Apr 22 02:36:18 GMT 2008 |9| Thread-12 parseResultXML(1121XSAM.txt, atts) end
+Tue Apr 22 02:36:18 GMT 2008 || Thread-12 done=true
+Tue Apr 22 02:36:19 GMT 2008 |11| Thread-12 Executable.execute() end
+Tue Apr 22 02:36:19 GMT 2008 || Thread-12 Auto Judge results for 1:11 is Yes
+Tue Apr 22 02:36:19 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Sending result 11 (Ser o no ser)
+Tue Apr 22 02:36:19 GMT 2008 || AWT-EventQueue-0 updateStatusLabel Waiting for run...
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [5] run_completed 
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.RunData
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [18] run_status_update 
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.RunData
+Tue Apr 22 02:36:19 GMT 2008 || Thread-22 debug handleRunStatusUpdated - run    Site 1 judge1
+Tue Apr 22 02:36:19 GMT 2008 || Thread-22 debug handleRunStatusUpdated - client Site 1 judge1
+Tue Apr 22 02:36:19 GMT 2008 || Thread-22 debug is judged true
+Tue Apr 22 02:36:19 GMT 2008 |9| AWT-EventQueue-0 JudgeFrame.addJudgement() begin
+Tue Apr 22 02:36:19 GMT 2008 |11| AWT-EventQueue-0 JudgeFrame.addJudgement() end
+Tue Apr 22 02:36:20 GMT 2008 || Thread-12 autoJudgeRunNow() no runs to autojudge 
+Tue Apr 22 02:36:20 GMT 2008 || Thread-12 stopRunningThread 
+Tue Apr 22 02:36:20 GMT 2008 |11| Thread-12 AJMonitorThread.run () end 
+Tue Apr 22 02:37:14 GMT 2008 || AWT-EventQueue-0 1 - Client LOGOFF
+Tue Apr 22 02:37:14 GMT 2008 || AWT-EventQueue-0 Nothing to cancel
+Tue Apr 22 02:37:14 GMT 2008 || AWT-EventQueue-0 JudgeFrame.cancelClarification() invoked but we are not nowAnsweringClar
+Tue Apr 22 02:37:14 GMT 2008 || AWT-EventQueue-0 Logged off 1

@@ -1,0 +1,105 @@
+CSUS Programming Contest Control System
+Version 8.7 20071117 00 (November 17th, 2007 10:39am)
+Date: Fri Mar 21 17:03:32 GMT 2008
+Report from site 1 (Wackamole)
+Contest started Fri Mar 21 16:31:28 GMT 2008
+Contest running true
+Contest stopped Fri Mar 21 16:31:10 GMT 2008
+Contest elapsed 00:32:03
+Contest length  05:00:00
+
+Next Team ID      : 5
+Next Judge ID     : 3
+Next CJ ID        : 1
+Next Board ID     : 2
+Next Admin ID     : 2
+Next Run ID       : 7
+Next Clar ID      : 3
+Reset Contest ID  : SiteId20080321163118
+
+
+Contest Data (options) 
+ Stop Team View Run Time: 300
+            Show Judges : Team Names only
+
+
+-- Teams --
+
+1:1 :team1 :La Horda
+1:2 :team2 :team2
+1:3 :team3 :team3
+1:4 :team4 :team4
+-- Languages --
+Language 1
+   version      : 3
+   (Site Info)  : null:1
+   display name : C++
+   compiler cmd : g++ -lm -o {:basename} {:mainfile}
+   executble ext: {:basename}
+   source exts  : 
+   EXE cmdline  : ./{:basename}
+
+-- Problems --
+
+A Ser o no ser
+   revision       : 5
+   (Site Info)    : null:1
+   Balloon Color  : Color1
+   goToChiefJudge : No
+   datafile       : in.txt
+   ans filename   : out.txt
+   time out limit : 5 secs.
+   Scoring type   : Standard
+
+   Do validation  : true
+   Validator Prog : Validator.jar
+   Validator Cmd  : java -cp Validator.jar Validator {:infile} {:outfile} {:ansfile} {:resfile} -pc2 1 false
+   Data from stdin: true
+   svtj           : true
+   Using Int      : false
+   Using PC^2     : true
+   Using Ignore   : false 1
+   Show Compare   : true
+   Hiding Output  : false
+
+   Test data 1    : in.txt
+   Path      1    : /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/problemas de prueba/ser o no ser/in.txt
+   MD5       1    : 53-67-41-31-1052-6288-100-24823421-10763-7539-75-9064
+    Ans data 1    : out.txt
+   Path      1    : /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/problemas de prueba/ser o no ser/out.txt
+   MD5       1    : 3-19-11275-861910-127-12190-116-54-19-8494-105-22107-5714
+
+   Aux  data      : none defined
+
+      Id : 1 Cat Name: MMFR Weight : 0
+       Judgement type: Boolean Range [ 0 - 1]
+
+
+-- Balloon Colors --
+color information for board1 from site 1
+color information for site 1
+no colors defined
+
+-- Judgements --
+There are 8 judgements names
+Judgement:0:Yes
+Judgement:1:No - Compilation Error
+Judgement:2:No - Run-time Error
+Judgement:3:No - Time-limit Exceeded
+Judgement:4:No - Wrong Answer
+Judgement:5:No - Excessive Output
+Judgement:6:No - Output Format Error
+Judgement:7:No - Other - Contact Staff
+
+-- Runs --
+run 1|site 1|proxy 0|team 1|Team1:La Horda|prob 1:Ser o no ser|lang 1:C++|os Linux|tocj false|jc true|sel false|15|rid SiteId20080321163118|mmfr false|del? false|jt 16|jby Site 1 judge1|jci 4:No - Wrong Answer|
+run 2|site 1|proxy 0|team 1|Team1:La Horda|prob 1:Ser o no ser|lang 1:C++|os Linux|tocj false|jc true|sel false|18|rid SiteId20080321163118|mmfr false|del? false|jt 19|jby Site 1 judge1|jci 4:No - Wrong Answer|
+run 3|site 1|proxy 0|team 1|Team1:La Horda|prob 1:Ser o no ser|lang 1:C++|os Linux|tocj false|jc true|sel false|22|rid SiteId20080321163118|mmfr false|del? false|jt 24|jby Site 1 judge1|jci 3:No - Time-limit Exceeded|
+run 4|site 1|proxy 0|team 1|Team1:La Horda|prob 1:Ser o no ser|lang 1:C++|os Linux|tocj false|jc true|sel false|27|rid SiteId20080321163118|mmfr false|del? false|jt 27|jby Site 1 judge1|jci 4:No - Wrong Answer|
+run 5|site 1|proxy 0|team 1|Team1:La Horda|prob 1:Ser o no ser|lang 1:C++|os Linux|tocj false|jc true|sel false|29|rid SiteId20080321163118|mmfr false|del? false|jt 29|jby Site 1 judge1|jci 4:No - Wrong Answer|
+run 6|site 1|proxy 0|team 1|Team1:La Horda|prob 1:Ser o no ser|lang 1:C++|os Linux|tocj false|jc true|sel false|30|rid SiteId20080321163118|mmfr true|del? false|jt 31|jby Site 1 judge1|jci 0:Yes|
+
+Settings revised/changed 55 times. (DBL=13)
+Done at Fri Mar 21 17:03:32 GMT 2008
+Contact us at: pc2@ecs.csus.edu or http://www.ecs.csus.edu/pc2 
+

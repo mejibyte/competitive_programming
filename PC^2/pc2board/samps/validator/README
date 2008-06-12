@@ -1,0 +1,21 @@
+pc2/samps/validator/README
+pc2@ecs.csus.edu
+Mon Nov 14 17:55:39 PST 2005
+
+Contains sample validator XML (described in Appendix F,
+pc2v85AdminGuide.pdf).
+
+Directory contains XML files:
+------------------------------------------------------------
+sampYes.xml  for: Yes judgement
+
+sampNo01.xml for: Compilation Error judgement
+sampNo02.xml for: Run-time Error judgement
+sampNo03.xml for: Time-limit Exceeded judgement
+sampNo04.xml for: Wrong Answer judgement
+sampNo05.xml for: Excessive Output judgement
+sampNo06.xml for: Output Format Error judgement
+sampNo07.xml for: Other - Contact Staff judgement
+------------------------------------------------------------
+
+eof README

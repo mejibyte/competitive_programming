@@ -1,0 +1,288 @@
+Thu Mar 20 23:33:25 GMT 2008 |2| main Debug level initially set to 2
+Thu Mar 20 23:33:25 GMT 2008 |2| main Console level initially set to 2
+Thu Mar 20 23:33:25 GMT 2008 |2| main Debug level set to 13
+Thu Mar 20 23:33:25 GMT 2008 |2| main Console level set to 5
+Thu Mar 20 23:33:25 GMT 2008 ||
+Thu Mar 20 23:33:25 GMT 2008 || main CSUS Programming Contest Control System
+Thu Mar 20 23:33:25 GMT 2008 || main mailto:pc2@ecs.csus.edu
+Thu Mar 20 23:33:25 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Thu Mar 20 23:33:25 GMT 2008 || main Java freeMemory   4828832 4828k
+Thu Mar 20 23:33:25 GMT 2008 || main Java totalMemory  5177344 5177k
+Thu Mar 20 23:33:25 GMT 2008 || main Version server 8.7 20051115 03 (November 15th, 2005 9:40pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Thu Mar 20 23:33:25 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2/pc2v8.ini
+Thu Mar 20 23:33:25 GMT 2008 ||
+Thu Mar 20 23:33:25 GMT 2008 || main Creating Server...
+Thu Mar 20 23:33:25 GMT 2008 || main (on 127.0.1.1)
+Thu Mar 20 23:33:25 GMT 2008 || main Binding PC^2 Server to RMI Port=50002
+Thu Mar 20 23:33:53 GMT 2008 || main Note: Server not contacting remote server (this is a primary server)
+Thu Mar 20 23:33:53 GMT 2008 || main Starting up as the first contest server...
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.init() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.initSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |12| main New Contest Reset Id: ReSetId20080320233353
+Thu Mar 20 23:33:53 GMT 2008 |12| main Contest Reset Id: ReSetId20080320233353
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeSettings() begin - 1
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/local.set) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/local.set) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.initSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.initIDs() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeSettings() begin - 1
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/local.set) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/local.set) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.initIDs() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.init() end
+Thu Mar 20 23:33:53 GMT 2008 |10| main Server()
+Thu Mar 20 23:33:53 GMT 2008 || main (Primary) Server succesfully bound, waiting for others to join
+Thu Mar 20 23:33:53 GMT 2008 || main Set SessionId to <1:0:-1>
+Thu Mar 20 23:33:53 GMT 2008 |9| main SessionId is <1:0:-1>
+Thu Mar 20 23:33:53 GMT 2008 |9| main server.initSiteList() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.setProperty(5, 2) begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeSettings() begin - 2
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.setProperty() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.initSiteList() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.createClarInfoFile() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/clar.db) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/clar.db) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.createClarInfoFile() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.createRunInfoFile() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/runinfo.dat) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/runinfo.dat) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.createRunInfoFile() end
+Thu Mar 20 23:33:53 GMT 2008 |-1| main Reading existing Run Information, please wait
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.getAllRuns() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readObjectFromFile(db/runinfo.dat) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readObjectFromFile(db/runinfo.dat) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.getAllRuns() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getProperty(1:0:-1,23,2) begin 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.getProperty(23,2) end 
+Thu Mar 20 23:33:53 GMT 2008 |12| main Note: reading judgement names from reject.ini
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.setProperty(23, 2) begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeSettings() begin - 2
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.setProperty() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getProperty(1:0:-1,22,1) begin 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.getProperty(22,1) end 
+Thu Mar 20 23:33:53 GMT 2008 |4| main Contest time read from config file 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.setProperty(22, 1) begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeSettings() begin - 1
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/local.set) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/local.set) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.updateAutoShutdown begin ()
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.updateAutoShutdown end ()
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.setProperty() end
+Thu Mar 20 23:33:53 GMT 2008 |8| main Contest time reset
+Thu Mar 20 23:33:53 GMT 2008 || main Contest is not running, Elapsed time: 00:00:00
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.updateAutoShutdown begin ()
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.updateAutoShutdown end ()
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getProperty(1:0:-1,14,2) begin 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.getProperty(14,2) end 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.setProperty(14, 2) begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeSettings() begin - 2
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.setProperty() end
+Thu Mar 20 23:33:53 GMT 2008 |8| main Contest data/options initialized
+Thu Mar 20 23:33:53 GMT 2008 |9| main ClarList.readObjectFromFile(db/clar.db) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main ClarList.readObjectFromFile(db/clar.db) end
+Thu Mar 20 23:33:53 GMT 2008 |11| main ClarList.load() note - loaded 0 clars. 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Loaded 0 clars.
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 || main In updateSettings - warning accountTable is null 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 || main Starting Server using .ini setting: Wackamole
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.logonServer() begin
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSiteID(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getProperty(1:0:-1,5,2) begin 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.getProperty(5,2) end 
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.addObserver(9) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.addObserver(12) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.addObserver(13) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.addObserver(6) begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.notifyObservers() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.notifyObservers() end
+Thu Mar 20 23:33:53 GMT 2008 |11| main Server.logonServer() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:53 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeSettings() begin - 2
+Thu Mar 20 23:33:53 GMT 2008 |9| main Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:54 GMT 2008 || main In updateSettings - warning accountTable is null 
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.addObserver(9) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.addObserver(12) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.addObserver(13) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.addObserver(6) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.addObserver() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getServers()
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.addServer() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSiteID(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 || main Server.addServer() already added server 1
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.addServer() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSiteList(1:0:-1) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.getSiteList() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.initAccountDataTable() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getAccountTable() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getProperty(1:0:-1,2,1) begin 
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.getProperty(2,1) end 
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSiteID(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.getAccountTable() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.writeSettings() begin - 1
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.writeObjectToFile(,db/local.set) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeObjectToFile(,db/local.set) end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSiteID(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 || main initAccountDataTable - adding account: root
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.updateAccountDataTable() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.updateLocalSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.writeSettings() begin - 1
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.writeObjectToFile(,db/local.set) begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-1 Server.update() update begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-1 Server.addServer() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-1 Server.getSiteID(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 || Thread-1 Server.addServer() already added server 1
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-1 Server.addServer() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-1 Server.notifyObservers() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-1 Server.notifyObservers() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-1 Server.update() end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeObjectToFile(,db/local.set) end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.notifyObservers() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.notifyObservers() end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.updateLocalSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 || main updateAccountDataTable - global accounts is NULL, updating with local accounts.
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.writeSettings() begin - 2
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.writeSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.updateAccountDataTable() end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.initAccountDataTable() updateAccountDataTable
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.initAccountDataTable() end
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getProperty(1:0:-1,22,1) begin 
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| main Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| main Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.getProperty(22,1) end 
+Thu Mar 20 23:33:54 GMT 2008 |4| main Contest time read from config file 
+Thu Mar 20 23:33:54 GMT 2008 || main Contest is not running, Elapsed time: 00:00:00
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.updateAutoShutdown begin ()
+Thu Mar 20 23:33:54 GMT 2008 |11| main Server.updateAutoShutdown end ()
+Thu Mar 20 23:33:54 GMT 2008 ||
+Thu Mar 20 23:33:54 GMT 2008 |9| main Server.getSiteID(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |-1| main Server at site "Wackamole" is ready. (id=1)
+Thu Mar 20 23:33:54 GMT 2008 ||
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Server.notifyObservers() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Server.handleGlobalPropertyUpdated() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Server.getAccountTable() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Server.getProperty(1:0:-1,2,1) begin 
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Server.getProperty(2,1) end 
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Server.getAccountTable() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Database.writeSettings() begin - 2
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-2 Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Database.writeSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Server.handleGlobalPropertyUpdated() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Server.update() update begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Server.handleGlobalPropertyUpdated() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Server.getAccountTable() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Server.getProperty(1:0:-1,2,1) begin 
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Server.getProperty(2,1) end 
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Server.getAccountTable() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Database.writeSettings() begin - 2
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-3 Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Database.writeSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Server.handleGlobalPropertyUpdated() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-3 Server.update() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-2 Server.notifyObservers() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Server.update() update begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Server.handleGlobalPropertyUpdated() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Server.getAccountTable() begin
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Server.getProperty(1:0:-1,2,1) begin 
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Server.getSettings(1:0:-1)
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Database.readSettings() begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Database.readSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Server.getProperty(2,1) end 
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Server.getAccountTable() end
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Database.writeSettings() begin - 2
+Thu Mar 20 23:33:54 GMT 2008 |9| Thread-4 Database.writeObjectToFile(,db/global.set) begin
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Database.writeObjectToFile(,db/global.set) end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Database.writeSettings() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Server.handleGlobalPropertyUpdated() end
+Thu Mar 20 23:33:54 GMT 2008 |11| Thread-4 Server.update() end

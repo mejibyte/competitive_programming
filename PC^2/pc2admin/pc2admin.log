@@ -1,0 +1,1435 @@
+Thu Mar 20 23:37:24 GMT 2008 |2| main Debug level initially set to 2
+Thu Mar 20 23:37:24 GMT 2008 |2| main Console level initially set to 2
+Thu Mar 20 23:37:24 GMT 2008 |2| main Debug level set to 13
+Thu Mar 20 23:37:24 GMT 2008 |2| main Console level set to 5
+Thu Mar 20 23:37:24 GMT 2008 ||
+Thu Mar 20 23:37:24 GMT 2008 |-1| main CSUS Programming Contest Control System
+Thu Mar 20 23:37:24 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Thu Mar 20 23:37:24 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Thu Mar 20 23:37:24 GMT 2008 || main Java freeMemory   4474464 4474k
+Thu Mar 20 23:37:24 GMT 2008 || main Java totalMemory  5177344 5177k
+Thu Mar 20 23:37:24 GMT 2008 ||
+Thu Mar 20 23:37:24 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2admin/pc2v8.ini
+Thu Mar 20 23:37:24 GMT 2008 || main Starting...
+Thu Mar 20 23:37:24 GMT 2008 || main (on 127.0.1.1)
+Thu Mar 20 23:37:24 GMT 2008 || main Contacting Server...
+Thu Mar 20 23:37:24 GMT 2008 |9| main Client.connectToSiteServer() begin
+Thu Mar 20 23:37:24 GMT 2008 || main Contacting server: localhost:50002
+Thu Mar 20 23:37:24 GMT 2008 |11| main Client.connectToSiteServer() end
+Thu Mar 20 23:37:24 GMT 2008 |9| main Client.selectServer() begin
+Thu Mar 20 23:37:24 GMT 2008 |11| main Client.selectServer() end
+Thu Mar 20 23:37:24 GMT 2008 ||
+Thu Mar 20 23:37:24 GMT 2008 || main Starting login...
+Thu Mar 20 23:38:13 GMT 2008 |9| AWT-EventQueue-0 LoginFrame logonButton_ActionPerformed() begin
+Thu Mar 20 23:38:13 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Thu Mar 20 23:38:13 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Thu Mar 20 23:38:13 GMT 2008 || AWT-EventQueue-0 
+Thu Mar 20 23:38:13 GMT 2008 || AWT-EventQueue-0 root - Client login at site (Wackamole)
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 AdminFrame initialize() begin
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Version admin 8.7 20051115 04 (November 15th, 2005 11:59pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Thu Mar 20 23:38:14 GMT 2008 |11| AWT-EventQueue-0 AdminFrame initialize() end
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Note: no run distribution is defined
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Note: no problems defined.
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Note: no languages defined 
+Thu Mar 20 23:38:14 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 initializeRemoteSiteList   begin
+Thu Mar 20 23:38:14 GMT 2008 |11| AWT-EventQueue-0 initializeRemoteSiteList   end
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(true) begin
+Thu Mar 20 23:38:14 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(true) end
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 admin 8.7 20051115 04 November 15th, 2005 11:59pm
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Thu Mar 20 23:38:14 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Thu Mar 20 23:38:14 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 initializeTeamStartupStatus(): team accounts is null.
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadProblems(), problems == null
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 loadSites() begin 
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Note: run distribution is not defined 
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Note: distribute to list is not defined 
+Thu Mar 20 23:38:14 GMT 2008 |11| AWT-EventQueue-0 loadSites() end 
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 There are 0 runs.
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 Note: there are no clarifications. 
+Thu Mar 20 23:38:14 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Thu Mar 20 23:38:14 GMT 2008 || AWT-EventQueue-0 refreshTeamStartupStatus(): no team accounts defined.
+Thu Mar 20 23:39:21 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Thu Mar 20 23:39:21 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Thu Mar 20 23:39:21 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Thu Mar 20 23:39:21 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Thu Mar 20 23:39:23 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:39:23 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) begin
+Thu Mar 20 23:39:23 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) end
+Thu Mar 20 23:39:23 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:40:39 GMT 2008 || AWT-EventQueue-0 Updating 1:1 'pc2 root admin'
+Thu Mar 20 23:40:39 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:40:39 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:40:39 GMT 2008 |6| RMI TCP Connection(2)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:40:39 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:40:39 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 Note: no problems defined.
+Thu Mar 20 23:40:39 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:40:39 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadProblems(), problems == null
+Thu Mar 20 23:40:39 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:40:39 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:40:39 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 Client.update() end
+Thu Mar 20 23:41:17 GMT 2008 |9| AWT-EventQueue-0 Generating accounts begin()
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 Requested to generate 1 judge accounts 
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 Generated 1 judge accounts 
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 Requested to generate 2 team accounts 
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 Generated 2 team accounts 
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 Requested to generate 1 board accounts 
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 Generated 1 board accounts 
+Thu Mar 20 23:41:17 GMT 2008 |11| AWT-EventQueue-0 Generating accounts end()
+Thu Mar 20 23:41:17 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Thu Mar 20 23:41:17 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(void) begin
+Thu Mar 20 23:41:17 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Thu Mar 20 23:41:17 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Thu Mar 20 23:41:17 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus() end
+Thu Mar 20 23:41:17 GMT 2008 |11| AWT-EventQueue-0 initializeTeamStartupStatus() end
+Thu Mar 20 23:41:17 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) begin
+Thu Mar 20 23:41:17 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) end
+Thu Mar 20 23:41:17 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:41:17 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:41:17 GMT 2008 |6| RMI TCP Connection(3)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:41:17 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:41:17 GMT 2008 || RMI TCP Connection(3)-127.0.1.1 Note: no problems defined.
+Thu Mar 20 23:41:17 GMT 2008 || RMI TCP Connection(3)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadProblems(), problems == null
+Thu Mar 20 23:41:17 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:41:18 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:41:18 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 Client.update() end
+Thu Mar 20 23:41:20 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:41:20 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Thu Mar 20 23:41:20 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Thu Mar 20 23:41:20 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:41:22 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:41:22 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) begin
+Thu Mar 20 23:41:22 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) end
+Thu Mar 20 23:41:22 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:41:24 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:41:24 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) begin
+Thu Mar 20 23:41:24 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) end
+Thu Mar 20 23:41:24 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:41:25 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:41:25 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(3) begin
+Thu Mar 20 23:41:25 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(3) end
+Thu Mar 20 23:41:25 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:41:27 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:41:27 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(4) begin
+Thu Mar 20 23:41:27 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(4) end
+Thu Mar 20 23:41:27 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:41:28 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:41:28 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Thu Mar 20 23:41:28 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Thu Mar 20 23:41:28 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:41:35 GMT 2008 |9| AWT-EventQueue-0 Generating accounts begin()
+Thu Mar 20 23:41:35 GMT 2008 || AWT-EventQueue-0 Requested to generate 1 judge accounts 
+Thu Mar 20 23:41:35 GMT 2008 || AWT-EventQueue-0 Generated 1 judge accounts 
+Thu Mar 20 23:41:35 GMT 2008 || AWT-EventQueue-0 Requested to generate 2 team accounts 
+Thu Mar 20 23:41:35 GMT 2008 || AWT-EventQueue-0 Generated 2 team accounts 
+Thu Mar 20 23:41:35 GMT 2008 |11| AWT-EventQueue-0 Generating accounts end()
+Thu Mar 20 23:41:35 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Thu Mar 20 23:41:35 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(void) begin
+Thu Mar 20 23:41:35 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Thu Mar 20 23:41:35 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Thu Mar 20 23:41:35 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus() end
+Thu Mar 20 23:41:35 GMT 2008 |11| AWT-EventQueue-0 initializeTeamStartupStatus() end
+Thu Mar 20 23:41:35 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Thu Mar 20 23:41:35 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Thu Mar 20 23:41:35 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:41:35 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:41:35 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:41:35 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:41:35 GMT 2008 || RMI TCP Connection(4)-127.0.1.1 Note: no problems defined.
+Thu Mar 20 23:41:35 GMT 2008 || RMI TCP Connection(4)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:41:35 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:41:35 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Thu Mar 20 23:41:35 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadProblems(), problems == null
+Thu Mar 20 23:41:35 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:41:44 GMT 2008 || AWT-EventQueue-0 Updating 1:1 'La Horda'
+Thu Mar 20 23:41:45 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:41:45 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:41:45 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:41:45 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:41:45 GMT 2008 || RMI TCP Connection(4)-127.0.1.1 Note: no problems defined.
+Thu Mar 20 23:41:45 GMT 2008 || RMI TCP Connection(4)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:41:45 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:41:45 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Thu Mar 20 23:41:45 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadProblems(), problems == null
+Thu Mar 20 23:41:45 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:41:51 GMT 2008 || AWT-EventQueue-0 Updating 1:1 'team1'
+Thu Mar 20 23:41:51 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:41:51 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:41:51 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:41:51 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:41:51 GMT 2008 || RMI TCP Connection(4)-127.0.1.1 Note: no problems defined.
+Thu Mar 20 23:41:51 GMT 2008 || RMI TCP Connection(4)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:41:51 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:41:51 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Thu Mar 20 23:41:51 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadProblems(), problems == null
+Thu Mar 20 23:41:51 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:43:22 GMT 2008 || AWT-EventQueue-0 Updating 1:1 'La Horda'
+Thu Mar 20 23:43:22 GMT 2008 |9| RMI TCP Connection(5)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:43:22 GMT 2008 |9| RMI TCP Connection(5)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:43:22 GMT 2008 |6| RMI TCP Connection(5)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:43:22 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:43:22 GMT 2008 || RMI TCP Connection(5)-127.0.1.1 Note: no problems defined.
+Thu Mar 20 23:43:22 GMT 2008 || RMI TCP Connection(5)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:43:22 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadProblems(), problems == null
+Thu Mar 20 23:43:22 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:43:22 GMT 2008 |11| RMI TCP Connection(5)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:43:22 GMT 2008 |11| RMI TCP Connection(5)-127.0.1.1 Client.update() end
+Thu Mar 20 23:47:54 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Thu Mar 20 23:47:54 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Thu Mar 20 23:47:54 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Thu Mar 20 23:47:54 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Thu Mar 20 23:47:56 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:47:56 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(1) begin
+Thu Mar 20 23:47:56 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(1) end
+Thu Mar 20 23:47:56 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:47:58 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:47:58 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(2) begin
+Thu Mar 20 23:47:58 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Thu Mar 20 23:47:58 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox end
+Thu Mar 20 23:47:58 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(2) end
+Thu Mar 20 23:47:58 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:48:00 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:48:00 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(3) begin
+Thu Mar 20 23:48:00 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(3) end
+Thu Mar 20 23:48:00 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:48:02 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:48:02 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(4) begin
+Thu Mar 20 23:48:02 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(4) end
+Thu Mar 20 23:48:02 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:48:04 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Thu Mar 20 23:48:04 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(2) begin
+Thu Mar 20 23:48:04 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Thu Mar 20 23:48:04 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox end
+Thu Mar 20 23:48:04 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(2) end
+Thu Mar 20 23:48:04 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Thu Mar 20 23:48:45 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.initialize() begin
+Thu Mar 20 23:48:45 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Thu Mar 20 23:48:45 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Thu Mar 20 23:48:45 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Thu Mar 20 23:48:45 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Thu Mar 20 23:48:45 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Thu Mar 20 23:48:45 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Thu Mar 20 23:48:45 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Thu Mar 20 23:48:45 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Thu Mar 20 23:50:48 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() begin
+Thu Mar 20 23:50:48 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.returnProblem() begin
+Thu Mar 20 23:50:48 GMT 2008 |11| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() end
+Thu Mar 20 23:50:48 GMT 2008 |9| RMI TCP Connection(7)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:50:48 GMT 2008 |9| RMI TCP Connection(7)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:50:48 GMT 2008 |6| RMI TCP Connection(7)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:50:48 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:50:48 GMT 2008 || RMI TCP Connection(7)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:50:48 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:50:48 GMT 2008 |11| RMI TCP Connection(7)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:50:48 GMT 2008 |11| RMI TCP Connection(7)-127.0.1.1 Client.update() end
+Thu Mar 20 23:52:41 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Thu Mar 20 23:52:41 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Thu Mar 20 23:53:49 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() begin
+Thu Mar 20 23:53:49 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.returnProblem() begin
+Thu Mar 20 23:53:49 GMT 2008 |11| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() end
+Thu Mar 20 23:53:49 GMT 2008 |9| RMI TCP Connection(9)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:53:49 GMT 2008 |9| RMI TCP Connection(9)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:53:49 GMT 2008 |6| RMI TCP Connection(9)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:53:49 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:53:49 GMT 2008 || RMI TCP Connection(9)-127.0.1.1 Note: no languages defined.
+Thu Mar 20 23:53:49 GMT 2008 || AWT-EventQueue-0 AdminFrame.loadLanguages(), langs == null
+Thu Mar 20 23:53:49 GMT 2008 |11| RMI TCP Connection(9)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:53:49 GMT 2008 |11| RMI TCP Connection(9)-127.0.1.1 Client.update() end
+Thu Mar 20 23:54:05 GMT 2008 |9| RMI TCP Connection(10)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:54:05 GMT 2008 |9| RMI TCP Connection(10)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:54:05 GMT 2008 |6| RMI TCP Connection(10)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:54:05 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:54:05 GMT 2008 |11| RMI TCP Connection(10)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:54:05 GMT 2008 |11| RMI TCP Connection(10)-127.0.1.1 Client.update() end
+Thu Mar 20 23:54:21 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:54:21 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:54:21 GMT 2008 |6| RMI TCP Connection(11)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:54:21 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:54:21 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:54:21 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 Client.update() end
+Thu Mar 20 23:55:19 GMT 2008 || AWT-EventQueue-0 ConfigOption: 
+Thu Mar 20 23:55:28 GMT 2008 || AWT-EventQueue-0 ConfigOption: 
+Thu Mar 20 23:55:46 GMT 2008 || AWT-EventQueue-0 ConfigOption: 
+Thu Mar 20 23:55:46 GMT 2008 || AWT-EventQueue-0 team judgement cutoff time changed to 300
+Thu Mar 20 23:55:46 GMT 2008 || AWT-EventQueue-0 max output size set to 512
+Thu Mar 20 23:55:46 GMT 2008 || AWT-EventQueue-0 balloon summary interval set to 0
+Thu Mar 20 23:55:46 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:55:46 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:55:46 GMT 2008 |6| RMI TCP Connection(12)-127.0.1.1 update() PC2Event.global_property_updated
+Thu Mar 20 23:55:46 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Admin.update() handling global_property_updated event
+Thu Mar 20 23:55:46 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:55:46 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 Client.update() end
+Thu Mar 20 23:57:04 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Thu Mar 20 23:57:04 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Thu Mar 20 23:57:04 GMT 2008 || AWT-EventQueue-0 refreshThread starting thread.
+Thu Mar 20 23:57:04 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Thu Mar 20 23:57:04 GMT 2008 |9| RMI TCP Connection(13)-127.0.1.1 Client.update() begin
+Thu Mar 20 23:57:04 GMT 2008 |9| RMI TCP Connection(13)-127.0.1.1 AdminFrame.update() begin
+Thu Mar 20 23:57:04 GMT 2008 |6| RMI TCP Connection(13)-127.0.1.1 update() PC2Event.contest_started 
+Thu Mar 20 23:57:04 GMT 2008 || RMI TCP Connection(13)-127.0.1.1 AdminFrame contest has been started at some site.
+Thu Mar 20 23:57:04 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Thu Mar 20 23:57:04 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Thu Mar 20 23:57:04 GMT 2008 || AWT-EventQueue-0 refreshThread thread already started.
+Thu Mar 20 23:57:04 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Thu Mar 20 23:57:04 GMT 2008 |11| RMI TCP Connection(13)-127.0.1.1 AdminFrame.update() end
+Thu Mar 20 23:57:04 GMT 2008 |11| RMI TCP Connection(13)-127.0.1.1 Client.update() end
+Fri Mar 21 00:09:53 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(false) begin
+Fri Mar 21 00:09:53 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(false) end
+Fri Mar 21 00:09:53 GMT 2008 |9| AWT-EventQueue-0 Client.logoff() begin
+Fri Mar 21 16:30:13 GMT 2008 |2| main Debug level initially set to 2
+Fri Mar 21 16:30:13 GMT 2008 |2| main Console level initially set to 2
+Fri Mar 21 16:30:13 GMT 2008 |2| main Debug level set to 13
+Fri Mar 21 16:30:13 GMT 2008 |2| main Console level set to 5
+Fri Mar 21 16:30:13 GMT 2008 ||
+Fri Mar 21 16:30:13 GMT 2008 |-1| main CSUS Programming Contest Control System
+Fri Mar 21 16:30:13 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Fri Mar 21 16:30:13 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Fri Mar 21 16:30:13 GMT 2008 || main Java freeMemory   4470056 4470k
+Fri Mar 21 16:30:13 GMT 2008 || main Java totalMemory  5177344 5177k
+Fri Mar 21 16:30:13 GMT 2008 ||
+Fri Mar 21 16:30:13 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2admin/pc2v8.ini
+Fri Mar 21 16:30:13 GMT 2008 || main Starting...
+Fri Mar 21 16:30:13 GMT 2008 || main (on 127.0.1.1)
+Fri Mar 21 16:30:13 GMT 2008 || main Contacting Server...
+Fri Mar 21 16:30:13 GMT 2008 |9| main Client.connectToSiteServer() begin
+Fri Mar 21 16:30:13 GMT 2008 || main Contacting server: localhost:50002
+Fri Mar 21 16:30:13 GMT 2008 |11| main Client.connectToSiteServer() end
+Fri Mar 21 16:30:13 GMT 2008 |9| main Client.selectServer() begin
+Fri Mar 21 16:30:13 GMT 2008 |11| main Client.selectServer() end
+Fri Mar 21 16:30:13 GMT 2008 ||
+Fri Mar 21 16:30:13 GMT 2008 || main Starting login...
+Fri Mar 21 16:30:20 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Fri Mar 21 16:30:20 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Fri Mar 21 16:30:20 GMT 2008 || AWT-EventQueue-0 
+Fri Mar 21 16:30:20 GMT 2008 || AWT-EventQueue-0 root - Client login at site (Wackamole)
+Fri Mar 21 16:30:20 GMT 2008 |9| AWT-EventQueue-0 AdminFrame initialize() begin
+Fri Mar 21 16:30:20 GMT 2008 || AWT-EventQueue-0 Version admin 8.7 20051115 04 (November 15th, 2005 11:59pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 AdminFrame initialize() end
+Fri Mar 21 16:30:21 GMT 2008 || AWT-EventQueue-0 Note: no run distribution is defined
+Fri Mar 21 16:30:21 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 16:30:21 GMT 2008 || AWT-EventQueue-0 refreshThread starting thread.
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 initializeRemoteSiteList   begin
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 initializeRemoteSiteList   end
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(true) begin
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(true) end
+Fri Mar 21 16:30:21 GMT 2008 || AWT-EventQueue-0 admin 8.7 20051115 04 November 15th, 2005 11:59pm
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(void) begin
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus() end
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 initializeTeamStartupStatus() end
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 loadSites() begin 
+Fri Mar 21 16:30:21 GMT 2008 || AWT-EventQueue-0 Note: run distribution is not defined 
+Fri Mar 21 16:30:21 GMT 2008 || AWT-EventQueue-0 Note: distribute to list is not defined 
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 loadSites() end 
+Fri Mar 21 16:30:21 GMT 2008 || AWT-EventQueue-0 There are 0 runs.
+Fri Mar 21 16:30:21 GMT 2008 || AWT-EventQueue-0 Note: there are no clarifications. 
+Fri Mar 21 16:30:21 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Fri Mar 21 16:30:21 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Fri Mar 21 16:30:36 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Fri Mar 21 16:30:36 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Fri Mar 21 16:30:36 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Fri Mar 21 16:30:36 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Fri Mar 21 16:30:38 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Fri Mar 21 16:30:38 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Fri Mar 21 16:30:38 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Fri Mar 21 16:30:38 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Fri Mar 21 16:30:40 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Fri Mar 21 16:30:40 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(1) begin
+Fri Mar 21 16:30:40 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(1) end
+Fri Mar 21 16:30:40 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Fri Mar 21 16:30:42 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Fri Mar 21 16:30:42 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Fri Mar 21 16:30:42 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) begin
+Fri Mar 21 16:30:42 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) end
+Fri Mar 21 16:30:44 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Fri Mar 21 16:30:44 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Fri Mar 21 16:30:44 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Fri Mar 21 16:30:44 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Fri Mar 21 16:30:46 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Fri Mar 21 16:30:46 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(3) begin
+Fri Mar 21 16:30:46 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(3) end
+Fri Mar 21 16:30:46 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Fri Mar 21 16:30:48 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Fri Mar 21 16:30:48 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) begin
+Fri Mar 21 16:30:48 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) end
+Fri Mar 21 16:30:48 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Fri Mar 21 16:30:50 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Fri Mar 21 16:30:50 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Fri Mar 21 16:30:50 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Fri Mar 21 16:30:50 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Fri Mar 21 16:31:09 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() begin
+Fri Mar 21 16:31:10 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 16:31:10 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() end
+Fri Mar 21 16:31:10 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:31:10 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:31:10 GMT 2008 |6| RMI TCP Connection(2)-127.0.1.1 update() PC2Event.contest_stopped 
+Fri Mar 21 16:31:10 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 AdminFrame contest has been stopped at some site.
+Fri Mar 21 16:31:10 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() begin
+Fri Mar 21 16:31:10 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 16:31:10 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Fri Mar 21 16:31:10 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() end
+Fri Mar 21 16:31:10 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:31:10 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 Client.update() end
+Fri Mar 21 16:31:17 GMT 2008 || AWT-EventQueue-0 Attempting to reset this site
+Fri Mar 21 16:31:18 GMT 2008 || AWT-EventQueue-0 Contest Reset
+Fri Mar 21 16:31:18 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:31:18 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:31:18 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 All site settings reset
+Fri Mar 21 16:31:18 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 resetAdminControls() begin 
+Fri Mar 21 16:31:18 GMT 2008 |13| RMI TCP Connection(2)-127.0.1.1 refreshRemainingTimeText() start 
+Fri Mar 21 16:31:18 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 Note: stopping timer, thread is null
+Fri Mar 21 16:31:18 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 initializeTeamStartupStatusWithReset() begin
+Fri Mar 21 16:31:18 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 initializeTeamStartupStatus() begin
+Fri Mar 21 16:31:18 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 updateTeamStartupStatus(void) begin
+Fri Mar 21 16:31:18 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 refreshTeamStartupStatus() begin
+Fri Mar 21 16:31:18 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 refreshTeamStartupStatus() end
+Fri Mar 21 16:31:18 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 updateTeamStartupStatus() end
+Fri Mar 21 16:31:18 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 initializeTeamStartupStatus() end
+Fri Mar 21 16:31:18 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 initializeTeamStartupStatusWithReset() end
+Fri Mar 21 16:31:18 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 Note: there are no clarifications. 
+Fri Mar 21 16:31:18 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 There are 0 runs.
+Fri Mar 21 16:31:18 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 resetAdminControls() end 
+Fri Mar 21 16:31:18 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:31:18 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 Client.update() end
+Fri Mar 21 16:31:28 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Fri Mar 21 16:31:28 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 16:31:28 GMT 2008 || AWT-EventQueue-0 refreshThread starting thread.
+Fri Mar 21 16:31:28 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Fri Mar 21 16:31:28 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:31:28 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:31:28 GMT 2008 |6| RMI TCP Connection(2)-127.0.1.1 update() PC2Event.contest_started 
+Fri Mar 21 16:31:28 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 AdminFrame contest has been started at some site.
+Fri Mar 21 16:31:28 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Fri Mar 21 16:31:28 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:31:28 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 Client.update() end
+Fri Mar 21 16:31:28 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 16:31:28 GMT 2008 || AWT-EventQueue-0 refreshThread thread already started.
+Fri Mar 21 16:31:28 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Fri Mar 21 16:32:01 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:32:01 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:32:01 GMT 2008 |6| RMI TCP Connection(3)-127.0.1.1 update() PC2Event.client_logged_on_off
+Fri Mar 21 16:32:01 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Fri Mar 21 16:32:01 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Fri Mar 21 16:32:01 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Fri Mar 21 16:32:01 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:32:01 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 Client.update() end
+Fri Mar 21 16:33:10 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:33:10 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:33:10 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.client_logged_on_off
+Fri Mar 21 16:33:10 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Fri Mar 21 16:33:10 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Fri Mar 21 16:33:10 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Fri Mar 21 16:33:10 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Team logged on/off
+Fri Mar 21 16:33:10 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:33:10 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Fri Mar 21 16:33:10 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Fri Mar 21 16:33:10 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Fri Mar 21 16:33:10 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:34:00 GMT 2008 |9| RMI TCP Connection(5)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:34:00 GMT 2008 |9| RMI TCP Connection(5)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:34:00 GMT 2008 |6| RMI TCP Connection(5)-127.0.1.1 update() PC2Event.client_logged_on_off
+Fri Mar 21 16:34:00 GMT 2008 |9| RMI TCP Connection(5)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Fri Mar 21 16:34:00 GMT 2008 |11| RMI TCP Connection(5)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Fri Mar 21 16:34:00 GMT 2008 |11| RMI TCP Connection(5)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:34:00 GMT 2008 |11| RMI TCP Connection(5)-127.0.1.1 Client.update() end
+Fri Mar 21 16:34:00 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Fri Mar 21 16:44:20 GMT 2008 |9| RMI TCP Connection(8)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:44:20 GMT 2008 |9| RMI TCP Connection(8)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:44:20 GMT 2008 |6| RMI TCP Connection(8)-127.0.1.1 update() PC2Event.clarification_submitted_selected
+Fri Mar 21 16:44:20 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:44:20 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Clar Submitted_Selected;
+Fri Mar 21 16:44:20 GMT 2008 |12| AWT-EventQueue-0   ClarID = 1
+Fri Mar 21 16:44:20 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus() 'La Horda'
+Fri Mar 21 16:44:20 GMT 2008 |12| AWT-EventQueue-0   Clar TeamID = 1
+Fri Mar 21 16:44:20 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_LOGGED_IN 
+Fri Mar 21 16:44:20 GMT 2008 |12| AWT-EventQueue-0   Changing State to: HAS_SUBMITTED_CLARS_ONLY 
+Fri Mar 21 16:44:20 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Fri Mar 21 16:44:20 GMT 2008 |11| RMI TCP Connection(8)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:44:20 GMT 2008 |11| RMI TCP Connection(8)-127.0.1.1 Client.update() end
+Fri Mar 21 16:44:20 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Fri Mar 21 16:44:20 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:44:54 GMT 2008 |9| RMI TCP Connection(9)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:44:54 GMT 2008 |9| RMI TCP Connection(9)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:44:54 GMT 2008 |6| RMI TCP Connection(9)-127.0.1.1 update() PC2Event.clarification_submitted_selected
+Fri Mar 21 16:44:54 GMT 2008 |11| RMI TCP Connection(9)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:44:54 GMT 2008 |11| RMI TCP Connection(9)-127.0.1.1 Client.update() end
+Fri Mar 21 16:44:54 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:44:54 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Clar Submitted_Selected;
+Fri Mar 21 16:44:54 GMT 2008 |12| AWT-EventQueue-0   ClarID = 1
+Fri Mar 21 16:44:54 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus() 'La Horda'
+Fri Mar 21 16:44:54 GMT 2008 |12| AWT-EventQueue-0   Clar TeamID = 1
+Fri Mar 21 16:44:54 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_CLARS_ONLY 
+Fri Mar 21 16:44:54 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:45:12 GMT 2008 |9| RMI TCP Connection(10)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:45:12 GMT 2008 |9| RMI TCP Connection(10)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:45:12 GMT 2008 |6| RMI TCP Connection(10)-127.0.1.1 update() PC2Event.clarification_answered
+Fri Mar 21 16:45:12 GMT 2008 |11| RMI TCP Connection(10)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:45:12 GMT 2008 |11| RMI TCP Connection(10)-127.0.1.1 Client.update() end
+Fri Mar 21 16:45:57 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:45:57 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:45:57 GMT 2008 |6| RMI TCP Connection(11)-127.0.1.1 update() PC2Event.clarification_submitted_selected
+Fri Mar 21 16:45:57 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:45:57 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 Client.update() end
+Fri Mar 21 16:45:57 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:45:57 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Clar Submitted_Selected;
+Fri Mar 21 16:45:57 GMT 2008 |12| AWT-EventQueue-0   ClarID = 2
+Fri Mar 21 16:45:57 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:46:00 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:46:00 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:46:01 GMT 2008 |6| RMI TCP Connection(11)-127.0.1.1 update() PC2Event.clarification_submitted_selected
+Fri Mar 21 16:46:01 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:46:01 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Clar Submitted_Selected;
+Fri Mar 21 16:46:01 GMT 2008 |12| AWT-EventQueue-0   ClarID = 2
+Fri Mar 21 16:46:01 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:46:01 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:46:01 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 Client.update() end
+Fri Mar 21 16:46:07 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:46:07 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:46:07 GMT 2008 |6| RMI TCP Connection(11)-127.0.1.1 update() PC2Event.clarification_answered
+Fri Mar 21 16:46:07 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:46:07 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 Client.update() end
+Fri Mar 21 16:46:59 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:46:59 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:46:59 GMT 2008 |6| RMI TCP Connection(12)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 16:46:59 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:1
+Fri Mar 21 16:46:59 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:46:59 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 Client.update() end
+Fri Mar 21 16:46:59 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:46:59 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 16:46:59 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 1
+Fri Mar 21 16:46:59 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 16:46:59 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_CLARS_ONLY 
+Fri Mar 21 16:46:59 GMT 2008 |12| AWT-EventQueue-0   Changing State to: HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 16:46:59 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Fri Mar 21 16:46:59 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Fri Mar 21 16:46:59 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:47:24 GMT 2008 |9| RMI TCP Connection(13)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:47:24 GMT 2008 |9| RMI TCP Connection(13)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:47:24 GMT 2008 |6| RMI TCP Connection(13)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 16:47:24 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:1
+Fri Mar 21 16:47:24 GMT 2008 |11| RMI TCP Connection(13)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:47:24 GMT 2008 |11| RMI TCP Connection(13)-127.0.1.1 Client.update() end
+Fri Mar 21 16:48:24 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:48:24 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:48:24 GMT 2008 |6| RMI TCP Connection(14)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 16:48:24 GMT 2008 |6| RMI TCP Connection(14)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 16:48:24 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:1
+Fri Mar 21 16:48:24 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:48:24 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:48:24 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:48:24 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 Client.update() end
+Fri Mar 21 16:50:04 GMT 2008 |9| RMI TCP Connection(15)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:50:04 GMT 2008 |9| RMI TCP Connection(15)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:50:04 GMT 2008 |6| RMI TCP Connection(15)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 16:50:04 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:2
+Fri Mar 21 16:50:04 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:50:04 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 16:50:04 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 2
+Fri Mar 21 16:50:04 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 16:50:04 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 16:50:04 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:50:04 GMT 2008 |11| RMI TCP Connection(15)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:50:04 GMT 2008 |11| RMI TCP Connection(15)-127.0.1.1 Client.update() end
+Fri Mar 21 16:50:30 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:50:30 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:50:30 GMT 2008 |6| RMI TCP Connection(16)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 16:50:30 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:2
+Fri Mar 21 16:50:30 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:50:30 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 Client.update() end
+Fri Mar 21 16:50:45 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:50:45 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:50:45 GMT 2008 |6| RMI TCP Connection(16)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 16:50:45 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:50:45 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 Client.update() end
+Fri Mar 21 16:50:45 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:2
+Fri Mar 21 16:50:45 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:50:45 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 16:50:45 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 2
+Fri Mar 21 16:50:45 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 16:50:45 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 16:50:45 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:50:47 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:50:47 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:50:47 GMT 2008 |6| RMI TCP Connection(16)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 16:50:47 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:50:47 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 Client.update() end
+Fri Mar 21 16:50:47 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:2
+Fri Mar 21 16:50:58 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:50:58 GMT 2008 |9| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:50:58 GMT 2008 |6| RMI TCP Connection(16)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 16:50:58 GMT 2008 |6| RMI TCP Connection(16)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 16:50:58 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:50:58 GMT 2008 |11| RMI TCP Connection(16)-127.0.1.1 Client.update() end
+Fri Mar 21 16:50:58 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:2
+Fri Mar 21 16:50:58 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:50:58 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:54:26 GMT 2008 |9| RMI TCP Connection(17)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:54:26 GMT 2008 |9| RMI TCP Connection(17)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:54:26 GMT 2008 |6| RMI TCP Connection(17)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 16:54:26 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:3
+Fri Mar 21 16:54:26 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:54:26 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 16:54:26 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 3
+Fri Mar 21 16:54:26 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 16:54:26 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 16:54:26 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:54:26 GMT 2008 |11| RMI TCP Connection(17)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:54:26 GMT 2008 |11| RMI TCP Connection(17)-127.0.1.1 Client.update() end
+Fri Mar 21 16:54:50 GMT 2008 |9| RMI TCP Connection(18)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:54:50 GMT 2008 |9| RMI TCP Connection(18)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:54:50 GMT 2008 |6| RMI TCP Connection(18)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 16:54:50 GMT 2008 |11| RMI TCP Connection(18)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:54:50 GMT 2008 |11| RMI TCP Connection(18)-127.0.1.1 Client.update() end
+Fri Mar 21 16:54:50 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:3
+Fri Mar 21 16:55:13 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.initialize() begin
+Fri Mar 21 16:55:13 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Fri Mar 21 16:55:13 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Fri Mar 21 16:55:13 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Fri Mar 21 16:55:13 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Fri Mar 21 16:55:13 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Fri Mar 21 16:55:13 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Fri Mar 21 16:55:13 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Fri Mar 21 16:55:13 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Fri Mar 21 16:55:19 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() begin
+Fri Mar 21 16:55:19 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.returnProblem() begin
+Fri Mar 21 16:55:19 GMT 2008 |11| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() end
+Fri Mar 21 16:55:20 GMT 2008 |9| RMI TCP Connection(19)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:55:20 GMT 2008 |9| RMI TCP Connection(19)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:55:20 GMT 2008 |6| RMI TCP Connection(19)-127.0.1.1 update() PC2Event.global_property_updated
+Fri Mar 21 16:55:20 GMT 2008 |12| RMI TCP Connection(19)-127.0.1.1 Admin.update() handling global_property_updated event
+Fri Mar 21 16:55:20 GMT 2008 |11| RMI TCP Connection(19)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:55:20 GMT 2008 |11| RMI TCP Connection(19)-127.0.1.1 Client.update() end
+Fri Mar 21 16:55:52 GMT 2008 |9| RMI TCP Connection(20)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:55:52 GMT 2008 |9| RMI TCP Connection(20)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:55:52 GMT 2008 |6| RMI TCP Connection(20)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 16:55:52 GMT 2008 |6| RMI TCP Connection(20)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 16:55:52 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:3
+Fri Mar 21 16:55:52 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:55:52 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:55:52 GMT 2008 |11| RMI TCP Connection(20)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:55:52 GMT 2008 |11| RMI TCP Connection(20)-127.0.1.1 Client.update() end
+Fri Mar 21 16:56:07 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Fri Mar 21 16:56:07 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Fri Mar 21 16:56:39 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() begin
+Fri Mar 21 16:56:39 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.returnProblem() begin
+Fri Mar 21 16:56:39 GMT 2008 |11| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() end
+Fri Mar 21 16:56:40 GMT 2008 |9| RMI TCP Connection(21)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:56:40 GMT 2008 |9| RMI TCP Connection(21)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:56:40 GMT 2008 |6| RMI TCP Connection(21)-127.0.1.1 update() PC2Event.global_property_updated
+Fri Mar 21 16:56:40 GMT 2008 |12| RMI TCP Connection(21)-127.0.1.1 Admin.update() handling global_property_updated event
+Fri Mar 21 16:56:40 GMT 2008 |11| RMI TCP Connection(21)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:56:40 GMT 2008 |11| RMI TCP Connection(21)-127.0.1.1 Client.update() end
+Fri Mar 21 16:57:48 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Fri Mar 21 16:57:48 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Fri Mar 21 16:57:51 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() begin
+Fri Mar 21 16:57:51 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.returnProblem() begin
+Fri Mar 21 16:57:51 GMT 2008 |11| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() end
+Fri Mar 21 16:57:52 GMT 2008 |9| RMI TCP Connection(22)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:57:52 GMT 2008 |9| RMI TCP Connection(22)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:57:52 GMT 2008 |6| RMI TCP Connection(22)-127.0.1.1 update() PC2Event.global_property_updated
+Fri Mar 21 16:57:52 GMT 2008 |12| RMI TCP Connection(22)-127.0.1.1 Admin.update() handling global_property_updated event
+Fri Mar 21 16:57:52 GMT 2008 |11| RMI TCP Connection(22)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:57:52 GMT 2008 |11| RMI TCP Connection(22)-127.0.1.1 Client.update() end
+Fri Mar 21 16:58:47 GMT 2008 |9| RMI TCP Connection(23)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:58:47 GMT 2008 |9| RMI TCP Connection(23)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:58:47 GMT 2008 |6| RMI TCP Connection(23)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 16:58:47 GMT 2008 |11| RMI TCP Connection(23)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:58:47 GMT 2008 |11| RMI TCP Connection(23)-127.0.1.1 Client.update() end
+Fri Mar 21 16:58:47 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:4
+Fri Mar 21 16:58:47 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:58:47 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 16:58:47 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 4
+Fri Mar 21 16:58:47 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 16:58:47 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 16:58:47 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 16:59:01 GMT 2008 |9| RMI TCP Connection(23)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:59:01 GMT 2008 |9| RMI TCP Connection(23)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:59:01 GMT 2008 |6| RMI TCP Connection(23)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 16:59:01 GMT 2008 |11| RMI TCP Connection(23)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:59:01 GMT 2008 |11| RMI TCP Connection(23)-127.0.1.1 Client.update() end
+Fri Mar 21 16:59:01 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:4
+Fri Mar 21 16:59:03 GMT 2008 |9| RMI TCP Connection(23)-127.0.1.1 Client.update() begin
+Fri Mar 21 16:59:03 GMT 2008 |9| RMI TCP Connection(23)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 16:59:03 GMT 2008 |6| RMI TCP Connection(23)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 16:59:03 GMT 2008 |6| RMI TCP Connection(23)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 16:59:03 GMT 2008 |11| RMI TCP Connection(23)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 16:59:03 GMT 2008 |11| RMI TCP Connection(23)-127.0.1.1 Client.update() end
+Fri Mar 21 16:59:03 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:4
+Fri Mar 21 16:59:03 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 16:59:03 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:00:35 GMT 2008 |9| RMI TCP Connection(24)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:00:35 GMT 2008 |9| RMI TCP Connection(24)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:00:35 GMT 2008 |6| RMI TCP Connection(24)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 17:00:35 GMT 2008 |11| RMI TCP Connection(24)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:00:35 GMT 2008 |11| RMI TCP Connection(24)-127.0.1.1 Client.update() end
+Fri Mar 21 17:00:35 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:5
+Fri Mar 21 17:00:35 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:00:35 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 17:00:35 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 5
+Fri Mar 21 17:00:35 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 17:00:35 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 17:00:35 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:00:41 GMT 2008 |9| RMI TCP Connection(24)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:00:41 GMT 2008 |9| RMI TCP Connection(24)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:00:41 GMT 2008 |6| RMI TCP Connection(24)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 17:00:41 GMT 2008 |11| RMI TCP Connection(24)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:00:41 GMT 2008 |11| RMI TCP Connection(24)-127.0.1.1 Client.update() end
+Fri Mar 21 17:00:41 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:5
+Fri Mar 21 17:01:16 GMT 2008 |9| RMI TCP Connection(25)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:01:16 GMT 2008 |9| RMI TCP Connection(25)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:01:16 GMT 2008 |6| RMI TCP Connection(25)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 17:01:16 GMT 2008 |6| RMI TCP Connection(25)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 17:01:16 GMT 2008 |11| RMI TCP Connection(25)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:01:16 GMT 2008 |11| RMI TCP Connection(25)-127.0.1.1 Client.update() end
+Fri Mar 21 17:01:16 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:5
+Fri Mar 21 17:01:16 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:01:16 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:01:55 GMT 2008 |9| RMI TCP Connection(26)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:01:55 GMT 2008 |9| RMI TCP Connection(26)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:01:55 GMT 2008 |6| RMI TCP Connection(26)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 17:01:55 GMT 2008 |11| RMI TCP Connection(26)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:01:55 GMT 2008 |11| RMI TCP Connection(26)-127.0.1.1 Client.update() end
+Fri Mar 21 17:01:55 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:6
+Fri Mar 21 17:01:55 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:01:55 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 17:01:55 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 6
+Fri Mar 21 17:01:55 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 17:01:55 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 17:01:55 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:02:14 GMT 2008 |9| RMI TCP Connection(27)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:02:14 GMT 2008 |9| RMI TCP Connection(27)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:02:14 GMT 2008 |6| RMI TCP Connection(27)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 17:02:14 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:6
+Fri Mar 21 17:02:14 GMT 2008 |11| RMI TCP Connection(27)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:02:14 GMT 2008 |11| RMI TCP Connection(27)-127.0.1.1 Client.update() end
+Fri Mar 21 17:02:30 GMT 2008 |9| RMI TCP Connection(28)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:02:30 GMT 2008 |9| RMI TCP Connection(28)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:02:30 GMT 2008 |6| RMI TCP Connection(28)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 17:02:30 GMT 2008 |6| RMI TCP Connection(28)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 17:02:30 GMT 2008 |11| RMI TCP Connection(28)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:02:30 GMT 2008 |11| RMI TCP Connection(28)-127.0.1.1 Client.update() end
+Fri Mar 21 17:02:30 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:6
+Fri Mar 21 17:02:30 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:02:30 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:03:03 GMT 2008 || AWT-EventQueue-0 Editing a local run 1:6
+Fri Mar 21 17:03:03 GMT 2008 || AWT-EventQueue-0 EditRunDlg run 1:6 judged: true
+Fri Mar 21 17:03:08 GMT 2008 || AWT-EventQueue-0 View source file: execute/ser.cpp
+Fri Mar 21 17:03:17 GMT 2008 |9| RMI TCP Connection(29)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:03:17 GMT 2008 |9| RMI TCP Connection(29)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:03:17 GMT 2008 |6| RMI TCP Connection(29)-127.0.1.1 update() PC2Event.clarification_submitted_selected
+Fri Mar 21 17:03:17 GMT 2008 |11| RMI TCP Connection(29)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:03:17 GMT 2008 |11| RMI TCP Connection(29)-127.0.1.1 Client.update() end
+Fri Mar 21 17:03:17 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:03:17 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Clar Submitted_Selected;
+Fri Mar 21 17:03:17 GMT 2008 |12| AWT-EventQueue-0   ClarID = 1
+Fri Mar 21 17:03:17 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus() 'La Horda'
+Fri Mar 21 17:03:17 GMT 2008 |12| AWT-EventQueue-0   Clar TeamID = 1
+Fri Mar 21 17:03:17 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 17:03:17 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:03:20 GMT 2008 || AWT-EventQueue-0 Updating clar 1:1 ... 
+Fri Mar 21 17:03:20 GMT 2008 |9| RMI TCP Connection(29)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:03:20 GMT 2008 |9| RMI TCP Connection(29)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:03:20 GMT 2008 |6| RMI TCP Connection(29)-127.0.1.1 update() PC2Event.clarification_answered
+Fri Mar 21 17:03:20 GMT 2008 |11| RMI TCP Connection(29)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:03:20 GMT 2008 |11| RMI TCP Connection(29)-127.0.1.1 Client.update() end
+Fri Mar 21 17:03:32 GMT 2008 || AWT-EventQueue-0 Generating report to pc2.report.txt
+Fri Mar 21 17:03:32 GMT 2008 || AWT-EventQueue-0 pc2.Reports before --all   = dump all probs, team names, langs and run info
+Fri Mar 21 17:03:32 GMT 2008 || AWT-EventQueue-0 pc2.Reports --all
+Fri Mar 21 17:05:30 GMT 2008 |9| RMI TCP Connection(30)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:05:30 GMT 2008 |9| RMI TCP Connection(30)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:05:30 GMT 2008 |6| RMI TCP Connection(30)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 17:05:30 GMT 2008 |6| RMI TCP Connection(30)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 17:05:30 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:6
+Fri Mar 21 17:05:30 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:05:30 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:05:30 GMT 2008 |11| RMI TCP Connection(30)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:05:30 GMT 2008 |11| RMI TCP Connection(30)-127.0.1.1 Client.update() end
+Fri Mar 21 17:06:42 GMT 2008 |9| RMI TCP Connection(31)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:06:42 GMT 2008 |9| RMI TCP Connection(31)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:06:42 GMT 2008 |6| RMI TCP Connection(31)-127.0.1.1 update() PC2Event.run_available
+Fri Mar 21 17:06:42 GMT 2008 |11| RMI TCP Connection(31)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:06:42 GMT 2008 |11| RMI TCP Connection(31)-127.0.1.1 Client.update() end
+Fri Mar 21 17:06:42 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:7
+Fri Mar 21 17:06:42 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:06:42 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Fri Mar 21 17:06:42 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 7
+Fri Mar 21 17:06:42 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Fri Mar 21 17:06:42 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Fri Mar 21 17:06:42 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:06:48 GMT 2008 |9| RMI TCP Connection(31)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:06:48 GMT 2008 |9| RMI TCP Connection(31)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:06:48 GMT 2008 |6| RMI TCP Connection(31)-127.0.1.1 update() PC2Event.run_selected
+Fri Mar 21 17:06:48 GMT 2008 |11| RMI TCP Connection(31)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:06:48 GMT 2008 |11| RMI TCP Connection(31)-127.0.1.1 Client.update() end
+Fri Mar 21 17:06:48 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:7
+Fri Mar 21 17:07:21 GMT 2008 |9| RMI TCP Connection(32)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:07:21 GMT 2008 |9| RMI TCP Connection(32)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:07:21 GMT 2008 |6| RMI TCP Connection(32)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Fri Mar 21 17:07:21 GMT 2008 |6| RMI TCP Connection(32)-127.0.1.1 update() PC2Event.run_submitted
+Fri Mar 21 17:07:21 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:7
+Fri Mar 21 17:07:21 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:07:21 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:07:21 GMT 2008 |11| RMI TCP Connection(32)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:07:21 GMT 2008 |11| RMI TCP Connection(32)-127.0.1.1 Client.update() end
+Fri Mar 21 17:11:48 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:11:48 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:11:48 GMT 2008 |6| RMI TCP Connection(34)-127.0.1.1 update() PC2Event.client_logged_on_off
+Fri Mar 21 17:11:48 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Fri Mar 21 17:11:48 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Fri Mar 21 17:11:48 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Fri Mar 21 17:11:48 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:11:48 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 Client.update() end
+Fri Mar 21 17:11:55 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:11:55 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:11:55 GMT 2008 |6| RMI TCP Connection(34)-127.0.1.1 update() PC2Event.client_logged_on_off
+Fri Mar 21 17:11:55 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Fri Mar 21 17:11:55 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Fri Mar 21 17:11:55 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Fri Mar 21 17:11:55 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Fri Mar 21 17:11:55 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Team logged on/off
+Fri Mar 21 17:11:55 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Fri Mar 21 17:11:55 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:11:55 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 Client.update() end
+Fri Mar 21 17:11:58 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:11:58 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:11:58 GMT 2008 |6| RMI TCP Connection(34)-127.0.1.1 update() PC2Event.client_logged_on_off
+Fri Mar 21 17:11:58 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Fri Mar 21 17:11:58 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Fri Mar 21 17:11:58 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:11:58 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 Client.update() end
+Fri Mar 21 17:11:58 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Fri Mar 21 17:12:00 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() begin
+Fri Mar 21 17:12:00 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 17:12:00 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 Client.update() begin
+Fri Mar 21 17:12:00 GMT 2008 |9| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() begin
+Fri Mar 21 17:12:00 GMT 2008 |6| RMI TCP Connection(34)-127.0.1.1 update() PC2Event.contest_stopped 
+Fri Mar 21 17:12:00 GMT 2008 || RMI TCP Connection(34)-127.0.1.1 AdminFrame contest has been stopped at some site.
+Fri Mar 21 17:12:00 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 AdminFrame.update() end
+Fri Mar 21 17:12:00 GMT 2008 |11| RMI TCP Connection(34)-127.0.1.1 Client.update() end
+Fri Mar 21 17:12:00 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() end
+Fri Mar 21 17:12:00 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() begin
+Fri Mar 21 17:12:00 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 17:12:00 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Fri Mar 21 17:12:00 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() end
+Fri Mar 21 17:12:03 GMT 2008 || AWT-EventQueue-0 refreshTimes - server is null 
+Fri Mar 21 17:12:03 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Fri Mar 21 17:12:03 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Fri Mar 21 17:12:12 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(false) begin
+Fri Mar 21 17:12:12 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(false) end
+Fri Mar 21 17:12:12 GMT 2008 |9| AWT-EventQueue-0 Client.logoff() begin
+Sat Mar 22 19:34:43 GMT 2008 |2| main Debug level initially set to 2
+Sat Mar 22 19:34:43 GMT 2008 |2| main Console level initially set to 2
+Sat Mar 22 19:34:43 GMT 2008 |2| main Debug level set to 13
+Sat Mar 22 19:34:43 GMT 2008 |2| main Console level set to 5
+Sat Mar 22 19:34:43 GMT 2008 ||
+Sat Mar 22 19:34:43 GMT 2008 |-1| main CSUS Programming Contest Control System
+Sat Mar 22 19:34:43 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Sat Mar 22 19:34:43 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Sat Mar 22 19:34:43 GMT 2008 || main Java freeMemory   4469968 4469k
+Sat Mar 22 19:34:43 GMT 2008 || main Java totalMemory  5177344 5177k
+Sat Mar 22 19:34:43 GMT 2008 ||
+Sat Mar 22 19:34:43 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2admin/pc2v8.ini
+Sat Mar 22 19:34:43 GMT 2008 || main Starting...
+Sat Mar 22 19:34:43 GMT 2008 || main (on 127.0.1.1)
+Sat Mar 22 19:34:43 GMT 2008 || main Contacting Server...
+Sat Mar 22 19:34:43 GMT 2008 |9| main Client.connectToSiteServer() begin
+Sat Mar 22 19:34:43 GMT 2008 || main Contacting server: localhost:50002
+Sat Mar 22 19:34:43 GMT 2008 |11| main Client.connectToSiteServer() end
+Sat Mar 22 19:34:43 GMT 2008 |9| main Client.selectServer() begin
+Sat Mar 22 19:34:43 GMT 2008 |11| main Client.selectServer() end
+Sat Mar 22 19:34:43 GMT 2008 ||
+Sat Mar 22 19:34:43 GMT 2008 || main Starting login...
+Sat Mar 22 19:34:48 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Sat Mar 22 19:34:48 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Sat Mar 22 19:34:48 GMT 2008 || AWT-EventQueue-0 
+Sat Mar 22 19:34:48 GMT 2008 || AWT-EventQueue-0 root - Client login at site (Wackamole)
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 AdminFrame initialize() begin
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 Version admin 8.7 20051115 04 (November 15th, 2005 11:59pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 AdminFrame initialize() end
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 Note: no run distribution is defined
+Sat Mar 22 19:34:49 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 initializeRemoteSiteList   begin
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 initializeRemoteSiteList   end
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(true) begin
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(true) end
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 admin 8.7 20051115 04 November 15th, 2005 11:59pm
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(void) begin
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus() end
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 initializeTeamStartupStatus() end
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 loadSites() begin 
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 Note: run distribution is not defined 
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 Note: distribute to list is not defined 
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 loadSites() end 
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 There are 7 runs.
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 updateTeamStartupStatus(), could not find client for team 0
+Sat Mar 22 19:34:49 GMT 2008 || AWT-EventQueue-0 Note: there are 2 clarifications. 
+Sat Mar 22 19:34:49 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Sat Mar 22 19:34:49 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Sat Mar 22 19:34:52 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Sat Mar 22 19:34:52 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Sat Mar 22 19:34:52 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) begin
+Sat Mar 22 19:34:52 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(0) end
+Sat Mar 22 19:34:55 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Sat Mar 22 19:34:55 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) begin
+Sat Mar 22 19:34:55 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(1) end
+Sat Mar 22 19:34:55 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Sat Mar 22 19:34:57 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Sat Mar 22 19:34:57 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) begin
+Sat Mar 22 19:34:57 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(2) end
+Sat Mar 22 19:34:57 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Sat Mar 22 19:34:59 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Sat Mar 22 19:34:59 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(3) begin
+Sat Mar 22 19:34:59 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(3) end
+Sat Mar 22 19:34:59 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Sat Mar 22 19:35:03 GMT 2008 |9| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() begin
+Sat Mar 22 19:35:03 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsManage(4) begin
+Sat Mar 22 19:35:03 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsManage(4) end
+Sat Mar 22 19:35:03 GMT 2008 |11| AWT-EventQueue-0 accounTypeComboBox_ItemStateChanged() end
+Sat Mar 22 19:35:39 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.initialize() begin
+Sat Mar 22 19:35:39 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Sat Mar 22 19:35:39 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Sat Mar 22 19:35:39 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Sat Mar 22 19:35:39 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Sat Mar 22 19:35:39 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Sat Mar 22 19:35:39 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Sat Mar 22 19:35:39 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Sat Mar 22 19:35:39 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Sat Mar 22 19:37:14 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Sat Mar 22 19:37:14 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Sat Mar 22 19:37:14 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:37:14 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:37:14 GMT 2008 |6| RMI TCP Connection(2)-127.0.1.1 update() PC2Event.contest_started 
+Sat Mar 22 19:37:14 GMT 2008 || AWT-EventQueue-0 refreshThread starting thread.
+Sat Mar 22 19:37:14 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Sat Mar 22 19:37:14 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 AdminFrame contest has been started at some site.
+Sat Mar 22 19:37:14 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Sat Mar 22 19:37:14 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:37:14 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 Client.update() end
+Sat Mar 22 19:37:14 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Sat Mar 22 19:37:14 GMT 2008 || AWT-EventQueue-0 refreshThread thread already started.
+Sat Mar 22 19:37:14 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Sat Mar 22 19:37:55 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:37:55 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:37:55 GMT 2008 |6| RMI TCP Connection(3)-127.0.1.1 update() PC2Event.client_logged_on_off
+Sat Mar 22 19:37:55 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Sat Mar 22 19:37:55 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Sat Mar 22 19:37:55 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Sat Mar 22 19:37:55 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:37:55 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 Client.update() end
+Sat Mar 22 19:39:43 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:39:43 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:39:43 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.client_logged_on_off
+Sat Mar 22 19:39:43 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Sat Mar 22 19:39:43 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Sat Mar 22 19:39:43 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Sat Mar 22 19:39:43 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Team logged on/off
+Sat Mar 22 19:39:43 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:39:43 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:39:43 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Sat Mar 22 19:40:08 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:40:08 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:40:08 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.clarification_submitted_selected
+Sat Mar 22 19:40:08 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:40:08 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Clar Submitted_Selected;
+Sat Mar 22 19:40:08 GMT 2008 |12| AWT-EventQueue-0   ClarID = 3
+Sat Mar 22 19:40:08 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus() 'La Horda'
+Sat Mar 22 19:40:08 GMT 2008 |12| AWT-EventQueue-0   Clar TeamID = 1
+Sat Mar 22 19:40:08 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Sat Mar 22 19:40:08 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:40:08 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:40:08 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Sat Mar 22 19:40:20 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:40:20 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:40:20 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.clarification_submitted_selected
+Sat Mar 22 19:40:20 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:40:20 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Clar Submitted_Selected;
+Sat Mar 22 19:40:20 GMT 2008 |12| AWT-EventQueue-0   ClarID = 3
+Sat Mar 22 19:40:20 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus() 'La Horda'
+Sat Mar 22 19:40:20 GMT 2008 |12| AWT-EventQueue-0   Clar TeamID = 1
+Sat Mar 22 19:40:20 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Sat Mar 22 19:40:20 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:40:20 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:40:20 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Sat Mar 22 19:40:43 GMT 2008 |9| RMI TCP Connection(5)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:40:43 GMT 2008 |9| RMI TCP Connection(5)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:40:43 GMT 2008 |6| RMI TCP Connection(5)-127.0.1.1 update() PC2Event.clarification_answered
+Sat Mar 22 19:40:43 GMT 2008 |11| RMI TCP Connection(5)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:40:43 GMT 2008 |11| RMI TCP Connection(5)-127.0.1.1 Client.update() end
+Sat Mar 22 19:42:12 GMT 2008 |9| RMI TCP Connection(6)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:42:12 GMT 2008 |9| RMI TCP Connection(6)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:42:12 GMT 2008 |6| RMI TCP Connection(6)-127.0.1.1 update() PC2Event.run_available
+Sat Mar 22 19:42:12 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:8
+Sat Mar 22 19:42:12 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:42:12 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Sat Mar 22 19:42:12 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 8
+Sat Mar 22 19:42:12 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Sat Mar 22 19:42:12 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Sat Mar 22 19:42:12 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:42:12 GMT 2008 |11| RMI TCP Connection(6)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:42:12 GMT 2008 |11| RMI TCP Connection(6)-127.0.1.1 Client.update() end
+Sat Mar 22 19:42:45 GMT 2008 |9| RMI TCP Connection(7)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:42:45 GMT 2008 |9| RMI TCP Connection(7)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:42:45 GMT 2008 |6| RMI TCP Connection(7)-127.0.1.1 update() PC2Event.run_selected
+Sat Mar 22 19:42:45 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:8
+Sat Mar 22 19:42:45 GMT 2008 |11| RMI TCP Connection(7)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:42:45 GMT 2008 |11| RMI TCP Connection(7)-127.0.1.1 Client.update() end
+Sat Mar 22 19:43:24 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Sat Mar 22 19:43:24 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Sat Mar 22 19:43:36 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() begin
+Sat Mar 22 19:43:36 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.returnProblem() begin
+Sat Mar 22 19:43:36 GMT 2008 |11| AWT-EventQueue-0 Admin.EditProblemDlg.updateButton_ActionPerformed() end
+Sat Mar 22 19:43:37 GMT 2008 |9| RMI TCP Connection(8)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:43:37 GMT 2008 |9| RMI TCP Connection(8)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:43:37 GMT 2008 |6| RMI TCP Connection(8)-127.0.1.1 update() PC2Event.global_property_updated
+Sat Mar 22 19:43:37 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Admin.update() handling global_property_updated event
+Sat Mar 22 19:43:37 GMT 2008 |11| RMI TCP Connection(8)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:43:37 GMT 2008 |11| RMI TCP Connection(8)-127.0.1.1 Client.update() end
+Sat Mar 22 19:43:57 GMT 2008 |9| RMI TCP Connection(9)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:43:57 GMT 2008 |9| RMI TCP Connection(9)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:43:57 GMT 2008 |6| RMI TCP Connection(9)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Sat Mar 22 19:43:57 GMT 2008 |6| RMI TCP Connection(9)-127.0.1.1 update() PC2Event.run_submitted
+Sat Mar 22 19:43:57 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:8
+Sat Mar 22 19:43:57 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:43:57 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:43:57 GMT 2008 |11| RMI TCP Connection(9)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:43:57 GMT 2008 |11| RMI TCP Connection(9)-127.0.1.1 Client.update() end
+Sat Mar 22 19:46:16 GMT 2008 || AWT-EventQueue-0 Editing a local run 1:8
+Sat Mar 22 19:46:16 GMT 2008 || AWT-EventQueue-0 EditRunDlg run 1:8 judged: true
+Sat Mar 22 19:46:23 GMT 2008 || AWT-EventQueue-0 View source file: execute/ser.cpp
+Sat Mar 22 19:46:30 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:46:30 GMT 2008 |9| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:46:30 GMT 2008 |6| RMI TCP Connection(11)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Sat Mar 22 19:46:30 GMT 2008 |6| RMI TCP Connection(11)-127.0.1.1 update() PC2Event.run_submitted
+Sat Mar 22 19:46:30 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:8
+Sat Mar 22 19:46:30 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:46:30 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:46:30 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:46:30 GMT 2008 |11| RMI TCP Connection(11)-127.0.1.1 Client.update() end
+Sat Mar 22 19:47:09 GMT 2008 |9| AWT-EventQueue-0 extractRun(extract,1,8)
+Sat Mar 22 19:47:09 GMT 2008 || AWT-EventQueue-0 extractRun:  made directory: extract
+Sat Mar 22 19:47:09 GMT 2008 |12| AWT-EventQueue-0  extract main file Run8 creating file extract/site1run8/ser.cpp
+Sat Mar 22 19:47:09 GMT 2008 |11| AWT-EventQueue-0 extractRun(extract,1,8)
+Sat Mar 22 19:47:09 GMT 2008 || AWT-EventQueue-0 extractRun - extracted run 1:8 to extract/site1run8/
+Sat Mar 22 19:47:09 GMT 2008 || AWT-EventQueue-0 Extracted run Site 1 Run 8 to "extract" dir.
+Sat Mar 22 19:47:09 GMT 2008 || AWT-EventQueue-0 All (1) selected runs were extracted to "extract" dir.
+Sat Mar 22 19:47:13 GMT 2008 || AWT-EventQueue-0 Editing a local run 1:8
+Sat Mar 22 19:47:13 GMT 2008 || AWT-EventQueue-0 EditRunDlg run 1:8 judged: true
+Sat Mar 22 19:47:16 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:47:16 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:47:16 GMT 2008 |6| RMI TCP Connection(12)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Sat Mar 22 19:47:16 GMT 2008 |6| RMI TCP Connection(12)-127.0.1.1 update() PC2Event.run_submitted
+Sat Mar 22 19:47:16 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:47:16 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 Client.update() end
+Sat Mar 22 19:47:16 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:8
+Sat Mar 22 19:47:16 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:47:16 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:47:22 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:47:22 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:47:22 GMT 2008 |6| RMI TCP Connection(12)-127.0.1.1 update() PC2Event.run_available
+Sat Mar 22 19:47:22 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:47:22 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 Client.update() end
+Sat Mar 22 19:47:22 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:9
+Sat Mar 22 19:47:22 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:47:22 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Sat Mar 22 19:47:22 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 9
+Sat Mar 22 19:47:22 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Sat Mar 22 19:47:22 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Sat Mar 22 19:47:22 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:47:30 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:47:30 GMT 2008 |9| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:47:30 GMT 2008 |6| RMI TCP Connection(12)-127.0.1.1 update() PC2Event.run_selected
+Sat Mar 22 19:47:30 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:47:30 GMT 2008 |11| RMI TCP Connection(12)-127.0.1.1 Client.update() end
+Sat Mar 22 19:47:30 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:9
+Sat Mar 22 19:48:00 GMT 2008 |9| RMI TCP Connection(13)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:48:00 GMT 2008 |9| RMI TCP Connection(13)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:48:00 GMT 2008 |6| RMI TCP Connection(13)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Sat Mar 22 19:48:00 GMT 2008 |6| RMI TCP Connection(13)-127.0.1.1 update() PC2Event.run_submitted
+Sat Mar 22 19:48:00 GMT 2008 |11| RMI TCP Connection(13)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:48:00 GMT 2008 |11| RMI TCP Connection(13)-127.0.1.1 Client.update() end
+Sat Mar 22 19:48:00 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:9
+Sat Mar 22 19:48:00 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:48:00 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:48:15 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:48:15 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:48:15 GMT 2008 |6| RMI TCP Connection(14)-127.0.1.1 update() PC2Event.run_available
+Sat Mar 22 19:48:15 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:48:15 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 Client.update() end
+Sat Mar 22 19:48:15 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:10
+Sat Mar 22 19:48:15 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:48:15 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Sat Mar 22 19:48:15 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 10
+Sat Mar 22 19:48:15 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Sat Mar 22 19:48:15 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Sat Mar 22 19:48:15 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:48:19 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:48:19 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:48:19 GMT 2008 |6| RMI TCP Connection(14)-127.0.1.1 update() PC2Event.run_selected
+Sat Mar 22 19:48:19 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:48:19 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 Client.update() end
+Sat Mar 22 19:48:19 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:10
+Sat Mar 22 19:48:23 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:48:23 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:48:23 GMT 2008 |6| RMI TCP Connection(14)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Sat Mar 22 19:48:23 GMT 2008 |6| RMI TCP Connection(14)-127.0.1.1 update() PC2Event.run_submitted
+Sat Mar 22 19:48:23 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:10
+Sat Mar 22 19:48:23 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Sat Mar 22 19:48:23 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Sat Mar 22 19:48:23 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:48:23 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 Client.update() end
+Sat Mar 22 19:48:44 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 Client.update() begin
+Sat Mar 22 19:48:44 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() begin
+Sat Mar 22 19:48:44 GMT 2008 |6| RMI TCP Connection(14)-127.0.1.1 update() PC2Event.client_logged_on_off
+Sat Mar 22 19:48:44 GMT 2008 |9| RMI TCP Connection(14)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Sat Mar 22 19:48:44 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Sat Mar 22 19:48:44 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Sat Mar 22 19:48:44 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 AdminFrame.update() end
+Sat Mar 22 19:48:44 GMT 2008 |11| RMI TCP Connection(14)-127.0.1.1 Client.update() end
+Sat Mar 22 19:48:48 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(false) begin
+Sat Mar 22 19:48:48 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(false) end
+Sat Mar 22 19:48:48 GMT 2008 |9| AWT-EventQueue-0 Client.logoff() begin
+Tue Apr 22 02:31:46 GMT 2008 |2| main Debug level initially set to 2
+Tue Apr 22 02:31:46 GMT 2008 |2| main Console level initially set to 2
+Tue Apr 22 02:31:46 GMT 2008 |2| main Debug level set to 13
+Tue Apr 22 02:31:46 GMT 2008 |2| main Console level set to 5
+Tue Apr 22 02:31:46 GMT 2008 ||
+Tue Apr 22 02:31:46 GMT 2008 |-1| main CSUS Programming Contest Control System
+Tue Apr 22 02:31:46 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:31:46 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Tue Apr 22 02:31:46 GMT 2008 || main Java freeMemory   4470032 4470k
+Tue Apr 22 02:31:46 GMT 2008 || main Java totalMemory  5177344 5177k
+Tue Apr 22 02:31:46 GMT 2008 ||
+Tue Apr 22 02:31:46 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2admin/pc2v8.ini
+Tue Apr 22 02:31:46 GMT 2008 || main Starting...
+Tue Apr 22 02:31:46 GMT 2008 || main (on 127.0.1.1)
+Tue Apr 22 02:31:46 GMT 2008 || main Contacting Server...
+Tue Apr 22 02:31:46 GMT 2008 |9| main Client.connectToSiteServer() begin
+Tue Apr 22 02:31:46 GMT 2008 || main Contacting server: localhost:50002
+Tue Apr 22 02:31:46 GMT 2008 |11| main Client.connectToSiteServer() end
+Tue Apr 22 02:31:46 GMT 2008 |9| main Client.selectServer() begin
+Tue Apr 22 02:31:46 GMT 2008 |11| main Client.selectServer() end
+Tue Apr 22 02:31:46 GMT 2008 ||
+Tue Apr 22 02:31:46 GMT 2008 || main Starting login...
+Tue Apr 22 02:31:50 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Tue Apr 22 02:31:50 GMT 2008 || AWT-EventQueue-0 logon: User 'admin1': '0' logon ID returned from Server
+Tue Apr 22 02:31:50 GMT 2008 || AWT-EventQueue-0 login failure Unknown Login/Account
+Tue Apr 22 02:31:50 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Tue Apr 22 02:31:50 GMT 2008 ||
+Tue Apr 22 02:31:50 GMT 2008 || AWT-EventQueue-0 admin1 - Client logon failed, site (Wackamole)
+Tue Apr 22 02:31:50 GMT 2008 || AWT-EventQueue-0 Client.processLogonButton() login failed
+Tue Apr 22 02:31:50 GMT 2008 || AWT-EventQueue-0 Client.processLogonButton() Invalid Login
+Tue Apr 22 02:31:50 GMT 2008 || AWT-EventQueue-0 Client processLogonButton: Invalid Login, Please try again.
+Tue Apr 22 02:31:54 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Tue Apr 22 02:31:54 GMT 2008 || AWT-EventQueue-0 logon: User 'admin': '0' logon ID returned from Server
+Tue Apr 22 02:31:54 GMT 2008 || AWT-EventQueue-0 login failure Unknown Login/Account
+Tue Apr 22 02:31:54 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Tue Apr 22 02:31:54 GMT 2008 ||
+Tue Apr 22 02:31:54 GMT 2008 || AWT-EventQueue-0 admin - Client logon failed, site (Wackamole)
+Tue Apr 22 02:31:54 GMT 2008 || AWT-EventQueue-0 Client.processLogonButton() login failed
+Tue Apr 22 02:31:54 GMT 2008 || AWT-EventQueue-0 Client.processLogonButton() Invalid Login
+Tue Apr 22 02:31:54 GMT 2008 || AWT-EventQueue-0 Client processLogonButton: Invalid Login, Please try again.
+Tue Apr 22 02:31:56 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Tue Apr 22 02:31:56 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Tue Apr 22 02:31:56 GMT 2008 || AWT-EventQueue-0 
+Tue Apr 22 02:31:56 GMT 2008 || AWT-EventQueue-0 root - Client login at site (Wackamole)
+Tue Apr 22 02:31:56 GMT 2008 |9| AWT-EventQueue-0 AdminFrame initialize() begin
+Tue Apr 22 02:31:56 GMT 2008 || AWT-EventQueue-0 Version admin 8.7 20051115 04 (November 15th, 2005 11:59pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 AdminFrame initialize() end
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 Note: no run distribution is defined
+Tue Apr 22 02:31:57 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 initializeRemoteSiteList   begin
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 initializeRemoteSiteList   end
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(true) begin
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(true) end
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 admin 8.7 20051115 04 November 15th, 2005 11:59pm
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(void) begin
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus() end
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 initializeTeamStartupStatus() end
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 loadSites() begin 
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 Note: run distribution is not defined 
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 Note: distribute to list is not defined 
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 loadSites() end 
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 There are 10 runs.
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 updateTeamStartupStatus(), could not find client for team 0
+Tue Apr 22 02:31:57 GMT 2008 || AWT-EventQueue-0 Note: there are 3 clarifications. 
+Tue Apr 22 02:31:57 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Tue Apr 22 02:31:57 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Tue Apr 22 02:32:03 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.initialize() begin
+Tue Apr 22 02:32:03 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Tue Apr 22 02:32:03 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.onChangeCategory() begin
+Tue Apr 22 02:32:03 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Tue Apr 22 02:32:03 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Tue Apr 22 02:32:03 GMT 2008 |9| AWT-EventQueue-0 Admin.setVisualControlsEnabled() begin
+Tue Apr 22 02:32:03 GMT 2008 |11| AWT-EventQueue-0 Admin.setVisualControlsEnabled(false)
+Tue Apr 22 02:32:03 GMT 2008 |9| AWT-EventQueue-0 Admin.EditProblem.setProblem() begin
+Tue Apr 22 02:32:03 GMT 2008 |12| AWT-EventQueue-0 setProblem added new row 1
+Tue Apr 22 02:32:43 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(false) begin
+Tue Apr 22 02:32:43 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(false) end
+Tue Apr 22 02:32:43 GMT 2008 |9| AWT-EventQueue-0 Client.logoff() begin
+Tue Apr 22 02:33:30 GMT 2008 |2| main Debug level initially set to 2
+Tue Apr 22 02:33:30 GMT 2008 |2| main Console level initially set to 2
+Tue Apr 22 02:33:30 GMT 2008 |2| main Debug level set to 13
+Tue Apr 22 02:33:30 GMT 2008 |2| main Console level set to 5
+Tue Apr 22 02:33:30 GMT 2008 ||
+Tue Apr 22 02:33:30 GMT 2008 |-1| main CSUS Programming Contest Control System
+Tue Apr 22 02:33:30 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:33:30 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Tue Apr 22 02:33:30 GMT 2008 || main Java freeMemory   4470032 4470k
+Tue Apr 22 02:33:30 GMT 2008 || main Java totalMemory  5177344 5177k
+Tue Apr 22 02:33:30 GMT 2008 ||
+Tue Apr 22 02:33:30 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2admin/pc2v8.ini
+Tue Apr 22 02:33:30 GMT 2008 || main Starting...
+Tue Apr 22 02:33:30 GMT 2008 || main (on 127.0.1.1)
+Tue Apr 22 02:33:30 GMT 2008 || main Contacting Server...
+Tue Apr 22 02:33:30 GMT 2008 |9| main Client.connectToSiteServer() begin
+Tue Apr 22 02:33:30 GMT 2008 || main Contacting server: localhost:50002
+Tue Apr 22 02:33:30 GMT 2008 |11| main Client.connectToSiteServer() end
+Tue Apr 22 02:33:30 GMT 2008 |9| main Client.selectServer() begin
+Tue Apr 22 02:33:30 GMT 2008 |11| main Client.selectServer() end
+Tue Apr 22 02:33:30 GMT 2008 ||
+Tue Apr 22 02:33:30 GMT 2008 || main Starting login...
+Tue Apr 22 02:33:34 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Tue Apr 22 02:33:34 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Tue Apr 22 02:33:34 GMT 2008 || AWT-EventQueue-0 
+Tue Apr 22 02:33:34 GMT 2008 || AWT-EventQueue-0 root - Client login at site (Wackamole)
+Tue Apr 22 02:33:34 GMT 2008 |9| AWT-EventQueue-0 AdminFrame initialize() begin
+Tue Apr 22 02:33:34 GMT 2008 || AWT-EventQueue-0 Version admin 8.7 20051115 04 (November 15th, 2005 11:59pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:33:34 GMT 2008 |11| AWT-EventQueue-0 AdminFrame initialize() end
+Tue Apr 22 02:33:34 GMT 2008 || AWT-EventQueue-0 Note: no run distribution is defined
+Tue Apr 22 02:33:34 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:33:34 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Tue Apr 22 02:33:34 GMT 2008 |9| AWT-EventQueue-0 initializeRemoteSiteList   begin
+Tue Apr 22 02:33:34 GMT 2008 |11| AWT-EventQueue-0 initializeRemoteSiteList   end
+Tue Apr 22 02:33:34 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(true) begin
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(true) end
+Tue Apr 22 02:33:35 GMT 2008 || AWT-EventQueue-0 admin 8.7 20051115 04 November 15th, 2005 11:59pm
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox end
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(void) begin
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus() end
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 initializeTeamStartupStatus() end
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 loadSites() begin 
+Tue Apr 22 02:33:35 GMT 2008 || AWT-EventQueue-0 Note: run distribution is not defined 
+Tue Apr 22 02:33:35 GMT 2008 || AWT-EventQueue-0 Note: distribute to list is not defined 
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 loadSites() end 
+Tue Apr 22 02:33:35 GMT 2008 || AWT-EventQueue-0 There are 10 runs.
+Tue Apr 22 02:33:35 GMT 2008 || AWT-EventQueue-0 updateTeamStartupStatus(), could not find client for team 0
+Tue Apr 22 02:33:35 GMT 2008 || AWT-EventQueue-0 Note: there are 3 clarifications. 
+Tue Apr 22 02:33:35 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Tue Apr 22 02:33:35 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Tue Apr 22 02:33:47 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Tue Apr 22 02:33:47 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:33:47 GMT 2008 || AWT-EventQueue-0 refreshThread starting thread.
+Tue Apr 22 02:33:47 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Tue Apr 22 02:33:47 GMT 2008 |9| RMI TCP Connection(1)-127.0.1.1 Client.update() begin
+Tue Apr 22 02:33:47 GMT 2008 |9| RMI TCP Connection(1)-127.0.1.1 AdminFrame.update() begin
+Tue Apr 22 02:33:47 GMT 2008 |6| RMI TCP Connection(1)-127.0.1.1 update() PC2Event.contest_started 
+Tue Apr 22 02:33:47 GMT 2008 || RMI TCP Connection(1)-127.0.1.1 AdminFrame contest has been started at some site.
+Tue Apr 22 02:33:47 GMT 2008 |11| RMI TCP Connection(1)-127.0.1.1 AdminFrame.update() end
+Tue Apr 22 02:33:47 GMT 2008 |11| RMI TCP Connection(1)-127.0.1.1 Client.update() end
+Tue Apr 22 02:33:47 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Tue Apr 22 02:33:47 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:33:47 GMT 2008 || AWT-EventQueue-0 refreshThread thread already started.
+Tue Apr 22 02:33:47 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Tue Apr 22 02:33:48 GMT 2008 |9| RMI TCP Connection(1)-127.0.1.1 Client.update() begin
+Tue Apr 22 02:33:48 GMT 2008 |9| RMI TCP Connection(1)-127.0.1.1 AdminFrame.update() begin
+Tue Apr 22 02:33:48 GMT 2008 |6| RMI TCP Connection(1)-127.0.1.1 update() PC2Event.contest_stopped 
+Tue Apr 22 02:33:48 GMT 2008 || RMI TCP Connection(1)-127.0.1.1 AdminFrame contest has been stopped at some site.
+Tue Apr 22 02:33:48 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() begin
+Tue Apr 22 02:33:48 GMT 2008 |11| RMI TCP Connection(1)-127.0.1.1 AdminFrame.update() end
+Tue Apr 22 02:33:48 GMT 2008 |11| RMI TCP Connection(1)-127.0.1.1 Client.update() end
+Tue Apr 22 02:33:48 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:33:48 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.stopButton_ActionPerformed() end
+Tue Apr 22 02:33:54 GMT 2008 || AWT-EventQueue-0 refreshTimes - server is null 
+Tue Apr 22 02:33:54 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:33:54 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Tue Apr 22 02:34:04 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:34:25 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Tue Apr 22 02:34:25 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:34:25 GMT 2008 || AWT-EventQueue-0 refreshThread starting thread.
+Tue Apr 22 02:34:25 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Tue Apr 22 02:34:25 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 Client.update() begin
+Tue Apr 22 02:34:25 GMT 2008 |9| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() begin
+Tue Apr 22 02:34:25 GMT 2008 |6| RMI TCP Connection(2)-127.0.1.1 update() PC2Event.contest_started 
+Tue Apr 22 02:34:25 GMT 2008 || RMI TCP Connection(2)-127.0.1.1 AdminFrame contest has been started at some site.
+Tue Apr 22 02:34:25 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 AdminFrame.update() end
+Tue Apr 22 02:34:25 GMT 2008 |11| RMI TCP Connection(2)-127.0.1.1 Client.update() end
+Tue Apr 22 02:34:25 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() begin
+Tue Apr 22 02:34:25 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Tue Apr 22 02:34:25 GMT 2008 || AWT-EventQueue-0 refreshThread thread already started.
+Tue Apr 22 02:34:25 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.startButton_ActionPerformed() end
+Tue Apr 22 02:36:03 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 Client.update() begin
+Tue Apr 22 02:36:03 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() begin
+Tue Apr 22 02:36:03 GMT 2008 |6| RMI TCP Connection(3)-127.0.1.1 update() PC2Event.run_available
+Tue Apr 22 02:36:04 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:11
+Tue Apr 22 02:36:04 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Tue Apr 22 02:36:04 GMT 2008 |12| AWT-EventQueue-0 updateTeamStartupStatus(): Run Available;
+Tue Apr 22 02:36:04 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData RunID = 11
+Tue Apr 22 02:36:04 GMT 2008 |12| AWT-EventQueue-0   RunDisplayData TeamID = 1
+Tue Apr 22 02:36:04 GMT 2008 |12| AWT-EventQueue-0   Team State = HAS_SUBMITTED_RUNS_AND_CLARS 
+Tue Apr 22 02:36:04 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Tue Apr 22 02:36:04 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() end
+Tue Apr 22 02:36:04 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 Client.update() end
+Tue Apr 22 02:36:17 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 Client.update() begin
+Tue Apr 22 02:36:17 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() begin
+Tue Apr 22 02:36:17 GMT 2008 |6| RMI TCP Connection(3)-127.0.1.1 update() PC2Event.run_selected
+Tue Apr 22 02:36:17 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:11
+Tue Apr 22 02:36:17 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() end
+Tue Apr 22 02:36:17 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 Client.update() end
+Tue Apr 22 02:36:19 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 Client.update() begin
+Tue Apr 22 02:36:19 GMT 2008 |9| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() begin
+Tue Apr 22 02:36:19 GMT 2008 |6| RMI TCP Connection(3)-127.0.1.1 update() PC2Event.run_completed, (falls through to run_submitted)
+Tue Apr 22 02:36:19 GMT 2008 |6| RMI TCP Connection(3)-127.0.1.1 update() PC2Event.run_submitted
+Tue Apr 22 02:36:19 GMT 2008 |8| AWT-EventQueue-0 Admin.updateRunsListbox RunDisplayData updating 1:11
+Tue Apr 22 02:36:19 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(int, Serializable): begin
+Tue Apr 22 02:36:19 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus(): end
+Tue Apr 22 02:36:19 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 AdminFrame.update() end
+Tue Apr 22 02:36:19 GMT 2008 |11| RMI TCP Connection(3)-127.0.1.1 Client.update() end
+Tue Apr 22 02:37:14 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 Client.update() begin
+Tue Apr 22 02:37:14 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() begin
+Tue Apr 22 02:37:14 GMT 2008 |6| RMI TCP Connection(4)-127.0.1.1 update() PC2Event.client_logged_on_off
+Tue Apr 22 02:37:14 GMT 2008 |9| RMI TCP Connection(4)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys begin
+Tue Apr 22 02:37:14 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.updateAccountsToViewLoginsKeys end
+Tue Apr 22 02:37:14 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.updateAccountsToViewLoginsListBox begin
+Tue Apr 22 02:37:14 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 AdminFrame.update() end
+Tue Apr 22 02:37:14 GMT 2008 |11| RMI TCP Connection(4)-127.0.1.1 Client.update() end
+Tue Apr 22 02:37:15 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(false) begin
+Tue Apr 22 02:37:15 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(false) end
+Tue Apr 22 02:37:15 GMT 2008 |9| AWT-EventQueue-0 Client.logoff() begin
+Wed Apr 23 02:35:02 GMT 2008 |2| main Debug level initially set to 2
+Wed Apr 23 02:35:02 GMT 2008 |2| main Console level initially set to 2
+Wed Apr 23 02:35:02 GMT 2008 |2| main Debug level set to 13
+Wed Apr 23 02:35:02 GMT 2008 |2| main Console level set to 5
+Wed Apr 23 02:35:03 GMT 2008 ||
+Wed Apr 23 02:35:03 GMT 2008 |-1| main CSUS Programming Contest Control System
+Wed Apr 23 02:35:03 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Wed Apr 23 02:35:03 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Wed Apr 23 02:35:03 GMT 2008 || main Java freeMemory   4470032 4470k
+Wed Apr 23 02:35:03 GMT 2008 || main Java totalMemory  5177344 5177k
+Wed Apr 23 02:35:03 GMT 2008 ||
+Wed Apr 23 02:35:03 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2admin/pc2v8.ini
+Wed Apr 23 02:35:03 GMT 2008 || main Starting...
+Wed Apr 23 02:35:03 GMT 2008 || main (on 127.0.1.1)
+Wed Apr 23 02:35:03 GMT 2008 || main Contacting Server...
+Wed Apr 23 02:35:03 GMT 2008 |9| main Client.connectToSiteServer() begin
+Wed Apr 23 02:35:03 GMT 2008 || main Contacting server: localhost:50002
+Wed Apr 23 02:35:03 GMT 2008 || main Client.connectToSiteServer()
+java.rmi.NotBoundException: Server
+	at sun.rmi.registry.RegistryImpl.lookup(RegistryImpl.java:124)
+	at sun.rmi.registry.RegistryImpl_Skel.dispatch(Unknown Source)
+	at sun.rmi.server.UnicastServerRef.oldDispatch(UnicastServerRef.java:404)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:268)
+	at sun.rmi.transport.Transport$1.run(Transport.java:177)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:173)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:553)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:808)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:667)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:675)
+	at sun.rmi.transport.StreamRemoteCall.exceptionReceivedFromServer(StreamRemoteCall.java:273)
+	at sun.rmi.transport.StreamRemoteCall.executeCall(StreamRemoteCall.java:251)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:377)
+	at sun.rmi.registry.RegistryImpl_Stub.lookup(Unknown Source)
+	at java.rmi.Naming.lookup(Naming.java:102)
+	at pc2.client.Client.connectToSiteServer(Client.java:115)
+	at pc2.client.Client.main(Client.java:461)
+Wed Apr 23 02:35:03 GMT 2008 |-1| main ERROR - Can not connect to Server (server at: localhost:50002)
+Wed Apr 23 02:35:03 GMT 2008 |-1| main (Or is PC^2 Server started ??)
+Wed Apr 23 02:35:13 GMT 2008 |2| main Debug level initially set to 2
+Wed Apr 23 02:35:13 GMT 2008 |2| main Console level initially set to 2
+Wed Apr 23 02:35:13 GMT 2008 |2| main Debug level set to 13
+Wed Apr 23 02:35:13 GMT 2008 |2| main Console level set to 5
+Wed Apr 23 02:35:13 GMT 2008 ||
+Wed Apr 23 02:35:13 GMT 2008 |-1| main CSUS Programming Contest Control System
+Wed Apr 23 02:35:13 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Wed Apr 23 02:35:13 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Wed Apr 23 02:35:13 GMT 2008 || main Java freeMemory   4470032 4470k
+Wed Apr 23 02:35:13 GMT 2008 || main Java totalMemory  5177344 5177k
+Wed Apr 23 02:35:13 GMT 2008 ||
+Wed Apr 23 02:35:13 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2admin/pc2v8.ini
+Wed Apr 23 02:35:13 GMT 2008 || main Starting...
+Wed Apr 23 02:35:13 GMT 2008 || main (on 127.0.1.1)
+Wed Apr 23 02:35:14 GMT 2008 || main Contacting Server...
+Wed Apr 23 02:35:14 GMT 2008 |9| main Client.connectToSiteServer() begin
+Wed Apr 23 02:35:14 GMT 2008 || main Contacting server: localhost:50002
+Wed Apr 23 02:35:14 GMT 2008 |11| main Client.connectToSiteServer() end
+Wed Apr 23 02:35:14 GMT 2008 |9| main Client.selectServer() begin
+Wed Apr 23 02:35:14 GMT 2008 |11| main Client.selectServer() end
+Wed Apr 23 02:35:14 GMT 2008 ||
+Wed Apr 23 02:35:14 GMT 2008 || main Starting login...
+Wed Apr 23 02:35:22 GMT 2008 |9| AWT-EventQueue-0 Client.logon() begin
+Wed Apr 23 02:35:22 GMT 2008 |11| AWT-EventQueue-0 Client.logon() end
+Wed Apr 23 02:35:22 GMT 2008 || AWT-EventQueue-0 
+Wed Apr 23 02:35:22 GMT 2008 || AWT-EventQueue-0 root - Client login at site (Wackamole)
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 AdminFrame initialize() begin
+Wed Apr 23 02:35:23 GMT 2008 || AWT-EventQueue-0 Version admin 8.7 20051115 04 (November 15th, 2005 11:59pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 AdminFrame initialize() end
+Wed Apr 23 02:35:23 GMT 2008 || AWT-EventQueue-0 Note: no run distribution is defined
+Wed Apr 23 02:35:23 GMT 2008 |13| AWT-EventQueue-0 refreshRemainingTimeText() start 
+Wed Apr 23 02:35:23 GMT 2008 || AWT-EventQueue-0 Note: stopping timer, thread is null
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 initializeRemoteSiteList   begin
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 initializeRemoteSiteList   end
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(true) begin
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(true) end
+Wed Apr 23 02:35:23 GMT 2008 || AWT-EventQueue-0 admin 8.7 20051115 04 November 15th, 2005 11:59pm
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() begin
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) begin
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.loadAccountsView(0) end
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 accountsViewLoginButton_ItemStateChanged() end
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 initializeTeamStartupStatus() begin
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 updateTeamStartupStatus(void) begin
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 updateTeamStartupStatus() end
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 initializeTeamStartupStatus() end
+Wed Apr 23 02:35:23 GMT 2008 |9| AWT-EventQueue-0 loadSites() begin 
+Wed Apr 23 02:35:23 GMT 2008 || AWT-EventQueue-0 Note: run distribution is not defined 
+Wed Apr 23 02:35:23 GMT 2008 || AWT-EventQueue-0 Note: distribute to list is not defined 
+Wed Apr 23 02:35:23 GMT 2008 |11| AWT-EventQueue-0 loadSites() end 
+Wed Apr 23 02:35:24 GMT 2008 || AWT-EventQueue-0 There are 11 runs.
+Wed Apr 23 02:35:24 GMT 2008 || AWT-EventQueue-0 updateTeamStartupStatus(), could not find client for team 0
+Wed Apr 23 02:35:24 GMT 2008 || AWT-EventQueue-0 Note: there are 3 clarifications. 
+Wed Apr 23 02:35:24 GMT 2008 |9| AWT-EventQueue-0 refreshTeamStartupStatus() begin
+Wed Apr 23 02:35:24 GMT 2008 |11| AWT-EventQueue-0 refreshTeamStartupStatus() end
+Wed Apr 23 02:48:01 GMT 2008 |9| AWT-EventQueue-0 AdminFrame.setObserving(false) begin
+Wed Apr 23 02:48:01 GMT 2008 |11| AWT-EventQueue-0 AdminFrame.setObserving(false) end
+Wed Apr 23 02:48:01 GMT 2008 |9| AWT-EventQueue-0 Client.logoff() begin

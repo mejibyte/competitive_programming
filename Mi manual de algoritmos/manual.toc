@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Teor\IeC {\'\i }a de n\IeC {\'u}meros}{1}
+\contentsline {subsection}{\numberline {1.1}Big mod}{1}
+\contentsline {subsection}{\numberline {1.2}Criba de Erat\IeC {\'o}stenes}{2}
+\contentsline {subsection}{\numberline {1.3}Divisores de un n\IeC {\'u}mero}{2}
+\contentsline {section}{\numberline {2}Programaci\IeC {\'o}n din\IeC {\'a}mica}{4}
+\contentsline {subsection}{\numberline {2.1}Longest common subsequence}{4}

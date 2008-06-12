@@ -1,0 +1,26 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+\noindent
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$iostream$>$}} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{const}}\ \textcolor{ForestGreen}{int}\ SIZE\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{1000000}\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{//criba[i]\ =\ false\ si\ i\ es\ primo}} \\
+\mbox{}\textcolor{ForestGreen}{bool}\ criba\textcolor{BrickRed}{[}SIZE\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{];} \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{buildCriba}}\textcolor{BrickRed}{()}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{memset}}\textcolor{BrickRed}{(}criba\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{false}}\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{sizeof}}\textcolor{BrickRed}{(}criba\textcolor{BrickRed}{));} \\
+\mbox{} \\
+\mbox{}\ \ criba\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ criba\textcolor{BrickRed}{[}\textcolor{Purple}{1}\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{2}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$=}SIZE\textcolor{BrickRed}{;}\ i\ \textcolor{BrickRed}{+=}\ \textcolor{Purple}{2}\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ criba\textcolor{BrickRed}{[}i\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \  \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{3}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$=}SIZE\textcolor{BrickRed}{;}\ i\ \textcolor{BrickRed}{+=}\ \textcolor{Purple}{2}\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(!}criba\textcolor{BrickRed}{[}i\textcolor{BrickRed}{])}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ j\textcolor{BrickRed}{=}i\textcolor{BrickRed}{+}i\textcolor{BrickRed}{;}\ j\textcolor{BrickRed}{$<$=}SIZE\textcolor{BrickRed}{;}\ j\ \textcolor{BrickRed}{+=}\ i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ criba\textcolor{BrickRed}{[}j\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{Red}{\}} \\
+

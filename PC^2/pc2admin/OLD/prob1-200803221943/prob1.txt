@@ -1,0 +1,9 @@
+
+Dump Created Sat Mar 22 19:43:36 GMT 2008
+
+Prob  : 1 Ser o no ser
+
+Data file OLD/prob1-200803221943/in.txt
+Data file source in.txt
+ Hide output window: false
+

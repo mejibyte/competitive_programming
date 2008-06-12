@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0031)http://acm.uva.es/p/v1/107.html -->
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><HTML><HEAD><TITLE>The Cat in the Hat</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="The Cat in the Hat" name=description>
+<META content=htmlatex name=keywords>
+<META content=document name=resource-type>
+<META content=global name=distribution><LINK 
+href="The%20Cat%20in%20the%20Hat_archivos/htmlatex.css" rel=STYLESHEET>
+<META content="MSHTML 6.00.6000.16414" name=GENERATOR></HEAD>
+<BODY lang=EN bgColor=#ffffff>
+<H1><BR clear=all>
+<CENTER>
+<TABLE bgColor=#0060f0>
+  <TBODY>
+  <TR>
+    <TD><B><FONT color=#c0ffff size=5>&nbsp;<A 
+      name=SECTION0001000000000000000000>The Cat in the 
+  Hat</A></FONT>&nbsp;</B></TR></TBODY></TABLE></CENTER></H1>
+<P>
+<H2><FONT color=#0070e8><A 
+name=SECTION0001001000000000000000>Background</A></FONT></H2>
+<P>(An homage to Theodore Seuss Geisel) 
+<P>The Cat in the Hat is a nasty creature,<BR>But the striped hat he is wearing 
+has a rather nifty feature. 
+<P>With one flick of his wrist he pops his top off. 
+<P>Do you know what's inside that Cat's hat?<BR>A bunch of small cats, each with 
+its own striped hat. 
+<P>Each little cat does the same as line three,<BR>All except the littlest ones, 
+who just say ``Why me?'' 
+<P>Because the littlest cats have to clean all the grime,<BR>And they're tired 
+of doing it time after time! 
+<P>
+<H2><FONT color=#0070e8><A name=SECTION0001002000000000000000>The 
+Problem</A></FONT></H2>
+<P>A clever cat walks into a messy room which he needs to clean. Instead of 
+doing the work alone, it decides to have its helper cats do the work. It keeps 
+its (smaller) helper cats inside its hat. Each helper cat also has helper cats 
+in its own hat, and so on. Eventually, the cats reach a smallest size. These 
+smallest cats have no additional cats in their hats. These unfortunate smallest 
+cats have to do the cleaning. 
+<P>The number of cats inside each (non-smallest) cat's hat is a constant, 
+<I>N</I>. The height of these cats-in-a-hat is <IMG height=31 
+alt=tex2html_wrap_inline35 src="The%20Cat%20in%20the%20Hat_archivos/107img1.gif" 
+width=30 align=middle> times the height of the cat whose hat they are in. 
+<BLOCKQUOTE>The smallest cats are of height one; <BR>these are the cats that 
+  get the work done. </BLOCKQUOTE>All heights are positive integers. 
+<P>Given the height of the initial cat and the number of worker cats (of height 
+one), find the number of cats that are not doing any work (cats of height 
+greater than one) and also determine the sum of all the cats' heights (the 
+height of a stack of all cats standing one on top of another). 
+<P>
+<H2><FONT color=#0070e8><A name=SECTION0001003000000000000000>The 
+Input</A></FONT></H2>
+<P>The input consists of a sequence of cat-in-hat specifications. Each 
+specification is a single line consisting of two positive integers, separated by 
+white space. The first integer is the height of the initial cat, and the second 
+integer is the number of worker cats. 
+<P>A pair of 0's on a line indicates the end of input. 
+<P>
+<H2><FONT color=#0070e8><A name=SECTION0001004000000000000000>The 
+Output</A></FONT></H2>
+<P>For each input line (cat-in-hat specification), print the number of cats that 
+are not working, followed by a space, followed by the height of the stack of 
+cats. There should be one output line for each input line other than the ``0 0'' 
+that terminates input. 
+<P>
+<H2><FONT color=#0070e8><A name=SECTION0001005000000000000000>Sample 
+Input</A></FONT></H2>
+<P><PRE>216 125
+5764801 1679616
+0 0</PRE>
+<P>
+<H2><FONT color=#0070e8><A name=SECTION0001006000000000000000>Sample 
+Output</A></FONT></H2>
+<P><PRE>31 671
+335923 30275911</PRE>
+<P></P></BODY></HTML>

@@ -1,0 +1,40 @@
+T TTTTT
+T  T TT
+T T  TT
+T   T T
+TTT   T
+T   T T
+TTTTT*T
+
+XX   X
+XXXX X
+
+XX   X
+
+XXXX X
+
+
+T TTTTT
+T  T TT
+T T  TT
+T   T T
+TTT   T
+T   T T
+TTTTTXT
+
+
+XX   X
+
+XXXX X
+
+
+XXX   XXX X     X X  X   X  X XXXX XXXX X   XXX
+ X    X X X  X  X XX X   XX X X  X X  X XXX  X
+ X    XXX  X X X  X XX   X XX X  X X  X X X   X
+XXX   X     X X   X  X   X  X XXXX XXXX XXX XXX
+
+
+OOO   OOO O     O O  O   O  O OOOO OOOO O   OOO
+ O    O O O  O  O OO O   OO O O  O O  O OOO  O
+ O    OOO  O O O  O OO   O OO O  O O  O O O   O
+OOO   O     O O   O  O   O  O OOOO OOOO OOO OOO

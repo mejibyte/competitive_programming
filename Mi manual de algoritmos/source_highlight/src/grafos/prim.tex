@@ -1,0 +1,68 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+\noindent
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$iostream$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$cmath$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$map$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$queue$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$set$>$}} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{using}}\ \textbf{\textcolor{Blue}{namespace}}\ std\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{typedef}}\ pair\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{double}\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\textcolor{BrickRed}{$>$}\ point\textcolor{BrickRed}{;} \\
+\mbox{}\textit{\textcolor{Brown}{//Gives\ a\ vector\ of\ adjacent\ nodes\ to\ a\ point}} \\
+\mbox{}\textbf{\textcolor{Blue}{typedef}}\ map\textcolor{BrickRed}{$<$}\ point\textcolor{BrickRed}{,}\ vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ \textcolor{BrickRed}{$>$}\ graph\textcolor{BrickRed}{;} \\
+\mbox{}\textit{\textcolor{Brown}{//Edge\ of\ length\ "{}first"{}\ that\ arrives\ to\ point\ "{}second"{}}} \\
+\mbox{}\textbf{\textcolor{Blue}{typedef}}\ pair\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{double}\textcolor{BrickRed}{,}\ point\textcolor{BrickRed}{$>$}\ edge\textcolor{BrickRed}{;}\  \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{double}\ \textbf{\textcolor{Black}{euclidean}}\textcolor{BrickRed}{(}\textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}a\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}b\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Black}{hypot}}\textcolor{BrickRed}{(}a\textcolor{BrickRed}{.}first\textcolor{BrickRed}{-}b\textcolor{BrickRed}{.}first\textcolor{BrickRed}{,}\ a\textcolor{BrickRed}{.}second\textcolor{BrickRed}{-}b\textcolor{BrickRed}{.}second\textcolor{BrickRed}{);}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{main}}\textcolor{BrickRed}{()}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ casos\textcolor{BrickRed}{;} \\
+\mbox{}\ \ cin\ \textcolor{BrickRed}{$>$$>$}\ casos\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(}casos\textcolor{BrickRed}{-\/-)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ graph\ g\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ n\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ cin\ \textcolor{BrickRed}{$>$$>$}\ n\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(}n\textcolor{BrickRed}{-\/-)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{double}\ x\textcolor{BrickRed}{,}y\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ cin\ \textcolor{BrickRed}{$>$$>$}\ x\ \textcolor{BrickRed}{$>$$>$}\ y\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ point\ \textbf{\textcolor{Black}{p}}\textcolor{BrickRed}{(}x\textcolor{BrickRed}{,}y\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}g\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{count}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{==}\ \textcolor{Purple}{0}\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ \textit{\textcolor{Brown}{//Si\ no\ está\ todavía}} \\
+\mbox{}\ \ \ \ \ \ \ \ vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ v\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \ \ g\textcolor{BrickRed}{[}p\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ v\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}graph\textcolor{BrickRed}{::}iterator\ i\ \textcolor{BrickRed}{=}\ g\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{begin}}\textcolor{BrickRed}{();}\ i\ \textcolor{BrickRed}{!=}\ g\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{end}}\textcolor{BrickRed}{();}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{((*}i\textcolor{BrickRed}{).}first\ \textcolor{BrickRed}{!=}\ p\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{BrickRed}{(*}i\textcolor{BrickRed}{).}second\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{push$\_$back}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \ \ g\textcolor{BrickRed}{[}p\textcolor{BrickRed}{].}\textbf{\textcolor{Black}{push$\_$back}}\textcolor{BrickRed}{((*}i\textcolor{BrickRed}{).}first\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \ \ set\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ visited\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ priority$\_$queue\textcolor{BrickRed}{$<$}edge\textcolor{BrickRed}{,}\ vector\textcolor{BrickRed}{$<$}edge\textcolor{BrickRed}{$>$,}\ greater\textcolor{BrickRed}{$<$}edge\textcolor{BrickRed}{$>$}\ \textcolor{BrickRed}{$>$}\ q\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//Each\ edge\ in\ q\ has\ got\ a\ length\ "{}first"{}\ and\ a\ point\ "{}second"{}.}} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//It\ means\ I\ can\ reach\ point\ "{}second"{}\ which\ is\ "{}first"{}\ meters\ away.}} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//q\ has\ the\ closest\ reachable\ node\ on\ top\ (I\ may\ have\ already\ visited\ it!)}} \\
+\mbox{}\ \ \ \ q\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{push}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{edge}}\textcolor{BrickRed}{(}\textcolor{Purple}{0.0}\textcolor{BrickRed}{,}\ \textcolor{BrickRed}{(*}g\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{begin}}\textcolor{BrickRed}{()).}first\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{double}\ totalDistance\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0.0}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(!}q\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{empty}}\textcolor{BrickRed}{())}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ edge\ nearest\ \textcolor{BrickRed}{=}\ q\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{top}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ \ \ q\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{pop}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ \ \ point\ actualNode\ \textcolor{BrickRed}{=}\ nearest\textcolor{BrickRed}{.}second\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}visited\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{count}}\textcolor{BrickRed}{(}actualNode\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{==}\ \textcolor{Purple}{1}\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{continue}}\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//Ya\ habia\ visitado\ este}} \\
+\mbox{}\ \ \ \ \ \ totalDistance\ \textcolor{BrickRed}{+=}\ nearest\textcolor{BrickRed}{.}first\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ visited\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{insert}}\textcolor{BrickRed}{(}actualNode\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ neighbors\ \textcolor{BrickRed}{=}\ g\textcolor{BrickRed}{[}actualNode\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}neighbors\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{();}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ point\ t\ \textcolor{BrickRed}{=}\ neighbors\textcolor{BrickRed}{[}i\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{ForestGreen}{double}\ dist\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{euclidean}}\textcolor{BrickRed}{(}actualNode\textcolor{BrickRed}{,}\ t\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ q\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{push}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{edge}}\textcolor{BrickRed}{(}dist\textcolor{BrickRed}{,}\ t\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{printf}}\textcolor{BrickRed}{(}\texttt{\textcolor{Red}{"{}\%.2f}}\texttt{\textcolor{CarnationPink}{\textbackslash{}n}}\texttt{\textcolor{Red}{"{}}}\textcolor{BrickRed}{,}\ totalDistance\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}casos\ \textcolor{BrickRed}{$>$}\ \textcolor{Purple}{0}\textcolor{BrickRed}{)}\ cout\ \textcolor{BrickRed}{$<$$<$}\ endl\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//Endl\ between\ cases}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{Red}{\}} \\
+

@@ -1,0 +1,32 @@
+program p579;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+procedure leer(var hora : integer; var minuto : integer);
+var
+  entrada : string;
+begin
+  readLn(entrada);
+  hora := strToInt(copy(entrada, 1, pos(':', entrada) - 1));
+  delete(entrada, 1, pos(':', entrada));
+  minuto := strToInt(entrada);
+end;
+
+var
+  h, m : integer; //hora y minuto
+  ah, am : double; //angulos que hay entre las 12 en punto y la hora y el minuto
+
+begin
+  leer(h, m);
+  while (h + m > 0) do
+    begin
+    ah := h * 30;
+    am := m * 6;
+    ah := ah + (30 * (10 - m) / 6);
+    writeLn(abs(ah - am));
+    leer(h, m);
+    end;
+end.

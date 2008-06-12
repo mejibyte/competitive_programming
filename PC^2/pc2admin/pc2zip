@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#
+# File:    pc2zip
+# Purpose: create a pc2 zip under archive
+# Author:  pc2
+# E-mail:  mailto:pc2@ecs.csus.edu
+# Revised: Sun Dec  5 00:36:30 PST 2004
+#
+# Send e-mail to us if you have questions.. thanks.
+#
+
+java pc2.ZipPC2
+
+# eof pc2zip

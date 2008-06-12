@@ -1,0 +1,733 @@
+Fri Mar 21 16:33:04 GMT 2008 |2| main Debug level initially set to 2
+Fri Mar 21 16:33:04 GMT 2008 |2| main Console level initially set to 2
+Fri Mar 21 16:33:04 GMT 2008 |2| main Debug level set to 13
+Fri Mar 21 16:33:04 GMT 2008 |2| main Console level set to 5
+Fri Mar 21 16:33:04 GMT 2008 ||
+Fri Mar 21 16:33:04 GMT 2008 |-1| main CSUS Programming Contest Control System
+Fri Mar 21 16:33:04 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Fri Mar 21 16:33:04 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Fri Mar 21 16:33:04 GMT 2008 ||
+Fri Mar 21 16:33:04 GMT 2008 || main CSUS Programming Contest Control System Version team 8.7 20051112 05 (November 12th, 2005 8:01pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Fri Mar 21 16:33:04 GMT 2008 ||
+Fri Mar 21 16:33:04 GMT 2008 ||
+Fri Mar 21 16:33:04 GMT 2008 || main Java freeMemory   3649640 3649k
+Fri Mar 21 16:33:04 GMT 2008 || main Java totalMemory  5177344 5177k
+Fri Mar 21 16:33:04 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/pc2v8.ini
+Fri Mar 21 16:33:04 GMT 2008 || main Starting in dir: /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team
+Fri Mar 21 16:33:10 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.initialize() begin
+Fri Mar 21 16:33:10 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.initialize() end
+Fri Mar 21 16:33:10 GMT 2008 || AWT-EventQueue-0 Contacting server: localhost port 50002
+Fri Mar 21 16:33:10 GMT 2008 || AWT-EventQueue-0 pc2.team.TeamFrame using 127.0.1.1.
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 Registered for 9=global_property_updated 
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 Registered for 11=clarification_answered 
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 Registered for 5=run_completed 
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 Registered for 18=run_status_update 
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 Registered for 14=contest_started 
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 Registered for 15=contest_stopped 
+Fri Mar 21 16:33:10 GMT 2008 |12| AWT-EventQueue-0 Registered for 20=contest_reset_refresh 
+Fri Mar 21 16:33:10 GMT 2008 || AWT-EventQueue-0 Logging on as team1
+Fri Mar 21 16:33:11 GMT 2008 || AWT-EventQueue-0 team 8.7 20051112 05 November 12th, 2005 8:01pm
+Fri Mar 21 16:33:11 GMT 2008 |9| AWT-EventQueue-0 initContestSettings() begin
+Fri Mar 21 16:33:11 GMT 2008 |11| AWT-EventQueue-0 initContestSettings() end
+Fri Mar 21 16:33:11 GMT 2008 || AWT-EventQueue-0 Contest is STARTED
+Fri Mar 21 16:33:11 GMT 2008 || Thread-2 Contest has been STARTED
+Fri Mar 21 16:33:18 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Fri Mar 21 16:33:18 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Fri Mar 21 16:39:37 GMT 2008 |9| Thread-4 TeamFrame.handleRun() begin
+Fri Mar 21 16:39:37 GMT 2008 || Thread-4 Test Run... 
+Fri Mar 21 16:39:37 GMT 2008 || Thread-4 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:39:37 GMT 2008 || Thread-4 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser.cpp
+Fri Mar 21 16:39:37 GMT 2008 || Thread-4 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/in.txt,
+Fri Mar 21 16:39:40 GMT 2008 |11| Thread-4 TeamFrame.handleRun() end
+Fri Mar 21 16:40:32 GMT 2008 |9| Thread-5 TeamFrame.handleRun() begin
+Fri Mar 21 16:40:32 GMT 2008 || Thread-5 Test Run... 
+Fri Mar 21 16:40:33 GMT 2008 || Thread-5 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:40:33 GMT 2008 || Thread-5 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser.cpp
+Fri Mar 21 16:40:33 GMT 2008 || Thread-5 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/in.txt,
+Fri Mar 21 16:40:34 GMT 2008 |11| Thread-5 TeamFrame.handleRun() end
+Fri Mar 21 16:43:20 GMT 2008 |9| Thread-6 TeamFrame.handleRun() begin
+Fri Mar 21 16:43:20 GMT 2008 |11| Thread-6 TeamFrame.handleRun() end
+Fri Mar 21 16:43:31 GMT 2008 |9| Thread-7 TeamFrame.handleRun() begin
+Fri Mar 21 16:43:31 GMT 2008 || Thread-7 Test Run... 
+Fri Mar 21 16:43:31 GMT 2008 || Thread-7 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:43:31 GMT 2008 || Thread-7 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 16:43:31 GMT 2008 || Thread-7 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 16:43:52 GMT 2008 |9| Thread-7 Executable.newExecute(RunData) begin
+Fri Mar 21 16:43:52 GMT 2008 || Thread-7 before substitution {:basename}
+Fri Mar 21 16:43:52 GMT 2008 || Thread-7 after substitution ser
+Fri Mar 21 16:43:52 GMT 2008 |9| Thread-7 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:43:52 GMT 2008 || Thread-7 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:43:52 GMT 2008 || Thread-7 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:43:52 GMT 2008 || Thread-7 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:43:53 GMT 2008 |11| Thread-7 Executable.compilerCall(RunData) end
+Fri Mar 21 16:43:53 GMT 2008 |9| Thread-7 Executable.executionCall(RunData) begin
+Fri Mar 21 16:43:53 GMT 2008 || Thread-7 before substitution ./{:basename}
+Fri Mar 21 16:43:53 GMT 2008 || Thread-7 after substitution ./ser
+Fri Mar 21 16:43:53 GMT 2008 || Thread-7 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Fri Mar 21 16:43:54 GMT 2008 || Thread-7 executionCall() team program exitValue = 0
+Fri Mar 21 16:43:54 GMT 2008 |11| Thread-7 Executable.executionCall(RunData) end
+Fri Mar 21 16:43:54 GMT 2008 || Thread-7 Execution returned true
+Fri Mar 21 16:43:54 GMT 2008 |11| Thread-7 Executable.execute() end
+Fri Mar 21 16:43:54 GMT 2008 |11| Thread-7 TeamFrame.handleRun() end
+Fri Mar 21 16:44:20 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.submitClarification() start
+Fri Mar 21 16:44:20 GMT 2008 || AWT-EventQueue-0 Submitting clar from 1:1 to server, for Ser o no ser
+Fri Mar 21 16:44:20 GMT 2008 || AWT-EventQueue-0 Clar 1 submitted for team 1:1
+Fri Mar 21 16:44:20 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Fri Mar 21 16:44:20 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Fri Mar 21 16:44:20 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.submitClarification() end
+Fri Mar 21 16:45:12 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Fri Mar 21 16:45:12 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:45:12 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Fri Mar 21 16:45:12 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Fri Mar 21 16:46:07 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Fri Mar 21 16:46:07 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 16:46:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Fri Mar 21 16:46:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Fri Mar 21 16:46:59 GMT 2008 |9| Thread-15 TeamFrame.handleRun() begin
+Fri Mar 21 16:46:59 GMT 2008 || Thread-15 Submit Run... 
+Fri Mar 21 16:47:00 GMT 2008 || Thread-15 Run 1 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Fri Mar 21 16:47:00 GMT 2008 |11| Thread-15 TeamFrame.handleRun() end
+Fri Mar 21 16:47:05 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Fri Mar 21 16:47:05 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Fri Mar 21 16:47:05 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:47:05 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:47:05 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Fri Mar 21 16:47:05 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Fri Mar 21 16:47:05 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Fri Mar 21 16:47:05 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:47:05 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:47:05 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:48:24 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:48:24 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:48:24 GMT 2008 || AWT-EventQueue-0 RunID 1 | X | SiteID 1 |
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(6)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:48:24 GMT 2008 |12| RMI TCP Connection(6)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:48:24 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:48:24 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:49:51 GMT 2008 |9| Thread-18 TeamFrame.handleRun() begin
+Fri Mar 21 16:49:51 GMT 2008 || Thread-18 Test Run... 
+Fri Mar 21 16:49:52 GMT 2008 || Thread-18 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:49:52 GMT 2008 || Thread-18 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 16:49:52 GMT 2008 || Thread-18 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 16:49:56 GMT 2008 |9| Thread-18 Executable.newExecute(RunData) begin
+Fri Mar 21 16:49:56 GMT 2008 || Thread-18 before substitution {:basename}
+Fri Mar 21 16:49:56 GMT 2008 || Thread-18 after substitution ser
+Fri Mar 21 16:49:56 GMT 2008 |9| Thread-18 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:49:56 GMT 2008 || Thread-18 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:49:56 GMT 2008 || Thread-18 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:49:56 GMT 2008 || Thread-18 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:49:57 GMT 2008 |11| Thread-18 Executable.compilerCall(RunData) end
+Fri Mar 21 16:49:57 GMT 2008 |9| Thread-18 Executable.executionCall(RunData) begin
+Fri Mar 21 16:49:57 GMT 2008 || Thread-18 before substitution ./{:basename}
+Fri Mar 21 16:49:57 GMT 2008 || Thread-18 after substitution ./ser
+Fri Mar 21 16:49:57 GMT 2008 || Thread-18 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Fri Mar 21 16:49:57 GMT 2008 || Thread-18 executionCall() team program exitValue = 0
+Fri Mar 21 16:49:57 GMT 2008 |11| Thread-18 Executable.executionCall(RunData) end
+Fri Mar 21 16:49:57 GMT 2008 || Thread-18 Execution returned true
+Fri Mar 21 16:49:57 GMT 2008 |11| Thread-18 Executable.execute() end
+Fri Mar 21 16:49:57 GMT 2008 |11| Thread-18 TeamFrame.handleRun() end
+Fri Mar 21 16:50:03 GMT 2008 |9| Thread-24 TeamFrame.handleRun() begin
+Fri Mar 21 16:50:04 GMT 2008 || Thread-24 Submit Run... 
+Fri Mar 21 16:50:04 GMT 2008 || Thread-24 Run 2 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Fri Mar 21 16:50:04 GMT 2008 |11| Thread-24 TeamFrame.handleRun() end
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:50:58 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:50:58 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:50:58 GMT 2008 || AWT-EventQueue-0 RunID 2 | X | SiteID 1 |
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:50:58 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:50:58 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:50:58 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:53:08 GMT 2008 |9| Thread-27 TeamFrame.handleRun() begin
+Fri Mar 21 16:53:08 GMT 2008 || Thread-27 Test Run... 
+Fri Mar 21 16:53:08 GMT 2008 || Thread-27 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:53:08 GMT 2008 || Thread-27 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 16:53:08 GMT 2008 || Thread-27 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 16:53:10 GMT 2008 |9| Thread-27 Executable.newExecute(RunData) begin
+Fri Mar 21 16:53:10 GMT 2008 || Thread-27 before substitution {:basename}
+Fri Mar 21 16:53:10 GMT 2008 || Thread-27 after substitution ser
+Fri Mar 21 16:53:10 GMT 2008 |9| Thread-27 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:53:10 GMT 2008 || Thread-27 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:53:10 GMT 2008 || Thread-27 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:53:10 GMT 2008 || Thread-27 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:53:11 GMT 2008 |11| Thread-27 Executable.compilerCall(RunData) end
+Fri Mar 21 16:53:11 GMT 2008 || Thread-27 Execution returned false
+Fri Mar 21 16:53:11 GMT 2008 |11| Thread-27 Executable.execute() end
+Fri Mar 21 16:53:11 GMT 2008 |11| Thread-27 TeamFrame.handleRun() end
+Fri Mar 21 16:53:59 GMT 2008 |9| Thread-31 TeamFrame.handleRun() begin
+Fri Mar 21 16:53:59 GMT 2008 || Thread-31 Test Run... 
+Fri Mar 21 16:53:59 GMT 2008 || Thread-31 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:53:59 GMT 2008 || Thread-31 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 16:53:59 GMT 2008 || Thread-31 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 16:54:00 GMT 2008 |9| Thread-31 Executable.newExecute(RunData) begin
+Fri Mar 21 16:54:00 GMT 2008 || Thread-31 before substitution {:basename}
+Fri Mar 21 16:54:00 GMT 2008 || Thread-31 after substitution ser
+Fri Mar 21 16:54:00 GMT 2008 |9| Thread-31 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:54:00 GMT 2008 || Thread-31 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:54:00 GMT 2008 || Thread-31 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:54:00 GMT 2008 || Thread-31 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:54:01 GMT 2008 |11| Thread-31 Executable.compilerCall(RunData) end
+Fri Mar 21 16:54:01 GMT 2008 |9| Thread-31 Executable.executionCall(RunData) begin
+Fri Mar 21 16:54:01 GMT 2008 || Thread-31 before substitution ./{:basename}
+Fri Mar 21 16:54:01 GMT 2008 || Thread-31 after substitution ./ser
+Fri Mar 21 16:54:01 GMT 2008 || Thread-31 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Fri Mar 21 16:54:19 GMT 2008 || AWT-EventQueue-0 ExecuteTimer: attempting to destroy process
+Fri Mar 21 16:54:19 GMT 2008 || Thread-31 executionCall() team program exitValue = 143
+Fri Mar 21 16:54:19 GMT 2008 |11| Thread-31 Executable.executionCall(RunData) end
+Fri Mar 21 16:54:19 GMT 2008 || Thread-31 Execution returned true
+Fri Mar 21 16:54:19 GMT 2008 |11| Thread-31 Executable.execute() end
+Fri Mar 21 16:54:19 GMT 2008 |11| Thread-31 TeamFrame.handleRun() end
+Fri Mar 21 16:54:26 GMT 2008 |9| Thread-37 TeamFrame.handleRun() begin
+Fri Mar 21 16:54:26 GMT 2008 || Thread-37 Submit Run... 
+Fri Mar 21 16:54:26 GMT 2008 || Thread-37 Run 3 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Fri Mar 21 16:54:26 GMT 2008 |11| Thread-37 TeamFrame.handleRun() end
+Fri Mar 21 16:55:20 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Fri Mar 21 16:55:20 GMT 2008 |12| RMI TCP Connection(11)-127.0.1.1 Base update() Class: pc2.Settings
+Fri Mar 21 16:55:20 GMT 2008 |9| AWT-EventQueue-0 initContestSettings() begin
+Fri Mar 21 16:55:20 GMT 2008 |11| AWT-EventQueue-0 initContestSettings() end
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(13)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:55:52 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:55:52 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:55:52 GMT 2008 |12| RMI TCP Connection(12)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:55:52 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:55:52 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:55:52 GMT 2008 || AWT-EventQueue-0 RunID 3 | X | SiteID 1 |
+Fri Mar 21 16:56:40 GMT 2008 |12| RMI TCP Connection(14)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Fri Mar 21 16:56:40 GMT 2008 |12| RMI TCP Connection(14)-127.0.1.1 Base update() Class: pc2.Settings
+Fri Mar 21 16:56:40 GMT 2008 |9| AWT-EventQueue-0 initContestSettings() begin
+Fri Mar 21 16:56:40 GMT 2008 |11| AWT-EventQueue-0 initContestSettings() end
+Fri Mar 21 16:57:37 GMT 2008 |9| Thread-42 TeamFrame.handleRun() begin
+Fri Mar 21 16:57:37 GMT 2008 || Thread-42 Test Run... 
+Fri Mar 21 16:57:38 GMT 2008 || Thread-42 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:57:38 GMT 2008 || Thread-42 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 16:57:38 GMT 2008 || Thread-42 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 16:57:40 GMT 2008 |9| Thread-42 Executable.newExecute(RunData) begin
+Fri Mar 21 16:57:40 GMT 2008 || Thread-42 before substitution {:basename}
+Fri Mar 21 16:57:40 GMT 2008 || Thread-42 after substitution ser
+Fri Mar 21 16:57:40 GMT 2008 |9| Thread-42 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:57:40 GMT 2008 || Thread-42 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:57:40 GMT 2008 || Thread-42 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:57:40 GMT 2008 || Thread-42 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:57:41 GMT 2008 |11| Thread-42 Executable.compilerCall(RunData) end
+Fri Mar 21 16:57:41 GMT 2008 |9| Thread-42 Executable.executionCall(RunData) begin
+Fri Mar 21 16:57:41 GMT 2008 || Thread-42 before substitution ./{:basename}
+Fri Mar 21 16:57:41 GMT 2008 || Thread-42 after substitution ./ser
+Fri Mar 21 16:57:41 GMT 2008 || Thread-42 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Fri Mar 21 16:57:41 GMT 2008 || Thread-42 executionCall() team program exitValue = 0
+Fri Mar 21 16:57:41 GMT 2008 |11| Thread-42 Executable.executionCall(RunData) end
+Fri Mar 21 16:57:41 GMT 2008 || Thread-42 Execution returned true
+Fri Mar 21 16:57:42 GMT 2008 |11| Thread-42 Executable.execute() end
+Fri Mar 21 16:57:42 GMT 2008 |11| Thread-42 TeamFrame.handleRun() end
+Fri Mar 21 16:57:52 GMT 2008 |12| RMI TCP Connection(15)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Fri Mar 21 16:57:52 GMT 2008 |12| RMI TCP Connection(15)-127.0.1.1 Base update() Class: pc2.Settings
+Fri Mar 21 16:57:52 GMT 2008 |9| AWT-EventQueue-0 initContestSettings() begin
+Fri Mar 21 16:57:52 GMT 2008 |11| AWT-EventQueue-0 initContestSettings() end
+Fri Mar 21 16:58:12 GMT 2008 |9| Thread-49 TeamFrame.handleRun() begin
+Fri Mar 21 16:58:12 GMT 2008 || Thread-49 Test Run... 
+Fri Mar 21 16:58:12 GMT 2008 || Thread-49 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:58:12 GMT 2008 || Thread-49 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 16:58:12 GMT 2008 || Thread-49 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 16:58:15 GMT 2008 |9| Thread-49 Executable.newExecute(RunData) begin
+Fri Mar 21 16:58:15 GMT 2008 || Thread-49 before substitution {:basename}
+Fri Mar 21 16:58:15 GMT 2008 || Thread-49 after substitution ser
+Fri Mar 21 16:58:15 GMT 2008 |9| Thread-49 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:58:15 GMT 2008 || Thread-49 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:58:15 GMT 2008 || Thread-49 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:58:15 GMT 2008 || Thread-49 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:58:16 GMT 2008 |11| Thread-49 Executable.compilerCall(RunData) end
+Fri Mar 21 16:58:16 GMT 2008 |9| Thread-49 Executable.executionCall(RunData) begin
+Fri Mar 21 16:58:16 GMT 2008 || Thread-49 before substitution ./{:basename}
+Fri Mar 21 16:58:16 GMT 2008 || Thread-49 after substitution ./ser
+Fri Mar 21 16:58:16 GMT 2008 || Thread-49 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Fri Mar 21 16:58:26 GMT 2008 || AWT-EventQueue-0 ExecuteTimer: attempting to destroy process
+Fri Mar 21 16:58:26 GMT 2008 || Thread-49 executionCall() team program exitValue = 143
+Fri Mar 21 16:58:26 GMT 2008 |11| Thread-49 Executable.executionCall(RunData) end
+Fri Mar 21 16:58:26 GMT 2008 || Thread-49 Execution returned true
+Fri Mar 21 16:58:26 GMT 2008 |11| Thread-49 Executable.execute() end
+Fri Mar 21 16:58:26 GMT 2008 |11| Thread-49 TeamFrame.handleRun() end
+Fri Mar 21 16:58:35 GMT 2008 |9| Thread-55 TeamFrame.handleRun() begin
+Fri Mar 21 16:58:35 GMT 2008 || Thread-55 Test Run... 
+Fri Mar 21 16:58:35 GMT 2008 || Thread-55 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 16:58:35 GMT 2008 || Thread-55 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 16:58:35 GMT 2008 || Thread-55 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 16:58:37 GMT 2008 |9| Thread-55 Executable.newExecute(RunData) begin
+Fri Mar 21 16:58:37 GMT 2008 || Thread-55 before substitution {:basename}
+Fri Mar 21 16:58:37 GMT 2008 || Thread-55 after substitution ser
+Fri Mar 21 16:58:37 GMT 2008 |9| Thread-55 Executable.compilerCall(RunData) begin
+Fri Mar 21 16:58:37 GMT 2008 || Thread-55 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 16:58:37 GMT 2008 || Thread-55 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 16:58:37 GMT 2008 || Thread-55 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 16:58:38 GMT 2008 |11| Thread-55 Executable.compilerCall(RunData) end
+Fri Mar 21 16:58:38 GMT 2008 |9| Thread-55 Executable.executionCall(RunData) begin
+Fri Mar 21 16:58:38 GMT 2008 || Thread-55 before substitution ./{:basename}
+Fri Mar 21 16:58:38 GMT 2008 || Thread-55 after substitution ./ser
+Fri Mar 21 16:58:38 GMT 2008 || Thread-55 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Fri Mar 21 16:58:38 GMT 2008 || Thread-55 executionCall() team program exitValue = 0
+Fri Mar 21 16:58:38 GMT 2008 |11| Thread-55 Executable.executionCall(RunData) end
+Fri Mar 21 16:58:38 GMT 2008 || Thread-55 Execution returned true
+Fri Mar 21 16:58:39 GMT 2008 |11| Thread-55 Executable.execute() end
+Fri Mar 21 16:58:39 GMT 2008 |11| Thread-55 TeamFrame.handleRun() end
+Fri Mar 21 16:58:47 GMT 2008 |9| Thread-61 TeamFrame.handleRun() begin
+Fri Mar 21 16:58:47 GMT 2008 || Thread-61 Submit Run... 
+Fri Mar 21 16:58:47 GMT 2008 || Thread-61 Run 4 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Fri Mar 21 16:58:47 GMT 2008 |11| Thread-61 TeamFrame.handleRun() end
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(18)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(18)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:59:03 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:59:03 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(17)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 16:59:03 GMT 2008 |12| RMI TCP Connection(17)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 16:59:03 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:59:03 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:59:03 GMT 2008 || AWT-EventQueue-0 RunID 4 | X | SiteID 1 |
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:59:29 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:59:29 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:59:29 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 16:59:29 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 16:59:29 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Fri Mar 21 16:59:29 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Fri Mar 21 16:59:29 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Fri Mar 21 16:59:29 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Fri Mar 21 17:00:34 GMT 2008 |9| Thread-64 TeamFrame.handleRun() begin
+Fri Mar 21 17:00:34 GMT 2008 || Thread-64 Submit Run... 
+Fri Mar 21 17:00:34 GMT 2008 || Thread-64 Run 5 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Fri Mar 21 17:00:34 GMT 2008 |11| Thread-64 TeamFrame.handleRun() end
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(20)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(21)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:01:16 GMT 2008 |12| RMI TCP Connection(21)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:01:16 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:01:16 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:01:16 GMT 2008 || AWT-EventQueue-0 RunID 5 | X | SiteID 1 |
+Fri Mar 21 17:01:16 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:01:16 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:01:54 GMT 2008 |9| Thread-67 TeamFrame.handleRun() begin
+Fri Mar 21 17:01:54 GMT 2008 || Thread-67 Submit Run... 
+Fri Mar 21 17:01:54 GMT 2008 || Thread-67 Run 6 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Fri Mar 21 17:01:54 GMT 2008 |11| Thread-67 TeamFrame.handleRun() end
+Fri Mar 21 17:02:30 GMT 2008 |12| RMI TCP Connection(23)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:02:30 GMT 2008 |12| RMI TCP Connection(23)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:02:30 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:30 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:30 GMT 2008 |12| RMI TCP Connection(22)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:02:31 GMT 2008 |12| RMI TCP Connection(22)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:02:31 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:31 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:31 GMT 2008 || AWT-EventQueue-0 RunID 6 | X | SiteID 1 |
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:46 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:46 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:46 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:46 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:46 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:46 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:02:46 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:02:46 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Fri Mar 21 17:03:20 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Fri Mar 21 17:03:20 GMT 2008 |12| RMI TCP Connection(24)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Fri Mar 21 17:03:20 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Fri Mar 21 17:03:20 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:05:30 GMT 2008 |12| RMI TCP Connection(25)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:05:30 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:05:30 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:06:33 GMT 2008 |9| Thread-72 TeamFrame.handleRun() begin
+Fri Mar 21 17:06:33 GMT 2008 || Thread-72 Test Run... 
+Fri Mar 21 17:06:33 GMT 2008 || Thread-72 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Fri Mar 21 17:06:33 GMT 2008 || Thread-72 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Fri Mar 21 17:06:33 GMT 2008 || Thread-72 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Fri Mar 21 17:06:35 GMT 2008 |9| Thread-72 Executable.newExecute(RunData) begin
+Fri Mar 21 17:06:35 GMT 2008 || Thread-72 before substitution {:basename}
+Fri Mar 21 17:06:35 GMT 2008 || Thread-72 after substitution ser
+Fri Mar 21 17:06:35 GMT 2008 |9| Thread-72 Executable.compilerCall(RunData) begin
+Fri Mar 21 17:06:35 GMT 2008 || Thread-72 before substitution g++ -lm -o {:basename} {:mainfile}
+Fri Mar 21 17:06:35 GMT 2008 || Thread-72 after substitution g++ -lm -o ser ser.cpp
+Fri Mar 21 17:06:35 GMT 2008 || Thread-72 executing: 'g++ -lm -o ser ser.cpp'
+Fri Mar 21 17:06:36 GMT 2008 |11| Thread-72 Executable.compilerCall(RunData) end
+Fri Mar 21 17:06:36 GMT 2008 |9| Thread-72 Executable.executionCall(RunData) begin
+Fri Mar 21 17:06:36 GMT 2008 || Thread-72 before substitution ./{:basename}
+Fri Mar 21 17:06:36 GMT 2008 || Thread-72 after substitution ./ser
+Fri Mar 21 17:06:36 GMT 2008 || Thread-72 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Fri Mar 21 17:06:36 GMT 2008 || Thread-72 executionCall() team program exitValue = 0
+Fri Mar 21 17:06:36 GMT 2008 |11| Thread-72 Executable.executionCall(RunData) end
+Fri Mar 21 17:06:36 GMT 2008 || Thread-72 Execution returned true
+Fri Mar 21 17:06:37 GMT 2008 |11| Thread-72 Executable.execute() end
+Fri Mar 21 17:06:37 GMT 2008 |11| Thread-72 TeamFrame.handleRun() end
+Fri Mar 21 17:06:42 GMT 2008 |9| Thread-78 TeamFrame.handleRun() begin
+Fri Mar 21 17:06:42 GMT 2008 || Thread-78 Submit Run... 
+Fri Mar 21 17:06:42 GMT 2008 || Thread-78 Run 7 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Fri Mar 21 17:06:42 GMT 2008 |11| Thread-78 TeamFrame.handleRun() end
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Event: [5] run_completed 
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(27)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:07:21 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:07:21 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:07:21 GMT 2008 || AWT-EventQueue-0 RunID 7 | X | SiteID 1 |
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(26)-127.0.1.1 Base update() Event: [18] run_status_update 
+Fri Mar 21 17:07:21 GMT 2008 |12| RMI TCP Connection(26)-127.0.1.1 Base update() Class: pc2.RunData
+Fri Mar 21 17:07:21 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Fri Mar 21 17:07:21 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Fri Mar 21 17:11:54 GMT 2008 || AWT-EventQueue-0 La Horda - Client LOGOFF
+Sat Mar 22 19:39:36 GMT 2008 |2| main Debug level initially set to 2
+Sat Mar 22 19:39:36 GMT 2008 |2| main Console level initially set to 2
+Sat Mar 22 19:39:36 GMT 2008 |2| main Debug level set to 13
+Sat Mar 22 19:39:36 GMT 2008 |2| main Console level set to 5
+Sat Mar 22 19:39:36 GMT 2008 ||
+Sat Mar 22 19:39:36 GMT 2008 |-1| main CSUS Programming Contest Control System
+Sat Mar 22 19:39:36 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Sat Mar 22 19:39:36 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Sat Mar 22 19:39:36 GMT 2008 ||
+Sat Mar 22 19:39:36 GMT 2008 || main CSUS Programming Contest Control System Version team 8.7 20051112 05 (November 12th, 2005 8:01pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Sat Mar 22 19:39:36 GMT 2008 ||
+Sat Mar 22 19:39:36 GMT 2008 ||
+Sat Mar 22 19:39:36 GMT 2008 || main Java freeMemory   3616856 3616k
+Sat Mar 22 19:39:36 GMT 2008 || main Java totalMemory  5177344 5177k
+Sat Mar 22 19:39:36 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/pc2v8.ini
+Sat Mar 22 19:39:36 GMT 2008 || main Starting in dir: /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team
+Sat Mar 22 19:39:42 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.initialize() begin
+Sat Mar 22 19:39:43 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.initialize() end
+Sat Mar 22 19:39:43 GMT 2008 || AWT-EventQueue-0 Contacting server: localhost port 50002
+Sat Mar 22 19:39:43 GMT 2008 || AWT-EventQueue-0 pc2.team.TeamFrame using 127.0.1.1.
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 Registered for 9=global_property_updated 
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 Registered for 11=clarification_answered 
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 Registered for 5=run_completed 
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 Registered for 18=run_status_update 
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 Registered for 14=contest_started 
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 Registered for 15=contest_stopped 
+Sat Mar 22 19:39:43 GMT 2008 |12| AWT-EventQueue-0 Registered for 20=contest_reset_refresh 
+Sat Mar 22 19:39:43 GMT 2008 || AWT-EventQueue-0 Logging on as team1
+Sat Mar 22 19:39:43 GMT 2008 || AWT-EventQueue-0 team 8.7 20051112 05 November 12th, 2005 8:01pm
+Sat Mar 22 19:39:43 GMT 2008 |9| AWT-EventQueue-0 initContestSettings() begin
+Sat Mar 22 19:39:43 GMT 2008 |11| AWT-EventQueue-0 initContestSettings() end
+Sat Mar 22 19:39:43 GMT 2008 || AWT-EventQueue-0 Contest is STARTED
+Sat Mar 22 19:39:44 GMT 2008 || Thread-2 Contest has been STARTED
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Sat Mar 22 19:39:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Sat Mar 22 19:39:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Sat Mar 22 19:40:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.submitClarification() start
+Sat Mar 22 19:40:07 GMT 2008 || AWT-EventQueue-0 Submitting clar from 1:1 to server, for Ser o no ser
+Sat Mar 22 19:40:07 GMT 2008 || AWT-EventQueue-0 Clar 3 submitted for team 1:1
+Sat Mar 22 19:40:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Sat Mar 22 19:40:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Sat Mar 22 19:40:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.submitClarification() end
+Sat Mar 22 19:40:43 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Event: [11] clarification_answered 
+Sat Mar 22 19:40:43 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Class: pc2.ClarificationData
+Sat Mar 22 19:40:43 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Sat Mar 22 19:40:43 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Sat Mar 22 19:41:14 GMT 2008 |9| Thread-5 TeamFrame.handleRun() begin
+Sat Mar 22 19:41:14 GMT 2008 || Thread-5 Test Run... 
+Sat Mar 22 19:41:14 GMT 2008 || Thread-5 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Sat Mar 22 19:41:14 GMT 2008 || Thread-5 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Sat Mar 22 19:41:14 GMT 2008 || Thread-5 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Sat Mar 22 19:42:03 GMT 2008 |9| Thread-5 Executable.newExecute(RunData) begin
+Sat Mar 22 19:42:03 GMT 2008 || Thread-5 before substitution {:basename}
+Sat Mar 22 19:42:03 GMT 2008 || Thread-5 after substitution ser
+Sat Mar 22 19:42:03 GMT 2008 |9| Thread-5 Executable.compilerCall(RunData) begin
+Sat Mar 22 19:42:03 GMT 2008 || Thread-5 before substitution g++ -lm -o {:basename} {:mainfile}
+Sat Mar 22 19:42:03 GMT 2008 || Thread-5 after substitution g++ -lm -o ser ser.cpp
+Sat Mar 22 19:42:03 GMT 2008 || Thread-5 executing: 'g++ -lm -o ser ser.cpp'
+Sat Mar 22 19:42:04 GMT 2008 |11| Thread-5 Executable.compilerCall(RunData) end
+Sat Mar 22 19:42:04 GMT 2008 |9| Thread-5 Executable.executionCall(RunData) begin
+Sat Mar 22 19:42:04 GMT 2008 || Thread-5 before substitution ./{:basename}
+Sat Mar 22 19:42:04 GMT 2008 || Thread-5 after substitution ./ser
+Sat Mar 22 19:42:04 GMT 2008 || Thread-5 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Sat Mar 22 19:42:04 GMT 2008 || Thread-5 executionCall() team program exitValue = 0
+Sat Mar 22 19:42:04 GMT 2008 |11| Thread-5 Executable.executionCall(RunData) end
+Sat Mar 22 19:42:04 GMT 2008 || Thread-5 Execution returned true
+Sat Mar 22 19:42:04 GMT 2008 |11| Thread-5 Executable.execute() end
+Sat Mar 22 19:42:04 GMT 2008 |11| Thread-5 TeamFrame.handleRun() end
+Sat Mar 22 19:42:11 GMT 2008 |9| Thread-11 TeamFrame.handleRun() begin
+Sat Mar 22 19:42:11 GMT 2008 || Thread-11 Submit Run... 
+Sat Mar 22 19:42:12 GMT 2008 || Thread-11 Run 8 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Sat Mar 22 19:42:12 GMT 2008 |11| Thread-11 TeamFrame.handleRun() end
+Sat Mar 22 19:43:37 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Event: [9] global_property_updated 
+Sat Mar 22 19:43:37 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Class: pc2.Settings
+Sat Mar 22 19:43:37 GMT 2008 |9| AWT-EventQueue-0 initContestSettings() begin
+Sat Mar 22 19:43:37 GMT 2008 |11| AWT-EventQueue-0 initContestSettings() end
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:43:57 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:43:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:43:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:43:57 GMT 2008 || AWT-EventQueue-0 RunID 8 | X | SiteID 1 |
+Sat Mar 22 19:43:57 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:43:57 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(7)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:46:30 GMT 2008 |12| RMI TCP Connection(8)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:46:30 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:30 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Sat Mar 22 19:46:39 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Sat Mar 22 19:46:39 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:46:41 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:47:16 GMT 2008 |12| RMI TCP Connection(9)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:47:16 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:47:16 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:47:22 GMT 2008 |9| Thread-17 TeamFrame.handleRun() begin
+Sat Mar 22 19:47:22 GMT 2008 || Thread-17 Submit Run... 
+Sat Mar 22 19:47:22 GMT 2008 || Thread-17 Run 9 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Sat Mar 22 19:47:22 GMT 2008 |11| Thread-17 TeamFrame.handleRun() end
+Sat Mar 22 19:48:00 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:48:00 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:00 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:48:00 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:48:00 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:48:00 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:14 GMT 2008 |9| Thread-19 TeamFrame.handleRun() begin
+Sat Mar 22 19:48:14 GMT 2008 || Thread-19 Submit Run... 
+Sat Mar 22 19:48:15 GMT 2008 || Thread-19 Run 10 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Sat Mar 22 19:48:15 GMT 2008 |11| Thread-19 TeamFrame.handleRun() end
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Event: [18] run_status_update 
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:48:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Event: [5] run_completed 
+Sat Mar 22 19:48:23 GMT 2008 |12| RMI TCP Connection(10)-127.0.1.1 Base update() Class: pc2.RunData
+Sat Mar 22 19:48:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Sat Mar 22 19:48:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Sat Mar 22 19:48:23 GMT 2008 || AWT-EventQueue-0 RunID 10 | X | SiteID 1 |
+Sat Mar 22 19:48:52 GMT 2008 || AWT-EventQueue-0 La Horda - Client LOGOFF
+Tue Apr 22 02:32:57 GMT 2008 |2| main Debug level initially set to 2
+Tue Apr 22 02:32:58 GMT 2008 |2| main Console level initially set to 2
+Tue Apr 22 02:32:58 GMT 2008 |2| main Debug level set to 13
+Tue Apr 22 02:32:58 GMT 2008 |2| main Console level set to 5
+Tue Apr 22 02:32:58 GMT 2008 ||
+Tue Apr 22 02:32:58 GMT 2008 |-1| main CSUS Programming Contest Control System
+Tue Apr 22 02:32:58 GMT 2008 || main Version 8.7 20071117 00 (November 17th, 2007 10:39am) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:32:58 GMT 2008 |-1| main mailto:pc2@ecs.csus.edu
+Tue Apr 22 02:32:58 GMT 2008 ||
+Tue Apr 22 02:32:58 GMT 2008 || main CSUS Programming Contest Control System Version team 8.7 20051112 05 (November 12th, 2005 8:01pm) Java ver 1.7.0 OS: Linux 2.6.22-14-generic (i386) 
+Tue Apr 22 02:32:58 GMT 2008 ||
+Tue Apr 22 02:32:58 GMT 2008 ||
+Tue Apr 22 02:32:58 GMT 2008 || main Java freeMemory   3640224 3640k
+Tue Apr 22 02:32:58 GMT 2008 || main Java totalMemory  5177344 5177k
+Tue Apr 22 02:32:58 GMT 2008 || main Using Configuration: file:/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/pc2v8.ini
+Tue Apr 22 02:32:58 GMT 2008 || main Starting in dir: /media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team
+Tue Apr 22 02:33:03 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.initialize() begin
+Tue Apr 22 02:33:03 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.initialize() end
+Tue Apr 22 02:33:03 GMT 2008 || AWT-EventQueue-0 Contacting server: localhost port 50002
+Tue Apr 22 02:33:03 GMT 2008 || AWT-EventQueue-0 pc2.team.TeamFrame using 127.0.1.1.
+Tue Apr 22 02:33:03 GMT 2008 |12| AWT-EventQueue-0 Registered for 9=global_property_updated 
+Tue Apr 22 02:33:03 GMT 2008 |12| AWT-EventQueue-0 Registered for 11=clarification_answered 
+Tue Apr 22 02:33:03 GMT 2008 |12| AWT-EventQueue-0 Registered for 5=run_completed 
+Tue Apr 22 02:33:03 GMT 2008 |12| AWT-EventQueue-0 Registered for 18=run_status_update 
+Tue Apr 22 02:33:03 GMT 2008 |12| AWT-EventQueue-0 Registered for 14=contest_started 
+Tue Apr 22 02:33:03 GMT 2008 |12| AWT-EventQueue-0 Registered for 15=contest_stopped 
+Tue Apr 22 02:33:03 GMT 2008 |12| AWT-EventQueue-0 Registered for 20=contest_reset_refresh 
+Tue Apr 22 02:33:03 GMT 2008 || AWT-EventQueue-0 Logging on as team1
+Tue Apr 22 02:33:03 GMT 2008 || AWT-EventQueue-0 team 8.7 20051112 05 November 12th, 2005 8:01pm
+Tue Apr 22 02:33:04 GMT 2008 |9| AWT-EventQueue-0 initContestSettings() begin
+Tue Apr 22 02:33:04 GMT 2008 |11| AWT-EventQueue-0 initContestSettings() end
+Tue Apr 22 02:33:04 GMT 2008 || AWT-EventQueue-0 Contest is STOPPED
+Tue Apr 22 02:33:04 GMT 2008 || Thread-2 Contest has been STOPPED
+Tue Apr 22 02:33:47 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Event: [14] contest_started 
+Tue Apr 22 02:33:47 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Class: <NULL>
+Tue Apr 22 02:33:47 GMT 2008 || Thread-3 Contest has been STARTED
+Tue Apr 22 02:33:48 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Event: [15] contest_stopped 
+Tue Apr 22 02:33:48 GMT 2008 |12| RMI TCP Connection(2)-127.0.1.1 Base update() Class: <NULL>
+Tue Apr 22 02:33:48 GMT 2008 || Thread-5 Contest has been STOPPED
+Tue Apr 22 02:34:25 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Event: [14] contest_started 
+Tue Apr 22 02:34:25 GMT 2008 |12| RMI TCP Connection(3)-127.0.1.1 Base update() Class: <NULL>
+Tue Apr 22 02:34:25 GMT 2008 || Thread-6 Contest has been STARTED
+Tue Apr 22 02:35:13 GMT 2008 |9| Thread-8 TeamFrame.handleRun() begin
+Tue Apr 22 02:35:13 GMT 2008 |11| Thread-8 TeamFrame.handleRun() end
+Tue Apr 22 02:35:25 GMT 2008 |9| Thread-9 TeamFrame.handleRun() begin
+Tue Apr 22 02:35:25 GMT 2008 || Thread-9 Test Run... 
+Tue Apr 22 02:35:25 GMT 2008 || Thread-9 tmpFile=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp,mainFile.length()=7
+Tue Apr 22 02:35:25 GMT 2008 || Thread-9 main.getFile().getPath()/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/ser.cpp
+Tue Apr 22 02:35:25 GMT 2008 || Thread-9 runPath=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/,dataFileName=/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/problemas resueltos/ser o no ser/in.txt,
+Tue Apr 22 02:35:56 GMT 2008 |9| Thread-9 Executable.newExecute(RunData) begin
+Tue Apr 22 02:35:56 GMT 2008 || Thread-9 before substitution {:basename}
+Tue Apr 22 02:35:56 GMT 2008 || Thread-9 after substitution ser
+Tue Apr 22 02:35:56 GMT 2008 |9| Thread-9 Executable.compilerCall(RunData) begin
+Tue Apr 22 02:35:56 GMT 2008 || Thread-9 before substitution g++ -lm -o {:basename} {:mainfile}
+Tue Apr 22 02:35:56 GMT 2008 || Thread-9 after substitution g++ -lm -o ser ser.cpp
+Tue Apr 22 02:35:56 GMT 2008 || Thread-9 executing: 'g++ -lm -o ser ser.cpp'
+Tue Apr 22 02:35:58 GMT 2008 |11| Thread-9 Executable.compilerCall(RunData) end
+Tue Apr 22 02:35:58 GMT 2008 |9| Thread-9 Executable.executionCall(RunData) begin
+Tue Apr 22 02:35:58 GMT 2008 || Thread-9 before substitution ./{:basename}
+Tue Apr 22 02:35:58 GMT 2008 || Thread-9 after substitution ./ser
+Tue Apr 22 02:35:58 GMT 2008 || Thread-9 executing: '/media/almacen/Wack-a-Mole/Programming/ACM/PC^2/pc2team/execute/./ser'
+Tue Apr 22 02:35:58 GMT 2008 || Thread-9 executionCall() team program exitValue = 0
+Tue Apr 22 02:35:58 GMT 2008 |11| Thread-9 Executable.executionCall(RunData) end
+Tue Apr 22 02:35:58 GMT 2008 || Thread-9 Execution returned true
+Tue Apr 22 02:35:58 GMT 2008 |11| Thread-9 Executable.execute() end
+Tue Apr 22 02:35:58 GMT 2008 |11| Thread-9 TeamFrame.handleRun() end
+Tue Apr 22 02:36:03 GMT 2008 |9| Thread-15 TeamFrame.handleRun() begin
+Tue Apr 22 02:36:03 GMT 2008 || Thread-15 Submit Run... 
+Tue Apr 22 02:36:03 GMT 2008 || Thread-15 Run 11 submitted for TEAM1 | PROB Ser o no ser | LANG C++
+Tue Apr 22 02:36:03 GMT 2008 |11| Thread-15 TeamFrame.handleRun() end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Tue Apr 22 02:36:07 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateClarList(clar) begin
+Tue Apr 22 02:36:07 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateClarList(clar) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:09 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Event: [18] run_status_update 
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(5)-127.0.1.1 Base update() Class: pc2.RunData
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Event: [5] run_completed 
+Tue Apr 22 02:36:19 GMT 2008 |12| RMI TCP Connection(4)-127.0.1.1 Base update() Class: pc2.RunData
+Tue Apr 22 02:36:19 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:19 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:36:19 GMT 2008 || AWT-EventQueue-0 RunID 11 | X | SiteID 1 |
+Tue Apr 22 02:36:19 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:36:19 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGrid() begin
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.populateRunGrid(Vector) begin
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |9| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunInfoAndFiles) begin
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGridRow(RunDisplayData) end
+Tue Apr 22 02:37:23 GMT 2008 |11| AWT-EventQueue-0 TeamFrame.updateRunGrid() end
+Tue Apr 22 02:37:25 GMT 2008 || AWT-EventQueue-0 La Horda - Client LOGOFF

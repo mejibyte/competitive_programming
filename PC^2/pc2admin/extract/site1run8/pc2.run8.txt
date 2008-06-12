@@ -1,0 +1,16 @@
+
+
+Contest on Sat Mar 22 19:37:14 GMT 2008
+
+Site  : 1
+Run   : 8
+
+Team  : 1 
+Prob  : 1 Ser o no ser
+Lang  : 1 null
+Elaps : 45
+At    : Sat Mar 22 19:42:11 GMT 2008
+
+Main:  ser.cpp
+
+done at Sat Mar 22 19:47:09 GMT 2008

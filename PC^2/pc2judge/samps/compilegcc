@@ -1,0 +1,12 @@
+#!/bin/csh
+
+set e=
+set mainfile=$1
+set basename=`echo $mainfile | sed 's/\.[^\.]*$//'`
+set ext=`echo $mainfile | awk -F. '{print $NF}'`
+
+if ("x$ext" == "xcpp") then
+  $e g++ -lm -o $basename $mainfile
+else 
+  $e gcc -lm -o $basename $mainfile
+endif

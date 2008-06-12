@@ -1,0 +1,163 @@
+#!/usr/bin/perl
+# 
+# File:    rotate_summary
+# Purpose: to create rotating html web pages based on summary.html
+# Author:  pc2@ecs.csus.edu
+# Revised: Sun May  1 13:09:03 PDT 2005
+# 
+# $Id: rotate_summary,v 1.2 2006/04/12 15:35:59 boudreat Exp $
+# 
+
+#
+# Input
+#
+# summary.html in current directory.
+#
+# Ouptut 
+#
+# Creates a number of new summary html files in current directory
+# named in the form of summary#.html where summary1.html is the first
+# file created.
+#
+# Directions:
+# 
+# CUSTOMIZE HERE
+$perpage=14;  # number of teams per page
+
+# set this to 1, run script once at cutoff time
+$nomoreupdates=0;
+$cutofftime="1 hour";
+
+# REFRESH value
+$refresh=15;
+
+# the number of attempts we try to read the html file
+$maxretry=4;
+
+# set to "" not print a banner
+$banner="../banner.png";
+# END CUSTOMIZATION
+
+
+$f="summary.html";
+$done=0;
+$rowcount=0;
+for($retry=0;(($retry < $maxretry ) && $done == 0); $retry++) {
+  open(IN,"$f") || die("Unable to read $f: $!\n");
+  while(<IN>) {
+    chomp;
+    if (/\<tr\>/) {
+      if ($firstrow eq "") {
+	s/tr/tr BGCOLOR="#EEEEFF"/ if $rowcount % 2 == 0;
+        $firstrow=$_;
+      } elsif (/\<td\>\<\/td\>/i) { # color line
+	s/tr/tr BGCOLOR="#EEEEFF"/ if $rowcount % 2 == 0;
+        $firstrow .= $_;
+      } elsif (/\<td\>Submitted/i) {
+        $summary=$_;
+	$summary =~ s@tr@tr><td>&nbsp;</td></tr><tr BGCOLOR="#EEEEFF"@;
+	$summary =~ s#<td>(\d+/(--|\d+)(/\d+)?)</td>#<td align=center>$1</td>#g;
+      } elsif (/\<td cellwid?th/i) { # v8.7-1115 has this misspelled
+	next;  # blank line before summary
+      } elsif (/\<tr\>/) {
+	$rowcount++;
+	s/tr/tr BGCOLOR="#EEEEFF"/ if $rowcount % 2 == 0;
+	s#<td>(\d+/(--|\d+))</td>#<td align=center>$1</td>#g;
+	s#<td>(\d+)</td><td>(\d+)</td>#<td align="center">$1</td><td align="right">$2</td>#g;
+	s#<td>(\c+)</td>#<td align=right>$1&nbsp;&nbsp;</td>#g;
+        push(@rows,$_);
+      }
+    } elsif (/^Created by/i) {
+      $created="Created by California State University, Sacramento PC<sup>2</sup><br>\nhttp://www.ecs.csus.edu/pc2/<br>\n";
+      $_ = <IN>; # url line
+      $created.= <IN>; # Last Updated
+      $created.= <IN>; # Date
+    }
+    $done=1 if (/\<\/html\>/);
+  } # while <IN>
+  close(IN);
+  sleep 1 if ($done == 0);
+}
+if ($done == 0) {
+  die("Unable to read a complete $f\n");
+}
+
+@nextpage=&gen_page_seq($#rows, $perpage);
+# page sequence already contains padding 1st value
+$maxpage=$#nextpage;
+
+foreach($page=1;$page <= $maxpage; $page++) {
+  &print_page($page,$nextpage[$page],($page-1)*$perpage+1,$page*$perpage);
+} 
+
+sub gen_page_seq {
+  my($rowcount, $rows_per_page)=@_;
+  my(@result)=(-1);  # 1st value is ignored
+  my($pages)=int($rowcount/$rows_per_page);
+  if ($pages * $rows_per_page != $rowcount) {
+     # we have a non-full page
+     $pages++;
+  }
+  # push a dummy value, so we can do $page[thispage] to get the next page
+  push(@pages,-1);
+  foreach($p=2; $p <= $pages ; $p++) {
+     push(@pages, $p);
+  }
+  push(@pages,1); # and back to the 1st page
+  return @pages;
+}
+
+sub print_page {
+  my($thispage,$nextpage,$start,$end)=@_;
+#  warn("print_page($thispage,$nextpage,$start,$end)\n");
+
+  open(OUT,">summary$thispage.html")
+       || warn("Unable to write summary$thispage.html");
+  $nextfile="summary$nextpage.html";          
+  print OUT <<EOM;
+<html>
+<!-- next page is summary$nextpage.html -->
+<META HTTP-EQUIV="REFRESH" CONTENT="$refresh; URL=$nextfile">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="no-cache">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<head>
+<title>
+$start thru $end
+</title>
+</head>
+<body>
+<center>
+EOM
+if ($banner ne "" && -f $banner) {
+  print OUT <<EOM;
+<IMG SRC="$banner" align="center">
+EOM
+}
+print OUT <<EOM;
+<table border=0 cellpadding=2>
+$firstrow
+EOM
+  $end=$#rows+1 if $end > ($#rows+1);
+  foreach($i=$start ; $i <= $end; $i++) {
+    print OUT $rows[$i-1]."\n";
+  }
+  print OUT <<EOM;
+$summary
+</table>
+</center>
+<font size=-1 face="verdana, arial, helvetica">
+<p align=right>Page $page of $maxpage</p>
+EOM
+  if ($nomoreupdates==1) {
+#    print OUT "<p align=center><font size=+2><b>No More Updates</b></font></p>";
+    print OUT "<p align=center><font size=+1><b>Standings with $cutofftime left. There will be no more scoreboard updates.</b></font></p>";
+  } else {
+    print OUT "<br><br>";
+  }
+  print OUT <<EOM;
+$created</font>
+</body>
+</html>
+EOM
+
+}
