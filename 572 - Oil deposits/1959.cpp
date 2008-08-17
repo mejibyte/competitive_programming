@@ -1,6 +1,10 @@
 /*
+  Problem:
   572 - Oil deposits (UVa Online Judge)
   1959 - Oil deposits (TJU Online Judge)
+
+  Author: Andrés Mejía-Posada (http://github.com/andmej/acm)
+  Algorithm: Depth-first search
  */
 #include <iostream>
 

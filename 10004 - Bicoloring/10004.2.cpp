@@ -1,10 +1,8 @@
 /*
-  Problem: 10004 - Bicoloring
-  UVa online judge
+  Problem: 10004 - Bicoloring (UVa online judge)
 
-  Andrés Mejía-Posada
+  Author: Andrés Mejía-Posada (http://github.com/andmej/acm)
   Algorithm: Depth-first search
-
  */
 #include <iostream>
 #include <vector>

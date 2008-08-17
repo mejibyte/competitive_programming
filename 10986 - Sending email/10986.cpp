@@ -3,7 +3,7 @@ Problem: 10986 - Sending email (UVa Online Judge)
 Andrés Mejía-Posada (http://github.com/andmej/acm)
 
 Verdict: Accepted
-Algorithm: Dijkstra
+Algorithm: Dijkstra's
 
 */
 #include <iostream>

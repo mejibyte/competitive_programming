@@ -1,3 +1,9 @@
+/*
+  Problem: 610 - Street directions (UVa online judge)
+
+  Author: Andrés Mejía-Posada (http://github.com/andmej/acm)
+  Algorithm: Depth-first search
+ */
 #include <iostream>
 
 using namespace std;
@@ -5,17 +11,16 @@ using namespace std;
 const int MAXN = 1000;
 
 bool g[MAXN][MAXN], visited[MAXN];
-int n, p[MAXN];
+int n, p[MAXN]; //p[i] = nodo predecesor que me llevó al nodo i.
 
 void dfs(int u){
   visited[u] = true;
   for (int v=0; v<n; ++v){
-    //printf("g[%d][%d] = %d\n", u, v, g[u][v]);
     if (g[u][v]){ //hay arista
       if (visited[v] && v != p[u]){ //encontre un ciclo
         g[v][u] = false;
         int previous = u;
-        while(previous != v){
+        while(previous != v){ //Volver de una sola vía todas las aristas del ciclo
           g[previous][p[previous]] = false;
           previous = p[previous];
         }
@@ -44,14 +49,6 @@ int main(){
       --u, --v;
       g[u][v] = g[v][u] = true;
     }
-
-    /*for(int i=0; i<n; ++i){
-      for (int j=0; j<n; ++j){
-        printf("%d ",g[i][j]);
-      }
-      printf("\n");
-    }
-    printf("\n");*/
 
     dfs(0);
     printf("%d\n\n", C++);
