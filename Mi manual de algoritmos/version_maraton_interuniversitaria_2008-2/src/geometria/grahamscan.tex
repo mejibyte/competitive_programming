@@ -1,0 +1,113 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+
+{\ttfamily \raggedright {
+\noindent
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$iostream$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$vector$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$algorithm$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$iterator$>$}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$cmath$>$}} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{using}}\ \textbf{\textcolor{Blue}{namespace}}\ std\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{struct}}\ point\textcolor{Red}{\{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{,}y\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{point}}\textcolor{BrickRed}{()}\ \textcolor{Red}{\{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{point}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ X\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ Y\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{:}\ \textbf{\textcolor{Black}{x}}\textcolor{BrickRed}{(}X\textcolor{BrickRed}{),}\ \textbf{\textcolor{Black}{y}}\textcolor{BrickRed}{(}Y\textcolor{BrickRed}{)}\ \textcolor{Red}{\{\}} \\
+\mbox{}\textcolor{Red}{\}}\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}point\ pivot\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}ostream\textcolor{BrickRed}{\&}\ \textbf{\textcolor{Blue}{operator}}\textcolor{BrickRed}{$<$$<$}\ \textcolor{BrickRed}{(}ostream\textcolor{BrickRed}{\&}\ out\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{const}}\ point\textcolor{BrickRed}{\&}\ c\textcolor{BrickRed}{)} \\
+\mbox{}\textcolor{Red}{\{} \\
+\mbox{}\ \ out\ \textcolor{BrickRed}{$<$$<$}\ \texttt{\textcolor{Red}{"{}("{}}}\ \textcolor{BrickRed}{$<$$<$}\ c\textcolor{BrickRed}{.}x\ \textcolor{BrickRed}{$<$$<$}\ \texttt{\textcolor{Red}{"{},"{}}}\ \textcolor{BrickRed}{$<$$<$}\ c\textcolor{BrickRed}{.}y\ \textcolor{BrickRed}{$<$$<$}\ \texttt{\textcolor{Red}{"{})"{}}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ out\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{//P\ es\ un\ polígono\ ordenado\ anticlockwise.}} \\
+\mbox{}\textit{\textcolor{Brown}{//Si\ es\ clockwise,\ retorna\ el\ area\ negativa.}} \\
+\mbox{}\textit{\textcolor{Brown}{//Si\ no\ esta\ ordenado\ retorna\ pura\ mierda}} \\
+\mbox{}\textcolor{ForestGreen}{double}\ \textbf{\textcolor{Black}{area}}\textcolor{BrickRed}{(}\textbf{\textcolor{Blue}{const}}\ vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ \textcolor{BrickRed}{\&}p\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{double}\ r\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0.0}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{();}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ j\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}i\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{\%}\ p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ r\ \textcolor{BrickRed}{+=}\ p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{].}x\textcolor{BrickRed}{*}p\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}y\ \textcolor{BrickRed}{-}\ p\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}x\textcolor{BrickRed}{*}p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{].}y\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ r\textcolor{BrickRed}{/}\textcolor{Purple}{2.0}\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{//retorna\ si\ c\ esta\ a\ la\ izquierda\ de\ el\ segmento\ AB}} \\
+\mbox{}\textbf{\textcolor{Blue}{inline}}\ \textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{cross}}\textcolor{BrickRed}{(}\textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}a\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}b\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}c\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ \textcolor{BrickRed}{(}b\textcolor{BrickRed}{.}x\textcolor{BrickRed}{-}a\textcolor{BrickRed}{.}x\textcolor{BrickRed}{)*(}c\textcolor{BrickRed}{.}y\textcolor{BrickRed}{-}a\textcolor{BrickRed}{.}y\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{-}\ \textcolor{BrickRed}{(}c\textcolor{BrickRed}{.}x\textcolor{BrickRed}{-}a\textcolor{BrickRed}{.}x\textcolor{BrickRed}{)*(}b\textcolor{BrickRed}{.}y\textcolor{BrickRed}{-}a\textcolor{BrickRed}{.}y\textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{//Self\ $<$\ that\ si\ esta\ a\ la\ derecha\ del\ segmento\ Pivot-That}} \\
+\mbox{}\textcolor{ForestGreen}{bool}\ \textbf{\textcolor{Black}{angleCmp}}\textcolor{BrickRed}{(}\textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}self\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}that\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\textcolor{BrickRed}{(}\ \textbf{\textcolor{Black}{cross}}\textcolor{BrickRed}{(}pivot\textcolor{BrickRed}{,}\ that\textcolor{BrickRed}{,}\ self\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$<$}\ \textcolor{Purple}{0}\ \textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{inline}}\ \textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{distsqr}}\textcolor{BrickRed}{(}\textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}a\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{const}}\ point\ \textcolor{BrickRed}{\&}b\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ \textcolor{BrickRed}{(}a\textcolor{BrickRed}{.}x\ \textcolor{BrickRed}{-}\ b\textcolor{BrickRed}{.}x\textcolor{BrickRed}{)*(}a\textcolor{BrickRed}{.}x\ \textcolor{BrickRed}{-}\ b\textcolor{BrickRed}{.}x\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{+}\ \textcolor{BrickRed}{(}a\textcolor{BrickRed}{.}y\ \textcolor{BrickRed}{-}\ b\textcolor{BrickRed}{.}y\textcolor{BrickRed}{)*(}a\textcolor{BrickRed}{.}y\ \textcolor{BrickRed}{-}\ b\textcolor{BrickRed}{.}y\textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{//vector\ p\ tiene\ los\ puntos\ ordenados\ anticlockwise}} \\
+\mbox{}vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ \textbf{\textcolor{Black}{graham}}\textcolor{BrickRed}{(}vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ p\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ pivot\ \textcolor{BrickRed}{=}\ p\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{sort}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{begin}}\textcolor{BrickRed}{(),}\ p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{end}}\textcolor{BrickRed}{(),}\ angleCmp\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{//Ordenar\ por\ ángulo\ y\ eliminar\ repetidos.}} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{//Si\ varios\ puntos\ tienen\ el\ mismo\ angulo\ se\ borran\ todos\ excepto\ el\ que\ esté\ más\ lejos}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{1}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{()-}\textcolor{Purple}{1}\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ \ \ \  \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}\textbf{\textcolor{Black}{cross}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{],}\ p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{],}\ p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{])}\ \textcolor{BrickRed}{==}\ \textcolor{Purple}{0}\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ \textit{\textcolor{Brown}{//Si\ son\ colineales...}} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}\textbf{\textcolor{Black}{distsqr}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{],}\ p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{])}\ \textcolor{BrickRed}{$<$}\ \textbf{\textcolor{Black}{distsqr}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{],}\ p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{]))}\textcolor{Red}{\{}\ \textit{\textcolor{Brown}{//Borrar\ el\ mas\ cercano}} \\
+\mbox{}\ \ \ \ \ \ \ \ p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{erase}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{begin}}\textcolor{BrickRed}{()}\ \textcolor{BrickRed}{+}\ i\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{erase}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{begin}}\textcolor{BrickRed}{()}\ \textcolor{BrickRed}{+}\ i\ \textcolor{BrickRed}{+}\ \textcolor{Purple}{1}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \ \ i\textcolor{BrickRed}{-\/-;} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \  \\
+\mbox{}\ \ vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ \textbf{\textcolor{Black}{chull}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{begin}}\textcolor{BrickRed}{(),}\ p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{begin}}\textcolor{BrickRed}{()+}\textcolor{Purple}{3}\textcolor{BrickRed}{);} \\
+\mbox{} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{//Ahora\ sí!!!}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{3}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{();}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(}\ chull\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{()}\ \textcolor{BrickRed}{$>$=}\ \textcolor{Purple}{2}\ \textcolor{BrickRed}{\&\&}\ \textbf{\textcolor{Black}{cross}}\textcolor{BrickRed}{(}chull\textcolor{BrickRed}{[}chull\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{()-}\textcolor{Purple}{2}\textcolor{BrickRed}{],}\ chull\textcolor{BrickRed}{[}chull\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{()-}\textcolor{Purple}{1}\textcolor{BrickRed}{],}\ p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{])}\ \textcolor{BrickRed}{$<$}\ \textcolor{Purple}{0}\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ chull\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{erase}}\textcolor{BrickRed}{(}chull\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{end}}\textcolor{BrickRed}{()}\ \textcolor{BrickRed}{-}\ \textcolor{Purple}{1}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ chull\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{push$\_$back}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{[}i\textcolor{BrickRed}{]);} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ chull\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{main}}\textcolor{BrickRed}{()}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ n\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ tileNo\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{1}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(}cin\ \textcolor{BrickRed}{$>$$>$}\ n\ \textcolor{BrickRed}{\&\&}\ n\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ vector\textcolor{BrickRed}{$<$}point\textcolor{BrickRed}{$>$}\ p\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ point\ \textbf{\textcolor{Black}{min}}\textcolor{BrickRed}{(}\textcolor{Purple}{10000}\textcolor{BrickRed}{,}\ \textcolor{Purple}{10000}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ minPos\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}n\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{,}\ y\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ cin\ \textcolor{BrickRed}{$>$$>$}\ x\ \textcolor{BrickRed}{$>$$>$}\ y\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ p\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{push$\_$back}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{point}}\textcolor{BrickRed}{(}x\textcolor{BrickRed}{,}y\textcolor{BrickRed}{));}\ \ \ \ \ \  \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}y\ \textcolor{BrickRed}{$<$}\ min\textcolor{BrickRed}{.}y\ \textcolor{BrickRed}{$|$$|$}\ \textcolor{BrickRed}{(}y\ \textcolor{BrickRed}{==}\ min\textcolor{BrickRed}{.}y\ \textcolor{BrickRed}{\&\&}\ x\ \textcolor{BrickRed}{$<$}\ min\textcolor{BrickRed}{.}x\ \textcolor{BrickRed}{))}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ min\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{point}}\textcolor{BrickRed}{(}x\textcolor{BrickRed}{,}y\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ minPos\ \textcolor{BrickRed}{=}\ i\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{double}\ tileArea\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{fabs}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{area}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{));} \\
+\mbox{} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//Destruye\ el\ orden\ cw$|$ccw\ poligono,\ pero\ hay\ que\ hacerlo\ por\ que\ Graham\ necesita\ el\ pivote\ en\ p[0]}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{swap}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{],}\ p\textcolor{BrickRed}{[}minPos\textcolor{BrickRed}{]);} \\
+\mbox{}\ \ \ \ pivot\ \textcolor{BrickRed}{=}\ p\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{double}\ chullArea\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{fabs}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{area}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{graham}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{)));} \\
+\mbox{}\ \ \ \  \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{printf}}\textcolor{BrickRed}{(}\texttt{\textcolor{Red}{"{}Tile\ \#\%d}}\texttt{\textcolor{CarnationPink}{\textbackslash{}n}}\texttt{\textcolor{Red}{"{}}}\textcolor{BrickRed}{,}\ tileNo\textcolor{BrickRed}{++);} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{printf}}\textcolor{BrickRed}{(}\texttt{\textcolor{Red}{"{}Wasted\ Space\ =\ \%.2f\ }}\texttt{\textcolor{CarnationPink}{\textbackslash{}\%\textbackslash{}n\textbackslash{}n}}\texttt{\textcolor{Red}{"{}}}\textcolor{BrickRed}{,}\ \ \textcolor{BrickRed}{(}chullArea\ \textcolor{BrickRed}{-}\ tileArea\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{*}\ \textcolor{Purple}{100.0}\ \textcolor{BrickRed}{/}\ chullArea\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \  \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}} \\
+
+} \normalfont\normalsize
