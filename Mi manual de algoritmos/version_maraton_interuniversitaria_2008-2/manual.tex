@@ -74,7 +74,7 @@ El peso de todas las aristas debe ser no negativo.
 
 \input{./src/grafos/prim}%.tex
 
-\subsection{Minimum spanning tree: Algoritmo de Kruskal}
+\subsection{Minimum spanning tree: Algoritmo de Kruskal + Union-Find}
 \input{./src/grafos/kruskal}%.tex
 
 \subsection{Algoritmo de Floyd}
@@ -82,6 +82,12 @@ El peso de todas las aristas debe ser no negativo.
 
 \subsection{Puntos de articulación}
 \input{./src/grafos/puntos_articulacion}%.tex
+
+\subsection{Máximo flujo: Método de Ford-Fulkerson, algoritmo de Edmonds-Karp}
+El algoritmo de Edmonds-Karp es una modificación al método de Ford-Fulkerson. Este último
+utiliza DFS para hallar un camino de aumentación, pero la sugerencia de Edmonds-Karp
+es utilizar BFS que lo hace más eficiente en algunos grafos.
+\input{./src/grafos/ford_fulkerson}%.tex
 
 \section{Programación dinámica}
 \subsection{Longest common subsequence}
@@ -109,6 +115,9 @@ Donde $ M $ es el área del polígono. \\
 Otra posible fórmula equivalente:
 
 $ \displaystyle\bar{C}_{x} = \frac{1}{6A} \sum_{i=0}^{n-1} (x_{i} + x_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $
+
+\medskip
+
 $ \displaystyle\bar{C}_{y} = \frac{1}{6A} \sum_{i=0}^{n-1} (y_{i} + y_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $
 
 

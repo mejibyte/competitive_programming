@@ -16,33 +16,16 @@ struct edge{
   }
 };
 
-int p[10001];
-int rank[10001];
 
-void make_set(int x){
-  p[x] = x;
-  rank[x] = 0;
-}
 
-void link(int x, int y){
-  if (rank[x] > rank[y]){
-    p[y] = x;
-  }else{
-    p[x] = y;
-    if (rank[x] == rank[y]) rank[y]++;
-  }
-}
+/* Union find */
+int p[10001], rank[10001];
+void make_set(int x){ p[x] = x, rank[x] = 0; }
+void link(int x, int y){ rank[x] > rank[y] ? p[y] = x : p[x] = y, rank[x] == rank[y] ? rank[y]++: 0; }
+int find_set(int x){ return x != p[x] ? p[x] = find_set(p[x]) : p[x]; }
+void merge(int x, int y){ link(find_set(x), find_set(y)); }
+/* End union find */
 
-int find_set(int x){
-  if (x != p[x]){
-    p[x] = find_set(p[x]);
-  }
-  return p[x];
-}
-
-void merge(int x, int y){
-  link(find_set(x), find_set(y));
-}
 
 int main(){
   int c;

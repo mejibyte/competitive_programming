@@ -20,33 +20,16 @@
 \mbox{}\ \ \textcolor{Red}{\}} \\
 \mbox{}\textcolor{Red}{\}}\textcolor{BrickRed}{;} \\
 \mbox{} \\
-\mbox{}\textcolor{ForestGreen}{int}\ p\textcolor{BrickRed}{[}\textcolor{Purple}{10001}\textcolor{BrickRed}{];} \\
-\mbox{}\textcolor{ForestGreen}{int}\ rank\textcolor{BrickRed}{[}\textcolor{Purple}{10001}\textcolor{BrickRed}{];} \\
 \mbox{} \\
-\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{make$\_$set}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ x\textcolor{BrickRed}{;} \\
-\mbox{}\ \ rank\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
-\mbox{}\textcolor{Red}{\}} \\
 \mbox{} \\
-\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{link}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ y\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}rank\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{$>$}\ rank\textcolor{BrickRed}{[}y\textcolor{BrickRed}{])}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ p\textcolor{BrickRed}{[}y\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ x\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ y\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}rank\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{==}\ rank\textcolor{BrickRed}{[}y\textcolor{BrickRed}{])}\ rank\textcolor{BrickRed}{[}y\textcolor{BrickRed}{]++;} \\
-\mbox{}\ \ \textcolor{Red}{\}} \\
-\mbox{}\textcolor{Red}{\}} \\
+\mbox{}\textit{\textcolor{Brown}{/*\ Union\ find\ */}} \\
+\mbox{}\textcolor{ForestGreen}{int}\ p\textcolor{BrickRed}{[}\textcolor{Purple}{10001}\textcolor{BrickRed}{],}\ rank\textcolor{BrickRed}{[}\textcolor{Purple}{10001}\textcolor{BrickRed}{];} \\
+\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{make$\_$set}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ x\textcolor{BrickRed}{,}\ rank\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;}\ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{link}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ y\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ rank\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{$>$}\ rank\textcolor{BrickRed}{[}y\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{?}\ p\textcolor{BrickRed}{[}y\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ x\ \textcolor{BrickRed}{:}\ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ y\textcolor{BrickRed}{,}\ rank\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{==}\ rank\textcolor{BrickRed}{[}y\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{?}\ rank\textcolor{BrickRed}{[}y\textcolor{BrickRed}{]++:}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;}\ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ \textbf{\textcolor{Blue}{return}}\ x\ \textcolor{BrickRed}{!=}\ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{?}\ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{])}\ \textcolor{BrickRed}{:}\ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{];}\ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{merge}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ y\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ \textbf{\textcolor{Black}{link}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}x\textcolor{BrickRed}{),}\ \textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}y\textcolor{BrickRed}{));}\ \textcolor{Red}{\}} \\
+\mbox{}\textit{\textcolor{Brown}{/*\ End\ union\ find\ */}} \\
 \mbox{} \\
-\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}x\ \textcolor{BrickRed}{!=}\ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{])}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{]);} \\
-\mbox{}\ \ \textcolor{Red}{\}} \\
-\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ p\textcolor{BrickRed}{[}x\textcolor{BrickRed}{];} \\
-\mbox{}\textcolor{Red}{\}} \\
-\mbox{} \\
-\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{merge}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ x\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ y\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \textbf{\textcolor{Black}{link}}\textcolor{BrickRed}{(}\textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}x\textcolor{BrickRed}{),}\ \textbf{\textcolor{Black}{find$\_$set}}\textcolor{BrickRed}{(}y\textcolor{BrickRed}{));} \\
-\mbox{}\textcolor{Red}{\}} \\
 \mbox{} \\
 \mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{main}}\textcolor{BrickRed}{()}\textcolor{Red}{\{} \\
 \mbox{}\ \ \textcolor{ForestGreen}{int}\ c\textcolor{BrickRed}{;} \\

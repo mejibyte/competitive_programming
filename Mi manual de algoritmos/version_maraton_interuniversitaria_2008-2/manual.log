@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.2.17)  22 AUG 2008 20:37
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.2.17)  14 SEP 2008 20:50
 entering extended mode
  %&-line parsing enabled.
 **manual.tex
@@ -411,22 +411,23 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <5> not available
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/it' undefined
 (Font)              using `OMS/cmtt/m/n' instead
-(Font)              for symbol `textbackslash' on input line 72.
+(Font)              for symbol `textbackslash' on input line 55.
 
-) (./src/grafos/floyd.tex [6]) (./src/grafos/puntos_articulacion.tex [7]
-[8]) (./src/dp/lcs.tex) (./src/geometria/grahamscan.tex [9] [10])
-(./src/geometria/monotonechain.tex [11])
-(./src/geometria/distance_point_to_segment.tex [12])
-(./src/geometria/distance_point_to_line.tex) (./src/java/io_estandar_easy.tex)
-(./src/java/io_estandar.tex [13]) (./src/java/io_file.tex [14])
-(./src/c++/io_file.tex) (./src/c++/unicode.tex [15]) (./src/c++/fgetws.tex)
-[16] (./manual.aux)
+) (./src/grafos/floyd.tex [6]) (./src/grafos/puntos_articulacion.tex [7])
+(./src/grafos/ford_fulkerson.tex [8]) (./src/dp/lcs.tex) [9]
+(./src/geometria/grahamscan.tex [10] [11]) (./src/geometria/monotonechain.tex
+[12]) (./src/geometria/distance_point_to_segment.tex)
+(./src/geometria/distance_point_to_line.tex [13])
+(./src/java/io_estandar_easy.tex) (./src/java/io_estandar.tex [14])
+(./src/java/io_file.tex) (./src/c++/io_file.tex [15]) (./src/c++/unicode.tex)
+(./src/c++/fgetws.tex [16]) [17] (./manual.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  )
-(\end occurred inside a group at level 19)
+(\end occurred inside a group at level 20)
 
+### simple group (level 20) entered at line 3 ({)
 ### simple group (level 19) entered at line 3 ({)
 ### simple group (level 18) entered at line 3 ({)
 ### simple group (level 17) entered at line 3 ({)
@@ -448,13 +449,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 ### simple group (level 1) entered at line 3 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 3457 strings out of 95001
- 44494 string characters out of 1181560
+ 3460 strings out of 95001
+ 44570 string characters out of 1181560
  106384 words of memory out of 1500000
  6570 multiletter control sequences out of 10000+50000
  6630 words of font info for 26 fonts, out of 1200000 for 2000
  80 hyphenation exceptions out of 8191
- 27i,6n,32p,830b,1281s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 27i,6n,32p,933b,1339s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx10.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf-texl
 ive/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/blu
@@ -465,9 +466,9 @@ luesky/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb>
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf-te
 xlive/fonts/type1/bluesky/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/b
 luesky/cm/cmtt10.pfb>
-Output written on manual.pdf (16 pages, 122171 bytes).
+Output written on manual.pdf (17 pages, 125809 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
