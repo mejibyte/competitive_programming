@@ -22,7 +22,8 @@ ostream& operator<< (ostream& out, const point& c)
 
 //P es un polígono ordenado anticlockwise.
 //Si es clockwise, retorna el area negativa.
-//Si no esta ordenado retorna pura mierda
+//Si no esta ordenado retorna pura mierda.
+//P[0] != P[n-1]
 double area(const vector<point> &p){
   double r = 0.0;
   for (int i=0; i<p.size(); ++i){

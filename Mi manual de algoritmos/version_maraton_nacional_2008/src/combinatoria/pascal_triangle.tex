@@ -1,0 +1,13 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+
+{\ttfamily \raggedright {
+\noindent
+\mbox{}\textbf{\textcolor{Blue}{const}}\ \textcolor{ForestGreen}{int}\ N\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{30}\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ choose\textcolor{BrickRed}{[}N\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{][}N\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{/*\ Binomial\ coefficients\ */}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$=}N\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\ choose\textcolor{BrickRed}{[}i\textcolor{BrickRed}{][}\textcolor{Purple}{0}\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ choose\textcolor{BrickRed}{[}i\textcolor{BrickRed}{][}i\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{1}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{1}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$=}N\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ j\textcolor{BrickRed}{=}\textcolor{Purple}{1}\textcolor{BrickRed}{;}\ j\textcolor{BrickRed}{$<$}i\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}j\textcolor{BrickRed}{)} \\
+\mbox{}\ \ \ \ \ \ choose\textcolor{BrickRed}{[}i\textcolor{BrickRed}{][}j\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ choose\textcolor{BrickRed}{[}i\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{][}j\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{+}\ choose\textcolor{BrickRed}{[}i\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{][}j\textcolor{BrickRed}{];} \\
+
+} \normalfont\normalsize

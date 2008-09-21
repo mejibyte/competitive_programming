@@ -1,0 +1,50 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+
+{\ttfamily \raggedright {
+\noindent
+\mbox{}\textbf{\textcolor{Blue}{struct}}\ edge\textcolor{Red}{\{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ u\textcolor{BrickRed}{,}\ v\textcolor{BrickRed}{,}\ w\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}}\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}edge\ \textcolor{BrickRed}{*}\ e\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//e\ =\ Arreglo\ de\ todas\ las\ aristas}} \\
+\mbox{}\textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ d\textcolor{BrickRed}{[}\textcolor{Purple}{300}\textcolor{BrickRed}{];}\ \textit{\textcolor{Brown}{//Distancias}} \\
+\mbox{}\textcolor{ForestGreen}{int}\ n\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//Cantidad\ de\ nodos}} \\
+\mbox{}\textcolor{ForestGreen}{int}\ m\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//Cantidad\ de\ aristas}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{/*}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Retorna\ falso\ si\ hay\ un\ ciclo\ de\ costo\ negativo.}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Si\ retorna\ verdadero,\ entonces\ d[i]\ contiene\ la\ distancia\ más\ corta\ entre\ el\ s\ y\ el\ nodo\ i.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ */}} \\
+\mbox{}\textcolor{ForestGreen}{bool}\ \textbf{\textcolor{Black}{bellman}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ \textcolor{BrickRed}{\&}s\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{//Llenar\ e}} \\
+\mbox{}\ \ e\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{new}}\ edge\textcolor{BrickRed}{[}n\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{//...}} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}n\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\ d\textcolor{BrickRed}{[}i\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ INT$\_$MAX\textcolor{BrickRed}{;} \\
+\mbox{}\ \ d\textcolor{BrickRed}{[}s\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ 0LL\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{bool}\ cambio\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{false}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ j\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ j\textcolor{BrickRed}{$<$}m\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}j\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{int}\ u\ \textcolor{BrickRed}{=}\ e\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}u\textcolor{BrickRed}{,}\ v\ \textcolor{BrickRed}{=}\ e\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}v\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ w\ \textcolor{BrickRed}{=}\ e\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}w\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}d\textcolor{BrickRed}{[}u\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{+}\ w\ \textcolor{BrickRed}{$<$}\ d\textcolor{BrickRed}{[}v\textcolor{BrickRed}{])}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ d\textcolor{BrickRed}{[}v\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ d\textcolor{BrickRed}{[}u\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{+}\ w\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \ \ cambio\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(!}cambio\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{break}}\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//Early-exit}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ j\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ j\textcolor{BrickRed}{$<$}m\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}j\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ u\ \textcolor{BrickRed}{=}\ e\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}u\textcolor{BrickRed}{,}\ v\ \textcolor{BrickRed}{=}\ e\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}v\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ w\ \textcolor{BrickRed}{=}\ e\textcolor{BrickRed}{[}j\textcolor{BrickRed}{].}w\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}d\textcolor{BrickRed}{[}u\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{+}\ w\ \textcolor{BrickRed}{$<$}\ d\textcolor{BrickRed}{[}v\textcolor{BrickRed}{])}\ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Blue}{false}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{delete}}\ \textcolor{BrickRed}{[]}\ e\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}} \\
+
+} \normalfont\normalsize

@@ -1,0 +1,56 @@
+\documentclass[10pt,letterpaper]{article}
+
+%---------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+%\usepackage{color}
+%---------------------------------------------------------------
+
+\setlength{\topmargin}{-1.0in}
+\setlength{\textheight}{9.5in} 
+\setlength{\evensidemargin}{0.0in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\textwidth}{6.5in} 
+
+\begin{document}
+
+La respuesta es 
+$$
+{m \choose k} \cdot \displaystyle \sum_{i=0}^{m-k} (-1)^{i}  {m - k \choose i} (n-k-i)!
+$$
+
+\bigskip
+
+\textbf{Explicación:} Lo primero que hacemos es escoger los $k$ elementos que quedarán ``clavados'' en su sitio correcto. Esto se puede hacer de $ {m \choose k} $ maneras diferentes, pues cualquier subconjunto de $k$ elementos entre los primeros $m$ elementos sirve para este propósito. \\
+\\
+Ahora bien, por cada una de estas clavadas nos quedan $ n - k $ elementos por ubicar. Hay que hacerlo de manera que en las primeras $ m - k $ posiciones ningún elemento quede en su sitio, porque si sucede lo contrario entonces habrá mas elementos clavados en su sitio de los $k$ pedidos. Para contar cuántas permutaciones de $n-k$ elementos cumplen esto, utilizamos el principio de inclusión-exclusión\footnote {Bastante similar a la demostración del teorema 2, ``Número de permutaciones completas'', Sección 6.6: \textit{Aplicaciones del principio de inclusión-exclusión}, Capítulo 6: \textit{Técnicas avanzadas de recuento}, página 430, del libro \textbf{Matemáticas discretas y sus aplicaciones}, Kenneth Rosen, quinta edición, McGraw-Hill.}. El resultado es la sumatoria que multiplica a ${ m \choose k}$.\\
+
+\begin{proof}{}
+Decimos que una permutación tiene la propiedad $P_{i}$ si deja en su sitio el elemento $i$. El número que se busca es el número de permutaciones de $n - k$ elementos que no tiene la propiedad $P_{i}$ para $i=1, 2, \cdots , m - k$ y lo denotamos $ D = N(\bar{P_{1}} \bar{P_{2}} \cdots \bar{P}_{m-k}) $. Aplicando el principio de inclusión-exclusión tenemos que:\\
+$$
+D = N - \sum_{i}{N(P_{i})} + \sum_{i < j}{N(P_{i}P_{j})} - \sum_{i < j < k}{N(P_{i}P_{j}P_{k})} + \cdots + (-1)^{m-k}N(P_{1}P_{2} \cdots P_{m-k})
+$$
+
+Vemos que $$ N = (n-k)! $$ pues $N$ es la cantidad de permutaciones posibles.\\
+Así mismo, $$ \sum_{i}{N(P_{i})} = { m - k \choose 1 } (n -k -1)! $$ Esto es, clavamos un sólo elemento de los primeros $m - k$ posibles, y el resto los permutamos de cualquier manera posible. Pero al restar estos elementos, restamos dos veces las permutaciones que tienen dos elementos fijos, así que las volvemos a sumar:
+$$\sum_{i < j}{N(P_{i}P_{j})} = { m - k \choose 2 } (n -k -2)! $$
+Esto es, clavamos dos elementos y el resto los permutamos de cualquier manera posible.\\
+Y en general,
+$$\sum{N(P_{i_{1}}P_{i_{2}} \cdots P_{i_{r}})} = { m - k \choose r } (n -k -r)! $$
+Reemplazando estos términos en la ecuación original, obtenemos
+$$
+D = N - \sum_{i}{N(P_{i})} + \sum_{i < j}{N(P_{i}P_{j})} - \sum_{i < j < k}{N(P_{i}P_{j}P_{k})} + \cdots + (-1)^{m-k}N(P_{1}P_{2} \cdots P_{m-k}) $$
+$$
+= (n - k)! - { m - k \choose 1 } (n -k -1)! +  { m - k \choose 2 } (n -k -2)! - 
+ \cdots + (-1)^{m-k}  { m - k \choose m - k } (n -k -(m - k))!
+$$
+$$
+= \sum_{i=0}^{m-k} (-1)^{i}  {m - k \choose i} (n-k-i)!
+$$
+\end{proof}
+\end{document}

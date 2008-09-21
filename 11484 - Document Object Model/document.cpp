@@ -21,7 +21,7 @@ int main(){
         for (int x = 0, i = 0; x < n; ++x){
             getline(cin, line);            
             if (line == "</n>"){
-               stk.pop();
+	      stk.pop();
             }else{
                string s = "";
                int j = line.find_first_of("'");
