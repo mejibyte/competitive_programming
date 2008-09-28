@@ -1,5 +1,10 @@
 /*
-  Accepted
+  Ensayando una implementación un poco diferente.
+  Encuentra el flujo máximo pero no permite reconstruir
+  la red de flujos, i.e, no sé cuanto material fluye de
+  i a j.
+
+  Accepted.
  */
 #include <iostream>
 #include <iterator>
@@ -10,11 +15,10 @@ using namespace std;
 
 const int MAXN = 101;
 
-int cap[MAXN+1][MAXN+1], flow[MAXN+1][MAXN+1], prev[MAXN+1];
+int cap[MAXN+1][MAXN+1], prev[MAXN+1];
 
 int fordFulkerson(int n, int s, int t){
   int ans = 0;
-  for (int i=0; i<n; ++i) fill(flow[i], flow[i]+n, 0);
   while (true){
     fill(prev, prev+n, -1);
     queue<int> q;
@@ -23,7 +27,7 @@ int fordFulkerson(int n, int s, int t){
       int u = q.front();
       q.pop();
       for (int v = 0; v<n; ++v)
-        if (v != s && prev[v] == -1 && cap[u][v] > 0 && cap[u][v] - flow[u][v] > 0)
+        if (v != s && prev[v] == -1 && cap[u][v] > 0)
           prev[v] = u, q.push(v);
     }
 
@@ -31,11 +35,11 @@ int fordFulkerson(int n, int s, int t){
 
     int bottleneck = INT_MAX;
     for (int v = t, u = prev[v]; u != -1; v = u, u = prev[v]){
-      bottleneck = min(bottleneck, cap[u][v] - flow[u][v]);
+      bottleneck = min(bottleneck, cap[u][v]);
     }
     for (int v = t, u = prev[v]; u != -1; v = u, u = prev[v]){
-      flow[u][v] += bottleneck;
-      flow[v][u] = -flow[u][v];
+      cap[u][v] -= bottleneck;
+      cap[v][u] += bottleneck;
     }
     ans += bottleneck;
   }
