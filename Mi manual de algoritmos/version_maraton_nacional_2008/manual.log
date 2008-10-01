@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.2.17)  20 SEP 2008 00:15
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.2.17)  30 SEP 2008 00:22
 entering extended mode
  %&-line parsing enabled.
 **manual.tex
@@ -507,17 +507,17 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (./src/misc/parser_recursivo_desc.tex [20]) (./src/java/io_estandar_easy.tex)
 (./src/java/io_estandar.tex [21]) (./src/java/io_file.tex [22])
 (./src/java/maps_sets.tex [23])
-Underfull \hbox (badness 10000) in paragraph at lines 316--316
+Underfull \hbox (badness 10000) in paragraph at lines 317--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--316
+Underfull \hbox (badness 10000) in paragraph at lines 317--317
 
  []
 
 (./src/java/priority_queue.tex [24])
-Underfull \hbox (badness 10000) in paragraph at lines 341--341
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
 
  []
 
@@ -525,6 +525,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 341--341
 [26]) [27] (./manual.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
 (\end occurred inside a group at level 30)
@@ -567,7 +570,7 @@ Here is how much of TeX's memory you used:
  8457 multiletter control sequences out of 10000+50000
  11689 words of font info for 44 fonts, out of 1200000 for 2000
  80 hyphenation exceptions out of 8191
- 27i,8n,36p,933b,2422s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 27i,8n,36p,933b,2424s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx10.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf-texl
 ive/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/blue
@@ -584,7 +587,7 @@ bluesky/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti10.pf
 b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti9.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt12.pfb>
-Output written on manual.pdf (27 pages, 231829 bytes).
+Output written on manual.pdf (27 pages, 232234 bytes).
 PDF statistics:
  421 PDF objects out of 1000 (max. 8388607)
  69 named destinations out of 1000 (max. 131072)

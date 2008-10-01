@@ -17,7 +17,7 @@ int fordFulkerson(int n, int s, int t){
       int u = q.front();
       q.pop();
       for (int v = 0; v<n; ++v)
-        if (v != s && prev[v] == -1 && cap[u][v] > 0 && cap[u][v] - flow[u][v] > 0)
+        if ( v != s && prev[v] == -1 && cap[u][v] > flow[u][v] )
           prev[v] = u, q.push(v);
     }
 
