@@ -23,7 +23,7 @@ struct vil {
 bool com[1005][1005];
 long long dp[1005][1005];
 int main() {
-    freopen("batman.in","r",stdin);
+  //assert(freopen("batman.in", "r", stdin) != NULL);
     int p,v,e;
     cin >> p >> v >> e;
     while(p!=0 && v!=0 && e!=0) {

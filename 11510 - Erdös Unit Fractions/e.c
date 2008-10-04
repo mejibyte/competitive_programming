@@ -1,6 +1,7 @@
 #include<stdio.h>
 /*#include<assert.h>*/
 int main(){
+  //assert(freopen("erdos.in", "r", stdin) != NULL);
   long long n,x,y,aux,nmedios,num,dem,aux1;
   char breaked;
   while(scanf("%lld",&n)==1 && n){

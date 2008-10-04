@@ -29,6 +29,7 @@ using namespace std;
 #define D(x) cout << #x " is " << x << endl
 
 int main(){
+  //assert(freopen("life.in", "r", stdin) != NULL);
   string line;
   while (getline(cin, line) && line != "0"){
     vector<int> s;

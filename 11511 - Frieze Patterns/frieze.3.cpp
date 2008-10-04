@@ -9,6 +9,7 @@ using namespace std;
 int f[1005][1005];
 
 int main(){
+  //assert(freopen("frieze.in", "r", stdin) != NULL);
   int n, row, col;
   while (cin >> n >> row >> col && n){
 

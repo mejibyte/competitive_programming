@@ -45,6 +45,7 @@ double rotation(point a, point b, point c){
 
 
 int main(){
+  //assert(freopen("trobot.in", "r", stdin) != NULL);
   int n;
   while (cin >> n && n){
     vector<point> p(n);

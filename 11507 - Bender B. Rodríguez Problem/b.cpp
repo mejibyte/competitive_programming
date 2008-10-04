@@ -11,7 +11,7 @@ int encode(string s){
     if(s=="-y") return 1;
     if(s=="+z") return 2;
     if(s=="-z") return 3;
-    return -100;
+    assert(0);
 }
 string decode(int n){
     if(n==0)return "+y";
@@ -22,7 +22,8 @@ string decode(int n){
     if(n==5)return "-x";
     assert(0);
 }
-int main(){    int move[6][4]={{5,4,0,0},
+int main(){
+  //assert(freopen("bender.in", "r", stdin) != NULL);    int move[6][4]={{5,4,0,0},
                     {4,5,1,1},
                     {2,2,5,4},
                     {3,3,4,5},
