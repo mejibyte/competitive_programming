@@ -1,3 +1,5 @@
+//http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=2197
+
 // another fine solution by misof
 // #includes {{{
 #include <algorithm>
