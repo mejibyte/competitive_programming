@@ -1,79 +1,84 @@
-/*
-  Range minimum query (RMQ) segment tree
- */
+#include <vector>
+using namespace std;
+
 class SegmentTree{
-  vector<int> tree;
+public:
+  vector<int> arr, tree;
   int n;
 
-  void update(int root, int tree_left, int tree_right, int where, int what){
-    //We assume root > 0
-    if (what < tree[root]) tree[root] = what;
-    if (tree_left < tree_right){
-      int tree_mid = (tree_left + tree_right) / 2;
-      if (where <= tree_mid){
-        update(2*root, tree_left, tree_mid, where, what);
-      }else{
-        update(2*root + 1, tree_mid + 1, tree_right, where, what);
-      }
-    }
+  SegmentTree(){}
+  SegmentTree(const vector<int> &arr) : arr(arr) {
+    initialize();
   }
 
-  int query(int root, int tree_left, int tree_right, int query_left, int query_right){
-    if (query_right >= n) return query(root, tree_left, tree_right, query_left, n-1);
-    if (query_left > query_right) return INT_MAX; //Retornar elemento identidad
-    if (tree_left == query_left && tree_right == query_right) return tree[root];
-
-    int tree_mid = (tree_left + tree_right) / 2;
-
-    int leftSide = query(2*root, tree_left, tree_mid, query_left, min(query_right, tree_mid));
-    int rightSide = query(2*root + 1, tree_mid+1, tree_right, max(query_left, tree_mid+1), query_right);
-
-    return min(leftSide, rightSide);
+  //must be called after assigning a new arr.
+  void initialize(){
+    n = arr.size();
+    tree.resize(4*n + 1);
+    initialize(0, 0, n-1);
   }
 
-public:
-  SegmentTree(int max_n) : n(max_n), tree(4 * max_n + 1, INT_MAX) {
-    /*
-      Llenarlo inicialmente con el elemento identidad.
-      Para la función mínimo, la identidad es infinito.
-    */
+  int query(int query_left, int query_right) const{
+    return query(0, 0, n-1, query_left, query_right);
   }
 
-  /*
-    Retorna el mínimo elemento en el intervalo [from, to].
-   */
-  int query(int from, int to){
-    if (from < 0) from = 0;
-    if (to >= n) to = n-1;
-    return query(1, 0, n-1, from, to);
-  }
-
-  /*
-    Cambia el elemento en la posición where por what.
-   */
   void update(int where, int what){
-    if (where < n) update(1, 0, n-1, where, what);
+    update(0, 0, n-1, where, what);
   }
 
+private:
+  int initialize(int node, int node_left, int node_right);
+  int query(int node, int node_left, int node_right, int query_left, int query_right) const;
+  void update(int node, int node_left, int node_right, int where, int what);
 };
 
-int main(){
-  int n = 15;
-  vector<int> v(n);
-  SegmentTree tree(n);
-  for (int i=0; i<n; ++i){
-    int x = random()%20;
-    printf("%d ", x);
-    v[i] = x;
-    tree.update(i, x);
+int SegmentTree::initialize(int node, int node_left, int node_right){
+  if (node_left == node_right){
+    tree[node] = node_left;
+    return tree[node];
   }
-  printf("\n");
+  int half = (node_left + node_right) / 2;
+  int ans_left = initialize(2*node+1, node_left, half);
+  int ans_right = initialize(2*node+2, half+1, node_right);
 
-  int left, right;
-  while (cin >> left >> right){
-    printf("El mínimo elemento entre [%d, %d] es %d.\n", left, right, tree.query(left, right));
+  if (arr[ans_left] <= arr[ans_right]){
+    tree[node] = ans_left;
+  }else{
+    tree[node] = ans_right;
   }
-
-  return 0;
+  return tree[node];
 }
 
+int SegmentTree::query(int node, int node_left, int node_right, int query_left, int query_right) const{
+  if (node_right < query_left || query_right < node_left) return -1;
+  if (query_left <= node_left && node_right <= query_right) return tree[node];
+
+  int half = (node_left + node_right) / 2;
+  int ans_left = query(2*node+1, node_left, half, query_left, query_right);
+  int ans_right = query(2*node+2, half+1, node_right, query_left, query_right);
+
+  if (ans_left == -1) return ans_right;
+  if (ans_right == -1) return ans_left;
+
+  return (arr[ans_left] <= arr[ans_right] ? ans_left : ans_right);
+}
+
+void SegmentTree::update(int node, int node_left, int node_right, int where, int what){
+  if (where < node_left || node_right < where) return;
+  if (node_left == where && where == node_right){
+    arr[where] = what;
+    tree[node] = where;
+    return;
+  }
+  int half = (node_left + node_right) / 2;
+  if (where <= half){
+    update(2*node+1, node_left, half, where, what);
+  }else{
+    update(2*node+2, half+1, node_right, where, what);
+  }
+  if (arr[tree[2*node+1]] <= arr[tree[2*node+2]]){
+    tree[node] = tree[2*node+1];
+  }else{
+    tree[node] = tree[2*node+2];
+  }
+}

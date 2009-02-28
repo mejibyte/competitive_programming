@@ -1,85 +1,87 @@
 % Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
-
-{\ttfamily \raggedright {
 \noindent
-\mbox{}\textit{\textcolor{Brown}{/*}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ Range\ minimum\ query\ (RMQ)\ segment\ tree}} \\
-\mbox{}\textit{\textcolor{Brown}{\ */}} \\
-\mbox{}\textbf{\textcolor{Blue}{class}}\ SegmentTree\textcolor{Red}{\{} \\
-\mbox{}\ \ vector\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{int}\textcolor{BrickRed}{$>$}\ tree\textcolor{BrickRed}{;} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#include}}\ \texttt{\textcolor{Red}{$<$vector$>$}} \\
+\mbox{}\textbf{\textcolor{Blue}{using}}\ \textbf{\textcolor{Blue}{namespace}}\ std\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{class}}\ \textcolor{ForestGreen}{SegmentTree}\textcolor{Red}{\{} \\
+\mbox{}\textbf{\textcolor{Blue}{public}}\textcolor{BrickRed}{:} \\
+\mbox{}\ \ vector\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{int}\textcolor{BrickRed}{$>$}\ arr\textcolor{BrickRed}{,}\ tree\textcolor{BrickRed}{;} \\
 \mbox{}\ \ \textcolor{ForestGreen}{int}\ n\textcolor{BrickRed}{;} \\
 \mbox{} \\
-\mbox{}\ \ \textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ root\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ tree$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ tree$\_$right\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ where\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ what\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//We\ assume\ root\ $>$\ 0}} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}what\ \textcolor{BrickRed}{$<$}\ tree\textcolor{BrickRed}{[}root\textcolor{BrickRed}{])}\ tree\textcolor{BrickRed}{[}root\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ what\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}tree$\_$left\ \textcolor{BrickRed}{$<$}\ tree$\_$right\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{int}\ tree$\_$mid\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}tree$\_$left\ \textcolor{BrickRed}{+}\ tree$\_$right\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{/}\ \textcolor{Purple}{2}\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}where\ \textcolor{BrickRed}{$<$=}\ tree$\_$mid\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \ \ \ \ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}root\textcolor{BrickRed}{,}\ tree$\_$left\textcolor{BrickRed}{,}\ tree$\_$mid\textcolor{BrickRed}{,}\ where\textcolor{BrickRed}{,}\ what\textcolor{BrickRed}{);} \\
-\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \ \ \ \ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}root\ \textcolor{BrickRed}{+}\ \textcolor{Purple}{1}\textcolor{BrickRed}{,}\ tree$\_$mid\ \textcolor{BrickRed}{+}\ \textcolor{Purple}{1}\textcolor{BrickRed}{,}\ tree$\_$right\textcolor{BrickRed}{,}\ where\textcolor{BrickRed}{,}\ what\textcolor{BrickRed}{);} \\
-\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
-\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{SegmentTree}}\textcolor{BrickRed}{()}\textcolor{Red}{\{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{SegmentTree}}\textcolor{BrickRed}{(}\textbf{\textcolor{Blue}{const}}\ vector\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{int}\textcolor{BrickRed}{$>$}\ \textcolor{BrickRed}{\&}arr\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{:}\ \textbf{\textcolor{Black}{arr}}\textcolor{BrickRed}{(}arr\textcolor{BrickRed}{)}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{initialize}}\textcolor{BrickRed}{();} \\
 \mbox{}\ \ \textcolor{Red}{\}} \\
 \mbox{} \\
-\mbox{}\ \ \textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ root\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ tree$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ tree$\_$right\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ query$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ query$\_$right\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}query$\_$right\ \textcolor{BrickRed}{$>$=}\ n\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}root\textcolor{BrickRed}{,}\ tree$\_$left\textcolor{BrickRed}{,}\ tree$\_$right\textcolor{BrickRed}{,}\ query$\_$left\textcolor{BrickRed}{,}\ n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{);} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}query$\_$left\ \textcolor{BrickRed}{$>$}\ query$\_$right\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ INT$\_$MAX\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//Retornar\ elemento\ identidad}} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}tree$\_$left\ \textcolor{BrickRed}{==}\ query$\_$left\ \textcolor{BrickRed}{\&\&}\ tree$\_$right\ \textcolor{BrickRed}{==}\ query$\_$right\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ tree\textcolor{BrickRed}{[}root\textcolor{BrickRed}{];} \\
-\mbox{} \\
-\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ tree$\_$mid\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}tree$\_$left\ \textcolor{BrickRed}{+}\ tree$\_$right\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{/}\ \textcolor{Purple}{2}\textcolor{BrickRed}{;} \\
-\mbox{} \\
-\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ leftSide\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}root\textcolor{BrickRed}{,}\ tree$\_$left\textcolor{BrickRed}{,}\ tree$\_$mid\textcolor{BrickRed}{,}\ query$\_$left\textcolor{BrickRed}{,}\ \textbf{\textcolor{Black}{min}}\textcolor{BrickRed}{(}query$\_$right\textcolor{BrickRed}{,}\ tree$\_$mid\textcolor{BrickRed}{));} \\
-\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ rightSide\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}root\ \textcolor{BrickRed}{+}\ \textcolor{Purple}{1}\textcolor{BrickRed}{,}\ tree$\_$mid\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ tree$\_$right\textcolor{BrickRed}{,}\ \textbf{\textcolor{Black}{max}}\textcolor{BrickRed}{(}query$\_$left\textcolor{BrickRed}{,}\ tree$\_$mid\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{),}\ query$\_$right\textcolor{BrickRed}{);} \\
-\mbox{} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Black}{min}}\textcolor{BrickRed}{(}leftSide\textcolor{BrickRed}{,}\ rightSide\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{//must\ be\ called\ after\ assigning\ a\ new\ arr.}} \\
+\mbox{}\ \ \textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{initialize}}\textcolor{BrickRed}{()}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ n\ \textcolor{BrickRed}{=}\ arr\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ tree\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{resize}}\textcolor{BrickRed}{(}\textcolor{Purple}{4}\textcolor{BrickRed}{*}n\ \textcolor{BrickRed}{+}\ \textcolor{Purple}{1}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{initialize}}\textcolor{BrickRed}{(}\textcolor{Purple}{0}\textcolor{BrickRed}{,}\ \textcolor{Purple}{0}\textcolor{BrickRed}{,}\ n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{);} \\
 \mbox{}\ \ \textcolor{Red}{\}} \\
 \mbox{} \\
-\mbox{}\textbf{\textcolor{Blue}{public}}\textcolor{BrickRed}{:} \\
-\mbox{}\ \ \textbf{\textcolor{Black}{SegmentTree}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ max$\_$n\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{:}\ \textbf{\textcolor{Black}{n}}\textcolor{BrickRed}{(}max$\_$n\textcolor{BrickRed}{),}\ \textbf{\textcolor{Black}{tree}}\textcolor{BrickRed}{(}\textcolor{Purple}{4}\ \textcolor{BrickRed}{*}\ max$\_$n\ \textcolor{BrickRed}{+}\ \textcolor{Purple}{1}\textcolor{BrickRed}{,}\ INT$\_$MAX\textcolor{BrickRed}{)}\ \textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \textit{\textcolor{Brown}{/*}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ \ \ \ \ Llenarlo\ inicialmente\ con\ el\ elemento\ identidad.}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ \ \ \ \ Para\ la\ función\ mínimo,\ la\ identidad\ es\ infinito.}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ \ \ */}} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ query$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ query$\_$right\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{const}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{Purple}{0}\textcolor{BrickRed}{,}\ \textcolor{Purple}{0}\textcolor{BrickRed}{,}\ n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ query$\_$left\textcolor{BrickRed}{,}\ query$\_$right\textcolor{BrickRed}{);} \\
 \mbox{}\ \ \textcolor{Red}{\}} \\
 \mbox{} \\
-\mbox{}\ \ \textit{\textcolor{Brown}{/*}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ \ \ Retorna\ el\ mínimo\ elemento\ en\ el\ intervalo\ [from,\ to].}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ \ */}} \\
-\mbox{}\ \ \textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ from\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ to\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}from\ \textcolor{BrickRed}{$<$}\ \textcolor{Purple}{0}\textcolor{BrickRed}{)}\ from\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}to\ \textcolor{BrickRed}{$>$=}\ n\textcolor{BrickRed}{)}\ to\ \textcolor{BrickRed}{=}\ n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ \textcolor{Purple}{0}\textcolor{BrickRed}{,}\ n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ from\textcolor{BrickRed}{,}\ to\textcolor{BrickRed}{);} \\
-\mbox{}\ \ \textcolor{Red}{\}} \\
-\mbox{} \\
-\mbox{}\ \ \textit{\textcolor{Brown}{/*}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ \ \ Cambia\ el\ elemento\ en\ la\ posición\ where\ por\ what.}} \\
-\mbox{}\textit{\textcolor{Brown}{\ \ \ */}} \\
 \mbox{}\ \ \textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ where\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ what\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}where\ \textcolor{BrickRed}{$<$}\ n\textcolor{BrickRed}{)}\ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ \textcolor{Purple}{0}\textcolor{BrickRed}{,}\ n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ where\textcolor{BrickRed}{,}\ what\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{Purple}{0}\textcolor{BrickRed}{,}\ \textcolor{Purple}{0}\textcolor{BrickRed}{,}\ n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ where\textcolor{BrickRed}{,}\ what\textcolor{BrickRed}{);} \\
 \mbox{}\ \ \textcolor{Red}{\}} \\
 \mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{private}}\textcolor{BrickRed}{:} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{initialize}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ node\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$right\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ node\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$right\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ query$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ query$\_$right\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{const}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ node\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$right\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ where\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ what\textcolor{BrickRed}{);} \\
 \mbox{}\textcolor{Red}{\}}\textcolor{BrickRed}{;} \\
 \mbox{} \\
-\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{main}}\textcolor{BrickRed}{()}\textcolor{Red}{\{} \\
-\mbox{}\ \ \textcolor{ForestGreen}{int}\ n\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{15}\textcolor{BrickRed}{;} \\
-\mbox{}\ \ vector\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{int}\textcolor{BrickRed}{$>$}\ \textbf{\textcolor{Black}{v}}\textcolor{BrickRed}{(}n\textcolor{BrickRed}{);} \\
-\mbox{}\ \ SegmentTree\ \textbf{\textcolor{Black}{tree}}\textcolor{BrickRed}{(}n\textcolor{BrickRed}{);} \\
-\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}n\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ x\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{random}}\textcolor{BrickRed}{()\%}\textcolor{Purple}{20}\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Black}{printf}}\textcolor{BrickRed}{(}\texttt{\textcolor{Red}{"{}\%d\ "{}}}\textcolor{BrickRed}{,}\ x\textcolor{BrickRed}{);} \\
-\mbox{}\ \ \ \ v\textcolor{BrickRed}{[}i\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ x\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \ \ tree\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}i\textcolor{BrickRed}{,}\ x\textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{ForestGreen}{int}\ SegmentTree\textcolor{BrickRed}{::}\textbf{\textcolor{Black}{initialize}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ node\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$right\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}node$\_$left\ \textcolor{BrickRed}{==}\ node$\_$right\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ node$\_$left\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{];} \\
 \mbox{}\ \ \textcolor{Red}{\}} \\
-\mbox{}\ \ \textbf{\textcolor{Black}{printf}}\textcolor{BrickRed}{(}\texttt{\textcolor{Red}{"{}}}\texttt{\textcolor{CarnationPink}{\textbackslash{}n}}\texttt{\textcolor{Red}{"{}}}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ half\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}node$\_$left\ \textcolor{BrickRed}{+}\ node$\_$right\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{/}\ \textcolor{Purple}{2}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ ans$\_$left\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{initialize}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ node$\_$left\textcolor{BrickRed}{,}\ half\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ ans$\_$right\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{initialize}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{2}\textcolor{BrickRed}{,}\ half\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ node$\_$right\textcolor{BrickRed}{);} \\
 \mbox{} \\
-\mbox{}\ \ \textcolor{ForestGreen}{int}\ left\textcolor{BrickRed}{,}\ right\textcolor{BrickRed}{;} \\
-\mbox{}\ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(}cin\ \textcolor{BrickRed}{$>$$>$}\ left\ \textcolor{BrickRed}{$>$$>$}\ right\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
-\mbox{}\ \ \ \ \textbf{\textcolor{Black}{printf}}\textcolor{BrickRed}{(}\texttt{\textcolor{Red}{"{}El\ mínimo\ elemento\ entre\ [\%d,\ \%d]\ es\ \%d.}}\texttt{\textcolor{CarnationPink}{\textbackslash{}n}}\texttt{\textcolor{Red}{"{}}}\textcolor{BrickRed}{,}\ left\textcolor{BrickRed}{,}\ right\textcolor{BrickRed}{,}\ tree\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}left\textcolor{BrickRed}{,}\ right\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}arr\textcolor{BrickRed}{[}ans$\_$left\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{$<$=}\ arr\textcolor{BrickRed}{[}ans$\_$right\textcolor{BrickRed}{])}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ ans$\_$left\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ ans$\_$right\textcolor{BrickRed}{;} \\
 \mbox{}\ \ \textcolor{Red}{\}} \\
-\mbox{} \\
-\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{];} \\
 \mbox{}\textcolor{Red}{\}} \\
 \mbox{} \\
-
-} \normalfont\normalsize
+\mbox{}\textcolor{ForestGreen}{int}\ SegmentTree\textcolor{BrickRed}{::}\textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ node\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$right\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ query$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ query$\_$right\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{const}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}node$\_$right\ \textcolor{BrickRed}{$<$}\ query$\_$left\ \textcolor{BrickRed}{$|$$|$}\ query$\_$right\ \textcolor{BrickRed}{$<$}\ node$\_$left\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}query$\_$left\ \textcolor{BrickRed}{$<$=}\ node$\_$left\ \textcolor{BrickRed}{\&\&}\ node$\_$right\ \textcolor{BrickRed}{$<$=}\ query$\_$right\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{];} \\
+\mbox{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ half\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}node$\_$left\ \textcolor{BrickRed}{+}\ node$\_$right\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{/}\ \textcolor{Purple}{2}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ ans$\_$left\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ node$\_$left\textcolor{BrickRed}{,}\ half\textcolor{BrickRed}{,}\ query$\_$left\textcolor{BrickRed}{,}\ query$\_$right\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ ans$\_$right\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{2}\textcolor{BrickRed}{,}\ half\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ node$\_$right\textcolor{BrickRed}{,}\ query$\_$left\textcolor{BrickRed}{,}\ query$\_$right\textcolor{BrickRed}{);} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}ans$\_$left\ \textcolor{BrickRed}{==}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ ans$\_$right\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}ans$\_$right\ \textcolor{BrickRed}{==}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ ans$\_$left\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ \textcolor{BrickRed}{(}arr\textcolor{BrickRed}{[}ans$\_$left\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{$<$=}\ arr\textcolor{BrickRed}{[}ans$\_$right\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{?}\ ans$\_$left\ \textcolor{BrickRed}{:}\ ans$\_$right\textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{void}\ SegmentTree\textcolor{BrickRed}{::}\textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ node\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$left\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ node$\_$right\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ where\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ what\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}where\ \textcolor{BrickRed}{$<$}\ node$\_$left\ \textcolor{BrickRed}{$|$$|$}\ node$\_$right\ \textcolor{BrickRed}{$<$}\ where\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}node$\_$left\ \textcolor{BrickRed}{==}\ where\ \textcolor{BrickRed}{\&\&}\ where\ \textcolor{BrickRed}{==}\ node$\_$right\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ arr\textcolor{BrickRed}{[}where\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ what\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ where\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ half\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}node$\_$left\ \textcolor{BrickRed}{+}\ node$\_$right\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{/}\ \textcolor{Purple}{2}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}where\ \textcolor{BrickRed}{$<$=}\ half\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ node$\_$left\textcolor{BrickRed}{,}\ half\textcolor{BrickRed}{,}\ where\textcolor{BrickRed}{,}\ what\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Black}{update}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{2}\textcolor{BrickRed}{,}\ half\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ node$\_$right\textcolor{BrickRed}{,}\ where\textcolor{BrickRed}{,}\ what\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}arr\textcolor{BrickRed}{[}tree\textcolor{BrickRed}{[}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{]]}\ \textcolor{BrickRed}{$<$=}\ arr\textcolor{BrickRed}{[}tree\textcolor{BrickRed}{[}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{2}\textcolor{BrickRed}{]])}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ tree\textcolor{BrickRed}{[}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ tree\textcolor{BrickRed}{[}node\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ tree\textcolor{BrickRed}{[}\textcolor{Purple}{2}\textcolor{BrickRed}{*}node\textcolor{BrickRed}{+}\textcolor{Purple}{2}\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{}

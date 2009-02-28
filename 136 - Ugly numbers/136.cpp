@@ -10,14 +10,14 @@ ull h[1501];
 priority_queue<ull, vector<ull>, greater<ull> > q;
 
 int main(){
-  
+
   q.push(1);
   int i=1;
   while (i <= 1500){
     ull top = q.top();
     q.pop();
     h[i++] = top;
-    
+
     q.push(top*2);
     if (top % 2 != 0) {
       q.push(top*3);
