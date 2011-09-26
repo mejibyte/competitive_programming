@@ -1,0 +1,34 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+
+{\ttfamily \raggedright {
+\noindent
+\mbox{}\textbf{\textcolor{Blue}{class}}\ FenwickTree\textcolor{Red}{\{} \\
+\mbox{}\ \ vector\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\textcolor{BrickRed}{$>$}\ v\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ maxSize\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{public}}\textcolor{BrickRed}{:} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{FenwickTree}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ $\_$maxSize\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{:}\ \textbf{\textcolor{Black}{maxSize}}\textcolor{BrickRed}{(}$\_$maxSize\textcolor{BrickRed}{+}\textcolor{Purple}{1}\textcolor{BrickRed}{)}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ v\ \textcolor{BrickRed}{=}\ vector\textcolor{BrickRed}{$<$}\textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\textcolor{BrickRed}{$>$(}maxSize\textcolor{BrickRed}{,}\ 0LL\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{add}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ where\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ what\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}where\textcolor{BrickRed}{++;}\ where\ \textcolor{BrickRed}{$<$=}\ maxSize\textcolor{BrickRed}{;}\ where\ \textcolor{BrickRed}{+=}\ where\ \textcolor{BrickRed}{\&}\ \textcolor{BrickRed}{-}where\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ v\textcolor{BrickRed}{[}where\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{+=}\ what\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ where\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ sum\ \textcolor{BrickRed}{=}\ v\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}where\textcolor{BrickRed}{++;}\ where\ \textcolor{BrickRed}{$>$}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;}\ where\ \textcolor{BrickRed}{-=}\ where\ \textcolor{BrickRed}{\&}\ \textcolor{BrickRed}{-}where\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ sum\ \textcolor{BrickRed}{+=}\ v\textcolor{BrickRed}{[}where\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\ sum\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{long}\ \textcolor{ForestGreen}{long}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ from\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ to\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}to\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{-}\ \textbf{\textcolor{Black}{query}}\textcolor{BrickRed}{(}from\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textcolor{Red}{\}}\textcolor{BrickRed}{;} \\
+
+} \normalfont\normalsize

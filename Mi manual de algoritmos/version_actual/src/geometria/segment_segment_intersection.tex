@@ -1,0 +1,64 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+{\ttfamily \raggedright {
+\noindent
+\mbox{}\textit{\textcolor{Brown}{/*}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Returns\ true\ if\ point\ (x,\ y)\ lies\ inside\ (or\ in\ the\ border)}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ of\ box\ defined\ by\ points\ (x0,\ y0)\ and\ (x1,\ y1).}} \\
+\mbox{}\textit{\textcolor{Brown}{*/}} \\
+\mbox{}\textcolor{ForestGreen}{bool}\ \textbf{\textcolor{Black}{point$\_$in$\_$box}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{double}\ x\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\ y\textcolor{BrickRed}{,} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{ForestGreen}{double}\ x0\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\ y0\textcolor{BrickRed}{,}\ \ \ \ \textcolor{ForestGreen}{double}\ x1\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\ y1\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Black}{min}}\textcolor{BrickRed}{(}x0\textcolor{BrickRed}{,}\ x1\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$<$=}\ x\ \textcolor{BrickRed}{\&\&}\ x\ \textcolor{BrickRed}{$<$=}\ \textbf{\textcolor{Black}{max}}\textcolor{BrickRed}{(}x0\textcolor{BrickRed}{,}\ x1\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{\&\&}\ \textbf{\textcolor{Black}{min}}\textcolor{BrickRed}{(}y0\textcolor{BrickRed}{,}\ y1\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$<$=}\ y\ \textcolor{BrickRed}{\&\&}\ y\ \textcolor{BrickRed}{$<$=}\ \textbf{\textcolor{Black}{max}}\textcolor{BrickRed}{(}y0\textcolor{BrickRed}{,}\ y1\textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{/*}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Finds\ the\ intersection\ between\ two\ segments\ (Not\ infinite\ lines!)}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Segment\ 1\ goes\ from\ point\ (x0,\ y0)\ to\ (x1,\ y1).}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Segment\ 2\ goes\ from\ point\ (x2,\ y2)\ to\ (x3,\ y3).}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Handles\ the\ case\ when\ the\ 2\ segments\ are:}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ *Parallel\ but\ don't\ lie\ on\ the\ same\ line\ (No\ intersection)}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ *Parallel\ and\ both\ lie\ on\ the\ same\ line\ (Infinite\ intersections\ or\ no\ intersections)}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ *Not\ parallel\ (One\ intersection\ or\ no\ intersections)}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Returns\ true\ if\ the\ segments\ do\ intersect\ in\ any\ case.}} \\
+\mbox{}\textit{\textcolor{Brown}{*/}} \\
+\mbox{}\textcolor{ForestGreen}{bool}\ \textbf{\textcolor{Black}{segment$\_$segment$\_$intersection}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{double}\ x0\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\ y0\textcolor{BrickRed}{,}\ \ \ \textcolor{ForestGreen}{double}\ x1\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\ y1\textcolor{BrickRed}{,} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{ForestGreen}{double}\ x2\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\ y2\textcolor{BrickRed}{,}\ \ \ \textcolor{ForestGreen}{double}\ x3\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{double}\ y3\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#ifndef}}\ EPS \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#define}}\ EPS\ \textcolor{Purple}{1e-9} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{\#endif}} \\
+\mbox{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{double}\ t0\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}y3\textcolor{BrickRed}{-}y2\textcolor{BrickRed}{)*(}x0\textcolor{BrickRed}{-}x2\textcolor{BrickRed}{)-(}x3\textcolor{BrickRed}{-}x2\textcolor{BrickRed}{)*(}y0\textcolor{BrickRed}{-}y2\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{ForestGreen}{double}\ t1\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}x1\textcolor{BrickRed}{-}x0\textcolor{BrickRed}{)*(}y2\textcolor{BrickRed}{-}y0\textcolor{BrickRed}{)-(}y1\textcolor{BrickRed}{-}y0\textcolor{BrickRed}{)*(}x2\textcolor{BrickRed}{-}x0\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{ForestGreen}{double}\ det\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}y1\textcolor{BrickRed}{-}y0\textcolor{BrickRed}{)*(}x3\textcolor{BrickRed}{-}x2\textcolor{BrickRed}{)-(}y3\textcolor{BrickRed}{-}y2\textcolor{BrickRed}{)*(}x1\textcolor{BrickRed}{-}x0\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}\textbf{\textcolor{Black}{fabs}}\textcolor{BrickRed}{(}det\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$<$}\ EPS\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//parallel}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}\textbf{\textcolor{Black}{fabs}}\textcolor{BrickRed}{(}t0\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$<$}\ EPS\ \textcolor{BrickRed}{$|$$|$}\ \textbf{\textcolor{Black}{fabs}}\textcolor{BrickRed}{(}t1\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$<$}\ EPS\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textit{\textcolor{Brown}{//they\ lie\ on\ same\ line,\ but\ they\ may\ or\ may\ not\ intersect.}} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textcolor{BrickRed}{(}\textbf{\textcolor{Black}{point$\_$in$\_$box}}\textcolor{BrickRed}{(}x0\textcolor{BrickRed}{,}\ y0\textcolor{BrickRed}{,}\ \ \ x2\textcolor{BrickRed}{,}\ y2\textcolor{BrickRed}{,}\ x3\textcolor{BrickRed}{,}\ y3\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$|$$|$} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{\textcolor{Black}{point$\_$in$\_$box}}\textcolor{BrickRed}{(}x1\textcolor{BrickRed}{,}\ y1\textcolor{BrickRed}{,}\ \ \ x2\textcolor{BrickRed}{,}\ y2\textcolor{BrickRed}{,}\ x3\textcolor{BrickRed}{,}\ y3\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$|$$|$} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{\textcolor{Black}{point$\_$in$\_$box}}\textcolor{BrickRed}{(}x2\textcolor{BrickRed}{,}\ y2\textcolor{BrickRed}{,}\ \ \ x0\textcolor{BrickRed}{,}\ y0\textcolor{BrickRed}{,}\ x1\textcolor{BrickRed}{,}\ y1\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{$|$$|$} \\
+\mbox{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{\textcolor{Black}{point$\_$in$\_$box}}\textcolor{BrickRed}{(}x3\textcolor{BrickRed}{,}\ y3\textcolor{BrickRed}{,}\ \ \ x0\textcolor{BrickRed}{,}\ y0\textcolor{BrickRed}{,}\ x1\textcolor{BrickRed}{,}\ y1\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textit{\textcolor{Brown}{//just\ parallel,\ no\ intersection}} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Blue}{false}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textcolor{Red}{\}}\textbf{\textcolor{Blue}{else}}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ t0\ \textcolor{BrickRed}{/=}\ det\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ t1\ \textcolor{BrickRed}{/=}\ det\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{/*}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ \ \ \ \ 0\ $<$=\ t0\ $<$=\ 1\ iff\ the\ intersection\ point\ lies\ in\ segment\ 1.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ \ \ \ \ 0\ $<$=\ t1\ $<$=\ 1\ iff\ the\ intersection\ point\ lies\ in\ segment\ 2.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ \ \ */}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}\textcolor{Purple}{0.0}\ \textcolor{BrickRed}{$<$=}\ t0\ \textcolor{BrickRed}{\&\&}\ t0\ \textcolor{BrickRed}{$<$=}\ \textcolor{Purple}{1.0}\ \textcolor{BrickRed}{\&\&}\ \textcolor{Purple}{0.0}\ \textcolor{BrickRed}{$<$=}\ t1\ \textcolor{BrickRed}{\&\&}\ t1\ \textcolor{BrickRed}{$<$=}\ \textcolor{Purple}{1.0}\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{double}\ x\ \textcolor{BrickRed}{=}\ x0\ \textcolor{BrickRed}{+}\ t0\textcolor{BrickRed}{*(}x1\textcolor{BrickRed}{-}x0\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{double}\ y\ \textcolor{BrickRed}{=}\ y0\ \textcolor{BrickRed}{+}\ t0\textcolor{BrickRed}{*(}y1\textcolor{BrickRed}{-}y0\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \textit{\textcolor{Brown}{//intersection\ is\ point\ (x,\ y)}} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//the\ intersection\ points\ doesn't\ lie\ on\ both\ segments.}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{return}}\ \textbf{\textcolor{Blue}{false}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{}
+} \normalfont\normalsize

@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.1.25)  28 FEB 2009 07:56
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.1.25)  28 FEB 2009 07:59
 entering extended mode
  %&-line parsing enabled.
 **manual.tex
@@ -505,14 +505,15 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 12.
  [20])
 (./src/estructuras/fenwick.tex [21]) (./src/estructuras/segment_tree.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+[22])
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 284.
 
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
- [22]) [23]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 284.
+ [23]
 (./src/misc/parser_recursivo_desc.tex) (./src/java/io_estandar_easy.tex
 [24]) (./src/java/io_estandar.tex [25]) (./src/java/io_file.tex)
 (./src/java/maps_sets.tex [26])
@@ -536,8 +537,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 362--362
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  )
-(\end occurred inside a group at level 31)
+(\end occurred inside a group at level 32)
 
+### simple group (level 32) entered at line 3 ({)
 ### simple group (level 31) entered at line 3 ({)
 ### simple group (level 30) entered at line 3 ({)
 ### simple group (level 29) entered at line 3 ({)
@@ -546,7 +548,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 ### simple group (level 26) entered at line 3 ({)
 ### simple group (level 25) entered at line 3 ({)
 ### simple group (level 24) entered at line 3 ({)
-### simple group (level 23) entered at line 3 ({)
+### simple group (level 23) entered at line 2 ({)
 ### simple group (level 22) entered at line 3 ({)
 ### simple group (level 21) entered at line 3 ({)
 ### simple group (level 20) entered at line 3 ({)
@@ -573,11 +575,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  5535 strings out of 95037
  75203 string characters out of 1182324
- 141834 words of memory out of 1500000
+ 142330 words of memory out of 1500000
  8477 multiletter control sequences out of 10000+50000
  12525 words of font info for 47 fonts, out of 1200000 for 2000
  54 hyphenation exceptions out of 8191
- 27i,8n,36p,933b,2512s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 27i,8n,36p,933b,2574s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx10.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf-texl
 ive/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/blue
@@ -595,7 +597,7 @@ luesky/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy9.pfb>
 exlive/fonts/type1/bluesky/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/b
 luesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt9.pfb
 >
-Output written on manual.pdf (30 pages, 251631 bytes).
+Output written on manual.pdf (30 pages, 248670 bytes).
 PDF statistics:
  454 PDF objects out of 1000 (max. 8388607)
  75 named destinations out of 1000 (max. 131072)

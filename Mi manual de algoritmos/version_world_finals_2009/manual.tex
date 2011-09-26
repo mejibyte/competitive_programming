@@ -1,6 +1,6 @@
-\documentclass[10pt,letterpaper]{article}
-
-%---------------------------------------------------------------
+\documentclass[10pt,letterpaper,twocolumn,twosided]{article}
+%\documentclass[10pt,letterpaper]{article}
+% ---------------------------------------------------------------
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{listings}
@@ -8,38 +8,44 @@
 \usepackage{amsmath}
 \usepackage{verbatim}
 \usepackage{hyperref}
-%\usepackage{color}
-%---------------------------------------------------------------
+\usepackage{color}
+\usepackage{geometry}
+%Poner la página en landscape
+\geometry{verbose,landscape,letterpaper,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 
-\setlength{\topmargin}{-1.0in}
-\setlength{\textheight}{9.5in} 
-\setlength{\evensidemargin}{0.0in}
-\setlength{\oddsidemargin}{0.0in}
-\setlength{\textwidth}{6.5in} 
+\newcommand{\codigofuente}[1]{
+\verbatiminput{#1}
+\dotfill
+}
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{1px}
 
+% ---------------------------------------------------------------
 \begin{document}
-
-%---------------------------------------------------------------
+% ---------------------------------------------------------------
 \title{Resumen de algoritmos para torneos de programación}
 \author{Andrés Mejía}
 \date{\today}
 \maketitle
-%---------------------------------------------------------------
+% ---------------------------------------------------------------
 
-%---------------------------------------------------------------
+% ---------------------------------------------------------------
 \tableofcontents
-%\lstlistoflistings
+% \lstlistoflistings
 \lstloadlanguages{C++}
-%---------------------------------------------------------------
-%---------------------------------------------------------------
+% ---------------------------------------------------------------
+\section{Plantilla}
+\codigofuente{./src/template.cpp}
+% ---------------------------------------------------------------
 \section{Teoría de números}
-%---------------------------------------------------------------
+% ---------------------------------------------------------------
 \subsection{Big mod}
-\input{./src/number_theory/bigmod}%.tex
+%\input{./src/number_theory/bigmod}%.tex
+\codigofuente{./src/number_theory/bigmod.cpp}
 
 \subsection{Criba de Eratóstenes}
 \small
-\textbf{Field-testing:} 
+\textbf{Field-testing:}
 \begin{itemize}
 \item \emph{SPOJ} -  2912 - Super Primes
 \item \emph{Live Archive} - 3639 - Prime Path
@@ -48,68 +54,64 @@
 \normalsize
 Marca los números primos en un arreglo. Algunos tiempos de ejecución:
 \begin{center}
-\begin{tabular}{c c}
-\hline\hline
-SIZE & Tiempo (s) \\ [0.5ex]
-\hline
-100000 & 0.003 \\
-1000000 & 0.060 \\
-10000000 & 0.620 \\
-100000000 & 7.650 \\ [1ex]
-\hline
-\end{tabular}
+  \begin{tabular}{c c}
+    \hline\hline
+    SIZE & Tiempo (s) \\ [0.5ex]
+    \hline
+    100000 & 0.003 \\
+    1000000 & 0.060 \\
+    10000000 & 0.620 \\
+    100000000 & 7.650 \\ [1ex]
+    \hline
+  \end{tabular}
 \end{center}
-
-\input{./src/number_theory/criba}%.tex
+\codigofuente{./src/number_theory/criba.cpp}
 
 \subsection{Divisores de un número}
-Este algoritmo imprime todos los divisores de un número (en desorden) en O($\sqrt{n}$).
-Hasta 4294967295 (máximo \textit{unsigned long}) responde instantaneamente. Se puede
+Imprime todos los divisores de un número (en desorden) en O($\sqrt{n}$).
+Hasta 4294967295 (máximo \textit{unsigned int}) responde instantáneamente. Se puede
 forzar un poco más usando \textit{unsigned long long} pero más allá de $10^{12}$ empieza a
 responder muy lento.
-
-\bigskip
-
-\input{./src/number_theory/divisores}%.tex
+\codigofuente{./src/number_theory/divisores.cpp}
 
 \section{Combinatoria}
 \subsection{Cuadro resumen}
 Fórmulas para combinaciones y permutaciones:
 \begin{center}
-\renewcommand{\arraystretch}{2} %Multiplica la altura de cada fila de la tabla por 2
-%Si quiero aumentar el tamaño de una fila en particular insertar \rule{0cm}{1cm} en esa fila.
-\begin{tabular}{| c | c | c |}
-\hline
-\textit{Tipo} & \textit{¿Se permite la repetición?} & \textit{Fórmula} \\ [1.5ex]
-\hline\hline
+  \renewcommand{\arraystretch}{2} %Multiplica la altura de cada fila de la tabla por 2
+  % Si quiero aumentar el tamaño de una fila en particular insertar \rule{0cm}{1cm} en esa fila.
+  \begin{tabular}{| c | c | c |}
+    \hline
+    \textit{Tipo} & \textit{¿Se permite la repetición?} & \textit{Fórmula} \\ [1.5ex]
+    \hline\hline
 
-$r$-permutaciones & No & $ \displaystyle\frac{n!}{(n-r)!} $ \\ [1.5ex]
-\hline
-$r$-combinaciones & No & $ \displaystyle\frac{n!}{r!(n-r)!} $ \\  [1.5ex]
-\hline
-$r$-permutaciones & Sí & $ \displaystyle n^{r} $ \\
-\hline
-$r$-combinaciones & Sí & $ \displaystyle\frac{(n+r-1)!}{r!(n-1)!} $ \\ [1.5ex]
-\hline
-\end{tabular}
-\renewcommand{\arraystretch}{1}
+    $r$-permutaciones & No & $ \displaystyle\frac{n!}{(n-r)!} $ \\ [1.5ex]
+    \hline
+    $r$-combinaciones & No & $ \displaystyle\frac{n!}{r!(n-r)!} $ \\  [1.5ex]
+    \hline
+    $r$-permutaciones & Sí & $ \displaystyle n^{r} $ \\
+    \hline
+    $r$-combinaciones & Sí & $ \displaystyle\frac{(n+r-1)!}{r!(n-1)!} $ \\ [1.5ex]
+    \hline
+  \end{tabular}
+  \renewcommand{\arraystretch}{1}
 \end{center}
 Tomado de \textit{Matemática discreta y sus aplicaciones}, Kenneth Rosen, 5${}^{\hbox{ta}}$ edición, McGraw-Hill, página 315.
 
 \subsection{Combinaciones, coeficientes binomiales, triángulo de Pascal}
 \emph{Complejidad:} $ O(n^2) $ \\
 $$ {n \choose k} = \left\{
-\begin{array}{c l}
- 1 & k = 0\\
- 1 & n = k\\
- \displaystyle {n - 1 \choose k - 1} + {n - 1 \choose k} & \mbox{en otro caso}\\
-\end{array}
+  \begin{array}{c l}
+    1 & k = 0\\
+    1 & n = k\\
+    \displaystyle {n - 1 \choose k - 1} + {n - 1 \choose k} & \mbox{en otro caso}\\
+  \end{array}
 \right.
 $$
 
-\input{./src/combinatoria/pascal_triangle}%.tex
+\codigofuente{./src/combinatoria/pascal_triangle.cpp}
 
-\bigskip 
+\bigskip
 \textbf{Nota:} $ \displaystyle {n \choose k }  $ está indefinido en el código anterior si $ n > k$. ¡La tabla puede estar llena con cualquier basura del compilador!
 
 \subsection{Permutaciones con elementos indistinguibles}
@@ -118,7 +120,7 @@ $n_{2}$ objetos indistinguibles de tipo 2, ..., y $n_{k}$ objetos indistinguible
 $$
 \frac{n!}{n_{1}!n_{2}! \cdots n_{k}!}
 $$
-\textbf{Ejemplo:} Con las letras de la palabra \texttt{PROGRAMAR} se pueden formar $ \displaystyle \frac{9!}{2! \cdot 3!} = 
+\textbf{Ejemplo:} Con las letras de la palabra \texttt{PROGRAMAR} se pueden formar $ \displaystyle \frac{9!}{2! \cdot 3!} =
 30240 $ permutaciones \underline{diferentes}.
 \subsection{Desordenes, desarreglos o permutaciones completas}
 
@@ -128,11 +130,11 @@ posición $i$-ésima. Por ejemplo, \textit{4213} es un desarreglo de 4 elementos
 
 Sea $D_{n}$ el número de desarreglos de $n$ elementos, entonces:
 $$ {D_{n}} = \left\{
-\begin{array}{c l}
- 1 & n = 0\\
- 0 & n = 1\\
- (n-1)(D_{n-1} + D_{n-2}) & n \geq 2\\
-\end{array}
+  \begin{array}{c l}
+    1 & n = 0\\
+    0 & n = 1\\
+    (n-1)(D_{n-1} + D_{n-2}) & n \geq 2\\
+  \end{array}
 \right.
 $$
 Usando el principio de inclusión-exclusión, también se puede encontrar la fórmula
@@ -145,28 +147,27 @@ $$
 \subsection{Algoritmo de Dijkstra}
 El peso de todas las aristas debe ser no negativo.
 \\
-\input{./src/grafos/dijkstra}%.tex
+\codigofuente{./src/grafos/dijkstra.cpp}
 
 \subsection{Minimum spanning tree: Algoritmo de Prim}
 
-\input{./src/grafos/prim}%.tex
+\codigofuente{./src/grafos/prim.cpp}
 
 \subsection{Minimum spanning tree: Algoritmo de Kruskal + Union-Find}
-\input{./src/grafos/kruskal}%.tex
+\codigofuente{./src/grafos/kruskal.cpp}
 
 \subsection{Algoritmo de Floyd-Warshall}
-\emph{Complejidad:} $ O(n^3) $ \\
-Se asume que no hay ciclos de costo negativo.
-\input{./src/grafos/floyd}%.tex
+\codigofuente{./src/grafos/floyd.cpp}
 
 \subsection{Algoritmo de Bellman-Ford}
-Si no hay ciclos de coste negativo, encuentra la distancia más corta entre un nodo
-y todos los demás. Si sí hay, permite saberlo. \\
-El coste de las aristas \underline{sí} puede ser negativo.
-\input{./src/grafos/bellman}%.tex
+Si no hay ciclos de coste negativo, encuentra la distancia más corta
+entre un nodo y todos los demás. Si sí hay, permite saberlo. \\ El
+coste de las aristas \underline{sí} puede ser negativo
+(\emph{Debería}, si no es así se puede usar Dijsktra o Floyd).
+\codigofuente{./src/grafos/bellman.cpp}
 
 \subsection{Puntos de articulación}
-\input{./src/grafos/puntos_articulacion}%.tex
+\codigofuente{./src/grafos/puntos_articulacion.cpp}
 
 \subsection{Máximo flujo: Método de Ford-Fulkerson, algoritmo de Edmonds-Karp}
 El algoritmo de Edmonds-Karp es una modificación al método de Ford-Fulkerson. Este último
@@ -174,12 +175,30 @@ utiliza DFS para hallar un camino de aumentación, pero la sugerencia de Edmonds
 es utilizar BFS que lo hace más eficiente en algunos grafos.
 \medskip
 
-\input{./src/grafos/ford_fulkerson}%.tex
+\codigofuente{./src/grafos/ford_fulkerson.cpp}
+
+\subsection{Máximo flujo para grafos dispersos usando Ford-Fulkerson}
+\codigofuente{./src/grafos/ford_fulkerson_sparse.cpp}
+
+\subsection{Máximo flujo para grafos disperos usando algoritmo de Dinic}
+\codigofuente{./src/grafos/dinic.cpp}
+
+\subsection{Máximo flujo mínimo costo}
+Implementación de Misof:
+\codigofuente{./src/grafos/mincostmaxflow.cpp}
+
+\subsection{Componentes fuertemente conexas: Algoritmo de Tarjan}
+\label{tarjan}
+\codigofuente{./src/grafos/tarjan.cpp}
+
+\subsection{2-Satisfiability}
+Dada una ecuación lógica de conjunciones de disyunciones de 2 términos, se pretente decidir si existen valores de verdad que puedan asignarse a las variables para hacer cierta la ecuación. \\
+Por ejemplo, $(b_1 \vee \neg b_2) \wedge (b_2 \vee b_3) \wedge (\neg b_1 \vee \neg b_2) $ es verdadero cuando $b_1$ y $b_3$ son verdaderos y $b_2$ es falso. \\
+\textbf{Solución:} Se sabe que $(p \rightarrow q) \leftrightarrow (\neg p \vee q)$. Entonces se traduce cada disyunción en una implicación y se crea un grafo donde los nodos son cada variable y su negación. Cada implicación es una arista en este grafo. Existe solución si nunca se cumple que una variable y su negación están en la misma componenete fuertemente conexa (Se usa el algoritmo de Tarjan, \ref{tarjan}).
 
 \section{Programación dinámica}
 \subsection{Longest common subsequence}
-\input{./src/dp/lcs}%.tex
-
+\codigofuente{./src/dp/lcs.cpp}
 \subsection{Partición de troncos}
 Este problema es similar al problema de \textit{Matrix Chain Multiplication}. Se tiene
 un tronco de longitud $n$, y $m$ puntos de corte en el tronco. Se puede hacer un corte a la vez,
@@ -202,7 +221,7 @@ costo para partirlo es 20, y se obtiene así:
 
 \medskip
 El algoritmo es $O(n^3)$, pero optimizable a $O(n^2)$ con una tabla adicional:
-\input{./src/dp/particion_troncos}%.tex
+\codigofuente{./src/dp/particion_troncos.cpp}
 
 \section{Geometría}
 \subsection{Área de un polígono}
@@ -210,7 +229,7 @@ Si P es un polígono simple (no se intersecta a sí mismo) su área está dada p
 
 $ A(P) = \frac{1}{2} \displaystyle\sum_{i=0}^{n-1} (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $ \\
 \bigskip
-\input{./src/geometria/polygon_area}%.tex
+\codigofuente{./src/geometria/polygon_area.cpp}
 
 \subsection{Centro de masa de un polígono}
 Si P es un polígono simple (no se intersecta a sí mismo) su centro de masa está dado por: \\
@@ -236,54 +255,59 @@ $ \displaystyle\bar{C}_{y} = \frac{1}{6A} \sum_{i=0}^{n-1} (y_{i} + y_{i+1}) (x_
 
 \subsection{Convex hull: Graham Scan}
 \emph{Complejidad:} $ O(n \log_{2}{n}) $
-\input{./src/geometria/grahamscan}%.tex
+\codigofuente{./src/geometria/grahamscan.cpp}
 
 \subsection{Convex hull: Andrew's monotone chain}
 \emph{Complejidad:} $ O(n \log_{2}{n}) $
-\input{./src/geometria/monotonechain}%.tex
+\codigofuente{./src/geometria/monotonechain.cpp}
 
 \subsection{Mínima distancia entre un punto y un segmento}
-\input{./src/geometria/distance_point_to_segment}%.tex
+\codigofuente{./src/geometria/distance_point_to_segment.cpp}
 
 \subsection{Mínima distancia entre un punto y una recta}
-\input{./src/geometria/distance_point_to_line}%.tex
+\codigofuente{./src/geometria/distance_point_to_line.cpp}
 
 \subsection{Determinar si un polígono es convexo}
-\input{./src/geometria/is_convex_polygon}%.tex
+\codigofuente{./src/geometria/is_convex_polygon.cpp}
 
 \subsection{Determinar si un punto está dentro de un polígono convexo}
-\input{./src/geometria/is_inside_convex_polygon}%.tex
+\codigofuente{./src/geometria/is_inside_convex_polygon.cpp}
 
 \subsection{Determinar si un punto está dentro de un polígono cualquiera}
 \small
-\textbf{Field-testing:} 
+\textbf{Field-testing:}
 \begin{itemize}
 \item \emph{TopCoder} -  SRM 187 - Division 2 Hard - PointInPolygon
 \end{itemize}
-\input{./src/geometria/is_inside_concave_polygon}%.tex
+\codigofuente{./src/geometria/is_inside_concave_polygon.cpp}
 
-%---------------------------------------------------------------
+\subsection{Intersección de dos rectas}
+\codigofuente{./src/geometria/line_line_intersection.cpp}
+
+\subsection{Intersección de dos segmentos de recta}
+\codigofuente{./src/geometria/segment_segment_intersection.cpp}
+% ---------------------------------------------------------------
 \section{Estructuras de datos}
 \subsection{Árboles de Fenwick ó Binary indexed trees}
 
 Se tiene un arreglo $\{a_0, a_1, \cdots, a_{n-1}\}$. Los árboles
 de Fenwick permiten encontrar $ \displaystyle \sum_{k=i}^{j} a_k $ en orden $O(\log_{2}{n})$ para parejas de $(i, j)$ con $i \leq j$. De la misma manera, permiten sumarle una cantidad a un $a_i$ también en tiempo $O(log_{2}{n})$.
 \medskip
-\input{./src/estructuras/fenwick}%.tex
+\codigofuente{./src/estructuras/fenwick.cpp}
 
 \subsection{Segment tree}
-\input{./src/estructuras/segment_tree}%.tex
+\codigofuente{./src/estructuras/segment_tree.cpp}
 
-%---------------------------------------------------------------
+% ---------------------------------------------------------------
 \section{Misceláneo}
 \subsection{El \textit{parser} más rápido del mundo}
 \begin{itemize}
 \item Cada no-terminal: un método
-\item Cada lado derecho: 
-\begin{itemize}
-\item invocar los métodos de los no-terminales o
-\item Cada terminal: invocar proceso \textit{match}
-\end{itemize}
+\item Cada lado derecho:
+  \begin{itemize}
+  \item invocar los métodos de los no-terminales o
+  \item Cada terminal: invocar proceso \textit{match}
+  \end{itemize}
 \item Alternativas en una producción: se hace un \textit{if}
 \end{itemize}
 \medskip
@@ -293,52 +317,104 @@ varias posibles escogencias que empiezan por el mismo caracter (En ambos casos l
 \medskip
 \textbf{Ejemplo:} Para la gramática:
 $$
-A \longrightarrow (A)A 
+A \longrightarrow (A)A
 $$ $$
 A \longrightarrow \epsilon
 $$
 
-\input{./src/misc/parser_recursivo_desc}%.tex
+\codigofuente{./src/misc/parser_recursivo_desc.cpp}
+
+\subsection{Checklist para corregir un Wrong Answer}
+Consideraciones que podrían ser causa de un Wrong Answer:
+\begin{itemize}
+  \begin{item}
+    Overflow.
+  \end{item}
+
+  \begin{item}
+    El programa termina anticipadamente por la condición en el ciclo de lectura.
+    Por ejemplo, se tiene \verb_while (cin >> n >> k && n && k)_ y un caso válido de entrada
+    es n = 1 y k = 0.
+  \end{item}
+
+  \begin{item}
+    El grafo no es conexo.
+  \end{item}
+
+  \begin{item}
+    Puede haber varias aristas entre el mismo par de nodos.
+  \end{item}
+
+  \begin{item}
+    Las aristas pueden tener costos negativos.
+  \end{item}
+
+  \begin{item}
+    El grafo tiene un sólo nodo.
+  \end{item}
+
+  \begin{item}
+    La cadena puede ser vacía.
+  \end{item}
+
+  \begin{item}
+    Las líneas pueden tener espacios en blanco al principio o al final (Cuidado al usar \texttt{getline} o \texttt{fgets}).
+  \end{item}
+
+  \begin{item}
+    El arreglo no se limpia entre caso y caso.
+  \end{item}
+
+  \begin{item}
+    Estás imprimiendo una línea en blanco con un espacio (\verb_printf(" \n")_ en vez de \verb_printf("\n")_  ó \verb_puts(" ")_  en vez de \verb_puts("")_).
+  \end{item}
+
+  \begin{item}
+    La rana se puede quedar quieta.
+  \end{item}
+
+
+\end{itemize}
 
 
 \section{Java}
 \subsection{Entrada desde entrada estándar}
-Este primer método es muy fácil pero es mucho más ineficiente porque utiliza Scanner en vez de BufferedReader: \\
-\input{./src/java/io_estandar_easy}%.tex
+Este primer método es muy fácil pero es mucho más ineficiente porque utiliza Scanner en vez de BufferedReader:
+\codigofuente{./src/java/io_estandar_easy.java}
 
 \bigskip
 
-Este segundo es más rápido: \\
-\input{./src/java/io_estandar}%.tex
+Este segundo es más rápido:
+\codigofuente{./src/java/io_estandar.java}
 \subsection{Entrada desde archivo}
-\input{./src/java/io_file}%.tex
+\codigofuente{./src/java/io_file.java}
 
 \subsection{Mapas y sets}
 Programa de ejemplo:
-\input{./src/java/maps_sets}%.tex
-\bigskip
+\codigofuente{./src/java/maps_sets.java} \\
 La salida de este programa es: \\
-
-\ttfamily 
+\bigskip
+\ttfamily
 \fbox{\parbox{2.0in}{
-Maps\\
-m.size() = 1\\
-465\\
-null\\
-\\
-Sets\\
-54 presente.\\
-s.size() = 3\\
-54\\
-3576\\
-1000000007\\
-s.size() = 0\\
-}
+    Maps\\
+    m.size() = 1\\
+    465\\
+    null\\
+    \\
+    Sets\\
+    54 presente.\\
+    s.size() = 3\\
+    54\\
+    3576\\
+    1000000007\\
+    s.size() = 0\\
+  }
 }
 \\ \normalfont\normalsize
-\bigskip 
+\bigskip
+
 Si quiere usarse una clase propia como llave del mapa o como elemento del set, la clase debe implementar
-algunos métodos especiales: Si va a usarse un TreeMap ó TreeSet hay que implementar los métodos \texttt{compareTo} y 
+algunos métodos especiales: Si va a usarse un TreeMap ó TreeSet hay que implementar los métodos \texttt{compareTo} y
 \texttt{equals} de la interfaz \texttt{Comparable} como en la sección \ref{colas_de_prioridad_java}. Si va a usarse
 un HashMap ó HashSet hay más complicaciones.\\
 \smallskip
@@ -347,33 +423,32 @@ un HashMap ó HashSet hay más complicaciones.\\
 \subsection{Colas de prioridad}
 \label{colas_de_prioridad_java}
 Hay que implementar unos métodos. Veamos un ejemplo: \\
-\input{./src/java/priority_queue}%.tex
-\bigskip
+\codigofuente{./src/java/priority_queue.java}\\
 La salida de este programa es: \\
 
-\ttfamily 
+\ttfamily
 \fbox{\parbox{2.0in}{
-peso = 0, destino = 12\\
-peso = 0, destino = 8\\
-peso = 0, destino = 13\\
-peso = 3, destino = 7\\
-peso = 1876, destino = 4\\
+    peso = 0, destino = 12\\
+    peso = 0, destino = 8\\
+    peso = 0, destino = 13\\
+    peso = 3, destino = 7\\
+    peso = 1876, destino = 4\\
+  }
 }
-}
-\\ \normalfont\normalsize
-\medskip
+ \normalfont\normalsize
+
 Vemos que la función de comparación que definimos no tiene en cuenta \texttt{destino},
 por eso no desempata cuando dos \texttt{Items} tienen el mismo \texttt{peso} si no que escoge
 cualquiera de manera arbitraria.
 
 \section{C++}
 \subsection{Entrada desde archivo}
-\input{./src/c++/io_file}%.tex
+\codigofuente{./src/c++/io_file.cpp}
 
 \subsection{Strings con caractéres especiales}
-\input{./src/c++/unicode}%.tex
+\codigofuente{./src/c++/unicode.cpp}
 
 \emph{Nota}: Como alternativa a la función getline, se pueden utilizar las funciones fgetws y fputws, y más adelante swscanf y wprintf:
-\input{./src/c++/fgetws}%.tex
+\codigofuente{./src/c++/fgetws.cpp}
 
 \end{document}

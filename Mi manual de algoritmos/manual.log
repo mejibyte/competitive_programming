@@ -1,11 +1,11 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.2.17)  22 AUG 2008 18:23
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.1.25)  4 APR 2009 10:38
 entering extended mode
  %&-line parsing enabled.
 **manual.tex
 (./manual.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, spanish, catalan, galician, spanish, catalan, galician, loaded.
+yphenation, spanish, catalan, galician, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size10.clo
@@ -371,12 +371,12 @@ a.cpp)
 (./src/number_theory/divisores.cpp [2]) (./src/dp/lcs.cpp) [3] (./manual.aux) )
  
 Here is how much of TeX's memory you used:
- 3097 strings out of 95001
- 38288 string characters out of 1181560
- 99800 words of memory out of 1500000
+ 3097 strings out of 95037
+ 38288 string characters out of 1182324
+ 99774 words of memory out of 1500000
  6261 multiletter control sequences out of 10000+50000
  8241 words of font info for 29 fonts, out of 1200000 for 2000
- 80 hyphenation exceptions out of 8191
+ 54 hyphenation exceptions out of 8191
  32i,7n,58p,188b,1694s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf-t
 exlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/
@@ -386,7 +386,7 @@ texlive/fonts/type1/bluesky/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/
 bluesky/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb><
 /usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf-te
 xlive/fonts/type1/bluesky/cm/cmti10.pfb>
-Output written on manual.pdf (3 pages, 70100 bytes).
+Output written on manual.pdf (3 pages, 70157 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)

@@ -1,0 +1,96 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+{\ttfamily \raggedright {
+\noindent
+\mbox{}\textit{\textcolor{Brown}{////////////////\ Maximum\ flow\ for\ sparse\ graphs\ ////////////////}} \\
+\mbox{}\textit{\textcolor{Brown}{////////////////\ \ \ \ Complexity:\ O(V\ *\ E\textasciicircum{}2)\ \ \ \ \ \ ////////////////}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{/*}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Usage:}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ initialize$\_$max$\_$flow();}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Create\ graph\ using\ add$\_$edge(u,\ v,\ c);}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ max$\_$flow(source,\ sink);}} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ WARNING:\ The\ algorithm\ writes\ on\ the\ cap\ array.\ The\ capacity\ is\ not}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ the\ same\ after\ having\ run\ the\ algorithm.\ \ If\ you\ need\ to\ run\ the}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ algorithm\ several\ times\ on\ the\ same\ graph,\ backup\ the\ cap\ array.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ */}} \\
+\mbox{} \\
+\mbox{}\textbf{\textcolor{Blue}{const}}\ \textcolor{ForestGreen}{int}\ MAXE\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{50000}\textcolor{BrickRed}{;}\ \textit{\textcolor{Brown}{//Maximum\ number\ of\ edges}} \\
+\mbox{}\textbf{\textcolor{Blue}{const}}\ \textcolor{ForestGreen}{int}\ oo\ \textcolor{BrickRed}{=}\ INT$\_$MAX\ \textcolor{BrickRed}{/}\ \textcolor{Purple}{4}\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{ForestGreen}{int}\ cap\textcolor{BrickRed}{[}MAXE\textcolor{BrickRed}{];} \\
+\mbox{}\textcolor{ForestGreen}{int}\ first\textcolor{BrickRed}{[}MAXE\textcolor{BrickRed}{];} \\
+\mbox{}\textcolor{ForestGreen}{int}\ next\textcolor{BrickRed}{[}MAXE\textcolor{BrickRed}{];} \\
+\mbox{}\textcolor{ForestGreen}{int}\ adj\textcolor{BrickRed}{[}MAXE\textcolor{BrickRed}{];} \\
+\mbox{}\textcolor{ForestGreen}{int}\ current$\_$edge\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\textit{\textcolor{Brown}{/*}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Builds\ a\ directed\ edge\ (u,\ v)\ with\ capacity\ c.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ Note\ that\ actually\ two\ edges\ are\ added,\ the\ edge}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ and\ its\ complementary\ edge\ for\ the\ backflow.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ */}} \\
+\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{add$\_$edge}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ u\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ v\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ c\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ adj\textcolor{BrickRed}{[}current$\_$edge\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ v\textcolor{BrickRed}{;} \\
+\mbox{}\ \ cap\textcolor{BrickRed}{[}current$\_$edge\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ c\textcolor{BrickRed}{;} \\
+\mbox{}\ \ next\textcolor{BrickRed}{[}current$\_$edge\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ first\textcolor{BrickRed}{[}u\textcolor{BrickRed}{];} \\
+\mbox{}\ \ first\textcolor{BrickRed}{[}u\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ current$\_$edge\textcolor{BrickRed}{++;} \\
+\mbox{} \\
+\mbox{}\ \ adj\textcolor{BrickRed}{[}current$\_$edge\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ u\textcolor{BrickRed}{;} \\
+\mbox{}\ \ cap\textcolor{BrickRed}{[}current$\_$edge\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ next\textcolor{BrickRed}{[}current$\_$edge\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ first\textcolor{BrickRed}{[}v\textcolor{BrickRed}{];} \\
+\mbox{}\ \ first\textcolor{BrickRed}{[}v\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ current$\_$edge\textcolor{BrickRed}{++;} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{initialize$\_$max$\_$flow}}\textcolor{BrickRed}{()}\textcolor{Red}{\{} \\
+\mbox{}\ \ current$\_$edge\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{memset}}\textcolor{BrickRed}{(}next\textcolor{BrickRed}{,}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{sizeof}}\ next\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{memset}}\textcolor{BrickRed}{(}first\textcolor{BrickRed}{,}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{sizeof}}\ first\textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{int}\ q\textcolor{BrickRed}{[}MAXE\textcolor{BrickRed}{];} \\
+\mbox{}\textcolor{ForestGreen}{int}\ incr\textcolor{BrickRed}{[}MAXE\textcolor{BrickRed}{];} \\
+\mbox{}\textcolor{ForestGreen}{int}\ arrived$\_$by\textcolor{BrickRed}{[}MAXE\textcolor{BrickRed}{];}\ \textit{\textcolor{Brown}{//arrived$\_$by[i]\ =\ The\ last\ edge\ used\ to\ reach\ node\ i}} \\
+\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{find$\_$augmenting$\_$path}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ src\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ snk\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{/*}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ \ \ Make\ a\ BFS\ to\ find\ an\ augmenting\ path\ from\ the\ source\ to\ the\ sink.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ \ \ Then\ pump\ flow\ through\ this\ path,\ and\ return\ the\ amount\ that\ was\ pumped.}} \\
+\mbox{}\textit{\textcolor{Brown}{\ \ */}} \\
+\mbox{}\ \ \textbf{\textcolor{Black}{memset}}\textcolor{BrickRed}{(}arrived$\_$by\textcolor{BrickRed}{,}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{sizeof}}\ arrived$\_$by\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ h\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{,}\ t\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ q\textcolor{BrickRed}{[}t\textcolor{BrickRed}{++]}\ \textcolor{BrickRed}{=}\ src\textcolor{BrickRed}{;} \\
+\mbox{}\ \ arrived$\_$by\textcolor{BrickRed}{[}src\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{-}\textcolor{Purple}{2}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ incr\textcolor{BrickRed}{[}src\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ oo\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(}h\ \textcolor{BrickRed}{$<$}\ t\ \textcolor{BrickRed}{\&\&}\ arrived$\_$by\textcolor{BrickRed}{[}snk\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{==}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{)}\textcolor{Red}{\{}\ \textit{\textcolor{Brown}{//BFS}} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ u\ \textcolor{BrickRed}{=}\ q\textcolor{BrickRed}{[}h\textcolor{BrickRed}{++];} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{for}}\ \textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ e\ \textcolor{BrickRed}{=}\ first\textcolor{BrickRed}{[}u\textcolor{BrickRed}{];}\ e\ \textcolor{BrickRed}{!=}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{;}\ e\ \textcolor{BrickRed}{=}\ next\textcolor{BrickRed}{[}e\textcolor{BrickRed}{])}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textcolor{ForestGreen}{int}\ v\ \textcolor{BrickRed}{=}\ adj\textcolor{BrickRed}{[}e\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}arrived$\_$by\textcolor{BrickRed}{[}v\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{==}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\ \textcolor{BrickRed}{\&\&}\ cap\textcolor{BrickRed}{[}e\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{$>$}\ \textcolor{Purple}{0}\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ arrived$\_$by\textcolor{BrickRed}{[}v\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ e\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \ \ incr\textcolor{BrickRed}{[}v\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{min}}\textcolor{BrickRed}{(}incr\textcolor{BrickRed}{[}u\textcolor{BrickRed}{],}\ cap\textcolor{BrickRed}{[}e\textcolor{BrickRed}{]);} \\
+\mbox{}\ \ \ \ \ \ \ \ q\textcolor{BrickRed}{[}t\textcolor{BrickRed}{++]}\ \textcolor{BrickRed}{=}\ v\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}arrived$\_$by\textcolor{BrickRed}{[}snk\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{==}\ \textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ \textcolor{Purple}{0}\textcolor{BrickRed}{;} \\
+\mbox{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ cur\ \textcolor{BrickRed}{=}\ snk\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ neck\ \textcolor{BrickRed}{=}\ incr\textcolor{BrickRed}{[}snk\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{(}cur\ \textcolor{BrickRed}{!=}\ src\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//Remove\ capacity\ from\ the\ edge\ used\ to\ reach\ node\ "{}cur"{}}} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//Add\ capacity\ to\ the\ backedge}} \\
+\mbox{}\ \ \ \ cap\textcolor{BrickRed}{[}arrived$\_$by\textcolor{BrickRed}{[}cur\textcolor{BrickRed}{]]}\ \textcolor{BrickRed}{-=}\ neck\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ cap\textcolor{BrickRed}{[}arrived$\_$by\textcolor{BrickRed}{[}cur\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{\textasciicircum{}}\ \textcolor{Purple}{1}\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{+=}\ neck\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ cur\ \textcolor{BrickRed}{=}\ adj\textcolor{BrickRed}{[}arrived$\_$by\textcolor{BrickRed}{[}cur\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{\textasciicircum{}}\ \textcolor{Purple}{1}\textcolor{BrickRed}{];}\ \textit{\textcolor{Brown}{//move\ backwards\ in\ the\ path}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ neck\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{max$\_$flow}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ src\textcolor{BrickRed}{,}\ \textcolor{ForestGreen}{int}\ snk\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ ans\ \textcolor{BrickRed}{=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{,}\ neck\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{while}}\ \textcolor{BrickRed}{((}neck\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{find$\_$augmenting$\_$path}}\textcolor{BrickRed}{(}src\textcolor{BrickRed}{,}\ snk\textcolor{BrickRed}{))}\ \textcolor{BrickRed}{!=}\ \textcolor{Purple}{0}\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ ans\ \textcolor{BrickRed}{+=}\ neck\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{return}}\ ans\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{}
+} \normalfont\normalsize
