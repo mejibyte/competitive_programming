@@ -1,4 +1,4 @@
-// Accepted
+// Wrong Answer
 using namespace std;
 #include <algorithm>
 #include <iostream>
@@ -27,6 +27,14 @@ using namespace std;
 
 int memo[1005][25];
 
+int myFloor(int n, int k) {
+    return n / k;
+}
+
+int myCeil(int n, int k) {
+    return (n + k - 1) / k;
+}
+
 int f(int n, int s) {
     if (n == 0) return 0;
     if (n == 1) return 1;
@@ -34,11 +42,8 @@ int f(int n, int s) {
     
     if (memo[n][s] != -1) return memo[n][s];
     
-    int best = 1<<28;
-    for (int i = 0; i < n; ++i) {
-        int option = 1 + max(   f(i, s-1),  f(n-i-1, s)  );
-        best = min(best, option);
-    }
+    int best = 1 + max( f(myFloor(n-1, 2), s-1), f(myCeil(n-1, 2), s)  );
+    
     return memo[n][s] = best;
 }
 
@@ -51,7 +56,7 @@ int main(){
         cin >> n >> s;
         assert(s > 0 and n > 0);
         int ans = f(n, s);
-        printf("%d\n", ans);
+        printf("%d %d = %d\n", n, s, ans);
     }
     return 0;
 }
