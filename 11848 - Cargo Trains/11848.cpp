@@ -1,3 +1,4 @@
+// Accepted
 using namespace std;
 #include <algorithm>
 #include <iostream>
