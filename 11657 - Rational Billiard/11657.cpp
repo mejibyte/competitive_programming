@@ -34,10 +34,10 @@ bool boom(int m, int n, int x0, int y0, int x1, int y1, int p, int q) {
     p /= abs(p);
     q /= abs(q);
     
-    int d1 = p * (x1 - x0)       - q * (y1 - y0);
-    int d2 = p * (2*m - x1 - x0) - q * (y1 - y0);
-    int d3 = p * (x1 - x0)       - q * (2*n - y1 - y0);
-    int d4 = p * (2*m - x1 - x0) - q * (2*n - y1 - y0);
+    int d1 = p * (y1 - y0)       - q * (x1 - x0);
+    int d2 = p * (2*n - y1 - y0) - q * (x1 - x0);
+    int d3 = p * (y1 - y0)       - q * (2*m - x1 - x0);
+    int d4 = p * (2*n - y1 - y0) - q * (2*m - x1 - x0);
     
     int g = __gcd(2*n*q, 2*m*p);
 
