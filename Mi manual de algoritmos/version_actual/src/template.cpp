@@ -34,7 +34,10 @@ int cmp(double x, double y = 0, double tol = EPS){
     return( x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
 }
 
-int main(){
+#define INPUT_FILE "problemname"
 
-  return 0;
+int main(){
+    freopen(INPUT_FILE ".in", "r", stdin); // Read from file
+  
+    return 0;
 }
