@@ -216,6 +216,21 @@ costo para partirlo es 20, y se obtiene así:
 El algoritmo es $O(n^3)$, pero optimizable a $O(n^2)$ con una tabla adicional:
 \codigofuente{./src/dp/particion_troncos.cpp}
 
+\section{Strings}
+\subsection{Algoritmo de Knuth-Morris-Pratt (KMP)}
+\subsection{Algoritmo de Aho-Corasick}
+Sirve para buscar muchos patrones en una cadena. Por ejemplo,
+dada la cadena $ahishers$ y los patrones $\{he, she, hers, his\}$,
+encuentra que $his$ aparece en la posición 1, $he$ aparece en la posición 4,
+$she$ aparece en la posición 3 y $hers$ aparece en la posición 4. \\
+
+Complejidad: $O(n + m)$ donde $n$ es la longitud de la cadena en la que hay que buscar
+y $m$ es la suma de las longitudes de todos los patrones. \\
+
+\codigofuente{./src/strings/aho-corasick.cpp}
+\subsection{Suffix arrays y longest common prefix}
+\subsection{Prefix tree}
+
 \section{Geometría}
 \subsection{Área de un polígono}
 Si P es un polígono simple (no se intersecta a sí mismo) su área está dada por: \\
@@ -369,9 +384,91 @@ Consideraciones que podrían ser causa de un Wrong Answer:
   \begin{item}
     La rana se puede quedar quieta.
   \end{item}
-
-
 \end{itemize}
+
+\subsection{Redondeo de dobles}
+
+\subsubsection{Convertir un doble al entero más cercano}
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.3} %Multiplica la altura de cada fila de la tabla por 2
+  % Si quiero aumentar el tamaño de una fila en particular insertar \rule{0cm}{1cm} en esa fila.
+  \begin{tabular}{| c | c | c | }
+    \hline
+    \textit{Código} & \textit{Valores originales ($d$)} & \textit{Nuevos valores ($k$)} \\
+    \hline\hline
+
+    \verb_int k = floor(d + 0.5 + EPS);_ & 0.0  & 0 \\ \cline{2-3}
+    (con \verb_EPS = 1e-9_)              & 0.1  & 0 \\ \cline{2-3}
+                                         & 0.5  & 1 \\ \cline{2-3}
+                                         & 0.4999999999999999 & 1 \\ \cline{2-3}
+                                         & \verb_cos(1e-7) * 0.5_ =  & \\ & 0.4999999999999975 & 1 \\ \cline{2-3}
+                                         & 0.9  & 1 \\ \cline{2-3}
+                                         & 1.0 & 1 \\ \cline{2-3}
+                                         & 1.4 & 1 \\ \cline{2-3}
+                                         & 1.5 & 2 \\ \cline{2-3}
+                                         & 1.6 & 2 \\ \cline{2-3}
+                                         & 1.9 & 2 \\ \cline{2-3}
+                                         & 2.0 & 2 \\ \cline{2-3}
+                                         & 2.1 & 2 \\ \cline{2-3}
+                                         & -0.0  & 0 \\ \cline{2-3}
+                                         & -0.1  & 0 \\ \cline{2-3}
+                                         & -0.5  & 0 \\ \cline{2-3}
+                                         & -0.4999999999999999 & 0 \\ \cline{2-3}
+                                         & \verb_-cos(1e-7) * 0.5_ =  & \\ & -0.4999999999999975 & 0 \\ \cline{2-3}
+                                         & -0.9  & -1 \\ \cline{2-3}
+                                         & -1.0 & -1 \\ \cline{2-3}
+                                         & -1.4 & -1 \\ \cline{2-3}
+                                         & -1.5 & -1 \\ \cline{2-3}
+                                         & -1.6 & -2 \\ \cline{2-3}
+                                         & -1.9 & -2 \\ \cline{2-3}
+                                         & -2.0 & -2 \\ \cline{2-3}
+                                         & -2.1 & -2 \\ \cline{2-3}
+    \hline
+  \end{tabular}
+  \renewcommand{\arraystretch}{1}
+\end{center}
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.3} %Multiplica la altura de cada fila de la tabla por 2
+  % Si quiero aumentar el tamaño de una fila en particular insertar \rule{0cm}{1cm} en esa fila.
+  \begin{tabular}{| c | c | c | }
+    \hline
+    \textit{Código} & \textit{Valores originales ($d$)} & \textit{Nuevos valores ($k$)} \\
+    \hline\hline
+
+    \verb_int k = floor(d + 0.5);_       & 0.0  & 0 \\ \cline{2-3}
+                                         & 0.1  & 0 \\ \cline{2-3}
+                                         & 0.5  & 1 \\ \cline{2-3}
+                                         & 0.4999999999999999 & 0 \\ \cline{2-3}
+                                         & \verb_cos(1e-7) * 0.5_ =  & \\ & 0.4999999999999975 & 0 \\ \cline{2-3}
+                                         & 0.9  & 1 \\ \cline{2-3}
+                                         & 1.0 & 1 \\ \cline{2-3}
+                                         & 1.4 & 1 \\ \cline{2-3}
+                                         & 1.5 & 2 \\ \cline{2-3}
+                                         & 1.6 & 2 \\ \cline{2-3}
+                                         & 1.9 & 2 \\ \cline{2-3}
+                                         & 2.0 & 2 \\ \cline{2-3}
+                                         & 2.1 & 2 \\ \cline{2-3}
+                                         & -0.0  & 0 \\ \cline{2-3}
+                                         & -0.1  & 0 \\ \cline{2-3}
+                                         & -0.5  & 0 \\ \cline{2-3}
+                                         & -0.4999999999999999 & 0 \\ \cline{2-3}
+                                         & \verb_-cos(1e-7) * 0.5_ =  & \\ & -0.4999999999999975 & 0 \\ \cline{2-3}
+                                         & -0.9  & -1 \\ \cline{2-3}
+                                         & -1.0 & -1 \\ \cline{2-3}
+                                         & -1.4 & -1 \\ \cline{2-3}
+                                         & -1.5 & -1 \\ \cline{2-3}
+                                         & -1.6 & -2 \\ \cline{2-3}
+                                         & -1.9 & -2 \\ \cline{2-3}
+                                         & -2.0 & -2 \\ \cline{2-3}
+                                         & -2.1 & -2 \\ \cline{2-3}
+    \hline
+  \end{tabular}
+  \renewcommand{\arraystretch}{1}
+\end{center}
+
+\subsubsection{Redondear un doble a cierto número de cifras de precisión}
 
 
 \section{Java}
