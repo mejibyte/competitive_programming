@@ -109,8 +109,12 @@ bool point_in_box(double x, double y,
 }
 
 
-int direction(int pix, int piy, int pjx, int pjy, int pkx, int pky) {
-    return (pkx - pix) * (pjy - piy) - (pky - piy) * (pjx - pix);
+/*
+  Returns the cross product of the segment that goes from (x1, y1) to (x3, y3)
+  with the segment that goes from (x1, y1) to (x2, y2)
+*/
+int direction(int x1, int y1, int x2, int y2, int x3, int y3) {
+    return (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1);
 }
 
 /*
