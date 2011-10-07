@@ -1,10 +1,6 @@
 // Convex Hull: Andrew's Monotone Chain Convex Hull
 // Complexity: O(n log n) (But lower constant than Graham Scan)
 
-#include <algorithm>
-#include <vector>
-using namespace std;
-
 typedef long long CoordType;
 
 struct Point {

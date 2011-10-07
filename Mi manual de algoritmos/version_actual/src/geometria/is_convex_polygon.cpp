@@ -1,6 +1,6 @@
 /*
-  Returns positive if a-b-c make a left turn.
-  Returns negative if a-b-c make a right turn.
+  Returns positive if a-b-c makes a left turn.
+  Returns negative if a-b-c makes a right turn.
   Returns 0.0 if a-b-c are colineal.
  */
 double turn(const point &a, const point &b, const point &c){

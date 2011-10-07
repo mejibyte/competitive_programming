@@ -26,19 +26,19 @@
 \BOOKMARK [2][-]{subsection.6.1}{Algoritmo de Knuth-Morris-Pratt \(KMP\)}{section.6}% 26
 \BOOKMARK [2][-]{subsection.6.2}{Algoritmo de Aho-Corasick}{section.6}% 27
 \BOOKMARK [2][-]{subsection.6.3}{Suffix arrays y longest common prefix}{section.6}% 28
-\BOOKMARK [2][-]{subsection.6.4}{Prefix tree}{section.6}% 29
-\BOOKMARK [1][-]{section.7}{Geometr\355a}{}% 30
-\BOOKMARK [2][-]{subsection.7.1}{\301rea de un pol\355gono}{section.7}% 31
-\BOOKMARK [2][-]{subsection.7.2}{Centro de masa de un pol\355gono}{section.7}% 32
-\BOOKMARK [2][-]{subsection.7.3}{Convex hull: Graham Scan}{section.7}% 33
-\BOOKMARK [2][-]{subsection.7.4}{Convex hull: Andrew's monotone chain}{section.7}% 34
-\BOOKMARK [2][-]{subsection.7.5}{M\355nima distancia entre un punto y un segmento}{section.7}% 35
-\BOOKMARK [2][-]{subsection.7.6}{M\355nima distancia entre un punto y una recta}{section.7}% 36
-\BOOKMARK [2][-]{subsection.7.7}{Determinar si un pol\355gono es convexo}{section.7}% 37
-\BOOKMARK [2][-]{subsection.7.8}{Determinar si un punto est\341 dentro de un pol\355gono convexo}{section.7}% 38
-\BOOKMARK [2][-]{subsection.7.9}{Determinar si un punto est\341 dentro de un pol\355gono cualquiera}{section.7}% 39
-\BOOKMARK [2][-]{subsection.7.10}{Intersecci\363n de dos rectas}{section.7}% 40
-\BOOKMARK [2][-]{subsection.7.11}{Intersecci\363n de dos segmentos de recta}{section.7}% 41
+\BOOKMARK [1][-]{section.7}{Geometr\355a}{}% 29
+\BOOKMARK [2][-]{subsection.7.1}{\301rea de un pol\355gono}{section.7}% 30
+\BOOKMARK [2][-]{subsection.7.2}{Centro de masa de un pol\355gono}{section.7}% 31
+\BOOKMARK [2][-]{subsection.7.3}{Convex hull: Graham Scan}{section.7}% 32
+\BOOKMARK [2][-]{subsection.7.4}{Convex hull: Andrew's monotone chain}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.5}{M\355nima distancia entre un punto y un segmento}{section.7}% 34
+\BOOKMARK [2][-]{subsection.7.6}{M\355nima distancia entre un punto y una recta}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.7}{Determinar si un pol\355gono es convexo}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.8}{Determinar si un punto est\341 dentro de un pol\355gono convexo}{section.7}% 37
+\BOOKMARK [2][-]{subsection.7.9}{Determinar si un punto est\341 dentro de un pol\355gono cualquiera}{section.7}% 38
+\BOOKMARK [2][-]{subsection.7.10}{Hallar la intersecci\363n de dos rectas}{section.7}% 39
+\BOOKMARK [2][-]{subsection.7.11}{Hallar la intersecci\363n de dos segmentos de recta}{section.7}% 40
+\BOOKMARK [2][-]{subsection.7.12}{Determinar si dos segmentos de recta se intersectan o no}{section.7}% 41
 \BOOKMARK [1][-]{section.8}{Estructuras de datos}{}% 42
 \BOOKMARK [2][-]{subsection.8.1}{\301rboles de Fenwick \363 Binary indexed trees}{section.8}% 43
 \BOOKMARK [2][-]{subsection.8.2}{Segment tree}{section.8}% 44
