@@ -437,6 +437,19 @@ Consideraciones que podrían ser causa de un Wrong Answer:
 
 \subsection{Redondeo de dobles}
 
+Para redondear un doble a $k$ cifras, usar:
+
+$$ \frac{\lfloor 10^{k} \cdot x + 0.5 \rfloor }{10^k} $$
+
+Ejemplo:
+
+\begin{verbatim}
+  double d = 1.2345;
+  d = floor(1000 * d + 0.5) / 1000;
+\end{verbatim}
+
+Al final, \verb_d_ es 1.235.
+
 \subsubsection{Convertir un doble al entero más cercano}
 
 \begin{center}
@@ -593,5 +606,10 @@ cualquiera de manera arbitraria.
 
 \emph{Nota}: Como alternativa a la función getline, se pueden utilizar las funciones fgetws y fputws, y más adelante swscanf y wprintf:
 \codigofuente{./src/c++/fgetws.cpp}
+
+\subsection{Imprimir un doble con \texttt{cout} con cierto número de cifras de precisión}
+Tener cuidado con números negativos, porque el comportamiento es diferente.
+
+\codigofuente{./src/c++/cout_con_precision.cpp}
 
 \end{document}

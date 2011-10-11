@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.3}Divisores de un n\IeC {\'u}mero}{3}{subsection.2.3}
 \contentsline {section}{\numberline {3}Combinatoria}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Cuadro resumen}{3}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Combinaciones, coeficientes binomiales, tri\IeC {\'a}ngulo de Pascal}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Combinaciones, coeficientes binomiales, tri\IeC {\'a}ngulo de Pascal}{4}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Permutaciones con elementos indistinguibles}{4}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Desordenes, desarreglos o permutaciones completas}{4}{subsection.3.4}
 \contentsline {section}{\numberline {4}Grafos}{4}{section.4}
@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {4.6}Puntos de articulaci\IeC {\'o}n}{7}{subsection.4.6}
 \contentsline {subsection}{\numberline {4.7}M\IeC {\'a}ximo flujo: M\IeC {\'e}todo de Ford-Fulkerson, algoritmo de Edmonds-Karp}{8}{subsection.4.7}
 \contentsline {subsection}{\numberline {4.8}M\IeC {\'a}ximo flujo para grafos dispersos usando Ford-Fulkerson}{9}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Componentes fuertemente conexas: Algoritmo de Tarjan}{10}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.9}Componentes fuertemente conexas: Algoritmo de Tarjan}{11}{subsection.4.9}
 \contentsline {subsection}{\numberline {4.10}2-Satisfiability}{11}{subsection.4.10}
 \contentsline {section}{\numberline {5}Programaci\IeC {\'o}n din\IeC {\'a}mica}{11}{section.5}
 \contentsline {subsection}{\numberline {5.1}Longest common subsequence}{11}{subsection.5.1}
@@ -42,10 +42,10 @@
 \contentsline {subsection}{\numberline {7.12}Determinar si dos segmentos de recta se intersectan o no}{23}{subsection.7.12}
 \contentsline {section}{\numberline {8}Estructuras de datos}{24}{section.8}
 \contentsline {subsection}{\numberline {8.1}\IeC {\'A}rboles de Fenwick \IeC {\'o} Binary indexed trees}{24}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Segment tree}{24}{subsection.8.2}
-\contentsline {section}{\numberline {9}Miscel\IeC {\'a}neo}{25}{section.9}
-\contentsline {subsection}{\numberline {9.1}El \textit {parser} m\IeC {\'a}s r\IeC {\'a}pido del mundo}{25}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Checklist para corregir un Wrong Answer}{26}{subsection.9.2}
+\contentsline {subsection}{\numberline {8.2}Segment tree}{25}{subsection.8.2}
+\contentsline {section}{\numberline {9}Miscel\IeC {\'a}neo}{26}{section.9}
+\contentsline {subsection}{\numberline {9.1}El \textit {parser} m\IeC {\'a}s r\IeC {\'a}pido del mundo}{26}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Checklist para corregir un Wrong Answer}{27}{subsection.9.2}
 \contentsline {subsection}{\numberline {9.3}Redondeo de dobles}{27}{subsection.9.3}
 \contentsline {subsubsection}{\numberline {9.3.1}Convertir un doble al entero m\IeC {\'a}s cercano}{27}{subsubsection.9.3.1}
 \contentsline {subsubsection}{\numberline {9.3.2}Redondear un doble a cierto n\IeC {\'u}mero de cifras de precisi\IeC {\'o}n}{28}{subsubsection.9.3.2}
@@ -57,3 +57,4 @@
 \contentsline {section}{\numberline {11}C++}{31}{section.11}
 \contentsline {subsection}{\numberline {11.1}Entrada desde archivo}{31}{subsection.11.1}
 \contentsline {subsection}{\numberline {11.2}Strings con caract\IeC {\'e}res especiales}{32}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Imprimir un doble con \texttt {cout} con cierto n\IeC {\'u}mero de cifras de precisi\IeC {\'o}n}{32}{subsection.11.3}
