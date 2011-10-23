@@ -65,10 +65,10 @@ bool segment_segment_intersection(int x1, int y1,
 }
 
 int main(){    
-    int times = 10;
-    const int MAXCOORD = 10;
+    int times = 100;
+    const int MAXCOORD = 1000;
     while (times--) {
-        int B = rand() % 10 + 1;
+        int B = rand() % 100 + 1;
         vector< pair< pair<int, int>, pair<int, int> > > segments;
         for (int i = 0; i < B; ++i) {
             while (true) {
