@@ -268,6 +268,14 @@ y $m$ es la suma de las longitudes de todos los patrones. \\
 \codigofuente{./src/strings/suffix_arrays.cpp}
 
 \section{Geometría}
+
+\subsection{Identidades trigonométricas}
+
+$$ \sin(\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta $$
+$$ \cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta $$
+$$ \tan(\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta} $$
+
+
 \subsection{Área de un polígono}
 Si P es un polígono simple (no se intersecta a sí mismo) su área está dada por: \\
 
@@ -348,6 +356,17 @@ el punto de intersección, se puede usar este código que es más corto que \ref
 La función \verb!point_in_box! es la misma que en \ref{hallar_interseccion_segmentos}.
 
 \codigofuente{./src/geometria/check_segment_intersection.cpp}
+
+\subsection{Centro del círculo que pasa por 3 puntos}
+\small
+\textbf{Field-testing:}
+\begin{itemize}
+\item \emph{Live Archive} - 4807 - Cocircular Points
+\end{itemize}
+\normalsize
+
+\codigofuente{./src/geometria/circle_through_3_points.cpp}
+
 % ---------------------------------------------------------------
 \section{Estructuras de datos}
 \subsection{Árboles de Fenwick ó Binary indexed trees}

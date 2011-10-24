@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  23 OCT 2011 13:45
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  23 OCT 2011 22:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -863,18 +863,18 @@ Overfull \hbox (4.45132pt too wide) in paragraph at lines 268--268
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 File: ./src/geometria/polygon_area.cpp  (verbatim)
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
@@ -883,27 +883,27 @@ File: ./src/geometria/grahamscan.cpp  (verbatim)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: ./src/geometria/monotonechain.cpp  (verbatim)
-
-Overfull \hbox (4.45132pt too wide) in paragraph at lines 306--306
+ [19]
+Overfull \hbox (4.45132pt too wide) in paragraph at lines 314--314
 []\OT1/cmtt/m/n/10 // counter-clockwise turn, negative for clockwise turn, and 
 zero[] 
  []
 
 
-Overfull \hbox (4.45132pt too wide) in paragraph at lines 306--306
+Overfull \hbox (4.45132pt too wide) in paragraph at lines 314--314
 []\OT1/cmtt/m/n/10 CoordType cross(const Point &O, const Point &A, const Point 
 &B){[] 
  []
 
-[19]
-Overfull \hbox (9.70128pt too wide) in paragraph at lines 306--306
+
+Overfull \hbox (9.70128pt too wide) in paragraph at lines 314--314
 []\OT1/cmtt/m/n/10 // counter-clockwise order.  Note: the last point in the ret
 urned[] 
  []
 
 File: ./src/geometria/distance_point_to_segment.cpp  (verbatim)
 
-Overfull \hbox (4.45132pt too wide) in paragraph at lines 309--309
+Overfull \hbox (4.45132pt too wide) in paragraph at lines 317--317
 []  \OT1/cmtt/m/n/10 Returns the closest distance between point pnt and the seg
 ment[] 
  []
@@ -912,194 +912,196 @@ File: ./src/geometria/distance_point_to_line.cpp  (verbatim)
 File: ./src/geometria/is_convex_polygon.cpp  (verbatim)
 [20]
 File: ./src/geometria/is_inside_convex_polygon.cpp  (verbatim)
+
+Underfull \hbox (badness 1939) in paragraph at lines 328--328
+[]\OT1/cmr/bx/n/12 Determinar si un pun-to est^^Sa den-tro de un
+ []
+
 File: ./src/geometria/is_inside_concave_polygon.cpp  (verbatim)
 
-Overfull \hbox (35.95105pt too wide) in paragraph at lines 328--328
+Overfull \hbox (35.95105pt too wide) in paragraph at lines 336--336
 []\OT1/cmtt/m/n/10 // Returns an angle in the range [0, 2*Pi) of a given Cartes
 ian point.[] 
  []
 
-
-Overfull \hbox (4.45132pt too wide) in paragraph at lines 328--328
+[21]
+Overfull \hbox (4.45132pt too wide) in paragraph at lines 336--336
 []  \OT1/cmtt/m/n/10 if(fabs(p.x) <= EPS) return (p.y > EPS ? 1.0 : 3.0) * acos
 (0);[] 
  []
 
 
-Overfull \hbox (14.95123pt too wide) in paragraph at lines 328--328
+Overfull \hbox (14.95123pt too wide) in paragraph at lines 336--336
 []  \OT1/cmtt/m/n/10 if(p.x > EPS) return(p.y >= -EPS ? theta : (4*acos(0) + th
 eta));[] 
  []
 
-[21]
-Overfull \hbox (9.70128pt too wide) in paragraph at lines 328--328
+
+Overfull \hbox (9.70128pt too wide) in paragraph at lines 336--336
 []    \OT1/cmtt/m/n/10 if(va < -0.5 || wa < -0.5 || fabs(fabs(xx)-2*acos(0)) < 
 EPS){[] 
  []
 
-File: ./src/geometria/line_line_intersection.cpp  (verbatim)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+File: ./src/geometria/line_line_intersection.cpp  (verbatim)
  [22]
 File: ./src/geometria/segment_segment_intersection.cpp  (verbatim)
 
-Overfull \hbox (9.70128pt too wide) in paragraph at lines 342--342
+Overfull \hbox (9.70128pt too wide) in paragraph at lines 350--350
 []      \OT1/cmtt/m/n/10 //they lie on same line, but they may or may not inter
 sect.[] 
  []
 
 
-Overfull \hbox (4.45132pt too wide) in paragraph at lines 342--342
+Overfull \hbox (4.45132pt too wide) in paragraph at lines 350--350
 []      \OT1/cmtt/m/n/10 0 <= t0 <= 1 iff the intersection point lies in segmen
 t 1.[] 
  []
 
 
-Overfull \hbox (4.45132pt too wide) in paragraph at lines 342--342
+Overfull \hbox (4.45132pt too wide) in paragraph at lines 350--350
 []      \OT1/cmtt/m/n/10 0 <= t1 <= 1 iff the intersection point lies in segmen
 t 2.[] 
  []
 
-File: ./src/geometria/check_segment_intersection.cpp  (verbatim)
 [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: ./src/estructuras/fenwick.cpp  (verbatim)
+File: ./src/geometria/check_segment_intersection.cpp  (verbatim)
+File: ./src/geometria/circle_through_3_points.cpp  (verbatim)
  [24]
+File: ./src/estructuras/fenwick.cpp  (verbatim)
 File: ./src/estructuras/segment_tree.cpp  (verbatim)
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [25]
-Overfull \hbox (14.95123pt too wide) in paragraph at lines 361--361
+Overfull \hbox (14.95123pt too wide) in paragraph at lines 380--380
 []  \OT1/cmtt/m/n/10 return (arr[ans_left] <= arr[ans_right] ? ans_left : ans_r
 ight);[] 
  []
 
 
-Overfull \hbox (9.70128pt too wide) in paragraph at lines 361--361
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (9.70128pt too wide) in paragraph at lines 380--380
 []\OT1/cmtt/m/n/10 void SegmentTree::update(int node, int node_left, int node_r
 ight,[] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 370.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 389.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 370.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 389.
+ [26]
 File: ./src/misc/parser_recursivo_desc.cpp  (verbatim)
 
-Overfull \hbox (9.70128pt too wide) in paragraph at lines 387--387
+Overfull \hbox (9.70128pt too wide) in paragraph at lines 406--406
 []    \OT1/cmtt/m/n/10 if (i < s.length()-1) ok = false; //No consumi toda la c
 adena[] 
  []
 
-[26]
-Overfull \hbox (34.00862pt too wide) in paragraph at lines 467--501
+[27]
+Overfull \hbox (34.00862pt too wide) in paragraph at lines 486--520
  [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
-Overfull \hbox (2.5089pt too wide) in paragraph at lines 506--540
+
+Overfull \hbox (2.5089pt too wide) in paragraph at lines 525--559
  [] 
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: ./src/java/io_estandar_easy.java  (verbatim)
 File: ./src/java/io_estandar.java  (verbatim)
+ [29]
 File: ./src/java/io_file.java  (verbatim)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-Overfull \hbox (30.7011pt too wide) in paragraph at lines 555--555
+
+Overfull \hbox (30.7011pt too wide) in paragraph at lines 574--574
 []\OT1/cmtt/m/n/10 public static void main(String[] args) throws FileNotFoundEx
 ception {[] 
  []
 
 File: ./src/java/maps_sets.java  (verbatim)
 
-Overfull \hbox (35.95105pt too wide) in paragraph at lines 559--559
+Overfull \hbox (35.95105pt too wide) in paragraph at lines 578--578
 []        \OT1/cmtt/m/n/10 //TreeMap<String, Integer> m = new TreeMap<String, I
 nteger>();[] 
  []
 
 
-Overfull \hbox (25.45114pt too wide) in paragraph at lines 559--559
+Overfull \hbox (25.45114pt too wide) in paragraph at lines 578--578
 []        \OT1/cmtt/m/n/10 HashMap<String, Integer> m = new HashMap<String, Int
 eger>();[] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--577
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 577--577
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
-Underfull \hbox (badness 10000) in paragraph at lines 590--591
+
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
  []
 
 File: ./src/java/priority_queue.java  (verbatim)
-
-Underfull \hbox (badness 10000) in paragraph at lines 591--593
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 610--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--602
+Underfull \hbox (badness 10000) in paragraph at lines 621--621
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
 File: ./src/c++/io_file.cpp  (verbatim)
+ [32]
 File: ./src/c++/unicode.cpp  (verbatim)
 File: ./src/c++/fgetws.cpp  (verbatim)
-
-[32]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 619.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 638.
 File: ./src/c++/cout_con_precision.cpp  (verbatim)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 624.
- [33
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 643.
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 624.
+[33]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 643.
  (./manual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 624.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 624.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 643.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 643.
 Package rerunfilecheck Info: File `manual.out' has not changed.
-(rerunfilecheck)             Checksum: 0358164BA18E9E82E736B77A1F4F663B;4725.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 624.
+(rerunfilecheck)             Checksum: 761DB1F6B4CB1BE94A82E3AA2D2F31D0;4900.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 643.
  ) 
 Here is how much of TeX's memory you used:
- 8399 strings out of 493633
- 119928 string characters out of 3143378
- 256250 words of memory out of 3000000
- 11475 multiletter control sequences out of 15000+200000
+ 8405 strings out of 493633
+ 120063 string characters out of 3143378
+ 250250 words of memory out of 3000000
+ 11478 multiletter control sequences out of 15000+200000
  11636 words of font info for 42 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  29i,9n,32p,454b,573s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1122,10 +1124,10 @@ ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 1/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2011/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on manual.pdf (33 pages, 300688 bytes).
+Output written on manual.pdf (33 pages, 303501 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 490 compressed objects within 5 object streams
- 94 named destinations out of 1000 (max. 500000)
- 473 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 500 compressed objects within 5 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 489 words of extra memory for PDF output out of 10000 (max. 10000000)
 
