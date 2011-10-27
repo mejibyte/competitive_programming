@@ -1,6 +1,0 @@
-#!/bin/csh
-
-set mainfile=$1
-
-#echo bc++ -A $mainfile
-bc++ -A $mainfile

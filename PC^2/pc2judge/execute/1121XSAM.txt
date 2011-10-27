@@ -1,3 +1,0 @@
-<?xml version="1.0"?>
-<result outcome =  "Yes" security = "1121XSAM.txt">No Comments.. 
- See log file.</result>
