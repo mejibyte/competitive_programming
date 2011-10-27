@@ -1,0 +1,78 @@
+6
+<n value='parent'>
+<n value='child'>
+</n>
+<n value='me'>
+</n>
+</n>
+8
+parent
+parent
+first_child
+next_sibling
+previous_sibling
+previous_sibling
+next_sibling
+first_child
+
+12
+<n value='a'>
+<n value='b'>
+</n>
+<n value='c'>
+</n>
+<n value='d'>
+</n>
+<n value='e'>
+<n value='f'>
+</n>
+</n>
+</n>
+32
+next_sibling
+previous_sibling
+first_child
+parent
+parent
+first_child
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+first_child
+previous_sibling
+parent
+parent
+first_child
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+next_sibling
+previous_sibling
+next_sibling
+first_child
+previous_sibling
+parent
+parent
+
+4
+<n value='parent'>
+<n value='child'>
+</n>
+</n>
+6
+next_sibling
+first_child
+first_child
+parent
+parent
+parent
+
+0

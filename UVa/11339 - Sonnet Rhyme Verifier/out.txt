@@ -1,0 +1,6 @@
+á in CAPS is Á
+é in CAPS is É
+í in CAPS is Í
+ó in CAPS is Ó
+ú in CAPS is Ú
+ñ in CAPS is Ñ

@@ -1,0 +1,26 @@
+int used[10] = {0};
+long denominator = 0;
+
+/* Here's a Strange one */
+main()
+{
+   bla;
+   bla;
+   bla;
+
+   exit (0);
+}
+}
+;)0( tixe
+
+;alb
+;alb
+;alb
+{
+)(niam
+/* eno egnartS a s'ereH */
+
+;0 = rotanimoned gnol
+;}0{ = ]01[desu tni
+
+>h.oidts< edulcni#

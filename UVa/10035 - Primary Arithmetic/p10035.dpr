@@ -1,0 +1,75 @@
+program p10035(input, output);
+
+{$APPTYPE CONSOLE}
+
+function StrToInt(const S: string): Integer;
+var
+  E: Integer;
+begin
+  Val(S, Result, E);
+end;
+
+var
+  a, b: Array[0..9] of byte; //Arreglo de 10 posiciones puesto que los numeros tienen a lo sumo 9 digitos
+  sa, sb : string; //a y b leidos como string
+  la, lb : byte; //Longitud de a y de b
+  i, temp, carries : integer;
+
+procedure leer();
+var
+  entrada : string;
+begin
+  readLn(entrada);
+  sa := copy(entrada, 1, pos(' ', entrada) - 1);
+  delete(entrada, 1, pos(' ', entrada));
+  sb := entrada;
+  la := length(sa);
+  lb := length(sb);
+end;
+
+procedure escribir();
+begin
+  case carries of
+    0: writeLn('No carry operation.');
+    1: writeLn('1 carry operation.');
+    else
+      begin
+      write(carries); writeLn(' carry operations.');
+      end;
+    end;
+end;
+
+begin
+  //reset(input, 'input.txt');
+  //reset(output, 'output.txt');
+  leer();
+  while (sa <> '0') or (sb <> '0') do //Mientras alguno de los dos sea diferente de 0
+    begin
+    fillChar(a, sizeof(a), 0); //lleno a y b de ceros
+    fillChar(b, sizeof(a), 0);
+    carries := 0;
+    //convierto el numero a que està representado como una string a un arreglo de 10 posiciones.
+    //Por ejemplo, el nùmero 12345 quedarìa guardado en a como {0, 0, 0, 0, 0, 1, 2, 3, 4, 5}
+    for i := la downto 1 do
+      begin
+        a[9 -(la-i)] := StrToInt(sa[i]);
+      end;
+    for i := lb downto 1 do
+      begin
+        b[9 -(lb-i)] := StrToInt(sb[i]);
+      end;
+
+    //sumo cada posicion de a con cada posicion de b, empezando desde la derecha
+    for i := 10 downto 1 do
+      begin
+      temp := a[i] + b[i];
+      if (temp >= 10) then //si es mayor que 10 entonces "llevo" 1 a la proxima posicion a la izquierda (i - 1)
+        begin
+        inc(a[i-1]);
+        inc(carries);
+        end;
+      end;
+    escribir();
+    leer();
+    end;
+end.

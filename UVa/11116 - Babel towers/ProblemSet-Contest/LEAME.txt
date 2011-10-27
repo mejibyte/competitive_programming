@@ -1,0 +1,10 @@
+Datos de prueba para problemas de competencia:
+
+
+compIn
+	Datos de entrada para los problemas 
+	<problema>.in : datos de entrada para el problema <problema>
+
+compOut
+	Datos de salida para los problemas 
+	<problema>.out : datos de salida esperados para el problema <problema>

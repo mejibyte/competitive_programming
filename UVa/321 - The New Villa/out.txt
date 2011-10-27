@@ -1,0 +1,3 @@
+Villa #1
+The problem can be solved in 0 steps:
+w.size() = 0

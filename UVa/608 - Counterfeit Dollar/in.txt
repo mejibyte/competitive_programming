@@ -1,0 +1,12 @@
+3
+ABCD EFGH even
+ABCI EFJK up
+ABIJ EFGH even
+
+ABC EDF up
+AEC BDF up
+ABE CDF up
+
+ABC EDF down
+EBC ADF down
+ABE CDF down
