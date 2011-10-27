@@ -1,0 +1,487 @@
+!SESSION 2009-02-13 11:52:23.164 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_12
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 9, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 9, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 10, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 10, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 11, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 11, column 97: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 12, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:09.805
+!MESSAGE Error at line 12, column 97: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 10, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 10, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 11, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 11, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 12, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 12, column 90: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 13, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 11:58:24.055
+!MESSAGE Error at line 13, column 90: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Problems resolving provisioning plan.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.expressions/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.ide/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.search/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.jface.text/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.workbench.texteditor/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.sse.core 1.1.203.v200802140626 to requiredCapability: osgi.bundle/org.eclipse.emf.common/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.environment 1.0.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emf 1.1.104.v200709131115 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.edit/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 11:58:34.930
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.frameworks 1.1.103.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore/[2.2.0,2.4.0).
+!SESSION 2009-02-13 12:07:24.539 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_12
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.cdt.core 1 0 2009-02-13 12:08:25.414
+!MESSAGE Indexed 'prueba' (0 sources, 6 headers) in 0.17 sec: 0 declarations; 0 references; 6 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 9, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 9, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 10, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 10, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 11, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 11, column 97: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 12, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:24.602
+!MESSAGE Error at line 12, column 97: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 10, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 10, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 11, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 11, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 12, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 12, column 90: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 13, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:26.586
+!MESSAGE Error at line 13, column 90: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Problems resolving provisioning plan.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.expressions/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.ide/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.search/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.jface.text/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.workbench.texteditor/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.sse.core 1.1.203.v200802140626 to requiredCapability: osgi.bundle/org.eclipse.emf.common/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.environment 1.0.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emf 1.1.104.v200709131115 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.edit/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:28.399
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.frameworks 1.1.103.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore/[2.2.0,2.4.0).
+
+!ENTRY org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:35.117
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:35.117
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10004 2009-02-13 12:09:35.117
+!MESSAGE Eclipse C/C++ Development Tools will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 12:09:35.117
+!MESSAGE OK
+
+!ENTRY org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:39.570
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:39.570
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10004 2009-02-13 12:09:39.570
+!MESSAGE Eclipse C/C++ Development Tools will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 12:09:39.570
+!MESSAGE OK
+
+!ENTRY org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:40.789
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:40.789
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10004 2009-02-13 12:09:40.789
+!MESSAGE Eclipse C/C++ Development Tools will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 12:09:40.789
+!MESSAGE OK
+
+!ENTRY org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:41.086
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 4 10005 2009-02-13 12:09:41.086
+!MESSAGE Cannot complete the request.  See the details.
+!SUBENTRY 1 org.eclipse.equinox.p2.ui 2 10004 2009-02-13 12:09:41.086
+!MESSAGE Eclipse C/C++ Development Tools will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 12:09:41.086
+!MESSAGE OK
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 9, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 9, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 10, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 10, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 11, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 11, column 97: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 12, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 12:09:41.492
+!MESSAGE Error at line 12, column 97: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Problems resolving provisioning plan.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.expressions/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.ide/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.search/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.jface.text/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.workbench.texteditor/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.sse.core 1.1.203.v200802140626 to requiredCapability: osgi.bundle/org.eclipse.emf.common/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.environment 1.0.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emf 1.1.104.v200709131115 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.edit/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 12:09:41.789
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.frameworks 1.1.103.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore/[2.2.0,2.4.0).
+!SESSION 2009-02-13 14:50:11.557 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_12
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 9, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 9, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 10, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 10, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 11, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 11, column 97: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 12, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:47.823
+!MESSAGE Error at line 12, column 97: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 10, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 10, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 11, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 11, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 12, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 12, column 90: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 13, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 14:56:50.166
+!MESSAGE Error at line 13, column 90: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Problems resolving provisioning plan.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.expressions/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.ide/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.search/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.jface.text/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.workbench.texteditor/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.sse.core 1.1.203.v200802140626 to requiredCapability: osgi.bundle/org.eclipse.emf.common/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.environment 1.0.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emf 1.1.104.v200709131115 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.edit/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 14:56:54.432
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.frameworks 1.1.103.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore/[2.2.0,2.4.0).
+!SESSION 2009-02-13 14:58:17.229 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_12
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 0 2009-02-13 14:58:30.323
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 org.eclipse.ui 0 0 2009-02-13 14:58:30.323
+!MESSAGE 
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 14:58:30.323
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 14:58:30.323
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 14:58:30.323
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2009-02-13 14:58:30.323
+!MESSAGE Unable to restore perspective: Workspace - C/C++.
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.323
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2009-02-13 14:58:30.323
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.323
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.323
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.323
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.323
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 4 4 2009-02-13 14:58:30.323
+!MESSAGE Could not create view: org.eclipse.cdt.make.ui.views.MakeView
+!STACK 1
+org.eclipse.ui.PartInitException: Could not create view: org.eclipse.cdt.make.ui.views.MakeView
+	at org.eclipse.ui.internal.ViewFactory.createView(ViewFactory.java:157)
+	at org.eclipse.ui.internal.Perspective.createReferences(Perspective.java:1173)
+	at org.eclipse.ui.internal.Perspective.restoreState(Perspective.java:1143)
+	at org.eclipse.ui.internal.WorkbenchPage$16.runWithException(WorkbenchPage.java:3168)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3800)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3425)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:803)
+	at org.eclipse.ui.internal.Workbench$27.runWithException(Workbench.java:1361)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3800)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3425)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2293)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:386)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:549)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:504)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
+!SUBENTRY 3 org.eclipse.ui 4 0 2009-02-13 14:58:30.338
+!MESSAGE Could not create view: org.eclipse.cdt.make.ui.views.MakeView
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.338
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.338
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.338
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2009-02-13 14:58:30.338
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 4 0 2009-02-13 14:58:30.338
+!MESSAGE Could not find view: org.eclipse.cdt.make.ui.views.MakeView
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2009-02-13 14:58:30.338
+!MESSAGE OK
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 9, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 9, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 10, column 99: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 10, column 99: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 11, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 11, column 97: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 12, column 97: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:34.557
+!MESSAGE Error at line 12, column 97: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error parsing metadata repository
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 10, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 10, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 11, column 91: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 11, column 91: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 12, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 12, column 90: Illegal value for attribute "url" of element "repository": null
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 13, column 90: Missing required attribute in "repository": url
+!SUBENTRY 1 org.eclipse.equinox.p2.core 2 0 2009-02-13 15:00:35.823
+!MESSAGE Error at line 13, column 90: Illegal value for attribute "url" of element "repository": null
+
+!ENTRY org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Problems resolving provisioning plan.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.core 1.1.101.v200706120315 to requiredCapability: osgi.bundle/org.eclipse.core.expressions/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.ide/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.runtime/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.search/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.jface.text/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.ui 1.1.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.ui.workbench.texteditor/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.sse.core 1.1.203.v200802140626 to requiredCapability: osgi.bundle/org.eclipse.emf.common/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.environment 1.0.200.v200705302225 to requiredCapability: osgi.bundle/org.eclipse.core.resources/[3.2.0,3.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emf 1.1.104.v200709131115 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.edit/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.emfworkbench.integration 1.1.105.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore.xmi/[2.2.0,2.4.0).
+!SUBENTRY 1 org.eclipse.equinox.p2.director 2 0 2009-02-13 15:00:46.463
+!MESSAGE Unable to satisfy dependency from org.eclipse.wst.common.frameworks 1.1.103.v200802192030 to requiredCapability: osgi.bundle/org.eclipse.emf.ecore/[2.2.0,2.4.0).

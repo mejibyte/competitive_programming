@@ -1,0 +1,15 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.emf.common.ui,2.4.0.v200808251517,org.eclipse.emf.common.ui,1318081079523
+stopped,bundle,org.eclipse.wst.command.env.ui,1.1.1.v200807162242,org.eclipse.wst.command.env.ui,1318081079523
+stopped,bundle,org.eclipse.wst.validation.ui,1.2.1.v200807292117,org.eclipse.wst.validation.ui,1318081079523
+stopped,bundle,org.eclipse.wst.common.frameworks.ui,1.1.200.v200805221400,org.eclipse.wst.common.frameworks.ui,1318081079524
+stopped,bundle,org.eclipse.wst.common.project.facet.ui,1.3.2.v200809022055,org.eclipse.wst.common.project.facet.ui,1318081079524
+stopped,bundle,org.eclipse.wst.common.snippets,1.1.200.v200805140415,org.eclipse.wst.common.snippets,1318081079524
+stopped,bundle,org.eclipse.ui.ide,3.4.1.M20080903-2000,org.eclipse.ui.ide,1318081079561
+stopped,bundle,org.eclipse.epp.usagedata.ui,1.0.1.R200809220400,org.eclipse.epp.usagedata.ui,1318081079561
+stopped,bundle,org.eclipse.ui.intro.universal,3.2.200.v20080508,org.eclipse.ui.intro.universal,1318081079561
+stopped,bundle,org.eclipse.ui.intro,3.2.201.v20080702_34x,org.eclipse.ui.intro,1318081079561
+stopped,bundle,org.eclipse.ui.views.properties.tabbed,3.4.1.M20080730-0800,org.eclipse.ui.views.properties.tabbed,1318081079561
+stopped,bundle,org.eclipse.update.scheduler,3.2.100.v20080404,org.eclipse.update.scheduler,1318081079561
+stopped,bundle,org.eclipse.update.ui,3.2.100.v20080318,org.eclipse.update.ui,1318081079561
+stopped,bundle,org.eclipse.mylyn.commons.ui,3.0.2.v20080918-1100-e3x,org.eclipse.mylyn.commons.ui,1318081079561

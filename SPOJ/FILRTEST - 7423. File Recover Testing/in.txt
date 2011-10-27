@@ -1,0 +1,13 @@
+14 abcab
+1000 abcde
+1000000000 z
+1 zzzzz
+7 abacaba
+8 abacaba
+10 abacaba
+13 abacaba
+14 abacaba
+15 abacaba
+20 abacaba
+21 abacaba
+-1 *

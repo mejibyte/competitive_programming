@@ -1,0 +1,28 @@
+01 Example test 1
+02 Example test 2
+03 Manual test for concatenation without comma
+04 3 rows, 5 columns
+05 5 rows, 3 columns, NO
+06 Random test for concatenation without comma
+07 1 row, 1 column
+08 1 row, 2 columns
+09 2 rows, 1 column
+10 2 rows, 2 columns, YES
+11 2 rows, 2 columns, NO
+12 10 rows, 2 columns, NO
+13 10 rows, 9 columns, NO
+14 47 rows, 9 columns, NO
+15 100 rows, 9 columns, NO
+16 637 rows, 8 columns, NO
+17 1024 rows, 10 columns, YES
+18 5073 rows, 10 columns, NO
+19 max all, common prefix, NO
+20 max all, common prefix, YES
+21 almost max rows, almost max columns, almost max width, common prefix, massive NO
+22 almost max rows, almost max columns, almost max width, common prefix, NO
+23 almost max rows, max columns, almost max width, common prefix, YES
+24 Large test for concatenation without comma
+25 max all, NO
+26 max all, YES
+27 max all, common prefix, NO
+28 max all, common prefix, YES

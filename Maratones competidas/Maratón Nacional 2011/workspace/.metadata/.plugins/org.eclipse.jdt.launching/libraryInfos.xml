@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\Users\Maraton\maraton\jdk1.6.0_12\jre" version="1.6.0_12">
+<bootpath>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\resources.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\rt.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\jsse.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\jce.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\charsets.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Users\Maraton\maraton\jdk1.6.0_12" version="1.6.0_12">
+<bootpath>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\resources.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\rt.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\jsse.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\jce.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\charsets.jar"/>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Users\Maraton\maraton\jdk1.6.0_12\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\maraton\jre6" version="1.6.0_12">
+<bootpath>
+<entry path="C:\maraton\jre6\lib\resources.jar"/>
+<entry path="C:\maraton\jre6\lib\rt.jar"/>
+<entry path="C:\maraton\jre6\lib\sunrsasign.jar"/>
+<entry path="C:\maraton\jre6\lib\jsse.jar"/>
+<entry path="C:\maraton\jre6\lib\jce.jar"/>
+<entry path="C:\maraton\jre6\lib\charsets.jar"/>
+<entry path="C:\maraton\jre6\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\maraton\jre6\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\maraton\jre6\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

@@ -1,0 +1,24 @@
+<challenge
+    id              = "neerc-2009.main"
+    name            = "ACM ICPC 2009-2010, Northeastern European Regional Contest"
+    scoring-model   = "%icpc"
+    length          = "5h"
+
+    problem-id      = "neerc-2009"
+    xmlai-process   = "http://neerc.ifmo.ru/develop/pcms2/xmlai/default-rules.xml"
+>
+    <problem-ref id = "a" alias = "A" problem-id = "asteroids" name = "Asteroids"/>
+    <problem-ref id = "b" alias = "B" problem-id = "business" name = "Business Center"/>
+    <problem-ref id = "c" alias = "C" problem-id = "central" name = "Central Element"/>
+    <problem-ref id = "d" alias = "D" problem-id = "database" name = "Database"/>
+    <problem-ref id = "e" alias = "E" problem-id = "exclusive" name = "Exclusive Access 2"/>
+    <problem-ref id = "f" alias = "F" problem-id = "funny" name = "Funny Language"/>
+    <problem-ref id = "g" alias = "G" problem-id = "garbling" name = "Garbling Game"/>
+    <problem-ref id = "h" alias = "H" problem-id = "headshot" name = "Headshot"/>
+    <problem-ref id = "i" alias = "I" problem-id = "inspection" name = "Inspection"/>
+    <problem-ref id = "j" alias = "J" problem-id = "javacert" name = "Java Certification"/>
+    <problem-ref id = "k" alias = "K" problem-id = "kequiv" name = "K-equivalence"/>
+    <problem-ref id = "x" alias = "X" problem-id = "xtra" name = "Xtrapolation"/>
+    <problem-ref id = "y" alias = "Y" problem-id = "yield" name = "Yield"/>
+    <problem-ref id = "z" alias = "Z" problem-id = "zero" name = "Zero-complexity Transposition"/>
+</challenge>

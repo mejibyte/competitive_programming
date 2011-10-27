@@ -1,0 +1,52 @@
+// Andrés Mejía
+using namespace std;
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <numeric>
+#include <sstream>
+#include <fstream>
+#include <cassert>
+#include <climits>
+#include <cstdlib>
+#include <cstring>
+#include <string>
+#include <cstdio>
+#include <vector>
+#include <cmath>
+#include <queue>
+#include <deque>
+#include <stack>
+#include <list>
+#include <map>
+#include <set>
+
+#define foreach(x, v) for (typeof (v).begin() x=(v).begin(); x !=(v).end(); ++x)
+#define For(i, a, b) for (int i=(a); i<(b); ++i)
+#define D(x) cout << #x " is " << x << endl
+
+const double EPS = 1e-9;
+int cmp(double x, double y = 0, double tol = EPS) {
+    return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
+}
+
+int times[32][2];
+
+int main(){
+    int n; cin >> n;
+    while (n--) {
+        unsigned int k; cin >> k;
+        for (int t = 0; t < 32; ++t) {
+            times[t][k & 1]++;
+            k >>= 1;
+        }
+    }
+    long long ans = 0;
+    long long pow = 1;
+    for (int t = 0; t < 32; ++t) {
+        ans += pow * times[t][0] * times[t][1];
+        pow <<= 1;
+    }
+    cout << ans << endl;
+    return 0;
+}

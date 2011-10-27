@@ -1,0 +1,11 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.emf.edit.ui,2.4.1.v200808251517,org.eclipse.emf.edit.ui,1234544988961
+stopped,bundle,org.eclipse.emf.common.ui,2.4.0.v200808251517,org.eclipse.emf.common.ui,1234544988961
+stopped,bundle,org.eclipse.wst.command.env.ui,1.1.1.v200807162242,org.eclipse.wst.command.env.ui,1234544988961
+stopped,bundle,org.eclipse.wst.validation.ui,1.2.1.v200807292117,org.eclipse.wst.validation.ui,1234544988961
+stopped,bundle,org.eclipse.wst.common.frameworks.ui,1.1.200.v200805221400,org.eclipse.wst.common.frameworks.ui,1234544988961
+stopped,bundle,org.eclipse.wst.common.project.facet.ui,1.3.2.v200809022055,org.eclipse.wst.common.project.facet.ui,1234544988961
+stopped,bundle,org.eclipse.wst.common.snippets,1.1.200.v200805140415,org.eclipse.wst.common.snippets,1234544988961
+stopped,bundle,org.eclipse.ui.views.log,1.0.0.v20080803-1700,org.eclipse.ui.views.log,1234544988961
+stopped,bundle,org.eclipse.ui.ide,3.4.1.M20080903-2000,org.eclipse.ui.ide,1234544988961
+stopped,bundle,org.eclipse.epp.usagedata.ui,1.0.1.R200809220400,org.eclipse.epp.usagedata.ui,1234544988961

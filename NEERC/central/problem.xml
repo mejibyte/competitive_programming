@@ -1,0 +1,33 @@
+<!--================================================================-->
+<!-- ACM ICPC 2009-2010                                             -->
+<!-- Northeastern European Regional Contest                         -->
+<!-- St Petersburg - Barnaul - Tashkent - Batumi, November 11, 2009 -->
+<!--================================================================-->
+<!-- Problem C. Central Element                                     -->
+<!--                                                                -->
+<!-- Original idea         Mikhail Dvorkin                          -->
+<!-- Problem statement     Mikhail Dvorkin                          -->
+<!-- Testset               Andrey Stankevich                        -->
+<!--================================================================-->
+
+<problem
+    id      = "neerc-2009.central"
+    version = "1.0"
+>
+    <judging>
+        <script type = "%icpc">
+            <testset
+                test-count   = "40"
+                input-href   = "tests/##"
+                answer-href  = "tests/##.a"
+                input-name   = "central.in"
+                output-name  = "central.out"
+                time-limit   = "3s"
+                memory-limit = "268435456"
+            />
+            <verifier type = "%testlib">
+                <binary executable-id = "x86.exe.win32" file = "check.exe" />
+            </verifier>
+        </script>
+    </judging>
+</problem>
