@@ -1,0 +1,115 @@
+PROBLEM STATEMENT
+There is a HxW rectangular board divided into 1x1 cells. Initially each cell is colored white. Fox Ciel wants to change the color of the cells. Letters 'A', 'B', ..., 'Z', 'a', 'b', ..., 'z' represent distinct colors, and they are different from white. You are given a vector <string> board. She must change the color of the cell (i, j) to the color represented by the j-th character of the i-th element of board.
+
+
+Fox Ciel can perform the following operation:
+
+
+1. Choose one row or one column.
+
+2. Choose one color from 'A', 'B', ..., 'Z', 'a', 'b', ..., 'z'. Note that she can't choose white.
+
+3. Paint the row or the column she chose in step 1 with the color she chose in step 2. The color of all cells in the row or the column becomes the color she chose in step 2.
+
+
+Return the minimal number of operations required to change the color of the cells to board. If it's impossible, return -1.
+
+
+DEFINITION
+Class:ColorfulBoard
+Method:theMin
+Parameters:vector <string>
+Returns:int
+Method signature:int theMin(vector <string> board)
+
+
+CONSTRAINTS
+-board will contain between 1 and 50 elements, inclusive.
+-Each element of board will contain the same number of characters.
+-Each element of board will contain between 1 and 50 characters, inclusive.
+-Each character in board will be a letter ('A'-'Z', 'a'-'z').
+
+
+EXAMPLES
+
+0)
+{"SSS",
+ "SRR",
+ "SMM"}
+
+Returns: 4
+
+Initially, the board is (# represents white):
+
+###
+###
+###
+
+Paint row 0 with color S:
+
+SSS
+###
+###
+
+Paint row 1 with color R:
+
+SSS
+RRR
+###
+
+Paint row 2 with color M:
+
+SSS
+RRR
+MMM
+
+Paint column 0 with color S:
+
+SSS
+SRR
+SMM
+
+
+1)
+{"BBBBBBBB",
+ "BBBBBBBB",
+ "BBBBBBBB",
+ "BBBBBBBB",
+ "BBBBBBBB"}
+
+Returns: 5
+
+Paint five rows with color B.
+
+2)
+{"Ab",
+ "bA"}
+
+Returns: -1
+
+
+
+3)
+{"iiiii",
+ "iwiwi"}
+
+
+Returns: 4
+
+
+
+4)
+{"ffffffffff",
+ "xfxxoofoxo",
+ "ffffffffff",
+ "xfxxoofoxo",
+ "ffffffffff",
+ "ooxxoofoxo",
+ "xfxxoofoxo",
+ "xfxxoxfxxo",
+ "ffxxofffxo",
+ "xfxxoxfxxo"}
+
+Returns: 17
+
+

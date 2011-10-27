@@ -1,0 +1,65 @@
+PROBLEM STATEMENT
+Cat Taro has N cards. He arranged the cards in a row and wrote numbers 0 through N-1 on them from left to right. He wants to rearrange them so that p[i] is written on the i-th (0-indexed) card from the left.
+
+
+He asked N-1 rabbits to rearrange the cards. The rabbits are numbered from 0 to N-2, and the i-th rabbit can swap the i-th and the (i+1)-th card from the left. A permutation of rabbits q[0], ..., q[N-2] is called good if having the rabbits performed exactly their operations in this order, p[i] is written on the i-th card from the left.
+
+
+Return the number of good permutations of rabbits, modulo 1,000,000,007.
+
+
+DEFINITION
+Class:AdjacentSwaps
+Method:theCount
+Parameters:vector <int>
+Returns:int
+Method signature:int theCount(vector <int> p)
+
+
+CONSTRAINTS
+-p will contain between 2 and 50 elements, inclusive.
+-Each element of p will be between 0 and N-1, inclusive, where N is the number of elements in p.
+-p will contain no duplicate elements.
+
+
+EXAMPLES
+
+0)
+{1, 2, 0}
+
+Returns: 1
+
+Initially {0, 1, 2} are written on the cards from left to right.
+There are two permutations of rabbits:
+
+Rabbit 0 -> rabbit 1. After rabbit 0 performs an operation, the cards become {1, 0, 2}. After rabbit 1 performs an operation, the cards become {1, 2, 0}.
+Rabbit 1 -> rabbit 0. After rabbit 1 performs an operation, the cards become {0, 2, 1}. After rabbit 0 performs an operation, the cards become {2, 0, 1}.
+
+
+1)
+{0, 1}
+
+Returns: 0
+
+The rabbit must perform an operation.
+
+2)
+{2, 0, 3, 1}
+
+Returns: 2
+
+
+
+3)
+{1, 0, 3, 2}
+
+Returns: 0
+
+
+
+4)
+{1, 3, 0, 5, 2, 7, 4, 8, 10, 6, 12, 9, 14, 11, 16, 13, 18, 15, 19, 17}
+
+Returns: 716743312
+
+

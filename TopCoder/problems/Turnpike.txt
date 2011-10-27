@@ -1,0 +1,75 @@
+PROBLEM STATEMENT
+The turnpike has mile markers at each mile along its length, with 0 at the western end
+and pikeLength at the eastern end (so it is exactly pikeLength miles long). 
+We locate our service
+plazas at various mile markers. Each plaza
+can service traffic going in either direction, so we never place multiple 
+plazas at the same mile marker. We also never place a plaza at either end of 
+the turnpike. 
+
+The locations of all the existing plazas are given in a vector <int> plazas. We are
+interested in locating n new plazas along the turnpike in such a way as to
+minimize the longest segment of turnpike that has no plaza. Given pikeLength, n, 
+and plazas, determine the best locations for the n new plazas and return the length of the
+longest unserviced segment after the new plazas have been added.
+
+
+
+DEFINITION
+Class:Turnpike
+Method:unserviced
+Parameters:int, int, vector <int>
+Returns:int
+Method signature:int unserviced(int pikeLength, int n, vector <int> plazas)
+
+
+CONSTRAINTS
+-pikeLength will be between 100 and 1000, inclusive.
+-n will be between 1 and 100, inclusive.
+-plazas will contain between 0 and 50 elements, inclusive.
+-The elements in plazas will be distinct values between 1 and pikeLength-1, inclusive.
+-n plus the number of elements in plazas will be less than pikeLength.
+
+
+EXAMPLES
+
+0)
+1000
+1
+{300,701,800}
+
+Returns: 300
+
+
+
+   The new plaza should be placed in the segment between 300 and 701. But the best
+   we can do is to make the longest unserviced segment be of length 300, since the
+   segment from 0 to 300 will still be unserviced. 
+
+
+
+
+
+1)
+1000
+1
+{200,701,800}
+
+Returns: 251
+
+
+
+   We should place the new plaza in the segment between 200 and 701. We can reduce
+   the longest unserviced segment to 251 by placing it either at 450 or at 451.
+
+2)
+800
+7
+{622,411,201,555,755,82}
+
+Returns: 70
+
+The seven new plazas can be distributed along the turnpike so
+that the longest unserviced segments are from 201 to a new
+plaza at 271, from 271 to 341 (also a new plaza), and from
+341 to the existing plaza at 411.

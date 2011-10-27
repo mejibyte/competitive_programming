@@ -1,0 +1,73 @@
+PROBLEM STATEMENT
+It is commonly known that in a typical English text, some letters occur more frequently than others. For example, in a long text, approximately 12.31% of the letters will be 'e'. Your friend from the linguistics department has asked you to help him find the most common letters in a given text.
+
+The text is given to you in the vector <string> text. Return the letter that occurs most frequently in text. If there are multiple letters that occur most frequently, return all of them in alphabetical order. See examples for further clarification.
+
+DEFINITION
+Class:MostCommonLetters
+Method:listMostCommon
+Parameters:vector <string>
+Returns:string
+Method signature:string listMostCommon(vector <string> text)
+
+
+CONSTRAINTS
+-text will contain between 1 and 50 elements, inclusive.
+-Each element of text will contain between 0 and 50 characters, inclusive.
+-Each character of text will be either a space (' ') or a lowercase letter ('a' - 'z').
+-text will contain at least one letter.
+
+
+EXAMPLES
+
+0)
+{"abc a"}
+
+Returns: "a"
+
+The letter 'a' is the most common letter here. It appears twice, while all other letters appear only once.
+
+
+1)
+{"abc", "ab"}
+
+Returns: "ab"
+
+Now letters 'a' and 'b' are most common: they appear twice, more than letter 'c' does.
+
+2)
+{"qwerty", "abc", "qwe", "a"}
+
+Returns: "aeqw"
+
+Don't forget to return letters in alphabetical order.
+
+3)
+{"english is a west germanic language originating",
+ "in england and is the first language for most",
+ "people in the united kingdom the united",
+ "states canada australia new zealand ireland",
+ "and the anglophone caribbean it is used",
+ "extensively as a second language and as an",
+ "official language throughout the world",
+ "especially in commonwealth countries and in",
+ "many international organizations"}
+
+Returns: "a"
+
+This is a short extract from wikipedia about the English language. All punctuations are omitted. This text is too short, so the letter 'e' is not the most common one. There are 41 occurrences of the letter 'a', 39 occurrences of 'n' and only 33 occurrences of 'e'.
+
+4)
+{"amanda forsaken bloomer meditated gauging knolls",
+ "betas neurons integrative expender commonalities",
+ "latins antidotes crutched bandwidths begetting",
+ "prompting dog association athenians christian ires",
+ "pompousness percolating figured bagatelles bursted",
+ "ninth boyfriends longingly muddlers prudence puns",
+ "groove deliberators charter collectively yorks",
+ "daringly antithesis inaptness aerosol carolinas",
+ "payoffs chumps chirps gentler inexpressive morales"}
+
+Returns: "e"
+
+Random words.

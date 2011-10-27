@@ -1,0 +1,57 @@
+PROBLEM STATEMENT
+The binary weight of a positive integer is the number of 1's in its binary representation. For example, the decimal number 1 has a binary weight of 1, and the decimal number 1717 (which is 11010110101 in binary) has a binary weight of 7.
+
+Given a positive integer N, return the smallest integer greater than N that has the same binary weight as N.
+
+DEFINITION
+Class:NextNumber
+Method:getNextNumber
+Parameters:int
+Returns:int
+Method signature:int getNextNumber(int N)
+
+
+NOTES
+-The result is guaranteed to fit in a signed 32-bit integer.
+
+
+CONSTRAINTS
+-N will be between 1 and 1,000,000,000, inclusive.
+
+
+EXAMPLES
+
+0)
+1717
+
+Returns: 1718
+
+Example from the problem statement.
+
+1)
+4
+
+Returns: 8
+
+4 is 100 in its binary representation and weighs 1. The next number is 1000(in binary) which represents 8.
+
+2)
+7
+
+Returns: 11
+
+The decimal 7 is binary 111, so it has binary weight of 3. The next number with the same binary weight is 11, which is 1011 in binary.
+
+3)
+12
+
+Returns: 17
+
+12 in decimal is 1100 in binary. The next number with the same binary weight is 10001 in binary, which is 17.
+
+4)
+555555
+
+Returns: 555557
+
+

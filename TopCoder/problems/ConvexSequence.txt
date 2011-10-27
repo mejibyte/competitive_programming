@@ -1,0 +1,65 @@
+PROBLEM STATEMENT
+
+A sequence x[0], ..., x[N-1] of integers is called convex if for every 1&lt=i&lt=N-2, x[i-1]+x[i+1]&gt=2*x[i]. 
+For example, sequences 7,3,4,5,7 and 4,2,1,3 are convex, while 4,3,1,2 and 5,7,3 are not. 
+A sequence with one or two elements is always convex. 
+
+You are given a vector <int> a containing N elements. You can perform an operation that chooses an index i and replaces a[i] with a[i]-1.
+Return the minimum number of operations needed to make the sequence convex.
+
+
+DEFINITION
+Class:ConvexSequence
+Method:getMinimum
+Parameters:vector <int>
+Returns:long long
+Method signature:long long getMinimum(vector <int> a)
+
+
+CONSTRAINTS
+-a will contain between 1 and 50 elements, inclusive.
+-Each element of a will be between 0 and 10^9, inclusive.
+
+
+EXAMPLES
+
+0)
+{6,5,1,5,3,3}
+
+Returns: 7
+
+You can change the given sequence into a convex sequence by seven operations: doing the operation on a[1] twice, on a[3] four times and on a[4] once yields a convex sequence 6,3,1,1,2,3.
+
+1)
+{3,0,1,4}
+
+Returns: 0
+
+No operation is needed; the sequence is already convex. 
+
+2)
+{1,1,1,0,2,2,2}
+
+Returns: 5
+
+You can change the sequence into 1,0,0,0,0,1,2 by five operations.
+
+3)
+{854159326, 317144183, 781399725, 287076509, 894967145, 882577367, 174517516, 134415519,
+ 274494874, 709819883, 59717133, 732212854, 40551288, 232526958, 811785438, 930853743,
+ 946882902, 321325300, 397702677, 376192501, 599310562, 889156198, 135776890, 882710939,
+ 823196361, 681959076, 318666702, 94469186, 536320456, 116468376, 530320850, 436708006,
+ 903344748, 659080120, 774722507, 967315412, 566063635, 43970906, 497687103, 781266213,
+ 876086123, 366960001, 587364849, 191948103, 172568553, 539762057, 83507466, 71569625,
+ 686305822, 663789601}
+
+Returns: 20178337330
+
+
+
+4)
+{5}
+
+Returns: 0
+
+

@@ -1,0 +1,70 @@
+PROBLEM STATEMENT
+Alice and Bob play the following game. 
+The game board consists of some cells in a row. 
+Each cell is marked either 'A' or 'B'. 
+At the beginning, there are no coins placed on the board Ð all the cells are empty. 
+Alice and Bob take alternating turns. 
+Alice plays first. 
+In each turn, the current player chooses some contiguous empty cells and places a coin onto each of the chosen cells. 
+The player must always choose at least one cell. 
+The player must never choose all empty cells. 
+In other words, after each turn there must be at least one empty cell. 
+
+The following picture shows two examples of placing coins: 
+
+
+
+The game ends when there is only one cell left without a coin. 
+If that cell is marked 'A', Alice wins. 
+Otherwise, Bob wins. 
+You are given a string cells representing the row of cells. 
+Assuming that both players aim to win and play optimally, return a string containing the name of the winner. 
+
+
+DEFINITION
+Class:RowAndManyCoins
+Method:getWinner
+Parameters:string
+Returns:string
+Method signature:string getWinner(string cells)
+
+
+CONSTRAINTS
+-cells will contain between 2 and 50 characters, inclusive. 
+-Each character in cells will be either 'A' or 'B'. 
+
+
+EXAMPLES
+
+0)
+"ABBB"
+
+Returns: "Alice"
+
+Alice can win by placing coins on three cells marked 'B' in her first turn. 
+
+
+1)
+"BBBB"
+
+Returns: "Bob"
+
+2)
+"BA"
+
+Returns: "Alice"
+
+3)
+"BABBABBB"
+
+Returns: "Bob"
+
+4)
+"ABABBBABAABBAA"
+
+Returns: "Alice"
+
+5)
+"BBBAAABBAAABBB"
+
+Returns: "Bob"

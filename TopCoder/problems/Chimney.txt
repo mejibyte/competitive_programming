@@ -1,0 +1,78 @@
+PROBLEM STATEMENT
+
+A construction worker was assigned the task to build a chimney. The chimney consists of N layers of
+4 bricks each. Each layer, when looked at from above, looks like this:
+
+  Layer 1      Layer 2
++-----+--+   +--+-----+
+|  1  |  |   |  |  B  |
++--+--|2 |   | A+--+--+
+|  |  |  |   |  |  |  |
+| 4+--+--+   +--+--+C |
+|  |  3  |   |  D  |  |
++--+-----+   +-----+--+
+
+Each layer, except the bottommost one, is placed on top of the previous such that the borders coincide
+perfectly and each brick is placed on top of exactly two bricks from the layer below.
+In the example above, brick A is placed on top of bricks 1 and 4, brick B on top of
+bricks 1 and 2, C on top of 2 and 3 and D on top of 3 and 4.
+
+A brick in a given layer can only be placed after both bricks below have already been placed. Of
+course, bricks on the bottommost layer have no such restrictions.
+There are many orders in which bricks can be placed. For instance, if only 1 layer is to be placed, there
+are 4! = 24 possible orders, because any order of the bricks is valid. However, when more layers are
+used, not every order of the total number of bricks is valid.
+
+You will be given the total number of layers n. Return the number of orders in which bricks
+can be placed, modulo 1000000007.
+
+
+
+DEFINITION
+Class:Chimney
+Method:countWays
+Parameters:long long
+Returns:int
+Method signature:int countWays(long long n)
+
+
+CONSTRAINTS
+-n will be between 1 and 1000000000000000000 (10^18), inclusive.
+
+
+EXAMPLES
+
+0)
+1
+
+Returns: 24
+
+There are 4! = 4*3*2*1 = 24 ways of placing 4 bricks without dependencies.
+
+1)
+2
+
+Returns: 1088
+
+
+
+2)
+5
+
+Returns: 110198784
+
+
+
+3)
+6
+
+Returns: 138284509
+
+
+
+4)
+100000
+
+Returns: 19900327
+
+

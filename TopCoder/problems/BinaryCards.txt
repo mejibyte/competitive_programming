@@ -1,0 +1,86 @@
+PROBLEM STATEMENT
+Karel is a robot. He has a set of 64 cards: for each x between 0 and 63, he has a card that is blank on one side and has 2^x dots on the other side.
+
+Karel's cards are placed on a table. At any moment, the cards show some integer between 0 and (2^64)-1, inclusive. To read the number, you just count all the dots you see.
+
+Karel is using the cards to count from A to B. That is, he is flipping some of the cards in such a way that the numbers A, A+1, ..., B appear in this order.
+
+Of course, Karel is using the shortest possible sequence of flips. Additionally, he always flips the cards one at a time. Sometimes, changing the number from some Z to Z+1 requires Karel to flip more than one card. In that case, he flips the necessary cards ordered by the number of dots they have, starting with the one with the most dots.
+
+For example, if A=6 and B=8, the following will happen:
+
+
+In the beginning, the card with 4 dots and the card with 2 dots are showing the dots, all other cards are blank side up. This shows the number 6.
+Karel flips the card with 1 dot. Now the number 7 is shown.
+Karel flips the card with 8 dots.
+Karel flips the card with 4 dots.
+Karel flips the card with 2 dots.
+Karel flips the card with 1 dot. Now the number 8 is shown and Karel is done.
+
+
+
+Given are long longs A and B. Your method must return the largest number that will be shown at any moment during Karel's counting.
+
+
+DEFINITION
+Class:BinaryCards
+Method:largestNumber
+Parameters:long long, long long
+Returns:long long
+Method signature:long long largestNumber(long long A, long long B)
+
+
+CONSTRAINTS
+-A will be between 1 and 10^18, inclusive.
+-B will be between A and 10^18, inclusive.
+
+
+EXAMPLES
+
+0)
+6
+6
+
+Returns: 6
+
+
+
+1)
+6
+7
+
+Returns: 7
+
+
+
+2)
+6
+8
+
+Returns: 15
+
+This is the example from the problem statement. When flipping cards to create the number 8 from the number 7, Karel starts by flipping the card with 8 dots. At this moment, the number shown on the cards is 15.
+
+3)
+1
+11
+
+Returns: 15
+
+
+
+4)
+35
+38
+
+Returns: 39
+
+
+
+5)
+1125899906842630
+1125899906842632
+
+Returns: 1125899906842639
+
+

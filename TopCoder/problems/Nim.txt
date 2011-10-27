@@ -1,0 +1,61 @@
+PROBLEM STATEMENT
+
+Alice and Bob are going to play a famous game called Nim. 
+In the game Nim, first they set up stones in K piles containing a1,...,aK stones respectively. Then they alternatively take turns (Alice moves first). 
+On a player's turn the player chooses a pile and takes some (at least one) stones from that pile. If there are no piles left which contain any stones, the player loses.
+
+Since they like prime numbers very much, they decided to make each ai a prime number less than or equal to L. 
+Given K and L return the number of such initial setups which allows Bob to win, assuming they play optimally, modulo 1,000,000,007.
+
+
+
+DEFINITION
+Class:Nim
+Method:count
+Parameters:int, int
+Returns:int
+Method signature:int count(int K, int L)
+
+
+NOTES
+-Two setups are considered different if at least one ai is different between them (for example, (a1,a2,a3)=(2,5,7) and (2,7,5) are considered different).
+
+
+CONSTRAINTS
+-K will be between 1 and 1000000000(=10^9), inclusive.
+-L will be between 2 and 50000, inclusive.
+
+
+EXAMPLES
+
+0)
+3
+7
+
+Returns: 6
+
+Prime numbers <= 7 are 2, 3, 5 and 7. Bob can win if the initial setup is (2,5,7) or its permutation. So return 3! = 6. 
+
+1)
+4
+13
+
+Returns: 120
+
+Bob can win if the initial setup is (p,p,p,p) for some prime p<=13, (p,p,q,q) or its permutation for p<q<=13, or (3,5,11,13) or its permutation. So return 6+(6C2*6)+4!=6+90+24=120. 
+
+2)
+10
+100
+
+Returns: 294844622
+
+
+
+3)
+123456789
+12345
+
+Returns: 235511047
+
+

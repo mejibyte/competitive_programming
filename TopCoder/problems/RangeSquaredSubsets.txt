@@ -1,0 +1,75 @@
+PROBLEM STATEMENT
+
+Given a real number n, a set of points P in the XY plane is called n-squared if it is not empty and there exists a square of side n in the XY plane with its sides parallel to the axes such that a point is in P if and only if it is contained within the square. A point lying on a side or a vertex of the square is considered to be contained in it.
+
+You will be given two ints nlow and nhigh. You will also be given two vector <int>s x and y such that the coordinates of point i are (x[i],y[i]). Return the number of subsets of the input set described by x and y that are n-squared for some n between nlow and nhigh, inclusive.
+
+
+DEFINITION
+Class:RangeSquaredSubsets
+Method:countSubsets
+Parameters:int, int, vector <int>, vector <int>
+Returns:long long
+Method signature:long long countSubsets(int nlow, int nhigh, vector <int> x, vector <int> y)
+
+
+CONSTRAINTS
+-nlow will be between 1 and 100000000 (10^8), inclusive.
+-nhigh will be between nlow and 100000000 (10^8), inclusive.
+-x and y will contain between 1 and 40 elements, inclusive.
+-x and y will contain the same number of elements.
+-Each element of x and y will be between -100000000 (-10^8) and 100000000 (10^8), inclusive.
+-All described points will be different.
+
+
+EXAMPLES
+
+0)
+5
+5
+{-5,0,5}
+{0,0,0}
+
+Returns: 5
+
+The following subsets are 5-squared: {(-5,0)}, {(0,0)}, {(5,0)}, {(-5,0),(0,0)}, {(0,0),(5,0)}.
+
+1)
+10
+10
+{-5,0,5}
+{0,0,0}
+
+Returns: 5
+
+The following subsets are 10-squared: {(-5,0)}, {(5,0)}, {(0,0),(5,0)}, {(-5,0),(0,0)}, {(-5,0),(0,0),(5,0)}.
+
+2)
+1
+100
+{-5,0,5}
+{0,0,0}
+
+Returns: 6
+
+{(-5,0),(5,0)} is not x-squared for any x. From the previous 2 examples you can infer that all other non-empty subsets are 5-squared or 10-squared.
+
+3)
+3
+100000000
+{-1,-1,-1,0,1,1,1}
+{-1,0,1,1,-1,0,1}
+
+Returns: 21
+
+
+
+4)
+64
+108
+{-56,-234,12,324,-12,53,0,234,1,12,72}
+{6,34,2,235,234,234,342,324,234,234,234}
+
+Returns: 26
+
+

@@ -1,0 +1,7 @@
+struct NextNumber {
+	int getNextNumber(int N) {
+		if(N==1<<29) return N*2;
+		for(int p=__builtin_popcount(N);p!=__builtin_popcount(++N););
+		return N;
+	}
+};

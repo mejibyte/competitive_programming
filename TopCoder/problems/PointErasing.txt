@@ -1,0 +1,85 @@
+PROBLEM STATEMENT
+You are given a vector <int> y of length N. 
+The values in y describe N points in the plane: 
+for each x = 0, 1, ..., N - 1 there is a point at coordinates (x, y[x]). 
+
+Krolik is going to perform the following operation repeatedly: 
+
+	Choose two of the remaining (i.e. not yet erased) points, say A and B, with different y-coordinates. 
+	Consider the rectangle with sides parallel to coordinate axes and points A and B in two opposite corners. 
+	Erase all points strictly inside the rectangle. 
+
+In each iteration, Krolik must choose A and B in such a way that at least one point is erased. 
+If no more operations can be performed, Krolik will count the number of remaining points and write it into a notebook. 
+Return a vector <int> containing all possible values of the number Krolik can write down, in ascending order. 
+
+
+DEFINITION
+Class:PointErasing
+Method:getOutcomes
+Parameters:vector <int>
+Returns:vector <int>
+Method signature:vector <int> getOutcomes(vector <int> y)
+
+
+NOTES
+-A point is strictly inside a rectangle if it is inside the rectangle and does not lie on the border of the rectangle. 
+
+
+CONSTRAINTS
+-y will contain between 1 and 50 elements, inclusive. 
+-Each element of y will be between 0 and 1,000,000,000, inclusive. 
+
+
+EXAMPLES
+
+0)
+{ 1, 2, 1, 1, 0, 4, 3 }
+
+Returns: {4, 6 }
+
+Krolik will end with 4 points if Krolik takes the following steps: 
+
+	Choose (1, 2) and (4, 0) to erase (2, 1) and (3, 1). 
+	Choose (0, 1) and (5, 4) to erase (1, 2). 
+
+If Krolik first chooses (0, 1) and (5, 4) to erase (1, 2), 6 points remain and there are no valid moves left. 
+
+Ê
+
+
+
+1)
+{ 0, 0, 4, 4, 8, 8, 4, 4 }
+
+Returns: {6 }
+
+2)
+{ 522 }
+
+Returns: {1 }
+
+3)
+{ 19, 19, 19, 19, 19, 19 }
+
+Returns: {6 }
+
+4)
+{ 0, 1, 2, 3, 4 }
+
+Returns: {2 }
+
+5)
+{ 7, 8, 8, 7, 6, 7, 9, 3, 5, 0 }
+
+Returns: {3, 4, 5 }
+
+6)
+{ 3, 2, 3, 3, 4, 3, 4, 3, 3, 1, 5, 3 }
+
+Returns: {4, 5, 6, 7, 9 }
+
+7)
+{ 5, 5, 4, 4, 5, 8, 5, 5, 5, 5, 5, 9, 2, 0, 9, 4, 5, 5, 3, 4, 4, 4, 4, 7, 4 }
+
+Returns: {6, 7, 8, 10, 11, 12, 13, 15, 16, 17 }

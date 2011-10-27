@@ -1,0 +1,67 @@
+PROBLEM STATEMENT
+Yesterday a very strange piece of paper was found by an international group of scientists. They believe it’s about 1 million years old! Moreover, it contains some text written in an alien language.  Here are all the known facts about this language:
+
+
+The aliens' alphabet consists of exactly P vowels and Q consonants.
+Each word contains no more than N vowels and no more than N consonants.
+In each word, the vowels always precede the consonants, i.e., each word consists of a consecutive block of vowels followed by a consecutive block of consonants.  The length of either block can be zero.
+Each word contains at least one letter.
+Each word can have stresses. Aliens put stresses not on syllables but on letters! There are three possibilities: the word has no stresses, the word has one stress (on one of its letters), or the word has two stresses (one on a vowel and one on a consonant).
+Two words that contain the same exact letters in the same order, but have different stresses, are considered different.
+
+
+The scientists want to know the maximal number of different words in the aliens' language. Help them!
+
+Return the maximal number of different words in the aliens’ language modulo M.
+
+
+DEFINITION
+Class:AlienLanguage
+Method:getNumberOfWords
+Parameters:int, int, int, int
+Returns:int
+Method signature:int getNumberOfWords(int P, int Q, int N, int M)
+
+
+CONSTRAINTS
+-P will be between 1 and 10^9, inclusive.
+-Q will be between 1 and 10^9, inclusive.
+-N will be between 1 and 10^9, inclusive.
+-M will be between 2 and 10^9, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+1
+1
+9
+
+Returns: 8
+
+If we denote the only vowel as 'a' and the only consonant as 'b' then all different words, not considering stresses, will be: a, b, and ab. With stresses we get 8 words: a, a', b, b', ab, a'b, ab', a'b'.
+
+1)
+2
+3
+2
+1000
+
+Returns: 577
+
+2)
+1
+1
+1000000000
+1000000000
+
+Returns: 0
+
+3)
+123
+456
+789
+987654321
+
+Returns: 345494202

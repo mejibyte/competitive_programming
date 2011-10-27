@@ -1,0 +1,70 @@
+PROBLEM STATEMENT
+There are N boys and M girls in a dance school. The teachers are organizing a performance and they need exactly K boy-girl couples for their show.  Unfortunately, this is not a straightforward task since some children cannot be paired with each other (due to differences in height, skill, etc.). One of the teachers is a computer science graduate, and has decided to count the number of ways to select K couples.
+
+You are given a vector <string> canDance containing exactly N elements, each with exactly M characters. The j-th character of the i-th element of canDance is 'Y' if boy i can be paired with girl j, and 'N' otherwise. Return the number of distinct valid ways to select exactly K boy-girl pairs.
+
+DEFINITION
+Class:DancingCouples
+Method:countPairs
+Parameters:vector <string>, int
+Returns:int
+Method signature:int countPairs(vector <string> canDance, int K)
+
+
+CONSTRAINTS
+-canDance will contain between 1 and 10 elements, inclusive.
+-Each element of canDance will contain between 1 and 10 characters, inclusive.
+-Each element of canDance will contain the same number of characters.
+-Each character in canDance will be either 'Y' or 'N'.
+-K will be between 1 and 10, inclusive.
+
+
+EXAMPLES
+
+0)
+{"YYYY", 
+ "YYYY",
+ "YYYY"}
+3
+
+Returns: 24
+
+There are three boys and four girls. Every boy can dance with every girl. The first boy selects one of the four girls, the second boy selects one of the three remaining girls, and the third boy selects one of the two remaining girls. Thus, there are 4*3*2=24 ways to create three couples.
+
+
+1)
+{"YYNN", 
+ "NYYN", 
+ "NNYY"}
+3
+
+Returns: 4
+
+There are 4 possible pairings:
+{boy1-girl1, boy2-girl2, boy3-girl3},
+{boy1-girl1, boy2-girl2, boy3-girl4},
+{boy1-girl1, boy2-girl3, boy3-girl4},
+{boy1-girl2, boy2-girl3, boy3-girl4}
+
+2)
+{"YY", 
+ "YY", 
+ "YY"}
+3
+
+Returns: 0
+
+There are 3 boys but only 2 girls, so it is impossible to select 3 pairs.
+
+3)
+{"YYNNNN",
+ "NYYNNN",
+ "NNYYNN",
+ "NNNYYN",
+ "NNNNYY",
+ "YNNNNY"}
+3
+
+Returns: 112
+
+

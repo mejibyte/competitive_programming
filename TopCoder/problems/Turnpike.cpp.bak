@@ -1,0 +1,8 @@
+#include <string>
+#include <vector>
+class Turnpike {
+	public:
+	int unserviced(int pikeLength, int n, vector <int> plazas) {
+		
+	}
+};

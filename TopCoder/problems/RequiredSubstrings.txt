@@ -1,0 +1,67 @@
+PROBLEM STATEMENT
+In this problem we consider strings of lowercase letters ('a'-'z').
+Given is a vector <string> words, an int C, and an int L. Let X be the number of strings of length L that contain exactly C of the strings in words as substrings. Your method must return the value (X modulo 1,000,000,009).
+
+DEFINITION
+Class:RequiredSubstrings
+Method:solve
+Parameters:vector <string>, int, int
+Returns:int
+Method signature:int solve(vector <string> words, int C, int L)
+
+
+CONSTRAINTS
+-words will contain between 1 and 6 elements, inclusive.
+-No two elements of words will be equal.
+-Each element of words will contain between 1 and 50 characters, inclusive.
+-Each character in each element of words will be a lowercase letter ('a'-'z').
+-C will be between 0 and the number of elements in words, inclusive.
+-L will be between 1 and 50, inclusive.
+
+
+EXAMPLES
+
+0)
+{"a","aa","aaa","aaaa"}
+2
+3
+
+Returns: 50
+
+The only valid strings are strings of the form "Xaa" or "aaX", where X is one of the letters 'b'-'z'.
+
+1)
+{"abcdefgh"}
+0
+7
+
+Returns: 31810104
+
+This answer is (26^7 modulo 1,000,000,009).
+
+2)
+{"abcdefgh"}
+1
+7
+
+Returns: 0
+
+A string of length 7 cannot have a substring of length 8.
+
+3)
+{"a","b","c","d"}
+3
+3
+
+Returns: 24
+
+The 24 good strings are the strings with three distinct letters, each of them in 'a'-'d'.
+
+4)
+{"ab","bc","xy","yz"}
+2
+3
+
+Returns: 2
+
+

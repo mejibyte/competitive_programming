@@ -1,0 +1,65 @@
+PROBLEM STATEMENT
+You are given a String[] digits. Concatenate its elements to obtain a very large positive integer D.
+We are interested in very smooth decompositions of D; that is, the ways in which D can be written as a product of numbers not exceeding 16.
+(In the product, each factor must be greater than 1. The order of factors does not matter, i.e., 24=3*8 is the same decomposition as 24=8*3.)
+Your method must return the number of very smooth decompositions of D, modulo 1,000,000,009.
+
+
+DEFINITION
+Class:VerySmoothDecompositions
+Method:solve
+Parameters:String[]
+Returns:int
+Method signature:int solve(String[] digits)
+
+
+CONSTRAINTS
+-digits will contain between 1 and 50 elements, inclusive.
+-Each element of digits will contain between 1 and 50 characters, inclusive.
+-Each character of each element of digits will be a digit ('0'-'9').
+-Character 0 of element 0 of digits will not be '0'.
+
+
+EXAMPLES
+
+0)
+{"47"}
+
+Returns: 0
+
+No valid decompositions.
+
+1)
+{"2"}
+
+Returns: 1
+
+The only valid decomposition is the one with a single factor equal to 2.
+
+2)
+{"10"}
+
+Returns: 2
+
+Two valid decompositions: 10 and 2*5.
+
+3)
+{"36"}
+
+Returns: 7
+
+All decompositions of 36 are: 36 = 2*18 = 3*12 = 4*9 = 6*6 = 2*2*9 = 2*3*6 = 3*3*4 = 2*2*3*3. The first two of these (36 and 2*18) contain a factor larger than 16. The other seven decompositions are very smooth.
+
+4)
+{"1","21"}
+
+Returns: 1
+
+Here the only valid decomposition is 11*11.
+
+5)
+{"1024"}
+
+Returns: 23
+
+

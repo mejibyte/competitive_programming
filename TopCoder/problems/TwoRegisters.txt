@@ -1,0 +1,72 @@
+PROBLEM STATEMENT
+
+You have a very simple computer whose memory consists only of two registers X and Y. Each of them can store a positive integer. The computer is so simple that it only has two different instructions (between brackets is the name of each instruction):
+
+[X] X := X + Y
+[Y] Y := X + Y
+
+As you may have imagined, both instructions compute the sum of both registers and store the result in one of them, overwriting its previous content. A program for this computer is simply a sequential list of zero or more instructions. When a program starts in this computer, both registers are initialized to 1. For instance, if the program is "XXYYX" then the following happens:
+
+  X | Y | ins | execute
+----+---+-----+------------
+  1 | 1 | [X] | X := X + Y
+----+---+-----+------------
+  2 | 1 | [X] | X := X + Y
+----+---+-----+------------
+  3 | 1 | [Y] | Y := X + Y
+----+---+-----+------------
+  3 | 4 | [Y] | Y := X + Y
+----+---+-----+------------
+  3 | 7 | [X] | X := X + Y
+----+---+-----+------------
+ 10 | 7 |
+
+You will be given an int r. Return the shortest program for the described computer that makes register X end with value r. Register Y may contain any value. If there are several such programs, return the one that comes earliest lexicographically.
+
+
+
+DEFINITION
+Class:TwoRegisters
+Method:minProg
+Parameters:int
+Returns:string
+Method signature:string minProg(int r)
+
+
+NOTES
+-A string comes lexicographically earlier than another one of the same length if and only if it contains a letter closer the beginning of the alphabet in the first position at which they differ.
+
+
+CONSTRAINTS
+-r will be between 1 and 1000000 (106), inclusive.
+
+
+EXAMPLES
+
+0)
+10
+
+Returns: "XXYYX"
+
+The example in the problem statement.
+
+1)
+3
+
+Returns: "XX"
+
+
+
+2)
+20
+
+Returns: "XYYYYXX"
+
+
+
+3)
+34
+
+Returns: "XYXYXYX"
+
+

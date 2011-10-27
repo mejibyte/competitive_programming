@@ -1,0 +1,65 @@
+PROBLEM STATEMENT
+You are given a vector <int> y of length N. 
+The values in y describe N points in the plane: 
+for each x = 0, 1, ..., N - 1 there is a point at coordinates (x, y[x]). 
+
+Krolik is going to perform the following operation: 
+
+	Choose two of the given points, say A and B, with different y-coordinates. 
+	Consider the rectangle with sides parallel to coordinate axes and points A and B in two opposite corners. 
+	Erase all points strictly inside the rectangle. 
+
+Return the maximum possible number of points Krolik can erase by a single operation. 
+
+
+DEFINITION
+Class:PointErasingTwo
+Method:getMaximum
+Parameters:vector <int>
+Returns:int
+Method signature:int getMaximum(vector <int> y)
+
+
+NOTES
+-A point is strictly inside a rectangle if it is inside the rectangle and does not lie on the border of the rectangle. 
+
+
+CONSTRAINTS
+-y will contain between 2 and 50 elements, inclusive. 
+-Each element of y will be between 0 and 50, inclusive. 
+-y will contain at least 2 distinct elements. 
+
+
+EXAMPLES
+
+0)
+{ 1, 2, 1, 1, 0, 4, 3 }
+
+Returns: 2
+
+If Krolik chooses A = (1, 2) and B = (4, 0), Krolik can erase two points: (2, 1) and (3, 1).
+
+
+
+
+1)
+{ 0, 1 }
+
+Returns: 0
+
+2)
+{ 0, 1, 2, 3, 4 }
+
+Returns: 3
+
+3)
+{ 10, 19, 10, 19 }
+
+Returns: 0
+
+
+
+4)
+{ 0, 23, 49, 50, 32, 0, 18, 50, 0, 28, 50, 27, 49, 0 }
+
+Returns: 5

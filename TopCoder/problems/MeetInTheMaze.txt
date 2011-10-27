@@ -1,0 +1,171 @@
+PROBLEM STATEMENT
+Lecette and her friends Fox and Rabbit are going to explore a strange maze. 
+The maze is rectangle-shaped and the layout of maze is in the vector <string> maze, 
+where the j-th character of the i-th element is the cell at row i, column j. 
+The following types of cells exist in the maze: 
+
+	'#' - Wall. They cannot enter these cells. 
+	'.' - Empty cell. They can walk freely into these cells. 
+	'L', 'F' or 'R' - Empty cell with Entrance. They can walk freely into these cells. 
+
+
+To enter the maze, Lecette chooses a cell marked as 'L' randomly and uniformly. 
+Fox does the same with a cell marked as 'F', and Rabbit does the same with a cell marked as 'R'. 
+They will each warp to the chosen cell. 
+Then, they decide on a meeting cell such that the total walking distance from the entrances to the meeting cell is minimized. 
+When walking, they can only move in the four cardinal directions. 
+They cannot move diagonally. 
+The walking distance to a neighboring cell is 1. 
+
+Calculate the expected total walking distance, 
+and return it as a string of the form "X/Y" (quotes for clarity), 
+where X and Y are positive integers with no common factor greater than 1. 
+In case there is a non-zero probability that they cannot meet, return an empty string instead. 
+
+
+DEFINITION
+Class:MeetInTheMaze
+Method:getExpected
+Parameters:vector <string>
+Returns:string
+Method signature:string getExpected(vector <string> maze)
+
+
+CONSTRAINTS
+-maze will contain between 1 and 50 elements, inclusive. 
+-Each element of maze will contain between 1 and 50 characters, inclusive. 
+-Each element of maze will contain the same number of characters. 
+-Each character in maze will be one of '#', '.', 'L', 'F' and 'R'. 
+-maze will contain at least 1 'L'. 
+-maze will contain between 1 and 20 'F's, inclusive. 
+-maze will contain between 1 and 20 'R's, inclusive. 
+
+
+EXAMPLES
+
+0)
+{ "#########", 
+  "####F####", 
+  "##L...R##", 
+  "####L####", 
+  "#########" }
+
+
+Returns: "9/2"
+
+There are two possible entrances for Lecette, one for Fox and one for Rabbit. 
+For both entrances of Lecette, the meeting cell should be the center of the maze. 
+The total walking distance will be 4 or 5 with the same probability. 
+
+
+1)
+{ "LR", 
+  "RF" }
+
+
+Returns: "2/1"
+
+
+
+2)
+{ "..F.#...", 
+  "L.F.#..L", 
+  "..F.#...", 
+  ".R.#..L.", 
+  "...#....", 
+  "..R#.L.." }
+
+
+Returns: ""
+
+
+
+3)
+{ ".L..L..L..", 
+  "..........", 
+  "..........", 
+  "..........", 
+  "........R.", 
+  "...R......", 
+  "..........", 
+  "..........", 
+  "..........", 
+  ".......F.." }
+
+
+Returns: "40/3"
+
+
+
+4)
+{ "#.#....#...#.#", 
+  "#...#..#......", 
+  ".L#...#R#..#F.", 
+  "#...#......#..", 
+  "#......#.....#", 
+  ".R.....F....L.", 
+  "##..#.......#.", 
+  "#........##...", 
+  ".F...##L#..#R#" }
+
+
+Returns: "362/27"
+
+
+
+5)
+{ "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLFLLLLLLLLLFLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLFFLLLLLLLLLLRLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLRLLLLLFLLLLLLLLLLLLLLF", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLF", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLFLLL", 
+  "LLLLLLLLLLLRLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLRRL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLRLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLR", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLRLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLRLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLRLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLRLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLFFLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "FLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLRLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLRLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLFLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLFLLLLLLLLLRLLLLLLLLLLLLLLLLLLLRLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLFLLLLLLLLLLLLLLLLRLLLLLLLLLRLLLLLLLLLLLLRLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLRLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLFLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLFLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLFLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "FLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLRLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLFLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
+  "LLLLLLLLLLLLLLLLLLLLLLLLLLLFLLLLLLLLLLLLLLLLLLLLLL" }
+
+
+Returns: "210623/4100"
+
+

@@ -1,0 +1,97 @@
+PROBLEM STATEMENT
+Lecette is going to open an item shop. 
+On the first day, she will sell only magical swords. 
+She prepared swords magical swords and she will keep the shop open for the whole day, from 00:00 to 23:59. 
+
+Lecette has information about her customers. 
+The information is given as vector <string> customers. 
+Each element represents a single customer who may come to the shop at some point during the day. 
+It is formatted as 
+"T1,C1,P1
+ T2,C2,P2
+ ...
+ TN,CN,PN"
+ (quotes for clarity), where N is a positive integer. 
+An occurrence of three integers Tj, Cj and Pj 
+within customers[i] means that the following event will happen with a probability of Pj percent: 
+the i-th customer comes to the shop at Tj o'clock 
+and offers to buy a magical sword at a price of Cj units of money. 
+The same customer never comes to the shop more than once. 
+That is, the customer does not come to the shop during the day 
+with a probability of 100 - (P1 + P2 + ... + PN) percent. 
+The values of Tj are such that at most one customer can come to the shop during each hour of the day 
+(see the constraints for further clarification). 
+
+When a customer comes to the shop, Lecette can choose to either accept or reject the offer. 
+She cannot sell more than one sword to the same customer. 
+Let's define S as the total amount of money that Lecette will get for all the swords sold during the day. 
+Lecette will act in such a way that maximizes the expected value of S. 
+Return this expected value. 
+
+
+DEFINITION
+Class:NewItemShop
+Method:getMaximum
+Parameters:int, vector <string>
+Returns:double
+Method signature:double getMaximum(int swords, vector <string> customers)
+
+
+NOTES
+-The returned value must have an absolute or relative error less than 1e-9. 
+
+
+CONSTRAINTS
+-swords will be between 1 and 24, inclusive. 
+-customers will contain between 1 and 24 elements, inclusive. 
+-Each element of customers will contain between 5 and 50 characters, inclusive. 
+-Each element of customers will be formatted as "T1,C1,P1 T2,C2,P2 ... TN,CN,PN", where Each Tj, Cj and Pj will be nonnegative integers without extra leading zeros. 
+-Each Tj will be between 0 and 23, inclusive. 
+-Each Cj will be between 1 and 100, inclusive. 
+-Each Pj will be between 1 and 100, inclusive. 
+-For each t, 0 <= t < 24, there will be at most one pair (i, j) such that the value of Tj in customers[i] is equal to t. 
+-In each element of customers, T1 < T2 < ... < TN will hold. 
+-In each element of customers, P1 + P2 + ... + PN will not exceed 100. 
+
+
+EXAMPLES
+
+0)
+1
+{ "8,1,80 16,100,11", "12,10,100" }
+
+Returns: 19.0
+
+The optimal strategy is as follows: 
+At 08:00, Lecette should not sell the sword even if the first customer comes to the shop. 
+At 12:00, the second customer surely comes. Then, 
+
+	If the first customer has come at 08:00, she should sell the sword to the second customer. 
+	Otherwise, she should not sell the sword to the second customer. She should sell it at 16:00 if possible. 
+
+By this strategy, S will be 10 (80%) or 100 (11%) or 0 (9%). 
+
+
+1)
+2
+{ "8,1,80 16,100,11", "12,10,100" }
+
+Returns: 21.8
+
+2)
+1
+{ "0,90,25 2,90,25 4,90,25 6,90,25", "7,100,80" }
+
+Returns: 90.0
+
+3)
+3
+{ "17,31,41 20,59,26 23,53,5", "19,89,79", "16,32,38 22,46,26", "18,43,38 21,32,7" }
+
+Returns: 135.5121414
+
+4)
+5
+{ "1,1,10", "2,2,9", "3,3,8", "4,4,7", "5,5,6", "6,6,5", "7,7,4", "8,8,3", "9,9,2", "10,10,1" }
+
+Returns: 2.1999744634845344
