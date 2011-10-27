@@ -1,0 +1,417 @@
+\newcommand{\cosito}[0]{\textcolor{Orange}{\huge$\cdot$}}
+\section{4289 - Disgruntled Judge}
+\textbf{Problema:}
+Dada una sucesión de números $x_1, x_3, ... , x_{2t-1}$, encontrar $x_2, x_4, ... , x_{2t}$, tal que:
+$$\exists a, b \in \mathds{Z}, 0 \leq a,b \leq 10000, \forall 0 \leq i \leq 2t-1, x_{i+1} = a* x_{i} + b \mod 10001$$ 
+
+\subsection{Resolución}
+Para resolver el problema primero notamos que $10001 = 73*137$, lo cual puede ser útil para aplicar el teorema chino del resto. 
+Llamaremos $I_{i} = x_{2i-1}$ y $O_{i} = x_{2i}$. Notemos que como el enunciado nos dice que $0 \leq x_{i} \leq 10000$, resulta que los $x_{i}$ son restos de la división módulo 10001. Esto resulta importante porque nos permite trabajar con congruencia en vez de igualdad.
+
+Si el \textit{input} es sólo $I_1$, alcanza con tomar $O_1=I_1$, pues se puede tomar $a=0, b=I_1$. Análogamente, si el \textit{input} es sólo $I_1, I_2$, alcanza con tomar $O_k = I_2$, pues se puede usar $a=0, b = I_2$.
+
+Si la cantidad de \textit{inputs} ($n$) es mayor, hay que plantearlo de otra forma. 
+
+Consideremos un caso tal que la cantidad de \textit{inputs} es mayor o igual a 3. Observando las ecuaciones de generación de los $x_i$ vemos que:
+
+$$a*I_1 + b \equiv O_1 \mod 10001$$
+$$a*0_1 + b \equiv I_2 \mod 10001$$
+$$a*I_2 + b \equiv O_2 \mod 10001$$
+$$a*O_2 + b \equiv I_3 \mod 10001$$
+
+De aquí podemos obtener:
+
+$$a^2*I_1 + a*b + b \equiv I_2 \mod 10001$$
+$$a^2*I_2 + a*b + b \equiv I_3 \mod 10001$$
+
+Restando ecuaciones,
+
+$$a^2*(I_1 - I_2) \equiv (I_2 - I_3) \mod 10001$$
+
+Resolviendo esta ecuación podemos obtener candidatos para $a^2$, y de estos candidatos podemos obtener posibles valores para $a$.
+
+Notemos que si $(I_1 - I_2)\equiv 0 \mod 10001$, resulta que $I_1 = I_2$, ya que $0 \leq I_1,I_2 \leq 10001$. %TODO: lo explico mas esto?
+En ese caso, alcanza con devolver $O_k=I_2$
+
+Usando teorema chino del resto, obtenemos que:
+$$a^2*(I_1 - I_2) \equiv (I_2 - I_3) \mod 137$$
+$$a^2*(I_1 - I_2) \equiv (I_2 - I_3) \mod 73$$
+
+Supongamos que $(I_1 - I_2) \not\equiv 0 \mod 137 \wedge (I_1 - I_2) \not\equiv 0 \mod 73$
+Entonces, como ambos módulos son primos, existen $k_{73}, k_{137}$ inversos multiplicativos de $(I_1 - I_2)$ módulo 73 y 137 respectivamente, tales que:
+$$a^2 \equiv (I_2 - I_3)*k_{137} \mod 137$$
+$$a^2 \equiv (I_2 - I_3)*k_{73} \mod 73$$
+
+Para encontrar los $k$ se busca expresar a 1 como combinación lineal entre $(I_1 - I_2)$ y 137 o 73 según corresponda, lo cual es posible, ya que estamos suponiendo que $(I_1 - I_2)$ es coprimo con 137 y con 73.
+
+Luego buscamos $a$ tales que $a^2$ cumpla esas ecuaciones. Si $(I_1 - I_2) \equiv 0 \mod 137 \vee (I_1 - I_2) \equiv 0 \mod 73$ (es un ``o'' exclusivo, porque estamos considerando que no $(I_1 - I_2)$ no era múltiplo de $10001$), perdemos una de las ecuaciones, pero igual obtenemos posibles candidatos para $a^2$.
+
+Una vez que obtenemos un candidato para $a$, vemos si es viable. Para esto debe ser posible encontrar $b$ tal que:
+$$a^2*I_1 + a*b + b \equiv I_2 \mod 10001$$
+Escrito de otra forma:
+$$(a+1)*b \equiv I_2 - a^2*I_1 \mod 10001$$
+
+Un caso donde podría no existir ningún $b$ que cumpla esta ecuación es si  $(a+1) \equiv 0 \mod 10001$, pero el lado derecho de la ecuación no es equivalente a 0. Usando teorema chino del resto, se obtienen dos ecuaciones módulo 173 y 73, que permiten obtener un $b$ candidato. 
+En verdad no puede ser que $(a+1) \equiv 0 \mod 10001$, porque entonces resulta que $a^2 \equiv 1 \mod 10001$ y de $(a+1)*b \equiv I_2 - a^2*I_1 \mod 10001$ sale que $I_1 \equiv I_2 \mod 10001$, pero ese caso yo lo habíamos considerado antes por separado. 
+Sin embargo, si puede ocurrir que $(a+1) \equiv 0 \mod 73$ o $(a+1) \equiv 0 \mod 137$ y que no valga que el lado derecho también sea congruente a 0, por lo cual hay que chequear esas condiciones.
+
+Dado un valor de $k\neq 0$, existen a lo sumo dos $a$ distintos que cumplen:
+$a \leq 0 \leq 73 \wedge a^2 \equiv k \mod 73$. En particular, existen o bien 2 $a$ que cumplen eso, o ninguno. El caso donde no existe ninguno no lo consideramos, ya que por enunciado sabemos que debe existir alguno. Si en vez de considerar el intervalo $[0,73]$ consideramos el intervalo $[0,\lfloor73/2\rfloor]$ existe un único $a$. El otro $a$ pertenece a la segunda mitad del intervalo y tiene la forma $a'=73-a$.
+Algo similar ocurre para $137$. 
+
+Podemos entonces tener dos arreglos, uno para cada factor primo, tales que, por ejemplo, $A_{73}[i] = k / k^2 \equiv i \mod 73 \wedge 0 < k < 73$, o $0$ si no existe tal $k$.
+
+En el caso en el que ninguna de las ecuaciones para $a^2$ se anula, usando lo visto antes, tenemos 4 posibles candidatos para $a$ (la combinación mediante teorema chino del resto de las dos soluciones módulo 73 y 137). Lo que hacemos entonces es probar alguno de esos que respete los \textit{inputs}, es decir que para todo $O_k$ en el rango, tiene que valer que $a*O_k+b \equiv I_{k+1} \mod 10001$. Una vez que encontramos uno, imprimimos los $O_k$.
+
+Si alguna de las ecuaciones se anula, tenemos muchos más candidatos. Por ejemplo, si se anula la ecuación de $137$, tenemos dos posibles valores de $a$ que son menores que $73$. Ahora, todo valor $a'$ que sea menor a $10001$ y congruente modulo $73$ a alguno de esos dos es otro posible candidato. Notemos que en este caso hay $2*137$ posibles candidatos. Es análogo para cuando la ecuación que se anula es la de $73$, en este caso hay $2*73$ candidatos
+
+
+El siguiente pseudocódigo ilustra la resolución del problema:
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Obtención de $a$ y $b$ para el caso en el que $n\geq 3$ }
+\PARAMS{$I_1$,$I_2$,$I_3$}
+\STATE q = $I_1-I_2$
+\STATE w = $I_2-I_3$
+\IF{$q \equiv 0 \mod 73 \wedge q \equiv 0 \mod 137$}
+\STATE no importa $a$ ni $b$, se puede tomar $O_k = I_3$
+\RETURN
+\ENDIF
+\IF{$q \equiv 0 \mod 73$}
+\STATE $a^2_{73} = w*q^{-1}_{73} \mod 73$ \COMMENT{ $q^{-1}_{73}$ es el inverso multiplicativo de $q \mod 73$}
+\STATE obtener $a$ tal que $0 \leq a \leq \lfloor73/2\rfloor \wedge a^2 \equiv a^2_{73} \mod 73$
+\STATE $a'= 73 - a$
+\WHILE{no encontré solución}
+	\IF{ es posible encontrar un $b$ para ese $a$, y $a,b$ respetan los inputs}
+	\STATE esos son los que buscábamos
+	\RETURN
+	\ELSIF{ es posible encontrar un $b$ para $a'$ y $a',b$ respetan los inputs}
+	\STATE esos son los que buscábamos
+	\RETURN
+	\ELSE
+	\STATE $a=a+73$
+	\STATE $a'=a'+73$
+	\ENDIF
+\ENDWHILE
+\ELSIF{$q \equiv 0 \mod 137$}
+\STATE realizar el mismo proceso que para 73 pero módulo 137
+\ELSE
+\STATE $a^2_{73} = w*q^{-1}_{73} \mod 73$
+\STATE obtener $k$ tal que $0 \leq k \leq \lfloor73/2\rfloor \wedge k^2 \equiv a^2_{73} \mod 73$
+\STATE $a^2_{137} = w*q^{-1}_{137} \mod 137$
+\STATE obtener $j$ tal que $0 \leq j \lfloor\leq 137/2\rfloor \wedge j^2 \equiv a^2_{73} \mod 73$
+\STATE considerar los siguientes candidatos: \COMMENT{se obtienen gracias al teorema chino}
+\STATE \cosito $k*137*137^{-1}_{73} + j*73*73^{-1}_{137} \mod 10001$
+\STATE \cosito $(73-k)*137*137^{-1}_{73} + j*73*73^{-1}_{137} \mod 10001$
+\STATE \cosito $k*137*137^{-1}_{73} + (137-j)*73*73^{-1}_{137} \mod 10001$
+\STATE \cosito $(73-k)*137*137^{-1}_{73} + (137-j)*73*73^{-1}_{137}  \mod 10001$
+\STATE devolver alguno de los candidatos tal que sea posible encontrar un $b$ para el, y que ambos respeten los $I_i$.
+\ENDIF
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Obtención de $b$ dado un $a$, o fallar si no se puede}
+\PARAMS{$a, I_1,I_2$}
+\IF{$a+1 \equiv 0 \mod 73$}
+\IF{$y - a^2*x \not\equiv 0 \mod 73$}
+\STATE \textcolor{Orange}{Fallar}
+\ELSE
+\STATE $b = y - a^2*x * (a+1)^{-1}_{137} \mod 137$
+\RETURN
+\ENDIF
+\ELSIF{$a+1 \equiv 0 \mod 137$}
+\IF{$y - a^2*x \not\equiv 0 \mod 137$}
+\STATE \textcolor{Orange}{Fallar}
+\ELSE
+\STATE $b = y - a^2*x * (a+1)^{-1}_{73} \mod 73$
+\RETURN
+\ENDIF
+\ELSE
+\STATE $b_{137} = y - a^2*x * (a+1)^{-1}_{137} \mod 137$
+\STATE $b_{73} = y - a^2*x * (a+1)^{-1}_{73} \mod 73$
+\STATE $b = b_{73}*137*137^{-1}_{73} + b_{137}*73*73^{-1}_{137} \mod 10001$
+\RETURN
+\ENDIF
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Complejidad}
+Con respecto a la complejidad, consideraremos que las operaciones aritméticas cuestan $O(1)$. Dado $m$, llamamos $\omega(m)$ a la cantidad de primos que dividen a $m$, es decir $\sharp\{ p / p \mid m \wedge p \in \mathds{P}\}$. Suponemos que conocemos esos factores primos, pues de lo contrario habría que considerar el costo de factorizar $m$.
+
+Para resolver el ejercicio, llenamos $\omega(m)$ arreglos, que sirven para obtener $a$, sabiendo el resto de $a^2$ para los distintos factores primos de $m$. Estos arreglos se pueden llenar en $O(m)$. 
+Luego se resuelven $O(\omega(m))$ ecuaciones, las cuales se pueden resolver en $O(\log m)$, ya que para hacerlo se necesita obtener los inversos multiplicativos que se pueden conseguir mediante el algoritmo para el $mcd$ como se vio en clase.
+
+A partir de esto, obtenemos $O(m)$ posibles candidatos (por ejemplo, si se anulan todas las ecuaciones menos una, la de $p_i$, quedan aproximadamente $O(m/p_i)$ candidatos). Para testear cada candidato, probamos que se cumplan todas las ecuaciones para los $I_i$, entonces si $n$ es la cantidad de inputs, chequeamos $O(n)$ ecuaciones. Por lo tanto, la complejidad de esta parte es $O(m*n)$.
+
+Leer la entrada es $O(n) \subseteq O(m*n)$.
+
+Uniendo todo, la complejidad es $O(\omega(m)*\log(m) + m*n)$.
+
+\subsection{Implementación}
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\hldir{\#include\ $<$stdlib.h$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$stdlib.h$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$stdio.h$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$sys/types.h$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$sys/stat.h$>$}\\
+\hlline{\ 6\ }\hlstd{}\hldir{\#include\ $<$fcntl.h$>$}\\
+\hlline{\ 7\ }\hlstd{}\hldir{\#include\ $<$cassert$>$}\\
+\hlline{\ 8\ }\hlstd{}\hldir{\#include\ $<$list$>$}\\
+\hlline{\ 9\ }\hlstd{}\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{10\ }\hlstd{}\hldir{\#define\ forn(i,n)\ for(int\ i\ =\ 0;\ i\ $<$\ n;\ ++i)}\\
+\hlline{11\ }\hlstd{}\hldir{\#define\ forsn(i,s,n)\ for(int\ i\ =\ (s);\ i\ $<$\ (n);\ i++)}\\
+\hlline{12\ }\hlstd{}\hldir{\#define\ foreachin(it,s)\ for(\textunderscore \textunderscore typeof\textunderscore \textunderscore ((s).begin())\ it\ =\ ((s).begin());\ it\ !=\ ((s).end());\ ++it)}\\
+\hlline{13\ }\hlstd{}\\
+\hlline{14\ }\hldir{\#define\ inverso\textunderscore de\textunderscore 73\textunderscore mod\textunderscore 137\ 122}\\
+\hlline{15\ }\hlstd{}\hldir{\#define\ inverso\textunderscore de\textunderscore 137\textunderscore mod\textunderscore 73\ 8}\\
+\hlline{16\ }\hlstd{}\hldir{\#define\ coef\textunderscore 137\ 1096\ }\hlslc{//\ 137{*}8}\\
+\hlline{17\ }\hldir{}\hlstd{}\hldir{\#define\ coef\textunderscore 73\ 8906\ }\hlslc{//\ 73{*}122}\\
+\hlline{18\ }\hldir{}\hlstd{}\\
+\hlline{19\ }\hlkwb{static\ int\ }\hlstd{cuad73}\hlsym{{[}}\hlstd{}\hlnum{73}\hlstd{}\hlsym{{]};}\\
+\hlline{20\ }\hlstd{}\hlkwb{static\ int\ }\hlstd{cuad137}\hlsym{{[}}\hlstd{}\hlnum{137}\hlstd{}\hlsym{{]};}\\
+\hlline{21\ }\hlstd{}\\
+\hlline{22\ }\hldir{\#define\ resto(x,y)\ ((((x)\ \%\ (y))\ +\ (y))\ \%\ (y))}\\
+\hlline{23\ }\hlstd{}\\
+\hlline{24\ }\hlslc{//\ si\ (a,b)\ =\ 1,\ deja\ en\ x\ el\ inverso\ multiplicativo\ de\ a\ ,mod\ b}\\
+\hlline{25\ }\hlstd{}\hlslc{//\ basicamente\ es\ la\ idea\ del\ algoritmo\ de\ euclides,\ pero\ iterativo}\\
+\hlline{26\ }\hlstd{}\hlslc{//\ mas\ info:\ www.math.hawaii.edu/$\sim$lee/discrete/combination.ps}\\
+\hlline{27\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{a}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{b}\hlsym{,\ }\hlstd{}\hlkwb{int}\hlstd{}\hlsym{\&}\hlstd{x}\hlsym{)\ \{}\\
+\hlline{28\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{g0\ }\hlsym{=\ }\hlstd{a}\hlsym{;}\\
+\hlline{29\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{x0\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{30\ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ }\hlslc{int\ y0\ =\ 0;}\\
+\hlline{31\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{g1\ }\hlsym{=\ }\hlstd{b}\hlsym{;}\\
+\hlline{32\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{x1\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{33\ }\hlstd{}\hlslc{//}\hlstd{\ \ \ \ }\hlslc{int\ y1\ =\ 1;}\\
+\hlline{34\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{g0\ }\hlsym{\%\ }\hlstd{g1\ }\hlsym{!=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{35\ }\hlstd{}\hlslc{//invariante:\ a{*}x\textunderscore 1+b{*}y\textunderscore 1=g1}\\
+\hlline{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{q\ }\hlsym{=\ }\hlstd{g0\ }\hlsym{/\ }\hlstd{g1}\hlsym{;}\\
+\hlline{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{temp\ }\hlsym{=\ }\hlstd{g1}\hlsym{;}\\
+\hlline{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{g1\ }\hlsym{=\ }\hlstd{g0\ }\hlsym{{-}\ }\hlstd{q\ }\hlsym{{*}\ }\hlstd{g1}\hlsym{;}\\
+\hlline{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{g0\ }\hlsym{=\ }\hlstd{temp}\hlsym{;}\\
+\hlline{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{temp\ }\hlsym{=\ }\hlstd{x1}\hlsym{;}\\
+\hlline{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{x1\ }\hlsym{=\ }\hlstd{x0\ }\hlsym{{-}\ }\hlstd{q\ }\hlsym{{*}\ }\hlstd{x1}\hlsym{;}\\
+\hlline{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{x0\ }\hlsym{=\ }\hlstd{temp}\hlsym{;}\\
+\hlline{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlcom{/{*}}\\
+\hlline{44\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ }\hlcom{temp\ =\ y1;}\\
+\hlline{45\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{y1\ =\ y0\ {-}\ q\ {*}\ y1;}\\
+\hlline{46\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{y0\ =\ temp;}\\
+\hlline{47\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ }\hlcom{{*}/}\hlstd{\\
+\hlline{48\ }}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{49\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{x}\hlsym{=}\hlstd{x1}\hlsym{;}\\
+\hlline{50\ }\hlstd{}\hlsym{\}}\\
+\hlline{51\ }\hlstd{}\\
+\hlline{52\ }\hlcom{/{*}\ utiliza\ la\ ecuacion:\ a\textasciicircum 2{*}x\ +a{*}b+b\ $\backslash$equiv\ y}\\
+\hlline{53\ }\hlcom{\ {*}\ para\ despejar\ b,\ si\ no\ es\ posible,\ es\ porque\ el\ a\ no\ era\ correcto}\\
+\hlline{54\ }\hlcom{\ {*}\ b{*}(a+1)\ $\backslash$equiv\ y\ {-}a\textasciicircum 2}\\
+\hlline{55\ }\hlcom{\ {*}/}\hlstd{}\\
+\hlline{56\ }\hlkwb{bool\ }\hlstd{}\hlkwd{obtener\textunderscore b}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{a}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{x}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{y}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{\&\ }\hlstd{b}\hlsym{)\ \{}\\
+\hlline{57\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{((}\hlstd{a}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \%\ }\hlstd{}\hlnum{73\ }\hlstd{}\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{58\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ para\ poder\ encontrar\ un\ b,\ la\ parte\ derecha\ tb\ tiene\ que\ ser\ congruente\ a\ 0\ modulo\ 73}\\
+\hlline{59\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{y}\hlsym{{-}}\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{a}\hlsym{{*}}\hlstd{a}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{){*}}\hlstd{x\ }\hlsym{\%}\hlstd{}\hlnum{73\ }\hlstd{}\hlsym{!=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)}\hlstd{}\hlkwa{return\ false}\hlstd{}\hlsym{;}\\
+\hlline{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{amas1inv}\hlsym{,\ }\hlstd{aux}\hlsym{;}\\
+\hlline{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{((}\hlstd{a}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{),}\hlstd{}\hlnum{137}\hlstd{}\hlsym{,}\hlstd{amas1inv}\hlsym{);}\\
+\hlline{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{amas1inv\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{amas1inv}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{);}\\
+\hlline{63\ }\hlstd{\\
+\hlline{64\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{acuad\ }\hlsym{=\ }\hlstd{a}\hlsym{{*}}\hlstd{a\ }\hlsym{\%}\hlstd{}\hlnum{137}\hlstd{}\hlsym{;}\\
+\hlline{65\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{aux\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{((}\hlstd{y\ }\hlsym{{-}\ }\hlstd{acuad}\hlsym{{*}}\hlstd{x}\hlsym{),}\hlstd{}\hlnum{137}\hlstd{}\hlsym{);}\\
+\hlline{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{b\ }\hlsym{=\ }\hlstd{aux}\hlsym{{*}}\hlstd{amas1inv}\hlsym{\%}\hlstd{}\hlnum{137}\hlstd{}\hlsym{;}\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ true}\hlstd{}\hlsym{;}\\
+\hlline{68\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{69\ }\hlstd{\\
+\hlline{70\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{((}\hlstd{a}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\%}\hlstd{}\hlnum{137\ }\hlstd{}\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{71\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ para\ poder\ encontrar\ un\ b,\ la\ parte\ derecha\ tb\ tiene\ que\ ser\ congruente\ a\ 0\ modulo\ 137}\\
+\hlline{72\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{y}\hlsym{{-}}\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{a}\hlsym{{*}}\hlstd{a}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{){*}}\hlstd{x\ }\hlsym{\%}\hlstd{}\hlnum{137\ }\hlstd{}\hlsym{!=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)}\hlstd{}\hlkwa{return\ false}\hlstd{}\hlsym{;}\\
+\hlline{73\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{amas1inv}\hlsym{,\ }\hlstd{aux}\hlsym{;}\\
+\hlline{74\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{((}\hlstd{a}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{),}\hlstd{}\hlnum{73}\hlstd{}\hlsym{,}\hlstd{amas1inv}\hlsym{);}\\
+\hlline{75\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{amas1inv\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{amas1inv}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{);}\\
+\hlline{76\ }\hlstd{\\
+\hlline{77\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{acuad\ }\hlsym{=\ }\hlstd{a}\hlsym{{*}}\hlstd{a\ }\hlsym{\%\ }\hlstd{}\hlnum{73}\hlstd{}\hlsym{;}\\
+\hlline{78\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{aux\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{((}\hlstd{y\ }\hlsym{{-}\ }\hlstd{acuad}\hlsym{{*}}\hlstd{x}\hlsym{),}\hlstd{}\hlnum{73}\hlstd{}\hlsym{);}\\
+\hlline{79\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{b\ }\hlsym{=\ }\hlstd{aux}\hlsym{{*}}\hlstd{amas1inv\ }\hlsym{\%}\hlstd{}\hlnum{73}\hlstd{}\hlsym{;}\\
+\hlline{80\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ true}\hlstd{}\hlsym{;}\\
+\hlline{81\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{82\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{amas1inv137}\hlsym{,\ }\hlstd{aux}\hlsym{;}\\
+\hlline{83\ }\hlstd{\\
+\hlline{84\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{((}\hlstd{a}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{),}\hlstd{}\hlnum{137}\hlstd{}\hlsym{,}\hlstd{amas1inv137}\hlsym{);}\\
+\hlline{85\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{amas1inv137\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{amas1inv137}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{);}\\
+\hlline{86\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{acuad137\ }\hlsym{=\ }\hlstd{a}\hlsym{{*}}\hlstd{a\ }\hlsym{\%\ }\hlstd{}\hlnum{137}\hlstd{}\hlsym{;}\\
+\hlline{87\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{aux137\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{((}\hlstd{y\ }\hlsym{{-}\ }\hlstd{acuad137}\hlsym{{*}}\hlstd{x}\hlsym{),}\hlstd{}\hlnum{137}\hlstd{}\hlsym{);}\\
+\hlline{88\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{b137}\hlsym{=\ }\hlstd{aux137}\hlsym{{*}}\hlstd{amas1inv137\ }\hlsym{\%\ }\hlstd{}\hlnum{137}\hlstd{}\hlsym{;}\\
+\hlline{89\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{amas1inv73}\hlsym{;}\\
+\hlline{90\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{((}\hlstd{a}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{),}\hlstd{}\hlnum{73}\hlstd{}\hlsym{,}\hlstd{amas1inv73}\hlsym{);}\\
+\hlline{91\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{amas1inv73\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{amas1inv73}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{);}\\
+\hlline{92\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{acuad73\ }\hlsym{=\ }\hlstd{a}\hlsym{{*}}\hlstd{a\ }\hlsym{\%}\hlstd{}\hlnum{73}\hlstd{}\hlsym{;}\\
+\hlline{93\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{aux73\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{((}\hlstd{y\ }\hlsym{{-}\ }\hlstd{acuad73}\hlsym{{*}}\hlstd{x}\hlsym{),}\hlstd{}\hlnum{73}\hlstd{}\hlsym{);}\\
+\hlline{94\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{b73}\hlsym{=\ }\hlstd{aux73}\hlsym{{*}}\hlstd{amas1inv73\ }\hlsym{\%}\hlstd{}\hlnum{73}\hlstd{}\hlsym{;}\\
+\hlline{95\ }\hlstd{\\
+\hlline{96\ }}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//usamos\ teorema\ chino\ del\ resto,\ para\ encontrar\ b}\\
+\hlline{97\ }\hlstd{\\
+\hlline{98\ }}\hlstd{\ \ \ \ }\hlstd{b\ }\hlsym{=\ ((}\hlstd{b73}\hlsym{{*}}\hlstd{coef\textunderscore 137}\hlsym{)+(}\hlstd{b137}\hlsym{{*}}\hlstd{coef\textunderscore 73}\hlsym{))\ \%\ }\hlstd{}\hlnum{10001}\hlstd{}\hlsym{;}\\
+\hlline{99\ }\hlstd{\\
+\hlline{100\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ true}\hlstd{}\hlsym{;}\\
+\hlline{101\ }\hlstd{}\\
+\hlline{102\ }\hlsym{\}}\\
+\hlline{103\ }\hlstd{}\\
+\hlline{104\ }\hlkwb{static\ int\ }\hlstd{numeros}\hlsym{{[}}\hlstd{}\hlnum{101}\hlstd{}\hlsym{{]};}\\
+\hlline{105\ }\hlstd{}\\
+\hlline{106\ }\hlkwb{bool\ }\hlstd{}\hlkwd{testear\textunderscore candidato}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{a}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{b}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{cant}\hlsym{,}\hlstd{list}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{res}\hlsym{)\ \{}\\
+\hlline{107\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,}\hlstd{cant}\hlsym{)\ \{}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{f\ }\hlsym{=\ (}\hlstd{a}\hlsym{{*}}\hlstd{numeros}\hlsym{{[}}\hlstd{i}\hlsym{{]}+}\hlstd{b}\hlsym{)\%\ }\hlstd{}\hlnum{10001}\hlstd{}\hlsym{;}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{res}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{f}\hlsym{);}\\
+\hlline{110\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{numeros}\hlsym{{[}}\hlstd{i}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}\ $<$\ }\hlstd{cant\ }\hlsym{\&\&\ (}\hlstd{a}\hlsym{{*}}\hlstd{f}\hlsym{+}\hlstd{b}\hlsym{)\%\ }\hlstd{}\hlnum{10001\ }\hlstd{}\hlsym{!=\ }\hlstd{numeros}\hlsym{{[}}\hlstd{i}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]})\ \{}\\
+\hlline{111\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{112\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{113\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{114\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{res}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ ==\ }\hlstd{cant}\hlsym{;}\\
+\hlline{115\ }\hlstd{}\hlsym{\}}\\
+\hlline{116\ }\hlstd{}\\
+\hlline{117\ }\hlkwb{void\ }\hlstd{}\hlkwd{llenar\textunderscore res}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{a}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{a1}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{x}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{y}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{cant}\hlsym{,}\hlstd{list}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{res}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{q}\hlsym{)\ \{}\\
+\hlline{118\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{b}\hlsym{;}\\
+\hlline{119\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{candidatos}\hlsym{{[}}\hlstd{}\hlnum{2}\hlstd{}\hlsym{{]}\ =\ \{}\hlstd{a}\hlsym{,}\hlstd{a1}\hlsym{\};}\\
+\hlline{120\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{t\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{121\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwa{true}\hlstd{}\hlsym{)\ \{}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwd{obtener\textunderscore b}\hlstd{}\hlsym{(}\hlstd{candidatos}\hlsym{{[}}\hlstd{t}\hlsym{{]},}\hlstd{x}\hlsym{,}\hlstd{y}\hlsym{,}\hlstd{b}\hlsym{))\ \{}\\
+\hlline{123\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwd{testear\textunderscore candidato}\hlstd{}\hlsym{(}\hlstd{candidatos}\hlsym{{[}}\hlstd{t}\hlsym{{]},}\hlstd{b}\hlsym{,}\hlstd{cant}\hlsym{,}\hlstd{res}\hlsym{))}\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{124\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{125\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{res}\hlsym{.}\hlstd{}\hlkwd{clear}\hlstd{}\hlsym{();}\\
+\hlline{126\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{t}\hlsym{++;}\\
+\hlline{127\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{t}\hlsym{$>$}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{128\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{candidatos}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}=}\hlstd{candidatos}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}+}\hlstd{q}\hlsym{;}\\
+\hlline{129\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{candidatos}\hlsym{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}=}\hlstd{candidatos}\hlsym{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}+}\hlstd{q}\hlsym{;}\\
+\hlline{130\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{t}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{131\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{132\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{133\ }\hlstd{}\hlsym{\}}\\
+\hlline{134\ }\hlstd{}\\
+\hlline{135\ }\hlkwb{void\ }\hlstd{}\hlkwd{resolver}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ int\ }\hlstd{cuadk}\hlsym{{[}{]},}\hlstd{}\hlkwb{int\ }\hlstd{k}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{x}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{y}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{qk}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{wk}\hlsym{,}\hlstd{}\hlkwb{int\ }\hlstd{cant}\hlsym{)\ \{}\\
+\hlline{136\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{qkinv}\hlsym{;}\\
+\hlline{137\ }\hlstd{\\
+\hlline{138\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{(}\hlstd{qk}\hlsym{,}\hlstd{k}\hlsym{,}\hlstd{qkinv}\hlsym{);}\\
+\hlline{139\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{qkinv\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{qkinv}\hlsym{,}\hlstd{k}\hlsym{);}\\
+\hlline{140\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{acuad\ }\hlsym{=\ (}\hlstd{wk}\hlsym{{*}}\hlstd{qkinv}\hlsym{)\%}\hlstd{k}\hlsym{;}\\
+\hlline{141\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{a}\hlsym{,}\hlstd{a1}\hlsym{;}\\
+\hlline{142\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{a\ }\hlsym{=\ }\hlstd{cuadk}\hlsym{{[}}\hlstd{acuad}\hlsym{{]};}\\
+\hlline{143\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{a1}\hlsym{=\ }\hlstd{k\ }\hlsym{{-}}\hlstd{cuadk}\hlsym{{[}}\hlstd{acuad}\hlsym{{]};}\\
+\hlline{144\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{list}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ }\hlstd{res}\hlsym{;}\\
+\hlline{145\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{llenar\textunderscore res}\hlstd{}\hlsym{(}\hlstd{a}\hlsym{,}\hlstd{a1}\hlsym{,}\hlstd{x}\hlsym{,}\hlstd{y}\hlsym{,}\hlstd{cant}\hlsym{,}\hlstd{res}\hlsym{,}\hlstd{k}\hlsym{);}\\
+\hlline{146\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{foreachin}\hlstd{}\hlsym{(}\hlstd{it}\hlsym{,}\hlstd{res}\hlsym{)\ \{}\\
+\hlline{147\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,{*}}\hlstd{it}\hlsym{);}\\
+\hlline{148\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{149\ }\hlstd{}\hlsym{\}}\\
+\hlline{150\ }\hlstd{}\\
+\hlline{151\ }\\
+\hlline{152\ }\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{argc}\hlsym{,\ }\hlstd{}\hlkwb{char}\hlstd{}\hlsym{{*}{*}\ }\hlstd{argv}\hlsym{)\ \{}\\
+\hlline{153\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ cuad73{[}k{]}\ =\ a\ /\ a\textasciicircum 2\ \%\ 73\ ==\ k}\\
+\hlline{154\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ notar\ que\ alcanza\ mirar\ hasta\ 37\ (73/2+1)}\\
+\hlline{155\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ porque\ j\textasciicircum 2\ \%\ 73\ ==\ (73\ {-}\ j)\textasciicircum 2}\\
+\hlline{156\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ ademas\ no\ hay\ a1,a2\ entre\ {[}0,73/2+1)\ tal\ que\ a1\textasciicircum 2\ \%\ 73\ ==\ a2\textasciicircum 2\ \%\ 73}\\
+\hlline{157\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{each}\hlsym{,}\hlstd{}\hlnum{37}\hlstd{}\hlsym{)\ \{}\\
+\hlline{158\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cuad73}\hlsym{{[}(}\hlstd{each}\hlsym{{*}}\hlstd{each}\hlsym{)\%}\hlstd{}\hlnum{73}\hlstd{}\hlsym{{]}\ =\ }\hlstd{each}\hlsym{;}\\
+\hlline{159\ }\hlstd{\\
+\hlline{160\ }}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{161\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ simil\ a\ lo\ anterior}\\
+\hlline{162\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{each}\hlsym{,}\hlstd{}\hlnum{68}\hlstd{}\hlsym{)\ \{}\\
+\hlline{163\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cuad137}\hlsym{{[}(}\hlstd{each}\hlsym{{*}}\hlstd{each}\hlsym{)\%}\hlstd{}\hlnum{137}\hlstd{}\hlsym{{]}=}\hlstd{each}\hlsym{;}\\
+\hlline{164\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{165\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{cant}\hlsym{;}\\
+\hlline{166\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d"}\hlstd{}\hlsym{,\&}\hlstd{cant}\hlsym{);}\\
+\hlline{167\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{cant\ }\hlsym{$>$\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{168\ }\hlstd{\\
+\hlline{169\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,}\hlstd{cant}\hlsym{)\ \{}\\
+\hlline{170\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d"}\hlstd{}\hlsym{,\&}\hlstd{numeros}\hlsym{{[}}\hlstd{i}\hlsym{{]});}\\
+\hlline{171\ }\hlstd{\\
+\hlline{172\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{173\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{cant\ }\hlsym{$<$\ }\hlstd{}\hlnum{3}\hlstd{}\hlsym{)\ \{}\\
+\hlline{174\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{cant}\hlsym{)\ \{}\\
+\hlline{175\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,}\hlstd{numeros}\hlsym{{[}}\hlstd{cant}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]});}\\
+\hlline{176\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{177\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{178\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{179\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{x}\hlsym{,}\hlstd{y}\hlsym{,}\hlstd{z}\hlsym{;}\\
+\hlline{180\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{x}\hlsym{=}\hlstd{numeros}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]};}\\
+\hlline{181\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{y}\hlsym{=}\hlstd{numeros}\hlsym{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]};}\\
+\hlline{182\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{z}\hlsym{=}\hlstd{numeros}\hlsym{{[}}\hlstd{}\hlnum{2}\hlstd{}\hlsym{{]};}\\
+\hlline{183\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{q}\hlsym{,}\hlstd{w}\hlsym{;}\\
+\hlline{184\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlcom{/{*}\ Idea:}\\
+\hlline{185\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{a{*}x\ +\ b\ $\backslash$equiv\ 0\textunderscore 1}\\
+\hlline{186\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{a{*}O\textunderscore 1\ +\ b\ $\backslash$equiv\ y}\\
+\hlline{187\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{a{*}y\ +\ b\ $\backslash$equiv\ O\textunderscore 2}\\
+\hlline{188\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{a{*}O\textunderscore 2\ +b\ $\backslash$equiv\ z}\\
+\hlline{189\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}\\
+\hlline{190\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{a\textasciicircum 2{*}x+ab+b\ $\backslash$equiv\ y}\\
+\hlline{191\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{a\textasciicircum 2{*}y+ab+b\ $\backslash$equiv\ z}\\
+\hlline{192\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}\\
+\hlline{193\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{a\textasciicircum 2(x{-}y)\ $\backslash$equiv\ (y{-}z)}\\
+\hlline{194\ }\hlcom{}\\
+\hlline{195\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{Resolver\ esa\ ecuacion\ modulo\ 137\ y\ 73\ y\ obtener\ candidatos\ para\ a.}\\
+\hlline{196\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{obtener\ un\ b\ para\ alguno\ de\ los\ candidatos.\ usar\ esa\ pareja\ (a,b)}\\
+\hlline{197\ }\hlcom{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlcom{{*}/}\hlstd{\\
+\hlline{198\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{q\ }\hlsym{=\ (}\hlstd{x}\hlsym{{-}}\hlstd{y}\hlsym{);}\\
+\hlline{199\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{w\ }\hlsym{=\ (}\hlstd{y}\hlsym{{-}}\hlstd{z}\hlsym{);}\\
+\hlline{200\ }\hlstd{\\
+\hlline{201\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{q137\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{q}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{);}\\
+\hlline{202\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{q73\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{q}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{);}\\
+\hlline{203\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{w137\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{w}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{);}\\
+\hlline{204\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{w73\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{w}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{);}\\
+\hlline{205\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{q137\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{206\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{q73\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{207\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,}\hlstd{cant}\hlsym{)\ \{}\\
+\hlline{208\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,}\hlstd{numeros}\hlsym{{[}}\hlstd{cant}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]});}\\
+\hlline{209\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{210\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{211\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{212\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{resolver}\hlstd{}\hlsym{(}\hlstd{cuad73}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{,}\hlstd{x}\hlsym{,}\hlstd{y}\hlsym{,}\hlstd{q73}\hlsym{,}\hlstd{w73}\hlsym{,}\hlstd{cant}\hlsym{);}\\
+\hlline{213\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{214\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{215\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{216\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{q73\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{217\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{resolver}\hlstd{}\hlsym{(}\hlstd{cuad137}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{,}\hlstd{x}\hlsym{,}\hlstd{y}\hlsym{,}\hlstd{q137}\hlsym{,}\hlstd{w137}\hlsym{,}\hlstd{cant}\hlsym{);}\\
+\hlline{218\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{219\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{220\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{q137inv}\hlsym{,}\hlstd{q73inv}\hlsym{;}\\
+\hlline{221\ }\hlstd{\\
+\hlline{222\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{(}\hlstd{q137}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{,}\hlstd{q137inv}\hlsym{);}\\
+\hlline{223\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{q137inv\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{q137inv}\hlsym{,}\hlstd{}\hlnum{137}\hlstd{}\hlsym{);}\\
+\hlline{224\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{acuad137\ }\hlsym{=\ (}\hlstd{w137}\hlsym{{*}}\hlstd{q137inv}\hlsym{)\%}\hlstd{}\hlnum{137}\hlstd{}\hlsym{;}\\
+\hlline{225\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{combinacion}\hlstd{}\hlsym{(}\hlstd{q73}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{,}\hlstd{q73inv}\hlsym{);}\\
+\hlline{226\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{q73inv\ }\hlsym{=\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{q73inv}\hlsym{,}\hlstd{}\hlnum{73}\hlstd{}\hlsym{);}\\
+\hlline{227\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{acuad73\ }\hlsym{=\ (}\hlstd{w73}\hlsym{{*}}\hlstd{q73inv}\hlsym{)\%}\hlstd{}\hlnum{73}\hlstd{}\hlsym{;}\\
+\hlline{228\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{a}\hlsym{,}\hlstd{b}\hlsym{;}\\
+\hlline{229\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{j\ }\hlsym{=\ }\hlstd{cuad73}\hlsym{{[}}\hlstd{acuad73}\hlsym{{]};}\\
+\hlline{230\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{k\ }\hlsym{=\ }\hlstd{cuad137}\hlsym{{[}}\hlstd{acuad137}\hlsym{{]};}\\
+\hlline{231\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{list}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ }\hlstd{res}\hlsym{;}\\
+\hlline{232\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{candidatos}\hlsym{{[}}\hlstd{}\hlnum{4}\hlstd{}\hlsym{{]}\ =\ \{\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\hlstd{j}\hlsym{{*}}\hlstd{coef\textunderscore 137\ }\hlsym{+\ }\hlstd{k}\hlsym{{*}\ }\hlstd{coef\textunderscore 73}\hlsym{,}\hlstd{}\hlnum{10001}\hlstd{}\hlsym{),\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{((}\hlstd{}\hlnum{73}\hlstd{}\hlsym{{-}}\hlstd{j}\hlsym{)}\Righttorque\\
+\hlline{233\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{{*}}\hlstd{coef\textunderscore 137\ }\hlsym{+\ }\hlstd{k}\hlsym{{*}\ }\hlstd{coef\textunderscore 73}\hlsym{,}\hlstd{}\hlnum{10001}\hlstd{}\hlsym{),}\\
+\hlline{234\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{((}\hlstd{}\hlnum{73}\hlstd{}\hlsym{{-}}\hlstd{j}\hlsym{){*}}\hlstd{coef\textunderscore 137\ }\hlsym{+\ (}\hlstd{}\hlnum{137}\hlstd{}\hlsym{{-}}\hlstd{k}\hlsym{){*}\ }\hlstd{coef\textunderscore 73}\hlsym{,}\hlstd{}\hlnum{10001}\hlstd{}\hlsym{),\ }\hlstd{}\hlkwd{resto}\hlstd{}\hlsym{(}\Righttorque\\
+\hlline{235\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{j}\hlsym{{*}}\hlstd{coef\textunderscore 137\ }\hlsym{+\ (}\hlstd{}\hlnum{137}\hlstd{}\hlsym{{-}}\hlstd{k}\hlsym{){*}\ }\hlstd{coef\textunderscore 73}\hlsym{,}\hlstd{}\hlnum{10001}\hlstd{}\hlsym{)}\\
+\hlline{236\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\};}\\
+\hlline{237\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{}\hlnum{4}\hlstd{}\hlsym{)\ \{}\\
+\hlline{238\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{a\ }\hlsym{=}\hlstd{candidatos}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ ;}\\
+\hlline{239\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwd{obtener\textunderscore b}\hlstd{}\hlsym{(}\hlstd{a}\hlsym{,}\hlstd{x}\hlsym{,}\hlstd{y}\hlsym{,}\hlstd{b}\hlsym{))\ \{}\\
+\hlline{240\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwd{testear\textunderscore candidato}\hlstd{}\hlsym{(}\hlstd{a}\hlsym{,}\hlstd{b}\hlsym{,}\hlstd{cant}\hlsym{,}\hlstd{res}\hlsym{))\ \{}\\
+\hlline{241\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{242\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{243\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{244\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{res}\hlsym{.}\hlstd{}\hlkwd{clear}\hlstd{}\hlsym{();}\\
+\hlline{245\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{246\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{foreachin}\hlstd{}\hlsym{(}\hlstd{it}\hlsym{,}\hlstd{res}\hlsym{)\ \{}\\
+\hlline{247\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,{*}}\hlstd{it}\hlsym{);}\\
+\hlline{248\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{249\ }\hlstd{\\
+\hlline{250\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{251\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{252\ }\hlstd{\\
+\hlline{253\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{254\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\&}\hlstd{cant}\hlsym{)!=}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)}\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{255\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{256\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlsym{(}\hlstd{EXIT\textunderscore SUCCESS}\hlsym{);}\\
+\hlline{257\ }\hlstd{}\hlsym{\}}\\
+\hlline{258\ }\hlstd{}\\
+\mbox{}
+\normalfont
+\shorthandon{"}
+

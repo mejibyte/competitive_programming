@@ -1,0 +1,270 @@
+\newcommand{\Null}{\textsc{null}}
+\section{3980 - Walk}
+\textbf{Problema:}
+Se tiene un conjunto de pol\'igonos (en $\Int^2$) que representan curvas de nivel.
+No hay intersecciones entre segmentos de dos pol\'igonos distintos, ni entre dos
+segmentos de un mismo pol\'igono. Dados dos puntos A y B (que no est\'an contenidos
+en el borde de ninguna de las curvas de nivel), determinar la m\'inima altura que
+se debe subir/bajar para llegar desde A hasta B, asumiendo que las \'areas entre
+las curvas de nivel son \'optimas.
+
+\subsection{Resoluci\'on}
+
+\subsubsection{Modelo del problema}
+Dado que no hay intersecciones entre dos segmentos de un pol\'igono,
+todos los pol\'igonos tienen un ``interior'' y un ``exterior''
+claramente definido.
+
+Adem\'as, dado que no hay intersecciones entre dos pol\'igonos distintos,
+se puede observar que hay un bosque de pol\'igonos impl\'icito en el problema.
+Dados dos pol\'igonos $p$ y $q$, notamos $q \subset p$ si todos los v\'ertices
+de $q$ est\'an en el interior de $p$. Los hijos de un pol\'igono $p$ se definen
+de la siguiente manera:
+
+$hijos(p) = \{q \tq q \subset p \,\land \not\exists p'.(q \subset p' \subset p) \}$
+
+Es decir, los hijos de un pol\'igono son aquellos que est\'an inmediatamente
+adentro. Las hojas son los pol\'igonos que no contienen a ning\'un otro pol\'igono.
+En la implementaci\'on, se trabaja directamente con el bosque de pol\'igonos.
+Para simplificar la demostraci\'on, se puede considerar que se tiene un \'arbol
+de pol\'igonos, agregando como ra\'iz un pol\'igono suficientemente grande que contenga
+a todos los dem\'as. (Esto no cambia la soluci\'on porque el camino que
+requiere menos subidas/bajadas no atraviesa esta curva de nivel).
+
+Dado un punto $x \in \Real^2$, notamos $x \in p$ sii $x$ est\'a
+adentro del pol\'igono $p$.
+El \'arbol se interpreta de la siguiente manera: el nodo del \'arbol
+asociado al pol\'igono $p$ representa todos los puntos
+$\{x \tq x \in p \,\land x \not\in hijos(p)\}$.
+Un camino en el \'arbol representa un
+camino entre puntos del plano (cocientando a los puntos mediante
+la relaci\'on de equivalencia $x \equiv y$ sii $\forall p. (x \in p \iff y \in p)$).
+Atravesar el eje que conecta al nodo $p$ con su hijo $q$
+equivale a cruzar la curva de nivel representada por $q$.
+
+Dado un punto $x$ se define $L(x)$ como el pol\'igono m\'as chico que
+lo contiene:
+
+$L(x) = p \text{ tal que } x \in p \,\land \not\exists q. (q < p \,\land\, x \in q)$
+
+Dado un punto $x$, se puede ver que $x$ est\'a
+adentro de todos los pol\'igonos en el camino que va desde la ra\'iz del
+\'arbol hasta $L(x)$, y que adem\'as no est\'a contenido en ning\'un otro nodo.
+
+Atravesar una curva de nivel siempre agrega un costo no negativo
+de subida o de bajada. Por lo tanto, el \'unico camino
+simple entre $L(A)$ y $L(B)$, que es m\'inimo en cantidad de ejes,
+tambi\'en debe ser m\'inimo en cantidad de distancia subida/bajada.
+
+\subsubsection{Cuestiones de implementaci\'on}
+
+Para encontrar el camino simple entre $L(A)$ y $L(B)$ se usa
+la siguiente propiedad de los pol\'igonos: $p \subset q \imp area(p) < area(q)$.
+Esto es verdad porque no hay intersecciones de ning\'un tipo.
+Por lo tanto, si se ordenan los pol\'igonos por \'area creciente
+y se los recorre en ese orden, se visitan los nodos del \'arbol
+de manera tal que, al momento de visitar el nodo $p$,
+todos los nodos en $hijos(p)$ ya fueron visitados.
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Encontrar el camino entre $L(A)$ y $L(B)$}
+\STATE Ordenar los pol\'igonos por \'area.
+\STATE $ramaA := []$
+\STATE $ramaB := []$
+\FOR{cada pol\'igono $p$, por \'area creciente}
+  \IF{$A \in p \land B \in p$}
+    \STATE terminar, devolver $(ramaA, ramaB)$
+  \ELSIF{$A \in p$}
+    \STATE agregar $p$ a $ramaA$
+  \ELSIF{$B \in p$}
+    \STATE agregar $p$ a $ramaB$
+  \ENDIF
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+Sea $L(A,B)$ el pol\'igono m\'as chico que contiene a $A$ y a $B$, es decir:\\
+$L(A,B) = p \text{ tal que } A \in p \,\land B \in p \,\land \not\exists q.(q < p \,\land A \in q \,\land B \in q)$
+
+El algoritmo se basa en el hecho de que el camino simple desde $L(A)$
+hasta $L(B)$ es el camino que va desde $L(A)$ hasta $L(A,B)$ m\'as el camino
+que va desde $L(A,B)$ hasta $L(B)$.
+El invariante es que, despu\'es de la iteraci\'on correspondiente al pol\'igono $p$,
+$ramaA$ contiene los nodos del camino simple que va desde $L(A,B)$ hasta $L(A)$
+y cuya \'area no exceda el \'area de $p$. (Y an\'alogamente para $B$).
+
+En la implementaci\'on no se construye la lista, sino que directamente
+se suman las distancias ascendidas o descendidas.
+
+\subsubsection{Complejidad}
+
+La entrada consta de $P$ pol\'igonos. Cada pol\'igono puede tener
+una cantidad variable de v\'ertices. La cantidad total de v\'ertices
+es $V$.
+
+Primero se calcula el \'area de cada pol\'igono, usando el m\'etodo
+usual (sumar los productos vectoriales y tomar m\'odulo).
+Esto requiere calcular productos vectoriales usando cada
+v\'ertice una cantidad constante de veces. Se hace para cada
+v\'ertice de cada pol\'igono y por lo tanto la complejidad
+temporal es $O(V)$.
+
+Una vez calculadas las \'areas, ordenar los pol\'igonos por \'area
+tiene complejidad $O(P \log P)$.
+
+Para verificar si un punto $x$ est\'a contenido en un pol\'igono,
+se elige un punto $y$ afuera del pol\'igono, y se determina si
+la cantidad de veces que el segmento $\bar{xy}$ se
+cruza con un segmento del pol\'igono es par o impar, usando
+nuevamente productos vectoriales.
+Esto requiere mirar cada punto del pol\'igono una cantidad
+constante de veces. En peor caso, $L(A,B)$ es la ra\'iz
+del \'arbol y se visitan todos los pol\'igonos una vez.
+El costo es $O(P + V) \subseteq O(V)$.
+
+La complejidad temporal de todo el algoritmo es entonces
+$O(P \log P + V)$.
+
+\subsection{Implementación}
+
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\hldir{\#include\ $<$iostream$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$algorithm$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$vector$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$cassert$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$cstdio$>$}\\
+\hlline{\ 6\ }\hlstd{}\\
+\hlline{\ 7\ }\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{\ 8\ }\hlstd{}\\
+\hlline{\ 9\ }\hlkwc{typedef\ }\hlstd{pair}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{,\ }\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ }\hlstd{Coord}\hlsym{;}\\
+\hlline{10\ }\hlstd{}\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{Coord}\hlsym{$>$\ }\hlstd{Poly}\hlsym{;}\\
+\hlline{11\ }\hlstd{}\\
+\hlline{12\ }\hldir{\#define\ x\ first}\\
+\hlline{13\ }\hlstd{}\hldir{\#define\ y\ second}\\
+\hlline{14\ }\hlstd{}\\
+\hlline{15\ }\hldir{\#define\ forsn(i,\ s,\ n)\ for\ (int\ i\ =\ (s);\ i\ $<$\ (n);\ i++)}\\
+\hlline{16\ }\hlstd{}\hldir{\#define\ forn(i,\ n)\ forsn\ (i,\ 0,\ n)}\\
+\hlline{17\ }\hlstd{}\\
+\hlline{18\ }\hldir{\#define\ coord\textunderscore sub(c1,\ c2)\ Coord((c1).x\ {-}\ (c2).x,\ (c1).y\ {-}\ (c2).y)}\\
+\hlline{19\ }\hlstd{}\\
+\hlline{20\ }\hlkwb{bool\ }\hlstd{}\hlkwd{cross\textunderscore prod\textunderscore sign}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{p}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{q}\hlsym{)\ \{}\\
+\hlline{21\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ long\ long\ int\ }\hlstd{pxqy\ }\hlsym{=\ ((}\hlstd{}\hlkwb{long\ long\ int}\hlstd{}\hlsym{)}\hlstd{p}\hlsym{.}\hlstd{x}\hlsym{)\ {*}\ }\hlstd{q}\hlsym{.}\hlstd{y}\hlsym{;}\\
+\hlline{22\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ long\ long\ int\ }\hlstd{qxpy\ }\hlsym{=\ ((}\hlstd{}\hlkwb{long\ long\ int}\hlstd{}\hlsym{)}\hlstd{q}\hlsym{.}\hlstd{x}\hlsym{)\ {*}\ }\hlstd{p}\hlsym{.}\hlstd{y}\hlsym{;}\\
+\hlline{23\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{pxqy\ }\hlsym{$>$=\ }\hlstd{qxpy}\hlsym{;}\\
+\hlline{24\ }\hlstd{}\hlsym{\}}\\
+\hlline{25\ }\hlstd{}\\
+\hlline{26\ }\hlkwb{bool\ }\hlstd{}\hlkwd{se\textunderscore cruzan}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{s0}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{s1}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{t0}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{t1}\hlsym{)\ \{}\\
+\hlline{27\ }\hlstd{}\hldir{\#define\ se\textunderscore cruzan1(a,\ b,\ c,\ d)\ (cross\textunderscore prod\textunderscore sign(coord\textunderscore sub(a,\ c),\ coord\textunderscore sub(d,\ c))\ !=\ cross\textunderscore prod\textunderscore sign(}\Righttorque\\
+\hlline{28\ }\hldir{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hldir{coord\textunderscore sub(b,\ c),\ coord\textunderscore sub(d,\ c)))}\\
+\hlline{29\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlkwd{se\textunderscore cruzan1}\hlstd{}\hlsym{(}\hlstd{s0}\hlsym{,\ }\hlstd{s1}\hlsym{,\ }\hlstd{t0}\hlsym{,\ }\hlstd{t1}\hlsym{)\ \&\&\ }\hlstd{}\hlkwd{se\textunderscore cruzan1}\hlstd{}\hlsym{(}\hlstd{t0}\hlsym{,\ }\hlstd{t1}\hlsym{,\ }\hlstd{s0}\hlsym{,\ }\hlstd{s1}\hlsym{);}\\
+\hlline{30\ }\hlstd{}\hldir{\#undef\ se\textunderscore cruzan1}\\
+\hlline{31\ }\hlstd{}\hlsym{\}}\\
+\hlline{32\ }\hlstd{}\\
+\hlline{33\ }\hlkwb{bool\ }\hlstd{}\hlkwd{esta\textunderscore adentro}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{punto}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{Poly}\hlsym{\&\ }\hlstd{poly}\hlsym{)\ \{}\\
+\hlline{34\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ buscar\ un\ punto\ afuera}\\
+\hlline{35\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{maxx\ }\hlsym{=\ }\hlstd{punto}\hlsym{.}\hlstd{x}\hlsym{;}\\
+\hlline{36\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ (}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{)}\hlstd{poly}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{())\ \{}\\
+\hlline{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{maxx\ }\hlsym{=\ }\hlstd{}\hlkwd{max}\hlstd{}\hlsym{(}\hlstd{maxx}\hlsym{,\ }\hlstd{poly}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{x}\hlsym{);}\\
+\hlline{38\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{39\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{maxx}\hlsym{++;}\\
+\hlline{40\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ }\hlstd{Coord\ }\hlkwd{externo}\hlstd{}\hlsym{(}\hlstd{maxx}\hlsym{,\ }\hlstd{punto}\hlsym{.}\hlstd{y\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{41\ }\hlstd{\\
+\hlline{42\ }}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ ver\ si\ la\ cantidad\ de\ cruces\ es\ par\ o\ impar}\\
+\hlline{43\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{poly}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{44\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{bool\ }\hlstd{adentro\ }\hlsym{=\ }\hlstd{}\hlkwa{false}\hlstd{}\hlsym{;}\\
+\hlline{45\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ }\hlstd{adentro\ \textasciicircum }\hlsym{=\ }\hlstd{}\hlkwd{se\textunderscore cruzan}\hlstd{}\hlsym{(}\hlstd{punto}\hlsym{,\ }\hlstd{externo}\hlsym{,\ }\hlstd{poly}\hlsym{{[}}\hlstd{i}\hlsym{{]},\ }\hlstd{poly}\hlsym{{[}(}\hlstd{i\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \%\ }\hlstd{n}\hlsym{{]});}\\
+\hlline{46\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{adentro}\hlsym{;}\\
+\hlline{47\ }\hlstd{}\hlsym{\}}\\
+\hlline{48\ }\hlstd{}\\
+\hlline{49\ }\hlkwb{long\ long\ int\ }\hlstd{}\hlkwd{doble\textunderscore area}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Poly}\hlsym{\&\ }\hlstd{poly}\hlsym{)\ \{}\\
+\hlline{50\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{poly}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{51\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{long\ long\ int\ }\hlstd{s\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{52\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{j\ }\hlsym{=\ (}\hlstd{i\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \%\ }\hlstd{n}\hlsym{;}\\
+\hlline{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{s\ }\hlsym{+=\ ((}\hlstd{}\hlkwb{long\ long\ int}\hlstd{}\hlsym{)}\hlstd{poly}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{x}\hlsym{)\ {*}\ }\hlstd{poly}\hlsym{{[}}\hlstd{j}\hlsym{{]}.}\hlstd{y\ }\hlsym{{-}\ ((}\hlstd{}\hlkwb{long\ long\ int}\hlstd{}\hlsym{)}\hlstd{poly}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{y}\hlsym{)\ {*}\ }\hlstd{poly}\hlsym{{[}}\hlstd{j}\hlsym{{]}.}\hlstd{x}\hlsym{;}\\
+\hlline{55\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{56\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{s\ }\hlsym{$<$\ }\hlstd{}\hlnum{0\ }\hlstd{?\ }\hlsym{{-}}\hlstd{s\ }\hlsym{:\ }\hlstd{s}\hlsym{;}\\
+\hlline{57\ }\hlstd{}\hlsym{\}}\\
+\hlline{58\ }\hlstd{}\\
+\hlline{59\ }\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ }\hlstd{vint}\hlsym{;}\\
+\hlline{60\ }\hlstd{}\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{long\ long\ int}\hlstd{}\hlsym{$>$\ }\hlstd{vllint}\hlsym{;}\\
+\hlline{61\ }\hlstd{\\
+\hlline{62\ }vllint\ \textunderscore \textunderscore area2}\hlsym{;}\\
+\hlline{63\ }\hlstd{}\hlkwb{bool\ }\hlstd{}\hlkwd{cmp\textunderscore area2}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{i}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{j}\hlsym{)\ \{}\\
+\hlline{64\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{\textunderscore \textunderscore area2}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ $<$\ }\hlstd{\textunderscore \textunderscore area2}\hlsym{{[}}\hlstd{j}\hlsym{{]};}\\
+\hlline{65\ }\hlstd{}\hlsym{\}}\\
+\hlline{66\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{minwalk}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{heights}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{vector}\hlsym{$<$}\hlstd{Poly}\hlsym{$>$\&\ }\hlstd{curves}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{Coord}\hlsym{\&\ }\hlstd{pos\textunderscore alice}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\Righttorque\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{Coord}\hlsym{\&\ }\hlstd{pos\textunderscore bob}\hlsym{)\ \{}\\
+\hlline{68\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{curves}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{69\ }\hlstd{\\
+\hlline{70\ }}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ ordenar\ los\ poligonos\ por\ area}\\
+\hlline{71\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{\textunderscore \textunderscore area2\ }\hlsym{=\ }\hlstd{}\hlkwd{vllint}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{);}\\
+\hlline{72\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{pi}\hlsym{,\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{73\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{\textunderscore \textunderscore area2}\hlsym{{[}}\hlstd{pi}\hlsym{{]}\ =\ }\hlstd{}\hlkwd{doble\textunderscore area}\hlstd{}\hlsym{(}\hlstd{curves}\hlsym{{[}}\hlstd{pi}\hlsym{{]});}\\
+\hlline{74\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{75\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{vint\ }\hlkwd{ind}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{76\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ }\hlstd{ind}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ =\ }\hlstd{i}\hlsym{;}\\
+\hlline{77\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{sort}\hlstd{}\hlsym{(}\hlstd{ind}\hlsym{.}\hlstd{}\hlkwd{begin}\hlstd{}\hlsym{(),\ }\hlstd{ind}\hlsym{.}\hlstd{}\hlkwd{end}\hlstd{}\hlsym{(),\ }\hlstd{cmp\textunderscore area2}\hlsym{);}\\
+\hlline{78\ }\hlstd{\\
+\hlline{79\ }}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//\ visitarlos\ en\ ese\ orden\ y\ calcular\ cuanto\ sube\ /\ baja}\\
+\hlline{80\ }\hlstd{}\hldir{\#define\ up\textunderscore down(H1,\ H2)\ if\ (H1\ $<$\ H2)\ \{\ cost\textunderscore up\ +=\ H2\ {-}\ H1;\ \}\ else\ \{\ cost\textunderscore down\ +=\ H1\ {-}\ H2;\ \}}\\
+\hlline{81\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{last\textunderscore height\textunderscore alice\ }\hlsym{=\ {-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{last\textunderscore height\textunderscore bob\ }\hlsym{=\ {-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{82\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{cost\textunderscore up\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{,\ }\hlstd{cost\textunderscore down\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{83\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{84\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{j\ }\hlsym{=\ }\hlstd{ind}\hlsym{{[}}\hlstd{i}\hlsym{{]};}\\
+\hlline{85\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{const\ bool\ }\hlstd{contains\textunderscore alice\ }\hlsym{=\ }\hlstd{}\hlkwd{esta\textunderscore adentro}\hlstd{}\hlsym{(}\hlstd{pos\textunderscore alice}\hlsym{,\ }\hlstd{curves}\hlsym{{[}}\hlstd{j}\hlsym{{]});}\\
+\hlline{86\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{const\ bool\ }\hlstd{contains\textunderscore bob\ }\hlsym{=\ }\hlstd{}\hlkwd{esta\textunderscore adentro}\hlstd{}\hlsym{(}\hlstd{pos\textunderscore bob}\hlsym{,\ }\hlstd{curves}\hlsym{{[}}\hlstd{j}\hlsym{{]});}\\
+\hlline{87\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{contains\textunderscore alice\ }\hlsym{\&\&\ }\hlstd{contains\textunderscore bob}\hlsym{)\ \{}\\
+\hlline{88\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{89\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ if\ }\hlstd{}\hlsym{(}\hlstd{contains\textunderscore alice}\hlsym{)\ \{}\\
+\hlline{90\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{last\textunderscore height\textunderscore alice\ }\hlsym{!=\ {-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{91\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{up\textunderscore down}\hlstd{}\hlsym{(}\hlstd{last\textunderscore height\textunderscore alice}\hlsym{,\ }\hlstd{heights}\hlsym{{[}}\hlstd{j}\hlsym{{]});}\\
+\hlline{92\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{93\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{last\textunderscore height\textunderscore alice\ }\hlsym{=\ }\hlstd{heights}\hlsym{{[}}\hlstd{j}\hlsym{{]};}\\
+\hlline{94\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ if\ }\hlstd{}\hlsym{(}\hlstd{contains\textunderscore bob}\hlsym{)\ \{}\\
+\hlline{95\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{last\textunderscore height\textunderscore bob\ }\hlsym{!=\ {-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{96\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{up\textunderscore down}\hlstd{}\hlsym{(}\hlstd{heights}\hlsym{{[}}\hlstd{j}\hlsym{{]},\ }\hlstd{last\textunderscore height\textunderscore bob}\hlsym{);}\\
+\hlline{97\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{98\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{last\textunderscore height\textunderscore bob\ }\hlsym{=\ }\hlstd{heights}\hlsym{{[}}\hlstd{j}\hlsym{{]};}\\
+\hlline{99\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{100\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{101\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{last\textunderscore height\textunderscore alice\ }\hlsym{!=\ {-}}\hlstd{}\hlnum{1\ }\hlstd{}\hlsym{\&\&\ }\hlstd{last\textunderscore height\textunderscore bob\ }\hlsym{!=\ {-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{102\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{up\textunderscore down}\hlstd{}\hlsym{(}\hlstd{last\textunderscore height\textunderscore alice}\hlsym{,\ }\hlstd{last\textunderscore height\textunderscore bob}\hlsym{);}\\
+\hlline{103\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{104\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%i\ \%i}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ }\hlstd{cost\textunderscore up}\hlsym{,\ }\hlstd{cost\textunderscore down}\hlsym{);}\\
+\hlline{105\ }\hlstd{}\hlsym{\}}\\
+\hlline{106\ }\hlstd{}\\
+\hlline{107\ }\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{()\ \{}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ }\hlstd{Coord\ }\hlkwd{pos\textunderscore alice}\hlstd{}\hlsym{(}\hlstd{}\hlnum{0}\hlstd{}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ }\hlstd{Coord\ }\hlkwd{pos\textunderscore bob}\hlstd{}\hlsym{(}\hlstd{}\hlnum{100000}\hlstd{}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{110\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{ncases}\hlsym{;}\\
+\hlline{111\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%i}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ \&}\hlstd{ncases}\hlsym{);}\\
+\hlline{112\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{ci}\hlsym{,\ }\hlstd{ncases}\hlsym{)\ \{}\\
+\hlline{113\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{npolys}\hlsym{;}\\
+\hlline{114\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%i}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ \&}\hlstd{npolys}\hlsym{);}\\
+\hlline{115\ }\hlstd{\\
+\hlline{116\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{Poly}\hlsym{$>$\ }\hlstd{polys}\hlsym{;}\\
+\hlline{117\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ }\hlstd{heights}\hlsym{;}\\
+\hlline{118\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{pi}\hlsym{,\ }\hlstd{npolys}\hlsym{)\ \{}\\
+\hlline{119\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{curve\textunderscore height}\hlsym{,\ }\hlstd{nverts}\hlsym{;}\\
+\hlline{120\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%i\ \%i"}\hlstd{}\hlsym{,\ \&}\hlstd{curve\textunderscore height}\hlsym{,\ \&}\hlstd{nverts}\hlsym{);}\\
+\hlline{121\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{polys}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{Poly}\hlstd{}\hlsym{());}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{vi}\hlsym{,\ }\hlstd{nverts}\hlsym{)\ \{}\\
+\hlline{123\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{vert\textunderscore x}\hlsym{,\ }\hlstd{vert\textunderscore y}\hlsym{;}\\
+\hlline{124\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%i\ \%i"}\hlstd{}\hlsym{,\ \&}\hlstd{vert\textunderscore x}\hlsym{,\ \&}\hlstd{vert\textunderscore y}\hlsym{);}\\
+\hlline{125\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{polys}\hlsym{{[}}\hlstd{pi}\hlsym{{]}.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{Coord}\hlstd{}\hlsym{(}\hlstd{vert\textunderscore x}\hlsym{,\ }\hlstd{vert\textunderscore y}\hlsym{));}\\
+\hlline{126\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{127\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{heights}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{curve\textunderscore height}\hlsym{);}\\
+\hlline{128\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{129\ }\hlstd{\\
+\hlline{130\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{minwalk}\hlstd{}\hlsym{(}\hlstd{heights}\hlsym{,\ }\hlstd{polys}\hlsym{,\ }\hlstd{pos\textunderscore alice}\hlsym{,\ }\hlstd{pos\textunderscore bob}\hlsym{);}\\
+\hlline{131\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{132\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{133\ }\hlstd{}\hlsym{\}}\\
+\hlline{134\ }\hlstd{}\\
+\mbox{}
+\normalfont
+\shorthandon{"}

@@ -1,0 +1,438 @@
+\newcommand{\tq}{\ensuremath{\ |\ }}
+\section{10600-ACM Contest and Blackout}
+\textbf{Problema:} Dado un conjunto de escuelas, y posibles conexiones entre ellas, cada una con un costo, encontrar los dos costos m\'as baratos para conectarlos.
+
+\subsection{Resolución}
+El problema se modela como un problema de grafos. El grafo tiene un nodo por cada escuela y existe un eje entre dos nodos por cada forma de conectar las escuelas representadas por esos nodos. El costo del eje es el costo de la conexión. En este modelo la respuesta consiste en buscar el costo de los dos árboles m\'as baratos. M\'as formalmente, si $g$ es el grafo, consideramos el siguiente conjunto $A$:
+
+$A=\{ T \tq  T$ es árbol generador de $g$$\}$
+
+lo que buscamos es $costo(T_1),costo(T_2)$ tal que:
+
+$T_1 \in A \wedge T_2 \in A  \wedge T_1 \neq T_2 \wedge T_1$ es árbol generador mínimo $\wedge \forall T_3 \in A, T_1 \neq T_3 \implies costo(T_2) \leq costo(T_3)$
+
+Dado que el problema nos dice que podemos encontrar los costos, podemos asumir que el grafo tiene m\'as de una forma de conectar a todos los nodos.
+
+Si tenemos la forma m\'as barata de conectar a todas las escuelas y miramos
+esta solución en el grafo, vemos que tiene que ser un árbol generador mínimo:
+es un \'arbol porque no puede haber escuelas ``sueltas'' (es conexo) y
+no puede haber ciclos, ya que las
+conexiones tienen un costo positivo (por lo cual eliminar una de esas
+conexiones abaratar\'ia el costo). Adem\'as, tiene
+que ser mínimo, ya que se busca que sea el de mínimo costo. La segunda forma
+m\'as barata de conectar a las escuelas tiene que ser también un árbol generador,
+ya que, por los mismos motivos de antes, el grafo correspondiente debe ser
+conexo y sin ciclos. Por lo tanto, si hay una solución al problema, sus costos
+tienen que coincidir con los costos de $T_1$ y $T_2$.
+
+Por otro lado es simple ver que los costos de $T_1$ y de $T_2$ son solución al
+problema, ya que si alguno de los dos no fuera es porque hay una forma m\'as
+barata de conectarlos; pero eso es absurdo por la definición de $T_1$ y de
+$T_2$.
+
+Encontrar $T_1$ es simple, se puede usar el algoritmo de Kruskal para hallar un
+árbol generador mínimo. 
+Para encontrar $T_2$ podría sacarse uno a uno los ejes que están en $T_1$ de $g$,
+y buscar el árbol generador mínimo de los sucesivos $g'$ hasta hallar el mas
+chico de todos ellos. Sin embargo esto es muy costoso y puede hacerse mejor.
+Para ello, usamos el Teorema~\ref{t1} demostrado abajo, que nos permite
+asegurar que se puede encontrar un $T_2$ cambiando a lo sumo un eje de $T_1$. 
+
+Sean dos ejes $(u,v) \in T_1$, $(x,y) \notin T_1$ tales que $T_1\cup \{(x,y)\}$
+tiene un ciclo en que tambi\'en est\'a el eje $(u,v)$. Sea adem\'as
+$T_2=T_1-\{(u,v)\}\cup\{(x,y)\}$, entonces:  
+
+%TODO: esto les parece que hay que justificarlo mas?
+%RESPUESTA: naaah
+$costo(T_2) = costo(T_1) - costo((u,v)) + costo((x,y))$
+
+Si queremos minimizar el costo de $T_2$ dado un $(x,y)$ fijo, debemos buscar cual es
+el $(u,v)$ que minimiza $- costo((u,v)) + costo((x,y))$. Este $(u,v)$ es el eje
+m\'as pesado del único camino que existe en $T_1$ entre $x$ e $y$. Una forma de
+resolver el problema es, para cada eje $(x,y)$ que ocurr\'ia en el grafo original
+pero qued\'o excluido de $T_1$, calcular cu\'al es el eje $(u,v)$ que le corresponde.
+Una vez hecho esto, se tienen los posibles mínimos incrementos que genera agregar
+un eje a $T_1$. El \'arbol $T_2$ buscado es el que minimiza este incremento.
+
+%los posibles mínimos incrementos que genera agregar
+%un eje a $T_1$. El costo que buscamos es el de $T_1$ mas el mínimo de estos incrementos.
+
+Una forma de hacer esto es encontrar, usando DFS, el eje m\'as caro del
+camino entre $u$ y $v$ para todo par de nodos $u,v$. El camino es \'unico
+porque $T_1$ es un árbol.
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Encontrar el eje m\'as caro en el camino que existe en un árbol para cada par de nodos $u$, $v$}
+\PARAMS{árbol sobre el que buscar}
+\STATE $M_{v,w} :=$ no calculado $\forall v, w$ nodos del árbol
+\FOR{cada nodo $v$ en el árbol}
+    \STATE \texttt{llenar\_con\_dfs\_m\'ax}($v$, $v$, $max$)
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{\texttt{llenar\_con\_dfs\_m\'ax:} Encontrar los ejes m\'as caros para los caminos que empiezan en un nodo}
+\PARAMS{nodo inicial $u$, otro nodo $x$, matriz ($max$) donde guardar los resultados}
+\FOR{cada nodo $v$ adyacente a $x$}
+\IF{$M_{u,v}$ es no calculado y $v\neq u$}
+           \IF{$x=u$ $\lor$ $peso(u,v) > M_{u,x}$}
+               \STATE $M_{u,v} := (x,v)$
+           \ELSE
+               \STATE $M_{u,v} := M_{u,x}$
+           \ENDIF
+           \STATE \texttt{llenar\_con\_dfs\_m\'ax}($u$, $v$, $max$)
+\ENDIF
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+Para obtener el árbol generador mínimo se utilizó el algoritmo de Kruskal, con una estructura auxiliar para {\em union-find}
+representada con un bosque de conjuntos disjuntos, de manera tal que cada nodo mantiene un puntero al representante de su
+clase. El algoritmo para la resolución del problema fue:
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Costo de los dos \'arboles generadores m\'as baratos}
+\PARAMS{un grafo $g$ con peso en los ejes}
+\STATE ordenar los ejes según su peso
+\STATE obtener el árbol generador mínimo $T_1$ y su costo mediante el algoritmo de Kruskal
+\STATE $M_{u,v}$ := eje m\'as caro en el camino desde $u$ hasta $v$ en $T_1$
+\STATE costo nuevo $:= \infty$
+\FOR{cada eje $(u,v)$ que quedo fuera del árbol generador mínimo}
+	\IF{costo nuevo $>$ $costo(T_1) - costo(M_{u,v}) + costo(u,v)$}
+		\STATE costo nuevo := $costo(T_1) - costo(M_{u,v}) + costo(u,v)$
+	\ENDIF
+\ENDFOR
+\RETURN $\langle$ $costo(T_1)$, costo nuevo $\rangle$
+\end{algorithmic}
+\end{algorithm}
+
+Podemos analizar la complejidad en base al pseudoc\'odigo antes presentado.
+Lo primero que hacemos es ordenar los ejes, lo cual toma $O(E \log E)$\footnote{Eventualmente se podría mejorar la complejidad utilizando bucket sort, ya que el costo de cada eje es a lo sumo 300.}, que es igual a $O(E \log V$). Luego obtenemos el árbol generador mínimo. Como usamos Kruskal con {\em union-find} y los ejes ya están ordenados, la complejidad es $O(E \alpha(V))$.
+
+Luego llenamos la matriz $M$, que como vimos antes, se logra haciendo DFS desde
+cada nodo, lo cual nos da un costo $O(V^2)$, ya que se hacen $V$ recorridos sobre el
+árbol, cada uno de los cuales cuesta $O(V)$ porque, como es un árbol, tiene $V-1$ ejes. En
+la implementación, no se llenan todas las posiciones $M_{u,v}$ al inicio, sino que
+se hace cada DFS a medida que se necesita su resultado. Esto no cambia la
+complejidad en peor caso, pero mejora los casos en los que hay pocos ejes.
+Finalmente, recorremos los ejes que no est\'an en el árbol, buscando cu\'al es el
+incremento mínimo que se produce al agregarlo; esto se hace en $O(E)$.
+Por lo tanto, la complejidad temporal es $O(V^2 + E \log V)$.
+
+\newtheorem{theorem}{Teorema}
+\begin{theorem}
+\label{t1}
+Sea $g$ un grafo tal que posee por lo menos dos árboles generadores. Entonces
+existe un árbol generador $T'$ tal que si $T$ es un árbol generador mínimo,
+entonces $T'$ difiere de $T$ en exactamente un eje y para todo otro árbol
+generador $T''$ ($T'' \neq T$), $costo(T') \leq costo(T'')$.
+\end{theorem}
+\begin{proof}
+Veamos primero que existe un \'arbol generador que difiere de $T$ en exactamente un
+eje.
+
+Sabemos que $g$ tiene por lo menos dos árboles generadores, por lo cual existe
+por lo menos un eje en g que no pertenece a $T$. Sea $e$ un eje de $g$ que no
+est\'a en $T$. Si se agrega $e$ a $T$, este pasa a tener un ciclo. Si se saca
+un eje de ese ciclo, que no sea $e$, se obtiene otro árbol generador que
+difiere de $T$ en exactamente un eje.
+
+Sea $T'$ un árbol generador que difiere de $T$ en exactamente un eje y cuyo
+costo es mínimo entre todos los que se diferencian de $T$ en exactamente un
+eje. Es decir:
+
+$A =\{t \tq t \text{ es árbol generador} \land \exists e \in E . T - t = \{e\}\}$ (difieren de $T$ en un eje)
+
+$T' \in \{ t \tq t \in A \wedge \forall t_1 \in A, costo(t) \leq costo(t_1)\}$
+
+Veamos que $costo(T') \leq costo(T'')$ para todo \'arbol generador $T'' \neq T$.
+
+Por la elecci\'on de $T'$, s\'olo falta considerar aquellos \'arboles generadores
+$T''$ que difieran de $T$ en dos o m\'as ejes.
+Supongamos que existe $T''$ que difiere de $T$ en dos o m\'as ejes y que
+$costo(T') > costo(T'')$.
+Considerar alg\'un $T''$ de costo mínimo y, dentro de los de costo m\'inimo,
+el que difiera de $T$ en la menor cantidad de ejes. M\'as formalmente:
+%$B =\{t \tq t $ es árbol generador,$ \#(T-t) \geq 2\}$
+
+$C =\{t \tq t \text{ es \'arbol generador }\land \#(T - t) \geq 2 \land costo(t) < costo(T')\}$ (difieren de $T$ en 2 o m\'as ejes)
+
+\noindent queremos ver que $C=\emptyset$. Consideramos:
+
+$C' = \{ t \tq t \in C \wedge \forall t_1 \in C, costo(t) \leq costo(t_1)\}$ (de costo m\'inimo)
+
+$C'' = \{ t \tq t \in C' \wedge \forall t_1 \in C', \#(T-t) \leq \#(T-t_1)\}$ (difieren de $T$ en m\'inima cantidad de ejes)
+
+Probar que $C=\emptyset$ es equivalente a probar que $C''=\emptyset$. Supongamos que $C'' \neq \emptyset$, entonces, sea $T'' \in C''$.
+
+Existe un eje $(u,v) \in T-T''$ que adem\'as tiene costo mínimo entre todos los que pertenecen a $T-T''$. Si agregamos $(u,v)$ a $T''$ obtenemos un ciclo, y en este ciclo hay un eje $(x,y)\in T''-T$ (porque si no habr\'ia un ciclo en $T$). 
+
+\begin{itemize}
+\item Si $peso((u,v)) > peso((x,y))$, agregamos $(x,y)$ a $T$ y obtenemos un ciclo. Hay un eje $(u',v')$
+en este ciclo que cumple que $(u',v') \in T-T''$ (porque si no habr\'ia un ciclo en $T''$).
+Como $(u,v)$ era el mínimo de todos los ejes de $T-T''$, vale que $peso((u,v))\leq peso((u',v'))$.
+
+Si $peso((u,v)) \leq peso((u',v'))$ y consideramos $T^\star=T-\{(u',v')\}\cup\{(x,y)\}$ obtenemos un árbol generador que tiene un costo mayor o igual que el de $T$.
+
+En verdad, no puede ser igual, porque $T^\star$ difiere de $T$ en exactamente
+un eje, y tendríamos que $costo(T) = costo(T^\star) \geq costo(T') > costo(T'')$
+y esto es absurdo ya que $T$ tiene costo mínimo. 
+
+Entonces $T^\star$ tiene un costo mayor, por lo cual tiene que valer que
+$peso((u',v')) < peso((x,y))$, entonces $peso((u',v')) < peso((x,y)) < peso((u,v))$. Esto es absurdo, ya que $(u,v)$ era un eje de peso mínimo en $T-T''$
+
+%Vemos entonces que $peso((u,v))\leq peso((x,y))$. 
+
+\item
+Si $peso((u,v)) = peso((x,y))$, resulta que existe $T^\star = T''-\{(x,y)\}\cup \{(u,v) \}$
+que tiene el mismo costo que $T''$ pero difiere de $T$ en menos ejes.
+Entonces, o bien $T^\star$ difiere en exactamente un eje de $T$, lo cual
+es absurdo porque $costo(T'') < costo(T') \leq costo(T^\star) = costo(T'')$,
+o bien difiere en m\'as de un eje,
+pero esto no puede ser porque, dentro de los de m\'inimo costo, $T''$ difer\'ia
+de $T$ en m\'inima cantidad de ejes.
+%pero esto no puede ser porque entonces $T^\star$ diferir\'ia en un eje menos de $T$ que $T''$.
+
+\item Por \'ultimo, si $peso((u,v)) < peso((x,y))$, entonces $T''-\{(x,y)\}\cup \{(u,v) \}$ pesa
+menos que $T''$ y difiere de $T$ en menos ejes, lo cual es nuevamente absurdo por
+las asunciones hechas sobre $T''$.
+\end{itemize}
+
+En todos los casos, el absurdo provino de suponer que existía $T''$.
+\end{proof}
+
+
+\subsection{Implementación}
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\hldir{\#include$<$iostream$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$stdio.h$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$stdlib.h$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$vector$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$algorithm$>$}\\
+\hlline{\ 6\ }\hlstd{}\hldir{\#include\ $<$list$>$}\\
+\hlline{\ 7\ }\hlstd{}\\
+\hlline{\ 8\ }\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{\ 9\ }\hlstd{}\hldir{\#define\ foreachin(it,s)\ for\ (typeof(s.begin())\ it\ =\ (s).begin();\ it\ !=\ (s).end();\ it++)}\\
+\hlline{10\ }\hlstd{}\hldir{\#define\ forn(i,n)\ for(unsigned\ short\ i\ =\ 0;\ i\ $<$\ (n);\ i++)}\\
+\hlline{11\ }\hlstd{}\\
+\hlline{12\ }\\
+\hlline{13\ }\hlkwc{class\ }\hlstd{uf\textunderscore node}\hlsym{\{}\\
+\hlline{14\ }\hlstd{}\hlkwc{public}\hlstd{}\hlsym{:}\\
+\hlline{15\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{name}\hlsym{;}\\
+\hlline{16\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{rank}\hlsym{;}\\
+\hlline{17\ }\hlstd{uf\textunderscore node\ }\hlsym{{*}}\hlstd{parent}\hlsym{;}\\
+\hlline{18\ }\hlstd{}\hlsym{\};}\\
+\hlline{19\ }\hlstd{}\\
+\hlline{20\ }\\
+\hlline{21\ }\hlkwc{class\ }\hlstd{union\textunderscore find}\hlsym{\{}\\
+\hlline{22\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{public\ }\hlstd{}\hlsym{:}\\
+\hlline{23\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{uf\textunderscore node}\hlsym{{*}\ }\hlstd{S}\hlsym{;}\\
+\hlline{24\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwd{union\textunderscore find}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{n}\hlsym{)\{}\\
+\hlline{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{S\ }\hlsym{=}\hlstd{}\hlkwa{new\ }\hlstd{uf\textunderscore node}\hlsym{{[}}\hlstd{n}\hlsym{{]};}\\
+\hlline{26\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{i}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\hlstd{i}\hlsym{$<$}\hlstd{n}\hlsym{;}\hlstd{i}\hlsym{++)\{}\\
+\hlline{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{S}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{rank}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{S}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{name}\hlsym{=}\hlstd{i}\hlsym{;}\\
+\hlline{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{S}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{parent}\hlsym{=\&}\hlstd{S}\hlsym{{[}}\hlstd{i}\hlsym{{]};}\\
+\hlline{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{31\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{32\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{$\sim$}\hlstd{}\hlkwd{union\textunderscore find}\hlstd{}\hlsym{()\{}\hlstd{}\hlkwa{delete}\hlstd{}\hlsym{{[}{]}\ }\hlstd{S}\hlsym{;\}}\\
+\hlline{33\ }\hlstd{\\
+\hlline{34\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{Union}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{a}\hlsym{,\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{b}\hlsym{)\{\ }\hlstd{}\hlslc{//use\ Union\ because\ union\ is\ a\ keyword\ :P}\\
+\hlline{35\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{ranka}\hlsym{,}\hlstd{rankb}\hlsym{;}\\
+\hlline{36\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{ranka}\hlsym{=}\hlstd{S}\hlsym{{[}}\hlstd{a}\hlsym{{]}.}\hlstd{parent}\hlsym{{-}$>$}\hlstd{rank}\hlsym{;}\\
+\hlline{37\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{rankb}\hlsym{=}\hlstd{S}\hlsym{{[}}\hlstd{b}\hlsym{{]}.}\hlstd{parent}\hlsym{{-}$>$}\hlstd{rank}\hlsym{;}\\
+\hlline{38\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{ranka}\hlsym{$>$}\hlstd{rankb}\hlsym{)\{}\\
+\hlline{39\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{(}\hlstd{S}\hlsym{{[}}\hlstd{b}\hlsym{{]}.}\hlstd{parent}\hlsym{){-}$>$}\hlstd{parent}\hlsym{=}\hlstd{S}\hlsym{{[}}\hlstd{a}\hlsym{{]}.}\hlstd{parent}\hlsym{;}\\
+\hlline{40\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{S}\hlsym{{[}}\hlstd{a}\hlsym{{]}.}\hlstd{rank}\hlsym{=}\hlstd{ranka}\hlsym{+}\hlstd{rankb}\hlsym{;}\\
+\hlline{41\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{42\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else}\hlstd{}\hlsym{\{}\\
+\hlline{43\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{(}\hlstd{S}\hlsym{{[}}\hlstd{a}\hlsym{{]}.}\hlstd{parent}\hlsym{){-}$>$}\hlstd{parent}\hlsym{=}\hlstd{S}\hlsym{{[}}\hlstd{b}\hlsym{{]}.}\hlstd{parent}\hlsym{;}\\
+\hlline{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{S}\hlsym{{[}}\hlstd{b}\hlsym{{]}.}\hlstd{rank}\hlsym{=}\hlstd{ranka}\hlsym{+}\hlstd{rankb}\hlsym{;}\\
+\hlline{45\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{46\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{47\ }\hlstd{\\
+\hlline{48\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{compress\textunderscore path}\hlstd{}\hlsym{(}\hlstd{uf\textunderscore node}\hlsym{{*}\ }\hlstd{temp}\hlsym{,\ }\hlstd{uf\textunderscore node}\hlsym{{*}\ }\hlstd{aux}\hlsym{,\ }\hlstd{uf\textunderscore node}\hlsym{{*}\ }\hlstd{stop\textunderscore point}\hlsym{)\{}\\
+\hlline{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{temp}\hlsym{=}\hlstd{aux}\hlsym{{-}$>$}\hlstd{parent}\hlsym{;}\\
+\hlline{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{aux}\hlsym{{-}$>$}\hlstd{parent}\hlsym{=}\hlstd{stop\textunderscore point}\hlsym{;}\\
+\hlline{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{aux}\hlsym{=}\hlstd{temp}\hlsym{;}\\
+\hlline{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while}\hlstd{}\hlsym{(}\hlstd{aux}\hlsym{!=}\hlstd{stop\textunderscore point}\hlsym{)\{}\\
+\hlline{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{temp}\hlsym{=}\hlstd{aux}\hlsym{{-}$>$}\hlstd{parent}\hlsym{;}\\
+\hlline{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{aux}\hlsym{{-}$>$}\hlstd{parent}\hlsym{=}\hlstd{stop\textunderscore point}\hlsym{;}\\
+\hlline{55\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{aux}\hlsym{=}\hlstd{temp}\hlsym{;}\\
+\hlline{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{57\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{58\ }\hlstd{\\
+\hlline{59\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{}\hlkwd{Find}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{a}\hlsym{)\{}\\
+\hlline{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{uf\textunderscore node}\hlsym{{*}\ }\hlstd{temp}\hlsym{;}\\
+\hlline{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{uf\textunderscore node}\hlsym{{*}\ }\hlstd{aux}\hlsym{;}\\
+\hlline{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{result}\hlsym{;}\\
+\hlline{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{aux}\hlsym{=\&}\hlstd{S}\hlsym{{[}}\hlstd{a}\hlsym{{]};}\\
+\hlline{64\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{temp}\hlsym{=}\hlstd{S}\hlsym{{[}}\hlstd{a}\hlsym{{]}.}\hlstd{parent}\hlsym{;}\\
+\hlline{65\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while}\hlstd{}\hlsym{(}\hlstd{aux}\hlsym{!=}\hlstd{temp}\hlsym{)\{}\\
+\hlline{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{aux}\hlsym{=}\hlstd{temp}\hlsym{;}\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{temp}\hlsym{=({*}}\hlstd{aux}\hlsym{).}\hlstd{parent}\hlsym{;}\\
+\hlline{68\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{69\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{result}\hlsym{=}\hlstd{aux}\hlsym{{-}$>$}\hlstd{name}\hlsym{;}\\
+\hlline{70\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{uf\textunderscore node}\hlsym{{*}\ }\hlstd{stop\textunderscore point}\hlsym{;}\\
+\hlline{71\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{stop\textunderscore point}\hlsym{=}\hlstd{aux}\hlsym{;}\\
+\hlline{72\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{aux}\hlsym{=\&}\hlstd{S}\hlsym{{[}}\hlstd{a}\hlsym{{]};}\\
+\hlline{73\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{compress\textunderscore path}\hlstd{}\hlsym{(}\hlstd{temp}\hlsym{,}\hlstd{aux}\hlsym{,}\hlstd{stop\textunderscore point}\hlsym{);}\\
+\hlline{74\ }\hlstd{\\
+\hlline{75\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{result}\hlsym{;}\\
+\hlline{76\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{77\ }\hlstd{}\hlsym{\};}\\
+\hlline{78\ }\hlstd{}\\
+\hlline{79\ }\hlkwc{class\ }\hlstd{edge}\hlsym{\{}\\
+\hlline{80\ }\hlstd{}\hlkwc{public\ }\hlstd{}\hlsym{:}\\
+\hlline{81\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{start}\hlsym{,}\hlstd{end}\hlsym{;}\\
+\hlline{82\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{cost}\hlsym{;}\\
+\hlline{83\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwd{edge}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{start}\hlsym{,\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{end}\hlsym{,\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{cost}\hlsym{)\{}\\
+\hlline{84\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{this}\hlstd{}\hlsym{{-}$>$}\hlstd{start}\hlsym{=}\hlstd{start}\hlsym{;}\\
+\hlline{85\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{this}\hlstd{}\hlsym{{-}$>$}\hlstd{end}\hlsym{=}\hlstd{end}\hlsym{;}\\
+\hlline{86\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{this}\hlstd{}\hlsym{{-}$>$}\hlstd{cost}\hlsym{=}\hlstd{cost}\hlsym{;}\\
+\hlline{87\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{88\ }\hlstd{}\hlsym{\};}\\
+\hlline{89\ }\hlstd{}\\
+\hlline{90\ }\\
+\hlline{91\ }\hlkwc{inline\ }\hlstd{}\hlkwb{bool\ }\hlstd{}\hlkwd{compare}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{edge}\hlsym{\&\ }\hlstd{a}\hlsym{,}\hlstd{}\hlkwb{const\ }\hlstd{edge}\hlsym{\&\ }\hlstd{b\ }\hlsym{)\{}\\
+\hlline{92\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{a}\hlsym{.}\hlstd{cost\ }\hlsym{$<$\ }\hlstd{b}\hlsym{.}\hlstd{cost}\hlsym{;}\\
+\hlline{93\ }\hlstd{}\\
+\hlline{94\ }\hlsym{\}}\\
+\hlline{95\ }\hlstd{}\\
+\hlline{96\ }\hlkwc{inline\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{bucket\textunderscore sort}\hlstd{}\hlsym{(}\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\&\ }\hlstd{e}\hlsym{,}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{max\textunderscore cost}\hlsym{)\{}\\
+\hlline{97\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\ $>$\ }\hlstd{}\hlkwd{v}\hlstd{}\hlsym{(}\hlstd{max\textunderscore cost}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{98\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while}\hlstd{}\hlsym{(!}\hlstd{e}\hlsym{.}\hlstd{}\hlkwd{empty}\hlstd{}\hlsym{())\{}\\
+\hlline{99\ }\hlstd{\ }\hlkwb{const\ }\hlstd{edge}\hlsym{\&\ }\hlstd{ed\ }\hlsym{=\ }\hlstd{e}\hlsym{.}\hlstd{}\hlkwd{front}\hlstd{}\hlsym{();}\\
+\hlline{100\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{v}\hlsym{{[}}\hlstd{ed}\hlsym{.}\hlstd{cost}\hlsym{{]}.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{ed}\hlsym{);}\\
+\hlline{101\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{e}\hlsym{.}\hlstd{}\hlkwd{pop\textunderscore front}\hlstd{}\hlsym{();}\\
+\hlline{102\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{103\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{max\textunderscore cost}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\{}\\
+\hlline{104\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while}\hlstd{}\hlsym{(!}\hlstd{v}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{}\hlkwd{empty}\hlstd{}\hlsym{())\{}\\
+\hlline{105\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{e}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{v}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{}\hlkwd{back}\hlstd{}\hlsym{());}\\
+\hlline{106\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{v}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{}\hlkwd{pop\textunderscore back}\hlstd{}\hlsym{();}\\
+\hlline{107\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{109\ }\hlstd{}\\
+\hlline{110\ }\hlsym{\}}\\
+\hlline{111\ }\hlstd{}\\
+\hlline{112\ }\hlkwc{inline\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{}\hlkwd{kruskal}\hlstd{}\hlsym{(}\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\&\ }\hlstd{e}\hlsym{,}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{n}\hlsym{,\ }\hlstd{vector}\hlsym{$<$}\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\ $>$\&\ }\hlstd{adj}\hlsym{, }\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\&\ }\Righttorque\\
+\hlline{113\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{rejected}\hlsym{,\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{max\textunderscore cost}\hlsym{,\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{m}\hlsym{)\{}\\
+\hlline{114\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{union\textunderscore find\ }\hlkwd{list}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{);}\\
+\hlline{115\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{res}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{116\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{m\ }\hlsym{$>$\ }\hlstd{max\textunderscore cost}\hlsym{)}\\
+\hlline{117\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{bucket\textunderscore sort}\hlstd{}\hlsym{(}\hlstd{e}\hlsym{,}\hlstd{max\textunderscore cost}\hlsym{);}\\
+\hlline{118\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{else}\\
+\hlline{119\ }\hlstd{\ e}\hlsym{.}\hlstd{}\hlkwd{sort}\hlstd{}\hlsym{(}\hlstd{compare}\hlsym{);}\\
+\hlline{120\ }\hlstd{\\
+\hlline{121\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{foreachin}\hlstd{}\hlsym{(}\hlstd{it}\hlsym{,}\hlstd{e}\hlsym{)\{}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{s}\hlsym{,}\hlstd{f}\hlsym{;}\\
+\hlline{123\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{s}\hlsym{=}\hlstd{it}\hlsym{{-}$>$}\hlstd{start}\hlsym{;}\\
+\hlline{124\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{f}\hlsym{=}\hlstd{it}\hlsym{{-}$>$}\hlstd{end}\hlsym{;}\\
+\hlline{125\ }\hlstd{\\
+\hlline{126\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{list}\hlsym{.}\hlstd{}\hlkwd{Find}\hlstd{}\hlsym{(}\hlstd{s}\hlsym{)==}\hlstd{list}\hlsym{.}\hlstd{}\hlkwd{Find}\hlstd{}\hlsym{(}\hlstd{f}\hlsym{))\{}\\
+\hlline{127\ }\hlstd{\\
+\hlline{128\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{rejected}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{({*}}\hlstd{it}\hlsym{);}\\
+\hlline{129\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{continue}\hlstd{}\hlsym{;}\\
+\hlline{130\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{131\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else}\hlstd{}\hlsym{\{}\\
+\hlline{132\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{list}\hlsym{.}\hlstd{}\hlkwd{Union}\hlstd{}\hlsym{(}\hlstd{s}\hlsym{,}\hlstd{f}\hlsym{);}\\
+\hlline{133\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{res\ }\hlsym{+=\ }\hlstd{it}\hlsym{{-}$>$}\hlstd{cost}\hlsym{;}\\
+\hlline{134\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{adj}\hlsym{{[}}\hlstd{s}\hlsym{{]}.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{({*}}\hlstd{it}\hlsym{);}\\
+\hlline{135\ }\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{adj}\hlsym{{[}}\hlstd{f}\hlsym{{]}.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{edge}\hlstd{}\hlsym{(}\hlstd{it}\hlsym{{-}$>$}\hlstd{end}\hlsym{,}\hlstd{it}\hlsym{{-}$>$}\hlstd{start}\hlsym{,}\hlstd{it}\hlsym{{-}$>$}\hlstd{cost}\hlsym{));}\\
+\hlline{136\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{137\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{138\ }\hlstd{\\
+\hlline{139\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{res}\hlsym{;}\\
+\hlline{140\ }\hlstd{}\\
+\hlline{141\ }\hlsym{\}}\\
+\hlline{142\ }\hlstd{}\\
+\hlline{143\ }\\
+\hlline{144\ }\hlkwc{inline\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{dfs\textunderscore fill\textunderscore max}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{u}\hlsym{,\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{x}\hlsym{,}\hlstd{vector}\hlsym{$<$}\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\ $>$\&\ }\hlstd{mst\textunderscore adjacency}\hlsym{,\ }\Righttorque\\
+\hlline{145\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{vector}\hlsym{$<$}\hlstd{edge}\hlsym{{*}$>$\ $>$\&\ }\hlstd{max}\hlsym{)\{}\\
+\hlline{146\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{foreachin}\hlstd{}\hlsym{(}\hlstd{v}\hlsym{,(}\hlstd{mst\textunderscore adjacency}\hlsym{{[}}\hlstd{x}\hlsym{{]}))\{}\\
+\hlline{147\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(\ }\hlstd{max}\hlsym{{[}}\hlstd{u}\hlsym{{]}{[}}\hlstd{v}\hlsym{{-}$>$}\hlstd{end}\hlsym{{]}\ ==\ }\hlstd{NULL\ }\hlsym{\&\&\ }\hlstd{v}\hlsym{{-}$>$}\hlstd{end\ }\hlsym{!=\ }\hlstd{u}\hlsym{)\{}\\
+\hlline{148\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{x}\hlsym{==}\hlstd{u\ }\hlsym{\textbar \textbar \ }\hlstd{v}\hlsym{{-}$>$}\hlstd{cost\ }\hlsym{$>$\ }\hlstd{max}\hlsym{{[}}\hlstd{u}\hlsym{{]}{[}}\hlstd{x}\hlsym{{]}{-}$>$}\hlstd{cost}\hlsym{)\{}\\
+\hlline{149\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{max}\hlsym{{[}}\hlstd{u}\hlsym{{]}{[}}\hlstd{v}\hlsym{{-}$>$}\hlstd{end}\hlsym{{]}\ =\ \&({*}}\hlstd{v}\hlsym{);}\\
+\hlline{150\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{151\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else}\hlstd{}\hlsym{\{}\\
+\hlline{152\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{max}\hlsym{{[}}\hlstd{u}\hlsym{{]}{[}}\hlstd{v}\hlsym{{-}$>$}\hlstd{end}\hlsym{{]}\ =\ }\hlstd{max}\hlsym{{[}}\hlstd{u}\hlsym{{]}{[}}\hlstd{x}\hlsym{{]};}\\
+\hlline{153\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{154\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{dfs\textunderscore fill\textunderscore max}\hlstd{}\hlsym{(}\hlstd{u}\hlsym{,}\hlstd{v}\hlsym{{-}$>$}\hlstd{end}\hlsym{,}\hlstd{mst\textunderscore adjacency}\hlsym{,}\hlstd{max}\hlsym{);}\\
+\hlline{155\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{156\ }\hlstd{\\
+\hlline{157\ }}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{158\ }\hlstd{}\hlsym{\}}\\
+\hlline{159\ }\hlstd{}\\
+\hlline{160\ }\hlkwc{inline\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{}\hlkwd{second\textunderscore mst}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{n}\hlsym{,\ }\hlstd{vector}\hlsym{$<$}\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\ $>$\&\ }\hlstd{mst\textunderscore adjacency}\hlsym{,\ }\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\&\ }\Righttorque\\
+\hlline{161\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{rejected}\hlsym{,}\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{minimum\textunderscore cost}\hlsym{)\{}\\
+\hlline{162\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{vector}\hlsym{$<$}\hlstd{edge}\hlsym{{*}$>$\ $>$\ }\hlstd{}\hlkwd{max}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,}\hlstd{vector}\hlsym{$<$}\hlstd{edge}\hlsym{{*}$>$(}\hlstd{n}\hlsym{,}\hlstd{NULL}\hlsym{));}\\
+\hlline{163\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$::}\hlstd{iterator\ it\ }\hlsym{=\ }\hlstd{rejected}\hlsym{.}\hlstd{}\hlkwd{begin}\hlstd{}\hlsym{();}\\
+\hlline{164\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{start\ }\hlsym{=\ }\hlstd{it}\hlsym{{-}$>$}\hlstd{start}\hlsym{;}\\
+\hlline{165\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{end\ }\hlsym{=\ }\hlstd{it}\hlsym{{-}$>$}\hlstd{end}\hlsym{;}\\
+\hlline{166\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{dfs\textunderscore fill\textunderscore max}\hlstd{}\hlsym{(}\hlstd{start}\hlsym{,}\hlstd{start}\hlsym{,}\hlstd{mst\textunderscore adjacency}\hlsym{,\ }\hlstd{max}\hlsym{);}\\
+\hlline{167\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{old\textunderscore cost}\hlsym{=}\hlstd{max}\hlsym{{[}}\hlstd{start}\hlsym{{]}{[}}\hlstd{end}\hlsym{{]}{-}$>$}\hlstd{cost}\hlsym{;}\\
+\hlline{168\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{new\textunderscore cost}\hlsym{=}\hlstd{it}\hlsym{{-}$>$}\hlstd{cost}\hlsym{;}\\
+\hlline{169\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{minimum}\hlsym{=\ }\hlstd{new\textunderscore cost\ }\hlsym{{-}\ }\hlstd{old\textunderscore cost}\hlsym{;}\\
+\hlline{170\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{it}\hlsym{++;}\\
+\hlline{171\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{for}\hlstd{}\hlsym{(}\hlstd{it}\hlsym{;}\hlstd{it\ }\hlsym{!=\ }\hlstd{rejected}\hlsym{.}\hlstd{}\hlkwd{end}\hlstd{}\hlsym{();}\hlstd{it}\hlsym{++\ )\{}\\
+\hlline{172\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{start\ }\hlsym{=\ }\hlstd{it}\hlsym{{-}$>$}\hlstd{start}\hlsym{;}\\
+\hlline{173\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{end\ }\hlsym{=\ }\hlstd{it}\hlsym{{-}$>$}\hlstd{end}\hlsym{;}\\
+\hlline{174\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{max}\hlsym{{[}}\hlstd{start}\hlsym{{]}{[}}\hlstd{end}\hlsym{{]}\ ==\ }\hlstd{NULL}\hlsym{)}\hlstd{}\hlkwd{dfs\textunderscore fill\textunderscore max}\hlstd{}\hlsym{(}\hlstd{start}\hlsym{,}\hlstd{start}\hlsym{,}\hlstd{mst\textunderscore adjacency}\hlsym{,\ }\hlstd{max}\hlsym{);}\\
+\hlline{175\ }\hlstd{\\
+\hlline{176\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{aux}\hlsym{=}\hlstd{it}\hlsym{{-}$>$}\hlstd{cost}\hlsym{{-}\ }\hlstd{max}\hlsym{{[}}\hlstd{start}\hlsym{{]}{[}}\hlstd{end}\hlsym{{]}{-}$>$}\hlstd{cost}\hlsym{;}\\
+\hlline{177\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{aux\ }\hlsym{$<$\ }\hlstd{minimum}\hlsym{)\{}\\
+\hlline{178\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{aux\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)}\hlstd{}\hlkwa{return\ }\hlstd{minimum\textunderscore cost}\hlsym{;}\\
+\hlline{179\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{minimum}\hlsym{=\ }\hlstd{aux}\hlsym{;}\\
+\hlline{180\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{new\textunderscore cost\ }\hlsym{=}\hlstd{\ \ }\hlsym{}\hlstd{it}\hlsym{{-}$>$}\hlstd{cost}\hlsym{;}\\
+\hlline{181\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{old\textunderscore cost\ }\hlsym{=\ }\hlstd{max}\hlsym{{[}}\hlstd{start}\hlsym{{]}{[}}\hlstd{end}\hlsym{{]}{-}$>$}\hlstd{cost}\hlsym{;}\\
+\hlline{182\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{183\ }\hlstd{\\
+\hlline{184\ }}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{185\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{minimum\textunderscore cost\ }\hlsym{{-}\ }\hlstd{old\textunderscore cost\ }\hlsym{+\ }\hlstd{new\textunderscore cost}\hlsym{;}\\
+\hlline{186\ }\hlstd{}\hlsym{\}}\\
+\hlline{187\ }\hlstd{}\\
+\hlline{188\ }\\
+\hlline{189\ }\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{()\{}\\
+\hlline{190\ }\hlstd{}\hlkwb{int\ }\hlstd{cases}\hlsym{;}\\
+\hlline{191\ }\hlstd{cin}\hlsym{$>$$>$}\hlstd{cases}\hlsym{;}\\
+\hlline{192\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{n}\hlsym{;}\\
+\hlline{193\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{m}\hlsym{;}\\
+\hlline{194\ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{from}\hlsym{,}\hlstd{to}\hlsym{,}\hlstd{cost}\hlsym{;}\\
+\hlline{195\ }\hlstd{}\\
+\hlline{196\ }\\
+\hlline{197\ }\hlkwa{while}\hlstd{}\hlsym{(}\hlstd{cases\ }\hlsym{$>$\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\{}\\
+\hlline{198\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{``\%hu\ \%hu''}\hlstd{}\hlsym{,\&}\hlstd{n}\hlsym{,\&}\hlstd{m}\hlsym{);}\\
+\hlline{199\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\ $>$\ }\hlstd{}\hlkwd{mst\textunderscore adjacency}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{);}\\
+\hlline{200\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\ }\hlstd{rejected}\hlsym{;}\\
+\hlline{201\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{list}\hlsym{$<$}\hlstd{edge}\hlsym{$>$\ }\hlstd{l}\hlsym{;}\\
+\hlline{202\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{cant\textunderscore edges}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{203\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{max\textunderscore cost\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{204\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while}\hlstd{}\hlsym{(}\hlstd{cant\textunderscore edges\ }\hlsym{$<$\ }\hlstd{m}\hlsym{)\{}\\
+\hlline{205\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{``\%hu\ \%hu\ \%hu''}\hlstd{}\hlsym{,\&}\hlstd{from}\hlsym{,\&}\hlstd{to}\hlsym{,\&}\hlstd{cost}\hlsym{);}\\
+\hlline{206\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{cost\ }\hlsym{$>$\ }\hlstd{max\textunderscore cost}\hlsym{)}\hlstd{max\textunderscore cost\ }\hlsym{=\ }\hlstd{cost}\hlsym{;}\\
+\hlline{207\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{l}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{edge}\hlstd{}\hlsym{(}\hlstd{from}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{,}\hlstd{to}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{,}\hlstd{cost}\hlsym{));}\\
+\hlline{208\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cant\textunderscore edges}\hlsym{++;}\\
+\hlline{209\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{210\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ short\ }\hlstd{k\ }\hlsym{=}\hlstd{}\hlkwd{kruskal}\hlstd{}\hlsym{(}\hlstd{l}\hlsym{,}\hlstd{n}\hlsym{,}\hlstd{mst\textunderscore adjacency}\hlsym{,}\hlstd{rejected}\hlsym{,}\hlstd{max\textunderscore cost}\hlsym{,}\hlstd{m}\hlsym{);}\\
+\hlline{211\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//unsigned\ short\ k\ =kruskal(l,n,mst\textunderscore adjacency,rejected);}\\
+\hlline{212\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{k}\hlsym{$<$$<$}\hlstd{}\hlstr{``\ ''}\hlstd{}\hlsym{;}\\
+\hlline{213\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlkwd{second\textunderscore mst}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,}\hlstd{mst\textunderscore adjacency}\hlsym{,}\hlstd{rejected}\hlsym{,}\hlstd{k}\hlsym{)$<$$<$}\hlstd{endl}\hlsym{;}\\
+\hlline{214\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{cases}\hlsym{{-}{-};}\\
+\hlline{215\ }\hlstd{}\hlsym{\}}\\
+\hlline{216\ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{217\ }\hlstd{}\hlsym{\}}\\
+\hlline{218\ }\hlstd{}\\
+\hlline{219\ }\\
+\hlline{220\ }\\
+\hlline{221\ }\\
+\hlline{222\ }\\
+\hlline{223\ }\\
+\mbox{}
+\normalfont
+\shorthandon{"}

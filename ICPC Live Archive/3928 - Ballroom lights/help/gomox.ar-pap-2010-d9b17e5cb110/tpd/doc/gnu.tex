@@ -1,0 +1,229 @@
+\section{10625 - GNU's Not Unix}
+\textbf{Problema:}
+Se tiene un conjunto de reglas que determinan c\'omo se debe expandir una letra en
+un acr\'onimo potencialmente recursivo. Para cada conjunto de reglas se quieren
+responder varias consultas. Cada consulta consiste en lo siguiente: dada una
+cadena $s$, un caracter $c$ y un natural $k$, se quiere saber cu\'antas ocurrencias
+de $c$ hay en la cadena que resulta de expandir $k$ veces el acr\'onimos $s$.
+
+\subsection{Resoluci\'on}
+
+Se trabaja con cadenas de un alfabeto $\Sigma$.
+Sea $\#_c(s) = \text{cantidad de ocurrencias de $c$ en $s$}$.
+El problema se modela mediante una funci\'on
+$f : \Sigma \rightarrow \Sigma^*$ que expande las siglas, definiendo $f(x) = x$ si $x$
+es un caracter no expandible. Se considera la extensi\'on $\hat{f} : \Sigma^* \rightarrow \Sigma^*$,
+definida por: $\hat{f}(a_1 \hdots a_n) = f(a_1) \hdots f(a_n)$.
+Se desea conocer $\#_c(\hat{f}^k(s))$.
+
+Sea $A = |\Sigma|$ el tama\~no del alfabeto.
+Se define $g : \Nat^A \rightarrow \Nat^A$
+como: $g(k_1, ..., k_A)[i] = \sum_{j = 1}^{A}{k_j \cdot \#_{chr(i)}(f(chr(j)))}$.
+
+Afirmaci\'on: $g(\#_{chr(1)}(s), \hdots, \#_{chr(A)}(s))[i] = \#_{chr(i)}\hat{f}(s)$.
+Es decir, dado un vector con la cantidad de ocurrencias de cada caracter,
+$g$ devuelve un vector con la cantidad de ocurrencias de cada caracter
+despu\'es de expandir una vez los acr\'onimos.
+
+Demostraci\'on:
+$g(\#_{chr(1)}(s), \hdots, \#_{chr(A)}(s))[i] =
+\sum_{j=1}^{A}{\#_{chr(j)}(s) \cdot \#_{chr(i)}{f(chr(j))}} =
+\sum_{t=1}^{n}{\#_{chr(i)}{f(s_t)}} =\\
+= \#_{chr(i)}{(f(s_1) \hdots f(s_n))} = \#_{chr(i)}{\hat{f}(s)}$. $\Box$
+
+Entonces, es f\'acil ver que $\#_{chr(i)}{\hat{f}^k(s)} = g^k(\#_{chr(1)}(s), \hdots, \#_{chr(A)}(s))[i]$.
+Adem\'as, $g$ es una transformaci\'on lineal, representable con una matriz, $M \in \Nat^{A\times A}$:
+si se define $M_{i,j} := \#_{chr(i)}{f(chr(j))}$ y $b = \langle k_1 \hdots k_n \rangle^t$,
+entonces $(M \cdot b)_{i}
+= \sum_{j=1}^{A}{M_{i,j} \cdot k_j}
+= k_j \cdot \#_{chr(i)}{f(chr(j))} = g(k_1, ..., k_A)[i]$.
+Por lo tanto, el problema se reduce a elevar la matriz $M$ a la $k$
+y finalmente multiplicar por el vector $b$, que cuenta la cantidad de
+ocurrencias de cada caracter en $s$.
+
+En cuanto a la complejidad,
+suponer que la entrada consta de $Q$ consultas.
+La matriz $M$ es fija porque depende s\'olo de $f$, es decir de las reglas
+para expandir los acr\'onimos.
+Para la $i$-\'esima consulta, se calcula $M^{k_i} b_i$,
+donde $k_i$ es la potencia de la $i$-\'esima consulta y
+$b_i$ el vector de ocurrencias asociado a la cadena
+de dicha consulta.
+
+Leer las reglas y cada una de las consultas tiene costo lineal en el tama\~no de la entrada.
+Primero se construye la matriz $M$, de tama\~no $A^2$. Para cada consulta,
+se construye el vector $b_i$, de tama\~no $O(A)$.
+Para elevar la matriz $M$ a la $k_i$ se usa el m\'etodo de potencia binaria
+que requiere $O(\log k_i)$ multiplicaciones de matrices. El producto de
+matrices se implementa de la manera directa, lo cual tiene una
+complejidad temporal de $O(A^3)$. El producto final entre $M^{k_i}$ y $b_i$
+tiene costo $O(A^2)$.
+
+Si el tama\~no total de la entrada es $E$, la complejidad temporal
+en peor caso es $O(E + A^2 + \sum_{i=1}^{Q} \log(k_i) A^3)$.
+Tomando $K = \max_{i=1}^{Q}{k_i}$, esto se puede acotar por:
+$O(E + A^2 + Q \log(K) A^3)$.
+Adem\'as, por las restricciones dadas en el enunciado sobre los
+tama\~nos de las cadenas en la entrada, $E << A^3$, y por lo tanto
+la complejidad es $O(Q \log(K) A^3)$.
+
+La complejidad espacial es $O(A^2)$. El algoritmo de multiplicaci\'on
+de matrices y de potencia binaria usan matrices auxiliares de tama\~no
+$A^2$, pero siempre una cantidad constante.
+
+\subsubsection{Alternativa no implementada}
+
+Dado que $Q \leq 10$, la complejidad temporal de $O(Q \log(K) A^3)$
+es razonable y hace que la implementaci\'on sea aceptada por el
+{\em online judge}. Si $Q$ fuera potencialmente muy grande,
+en lugar de calcular $M^{k_i}$ usando el m\'etodo de potenciaci\'on
+binaria para cada una de las consultas separadamente, se podr\'ian calcular
+y guardar una sola vez las matrices: $M^1, M^2, M^4, ..., M^{2^p}$
+(mientras $2^p < K$). Una vez hecho esto, para responder una consulta,
+bastar\'ia con sumar las matrices que corresponden a potencias de $2$
+que intervienen en la representaci\'on binaria de $k_i$. Dado que
+sumar las matrices tiene costo $O(A^2)$, y que la multiplicaci\'on
+final por el vector $b_i$ tambi\'en es $O(A^2)$, la complejidad temporal
+de cada consulta ser\'ia $O(\log(k_i) A^2)$. La complejidad temporal
+de responder todas las consultas ser\'ia $O(\log(K) A^3 + Q \log(K) A^2)$.
+Por otro lado, la complejidad espacial aumentar\'ia a
+$O(\log(K) A^2)$ porque ser\'ia necesario guardar las potencias
+ya mencionadas de $M$.
+
+\subsection{Implementación}
+
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\hldir{\#include\ $<$vector$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$cstdio$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$iostream$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$cassert$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$cstring$>$}\\
+\hlline{\ 6\ }\hlstd{}\\
+\hlline{\ 7\ }\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{\ 8\ }\hlstd{}\\
+\hlline{\ 9\ }\hlkwc{typedef\ }\hlstd{}\hlkwb{unsigned\ long\ long\ int\ }\hlstd{lluint}\hlsym{;}\\
+\hlline{10\ }\hlstd{}\\
+\hlline{11\ }\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{lluint}\hlsym{$>$\ }\hlstd{Row}\hlsym{;}\\
+\hlline{12\ }\hlstd{}\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{Row}\hlsym{$>$\ }\hlstd{Mat}\hlsym{;}\\
+\hlline{13\ }\hlstd{}\\
+\hlline{14\ }\hldir{\#define\ forsn(i,\ s,\ n)\ for\ (int\ i\ =\ (s);\ i\ $<$\ (n);\ i++)}\\
+\hlline{15\ }\hlstd{}\hldir{\#define\ forn(i,\ n)\ forsn\ (i,\ 0,\ n)}\\
+\hlline{16\ }\hlstd{}\\
+\hlline{17\ }\hlkwb{void\ }\hlstd{}\hlkwd{mat\textunderscore mult}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{m1}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{m2}\hlsym{,\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{res}\hlsym{)\ \{}\\
+\hlline{18\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{m1}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{19\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{m\ }\hlsym{=\ }\hlstd{m2}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{20\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{p\ }\hlsym{=\ }\hlstd{m2}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{21\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{m1}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ ==\ }\hlstd{m\ }\hlsym{\&\&\ }\hlstd{res}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ ==\ }\hlstd{n\ }\hlsym{\&\&\ }\hlstd{res}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ ==\ }\hlstd{p}\hlsym{);}\\
+\hlline{22\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{j}\hlsym{,\ }\hlstd{p}\hlsym{)\ \{}\\
+\hlline{23\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{lluint\ s\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{24\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{k}\hlsym{,\ }\hlstd{m}\hlsym{)\ }\hlstd{s\ }\hlsym{+=\ }\hlstd{m1}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{k}\hlsym{{]}\ {*}\ }\hlstd{m2}\hlsym{{[}}\hlstd{k}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]};}\\
+\hlline{25\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{res}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{s}\hlsym{;}\\
+\hlline{26\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{27\ }\hlstd{}\hlsym{\}}\\
+\hlline{28\ }\hlstd{}\\
+\hlline{29\ }\hlkwb{void\ }\hlstd{}\hlkwd{mat\textunderscore identity}\hlstd{}\hlsym{(}\hlstd{Mat}\hlsym{\&\ }\hlstd{mt}\hlsym{)\ \{}\\
+\hlline{30\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{mt}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{31\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{n\ }\hlsym{==\ }\hlstd{mt}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{());}\\
+\hlline{32\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{j}\hlsym{,\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{mt}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{i\ }\hlsym{==\ }\hlstd{j}\hlsym{;}\\
+\hlline{34\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{35\ }\hlstd{}\hlsym{\}}\\
+\hlline{36\ }\hlstd{}\\
+\hlline{37\ }\hlkwb{void\ }\hlstd{}\hlkwd{mat\textunderscore copy}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{in}\hlsym{,\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{out}\hlsym{)\ \{}\\
+\hlline{38\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{in}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{39\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{m\ }\hlsym{=\ }\hlstd{in}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{40\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{out}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ ==\ }\hlstd{in}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ \&\&\ }\hlstd{out}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ ==\ }\hlstd{in}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{());}\\
+\hlline{41\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{j}\hlsym{,\ }\hlstd{m}\hlsym{)\ }\hlstd{out}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{in}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]};}\\
+\hlline{42\ }\hlstd{}\hlsym{\}}\\
+\hlline{43\ }\hlstd{}\\
+\hlline{44\ }\hlkwb{void\ }\hlstd{}\hlkwd{mat\textunderscore pow}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{mt}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{pow}\hlsym{,\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{res}\hlsym{)\ \{}\\
+\hlline{45\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{mt}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{46\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{Mat}\hlsym{$>$\ }\hlstd{}\hlkwd{acc}\hlstd{}\hlsym{(}\hlstd{}\hlnum{2}\hlstd{}\hlsym{,\ }\hlstd{}\hlkwd{Mat}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlkwd{Row}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)));}\\
+\hlline{47\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore identity}\hlstd{}\hlsym{(}\hlstd{res}\hlsym{);}\\
+\hlline{48\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore copy}\hlstd{}\hlsym{(}\hlstd{mt}\hlsym{,\ }\hlstd{acc}\hlsym{{[}}\hlstd{}\hlkwa{false}\hlstd{}\hlsym{{]});}\\
+\hlline{49\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{bool\ }\hlstd{cur\ }\hlsym{=\ }\hlstd{}\hlkwa{false}\hlstd{}\hlsym{;}\\
+\hlline{50\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(;;)\ \{}\\
+\hlline{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{pow\ }\hlsym{\&\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore copy}\hlstd{}\hlsym{(}\hlstd{res}\hlsym{,\ }\hlstd{acc}\hlsym{{[}!}\hlstd{cur}\hlsym{{]});}\\
+\hlline{53\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore mult}\hlstd{}\hlsym{(}\hlstd{acc}\hlsym{{[}!}\hlstd{cur}\hlsym{{]},\ }\hlstd{acc}\hlsym{{[}}\hlstd{cur}\hlsym{{]},\ }\hlstd{res}\hlsym{);}\\
+\hlline{54\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{55\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{pow\ }\hlsym{$>$$>$=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{56\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{pow\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore mult}\hlstd{}\hlsym{(}\hlstd{acc}\hlsym{{[}}\hlstd{cur}\hlsym{{]},\ }\hlstd{acc}\hlsym{{[}}\hlstd{cur}\hlsym{{]},\ }\hlstd{acc}\hlsym{{[}!}\hlstd{cur}\hlsym{{]});}\\
+\hlline{58\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cur\ }\hlsym{=\ !}\hlstd{cur}\hlsym{;}\\
+\hlline{59\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{60\ }\hlstd{}\hlsym{\}}\\
+\hlline{61\ }\hlstd{}\\
+\hlline{62\ }\hlkwb{void\ }\hlstd{}\hlkwd{mat\textunderscore print}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{Mat}\hlsym{\&\ }\hlstd{mt}\hlsym{)\ \{}\\
+\hlline{63\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{mt}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{64\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{m\ }\hlsym{=\ }\hlstd{mt}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{65\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{j}\hlsym{,\ }\hlstd{m}\hlsym{)\ \{}\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{mt}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ $<$$<$\ }\hlstd{}\hlstr{"\ "}\hlstd{}\hlsym{;}\\
+\hlline{68\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{69\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{70\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{71\ }\hlstd{}\hlsym{\}}\\
+\hlline{72\ }\hlstd{}\\
+\hlline{73\ }\hldir{\#define\ MIN\textunderscore CHAR\ 32}\\
+\hlline{74\ }\hlstd{}\hldir{\#define\ MAX\textunderscore CHAR\ 127}\\
+\hlline{75\ }\hlstd{}\hldir{\#define\ N}\hlstd{\ \ }\hldir{(MAX\textunderscore CHAR\ {-}\ MIN\textunderscore CHAR\ +\ 1)}\\
+\hlline{76\ }\hlstd{}\\
+\hlline{77\ }\hldir{\#define\ in\textunderscore range(Char)\ (MIN\textunderscore CHAR\ $<$=\ (Char)\ $<$=\ MAX\textunderscore CHAR)}\\
+\hlline{78\ }\hlstd{}\hldir{\#define\ charcode(Char)\ ((Char)\ {-}\ MIN\textunderscore CHAR)}\\
+\hlline{79\ }\hlstd{}\\
+\hlline{80\ }\hldir{\#define\ Max\textunderscore rule\ 1024}\\
+\hlline{81\ }\hlstd{}\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{()\ \{}\\
+\hlline{82\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{ncases}\hlsym{;}\\
+\hlline{83\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{char\ }\hlstd{buf}\hlsym{{[}}\hlstd{Max\textunderscore rule}\hlsym{{]};}\\
+\hlline{84\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{char\ }\hlstd{chr}\hlsym{;}\\
+\hlline{85\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%u}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ \&}\hlstd{ncases}\hlsym{);}\\
+\hlline{86\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{ci}\hlsym{,\ }\hlstd{ncases}\hlsym{)\ \{}\\
+\hlline{87\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{nrules}\hlsym{;}\\
+\hlline{88\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%u}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ \&}\hlstd{nrules}\hlsym{);}\\
+\hlline{89\ }\hlstd{\\
+\hlline{90\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ rules{[}i{]}{[}j{]}\ =\ cantidad\ de\ ocurrencias\ de\ Ai\ en\ la\ regla\ Aj\ {-}$>$\ ...}\\
+\hlline{91\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{Mat\ }\hlkwd{rules}\hlstd{}\hlsym{(}\hlstd{N}\hlsym{,\ }\hlstd{}\hlkwd{Row}\hlstd{}\hlsym{(}\hlstd{N}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{));}\\
+\hlline{92\ }\hlstd{\\
+\hlline{93\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore identity}\hlstd{}\hlsym{(}\hlstd{rules}\hlsym{);}\\
+\hlline{94\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{ri}\hlsym{,\ }\hlstd{nrules}\hlsym{)\ \{}\\
+\hlline{95\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%c{-}$>$\%s}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ \&}\hlstd{chr}\hlsym{,\ }\hlstd{buf}\hlsym{);}\\
+\hlline{96\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{in\textunderscore range}\hlstd{}\hlsym{(}\hlstd{chr}\hlsym{));}\\
+\hlline{97\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{N}\hlsym{)\ }\hlstd{rules}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{}\hlkwd{charcode}\hlstd{}\hlsym{(}\hlstd{chr}\hlsym{){]}\ =\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{98\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{rule\textunderscore len\ }\hlsym{=\ }\hlstd{}\hlkwd{strlen}\hlstd{}\hlsym{(}\hlstd{buf}\hlsym{);}\\
+\hlline{99\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{rule\textunderscore len}\hlsym{)\ \{}\\
+\hlline{100\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{in\textunderscore range}\hlstd{}\hlsym{(}\hlstd{buf}\hlsym{{[}}\hlstd{i}\hlsym{{]}));}\\
+\hlline{101\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{rules}\hlsym{{[}}\hlstd{}\hlkwd{charcode}\hlstd{}\hlsym{(}\hlstd{buf}\hlsym{{[}}\hlstd{i}\hlsym{{]}){]}{[}}\hlstd{}\hlkwd{charcode}\hlstd{}\hlsym{(}\hlstd{chr}\hlsym{){]}++;}\\
+\hlline{102\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{103\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{104\ }\hlstd{\\
+\hlline{105\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{nqueries}\hlsym{;}\\
+\hlline{106\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{pow}\hlsym{;}\\
+\hlline{107\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%u}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ \&}\hlstd{nqueries}\hlsym{);}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{qi}\hlsym{,\ }\hlstd{nqueries}\hlsym{)\ \{}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{Mat\ }\hlkwd{input}\hlstd{}\hlsym{(}\hlstd{N}\hlsym{,\ }\hlstd{}\hlkwd{Row}\hlstd{}\hlsym{(}\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{));}\\
+\hlline{110\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%s\ \%c\ \%u}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ }\hlstd{buf}\hlsym{,\ \&}\hlstd{chr}\hlsym{,\ \&}\hlstd{pow}\hlsym{);}\\
+\hlline{111\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ procesar\ regla}\\
+\hlline{112\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{input\textunderscore len\ }\hlsym{=\ }\hlstd{}\hlkwd{strlen}\hlstd{}\hlsym{(}\hlstd{buf}\hlsym{);}\\
+\hlline{113\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{input\textunderscore len}\hlsym{)\ \{}\\
+\hlline{114\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{in\textunderscore range}\hlstd{}\hlsym{(}\hlstd{buf}\hlsym{{[}}\hlstd{i}\hlsym{{]}));}\\
+\hlline{115\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{input}\hlsym{{[}}\hlstd{}\hlkwd{charcode}\hlstd{}\hlsym{(}\hlstd{buf}\hlsym{{[}}\hlstd{i}\hlsym{{]}){]}{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}++;}\\
+\hlline{116\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{117\ }\hlstd{\\
+\hlline{118\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{Mat\ }\hlkwd{pow\textunderscore rules}\hlstd{}\hlsym{(}\hlstd{N}\hlsym{,\ }\hlstd{}\hlkwd{Row}\hlstd{}\hlsym{(}\hlstd{N}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{));}\\
+\hlline{119\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore pow}\hlstd{}\hlsym{(}\hlstd{rules}\hlsym{,\ }\hlstd{pow}\hlsym{,\ }\hlstd{pow\textunderscore rules}\hlsym{);}\\
+\hlline{120\ }\hlstd{\\
+\hlline{121\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{Mat\ }\hlkwd{result}\hlstd{}\hlsym{(}\hlstd{N}\hlsym{,\ }\hlstd{}\hlkwd{Row}\hlstd{}\hlsym{(}\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{));}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{mat\textunderscore mult}\hlstd{}\hlsym{(}\hlstd{pow\textunderscore rules}\hlsym{,\ }\hlstd{input}\hlsym{,\ }\hlstd{result}\hlsym{);}\\
+\hlline{123\ }\hlstd{\\
+\hlline{124\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{result}\hlsym{{[}}\hlstd{}\hlkwd{charcode}\hlstd{}\hlsym{(}\hlstd{chr}\hlsym{){]}{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}\ $<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{125\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{126\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{127\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{128\ }\hlstd{}\hlsym{\}}\hlstd{}\\
+\mbox{}
+\normalfont
+\shorthandon{"}
+

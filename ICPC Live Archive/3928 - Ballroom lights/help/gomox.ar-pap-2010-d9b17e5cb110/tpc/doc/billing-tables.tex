@@ -1,0 +1,441 @@
+\newcommand{\entrada}[3]{\ensuremath{[#1\text{|}#2\mapsto#3]}}
+
+\section{3703 - Billing tables}
+\textbf{Problema:}
+Se tiene una tabla de entradas, cada una de las cuales describe un conjunto
+de cadenas y tiene asociado un valor. Las cadenas descriptas est\'an siempre
+formadas por once d\'igitos num\'ericos. Cada entrada es de
+la forma $\entrada{a_1...a_k...a_n}{b_k ... b_n}{v}$
+con $a_k ... a_n \leq b_k ... b_n$,
+lo cual engloba a las cadenas $\{x\ |\ a_1 ... a_n \leq x \leq a_1 ... a_{k-1} b_k ... b_n\}$
+(donde $\leq$~es el orden lexicogr\'afico).
+El valor asociado a una cadena $s$ es el valor $v$ de la primera entrada
+de la tabla que engloba a $s$.
+
+El problema es convertir la tabla de entradas en un diccionario
+equivalente (i.e. que asigne los mismos valores a las mismas cadenas).
+Cada entrada del diccionario debe ser de la forma
+$a_1 ... a_n \mapsto v$, lo cual asocia una cadena $s$ a $v$ sii
+$a_1 ... a_n$ es prefijo de $s$. Ninguna entrada del
+diccionario puede ser prefijo de otra. Adem\'as, el diccionario
+debe ser m\'inimo en cantidad de entradas.
+
+\subsection{Resoluci\'on}
+
+\subsubsection{Representaci\'on del diccionario}
+
+El problema se resuelve construyendo un \textit{trie} que representa
+el diccionario. El \textit{trie} cumple con el siguiente invariante:
+
+\begin{enumerate}
+\item Las hojas tienen asociado un valor
+\item Los nodos internos no tienen asociado un valor.
+\item Todo nodo interno tiene exactamente 10 hijos (no le faltan hijos).
+\item Si un nodo $x$ es interno, sea $L$ el conjunto de valores que figuran
+      en el sub\'arbol cuya ra\'iz es $x$. Entonces $\#L > 1$.
+      (Notar que, por la condici\'on 1, $\#L \geq 1$).
+\end{enumerate}
+
+Un \textit{trie} de estas caracter\'isticas representa un diccionario m\'inimo.
+Las entradas del diccionario est\'an dadas por las ramas del \textit{trie}
+y por lo tanto ninguna entrada es prefijo de otra.
+Adem\'as, el diccionario $D$ es m\'inimo en cantidad de entradas.
+Suponer que hubiera un diccionario $D'$ m\'as chico.
+Para que $D$ y $D'$ sean equivalentes, todas las cadenas
+de $D$ deben estar representadas por alguna entrada de $D'$.
+Si todas las entradas de $D'$ fueran extensiones de las
+entradas de $D$, entonces $D'$ tendr\'ia al menos tantas
+entradas como $D$ y no ser\'ia m\'as chico.
+Entonces hay al menos una entrada de $D'$ de la forma
+$a_1 ... a_k \mapsto v$ que es un prefijo de alguna
+entrada de $D$ de la forma $a_1 ... a_k ... a_n \mapsto v_1$.
+Por la condici\'on 4, en $D$ debe haber otra entrada
+$a_1 ... a_k b_{k+1} ... b_n \mapsto v_2$ con $v_1 \neq v_2$.
+Por lo tanto $D$ y $D'$ no pueden ser equivalentes.
+
+\subsubsection{Construcci\'on del diccionario a partir de la tabla}
+
+El diccionario se construye tomando las entradas de la tabla
+original y recorri\'endolas desde abajo hacia arriba.
+El razonamiento inductivo es que si se tiene un diccionario $D$
+equivalente a una tabla $T$, se puede construir un nuevo
+diccionario $D'$ equivalente a la tabla $\entrada{a_1...a_k...a_n}{b_k...b_n}{v} \cdot T$
+insertando en $D$ una cierta cantidad de elementos.
+Adem\'as, el \textit{trie} de $D$ se construye respetando el invariante,
+de modo tal que, por el razonamiento anterior, $D$ es m\'inimo.
+
+Para agregar la entrada $\entrada{a_1...a_k...a_n}{b_k...b_n}{v}$,
+ser\'ia posible insertar en el diccionario todas las cadenas de la forma
+$a_1...a_{k-1}c_k...c_n$ tales que $a_k...a_n \leq c_k...c_n \leq b_k...b_n$.
+Esto ser\'ia correcto pero potencialmente muy ineficiente.
+Por ejemplo, en el peor caso, $\entrada{0^{L}}{9^{L}}{v}$
+requerir\'ia insertar todas las cadenas de longitud $L$,
+que es claramente exponencial en el tama\~no de la entrada.
+
+En lugar de hacer esto, se puede insertar una cantidad de
+cadenas lineal en el tama\~no de la entrada (por el tama\~no
+del alfabeto, que en este caso es suficientemente chico como
+para ser considerado constante).
+Por ejemplo, para agregar $\entrada{7400}{499}{v}$ es redundante
+insertar todos los valores intermedios $7400, 7401, 7402, \hdots, 7499$;
+basta con insertar $74$. Esto es consistente con la condici\'on 4
+del invariante del \textit{trie}.
+
+En general, para agregar $\entrada{a_1...a_k...a_n}{b_k...b_n}{v}$
+se insertan todas las cadenas de la forma $a_1...a_{n-1}d$ 
+y todas las cadenas de la forma $a_1...a_{k-1}b_k...b_{n-1}d$
+(para todo valor de $d$ que haga que dichas cadenas est\'en en el rango). Una vez hecho esto,
+se aplica recursivamente el mismo procedimiento
+para agregar $\entrada{a_1...a_k...a_{n-1}}{b_k...b_{n-1}}{v}$.
+Esto requiere a lo sumo $n$ pasos, y en cada
+paso se insertan a lo sumo $2|\Sigma|$ cadenas, siendo $|\Sigma|$ la cantidad de elementos 
+del alfabeto que se utiliza.
+
+Por ejemplo, para agregar \entrada{7377}{643}{v} se
+insertan las siguientes cadenas:
+
+\begin{itemize}
+\item $7377, 7378, 7379$
+\item $738, 739$
+\item $74, 75$
+\item $760, 761, 762, 763$
+\item $7640, 7641, 7642, 7643$
+\end{itemize}
+
+El algoritmo que lista dichas cadenas se implementa
+de manera iterativa, representando las cadenas de
+d\'igitos como enteros de 64 bits.
+
+\subsubsection{Modificaciones del algoritmo de inserci\'on}
+
+Para mantener el invariante del \textit{trie}, las inserciones usan el algoritmo
+habitual, con las siguientes modificaciones:
+
+\begin{itemize}
+\item Cuando se va a insertar una cadena $\alpha \beta \mapsto v$
+en una hoja de la forma $\alpha \mapsto w$, se elimina el valor
+$w$ de la hoja (para cumplir con la condici\'on 2, porque va a pasar
+a ser un nodo interno). Se completan los hijos de la hoja, agregando
+$\alpha d \mapsto w$ para todo $d \in \Sigma$ para cumplir con la
+condici\'on 3. Despu\'es se prosigue insertando
+$\alpha \beta \mapsto v$ en el hijo que corresponda.
+
+\item Una vez que se insert\'o una cadena, a medida que se
+va subiendo por los nodos (al volver de la recursi\'on), se
+garantiza que se cumpla con la condici\'on 4 de la siguiente
+manera: si todos los hijos de un nodo son hojas cuyo valor
+es $v$, se eliminan todos los hijos y se etiqueta el nodo
+actual con $v$. (Los hijos del nodo ya cumplen con la
+condici\'on 4 del invariante; por lo tanto, si alguno de
+ellos no es una hoja, hay al menos dos valores diferentes
+en el sub\'arbol analizado).
+\end{itemize}
+
+\subsubsection{Complejidades}
+
+Por lo visto arriba, en peor caso, el costo de insertar una
+cadena de longitud $n$ en el \textit{trie} es $O(n |\Sigma|)$.
+
+La complejidad total del algoritmo es la siguiente:
+la tabla original tiene $k$ entradas. La $i$-\'esima
+entrada describe prefijos de longitud $n_i$. Para cada
+entrada, es necesario insertar a lo sumo $2 |\Sigma| n_i$
+cadenas, cada una de longitud $n_i$.
+En peor caso, el costo de insertar todas las cadenas asociadas
+a una entrada es $O(n_i^2 |\Sigma|^2)$. %TODO: No llego a entender de donde sale esto (Fede)
+
+El costo de insertar todas las entradas es
+$O(\sum_{i=1}^{k}{n_i^2 |\Sigma|^2})$ en peor
+caso. Adem\'as, se puede acotar la longitud del
+prefijo por la longitud m\'axima de las cadenas:
+$n_i \leq L = 11$, con lo cual el costo de insertar
+todas las cadenas de una tabla es $O(k L^2 |\Sigma|^2)$.
+
+Los valores $v$ asociados a cada entrada son cadenas
+de longitud acotada (y razonablemente chica). 
+Para (potencialmente) usar menos memoria y comparar
+las cadenas de manera m\'as simple, se guardan en un
+\texttt{set<string>} y se representan los valores
+con un puntero. En una tabla de $k$ entradas hay a lo
+sumo $k$ valores, y por lo tanto esto introduce un costo
+adicional de $O(V \log k)$ donde $V = 20$ es la
+longitud m\'axima de las cadenas que describen valores.
+
+Por \'ultimo, el costo de iterar el diccionario e imprimirlo
+es el siguiente: recorrer el \textit{trie} es lineal en la cantidad
+de nodos del mismo, que es a lo sumo $O(k L^2 |\Sigma|^2)$
+(resultan de insertar $O(k L |\Sigma|)$ cadenas, cada una de las
+cuales agrega como mucho $O(L |\Sigma|)$ nodos).
+Para cada hoja, se imprime el prefijo que le corresponde
+al nodo en cuesti\'on, de largo $L$, y el valor asociado, de largo $V$.
+
+Notando que $V \in O(L)$ y que el costo de mantener el conjunto
+de cadenas $O(V \log k)$ est\'a inclu\'ido en el costo de las
+dem\'as operaciones, el costo total en peor caso es
+$O(k L^3 |\Sigma|^2)$.
+Si se desprecian las constantes $L = 11$, $|\Sigma| = 10$ por
+ser $O(1)$, la complejidad en peor caso es $O(k)$.
+
+\subsection{Implementación}
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\hldir{\#include\ $<$string$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$map$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$set$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$vector$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$stack$>$}\\
+\hlline{\ 6\ }\hlstd{}\hldir{\#include\ $<$iostream$>$}\\
+\hlline{\ 7\ }\hlstd{}\hldir{\#include\ $<$sstream$>$}\\
+\hlline{\ 8\ }\hlstd{}\hldir{\#include\ $<$iomanip$>$}\\
+\hlline{\ 9\ }\hlstd{}\hldir{\#include\ $<$cassert$>$}\\
+\hlline{10\ }\hlstd{}\hldir{\#include\ $<$cstdlib$>$}\\
+\hlline{11\ }\hlstd{}\hldir{\#include\ $<$stdio.h$>$}\\
+\hlline{12\ }\hlstd{}\\
+\hlline{13\ }\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{14\ }\hlstd{}\\
+\hlline{15\ }\hldir{\#define\ forsn(i,\ s,\ n)\ for\ (int\ i\ =\ (s);\ i\ $<$\ (n);\ i++)}\\
+\hlline{16\ }\hlstd{}\hldir{\#define\ forn(i,\ n)\ forsn\ (i,\ 0,\ n)}\\
+\hlline{17\ }\hlstd{}\hldir{\#define\ dforn(i,\ n)\ for\ (int\ i\ =\ (n);\ i{-}{-}\ $>$\ 0;)}\\
+\hlline{18\ }\hlstd{}\\
+\hlline{19\ }\hldir{\#define\ ALPHA\textunderscore SIZE\ 10}\\
+\hlline{20\ }\hlstd{}\hldir{\#define\ ALPHA\textunderscore VAL(C)\ ((C)\ {-}\ }\hldstr{`0`}\hldir{)}\\
+\hlline{21\ }\hlstd{}\hldir{\#define\ foralpha(x)\ forn\ (x,\ ALPHA\textunderscore SIZE)}\\
+\hlline{22\ }\hlstd{}\\
+\hlline{23\ }\hlkwc{typedef\ }\hlstd{}\hlkwb{unsigned\ long\ long\ int\ }\hlstd{lluint}\hlsym{;}\\
+\hlline{24\ }\hlstd{}\\
+\hlline{25\ }\hlkwc{typedef\ }\hlstd{}\hlkwb{const\ }\hlstd{string\ }\hlsym{{*}}\hlstd{Value}\hlsym{;}\\
+\hlline{26\ }\hlstd{\\
+\hlline{27\ }string\ }\hlkwd{itos}\hlstd{}\hlsym{(}\hlstd{lluint\ i}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{width}\hlsym{)\ \{}\\
+\hlline{28\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{width\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlstr{``''}\hlstd{}\hlsym{;}\\
+\hlline{29\ }\hlstd{\ ostringstream\ os}\hlsym{;}\\
+\hlline{30\ }\hlstd{\ os\ }\hlsym{$<$$<$\ }\hlstd{}\hlkwd{setw}\hlstd{}\hlsym{(}\hlstd{width}\hlsym{)\ $<$$<$\ }\hlstd{}\hlkwd{setfill}\hlstd{}\hlsym{(}\hlstd{}\hlstr{`0`}\hlstd{}\hlsym{)\ $<$$<$\ }\hlstd{i}\hlsym{;}\\
+\hlline{31\ }\hlstd{\ }\hlkwa{return\ }\hlstd{os}\hlsym{.}\hlstd{}\hlkwd{str}\hlstd{}\hlsym{();}\\
+\hlline{32\ }\hlstd{}\hlsym{\}}\\
+\hlline{33\ }\hlstd{}\\
+\hlline{34\ }\hlcom{/{*}{*}{*}{*}\ String\ register\ {*}{*}{*}{*}/}\hlstd{\\
+\hlline{35\ }\\
+\hlline{36\ }set}\hlsym{$<$}\hlstd{string}\hlsym{$>$\ }\hlstd{\textunderscore reg}\hlsym{;}\\
+\hlline{37\ }\hlstd{\\
+\hlline{38\ }Value\ }\hlkwd{reg\textunderscore intern}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{string}\hlsym{\&\ }\hlstd{s}\hlsym{)\ \{}\\
+\hlline{39\ }\hlstd{\ }\hlkwa{return\ }\hlstd{}\hlsym{\&{*}}\hlstd{\textunderscore reg}\hlsym{.}\hlstd{}\hlkwd{insert}\hlstd{}\hlsym{(}\hlstd{s}\hlsym{).}\hlstd{first}\hlsym{;}\\
+\hlline{40\ }\hlstd{}\hlsym{\}}\\
+\hlline{41\ }\hlstd{}\\
+\hlline{42\ }\hlkwb{void\ }\hlstd{}\hlkwd{reg\textunderscore free}\hlstd{}\hlsym{()\ \{}\\
+\hlline{43\ }\hlstd{\ \textunderscore reg\ }\hlsym{=\ }\hlstd{set}\hlsym{$<$}\hlstd{string}\hlsym{$>$();}\\
+\hlline{44\ }\hlstd{}\hlsym{\}}\\
+\hlline{45\ }\hlstd{}\\
+\hlline{46\ }\hlcom{/{*}{*}{*}{*}\ Trie\ {*}{*}{*}{*}/}\hlstd{}\\
+\hlline{47\ }\\
+\hlline{48\ }\hlkwb{struct\ }\hlstd{Node\ }\hlsym{\{}\\
+\hlline{49\ }\hlstd{\ Node\ }\hlsym{{*}}\hlstd{children}\hlsym{{[}}\hlstd{ALPHA\textunderscore SIZE}\hlsym{{]};}\\
+\hlline{50\ }\hlstd{\ Value\ value}\hlsym{;}\\
+\hlline{51\ }\hlstd{}\hlsym{\};}\\
+\hlline{52\ }\hlstd{}\\
+\hlline{53\ }\hlkwc{typedef\ }\hlstd{Node\ }\hlsym{{*}}\hlstd{Trie}\hlsym{;}\\
+\hlline{54\ }\hlstd{}\hldir{\#define\ trie\textunderscore new()\ NULL}\\
+\hlline{55\ }\hlstd{}\hldir{\#define\ Empty}\hlstd{\ \ }\hldir{NULL}\\
+\hlline{56\ }\hlstd{}\\
+\hlline{57\ }\hlkwb{void\ }\hlstd{}\hlkwd{trie\textunderscore free}\hlstd{}\hlsym{(}\hlstd{Trie\ tr}\hlsym{)\ \{}\\
+\hlline{58\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{tr}\hlsym{)\ }\hlstd{}\hlkwa{return}\hlstd{}\hlsym{;}\\
+\hlline{59\ }\hlstd{\ }\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ \{}\\
+\hlline{60\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{trie\textunderscore free}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]});}\\
+\hlline{61\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{62\ }\hlstd{\ }\hlkwa{delete\ }\hlstd{tr}\hlsym{;}\\
+\hlline{63\ }\hlstd{}\hlsym{\}}\\
+\hlline{64\ }\hlstd{}\\
+\hlline{65\ }\hlkwb{void\ }\hlstd{}\hlkwd{\textunderscore trie\textunderscore delete\textunderscore children}\hlstd{}\hlsym{(}\hlstd{Trie\ tr}\hlsym{)\ \{}\\
+\hlline{66\ }\hlstd{\ }\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]})\ \{}\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{trie\textunderscore free}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]});}\\
+\hlline{68\ }\hlstd{}\hlstd{\ \ }\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]}\ =\ }\hlstd{NULL}\hlsym{;}\\
+\hlline{69\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{70\ }\hlstd{}\hlsym{\}}\\
+\hlline{71\ }\hlstd{}\\
+\hlline{72\ }\hlkwb{void\ }\hlstd{}\hlkwd{\textunderscore trie\textunderscore collapse\textunderscore children}\hlstd{}\hlsym{(}\hlstd{Trie\ tr}\hlsym{)\ \{}\\
+\hlline{73\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}\ \textbar \textbar \ }\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}{-}$>$}\hlstd{value\ }\hlsym{==\ }\hlstd{Empty}\hlsym{)\ }\hlstd{}\hlkwa{return}\hlstd{}\hlsym{;}\\
+\hlline{74\ }\hlstd{\ }\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ \{}\\
+\hlline{75\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]})\ }\hlstd{}\hlkwa{return}\hlstd{}\hlsym{;}\\
+\hlline{76\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]}{-}$>$}\hlstd{value\ }\hlsym{!=\ }\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}{-}$>$}\hlstd{value}\hlsym{)\ }\hlstd{}\hlkwa{return}\hlstd{}\hlsym{;}\\
+\hlline{77\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{78\ }\hlstd{\\
+\hlline{79\ }\ tr}\hlsym{{-}$>$}\hlstd{value\ }\hlsym{=\ }\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}{-}$>$}\hlstd{value}\hlsym{;}\\
+\hlline{80\ }\hlstd{\ }\hlkwd{\textunderscore trie\textunderscore delete\textunderscore children}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{);}\\
+\hlline{81\ }\hlstd{}\hlsym{\}}\\
+\hlline{82\ }\hlstd{}\\
+\hlline{83\ }\hlslc{//\ invariante:\ los\ valores\ estan\ en\ las\ hojas}\\
+\hlline{84\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{trie\textunderscore add}\hlstd{}\hlsym{(}\hlstd{Trie\ }\hlsym{{*}}\hlstd{tr}\hlsym{,\ }\hlstd{}\hlkwb{const\ char\ }\hlstd{}\hlsym{{*}}\hlstd{s}\hlsym{,\ }\hlstd{Value\ v}\hlsym{)\ \{}\\
+\hlline{85\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{({*}}\hlstd{tr\ }\hlsym{==\ }\hlstd{NULL}\hlsym{)\ \{}\\
+\hlline{86\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{{*}}\hlstd{tr\ }\hlsym{=\ }\hlstd{}\hlkwa{new\ }\hlstd{}\hlkwd{Node}\hlstd{}\hlsym{();}\\
+\hlline{87\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ ({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]}\ =\ }\hlstd{NULL}\hlsym{;}\\
+\hlline{88\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{value\ }\hlsym{=\ }\hlstd{Empty}\hlsym{;}\\
+\hlline{89\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{90\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(!{*}}\hlstd{s}\hlsym{)\ \{}\\
+\hlline{91\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{value\ }\hlsym{=\ }\hlstd{v}\hlsym{;}\\
+\hlline{92\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{\textunderscore trie\textunderscore delete\textunderscore children}\hlstd{}\hlsym{({*}}\hlstd{tr}\hlsym{);}\\
+\hlline{93\ }\hlstd{\ }\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{94\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{value\ }\hlsym{!=\ }\hlstd{Empty}\hlsym{)\ \{}\\
+\hlline{95\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ \{}\\
+\hlline{96\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{trie\textunderscore add}\hlstd{}\hlsym{(\&({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]},\ }\hlstd{}\hlstr{""}\hlstd{}\hlsym{,\ ({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{value}\hlsym{);}\\
+\hlline{97\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{98\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{value\ }\hlsym{=\ }\hlstd{Empty}\hlsym{;}\\
+\hlline{99\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{100\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{trie\textunderscore add}\hlstd{}\hlsym{(\&({*}}\hlstd{tr}\hlsym{){-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{}\hlkwd{ALPHA\textunderscore VAL}\hlstd{}\hlsym{({*}}\hlstd{s}\hlsym{){]},\ \&}\hlstd{s}\hlsym{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]},\ }\hlstd{v}\hlsym{);}\\
+\hlline{101\ }\hlstd{\\
+\hlline{102\ }}\hlstd{\ \ }\hlstd{}\hlkwd{\textunderscore trie\textunderscore collapse\textunderscore children}\hlstd{}\hlsym{({*}}\hlstd{tr}\hlsym{);}\\
+\hlline{103\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{104\ }\hlstd{}\hlsym{\}}\\
+\hlline{105\ }\hlstd{}\\
+\hlline{106\ }\hlkwb{bool\ }\hlstd{}\hlkwd{trie\textunderscore has\textunderscore children}\hlstd{}\hlsym{(}\hlstd{Trie\ tr}\hlsym{)\ \{}\\
+\hlline{107\ }\hlstd{\ }\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ \{}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]}\ ==\ }\hlstd{NULL}\hlsym{)\ }\hlstd{}\hlkwa{continue}\hlstd{}\hlsym{;}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{return\ true}\hlstd{}\hlsym{;}\\
+\hlline{110\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{111\ }\hlstd{\ }\hlkwa{return\ false}\hlstd{}\hlsym{;}\\
+\hlline{112\ }\hlstd{}\hlsym{\}}\\
+\hlline{113\ }\hlstd{}\\
+\hlline{114\ }\hlkwb{void\ }\hlstd{}\hlkwd{trie\textunderscore debug}\hlstd{}\hlsym{(}\hlstd{Trie\ tr}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{depth}\hlsym{)\ \{}\\
+\hlline{115\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{tr}\hlsym{)\ }\hlstd{}\hlkwa{return}\hlstd{}\hlsym{;}\\
+\hlline{116\ }\hlstd{\ }\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ \{}\\
+\hlline{117\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]})\ }\hlstd{}\hlkwa{continue}\hlstd{}\hlsym{;}\\
+\hlline{118\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{depth}\hlsym{)\ \{\ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlstr{``\ }\hlstd{}\hlsym{;\ \}}\\
+\hlline{119\ }\hlstd{}\hlstd{\ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlkwd{itos}\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{,\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{120\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]}{-}$>$}\hlstd{value}\hlsym{)\ \{}\\
+\hlline{121\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlstr{"}\hlstd{\ \ }\hlstr{("}\hlstd{\ }\hlsym{$<$$<$\ {*}(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]}{-}$>$}\hlstd{value}\hlsym{)\ $<$$<$\ }\hlstd{}\hlstr{")"}\hlstd{}\hlsym{;}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{123\ }\hlstd{}\hlstd{\ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{124\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{trie\textunderscore debug}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]},\ }\hlstd{depth\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{125\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{126\ }\hlstd{}\hlsym{\}}\\
+\hlline{127\ }\hlstd{}\\
+\hlline{128\ }\hlcom{/{*}{*}{*}{*}\ Resultado\ {*}{*}{*}{*}/}\hlstd{}\\
+\hlline{129\ }\\
+\hlline{130\ }\hlkwc{typedef\ }\hlstd{pair}\hlsym{$<$}\hlstd{string}\hlsym{,\ }\hlstd{Value}\hlsym{$>$\ }\hlstd{ResultItem}\hlsym{;}\\
+\hlline{131\ }\hlstd{vector}\hlsym{$<$}\hlstd{ResultItem}\hlsym{$>$\ }\hlstd{result}\hlsym{;}\\
+\hlline{132\ }\hlstd{Value\ Invalid}\hlsym{;}\\
+\hlline{133\ }\hlstd{}\\
+\hlline{134\ }\hldir{\#define\ \textunderscore produce(S,\ V)}\hlstd{\ \ }\hldir{if\ ((V)\ !=\ Invalid)\ \{\ result.push\textunderscore back(ResultItem((S),\ (V)));\ \}}\\
+\hlline{135\ }\hlstd{}\hldir{\#define\ Maxlen\ 20}\\
+\hlline{136\ }\hlstd{}\hlkwb{char\ }\hlstd{prefix\textunderscore buf}\hlsym{{[}}\hlstd{Maxlen}\hlsym{{]};}\\
+\hlline{137\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{\textunderscore build\textunderscore result\textunderscore rec}\hlstd{}\hlsym{(}\hlstd{Trie\ tr}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{prefix\textunderscore length}\hlsym{)\ \{}\\
+\hlline{138\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{tr\ }\hlsym{==\ }\hlstd{NULL}\hlsym{)\ }\hlstd{}\hlkwa{return}\hlstd{}\hlsym{;}\\
+\hlline{139\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{}\hlkwd{trie\textunderscore has\textunderscore children}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{))\ \{}\\
+\hlline{140\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{//\ no\ children}\\
+\hlline{141\ }\hlstd{}\hlstd{\ \ }\hlstd{prefix\textunderscore buf}\hlsym{{[}}\hlstd{prefix\textunderscore length}\hlsym{{]}\ =\ }\hlstd{}\hlstr{`$\backslash$0`}\hlstd{}\hlsym{;}\\
+\hlline{142\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{\textunderscore produce}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{string}\hlstd{}\hlsym{(}\hlstd{prefix\textunderscore buf}\hlsym{),\ }\hlstd{tr}\hlsym{{-}$>$}\hlstd{value}\hlsym{);}\\
+\hlline{143\ }\hlstd{\ }\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{144\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{//\ visit\ the\ children}\\
+\hlline{145\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ \{}\\
+\hlline{146\ }\hlstd{}\hlstd{\ \ \ }\hlstd{prefix\textunderscore buf}\hlsym{{[}}\hlstd{prefix\textunderscore length}\hlsym{{]}\ =\ }\hlstd{}\hlstr{`0`}\hlstd{\ }\hlsym{+\ }\hlstd{dig}\hlsym{;}\\
+\hlline{147\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{\textunderscore build\textunderscore result\textunderscore rec}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{{-}$>$}\hlstd{children}\hlsym{{[}}\hlstd{dig}\hlsym{{]},\ }\hlstd{prefix\textunderscore length\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{148\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{149\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{150\ }\hlstd{}\hlsym{\}}\\
+\hlline{151\ }\hlstd{}\\
+\hlline{152\ }\hlkwb{void\ }\hlstd{}\hlkwd{trie\textunderscore print\textunderscore result}\hlstd{}\hlsym{(}\hlstd{Trie\ tr}\hlsym{)\ \{}\\
+\hlline{153\ }\hlstd{\ Invalid\ }\hlsym{=\ }\hlstd{}\hlkwd{reg\textunderscore intern}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"invalid"}\hlstd{}\hlsym{);}\\
+\hlline{154\ }\hlstd{\ result\ }\hlsym{=\ }\hlstd{vector}\hlsym{$<$}\hlstd{ResultItem}\hlsym{$>$();}\\
+\hlline{155\ }\hlstd{\\
+\hlline{156\ }\ }\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{}\hlkwd{trie\textunderscore has\textunderscore children}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{)\ \&\&\ }\hlstd{tr}\hlsym{{-}$>$}\hlstd{value\ }\hlsym{!=\ }\hlstd{Empty\ }\hlsym{\&\&\ }\hlstd{tr}\hlsym{{-}$>$}\hlstd{value\ }\hlsym{!=\ }\hlstd{Invalid}\hlsym{)\ \{}\\
+\hlline{157\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{//\ special\ case:\ every\ prefix\ has\ the\ same\ type}\\
+\hlline{158\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,}\hlstd{ALPHA\textunderscore SIZE}\hlsym{);}\\
+\hlline{159\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{foralpha\ }\hlstd{}\hlsym{(}\hlstd{dig}\hlsym{)\ \{}\\
+\hlline{160\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d\ \%s}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,}\hlstd{dig}\hlsym{,({*}}\hlstd{tr}\hlsym{{-}$>$}\hlstd{value}\hlsym{).}\hlstd{}\hlkwd{c\textunderscore str}\hlstd{}\hlsym{());}\\
+\hlline{161\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{162\ }\hlstd{\ }\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{163\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{\textunderscore build\textunderscore result\textunderscore rec}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{164\ }\hlstd{\\
+\hlline{165\ }}\hlstd{\ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,}\hlstd{result}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{());}\\
+\hlline{166\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ (}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{)}\hlstd{result}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{())\ \{}\\
+\hlline{167\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%s\ \%s}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,}\hlstd{result}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{first}\hlsym{.}\hlstd{}\hlkwd{c\textunderscore str}\hlstd{}\hlsym{(),({*}}\hlstd{result}\hlsym{{[}}\hlstd{i}\hlsym{{]}.}\hlstd{second}\hlsym{).}\hlstd{}\hlkwd{c\textunderscore str}\hlstd{}\hlsym{());}\\
+\hlline{168\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{169\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{170\ }\hlstd{}\hlsym{\}}\\
+\hlline{171\ }\hlstd{}\\
+\hlline{172\ }\hlcom{/{*}{*}{*}{*}\ Intervalos\ {*}{*}{*}{*}/}\hlstd{}\\
+\hlline{173\ }\\
+\hlline{174\ }\hldir{\#define\ IMP(X,\ Y)\ (!(X)\ \textbar \textbar \ (Y))}\\
+\hlline{175\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwd{add\textunderscore interval}\hlstd{}\hlsym{(}\hlstd{Trie\ }\hlsym{{*}}\hlstd{tr}\hlsym{,\ }\hlstd{}\hlkwb{int\ }\hlstd{pref\textunderscore size}\hlsym{,\ }\hlstd{lluint\ from}\hlsym{,\ }\hlstd{lluint\ to}\hlsym{,\ }\hlstd{Value\ val}\hlsym{)\ \{}\\
+\hlline{176\ }\hlstd{\ lluint\ pot\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{177\ }\hlstd{\ }\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{t}\hlsym{,\ }\hlstd{}\hlnum{2}\hlstd{}\hlsym{)\ \{}\\
+\hlline{178\ }\hlstd{}\hlstd{\ \ }\hlstd{lluint\ }\hlsym{{*}}\hlstd{from\textunderscore to\ }\hlsym{=\ (}\hlstd{t\ }\hlsym{==\ }\hlstd{}\hlnum{0\ }\hlstd{?\ }\hlsym{\&}\hlstd{from\ }\hlsym{:\ \&}\hlstd{to}\hlsym{);}\\
+\hlline{179\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{pot\ }\hlsym{$>$\ }\hlstd{}\hlnum{0\ }\hlstd{}\hlsym{\&\&\ }\hlstd{}\hlkwd{IMP}\hlstd{}\hlsym{(}\hlstd{t\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{,\ }\hlstd{from\ }\hlsym{+\ }\hlstd{pot\ }\hlsym{$<$=\ }\hlstd{to}\hlsym{))\ \{}\\
+\hlline{180\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{from\ }\hlsym{+\ }\hlstd{pot\ }\hlsym{$<$=\ }\hlstd{to\ }\hlsym{\&\&\ {*}}\hlstd{from\textunderscore to\ }\hlsym{\%\ (}\hlstd{pot\ }\hlsym{{*}\ }\hlstd{}\hlnum{10}\hlstd{}\hlsym{)\ $>$\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{181\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{string\ }\hlkwd{element}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{itos}\hlstd{}\hlsym{(}\hlstd{from\ }\hlsym{/\ }\hlstd{pot}\hlsym{,\ }\hlstd{pref\textunderscore size}\hlsym{));}\\
+\hlline{182\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{trie\textunderscore add}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{,\ }\hlstd{element}\hlsym{.}\hlstd{}\hlkwd{c\textunderscore str}\hlstd{}\hlsym{(),\ }\hlstd{val}\hlsym{);}\\
+\hlline{183\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{from\ }\hlsym{+=\ }\hlstd{pot}\hlsym{;}\\
+\hlline{184\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{185\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{t\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{186\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{pot\ }\hlsym{{*}=\ }\hlstd{}\hlnum{10}\hlstd{}\hlsym{;}\\
+\hlline{187\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{pref\textunderscore size}\hlsym{{-}{-};}\\
+\hlline{188\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{189\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{pot\ }\hlsym{/=\ }\hlstd{}\hlnum{10}\hlstd{}\hlsym{;}\\
+\hlline{190\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{pref\textunderscore size}\hlsym{++;}\\
+\hlline{191\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{192\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{193\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{t\ }\hlsym{==\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{194\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{from\ }\hlsym{+\ }\hlstd{pot\ }\hlsym{$>$\ }\hlstd{to}\hlsym{)\ \{\ }\hlstd{pot\ }\hlsym{/=\ }\hlstd{}\hlnum{10}\hlstd{}\hlsym{;\ }\hlstd{pref\textunderscore size}\hlsym{++;\ \}}\\
+\hlline{195\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{196\ }\hlstd{}\hlsym{\}}\\
+\hlline{197\ }\hlstd{\\
+\hlline{198\ }lluint\ }\hlkwd{atoll\textunderscore }\hlstd{}\hlsym{(}\hlstd{string\ s}\hlsym{)\ \{}\\
+\hlline{199\ }\hlstd{\ lluint\ r\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{200\ }\hlstd{\ }\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{s}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{())\ \{}\\
+\hlline{201\ }\hlstd{}\hlstd{\ \ }\hlstd{r\ }\hlsym{=\ }\hlstd{}\hlnum{10\ }\hlstd{}\hlsym{{*}\ }\hlstd{r\ }\hlsym{+\ }\hlstd{}\hlkwd{ALPHA\textunderscore VAL}\hlstd{}\hlsym{(}\hlstd{s}\hlsym{{[}}\hlstd{i}\hlsym{{]});}\\
+\hlline{202\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{203\ }\hlstd{\ }\hlkwa{return\ }\hlstd{r}\hlsym{;}\\
+\hlline{204\ }\hlstd{}\hlsym{\}}\\
+\hlline{205\ }\hlstd{}\\
+\hlline{206\ }\hlcom{/{*}{*}{*}{*}\ Main\ {*}{*}{*}{*}/}\hlstd{}\\
+\hlline{207\ }\\
+\hlline{208\ }\hlkwb{struct\ }\hlstd{InputItem\ }\hlsym{\{}\\
+\hlline{209\ }\hlstd{\ }\hlkwb{int\ }\hlstd{pref\textunderscore size}\hlsym{;}\\
+\hlline{210\ }\hlstd{\ lluint\ from}\hlsym{,\ }\hlstd{to}\hlsym{;}\\
+\hlline{211\ }\hlstd{\ Value\ name\textunderscore id}\hlsym{;}\\
+\hlline{212\ }\hlstd{}\hlsym{\};}\\
+\hlline{213\ }\hlstd{}\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{()\ \{}\\
+\hlline{214\ }\hlstd{\ }\hlkwb{bool\ }\hlstd{primero\ }\hlsym{=\ }\hlstd{}\hlkwa{true}\hlstd{}\hlsym{;}\\
+\hlline{215\ }\hlstd{\ }\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwa{true}\hlstd{}\hlsym{)\ \{}\\
+\hlline{216\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwb{int\ }\hlstd{nlines}\hlsym{;}\\
+\hlline{217\ }\hlstd{}\hlstd{\ \ }\hlstd{cin\ }\hlsym{$>$$>$\ }\hlstd{nlines}\hlsym{;}\\
+\hlline{218\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{cin}\hlsym{.}\hlstd{}\hlkwd{eof}\hlstd{}\hlsym{())\ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{219\ }\hlstd{\\
+\hlline{220\ }}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{primero}\hlsym{)\ \{}\\
+\hlline{221\ }\hlstd{}\hlstd{\ \ \ }\hlstd{primero\ }\hlsym{=\ }\hlstd{}\hlkwa{false}\hlstd{}\hlsym{;}\\
+\hlline{222\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{223\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{);}\\
+\hlline{224\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{225\ }\hlstd{\\
+\hlline{226\ }}\hlstd{\ \ }\hlstd{vector}\hlsym{$<$}\hlstd{InputItem}\hlsym{$>$\ }\hlstd{todo\textunderscore list}\hlsym{;}\\
+\hlline{227\ }\hlstd{\\
+\hlline{228\ }}\hlstd{\ \ }\hlstd{}\hlslc{//\ Read\ the\ lines\ and\ build\ the\ todo\ list}\\
+\hlline{229\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{line}\hlsym{,\ }\hlstd{nlines}\hlsym{)\ \{}\\
+\hlline{230\ }\hlstd{}\hlstd{\ \ \ }\hlstd{string\ from}\hlsym{,\ }\hlstd{sep}\hlsym{,\ }\hlstd{to}\hlsym{,\ }\hlstd{name}\hlsym{;}\\
+\hlline{231\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cin\ }\hlsym{$>$$>$\ }\hlstd{from\ }\hlsym{$>$$>$\ }\hlstd{sep\ }\hlsym{$>$$>$\ }\hlstd{to\ }\hlsym{$>$$>$\ }\hlstd{name}\hlsym{;}\\
+\hlline{232\ }\hlstd{\\
+\hlline{233\ }}\hlstd{\ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{k\ }\hlsym{=\ }\hlstd{from}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ {-}\ }\hlstd{to}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{234\ }\hlstd{}\hlstd{\ \ \ }\hlstd{InputItem\ item}\hlsym{;}\\
+\hlline{235\ }\hlstd{}\hlstd{\ \ \ }\hlstd{item}\hlsym{.}\hlstd{name\textunderscore id\ }\hlsym{=\ }\hlstd{}\hlkwd{reg\textunderscore intern}\hlstd{}\hlsym{(}\hlstd{name}\hlsym{);}\\
+\hlline{236\ }\hlstd{}\hlstd{\ \ \ }\hlstd{item}\hlsym{.}\hlstd{from\ }\hlsym{=\ }\hlstd{}\hlkwd{atoll\textunderscore }\hlstd{}\hlsym{(}\hlstd{from}\hlsym{);}\\
+\hlline{237\ }\hlstd{}\hlstd{\ \ \ }\hlstd{item}\hlsym{.}\hlstd{to\ }\hlsym{=\ }\hlstd{}\hlkwd{atoll\textunderscore }\hlstd{}\hlsym{(}\hlstd{from}\hlsym{.}\hlstd{}\hlkwd{substr}\hlstd{}\hlsym{(}\hlstd{}\hlnum{0}\hlstd{}\hlsym{,\ }\hlstd{k}\hlsym{)\ +\ }\hlstd{to}\hlsym{)\ +\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{238\ }\hlstd{}\hlstd{\ \ \ }\hlstd{item}\hlsym{.}\hlstd{pref\textunderscore size\ }\hlsym{=\ }\hlstd{from}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{239\ }\hlstd{\\
+\hlline{240\ }}\hlstd{\ \ \ }\hlstd{todo\textunderscore list}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{item}\hlsym{);}\\
+\hlline{241\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{242\ }\hlstd{\\
+\hlline{243\ }}\hlstd{\ \ }\hlstd{}\hlslc{//\ Process\ the\ lines\ in\ reverse\ order}\\
+\hlline{244\ }\hlstd{}\hlstd{\ \ }\hlstd{Trie\ tr\ }\hlsym{=\ }\hlstd{}\hlkwd{trie\textunderscore new}\hlstd{}\hlsym{();}\\
+\hlline{245\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{dforn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{nlines}\hlsym{)\ \{}\\
+\hlline{246\ }\hlstd{}\hlstd{\ \ \ }\hlstd{InputItem}\hlsym{\&\ }\hlstd{}\hlkwd{item}\hlstd{}\hlsym{(}\hlstd{todo\textunderscore list}\hlsym{{[}}\hlstd{i}\hlsym{{]});}\\
+\hlline{247\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{add\textunderscore interval}\hlstd{}\hlsym{(\&}\hlstd{tr}\hlsym{,\ }\hlstd{item}\hlsym{.}\hlstd{pref\textunderscore size}\hlsym{,\ }\hlstd{item}\hlsym{.}\hlstd{from}\hlsym{,\ }\hlstd{item}\hlsym{.}\hlstd{to}\hlsym{,\ }\hlstd{item}\hlsym{.}\hlstd{name\textunderscore id}\hlsym{);}\\
+\hlline{248\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{249\ }\hlstd{\\
+\hlline{250\ }}\hlstd{\ \ }\hlstd{}\hlkwd{trie\textunderscore print\textunderscore result}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{);}\\
+\hlline{251\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{trie\textunderscore free}\hlstd{}\hlsym{(}\hlstd{tr}\hlsym{);}\\
+\hlline{252\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{reg\textunderscore free}\hlstd{}\hlsym{();}\\
+\hlline{253\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{254\ }\hlstd{\\
+\hlline{255\ }\ }\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{256\ }\hlstd{}\hlsym{\}}\hlstd{}\\
+\mbox{}
+\normalfont
+\shorthandon{"}

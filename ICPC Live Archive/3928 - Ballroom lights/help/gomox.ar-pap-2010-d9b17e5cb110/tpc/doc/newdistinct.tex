@@ -1,0 +1,240 @@
+\section{705 - SUBST1}
+Dado un string $s$, encontrar el número total de substrings distintas.
+
+\subsection{Resolución}
+Para resolver este problema, primero notamos que todo \textit{substring} de la cadena $s$ 
+es prefijo de algún sufijo de $s$ (la vuelta también es cierta: todo prefijo de algún 
+sufijo es \textit{substring} de $s$). A partir de esto, vemos que para contar la cantidad 
+de \textit{substrings} distintos se puede contar la cantidad de prefijos distintos que 
+tienen todos los sufijos.
+
+Las subcadenas que estén repetidas deben ser necesariamente prefijos de más de un sufijo.
+Esto se debe a que si cada subcadena está definida por un par de índices válidos $i$, $j$ 
+dentro de la cadena (con $i < j$), una aparición repetida de la misma subcadena involucra
+que dicha subcadena ocurra en 2 lugares distintos dentro de la cadena, lo que por lo tanto define
+una posición de inicio $i$ distinta. Para cada uno de estos $i$ existe un sufijo correspondiente
+tomando $j=longitud(cadena)$.
+
+Por lo tanto, para contabilizar rapidamente las subcadenas distintas, resulta muy útil
+tener los sufijos ordenados lexicográficamente. Si una subcadena aparece más de una vez
+en la cadena, cada aparición es prefijo de un sufijo de la cadena. Como todos estos
+sufijos comienzan por la misma cadena, se encontrarán agrupados en el \textit{suffix
+array} ordenado de la misma.
+
+Si consideramos los dos sufijos en las posiciones $i$ y $i+1$ del \textit{suffix array},
+vemos que todas las cadenas repetidas que introduce este último son tantas como el largo
+del máximo prefijo común entre estos dos sufijos. Esto resulta del hecho de que toda cadena
+repetida es un prefijo, y de que hay tantos subprefijos idénticos posibles como la longitud del
+prefijo repetido máximo. Además, no es necesario mirar ningún prefijo anterior al $i$, ya que
+si el sufijo $i+1$ tuviera un prefijo compartido más largo con algún otro sufijo que con el $i$,
+este tercer sufijo se encontraría posicionado en la posición $i$ (ya que sería lexicográficamente
+más próximo al sufijo $i+1$).
+
+
+En base a esto, para resolver el ejercicio construimos el \textit{suffix array}, y a continuación
+la tabla asociada del {\sc{lcp}}\footnote{No hace falta computar la tabla del {\sc{lcp}}, puesto
+que es suficiente con ir haciendo la suma agregada de los valores, ahorrándose así espacio en memoria} que
+se utiliza para contar las subcadenas.
+
+La idea es la siguiente: si consideramos el sufijo $j$, de largo $|s|-(j-1)$, vemos que en 
+principio introduce $|s|-(j-1)$ prefijos, pero como vimos antes, hay que descontar los prefijos 
+ya contados anteriormente, lo cual corresponde a $lcp[j]$.
+
+El algoritmo es entonces:
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Calcula la cantidad de subcadenas diferentes en una cadena}
+\PARAMS{string $s$}
+\STATE sa, rank = Suffix Array y su permutación inversa
+\STATE lcp = tabular el LCP usando sa y rank
+\STATE substrings = 0
+\FOR{i en [0,...N)}
+\STATE $substrings += |sa[i]| - lcp[i]$
+\ENDFOR
+\RETURN substrings
+\end{algorithmic}
+\end{algorithm}
+
+
+La construcción del \textit{suffix array} se hace con un algoritmo simplificado respecto
+del visto en clase. Se hacen varias pasadas duplicando cada vez el valor de una variable $K$.
+El algoritmo ordena cada vez el \textit{suffix array} garantizando el orden definitivo si
+solo se cuentan los primeros $K$ caracteres de cada sufijo. Así, se hacen a lo sumo $\log_2(n)$
+pasadas. El costo de cada una es el de realizar el ordenamiento con comparaciones en $O(1)$,
+siguiendo la idea detallada en el paper de Karp, Miller y Rosenberg. Utilizando un
+algoritmo de ordenamiento apropiado se obtiene así un costo total de $O(n \log^2(n))$ para
+la construcción del \textit{sorted suffix array}.
+
+Para construir el {\sc{lcp}} utilizamos el algoritmo de Kasai visto en clase, por lo que la complejidad 
+es $O(n)$ siendo $n$ la cantidad de caracteres del string $s$. La suma de la cantidad de \textit{substrings}
+nuevas de cada sufijo es también $O(n)$. 
+
+Finalmente dado que el cálculo de la cantidad de \textit{substrings} se realiza con una sola
+pasada sobre el {\sc{lcp}}, cuyo tamaño es lineal, concluimos que la complejidad del algoritmo es
+$O(n \log^2 n)$, pero podría mejorarse a $O(n)$ usando un algoritmo más sofisticado para la
+construcción del \textit{suffix array}.
+
+
+En base a esto, la complejidad final es $O(n \log^2 n)$.
+
+\subsection{Implementación}
+
+\noindent
+\ttfamily
+\shorthandoff{"}
+\hlstd{}\hlline{\ 1\ }\hldir{\#include\ $<$string.h$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$cstdio$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$algorithm$>$}\\
+\hlline{\ 4\ }\hlstd{}\\
+\hlline{\ 5\ }\hlkwa{using\ }\hlstd{std}\hlsym{::}\hlstd{sort}\hlsym{;}\\
+\hlline{\ 6\ }\hlstd{}\hlkwa{using\ }\hlstd{std}\hlsym{::}\hlstd{swap}\hlsym{;}\\
+\hlline{\ 7\ }\hlstd{}\\
+\hlline{\ 8\ }\hlkwb{static\ char\ }\hlstd{text}\hlsym{{[}}\hlstd{}\hlnum{50001}\hlstd{}\hlsym{{]};}\\
+\hlline{\ 9\ }\hlstd{}\hlkwb{static\ unsigned\ int\ }\hlstd{sa}\hlsym{{[}}\hlstd{}\hlnum{50000}\hlstd{}\hlsym{{]};}\\
+\hlline{10\ }\hlstd{}\hlkwb{static\ unsigned\ int\ }\hlstd{rank1}\hlsym{{[}}\hlstd{}\hlnum{50000}\hlstd{}\hlsym{{]}=\{}\hlstd{}\hlnum{0}\hlstd{}\hlsym{\};}\\
+\hlline{11\ }\hlstd{}\hlkwb{static\ unsigned\ int\ }\hlstd{rank2}\hlsym{{[}}\hlstd{}\hlnum{50000}\hlstd{}\hlsym{{]}=\{}\hlstd{}\hlnum{0}\hlstd{}\hlsym{\};}\\
+\hlline{12\ }\hlstd{}\\
+\hlline{13\ }\hlkwb{static\ int\ }\hlstd{N}\hlsym{;}\\
+\hlline{14\ }\hlstd{}\hlkwb{static\ long\ long\ }\hlstd{total}\hlsym{;}\\
+\hlline{15\ }\hlstd{}\hlkwb{static\ unsigned\ }\hlstd{cuantos}\hlsym{;}\\
+\hlline{16\ }\hlstd{}\\
+\hlline{17\ }\hlkwb{bool\ }\hlstd{parar}\hlsym{;}\\
+\hlline{18\ }\hlstd{}\hlkwb{int\ }\hlstd{bucket}\hlsym{,\ }\hlstd{aux}\hlsym{,\ }\hlstd{desde}\hlsym{,\ }\hlstd{actual}\hlsym{;}\\
+\hlline{19\ }\hlstd{}\hlkwb{unsigned\ int}\hlstd{}\hlsym{{*}\ }\hlstd{ahora}\hlsym{;}\\
+\hlline{20\ }\hlstd{}\hlkwb{unsigned\ int}\hlstd{}\hlsym{{*}\ }\hlstd{proximo}\hlsym{;}\\
+\hlline{21\ }\hlstd{}\\
+\hlline{22\ }\\
+\hlline{23\ }\hlslc{//\ Comparador}\\
+\hlline{24\ }\hlstd{}\hlkwb{struct\ }\hlstd{Comparador\ }\hlsym{\{}\\
+\hlline{25\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ int\ }\hlstd{K}\hlsym{;}\\
+\hlline{26\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{const\ unsigned\ int}\hlstd{}\hlsym{{*}\ }\hlstd{rank}\hlsym{;}\\
+\hlline{27\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{Comparador}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ int\ }\hlstd{j}\hlsym{,}\hlstd{}\hlkwb{const\ unsigned\ int}\hlstd{}\hlsym{{*}\ }\hlstd{vrank}\hlsym{):\ }\hlstd{}\hlkwd{K}\hlstd{}\hlsym{(}\hlstd{j}\hlsym{),\ }\hlstd{}\hlkwd{rank}\hlstd{}\hlsym{(}\hlstd{vrank}\hlsym{)\ \{\};}\\
+\hlline{28\ }\hlstd{\\
+\hlline{29\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{bool\ }\hlstd{}\hlkwc{inline\ operator}\hlstd{}\hlsym{()(}\hlstd{}\hlkwb{const\ int\ }\hlstd{i}\hlsym{,\ }\hlstd{}\hlkwb{const\ int\ }\hlstd{j}\hlsym{)\ }\hlstd{}\hlkwb{const\ }\hlstd{}\hlsym{\{}\\
+\hlline{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlkwd{clave}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{)\ $<$\ }\hlstd{}\hlkwd{clave}\hlstd{}\hlsym{(}\hlstd{j}\hlsym{);}\\
+\hlline{31\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{32\ }\hlstd{\\
+\hlline{33\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwd{clave}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ int\ }\hlstd{i}\hlsym{)\ }\hlstd{}\hlkwb{const\ }\hlstd{}\hlsym{\{}\\
+\hlline{34\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{+}\hlstd{K\ }\hlsym{$<$\ }\hlstd{N\ ?\ rank}\hlsym{{[}}\hlstd{i}\hlsym{+}\hlstd{K}\hlsym{{]}+}\hlstd{}\hlnum{1\ }\hlstd{}\hlsym{:\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{35\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{36\ }\hlstd{}\hlsym{\};}\\
+\hlline{37\ }\hlstd{}\\
+\hlline{38\ }\\
+\hlline{39\ }\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{argc}\hlsym{,\ }\hlstd{}\hlkwb{const\ char\ }\hlstd{}\hlsym{{*}}\hlstd{argv}\hlsym{{[}{]})\ \{}\\
+\hlline{40\ }\hlstd{\\
+\hlline{41\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d"}\hlstd{}\hlsym{,\ \&}\hlstd{cuantos}\hlsym{);}\\
+\hlline{42\ }\hlstd{\\
+\hlline{43\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{c\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;\ }\hlstd{c\ }\hlsym{$<$\ }\hlstd{cuantos}\hlsym{;\ }\hlstd{c}\hlsym{++)\ \{}\\
+\hlline{44\ }\hlstd{\\
+\hlline{45\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%s"}\hlstd{}\hlsym{,\ }\hlstd{text}\hlsym{);}\\
+\hlline{46\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{N\ }\hlsym{=\ }\hlstd{}\hlkwd{strlen}\hlstd{}\hlsym{(}\hlstd{text}\hlsym{);}\\
+\hlline{47\ }\hlstd{\\
+\hlline{48\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ Suffix\ Array}\\
+\hlline{49\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{i\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;\ }\hlstd{i\ }\hlsym{$<$\ }\hlstd{N}\hlsym{;\ }\hlstd{i}\hlsym{++)\ \{}\\
+\hlline{50\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{sa}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ =\ }\hlstd{i}\hlsym{;}\\
+\hlline{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{rank1}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ =\ }\hlstd{text}\hlsym{{[}}\hlstd{i}\hlsym{{]};}\\
+\hlline{52\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{53\ }\hlstd{\\
+\hlline{54\ }\\
+\hlline{55\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{sort}\hlstd{}\hlsym{(}\hlstd{sa}\hlsym{,\ }\hlstd{sa}\hlsym{+}\hlstd{N}\hlsym{,\ }\hlstd{}\hlkwd{Comparador}\hlstd{}\hlsym{(}\hlstd{}\hlnum{0}\hlstd{}\hlsym{,\ }\hlstd{rank1}\hlsym{));}\\
+\hlline{56\ }\hlstd{\\
+\hlline{57\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{bucket\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{58\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{rank1}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}{]}\ =\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{59\ }\hlstd{\\
+\hlline{60\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{t\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;\ }\hlstd{t\ }\hlsym{$<$\ }\hlstd{N}\hlsym{;\ }\hlstd{t}\hlsym{++)\ \{}\\
+\hlline{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{text}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}{]}\ ==\ }\hlstd{text}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}{]})\ \{}\\
+\hlline{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{rank1}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}{]}\ =\ }\hlstd{bucket}\hlsym{;}\\
+\hlline{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{64\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{bucket\ }\hlsym{=\ }\hlstd{t}\hlsym{;}\\
+\hlline{65\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{rank1}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}{]}\ =\ }\hlstd{bucket}\hlsym{;}\\
+\hlline{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{68\ }\hlstd{\\
+\hlline{69\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{parar\ }\hlsym{=\ }\hlstd{}\hlkwa{true}\hlstd{}\hlsym{;}\\
+\hlline{70\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{ahora\ }\hlsym{=\ }\hlstd{rank1}\hlsym{;}\\
+\hlline{71\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{proximo\ }\hlsym{=\ }\hlstd{rank2}\hlsym{;}\\
+\hlline{72\ }\hlstd{\\
+\hlline{73\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{K\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;\ }\hlstd{K\ }\hlsym{$<$\ }\hlstd{N}\hlsym{;\ }\hlstd{K\ }\hlsym{{*}=\ }\hlstd{}\hlnum{2}\hlstd{}\hlsym{)\ \{}\\
+\hlline{74\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{desde\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{75\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{actual\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{76\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{Comparador\ }\hlkwd{comparador}\hlstd{}\hlsym{(}\hlstd{K}\hlsym{,}\hlstd{ahora}\hlsym{);}\\
+\hlline{77\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{actual\ }\hlsym{$<$\ }\hlstd{N}\hlsym{)\ \{}\\
+\hlline{78\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{actual}\hlsym{$<$\ }\hlstd{N\ }\hlsym{\&\&\ }\hlstd{ahora}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{actual}\hlsym{{]}{]}\ ==\ }\hlstd{ahora}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{actual}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}{]})\ \{}\\
+\hlline{79\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{actual}\hlsym{++;}\\
+\hlline{80\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{81\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{actual\ }\hlsym{$>$\ }\hlstd{desde}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{82\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{sort}\hlstd{}\hlsym{(}\hlstd{sa}\hlsym{+}\hlstd{desde}\hlsym{,\ }\hlstd{sa}\hlsym{+}\hlstd{actual}\hlsym{,\ }\hlstd{comparador}\hlsym{);}\\
+\hlline{83\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{84\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{desde\ }\hlsym{=\ }\hlstd{actual}\hlsym{;}\\
+\hlline{85\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{actual}\hlsym{++;}\\
+\hlline{86\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{87\ }\hlstd{\\
+\hlline{88\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{bucket\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{89\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{proximo}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}{]}\ =\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{90\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{aux\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{91\ }\hlstd{\\
+\hlline{92\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{t\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;\ }\hlstd{t\ }\hlsym{$<$\ }\hlstd{N}\hlsym{;\ }\hlstd{t}\hlsym{++)\ \{}\\
+\hlline{93\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{ahora}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}{]}\ ==\ }\hlstd{aux\ }\hlsym{\&\&\ }\hlstd{comparador}\hlsym{.}\hlstd{}\hlkwd{clave}\hlstd{}\hlsym{(}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]})\ ==\ }\hlstd{comparador}\hlsym{.}\hlstd{}\hlkwd{clave}\hlstd{}\hlsym{(}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}))\ \{}\\
+\hlline{94\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{proximo}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}{]}\ =\ }\hlstd{bucket}\hlsym{;}\\
+\hlline{95\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{parar\ }\hlsym{=\ }\hlstd{}\hlkwa{false}\hlstd{}\hlsym{;}\\
+\hlline{96\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{97\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{aux\ }\hlsym{=\ }\hlstd{ahora}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}{]};}\\
+\hlline{98\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{bucket\ }\hlsym{=\ }\hlstd{t}\hlsym{;}\\
+\hlline{99\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{proximo}\hlsym{{[}}\hlstd{sa}\hlsym{{[}}\hlstd{t}\hlsym{{]}{]}\ =\ }\hlstd{bucket}\hlsym{;}\\
+\hlline{100\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{101\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{102\ }\hlstd{\\
+\hlline{103\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{swap}\hlstd{}\hlsym{(}\hlstd{ahora}\hlsym{,\ }\hlstd{proximo}\hlsym{);}\\
+\hlline{104\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{parar}\hlsym{)\ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{105\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{parar\ }\hlsym{=\ }\hlstd{}\hlkwa{true}\hlstd{}\hlsym{;}\\
+\hlline{106\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{107\ }\hlstd{\\
+\hlline{108\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ LCP\ (Kasai)}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{total\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{110\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{k\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{111\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{i\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;\ }\hlstd{i\ }\hlsym{$<$\ }\hlstd{N}\hlsym{;\ }\hlstd{i}\hlsym{++)\ \{}\\
+\hlline{112\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{k\ }\hlsym{$>$\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{113\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{k}\hlsym{{-}{-};}\\
+\hlline{114\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{115\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{ahora}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ ==\ }\hlstd{N}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{116\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{total\ }\hlsym{+=\ }\hlstd{N\ }\hlsym{+\ }\hlstd{}\hlnum{1\ }\hlstd{}\hlsym{{-}\ }\hlstd{sa}\hlsym{{[}}\hlstd{N}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]};}\\
+\hlline{117\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{k\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{118\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{continue}\hlstd{}\hlsym{;}\\
+\hlline{119\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{120\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{j\ }\hlsym{=\ }\hlstd{sa}\hlsym{{[}}\hlstd{ahora}\hlsym{{[}}\hlstd{i}\hlsym{{]}+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]};}\\
+\hlline{121\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{text}\hlsym{{[}}\hlstd{i}\hlsym{+}\hlstd{k}\hlsym{{]}\ ==\ }\hlstd{text}\hlsym{{[}}\hlstd{j}\hlsym{+}\hlstd{k}\hlsym{{]})\ }\hlstd{k}\hlsym{++;}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{total\ }\hlsym{+=\ }\hlstd{N\ }\hlsym{{-}\ }\hlstd{k\ }\hlsym{{-}\ }\hlstd{sa}\hlsym{{[}}\hlstd{ahora}\hlsym{{[}}\hlstd{i}\hlsym{{]}{]};}\\
+\hlline{123\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{124\ }\hlstd{\\
+\hlline{125\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ El\ codigo\ de\ arriba\ pone\ un\ {-}1\ en\ la}\\
+\hlline{126\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ fila\ final\ del\ LCP\ en\ lugar\ de\ un\ 0\ en\ la\ primera,}\\
+\hlline{127\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ asi\ que\ hay\ que\ restarlo\ ahora.}\\
+\hlline{128\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{total\ }\hlsym{=\ }\hlstd{total\ }\hlsym{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{129\ }\hlstd{\\
+\hlline{130\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%lld}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,\ }\hlstd{total}\hlsym{);}\\
+\hlline{131\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{132\ }\hlstd{}\hlsym{\}}\hlstd{}\\
+\mbox{}
+\normalfont
+\shorthandon{"}
+
+
+La implementación es bastante directa a partir de lo expresado anteriormente. Se
+reservan arreglos estáticos de memoria para mejorar la eficiencia del algoritmo, y se
+utiliza la función de ordenamiento provista por la STL cuyo rendimiento es excelente.
+
+Se utilizan dos arreglos para los \textit{buckets}, que se van intercambiando en $O(1)$
+mediante un \textit{swap} de punteros para ir modificando los valores en cada
+pasada. El objeto comparador \textit{Comparador} se utiliza para realizar las comparaciones
+entre los prefijos, utilizando como clave su número de \textit{bucket}. En la primera
+pasada, se inicializan los números de \textit{bucket} con los valores de los caracteres en la cadena,
+pero enseguida se sobreescriben esos valores con enteros entre $0$ y $n-1$. Esto evita
+especializar el método de comparación para la primera pasada del programa.
+
+Como era de esperarse, el invariante del ciclo principal es que al comenzar
+el cuerpo del ciclo, están ordenados los sufijos si solo se tienen en cuenta
+sus primeros $K$ caracteres.
+
+El algoritmo de Kasai sigue la implementación convencional, y la suma
+de los valores es la esperada.

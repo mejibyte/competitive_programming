@@ -1,0 +1,283 @@
+\section{10594 - Data Flow}
+
+\textbf{Problema:} 
+Dada una red en la que cada enlace tiene asociado un
+tiempo de transferencia (por unidad de datos), y todos
+los enlaces permiten transferir una cantidad m\'axima
+de datos fija $k$, determinar la manera de enviar una cierta
+cantidad de datos $m$ desde un nodo $v_A$ a un nodo $v_B$
+de manera tal que el tiempo de transferencia sea m\'inimo.
+
+\subsection{Resoluci\'on}
+
+Se modela como un problema de flujo m\'aximo de costo m\'inimo.
+Se considera un grafo donde todas las conexiones dadas en la entrada
+son ejes de capacidad $k$, y el costo de un eje es el tiempo de
+transferencia por unidad.
+Para convertir el problema original en un problema de flujo m\'aximo,
+se agrega un nodo inicial $v_0$ y un eje $(v_0,v_A)$ con capacidad
+$m$ y costo $0$.
+
+El problema de buscar el flujo m\'aximo de costo m\'inimo desde $v_0$ hasta $v_B$
+es equivalente al problema original, porque 
+si el flujo m\'aximo de $v_0$ a $v_B$ es igual a $m$,
+en particular es posible enviar $m$ unidades de $v_A$ a $v_B$.
+Inversamente, si el flujo m\'aximo de $v_0$ a $v_B$ es menor que $m$,
+no es posible enviar m\'as de $m$ unidades en la red original, ya
+que el eje agregado entre $v_0$ a $v_A$ no est\'a saturado, y por
+lo tanto el corte m\'inimo se da en ejes de la red original.
+
+El algoritmo utilizado es Ford-Fulkerson, donde en cada paso
+el camino de aumento elegido es el de costo m\'inimo. El
+camino de aumento de costo m\'inimo se busca con Bellman-Ford.
+Como en el grafo original los ejes tienen costos no negativos,
+nunca hay ciclos de costo negativo en el grafo residual.
+
+El hecho de que todos los ejes de la red original (antes de
+agregar $v_0$) tengan la misma capacidad, permite acotar la
+cantidad de pasos de Ford-Fulkerson de la siguiente manera.
+
+La capacidad del eje $(v_0,v_A)$ en el grafo residual
+representa el flujo remanente, es decir, la cantidad de
+unidades de informaci\'on que todav\'ia no fueron asignadas
+a ejes.
+Todos los ejes del grafo, exceptuando el eje $(v_0,v_A)$,
+tienen la misma capacidad $k$. Como en la red del problema los
+ejes no son orientados, cada eje $(v,w)$ tiene asociado
+un eje reverso $(w,v)$ de igual capacidad.
+Cada eje y su eje reverso pueden encontrarse en $2k + 1$ estados
+posibles: o bien ambos tienen asignado flujo $0$, o bien el flujo
+es una cantidad de datos $1 \leq c \leq k$ en un sentido,
+o bien en el sentido opuesto.
+
+En cada paso de Ford-Fulkerson, si hay un camino de aumento
+desde $v_0$ hasta $v_B$, este camino debe ser de la forma
+$v_0, v_A, ..., v_B$.
+Adem\'as, como no hay ciclos de costo negativo y el camino
+es m\'inimo, el camino debe ser simple en nodos (si repitiera
+un nodo $v_i$, habr\'ia un ciclo de costo positivo y se
+podr\'ia sacar).
+Por lo tanto, en un camino de aumento no se vuelve a utilizar
+el eje $(v_0,v_A)$ (ni su reverso). Como adem\'as los caminos
+de aumento tienen capacidad positiva por definici\'on, la capacidad
+residual del eje $(v_0,v_A)$ va disminuyendo a lo largo de las
+iteraciones del algoritmo.
+
+Por inducci\'on, se puede ver que mientras el flujo remanente
+sea mayor que $k$ (es decir, en todos los pasos excepto en el \'ultimo)
+y mientras haya un camino de aumento,
+la capacidad del camino de aumento encontrado entre $v_A$ y $v_B$
+es $k$, y adem\'as el flujo asignado a cada uno de los restantes ejes
+del grafo (exceptuando el eje $(v_0,v_A)$) es o bien $0$ o bien $k$
+(es decir, si se pasa flujo por un eje, esto se hace hasta saturar
+la capacidad).
+
+En el caso base, el flujo es $0$ y la capacidad del camino de
+aumento es $k$. En una iteraci\'on $i > 0$, la capacidad del
+camino de aumento entre $v_A$ y $v_B$ est\'a dada por el m\'inimo
+de las capacidades de los ejes en el grafo residual. Si un eje
+tiene asignado flujo $k$, su capacidad residual es $0$ y la
+capacidad residual del eje reverso es $2k$. Si un eje tiene
+asignado flujo $0$, su capacidad residual y la de su eje reverso
+son ambas $k$.
+
+Despu\'es de la primera iteraci\'on, hay al menos un camino $C_1$
+desde $v_A$ hasta $v_B$ cuyos ejes tienen asignado flujo positivo
+(esto es porque el algoritmo de Ford-Fulkerson en todo
+momento mantiene un conjunto de caminos disjuntos desde $v_0$
+hasta $v_B$).
+Por lo tanto, en la iteraci\'on $i > 0$, no puede ocurrir que haya
+un camino de aumento $C_2$ desde $v_A$ hasta $v_B$ que tenga
+capacidad $2k$ (es decir, tomando siempre ejes con flujo
+en un sentido y satur\'andolos en el sentido opuesto),
+porque si esto ocurriera se podr\'ia construir un ciclo de costo negativo 
+combinando los caminos $C_1$ y $C_2$. Esto es así porque se puede
+pasar flujo por $C_2$ en la dirección opuesta sin aumentar el costo, 
+ya que el costo se estaba pagando antes, pero pasando flujo en la otra
+dirección, y luego dejar de pasar flujo por $C_1$, lo cual disminuye el costo,
+ya que los costos de los ejes son positivos, por lo cual son mayores a $0$.
+
+Por lo tanto, el camino de aumento tiene capacidad $k$.
+Una vez determinado esto, los flujos de los ejes se
+actualizan restando o sumando $k$ en el eje y en el eje
+reverso, de tal manera que cada uno sigue teniendo
+correspondientemente flujo $0$ o $k$.
+
+Por \'ultimo, si en alguna iteraci\'on la capacidad residual
+de $(v_0,v_A)$ es menor que $k$, el algoritmo termina en esa
+iteraci\'on. Dado que todos los caminos de aumento tienen
+capacidad $k$, la capacidad residual del eje $(v_0,v_A)$ debe
+ser $m\mod k$. Despu\'es de esta \'ultima iteraci\'on, deja de
+valer la propiedad sobre el flujo asignado a cada uno de los ejes,
+pero la capacidad residual del eje $(v_0,v_A)$ queda en $0$
+y por lo tanto el algoritmo termina.
+
+Este razonamiento permite acotar la cantidad de iteraciones
+de Ford-Fulkerson por $\lceil\frac{m}{k}\rceil$.
+Adem\'as, el costo de encontrar el camino de aumento de costo m\'inimo
+con Bellman-Ford es el de hacer a lo sumo $N - 1$ iteraciones
+(donde $N$ es la cantidad de nodos del grafo) en las que se
+recorren las $M$ aristas del grafo,
+representado con listas de adyacencia.
+La complejidad del algoritmo resulta entonces de las
+$O(\frac{m}{k})$ iteraciones, cada una con un costo de
+$O(N M)$, es decir $O(\frac{m}{k} N M)$.
+
+\subsection{Implementación}
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\\
+\hlline{\ 2\ }\hldir{\#include\ $<$iostream$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$map$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$vector$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$list$>$}\\
+\hlline{\ 6\ }\hlstd{}\hldir{\#include\ $<$cassert$>$}\\
+\hlline{\ 7\ }\hlstd{}\\
+\hlline{\ 8\ }\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{\ 9\ }\hlstd{}\\
+\hlline{10\ }\hlkwc{typedef\ }\hlstd{}\hlkwb{long\ long\ int\ }\hlstd{int64}\hlsym{;}\\
+\hlline{11\ }\hlstd{}\\
+\hlline{12\ }\hldir{\#define\ forsn(i,\ s,\ n)\ for\ (int64\ i\ =\ (s);\ i\ $<$\ (n);\ i++)}\\
+\hlline{13\ }\hlstd{}\hldir{\#define\ forn(i,\ n)\ forsn\ (i,\ 0,\ n)}\\
+\hlline{14\ }\hlstd{}\hldir{\#define\ forall(x,\ s)\ for\ (typeof((s).begin())\ x\ =\ (s).begin();\ x\ !=\ (s).end();\ x++)}\\
+\hlline{15\ }\hlstd{}\\
+\hlline{16\ }\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{int64}\hlsym{$>$\ }\hlstd{vint}\hlsym{;}\\
+\hlline{17\ }\hlstd{}\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{vint}\hlsym{$>$\ }\hlstd{vvint}\hlsym{;}\\
+\hlline{18\ }\hlstd{\\
+\hlline{19\ }int64\ n}\hlsym{;}\\
+\hlline{20\ }\hlstd{int64\ capacidad\textunderscore eje0}\hlsym{;}\\
+\hlline{21\ }\hlstd{int64\ capacidad\textunderscore enlace}\hlsym{;}\\
+\hlline{22\ }\hlstd{vvint\ grafo}\hlsym{;}\hlstd{\ \ }\hlsym{}\hlstd{}\hlslc{//\ listas\ de\ adyacencia}\\
+\hlline{23\ }\hlstd{vvint\ costo}\hlsym{;}\hlstd{\ \ }\hlsym{}\hlstd{}\hlslc{//\ matriz}\\
+\hlline{24\ }\hlstd{vvint\ flujo}\hlsym{;}\hlstd{\ \ }\hlsym{}\hlstd{}\hlslc{//\ matriz}\\
+\hlline{25\ }\hlstd{}\\
+\hlline{26\ }\hldir{\#define\ agregar(u,\ v,\ c)\ \{\ $\backslash$}\\
+\hlline{27\ }\hldir{\ grafo{[}u{]}.push\textunderscore back(v);\ $\backslash$}\\
+\hlline{28\ }\hldir{\ costo{[}u{]}{[}v{]}\ =\ (c);\ $\backslash$}\\
+\hlline{29\ }\hldir{\ grafo{[}v{]}.push\textunderscore back(u);\ $\backslash$}\\
+\hlline{30\ }\hldir{\ costo{[}v{]}{[}u{]}\ =\ (c);\ $\backslash$}\\
+\hlline{31\ }\hldir{\}}\\
+\hlline{32\ }\hlstd{}\\
+\hlline{33\ }\hldir{\#define\ capacidad(v,\ w)\ (((v)\ ==\ 0\ \textbar \textbar \ (w)\ ==\ 0)\ ?\ capacidad\textunderscore eje0\ :\ capacidad\textunderscore enlace)}\\
+\hlline{34\ }\hlstd{}\\
+\hlline{35\ }\hlkwb{void\ }\hlstd{}\hlkwd{print\textunderscore grafo\textunderscore residual}\hlstd{}\hlsym{()\ \{}\\
+\hlline{36\ }\hlstd{\ cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlstr{"{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}"}\hlstd{\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{37\ }\hlstd{\ }\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{v}\hlsym{,\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{38\ }\hlstd{}\hlstd{\ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{v\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{39\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forall\ }\hlstd{}\hlsym{(}\hlstd{vecino}\hlsym{,\ }\hlstd{grafo}\hlsym{{[}}\hlstd{v}\hlsym{{]})\ \{}\\
+\hlline{40\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlstr{"{-}{-}$>$\ "}\hlstd{}\hlsym{;}\\
+\hlline{41\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ {*}}\hlstd{vecino}\hlsym{;}\\
+\hlline{42\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlstr{"\ costo\ =\ "}\hlstd{\ }\hlsym{$<$$<$\ }\hlstd{costo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}{*}}\hlstd{vecino}\hlsym{{]};}\\
+\hlline{43\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlstr{"\ flujo\ =\ "}\hlstd{\ }\hlsym{$<$$<$\ }\hlstd{flujo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}{*}}\hlstd{vecino}\hlsym{{]}\ $<$$<$\ }\hlstd{}\hlstr{"\ /\ "}\hlstd{\ }\hlsym{$<$$<$\ }\hlstd{}\hlkwd{capacidad}\hlstd{}\hlsym{(}\hlstd{v}\hlsym{,\ {*}}\hlstd{vecino}\hlsym{);}\\
+\hlline{44\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{45\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{46\ }\hlstd{}\hlstd{\ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{47\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{48\ }\hlstd{}\hlsym{\}}\\
+\hlline{49\ }\hlstd{}\\
+\hlline{50\ }\hldir{\#define\ INF\ 0x7fffffff}\\
+\hlline{51\ }\hlstd{}\hldir{\#define\ No\textunderscore hay\textunderscore camino\ {-}1}\\
+\hlline{52\ }\hlstd{}\hldir{\#define\ signo(x)\ ((x)\ $<$\ 0\ ?\ {-}1\ :\ 1)}\\
+\hlline{53\ }\hlstd{int64\ }\hlkwd{caumento}\hlstd{}\hlsym{(}\hlstd{vint}\hlsym{\&\ }\hlstd{camino}\hlsym{)\ \{}\\
+\hlline{54\ }\hlstd{\ }\hlslc{//\ buscar\ el\ camino\ de\ aumento\ de\ costo\ minimo\ usando\ Bellman{-}Ford}\\
+\hlline{55\ }\hlstd{\ vint\ }\hlkwd{dist}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{INF}\hlsym{);}\\
+\hlline{56\ }\hlstd{\ vint\ }\hlkwd{ant}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ {-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{57\ }\hlstd{\\
+\hlline{58\ }\ dist}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}\ =\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{59\ }\hlstd{\\
+\hlline{60\ }\ }\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{it}\hlsym{,\ }\hlstd{n\ }\hlsym{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{61\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{//\ para\ cada\ arista\ del\ grafo\ residual}\\
+\hlline{62\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwb{bool\ }\hlstd{cambio\ }\hlsym{=\ }\hlstd{}\hlkwa{false}\hlstd{}\hlsym{;}\\
+\hlline{63\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{v}\hlsym{,\ }\hlstd{n}\hlsym{)\ }\hlstd{}\hlkwd{forall\ }\hlstd{}\hlsym{(}\hlstd{vecino}\hlsym{,\ }\hlstd{grafo}\hlsym{{[}}\hlstd{v}\hlsym{{]})\ \{}\\
+\hlline{64\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwb{const\ }\hlstd{int64\ w\ }\hlsym{=\ {*}}\hlstd{vecino}\hlsym{;}\\
+\hlline{65\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwd{capacidad}\hlstd{}\hlsym{(}\hlstd{v}\hlsym{,\ }\hlstd{w}\hlsym{)\ {-}\ }\hlstd{flujo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}}\hlstd{w}\hlsym{{]}\ $<$=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ }\hlstd{}\hlkwa{continue}\hlstd{}\hlsym{;}\\
+\hlline{66\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{dist}\hlsym{{[}}\hlstd{v}\hlsym{{]}\ ==\ }\hlstd{INF}\hlsym{)\ }\hlstd{}\hlkwa{continue}\hlstd{}\hlsym{;}\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ \ }\hlstd{int64\ ndist\ }\hlsym{=\ }\hlstd{dist}\hlsym{{[}}\hlstd{v}\hlsym{{]}\ +\ }\hlstd{}\hlkwd{signo}\hlstd{}\hlsym{(}\hlstd{flujo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}}\hlstd{w}\hlsym{{]})\ {*}\ }\hlstd{costo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}}\hlstd{w}\hlsym{{]};}\\
+\hlline{68\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{ndist\ }\hlsym{$<$\ }\hlstd{dist}\hlsym{{[}}\hlstd{w}\hlsym{{]})\ \{}\\
+\hlline{69\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{dist}\hlsym{{[}}\hlstd{w}\hlsym{{]}\ =\ }\hlstd{ndist}\hlsym{;}\\
+\hlline{70\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{ant}\hlsym{{[}}\hlstd{w}\hlsym{{]}\ =\ }\hlstd{v}\hlsym{;}\\
+\hlline{71\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{cambio\ }\hlsym{=\ }\hlstd{}\hlkwa{true}\hlstd{}\hlsym{;}\\
+\hlline{72\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{73\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{74\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(!}\hlstd{cambio}\hlsym{)\ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{75\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{76\ }\hlstd{\\
+\hlline{77\ }\ }\hlslc{//\ armar\ el\ camino}\\
+\hlline{78\ }\hlstd{\ int64\ costo\textunderscore camino\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{79\ }\hlstd{\ int64\ actual\ }\hlsym{=\ }\hlstd{n\ }\hlsym{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{80\ }\hlstd{\ }\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{}\hlkwa{true}\hlstd{}\hlsym{)\ \{}\\
+\hlline{81\ }\hlstd{}\hlstd{\ \ }\hlstd{camino}\hlsym{.}\hlstd{}\hlkwd{push\textunderscore back}\hlstd{}\hlsym{(}\hlstd{actual}\hlsym{);}\\
+\hlline{82\ }\hlstd{}\hlstd{\ \ }\hlstd{int64\ anterior\ }\hlsym{=\ }\hlstd{ant}\hlsym{{[}}\hlstd{actual}\hlsym{{]};}\\
+\hlline{83\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{anterior\ }\hlsym{==\ {-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ }\hlstd{}\hlkwa{break}\hlstd{}\hlsym{;}\\
+\hlline{84\ }\hlstd{}\hlstd{\ \ }\hlstd{costo\textunderscore camino\ }\hlsym{+=\ }\hlstd{}\hlkwd{signo}\hlstd{}\hlsym{(}\hlstd{flujo}\hlsym{{[}}\hlstd{anterior}\hlsym{{]}{[}}\hlstd{actual}\hlsym{{]})\ {*}\ }\hlstd{costo}\hlsym{{[}}\hlstd{anterior}\hlsym{{]}{[}}\hlstd{actual}\hlsym{{]};}\\
+\hlline{85\ }\hlstd{}\hlstd{\ \ }\hlstd{actual\ }\hlsym{=\ }\hlstd{anterior}\hlsym{;}\\
+\hlline{86\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{87\ }\hlstd{\ }\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{actual\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{88\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{return\ }\hlstd{costo\textunderscore camino}\hlsym{;}\\
+\hlline{89\ }\hlstd{\ }\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{90\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{return\ }\hlstd{No\textunderscore hay\textunderscore camino}\hlsym{;}\\
+\hlline{91\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{92\ }\hlstd{}\hlsym{\}}\\
+\hlline{93\ }\hlstd{\\
+\hlline{94\ }int64\ }\hlkwd{resolver}\hlstd{}\hlsym{()\ \{}\\
+\hlline{95\ }\hlstd{\ int64\ flujo\textunderscore total\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{96\ }\hlstd{\ int64\ costo\textunderscore total\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{97\ }\hlstd{\ }\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{flujo\textunderscore total\ }\hlsym{$<$\ }\hlstd{capacidad\textunderscore eje0}\hlsym{)\ \{}\\
+\hlline{98\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{//print\textunderscore grafo\textunderscore residual();}\\
+\hlline{99\ }\hlstd{}\hlstd{\ \ }\hlstd{vint\ camino\textunderscore aumento}\hlsym{;}\\
+\hlline{100\ }\hlstd{}\hlstd{\ \ }\hlstd{int64\ costo\textunderscore camino\ }\hlsym{=\ }\hlstd{}\hlkwd{caumento}\hlstd{}\hlsym{(}\hlstd{camino\textunderscore aumento}\hlsym{);}\\
+\hlline{101\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{costo\textunderscore camino\ }\hlsym{==\ }\hlstd{No\textunderscore hay\textunderscore camino}\hlsym{)\ }\hlstd{}\hlkwa{return\ }\hlstd{No\textunderscore hay\textunderscore camino}\hlsym{;}\\
+\hlline{102\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{//\ saturar\ el\ camino\ de\ aumento}\\
+\hlline{103\ }\hlstd{}\hlstd{\ \ }\hlstd{int64\ mn\ }\hlsym{=\ }\hlstd{INF}\hlsym{;}\\
+\hlline{104\ }\hlstd{}\hlstd{\ \ }\hlstd{\\
+\hlline{105\ }}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{camino\textunderscore aumento}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ {-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{106\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwb{const\ }\hlstd{int64\ v\ }\hlsym{=\ }\hlstd{camino\textunderscore aumento}\hlsym{{[}}\hlstd{i\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]},\ }\hlstd{w\ }\hlsym{=\ }\hlstd{camino\textunderscore aumento}\hlsym{{[}}\hlstd{i}\hlsym{{]};}\\
+\hlline{107\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{flujo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}}\hlstd{w}\hlsym{{]}\ $<$\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{mn\ }\hlsym{=\ }\hlstd{}\hlkwd{min}\hlstd{}\hlsym{(}\hlstd{mn}\hlsym{,\ {-}}\hlstd{flujo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}}\hlstd{w}\hlsym{{]});}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{110\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{mn\ }\hlsym{=\ }\hlstd{}\hlkwd{min}\hlstd{}\hlsym{(}\hlstd{mn}\hlsym{,\ }\hlstd{}\hlkwd{capacidad}\hlstd{}\hlsym{(}\hlstd{v}\hlsym{,\ }\hlstd{w}\hlsym{)\ {-}\ }\hlstd{flujo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}}\hlstd{w}\hlsym{{]});}\\
+\hlline{111\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{112\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{113\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{camino\textunderscore aumento}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ {-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{114\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwb{const\ }\hlstd{int64\ v\ }\hlsym{=\ }\hlstd{camino\textunderscore aumento}\hlsym{{[}}\hlstd{i\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]},\ }\hlstd{w\ }\hlsym{=\ }\hlstd{camino\textunderscore aumento}\hlsym{{[}}\hlstd{i}\hlsym{{]};}\\
+\hlline{115\ }\hlstd{}\hlstd{\ \ \ }\hlstd{flujo}\hlsym{{[}}\hlstd{v}\hlsym{{]}{[}}\hlstd{w}\hlsym{{]}\ +=\ }\hlstd{mn}\hlsym{;}\\
+\hlline{116\ }\hlstd{}\hlstd{\ \ \ }\hlstd{flujo}\hlsym{{[}}\hlstd{w}\hlsym{{]}{[}}\hlstd{v}\hlsym{{]}\ {-}=\ }\hlstd{mn}\hlsym{;}\\
+\hlline{117\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{118\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{mn\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ }\hlstd{}\hlkwa{return\ }\hlstd{No\textunderscore hay\textunderscore camino}\hlsym{;}\\
+\hlline{119\ }\hlstd{}\hlstd{\ \ }\hlstd{flujo\textunderscore total\ }\hlsym{+=\ }\hlstd{mn}\hlsym{;}\\
+\hlline{120\ }\hlstd{}\hlstd{\ \ }\hlstd{costo\textunderscore total\ }\hlsym{+=\ }\hlstd{costo\textunderscore camino\ }\hlsym{{*}\ }\hlstd{mn}\hlsym{;}\\
+\hlline{121\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{122\ }\hlstd{\\
+\hlline{123\ }\ }\hlkwa{return\ }\hlstd{costo\textunderscore total}\hlsym{;}\\
+\hlline{124\ }\hlstd{}\hlsym{\}}\\
+\hlline{125\ }\hlstd{}\\
+\hlline{126\ }\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{()\ \{}\\
+\hlline{127\ }\hlstd{\ int64\ m}\hlsym{;}\\
+\hlline{128\ }\hlstd{\ }\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{cin\ }\hlsym{$>$$>$\ }\hlstd{n\ }\hlsym{$>$$>$\ }\hlstd{m}\hlsym{)\ \{}\\
+\hlline{129\ }\hlstd{}\hlstd{\ \ }\hlstd{n}\hlsym{++;}\\
+\hlline{130\ }\hlstd{}\hlstd{\ \ }\hlstd{grafo\ }\hlsym{=\ }\hlstd{}\hlkwd{vvint}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlkwd{vint}\hlstd{}\hlsym{());}\\
+\hlline{131\ }\hlstd{}\hlstd{\ \ }\hlstd{costo\ }\hlsym{=\ }\hlstd{}\hlkwd{vvint}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlkwd{vint}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{));}\\
+\hlline{132\ }\hlstd{}\hlstd{\ \ }\hlstd{flujo\ }\hlsym{=\ }\hlstd{}\hlkwd{vvint}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlkwd{vint}\hlstd{}\hlsym{(}\hlstd{n}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{));}\\
+\hlline{133\ }\hlstd{\\
+\hlline{134\ }}\hlstd{\ \ }\hlstd{}\hlkwd{agregar}\hlstd{}\hlsym{(}\hlstd{}\hlnum{0}\hlstd{}\hlsym{,\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{135\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{m}\hlsym{)\ \{}\\
+\hlline{136\ }\hlstd{}\hlstd{\ \ \ }\hlstd{int64\ v1}\hlsym{,\ }\hlstd{v2}\hlsym{,\ }\hlstd{c}\hlsym{;}\\
+\hlline{137\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cin\ }\hlsym{$>$$>$\ }\hlstd{v1\ }\hlsym{$>$$>$\ }\hlstd{v2\ }\hlsym{$>$$>$\ }\hlstd{c}\hlsym{;}\\
+\hlline{138\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{agregar}\hlstd{}\hlsym{(}\hlstd{v1}\hlsym{,\ }\hlstd{v2}\hlsym{,\ }\hlstd{c}\hlsym{);}\\
+\hlline{139\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{140\ }\hlstd{}\hlstd{\ \ }\hlstd{cin\ }\hlsym{$>$$>$\ }\hlstd{capacidad\textunderscore eje0\ }\hlsym{$>$$>$\ }\hlstd{capacidad\textunderscore enlace}\hlsym{;}\\
+\hlline{141\ }\hlstd{}\hlstd{\ \ }\hlstd{int64\ r\ }\hlsym{=\ }\hlstd{}\hlkwd{resolver}\hlstd{}\hlsym{();}\\
+\hlline{142\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{r\ }\hlsym{==\ }\hlstd{No\textunderscore hay\textunderscore camino}\hlsym{)\ \{}\\
+\hlline{143\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{}\hlstr{"Impossible."}\hlstd{\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{144\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{145\ }\hlstd{}\hlstd{\ \ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{r\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{146\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{147\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{148\ }\hlstd{\ }\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{149\ }\hlstd{}\hlsym{\}}\\
+\hlline{150\ }\hlstd{}\\
+\mbox{}
+\normalfont
+\shorthandon{"}
+

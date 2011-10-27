@@ -1,0 +1,165 @@
+\documentclass[10pt,a4paper,notitlepage]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{algorithmic}
+
+\begin{document}
+
+\section{100 - The $3n + 1$ problem}
+
+\section{861 - Little bishops}
+
+\section{10020 - Minimal coverage}
+
+Problema: dado un conjunto de intervalos $[L_i,R_i)$, determinar
+un subconjunto que cubra el segmento $[0,M)$ y que sea m\'inimo
+(en el sentido de cardinalidad). En el enunciado los intervalos
+se notan $[L,R]$, pero como los extremos son enteros y hay que
+cubrir intervalos reales, los problemas son equivalentes.
+
+Se resolvi\'o mediante una t\'ecnica golosa. La idea del algoritmo
+es tomar en cada paso alguno de los intervalos cuyo borde izquierdo
+ya se encuentre cubierto (o a lo sumo coincida con el punto m\'as chico
+que todav\'ia no est\'e cubierto) y cuyo borde derecho sea lo mayor posible.
+
+\vspace{10pt}
+\begin{algorithmic}
+\STATE Entrada: $A$: conjunto de intervalos $[L,R)$.
+\STATE Salida: $S$: un conjunto m\'inimo de intervalos de $A$ que cubren $[0,M)$.
+\STATE $A^\star :=$ intervalos no vac\'ios de $A$ ordenados crecientemente por $L$.
+\STATE $final := 0$
+\STATE $S := [\,]$
+\WHILE {$final < M$}
+  \IF {$A^\star$ es vac\'ia $\lor$ \big($A^\star_0 = [L,R)$ con $L > final$\big)}
+    \STATE --- No se puede cubrir el intervalo $[0,M)$ ---
+    \STATE Fallar.
+  \ELSE
+    \STATE $C := \{ [L,R) \gets A^\star \text{ tales que } L \leq final \}$
+    \STATE --- $C$ corresponde a un prefijo no vac\'io de $A^\star$ ---
+    \STATE $I := [L_I,R_I) \in C$ tal que $R_I = \max\{R : [L,R) \in C\}$
+    \IF {$R_I \leq final$}
+      \STATE --- No se puede cubrir el intervalo $[0,M)$ ---
+      \STATE Fallar.
+    \ENDIF
+    \STATE Agregar $I$ a $S$.
+    \STATE $A^\star := $ sufijo de $A^\star$ omitiendo los primeros $\#C$ elementos
+    \STATE $final := R_I$
+  \ENDIF
+\ENDWHILE
+\end{algorithmic}
+\vspace{10pt}
+
+El algoritmo termina porque en la rama del {\bf else}
+el conjunto $C$ nunca es vac\'io, y por lo tanto $A^\star$
+se va achicando.
+
+El invariante del algoritmo es que los intervalos en $S$ cubren el
+intervalo $[0,final)$.
+Al entrar en una iteraci\'on, todav\'ia falta cubrir el intervalo
+$[final, M)$. En la rama del {\bf then}, no se puede cubrir
+$[final, M)$ y por lo tanto tampoco $[0,M)$.
+
+En la rama del {\bf else}, es claro que el conjunto $C$ no es vac\'io.
+Corresponde a un prefijo de $A^\star$ porque los elementos de $A^\star$
+est\'an ordenados. Si hay soluci\'on, al menos un intervalo de $C$ debe
+figurar en ella, porque todos los intervalos restantes de $A^\star$ no
+cubren el punto $final$. Se puede encontrar una soluci\'on m\'inima
+tomando $I$ como alguno de los intervalos de $C$ cuyo extremo
+derecho sea mayor.
+Al incluir $I$ en la soluci\'on, todos los dem\'as intervalos
+de $C$ quedan cubiertos por el contenido de $S$ y por lo tanto
+se pueden excluir de $A^\star$.
+
+Adem\'as, incluir $I$ en la soluci\'on no puede ser una mala
+decisi\'on (que ``moleste'' en iteraciones posteriores), porque
+el hecho de elegir un valor m\'as grande de $R_I$ hace que
+en iteraciones posteriores el valor de $final$ sea mayor y
+por lo tanto el conjunto $C$ incluya m\'as intervalos.
+
+Para una entrada de $n$ intervalos, la complejidad del algoritmo
+es $O(n \log n)$ en peor caso. El paso m\'as costoso es ordenarlos.
+Es claro que el resto del algoritmo se reduce a
+hacer una pasada sobre los intervalos ya ordenados\footnote{
+Se podr\'ia mejorar la complejidad para que ordenarlos
+fuera $O(n)$ haciendo bucket sort. El enunciado afirma que el valor
+de los extremos $L_i, R_i$ es a lo sumo $50000$. Pueden ser negativos,
+pero para este problema ser\'ia equivalente considerar los
+intervalos $[\max(L_i,0),\max(R_i,0))$.
+}.
+Las operaciones para manipular intervalos son $O(1)$ porque
+los extremos se representan con enteros de 32 bits.
+
+En la implementaci\'on del algoritmo en C++ no se incluye el {\bf if}
+cuya condici\'on es $R_I \leq final$. En ese caso, el
+algoritmo falla en la siguiente iteraci\'on, porque si
+$A^\star$ no es vac\'ia, el primer intervalo no puede ser
+tal que $L \leq final$.
+
+\section{10069 - Distinct subsequences}
+
+Problema: dadas dos strings $x = x_0 \hdots x_n$ y $z = z_0 \hdots z_m$,
+determinar la cantidad de ocurrencias distintas de $z$ como subsecuencia de $x$.
+(Dos ocurrencias son distintas si les corresponden distintas secuencias
+de \'indices).
+
+Se resolvi\'o mediante un algoritmo de programaci\'on din\'amica.
+Se define la siguiente funci\'on $M(i,j)$ para $i \in [0,n]$, $j \in [0,m]$:
+$$M(i,j) = \text{cantidad de ocurrencias de $z[0..j)$ como subsecuencia de $x[0..i)$}$$
+
+\noindent
+Definida concretamente por las siguientes ecuaciones:
+
+\vspace{10pt}
+\begin{tabular}{ll}
+$M(i,0) = 1$ &\vspace{5pt}\\
+$M(0,j) = 0$ \text{ (para $j > 0$)}&\vspace{5pt}\\
+$M(i,j) = M(i - 1, j) + \begin{cases}
+M(i - 1, j - 1) & \text{ si $x_{i - 1}$ = $z_{j - 1}$ }\\
+0 & \text{ si no}
+\end{cases}$
+& (para $i, j > 0$)
+\end{tabular}
+\vspace{10pt}
+
+La primera ecuaci\'on afirma que la cadena vac\'ia ocurre una vez en cualquier otra cadena
+(la secuencia de \'indices de la cadena vac\'ia es una secuencia vac\'ia).
+La segunda ecuaci\'on afirma que cualquier cadena no vac\'ia no ocurre en la cadena vac\'ia.
+En la tercera ecuaci\'on se afirma que:
+\begin{itemize}
+\item Todas las ocurrencias de $z[0..j)$ en $x[0..i-1)$
+      son ocurrencias de $z[0..j)$ en $x[0..i)$.
+\item Adem\'as, si $x_{i - 1} = z_{j - 1}$, cada una de las ocurrencias de
+      $z[0..j-1)$ en $x[0..i-1)$ tiene asociada una ocurrencia de
+      $z[0..j)$ en $x[0..i)$.
+\item Es claro que no puede haber otras ocurrencias de $z[0..j)$ en $x[0..i)$
+      y que los dos tipos de ocurrencias descriptos son disjuntos,
+      de modo que alcanza con sumarlos.
+\end{itemize}
+
+El algoritmo se implementa computando la matriz de la funci\'on $M$,
+visitando una vez cada posici\'on de la matriz. S\'olo se necesita el
+resultado, $M(n,m) = $ cantidad de ocurrencias de $z$ en $x$. Alcanza
+con mantener en memoria s\'olo las dos \'ultimas columnas de $M(i,j)$.
+La complejidad temporal es $O(n \cdot m)$ en peor caso.
+
+\subsection{Aritm\'etica de n\'umeros grandes}
+
+El enunciado afirma que $|x| \leq 10000$, $|z| \leq 100$ y que la cantidad de
+ocurrencias de $z$ en $x$ es a lo sumo $10^{100}$, que obviamente no cabe en registros
+de 64 bits. Adem\'as, la afirmaci\'on no es espuria porque {\em pueden} darse
+situaciones en las que el n\'umero de ocurrencias sea mucho mayor que $10^{100}$.
+Por ejemplo, tomando $x = a^{10000}$ y $z = a^{100}$, hay
+$10000 \choose 100$ ocurrencias de $z$ en $x$.
+
+La \'unica operaci\'on requerida por el algoritmo es la suma de n\'umeros
+grandes. Se program\'o una clase \texttt{BigInt} que representa
+un n\'umero natural con un vector de 16 d\'igitos en base
+$10^8$. Esto permite representar enteros en $[0,10^{128})$
+e imprimir la salida en base 10 sin recurrir a divisiones.
+
+La suma de n\'umeros grandes es $O(1)$ porque est\'an representados
+con un arreglo que siempre tiene exactamente 16 d\'igitos. La
+implementaci\'on de la suma con carry es la usual.
+
+\end{document}
+

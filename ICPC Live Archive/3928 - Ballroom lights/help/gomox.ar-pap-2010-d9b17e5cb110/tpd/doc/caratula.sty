@@ -1,0 +1,290 @@
+% **************************************************************************
+%
+%  Package 'caratula', version 0.3 (para componer caratulas de TPs del DC).
+%
+%  En caso de dudas, problemas o sugerencias sobre este package escribir a
+%  Brian J. Cardiff (bcardif arroba gmail.com).
+%  Nico Rosner (nrosner arroba dc.uba.ar).
+%
+% **************************************************************************
+
+% ----- Informacion sobre el package para el sistema -----------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{caratula}[2005/08/09 v0.4 Para componer caratulas de TPs del DC]
+\RequirePackage{ifthen}
+\usepackage[pdftex]{graphicx}
+
+% ----- Imprimir un mensajito al procesar un .tex que use este package -----
+
+\typeout{Cargando package 'caratula' v0.4 (2006/09/29)}
+
+% ----- Algunas variables --------------------------------------------------
+
+\let\Materia\relax
+\let\Submateria\relax
+\let\Titulo\relax
+\let\Subtitulo\relax
+\let\Grupo\relax
+\let\Fecha\relax
+\let\Logoimagefile\relax
+\let\Resumen\relax
+\newcommand{\LabelIntegrantes}{}
+\newboolean{showLU}
+\newboolean{showDirectores}
+
+% ----- Comandos para que el usuario defina las variables ------------------
+
+\def\materia#1{\def\Materia{#1}}
+\def\submateria#1{\def\Submateria{#1}}
+\def\titulo#1{\def\Titulo{#1}}
+\def\subtitulo#1{\def\Subtitulo{#1}}
+\def\grupo#1{\def\Grupo{#1}}
+\def\fecha#1{\def\Fecha{#1}}
+\def\logoimagefile#1{\def\Logoimagefile{#1}}
+\def\resumen#1{\def\Resumen{#1}}
+
+% ----- Token list para los integrantes ------------------------------------
+
+\newtoks\intlist\intlist={}
+
+\newtoks\intlistSinLU\intlistSinLU={}
+
+\newcounter{integrantesCount}
+\setcounter{integrantesCount}{0}
+\newtoks\intTabNombre\intTabNombre={}
+\newtoks\intTabLU\intTabLU={}
+\newtoks\intTabEmail\intTabEmail={}
+
+\newcounter{directoresCount}
+\setcounter{directoresCount}{0}
+\newtoks\direcTabNombre\direcTabNombre={}
+\newtoks\direcTabEmail\direcTabEmail={}
+
+% ----- Comando para que el usuario agregue integrantes --------------------
+
+\def\integrante#1#2#3{%
+    \intlist=\expandafter{\the\intlist\rule{0pt}{1.2em}#1&#2&\tt #3\\[0.2em]}%
+    \intlistSinLU=\expandafter{\the\intlistSinLU\rule{0pt}{1.2em}#1 & \tt #3\\[0.2em]}%
+    %
+    \ifthenelse{\value{integrantesCount} > 0}{%
+        \intTabNombre=\expandafter{\the\intTabNombre & #1}%
+        \intTabLU=\expandafter{\the\intTabLU & #2}%
+        \intTabEmail=\expandafter{\the\intTabEmail & \tt #3}%
+    }{
+        \intTabNombre=\expandafter{\the\intTabNombre #1}%
+        \intTabLU=\expandafter{\the\intTabLU #2}%
+        \intTabEmail=\expandafter{\the\intTabEmail \tt #3}%
+    }%
+    \addtocounter{integrantesCount}{1}%
+}
+
+\def\director#1#2{%
+    \ifthenelse{\value{directoresCount} > 0}{%
+        \direcTabNombre=\expandafter{\the\direcTabNombre & #1}%
+        \direcTabEmail=\expandafter{\the\direcTabEmail & \tt #2}%
+    }{
+        \direcTabNombre=\expandafter{\the\direcTabNombre #1}%
+        \direcTabEmail=\expandafter{\the\direcTabEmail \tt #2}%
+    }%
+    \addtocounter{directoresCount}{1}%
+}
+
+% ----- Macro para generar la tabla de integrantes -------------------------
+
+\newcommand{\tablaIntegrantes}{\ }
+
+\newcommand{\tablaIntegrantesVertical}{%
+\ifthenelse{\boolean{showLU}}{%
+    \begin{tabular}[t]{| l @{\hspace{4ex}} c @{\hspace{4ex}} l|}
+        \hline
+        \multicolumn{1}{|c}{\rule{0pt}{1.2em} \LabelIntegrantes} & LU &  \multicolumn{1}{c|}{Correo electr\'onico} \\[0.2em]
+        \hline \hline
+        \the\intlist
+        \hline
+    \end{tabular}
+}{
+    \begin{tabular}[t]{| l @{\hspace{4ex}} @{\hspace{4ex}} l|}
+        \hline
+        \multicolumn{1}{|c}{\rule{0pt}{1.2em} \LabelIntegrantes} &  \multicolumn{1}{c|}{Correo electr\'onico} \\[0.2em]
+        \hline \hline
+        \the\intlistSinLU
+        \hline
+    \end{tabular}
+    }%
+}
+
+\newcommand{\tablaIntegrantesHorizontal}{%
+    \begin{tabular}[t]{ *{\value{integrantesCount}}{c} }
+    \the\intTabNombre \\%
+\ifthenelse{\boolean{showLU}}{
+    \the\intTabLU \\%
+}{}
+    \the\intTabEmail %
+    \end{tabular}%
+}
+
+\newcommand{\tablaDirectores}{%
+\ifthenelse{\boolean{showDirectores}}{%
+	\bigskip
+	Directores
+
+	\smallskip
+    \begin{tabular}[t]{ *{\value{directoresCount}}{c} }
+    \the\direcTabNombre \\%
+    \the\direcTabEmail %
+    \end{tabular}%
+}{}%
+}
+
+% ----- Codigo para manejo de errores --------------------------------------
+
+\def\se{\let\ifsetuperror\iftrue}
+\def\ifsetuperror{%
+    \let\ifsetuperror\iffalse
+    \ifx\Materia\relax\se\errhelp={Te olvidaste de proveer una \materia{}.}\fi
+    \ifx\Titulo\relax\se\errhelp={Te olvidaste de proveer un \titulo{}.}\fi
+    \edef\mlist{\the\intlist}\ifx\mlist\empty\se%
+    \errhelp={Tenes que proveer al menos un \integrante{nombre}{lu}{email}.}\fi
+    \expandafter\ifsetuperror}
+
+
+% ----- \maketitletxt correspondiente a la versión v0.2.1 (texto v0.2 + fecha ) ---------
+
+\def\maketitletxt{%
+    \ifsetuperror\errmessage{Faltan datos de la caratula! Ingresar 'h' para mas informacion.}\fi
+    \thispagestyle{empty}
+    \begin{center}
+    \vspace*{\stretch{2}}
+    {\LARGE\textbf{\Materia}}\\[1em]
+    \ifx\Submateria\relax\else{\Large \Submateria}\\[0.5em]\fi
+    \ifx\Fecha\relax\else{\Large \Fecha}\\[0.5em]\fi
+    \par\vspace{\stretch{1}}
+    {\large Departamento de Computaci\'on}\\[0.5em]
+    {\large Facultad de Ciencias Exactas y Naturales}\\[0.5em]
+    {\large Universidad de Buenos Aires}
+    \par\vspace{\stretch{3}}
+    {\Large \textbf{\Titulo}}\\[0.8em]
+    {\Large \Subtitulo}
+    \par\vspace{\stretch{3}}
+    \ifx\Grupo\relax\else\textbf{\Grupo}\par\bigskip\fi
+    \tablaIntegrantes
+    \end{center}
+    \vspace*{\stretch{3}}
+    \newpage}
+
+% ----- \maketitletxtlogo correspondiente v0.2.1 (texto con fecha y logo) ---------
+
+\def\maketitletxtlogo{%
+    \ifsetuperror\errmessage{Faltan datos de la caratula! Ingresar 'h' para mas informacion.}\fi
+    \thispagestyle{empty}
+    \begin{center}
+    \ifx\Logoimagefile\relax\else\includegraphics{\Logoimagefile}\fi \hfill \includegraphics{./figuras/logo_dc.jpg}\\[1em]
+    \vspace*{\stretch{2}}
+    {\LARGE\textbf{\Materia}}\\[1em]
+    \ifx\Submateria\relax\else{\Large \Submateria}\\[0.5em]\fi
+    \ifx\Fecha\relax\else{\large \Fecha}\\[0.5em]\fi
+    \par\vspace{\stretch{1}}
+    {\large Departamento de Computaci\'on}\\[0.5em]
+    {\large Facultad de Ciencias Exactas y Naturales}\\[0.5em]
+    {\large Universidad de Buenos Aires}
+    \par\vspace{\stretch{3}}
+    {\Large \textbf{\Titulo}}\\[0.8em]
+    {\Large \Subtitulo}
+    \par\vspace{\stretch{3}}
+    \ifx\Grupo\relax\else\textbf{\Grupo}\par\bigskip\fi
+    \tablaIntegrantes
+    \end{center}
+    \vspace*{\stretch{4}}
+    \newpage}
+
+% ----- \maketitlegraf correspondiente a la versión v0.3 (gráfica) -------------
+
+\def\maketitlegraf{%
+    \ifsetuperror\errmessage{Faltan datos de la caratula! Ingresar 'h' para mas informacion.}\fi
+%
+    \thispagestyle{empty}
+
+    \ifx\Logoimagefile\relax\else\includegraphics{\Logoimagefile}\fi \hfill \includegraphics{./figuras/logo_dc.jpg}
+
+    \vspace*{.12 \textheight}
+
+    \noindent \textbf{\huge \Titulo}  \medskip \\
+    \ifx\Subtitulo\relax\else\noindent\textbf{\large \Subtitulo} \\ \fi%
+    \noindent \rule{\textwidth}{1 pt}
+
+    {\noindent\large\Fecha \hspace*\fill \Materia} \\
+    \ifx\Submateria\relax\else{\noindent \hspace*\fill \Submateria}\fi%
+
+    \medskip%
+    \begin{center}
+        \ifx\Grupo\relax\else\textbf{\Grupo}\par\bigskip\fi
+        \tablaIntegrantes
+
+        \tablaDirectores
+    \end{center}%
+    \vfill%
+ 		%	\begin{abstract}
+		\small{\Resumen}
+	 %\end{abstract}
+	 
+    \begin{minipage}[t]{\textwidth}
+        \begin{minipage}[t]{.55 \textwidth}
+            \includegraphics{./figuras/logo_uba.jpg}
+        \end{minipage}%%
+        \begin{minipage}[b]{.5 \textwidth}
+            \textbf{\textsf{Facultad de Ciencias Exactas y Naturales}} \\
+            \textsf{Universidad de Buenos Aires} \\
+            {\scriptsize %
+            Ciudad Universitaria - (Pabell\'on I/Planta Baja) \\
+                Intendente G\"uiraldes 2160 - C1428EGA \\
+            Ciudad Aut\'onoma de Buenos Aires - Rep. Argentina \\
+                Tel/Fax: (54 11) 4576-3359 \\
+            http://www.fcen.uba.ar \\
+            }
+        \end{minipage}
+    \end{minipage}%
+	
+    \newpage}
+
+% ----- Reemplazamos el comando \maketitle de LaTeX con el nuestro ---------
+\renewcommand{\maketitle}{\maketitlegraf}
+
+% ----- Dependiendo de las opciones ---------
+%
+% opciones:
+%   txt     : caratula solo texto.
+%   txtlogo : caratula txt con logo del DC y del grupo (opcional).
+%   graf    : (default) caratula grafica con logo del DC, UBA y del grupo (opcional).
+%
+\@makeother\*% some package redefined it as a letter (as color.sty)
+%
+% Layout general de la caratula
+%
+\DeclareOption{txt}{\renewcommand{\maketitle}{\maketitletxt}}
+\DeclareOption{txtlogo}{\renewcommand{\maketitle}{\maketitletxtlogo}}
+\DeclareOption{graf}{\renewcommand{\maketitle}{\maketitlegraf}}
+%
+% Etiqueta Autores o Integrantes
+%
+\DeclareOption{integrante}{\renewcommand{\LabelIntegrantes}{Integrante}}
+\DeclareOption{autor}{\renewcommand{\LabelIntegrantes}{Autor}}
+%
+% Formato tabla de integrantes
+%
+\DeclareOption{intVert}{\renewcommand{\tablaIntegrantes}{\tablaIntegrantesVertical}}
+\DeclareOption{intHoriz}{\renewcommand{\tablaIntegrantes}{\tablaIntegrantesHorizontal}}
+\DeclareOption{conLU}{\setboolean{showLU}{true}}
+\DeclareOption{sinLU}{\setboolean{showLU}{false}}
+\DeclareOption{showDirectores}{\setboolean{showDirectores}{true}}
+\DeclareOption{hideDirectores}{\setboolean{showDirectores}{false}}
+%
+% Opciones predeterminadas
+%
+\ExecuteOptions{intVert}%
+\ExecuteOptions{graf}%
+\ExecuteOptions{integrante}%
+\ExecuteOptions{conLU}%
+\ExecuteOptions{hideDirectores}%
+%
+\ProcessOptions\relax

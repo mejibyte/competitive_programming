@@ -1,0 +1,118 @@
+%%	SECCION documentclass																									 %%	
+%%---------------------------------------------------------------------------%%
+\documentclass{article}
+
+%%---------------------------------------------------------------------------%%
+%%	SECCION usepackage																											 %%	
+%%---------------------------------------------------------------------------%%
+\usepackage{amsmath, amsthm}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{caratula}
+\usepackage{a4wide}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{dsfont}
+% \usepackage{moreverb}
+\usepackage{graphicx} % Para el logo magico!
+\usepackage{capt-of}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage{subfigure}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{amsfonts}
+\usepackage{code_color}
+\usepackage{amsthm}
+\usepackage{marvosym}
+%\usepackage{minipage}
+
+%%---------------------------------------------------------------------------%%
+%%	SECCION opciones																												 %%	
+%%---------------------------------------------------------------------------%%
+\parskip    = 11 pt
+\headheight	= 13.1pt
+\pagestyle	{fancy}
+\definecolor{orange}{rgb}{1,0.5,0}
+
+\addtolength{\headwidth}{1.0in}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.8in}
+\addtolength{\textheight}{0.7in}
+
+%%%---------------------------------------------------------------------------%%
+%%%	SECCION listings    													 %%	
+%%%---------------------------------------------------------------------------%%
+%\usepackage{listings}
+%\lstset{
+%		language=C++,
+%		basicstyle=\ttfamily \small,
+%		keepspaces=true,
+%		flexiblecolumns=false,
+%		basewidth={0.5em,0.45em},
+%		keywordstyle=\ttfamily \bfseries \hlkwa,
+%		tabsize=4
+%}
+
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Int}{\mathbb{Z}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\tq}{\ensuremath{\,|\,}}
+\newcommand{\imp}{\ensuremath{\Rightarrow}}
+
+%%---------------------------------------------------------------------------%%
+%%	SECCION document	 %%	
+%%---------------------------------------------------------------------------%%
+\begin{document}
+\renewcommand{\chaptername}{Parte }
+\input{trans_algorithmic.tex}
+%%---- Caratula -------------------------------------------------------------%%
+\materia{Problemas, algoritmos y programación (2010)}
+\titulo{Trabajo Pr'actico nº 4}
+
+
+\integrante{Barenbaum, Pablo}{124/04}{foones@gmail.com}
+\integrante{Mart'inez, Federico}{17/06}{federicoemartinez@gmail.com}
+\integrante{Sainz-Tr'apaga, Gonzalo}{454/06}{gonzalo@sainztrapaga.com.ar}
+\grupo{Grupo 1}
+\resumen{
+El siguiente informe presenta la resolución a los 4 problemas correspondientes al cuarto trabajo pr\'actico de la materia Problemas, Algoritmos y Programación en el primer cuatrimestre del 2010. En el mismo se encuentra la explicación del algoritmo utilizado para resolver cada problema, así como también la implementación en C++ de los mismos.
+}
+
+% TOC, usa estilos locos
+\maketitle
+\pagestyle{empty}
+{
+\fancypagestyle{plain}
+    {
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.0pt}
+    } % clear header and footer of plain page because of ToC
+%\tableofcontents
+}
+
+\newpage
+% arreglos los estilos para el resto del documento, y
+% reseteo los numeros de pagina para que queden bien
+\pagenumbering{arabic}
+\fancypagestyle{plain} {
+    \fancyhead[LO]{Barenbaum, Martínez, Sainz Trápaga}
+    \fancyhead[C]{}
+    \fancyhead[RO]{P\'agina \thepage\ de \pageref{LastPage}}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.4pt}
+}
+\pagestyle{plain}
+\input{disgruntled}
+\input{gnu}
+\input{walk}
+\input{ballroom}
+\label{LastPage}
+\end{document}
+

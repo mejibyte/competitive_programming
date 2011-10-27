@@ -1,0 +1,237 @@
+\section{10069 - Distinct subsequences}
+
+\textbf{Problema:} dadas dos strings $x = x_0 \hdots x_n$ y $z = z_0 \hdots z_m$,
+determinar la cantidad de ocurrencias distintas de $z$ como subsecuencia de $x$.
+(Dos ocurrencias son distintas si les corresponden distintas secuencias
+de \'indices).
+
+\subsection{Resolución}
+
+Se resolvi\'o mediante un algoritmo de programaci\'on din\'amica.
+Se define la siguiente funci\'on $M(i,j)$ para $i \in [0,n]$, $j \in [0,m]$:
+$$M(i,j) = \text{cantidad de ocurrencias de $z[0..j)$ como subsecuencia de $x[0..i)$}$$
+
+\noindent
+Definida concretamente por las siguientes ecuaciones:
+
+\vspace{10pt}
+\begin{tabular}{ll}
+$M(i,0) = 1$ &\vspace{5pt}\\
+$M(0,j) = 0$ \text{ (para $j > 0$)}&\vspace{5pt}\\
+$M(i,j) = M(i - 1, j) + \begin{cases}
+M(i - 1, j - 1) & \text{ si $x_{i - 1}$ = $z_{j - 1}$ }\\
+0 & \text{ si no}
+\end{cases}$
+& (para $i, j > 0$)
+\end{tabular}
+\vspace{10pt}
+
+La primera ecuaci\'on afirma que la cadena vac\'ia ocurre una vez en cualquier otra cadena
+(la secuencia de \'indices de la cadena vac\'ia es una secuencia vac\'ia).
+La segunda ecuaci\'on afirma que cualquier cadena no vac\'ia no ocurre en la cadena vac\'ia.
+En la tercera ecuaci\'on se afirma que:
+\begin{itemize}
+\item Todas las ocurrencias de $z[0..j)$ en $x[0..i-1)$
+      son ocurrencias de $z[0..j)$ en $x[0..i)$.
+
+\item Adem\'as, si $x_{i - 1} = z_{j - 1}$, cada una de las ocurrencias de
+      $z' = z[0..j-1)$ en $x' = x[0..i-1)$ tiene asociada una ocurrencia de
+      $z'' = z[0..j)$ en $x'' = x[0..i)$. Esto es porque si $z'$ ocurre en $x'$
+      con la secuencia de \'indices $\langle p_1, \hdots, p_{j-1} \rangle$, entonces
+      $z''$ ocurre en $x''$ con la secuencia de \'indices $\langle p_1, \hdots, p_{j-1}, i - 1 \rangle$.
+
+\item No puede haber otras ocurrencias de $z[0..j)$ en $x[0..i)$
+      (por simple an\'alisis de casos)
+      y adem\'as los dos tipos de ocurrencias descriptos son disjuntos
+      (porque en el primer caso la secuencia de \'indices nunca termina en $i - 1$).
+      Por lo tanto, la cantidad total de ocurrencias es la suma de estos
+      dos tipos de ocurrencias.
+\end{itemize}
+
+El algoritmo se implementa computando la matriz de la funci\'on $M$,
+visitando una vez cada posici\'on de la matriz. S\'olo se necesita el
+resultado, $M(n,m) = $ cantidad de ocurrencias de $z$ en $x$. Alcanza
+con mantener en memoria s\'olo las dos \'ultimas columnas de $M(i,j)$.
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Cantidad de ocurrencias de $z$ como subsecuencia de $x$}
+\PARAMS{$z$: string cuyas ocurrencias se quieren contar, $x$: string donde se buscan las ocurrencias de $z$}
+\STATE $M :=$ matriz de 2 filas por $largo(z) + 1$ columnas%%, tal que $m_{i,j}=0$
+\STATE $M_{i,0} := 1$ para $i \in \{1,2\}$
+\STATE $M_{0,j} := 0$ para $j > 0$
+\STATE $fila actual := 1$
+\STATE $otra fila := 0$
+\FOR{cada $i$ en $[1,largo(x)]$}
+	\FOR{cada $j$ en $[1,largo(z)]$}
+		\IF{$x_{i-1}$ es igual a  $z_{j-1}$}
+			\STATE $M_{filaactual, j} = M_{otrafila, j} + M_{otrafila, j-1}$
+		\ELSE
+			\STATE	$M_{filaactual, j} = M_{otrafila, j}$
+		\ENDIF
+	\ENDFOR
+	\STATE intercambiar $fila actual$ y $otra fila$
+\ENDFOR
+\RETURN $M_{otra fila, largo(z)}$
+\end{algorithmic}
+\end{algorithm}
+
+Como vemos a partir del pseudoc\'odigo, si $largo(x)=n$ y $largo(z)=m$, la
+complejidad temporal es $O(n \cdot m)$ en peor caso, y es el costo del llenado
+de la matriz. La memoria usada son las dos filas de la matriz, es decir $O(m)$.
+
+\subsubsection{Aritm\'etica de n\'umeros grandes}
+
+El enunciado afirma que $|x| \leq 10000$, $|z| \leq 100$ y que la cantidad de
+ocurrencias de $z$ en $x$ es a lo sumo $10^{100}$, que obviamente no cabe en registros
+de 64 bits. Adem\'as, la afirmaci\'on no es irrelevante porque {\em pueden} darse
+situaciones en las que el n\'umero de ocurrencias sea mucho mayor que $10^{100}$.
+Por ejemplo, tomando $x = a^{10000}$ y $z = a^{100}$, hay
+$10000 \choose 100$ ocurrencias de $z$ en $x$.
+
+La \'unica operaci\'on requerida por el algoritmo es la suma de n\'umeros
+grandes. Se program\'o una clase \texttt{BigInt} que representa
+un n\'umero natural con un vector de 16 d\'igitos en base
+$10^8$. Esto permite representar enteros en $[0,10^{128})$
+e imprimir la salida en base 10 sin recurrir a divisiones.
+
+La suma de n\'umeros grandes es $O(1)$ porque est\'an representados
+con un arreglo que siempre tiene exactamente 16 d\'igitos. La
+implementaci\'on de la suma con carry es la usual.
+
+\subsection{Implementación}
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\hldir{\#include\ $<$vector$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$string$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$iostream$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$cassert$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$cstdio$>$}\\
+\hlline{\ 6\ }\hlstd{}\\
+\hlline{\ 7\ }\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{\ 8\ }\hlstd{}\\
+\hlline{\ 9\ }\hlkwc{typedef\ }\hlstd{}\hlkwb{unsigned\ int\ }\hlstd{uint32}\hlsym{;}\\
+\hlline{10\ }\hlstd{}\\
+\hlline{11\ }\hldir{\#define\ forsn(i,\ s,\ n)\ for\ (uint32\ i\ =\ (s);\ i\ $<$\ (n);\ i++)}\\
+\hlline{12\ }\hlstd{}\hldir{\#define\ forn(i,\ n)\ forsn\ (i,\ 0,\ n)}\\
+\hlline{13\ }\hlstd{}\hldir{\#define\ dforn(i,\ n)\ for\ (uint32\ i\ =\ (n);\ i{-}{-}\ $>$\ 0;)}\\
+\hlline{14\ }\hlstd{}\\
+\hlline{15\ }\hlslc{//\ BigInt}\\
+\hlline{16\ }\hlstd{}\hlslc{//\ Represents\ a\ number\ in\ 0\ $<$=\ n\ $<$\ 10\ {*}{*}\ 128}\\
+\hlline{17\ }\hlstd{}\\
+\hlline{18\ }\hldir{\#define\ BigInt\textunderscore NDIGITS\ 16}\\
+\hlline{19\ }\hlstd{}\hldir{\#define\ BigInt\textunderscore BASE\ 100000000}\\
+\hlline{20\ }\hlstd{}\hlkwc{class\ }\hlstd{BigInt\ }\hlsym{\{}\\
+\hlline{21\ }\hlstd{}\hlkwc{public}\hlstd{}\hlsym{:}\\
+\hlline{22\ }\hlstd{\ }\hlkwd{BigInt}\hlstd{}\hlsym{()\ :\ }\hlstd{}\hlkwd{\textunderscore digits}\hlstd{}\hlsym{(}\hlstd{BigInt\textunderscore NDIGITS}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{\}}\\
+\hlline{23\ }\hlstd{\\
+\hlline{24\ }\ }\hlkwd{BigInt}\hlstd{}\hlsym{(}\hlstd{uint32\ n}\hlsym{)\ :\ }\hlstd{}\hlkwd{\textunderscore digits}\hlstd{}\hlsym{(}\hlstd{BigInt\textunderscore NDIGITS}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{25\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{n\ }\hlsym{$<$\ }\hlstd{BigInt\textunderscore BASE}\hlsym{);}\\
+\hlline{26\ }\hlstd{}\hlstd{\ \ }\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}\ =\ }\hlstd{n}\hlsym{;}\\
+\hlline{27\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{28\ }\hlstd{\\
+\hlline{29\ }\ }\hlslc{//\ For\ testing}\\
+\hlline{30\ }\hlstd{\ }\hlkwd{BigInt}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{string}\hlsym{\&\ }\hlstd{s}\hlsym{)\ :\ }\hlstd{}\hlkwd{\textunderscore digits}\hlstd{}\hlsym{(}\hlstd{BigInt\textunderscore NDIGITS}\hlsym{,\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{31\ }\hlstd{}\hlstd{\ \ }\hlstd{uint32\ pow\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{32\ }\hlstd{}\hlstd{\ \ }\hlstd{uint32\ digit\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{33\ }\hlstd{}\hlstd{\ \ }\hlstd{uint32\ j\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{34\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{dforn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{s}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{())\ \{}\\
+\hlline{35\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{}\hlstr{'0´}\hlstd{\ }\hlsym{$<$=\ }\hlstd{s}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ \&\&\ }\hlstd{s}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ $<$=\ }\hlstd{}\hlstr{`9´}\hlstd{}\hlsym{);}\\
+\hlline{36\ }\hlstd{}\hlstd{\ \ \ }\hlstd{digit\ }\hlsym{+=\ }\hlstd{pow\ }\hlsym{{*}\ (}\hlstd{s}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ {-}\ }\hlstd{}\hlstr{'0´}\hlstd{}\hlsym{);}\\
+\hlline{37\ }\hlstd{\\
+\hlline{38\ }}\hlstd{\ \ \ }\hlstd{pow\ }\hlsym{{*}=\ }\hlstd{}\hlnum{10}\hlstd{}\hlsym{;}\\
+\hlline{39\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{pow\ }\hlsym{==\ }\hlstd{BigInt\textunderscore BASE}\hlsym{)\ \{}\\
+\hlline{40\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{j}\hlsym{++{]}\ =\ }\hlstd{digit}\hlsym{;}\\
+\hlline{41\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{digit\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{42\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{pow\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{43\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{44\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{45\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{j\ }\hlsym{$<$\ }\hlstd{BigInt\textunderscore NDIGITS\ }\hlsym{\textbar \textbar \ }\hlstd{digit\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{46\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{j\ }\hlsym{$<$\ }\hlstd{BigInt\textunderscore NDIGITS}\hlsym{)\ \{}\\
+\hlline{47\ }\hlstd{}\hlstd{\ \ \ }\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{digit}\hlsym{;}\\
+\hlline{48\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{49\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{50\ }\hlstd{\\
+\hlline{51\ }\ BigInt\ }\hlkwc{operator}\hlstd{}\hlsym{+(}\hlstd{}\hlkwb{const\ }\hlstd{BigInt}\hlsym{\&\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{52\ }\hlstd{}\hlstd{\ \ }\hlstd{BigInt\ res}\hlsym{;}\\
+\hlline{53\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwb{bool\ }\hlstd{carry\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{54\ }\hlstd{\\
+\hlline{55\ }}\hlstd{\ \ }\hlstd{}\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{BigInt\textunderscore NDIGITS}\hlsym{)\ \{}\\
+\hlline{56\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwb{const\ }\hlstd{uint32\ r\ }\hlsym{=\ }\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ +\ }\hlstd{n}\hlsym{.}\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ +\ }\hlstd{carry}\hlsym{;}\\
+\hlline{57\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{r\ }\hlsym{$>$=\ }\hlstd{BigInt\textunderscore BASE}\hlsym{)\ \{}\\
+\hlline{58\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{res}\hlsym{.}\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ =\ }\hlstd{r\ }\hlsym{\%\ }\hlstd{BigInt\textunderscore BASE}\hlsym{;}\\
+\hlline{59\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{carry\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{60\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{61\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{res}\hlsym{.}\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ =\ }\hlstd{r}\hlsym{;}\\
+\hlline{62\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{carry\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{63\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{64\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{65\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{assert}\hlstd{}\hlsym{(}\hlstd{carry\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{);}\\
+\hlline{66\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{return\ }\hlstd{res}\hlsym{;}\\
+\hlline{67\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{68\ }\hlstd{\\
+\hlline{69\ }\ }\hlkwb{void\ }\hlstd{}\hlkwd{print}\hlstd{}\hlsym{()\ \{}\\
+\hlline{70\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwb{bool\ }\hlstd{zero\ }\hlsym{=\ }\hlstd{}\hlkwa{true}\hlstd{}\hlsym{;\ }\\
+\hlline{71\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{dforn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{BigInt\textunderscore NDIGITS}\hlsym{)\ \{}\\
+\hlline{72\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{zero}\hlsym{)\ \{}\\
+\hlline{73\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{i}\hlsym{{]}\ ==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ }\hlstd{}\hlkwa{continue}\hlstd{}\hlsym{;}\\
+\hlline{74\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%u"}\hlstd{}\hlsym{,\ }\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{i}\hlsym{{]});}\\
+\hlline{75\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{zero\ }\hlsym{=\ }\hlstd{}\hlkwa{false}\hlstd{}\hlsym{;}\\
+\hlline{76\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{77\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%.8u"}\hlstd{}\hlsym{,\ }\hlstd{\textunderscore digits}\hlsym{{[}}\hlstd{i}\hlsym{{]});}\\
+\hlline{78\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{79\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{80\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{zero}\hlsym{)\ \{}\\
+\hlline{81\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"0"}\hlstd{}\hlsym{);}\\
+\hlline{82\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{83\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{84\ }\hlstd{}\\
+\hlline{85\ }\hlkwc{private}\hlstd{}\hlsym{:}\\
+\hlline{86\ }\hlstd{\ }\hlslc{//\ Least\ significant\ digit\ first.}\\
+\hlline{87\ }\hlstd{\ }\hlslc{//\ Digits\ are\ in\ 0\ $<$=\ d\ $<$\ BigInt\textunderscore BASE}\\
+\hlline{88\ }\hlstd{\ vector}\hlsym{$<$}\hlstd{uint32}\hlsym{$>$\ }\hlstd{\textunderscore digits}\hlsym{;}\\
+\hlline{89\ }\hlstd{}\hlsym{\};}\\
+\hlline{90\ }\hlstd{}\\
+\hlline{91\ }\hldir{\#define\ print\textunderscore bigint(x)\ (x).print()}\\
+\hlline{92\ }\hlstd{}\\
+\hlline{93\ }\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{BigInt}\hlsym{$>$\ }\hlstd{vBigInt}\hlsym{;}\\
+\hlline{94\ }\hlstd{}\hlkwc{typedef\ }\hlstd{vector}\hlsym{$<$}\hlstd{vBigInt}\hlsym{$>$\ }\hlstd{vvBigInt}\hlsym{;}\\
+\hlline{95\ }\hlstd{BigInt\ }\hlkwd{distinct\textunderscore subsequences}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ }\hlstd{string}\hlsym{\&\ }\hlstd{x}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{string}\hlsym{\&\ }\hlstd{z}\hlsym{)\ \{}\\
+\hlline{96\ }\hlstd{\ vvBigInt\ }\hlkwd{m}\hlstd{}\hlsym{(}\hlstd{}\hlnum{2}\hlstd{}\hlsym{,\ }\hlstd{}\hlkwd{vBigInt}\hlstd{}\hlsym{(}\hlstd{z}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ +\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{}\hlkwd{BigInt}\hlstd{}\hlsym{(}\hlstd{}\hlnum{0}\hlstd{}\hlsym{)));}\\
+\hlline{97\ }\hlstd{\\
+\hlline{98\ }\ m}\hlsym{{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}\ =\ }\hlstd{}\hlkwd{BigInt}\hlstd{}\hlsym{(}\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{99\ }\hlstd{\ m}\hlsym{{[}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}\ =\ }\hlstd{}\hlkwd{BigInt}\hlstd{}\hlsym{(}\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{100\ }\hlstd{\ }\hlkwb{bool\ }\hlstd{row\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{101\ }\hlstd{\ }\hlkwd{forsn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{x}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ +\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{102\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{forsn\ }\hlstd{}\hlsym{(}\hlstd{j}\hlsym{,\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{z}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{()\ +\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{)\ \{}\\
+\hlline{103\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{x}\hlsym{{[}}\hlstd{i\ }\hlsym{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}\ ==\ }\hlstd{z}\hlsym{{[}}\hlstd{j\ }\hlsym{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]})\ \{}\\
+\hlline{104\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{m}\hlsym{{[}}\hlstd{row}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{m}\hlsym{{[}!}\hlstd{row}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ +\ }\hlstd{m}\hlsym{{[}!}\hlstd{row}\hlsym{{]}{[}}\hlstd{j\ }\hlsym{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]};}\\
+\hlline{105\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{106\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{m}\hlsym{{[}}\hlstd{row}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{m}\hlsym{{[}!}\hlstd{row}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]};}\\
+\hlline{107\ }\hlstd{}\hlstd{\ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{\}}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ }\hlstd{row\ }\hlsym{=\ !}\hlstd{row}\hlsym{;}\\
+\hlline{110\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{111\ }\hlstd{\ }\hlkwa{return\ }\hlstd{m}\hlsym{{[}!}\hlstd{row}\hlsym{{]}{[}}\hlstd{z}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{(){]};}\\
+\hlline{112\ }\hlstd{}\hlsym{\}}\\
+\hlline{113\ }\hlstd{}\\
+\hlline{114\ }\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{argc}\hlsym{,\ }\hlstd{}\hlkwb{char\ }\hlstd{}\hlsym{{*}{*}}\hlstd{argv}\hlsym{)\ \{}\\
+\hlline{115\ }\hlstd{\ uint32\ n}\hlsym{;}\\
+\hlline{116\ }\hlstd{\ cin\ }\hlsym{$>$$>$\ }\hlstd{n}\hlsym{;}\\
+\hlline{117\ }\hlstd{\ }\hlkwb{char\ }\hlstd{c}\hlsym{;}\\
+\hlline{118\ }\hlstd{\ cin}\hlsym{.}\hlstd{}\hlkwd{get}\hlstd{}\hlsym{(}\hlstd{c}\hlsym{);}\\
+\hlline{119\ }\hlstd{\ }\hlkwd{forn\ }\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,\ }\hlstd{n}\hlsym{)\ \{}\\
+\hlline{120\ }\hlstd{}\hlstd{\ \ }\hlstd{string\ x}\hlsym{,\ }\hlstd{z}\hlsym{;}\\
+\hlline{121\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{getline}\hlstd{}\hlsym{(}\hlstd{cin}\hlsym{,\ }\hlstd{x}\hlsym{);}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{getline}\hlstd{}\hlsym{(}\hlstd{cin}\hlsym{,\ }\hlstd{z}\hlsym{);}\\
+\hlline{123\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{print\textunderscore bigint}\hlstd{}\hlsym{(}\hlstd{}\hlkwd{distinct\textunderscore subsequences}\hlstd{}\hlsym{(}\hlstd{x}\hlsym{,\ }\hlstd{z}\hlsym{));}\\
+\hlline{124\ }\hlstd{}\hlstd{\ \ }\hlstd{cout\ }\hlsym{$<$$<$\ }\hlstd{endl}\hlsym{;}\\
+\hlline{125\ }\hlstd{\ }\hlsym{\}}\\
+\hlline{126\ }\hlstd{\ }\hlkwa{return\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{127\ }\hlstd{}\hlsym{\}}\\
+\hlline{128\ }\hlstd{}\\
+\mbox{}
+\normalfont
+\shorthandon{"}
+

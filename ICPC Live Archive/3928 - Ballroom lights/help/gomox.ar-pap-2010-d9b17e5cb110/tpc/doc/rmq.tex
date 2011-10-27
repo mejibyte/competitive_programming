@@ -1,0 +1,285 @@
+\section{11235 - Frequent values}
+\textbf{Problema:} Dado un arreglo de números ordenados de forma no decreciente, y un par de indices $i$, $j$; encontrar la mayor frecuencia (repeticiones de un numero) en el rango $[i,j]$ del arreglo.
+
+\subsection{Resolución}
+Dado que el arreglo esta ordenado, las apariciones de un número están todas juntas. En otras palabras, si $k$ está en el arreglo, vale que:
+
+$\exists i,j / k \notin a[0..i-1]  \wedge \forall t \in a[i..j], a[t] = k \wedge k \notin a[j+1..n]$
+
+Esto es útil porque significa que todas las apariciones de un elemento están juntas, 
+es decir que en el arreglo los elementos iguales están en subarreglos. Podemos 
+considerar entonces el arreglo que se obtiene de considerar las longitudes de esos 
+subarreglos (consideramos subarreglos máximos - los que abarcan todas las apariciones 
+de un elemento). Por ejemplo, si el arreglo original es:
+$$a = -1, -1, 1, 1, 1, 1, 3, 10, 10, 10$$
+el arreglo de las cantidades es:
+$$c = 2, 4, 1, 3$$
+
+Definimos además:
+
+$s(i) = k  \longleftrightarrow c[k]$ representa al subarreglo que contiene a los elementos que son iguales a $a[i]$
+
+$d(i) = 0 \longleftrightarrow \forall 0 \leq t \leq i, a[t] = a[i] $
+
+$d(i) = k > 0 \longleftrightarrow a[k] = a[i] \wedge a[k-1] < a[i]$
+
+
+$h(i) = n - 1  \longleftrightarrow \forall i \leq t < n, a[t] = a[i] $
+
+$h(i) = k < n -1 \longleftrightarrow a[k] = a[i] \wedge a[k+1] > a[i]$
+
+Intuitivamente, $d(i)$ y $h(i)$ son los extremos del intervalo en a, tal que $\forall d(i) \leq t \leq h(i), a[t] == a[i]$. Notemos entonces que vale que:
+
+$\forall i,j / s(i) = s(j) \Rightarrow d(i)=d(j) \wedge h(i)=h(j)$
+
+Esto es así ya que si $s(i) = s(j)$, se desprende que $a[i] = a[j]$
+
+El arreglo $c$ es útil para resolver el problema. Si tenemos que dar la máxima frecuencia 
+en $[i,j]$, puede pasar que:
+\begin{itemize}
+\item $a[i] = a[j]$, con lo cual la máxima frecuencia es el largo de  $[i,j]$
+\item $a[i] \neq a[j]$, en este caso podemos usar el arreglo $c$ para hacer una consulta 
+por el máximo en el intervalo $[s(i)..s(j)]$. Esto sólo es cierto si $i$ es el extremo 
+izquierdo de un subarreglo de $a$, y $j$ es el extremo derecho de otro. 
+
+Si esto no se cumple, hay que considerar que del subarreglo que corresponde 
+a $i$ o a $j$ sólo importa una parte. 
+
+Entonces, la máxima frecuencia se puede obtener como: 
+$$max(\Vert [i..h(i)] \Vert, \Vert [d(j)..j] \Vert, max(c[s(i)+1...s(j)-1]))$$
+
+Esto corresponde al máximo entre la cantidad de valores iguales a $a[i]$ que caen en el 
+intervalo pedido, la cantidad de valores iguales a $a[j]$ y la máxima frecuencia entre ellos.
+\end{itemize}
+
+Al cargar el arreglo se pueden computar $s$, $d$, $h$ y $c$, de la siguiente manera:
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Calculo de $s$, $d$, $h$ y $c$ a partir del arreglo ordenado}
+\PARAMS{arreglo $a$, ordenado de forma no decreciente}
+\STATE $i = 0$
+\STATE $actual = a[i]$
+\STATE $intervalo = 0$
+\STATE $desde = 0$
+\STATE $hasta = 0$
+\STATE $s(i) = intervalo$
+\STATE $c[intervalo] = 1$
+\STATE $i = 1$
+\WHILE{$i < \Vert a \Vert - 1 $}
+	\IF{$actual = a[i-1]$}
+		\STATE $hasta++$
+		\STATE $c[intervalo]++$
+	\ELSE
+		\STATE $h(intervalo) = hasta$
+		\STATE $d(intervalo) = desde$
+		\STATE $intervalo++$
+		\STATE $hasta++$
+		\STATE $desde = hasta$
+		\STATE $actual = a[i]$
+		\STATE $c[intervalo] = 1$
+	\ENDIF
+	\STATE $s(i) = intervalo$
+	\STATE $i++$
+\ENDWHILE
+\STATE $h(intervalo) = hasta$
+\STATE $d(intervalo) = desde$
+\end{algorithmic}
+\end{algorithm}
+
+Para guardar $s,d$ y $h$ se pueden usar arreglos, e indexar $h y d$ siempre por $s(i)$.
+
+Una vez que tenemos esto, queda computar eficientemente el máximo en  $c[s(i)+1...s(j)-1]$. 
+Para ello usamos la estructura \textit{\textbf{Sparse Table} }\footnote{http://www.topcoder.com/tc?module=Static\&d1=tutorials\&d2=lowestCommonAncestor}.
+
+Una vez construida esta estructura podemos comenzar a responder las consultas. El siguiente es el algoritmo para responderlas:
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{Resolución de queries}
+\PARAMS{$i,j$ indices del arreglo $a$}
+\IF{s(i) == s(j)}
+	\RETURN $j-i+1$ \COMMENT{$\Vert[i..j]\Vert$}
+\ELSE
+	\STATE res = $max( h(s(i)) - i +1, j - d(s(j)) + 1)$ \COMMENT{$max(\Vert [i..h(i)] \Vert, \Vert [d(j)..j] \Vert)$}
+	\STATE res = $max(res, rmq(c, h(s(i))+1, d(s(j))-1))$ \COMMENT{usar la sparse table para obtener el maximo en el rango de c}
+	\RETURN res
+\ENDIF
+\end{algorithmic}
+\end{algorithm}
+
+Con respecto a la complejidad, primero computamos $s,d,h$ y $c$, lo que podemos hacer en $O(n)$ mientras 
+cargamos los números. Luego armamos la \textit{sparse table} para el arreglo $c$, que tiene $O(n)$ elementos 
+(pueden ser $n$, si todos los elementos de $a$ son distintos). Por lo tanto, la construcción de la tabla es 
+$O(n \log n)$. Usando el algoritmo antes mostrado, podemos responder a las consultas en $O(1)$, ya que la 
+consulta a la tabla cuesta $O(1)$. Por lo tanto, si hay $q$ queries que responder, el orden total del algoritmo 
+es $O(n \log n + q)$. Ajustando un poco el calculo, vemos que la tabla no tiene siempre $O(n*\log n)$ posiciones, 
+sino que tiene $O(d*\log d)$ posiciones, donde $d$ es la cantidad de elementos distintos. Si bien $O(d*\log d) 
+\subseteq O(n*\log n)$, potencialmente $d$ es más chico que $n$. Considerando que igualmente deben cargarse 
+todos los valores del arreglo original, el orden es $O(n + d*\log d + q)$.
+
+\subsection{Implementación}
+\noindent
+\ttfamily
+\shorthandoff{"}\\
+\hlstd{}\hlline{\ 1\ }\hldir{\#include\ $<$iostream$>$}\\
+\hlline{\ 2\ }\hlstd{}\hldir{\#include\ $<$vector$>$}\\
+\hlline{\ 3\ }\hlstd{}\hldir{\#include\ $<$list$>$}\\
+\hlline{\ 4\ }\hlstd{}\hldir{\#include\ $<$stdlib.h$>$}\\
+\hlline{\ 5\ }\hlstd{}\hldir{\#include\ $<$utility$>$}\\
+\hlline{\ 6\ }\hlstd{}\hldir{\#include\ $<$cassert$>$}\\
+\hlline{\ 7\ }\hlstd{}\hldir{\#include\ $<$sys/types.h$>$}\\
+\hlline{\ 8\ }\hlstd{}\hldir{\#include\ $<$sys/stat.h$>$}\\
+\hlline{\ 9\ }\hlstd{}\hldir{\#include\ $<$fcntl.h$>$}\\
+\hlline{10\ }\hlstd{}\hldir{\#include\ $<$stdio.h$>$}\\
+\hlline{11\ }\hlstd{}\hlkwa{using\ namespace\ }\hlstd{std}\hlsym{;}\\
+\hlline{12\ }\hlstd{}\hldir{\#define\ forit(it,l)\ for(it=(l).begin();it\ !=\ (l).end();\ it++)}\\
+\hlline{13\ }\hlstd{}\hldir{\#define\ forn(i,n)\ for(unsigned}\hlstd{\ \ }\hldir{i=\ 0;\ i\ $<$\ ((unsigned)(n));\ i++)}\\
+\hlline{14\ }\hlstd{}\hldir{\#define\ foreachin(it,s)\ for(typeof((s).begin())\ it\ =\ ((s).begin());\ it\ !=\ ((s).end());\ it++)}\\
+\hlline{15\ }\hlstd{}\hldir{\#define\ forsn(i,s,n)\ for(int\ i\ =\ (s);\ i\ $<$\ (n);\ i++)}\\
+\hlline{16\ }\hlstd{}\hlkwb{void\ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwd{llenar\textunderscore tabla}\hlstd{}\hlsym{(}\hlstd{vector}\hlsym{$<$}\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ $>$\&\ }\hlstd{tabla}\hlsym{,\ }\hlstd{}\hlkwb{const\ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{frec}\hlsym{)\ \{}\\
+\hlline{17\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{n\ }\hlsym{=\ }\hlstd{tabla}\hlsym{.}\hlstd{}\hlkwd{size}\hlstd{}\hlsym{();}\\
+\hlline{18\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{i}\hlsym{,\ }\hlstd{j}\hlsym{;}\\
+\hlline{19\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//init\ de\ los\ intervalos\ de\ largo\ 1}\\
+\hlline{20\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{forn}\hlstd{}\hlsym{(}\hlstd{i}\hlsym{,}\hlstd{n}\hlsym{)}\\
+\hlline{21\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{tabla}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{}\hlnum{0}\hlstd{}\hlsym{{]}\ =\ }\hlstd{i}\hlsym{;}\\
+\hlline{22\ }\hlstd{\\
+\hlline{23\ }}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//llenado\ de\ la\ tabla\ desde\ los\ mas\ chicos\ a\ los\ mas\ grandes}\\
+\hlline{24\ }\hlstd{\ }\hlkwb{unsigned\ }\hlstd{t}\hlsym{=}\hlstd{}\hlnum{2}\hlstd{}\hlsym{;}\\
+\hlline{25\ }\hlstd{\ }\hlkwb{unsigned\ }\hlstd{t\textunderscore ant}\hlsym{=}\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{26\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{j\ }\hlsym{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;\ }\hlstd{t\ }\hlsym{$<$=\ }\hlstd{n}\hlsym{;\ }\hlstd{j}\hlsym{++)\ \{}\\
+\hlline{27\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{for\ }\hlstd{}\hlsym{(}\hlstd{i\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;\ }\hlstd{i\ }\hlsym{+\ (}\hlstd{t}\hlsym{)\ {-}\ }\hlstd{}\hlnum{1\ }\hlstd{}\hlsym{$<$\ }\hlstd{n}\hlsym{;\ }\hlstd{i}\hlsym{++)\ \{}\\
+\hlline{28\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{k\ }\hlsym{=\ }\hlstd{j\ }\hlsym{{-}\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{29\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{frec}\hlsym{{[}}\hlstd{tabla}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{k}\hlsym{{]}{]}\ $>$\ }\hlstd{frec}\hlsym{{[}}\hlstd{tabla}\hlsym{{[}}\hlstd{i\ }\hlsym{+\ (}\hlstd{t\textunderscore ant}\hlsym{){]}{[}}\hlstd{k}\hlsym{{]}{]})}\\
+\hlline{30\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{tabla}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{tabla}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{k}\hlsym{{]};}\\
+\hlline{31\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else}\\
+\hlline{32\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{tabla}\hlsym{{[}}\hlstd{i}\hlsym{{]}{[}}\hlstd{j}\hlsym{{]}\ =\ }\hlstd{tabla}\hlsym{{[}}\hlstd{i\ }\hlsym{+\ (}\hlstd{t\textunderscore ant}\hlsym{){]}{[}}\hlstd{k}\hlsym{{]};}\\
+\hlline{33\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{34\ }\hlstd{}\hlstd{\ \ }\hlstd{t\textunderscore ant}\hlsym{=}\hlstd{t}\hlsym{;}\\
+\hlline{35\ }\hlstd{}\hlstd{\ \ }\hlstd{t}\hlsym{=}\hlstd{t}\hlsym{$<$$<$}\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{36\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{37\ }\hlstd{}\hlsym{\}}\\
+\hlline{38\ }\hlstd{}\\
+\hlline{39\ }\\
+\hlline{40\ }\hlkwb{static\ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwb{uint32\textunderscore t\ }\hlstd{}\hlkwd{log\textunderscore 2}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ uint32\textunderscore t\ }\hlstd{x}\hlsym{)\ \{}\\
+\hlline{41\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwb{uint32\textunderscore t\ }\hlstd{y}\hlsym{;}\\
+\hlline{42\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{asm\ }\hlstd{}\hlsym{(\ }\hlstd{}\hlstr{"}\hlesc{$\backslash$t}\hlstr{bsr\ \%1,\ \%0}\hlesc{$\backslash$n}\hlstr{"}\hlstd{\\
+\hlline{43\ }}\hlstd{\ \ \ \ \ \ }\hlstd{}\hlsym{:\ }\hlstd{}\hlstr{"=r"}\hlstd{}\hlsym{(}\hlstd{y}\hlsym{)}\\
+\hlline{44\ }\hlstd{}\hlstd{\ \ \ \ \ \ }\hlstd{}\hlsym{:\ }\hlstd{}\hlstr{"r"}\hlstd{\ }\hlsym{(}\hlstd{x}\hlsym{)}\\
+\hlline{45\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlsym{);}\\
+\hlline{46\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{return\ }\hlstd{y}\hlsym{;}\\
+\hlline{47\ }\hlstd{}\hlsym{\}}\\
+\hlline{48\ }\hlstd{\\
+\hlline{49\ }\\
+\hlline{50\ }\ }\hlkwb{void\ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwd{cargar\textunderscore numeros}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{cant\textunderscore numeros}\hlsym{,}\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{frec}\hlsym{,}\hlstd{vector}\hlsym{$<$}\hlstd{pair}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ $>$\&\ }\Righttorque\\
+\hlline{51\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{intervalostupla}\hlsym{,}\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{intervaloindice}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{\&\ }\hlstd{intervalo}\hlsym{)\ \{}\\
+\hlline{52\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{i\ }\hlsym{=\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{53\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{numero}\hlsym{;}\\
+\hlline{54\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{desde}\hlsym{,}\hlstd{hasta}\hlsym{;\ }\hlstd{}\hlslc{//intervalo\ donde\ todos\ los\ elementos\ son\ iguales\ {[}\ {]}}\\
+\hlline{55\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{actual}\hlsym{;\ }\hlstd{}\hlslc{//elemento\ cuya\ frecuencia\ estoy\ construyendo}\\
+\hlline{56\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{i\ }\hlsym{$<$\ }\hlstd{cant\textunderscore numeros}\hlsym{)\ \{}\\
+\hlline{57\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf\ }\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d"}\hlstd{}\hlsym{,\&}\hlstd{numero}\hlsym{);}\\
+\hlline{58\ }\hlstd{\\
+\hlline{59\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{i\ }\hlsym{==\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{60\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{actual}\hlsym{=}\hlstd{numero}\hlsym{;}\\
+\hlline{61\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{desde}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{62\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{hasta}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{63\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{64\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{actual}\hlsym{==}\hlstd{numero}\hlsym{)\ \{\ }\hlstd{}\hlslc{//si\ son\ iguales,\ incremento\ el\ hasta\ y\ su\ frecuencia}\\
+\hlline{65\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{hasta}\hlsym{++;}\\
+\hlline{66\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{frec}\hlsym{{[}}\hlstd{intervalo}\hlsym{{]}++;}\\
+\hlline{67\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{68\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ si\ son\ distintos,\ se\ cerró\ un\ intervalo,\ hay\ que\ empezar\ a\ armar\ otro}\\
+\hlline{69\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{70\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{intervalostupla}\hlsym{{[}}\hlstd{intervalo}\hlsym{{]}\ =\ }\hlstd{pair}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$(}\hlstd{desde}\hlsym{,}\hlstd{hasta}\hlsym{);}\\
+\hlline{71\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{intervalo}\hlsym{++;}\\
+\hlline{72\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{hasta}\hlsym{++;}\\
+\hlline{73\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{desde}\hlsym{=}\hlstd{hasta}\hlsym{;}\\
+\hlline{74\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{actual\ }\hlsym{=\ }\hlstd{numero}\hlsym{;}\\
+\hlline{75\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{76\ }\hlstd{\\
+\hlline{77\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{78\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{intervaloindice}\hlsym{{[}}\hlstd{i}\hlsym{{]}=}\hlstd{intervalo}\hlsym{;}\\
+\hlline{79\ }\hlstd{\\
+\hlline{80\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{i}\hlsym{++;}\\
+\hlline{81\ }\hlstd{\\
+\hlline{82\ }}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{83\ }\hlstd{\\
+\hlline{84\ }}\hlstd{\ \ \ \ }\hlstd{}\hlslc{//hack:\ el\ ultimo\ siempre\ quedaba\ sin\ agregar}\\
+\hlline{85\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{intervalostupla}\hlsym{{[}}\hlstd{intervalo}\hlsym{{]}\ =\ }\hlstd{pair}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$(}\hlstd{desde}\hlsym{,}\hlstd{hasta}\hlsym{);}\\
+\hlline{86\ }\hlstd{}\hlsym{\}}\\
+\hlline{87\ }\hlstd{}\\
+\hlline{88\ }\hlkwb{void\ }\hlstd{}\hlkwc{inline\ }\hlstd{}\hlkwd{procesar\textunderscore queries}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{const\ int\ }\hlstd{queries}\hlsym{,}\hlstd{}\hlkwb{const\ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{frec}\hlsym{,}\hlstd{}\hlkwb{const\ }\hlstd{vector}\hlsym{$<$}\hlstd{pair}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ $>$\&\ }\Righttorque\\
+\hlline{89\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{intervalostupla}\hlsym{,}\hlstd{}\hlkwb{const\ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\&\ }\hlstd{intervaloindice}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{\&\ }\hlstd{intervalo}\hlsym{)\ \{}\\
+\hlline{90\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ $>$\ }\hlstd{}\hlkwd{tabla}\hlstd{}\hlsym{(}\hlstd{intervalo}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{,\ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$(}\hlstd{}\hlkwd{log\textunderscore 2}\hlstd{}\hlsym{(}\hlstd{intervalo}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{)+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{));}\\
+\hlline{91\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwd{llenar\textunderscore tabla}\hlstd{}\hlsym{(}\hlstd{tabla}\hlsym{,}\hlstd{frec}\hlsym{);}\\
+\hlline{92\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{unsigned\ }\hlstd{x}\hlsym{,}\hlstd{y}\hlsym{;}\\
+\hlline{93\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{i}\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\\
+\hlline{94\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{i\ }\hlsym{$<$\ }\hlstd{queries}\hlsym{)\ \{}\\
+\hlline{95\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%u\ \%u"}\hlstd{}\hlsym{,\&}\hlstd{x}\hlsym{,\&}\hlstd{y}\hlsym{);}\\
+\hlline{96\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{desde}\hlsym{,\ }\hlstd{hasta}\hlsym{;}\\
+\hlline{97\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//desde\ y\ hasta\ son\ los\ intervalos\ extremos\ que\ hay\ que\ mirar.}\\
+\hlline{98\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//No\ necesariamente\ estan\ completos}\\
+\hlline{99\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{desde\ }\hlsym{=\ }\hlstd{intervaloindice}\hlsym{{[}}\hlstd{x}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]};}\\
+\hlline{100\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{hasta\ }\hlsym{=\ }\hlstd{intervaloindice}\hlsym{{[}}\hlstd{y}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]};}\\
+\hlline{101\ }\hlstd{\\
+\hlline{102\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{res}\hlsym{;}\\
+\hlline{103\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//\ Si\ esos\ indices\ son\ parte\ del\ mismo\ intervalo,\ la\ frecuencia\ es\ la\ distancia\ entre\ ellos.}\\
+\hlline{104\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{desde}\hlsym{==}\hlstd{hasta}\hlsym{)\ \{}\\
+\hlline{105\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{res\ }\hlsym{=\ }\hlstd{y}\hlsym{{-}}\hlstd{x}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{106\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}\ }\hlstd{}\hlkwa{else\ }\hlstd{}\hlsym{\{}\\
+\hlline{107\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//calculo\ por\ separado\ los\ intervalos\ que\ pueden\ ser\ truncos}\\
+\hlline{108\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{frec\textunderscore i\ }\hlsym{=\ }\hlstd{intervalostupla}\hlsym{{[}}\hlstd{desde}\hlsym{{]}.}\hlstd{second\ }\hlsym{{-}\ }\hlstd{x\ }\hlsym{+\ }\hlstd{}\hlnum{2}\hlstd{}\hlsym{;}\\
+\hlline{109\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{frec\textunderscore j\ }\hlsym{=\ }\hlstd{y\ }\hlsym{{-}\ }\hlstd{intervalostupla}\hlsym{{[}}\hlstd{hasta}\hlsym{{]}.}\hlstd{first\ }\hlsym{;}\\
+\hlline{110\ }\hlstd{\\
+\hlline{111\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlslc{//el\ siguiente\ del\ desde\ y\ el\ anterior\ del\ hasta\ si\ estan\ completos}\\
+\hlline{112\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{unsigned\ int\ }\hlstd{intervalo\textunderscore completo\textunderscore i\ }\hlsym{=\ }\hlstd{desde}\hlsym{+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{113\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{unsigned\ int\ }\hlstd{intervalo\textunderscore completo\textunderscore j\ }\hlsym{=\ }\hlstd{hasta}\hlsym{{-}}\hlstd{}\hlnum{1}\hlstd{}\hlsym{;}\\
+\hlline{114\ }\hlstd{\\
+\hlline{115\ }}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{res\ }\hlsym{=\ }\hlstd{}\hlkwd{max}\hlstd{}\hlsym{(}\hlstd{frec\textunderscore i}\hlsym{,}\hlstd{frec\textunderscore j}\hlsym{);}\\
+\hlline{116\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if}\hlstd{}\hlsym{(}\hlstd{intervalo\textunderscore completo\textunderscore i\ }\hlsym{$<$=\ }\hlstd{intervalo\textunderscore completo\textunderscore j}\hlsym{)\{}\\
+\hlline{117\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{unsigned\ int\ }\hlstd{k\ }\hlsym{=\ }\hlstd{}\hlkwd{log\textunderscore 2}\hlstd{}\hlsym{(}\hlstd{intervalo\textunderscore completo\textunderscore j\ }\hlsym{{-}\ }\hlstd{intervalo\textunderscore completo\textunderscore i\ }\hlsym{+\ }\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\\
+\hlline{118\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{aux\ }\hlsym{=\ }\hlstd{frec}\hlsym{{[}}\hlstd{tabla}\hlsym{{[}}\hlstd{intervalo\textunderscore completo\textunderscore j}\hlsym{{-}(}\hlstd{}\hlnum{1}\hlstd{}\hlsym{$<$$<$}\hlstd{k}\hlsym{)+}\hlstd{}\hlnum{1}\hlstd{}\hlsym{{]}{[}}\hlstd{k}\hlsym{{]}{]};}\\
+\hlline{119\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{if\ }\hlstd{}\hlsym{(}\hlstd{frec}\hlsym{{[}}\hlstd{tabla}\hlsym{{[}}\hlstd{intervalo\textunderscore completo\textunderscore i}\hlsym{{]}{[}}\hlstd{k}\hlsym{{]}{]}\ $>$=\ }\hlstd{aux\ }\hlsym{)}\\
+\hlline{120\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{res\ }\hlsym{=\ }\hlstd{}\hlkwd{max}\hlstd{}\hlsym{(}\hlstd{res}\hlsym{,}\hlstd{frec}\hlsym{{[}}\hlstd{tabla}\hlsym{{[}}\hlstd{intervalo\textunderscore completo\textunderscore i}\hlsym{{]}{[}}\hlstd{k}\hlsym{{]}{]});}\\
+\hlline{121\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlkwa{else}\\
+\hlline{122\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{res\ }\hlsym{=\ }\hlstd{}\hlkwd{max}\hlstd{}\hlsym{(}\hlstd{res}\hlsym{,}\hlstd{aux}\hlsym{);}\\
+\hlline{123\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{124\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{125\ }\hlstd{\\
+\hlline{126\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{printf}\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d}\hlesc{$\backslash$n}\hlstr{"}\hlstd{}\hlsym{,}\hlstd{res}\hlsym{);}\\
+\hlline{127\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{i}\hlsym{++;}\\
+\hlline{128\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{129\ }\hlstd{}\hlsym{\}}\\
+\hlline{130\ }\hlstd{}\\
+\hlline{131\ }\hlkwb{int\ }\hlstd{}\hlkwd{main}\hlstd{}\hlsym{(}\hlstd{}\hlkwb{int\ }\hlstd{argc}\hlsym{,\ }\hlstd{}\hlkwb{char}\hlstd{}\hlsym{{*}{*}\ }\hlstd{argv}\hlsym{)\ \{}\hlstd{\ \ }\hlsym{}\\
+\hlline{132\ }\hlstd{\\
+\hlline{133\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{cant\textunderscore numeros}\hlsym{,}\hlstd{queries}\hlsym{;}\\
+\hlline{134\ }\hlstd{\ }\hlkwd{scanf\ }\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d"}\hlstd{}\hlsym{,\&}\hlstd{cant\textunderscore numeros}\hlsym{);}\\
+\hlline{135\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{\\
+\hlline{136\ }\\
+\hlline{137\ }}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{while\ }\hlstd{}\hlsym{(}\hlstd{cant\textunderscore numeros\ }\hlsym{$>$\ }\hlstd{}\hlnum{0}\hlstd{}\hlsym{)\ \{}\\
+\hlline{138\ }\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwd{scanf\ }\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d"}\hlstd{}\hlsym{,\&}\hlstd{queries}\hlsym{);}\\
+\hlline{139\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ }\hlstd{}\hlkwd{frec}\hlstd{}\hlsym{(}\hlstd{cant\textunderscore numeros}\hlsym{,}\hlstd{}\hlnum{1}\hlstd{}\hlsym{);}\hlstd{}\hlslc{//vector\ de\ frecuencias}\\
+\hlline{140\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwb{int\ }\hlstd{intervalo\ }\hlsym{=}\hlstd{}\hlnum{0}\hlstd{}\hlsym{;}\hlstd{}\hlslc{//cantidad\ de\ intervalos}\\
+\hlline{141\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ }\hlstd{}\hlkwd{intervaloindice}\hlstd{}\hlsym{(}\hlstd{cant\textunderscore numeros}\hlsym{);\ }\hlstd{}\hlslc{//dado\ un\ indice\ del\ arreglo,\ devuelve\ el\ numero\ }\Righttorque\\
+\hlline{142\ }\hlslc{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{de\ intervalo\ en\ el\ que\ esta}\\
+\hlline{143\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{vector}\hlsym{$<$}\hlstd{pair}\hlsym{$<$}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{,}\hlstd{}\hlkwb{int}\hlstd{}\hlsym{$>$\ $>$\ }\hlstd{}\hlkwd{intervalostupla}\hlstd{}\hlsym{(}\hlstd{cant\textunderscore numeros}\hlsym{);\ }\hlstd{}\hlslc{//dado\ un\ numero\ de\ intervalo,\ da\ su\ }\Righttorque\\
+\hlline{144\ }\hlslc{}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlslc{desde\ y\ hasta}\\
+\hlline{145\ }\hlstd{\\
+\hlline{146\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{cargar\textunderscore numeros}\hlstd{}\hlsym{(}\hlstd{cant\textunderscore numeros}\hlsym{,}\hlstd{frec}\hlsym{,}\hlstd{intervalostupla}\hlsym{,\ }\hlstd{intervaloindice}\hlsym{,\ }\hlstd{intervalo}\hlsym{);}\\
+\hlline{147\ }\hlstd{}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{procesar\textunderscore queries}\hlstd{}\hlsym{(}\hlstd{queries}\hlsym{,\ }\hlstd{frec}\hlsym{,}\hlstd{intervalostupla}\hlsym{,\ }\hlstd{intervaloindice}\hlsym{,\ }\hlstd{intervalo}\hlsym{);}\\
+\hlline{148\ }\hlstd{\\
+\hlline{149\ }\\
+\hlline{150\ }}\hlstd{\ \ \ \ \ \ \ \ }\hlstd{}\hlkwd{scanf\ }\hlstd{}\hlsym{(}\hlstd{}\hlstr{"\%d"}\hlstd{}\hlsym{,\&}\hlstd{cant\textunderscore numeros}\hlsym{);}\\
+\hlline{151\ }\hlstd{\\
+\hlline{152\ }}\hlstd{\ \ \ \ }\hlstd{}\hlsym{\}}\\
+\hlline{153\ }\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlkwa{return\ }\hlstd{}\hlsym{(}\hlstd{EXIT\textunderscore SUCCESS}\hlsym{);}\\
+\hlline{154\ }\hlstd{}\hlsym{\}}\\
+\hlline{155\ }\hlstd{}\\
+\hlline{156\ }\\
+\mbox{}
+\normalfont
+\shorthandon{"}
+
+

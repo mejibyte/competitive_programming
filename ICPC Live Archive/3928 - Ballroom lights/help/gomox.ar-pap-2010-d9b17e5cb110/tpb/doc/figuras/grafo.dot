@@ -1,0 +1,56 @@
+digraph g{
+rankdir="LR";
+
+"Windsor\n 8:00"
+"London\n 9:55"[rotate="90"]
+"Kitchener\n 11:30"
+"Guelph\n 12:25"
+"Toronto\n 13:30"[color="#DDDDFF",style=filled]"Montreal\n 18:20"
+"Kitchener\n 8:45"
+"Waterloo\n 9:00"[color="#DDFFDD",style=filled]
+"Waterloo\n 8:00"[color="#DDFFDD",style=filled]
+"Waterloo\n 7:00"[color="#DDFFDD",style=filled]
+"Waterloo\n 23:00"[color="#DDFFDD",style=filled]
+"Hamilton\n 10:45"
+"Niagara\n 11:50"
+"Niagara\n 12:00"
+"Toronto\n 14:00"[color="#DDDDFF",style=filled]
+"Toronto\n 8:45"[color="#DDDDFF",style=filled]
+"Guleph\n 23:55"
+"Guleph\n 6:00"
+"Toronto\n 7:05"[color="#DDDDFF",style=filled]
+"FINAL"[color="#FFDDDD",style=filled]
+
+"Windsor\n 8:00"->"London\n 9:55" [label="115"]
+"London\n 9:55"->"Kitchener\n 11:30" [label="95"]
+"Kitchener\n 11:30"->"Guelph\n 12:25"[label="55"]
+"Guelph\n 12:25"->"Toronto\n 13:30"[label="65"]
+"Toronto\n 13:30"->"Montreal\n 18:20"[label="290"]
+"Waterloo\n 8:00"->"Kitchener\n 8:45"[label="45"]
+"Kitchener\n 11:30"->"Kitchener\n 8:45"[label="1275"]
+"Kitchener\n 8:45"->"Kitchener\n 11:30"[label="165"]
+"Waterloo\n 9:00"->"Hamilton\n 10:45"[label="105"]
+"Hamilton\n 10:45"->"Niagara\n 11:50"[label="65"]
+"Niagara\n 12:00"->"Toronto\n 14:00"[label="120"]
+"Niagara\n 11:50"->"Niagara\n 12:00"[label="10"]
+"Niagara\n 12:00"->"Niagara\n 11:50"[label="1430"]
+"Waterloo\n 7:00"->"Toronto\n 8:45"[label="105"]
+"Waterloo\n 23:00"->"Guleph\n 23:55"[label="55"]
+"Guleph\n 6:00"->"Toronto\n 7:05"[label="65"]
+"Guelph\n 12:25"->"Guleph\n 23:55"[label="690"]
+"Guleph\n 23:55"->"Guleph\n 6:00"[label="365"]
+"Guleph\n 6:00"->"Guelph\n 12:25"[label="385"]
+"Toronto\n 13:30"->"FINAL"
+"Toronto\n 14:00"->"FINAL"
+"Toronto\n 8:45"->"FINAL"
+"Toronto\n 7:05"->"FINAL"
+"Toronto\n 13:30"->"Toronto\n 14:00"[label="30"]
+"Toronto\n 14:00"->"Toronto\n 7:05"[label="1025"]
+"Toronto\n 8:45"->"Toronto\n 13:30"[label="285"]
+"Toronto\n 7:05"->"Toronto\n 8:45"[label="100"]
+"Waterloo\n 7:00"->"Waterloo\n 8:00"[label="60"]
+"Waterloo\n 8:00"->"Waterloo\n 9:00"[label="60"]
+"Waterloo\n 9:00"->"Waterloo\n 23:00"[label="840"]
+"Waterloo\n 23:00"->"Waterloo\n 7:00"[label="480"]
+
+}
