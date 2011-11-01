@@ -1,4 +1,7 @@
 // Andrés Mejía
+// Live Archive - 4805 - Ant Colony
+//    Accepted. Uses Schieber-Vishkin algorithm for LCA as explained in
+//              "Algorithms on Strings, Trees and Sequences" by Dan Gusfield.
 using namespace std;
 #include <algorithm>
 #include <iostream>
