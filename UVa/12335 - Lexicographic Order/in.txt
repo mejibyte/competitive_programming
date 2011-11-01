@@ -1,0 +1,11 @@
+10
+bdac 11
+abcd 5
+hjbrl 120
+abdc 1
+pqrs 11
+abcdefghijklmnopqrst 1
+abcdefghijklmnopqrst 1000000
+kpcx 8
+abcdefghijklmnopqrst 2432902008176640000
+abcdefghijklmnopqrst 2432902008176639999
