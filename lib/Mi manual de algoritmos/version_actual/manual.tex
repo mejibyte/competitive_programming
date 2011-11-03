@@ -254,6 +254,23 @@ es el patrón que se quiere buscar en la otra cadena). Una ejemplo del arreglo \
 
 \codigofuente{./src/strings/kmp.cpp}
 
+\subsection{Algoritmo Z}
+
+\begin{center}
+  \begin{tabular}{| c | c c c c c c c c c c c c c | }
+    \hline
+    i & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ [0.5ex]
+    \hline
+    \hline
+    \textit{string} & a & b & a & c & a & b & a & c & a & d & a & b & a \\
+    \textit{$Z_i$} & 0 & 0 & 1 & 0 & 5 & 0 & 1 & 0 & 1 & 0 & 3 & 0 & 1 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+\codigofuente{./src/strings/z_algorithm.cpp}
+
 \subsection{Algoritmo de Aho-Corasick}
 Sirve para buscar muchos patrones en una cadena. Por ejemplo,
 dada la cadena $ahishers$ y los patrones $\{he, she, hers, his\}$,
@@ -381,6 +398,11 @@ de Fenwick permiten encontrar $ \displaystyle \sum_{k=i}^{j} a_k $ en orden $O(\
 
 % ---------------------------------------------------------------
 \section{Misceláneo}
+\subsection{Trucos con bits}
+\subsubsection{Iterar sobre los subconjuntos de una máscara}
+
+\codigofuente{./src/misc/subsets_of_mask.cpp}
+
 \subsection{El \textit{parser} más rápido del mundo}
 \begin{itemize}
 \item Cada no-terminal: un método
