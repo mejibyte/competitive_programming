@@ -1,0 +1,16 @@
+fixprefixsuffix
+abcdabc
+aaaaaaaaaaaaaaaa
+aaaaaab
+abaaba
+mocolocomoco
+moco_moco_moco
+ocolocomoco
+aba_a_aba
+aba_ab_aba
+aba_abba_aba
+aba_abbaba_aba
+abacaba_c_abacaba
+abacaba_aba_abacaba
+abacaba_abac_abacaba
+abacaba_abacaba_abacaba

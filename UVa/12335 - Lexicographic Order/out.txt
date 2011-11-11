@@ -1,0 +1,10 @@
+Case 1: abcd
+Case 2: acdb
+Case 3: lrbjh
+Case 4: abdc
+Case 5: rpsq
+Case 6: abcdefghijklmnopqrst
+Case 7: abcdefghijtpknrqslmo
+Case 8: pkxc
+Case 9: tsrqponmlkjihgfedcba
+Case 10: strqponmlkjihgfedcba
