@@ -33,12 +33,9 @@ int cmp(double x, double y = 0, double tol = EPS) {
 ////////////////////////// Solution starts below. //////////////////////////////
 
 const int MAXT = 1000005, MAXN = 32;
-vector< int > at[MAXT];
+vector< pair<int, int> > at[MAXT];
 
-int number[MAXN][MAXN], certain[MAXN], cur[MAXN], next[MAXN];
-vector< pair<int, int> > positions[MAXN * MAXN];
-
-vector< int > heights;
+int certain[MAXN], cur[MAXN], next[MAXN];
 
 int main(){
     int N, T, X, Y;
@@ -47,46 +44,37 @@ int main(){
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < N; ++j) {
             int v; scanf("%d", &v);
-            number[i][j] = v;
             if (v == 1) {
                 certain[i] |= (1 << j);
             } else if (v == 2) {
                 if ( ( (i + j) % 2 ) == ( (X + Y) % 2 ) ) certain[i] |= (1 << j);
             } else {
-                heights.push_back( v );
-            }
-        }
-    }
-
-    sort(heights.begin(), heights.end());
-    heights.resize(unique(heights.begin(), heights.end()) - heights.begin());
-    
-    for (int k = 0; k < heights.size(); ++k) {
-        int v = heights[k];
-        for (int i = 0; i < N; ++i) {
-            for (int j = 0; j < N; ++j) {
-                if (number[i][j] == v) {
-                    positions[k].push_back( make_pair(i, j) );
+                int z = v;
+                while (z <= T) {
+                    at[z].push_back( make_pair(i, j) );
+                    z += v;
                 }
             }
         }
-        
-        int z = v;
-        while (z <= T) {
-            at[z].push_back( k );
-            z += v;
-        }
     }
+
     cur[X] |= (1 << Y);
     for (int t = 1; t <= T; ++t) {
         for (int i = 0; i < N; ++i) next[i] = certain[i];
-
-        foreach(k, at[t]) {
-            const vector< pair<int, int> > &steps = positions[*k];
-            foreach(p, steps) {
-                int r = p->first, c = p->second;
-                next[r] |= (1 << c);
-            }
+        
+        // printf("Time %d:\n", t);
+        // puts("cur:");
+        // for (int i = 0; i < N; ++i) {
+        //     for (int j = 0; j < N; ++j) {
+        //         int k = cur[i] & (1 << j);
+        //         printf("%d", k);
+        //     }
+        //     puts("");
+        // }
+        
+        foreach(p, at[t]) {
+            int r = p->first, c = p->second;
+            next[r] |= (1 << c);
         }
         
         for (int i = 0; i < N; ++i) {

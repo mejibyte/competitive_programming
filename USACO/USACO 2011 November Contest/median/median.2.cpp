@@ -32,7 +32,35 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 ////////////////////////// Solution starts below. //////////////////////////////
 
+const int MAXN = 100005;
+int a[MAXN];
+
 int main(){
+    #ifndef LOCAL
+    freopen("median.in", "r", stdin);
+    freopen("median.out", "w", stdout);
+    #endif
+    
+    int n, x;
+    scanf("%d %d", &n, &x);
+    for (int i = 0; i < n; ++i){
+        int cow; scanf("%d", &cow);
+        a[i] = cow >= x;
+    }
+    
+    long long ans = 0;
+    for (int i = 0; i < n; ++i) {
+        int zeros = 0;
+        int ones = 0;
+        for (int j = i; j < n; ++j) {
+            zeros += a[j] == 0;
+            ones += a[j] == 1;
+            if (zeros <= ones) {
+                ans++;
+            }
+        }
+    }
+    printf("%lld\n", ans);
     
     return 0;
 }

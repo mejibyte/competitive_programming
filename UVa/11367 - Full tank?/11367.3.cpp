@@ -2,7 +2,9 @@
   Accepted
  */
 #include <iostream>
+#include <climits>
 #include <vector>
+#include <cstdio>
 #include <queue>
 //#include <cassert>
 

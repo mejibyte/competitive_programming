@@ -32,7 +32,28 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 ////////////////////////// Solution starts below. //////////////////////////////
 
+int a[100001];
+
 int main(){
+    int n, thres;
+    scanf("%d %d", &n, &thres);
     
+    a[0] = 0;
+    for (int i = 0; i < n; ++i){
+        int cow; scanf("%d", &cow);
+        a[i] = cow;
+    }
+    
+    int ans = 0;
+    for (int i = 0; i < n; ++i) {
+        vector<int> b;
+        for (int j = i; j < n; ++j) {
+            b.push_back( a[j] );
+            sort(b.begin(), b.end());
+            int median = b[ b.size() / 2 ];
+            if (median >= thres) ans++;
+        }
+    }
+    cout << ans << endl;
     return 0;
 }

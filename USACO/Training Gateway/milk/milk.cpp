@@ -1,4 +1,7 @@
-// Andrés Mejía
+/*
+  LANG: C++
+  PROB: milk
+*/
 using namespace std;
 #include <algorithm>
 #include <iostream>
@@ -32,7 +35,30 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 ////////////////////////// Solution starts below. //////////////////////////////
 
+struct farmer {
+    int price, avail;
+    bool operator < (const farmer &t) const {
+        return price < t.price;
+    }
+};
+
+farmer v[5000];
+
 int main(){
+    freopen("milk.in", "r", stdin);
+    freopen("milk.out", "w", stdout);
     
+    int n, m;
+    while (scanf("%d %d", &n, &m) == 2) {
+        for (int i = 0; i < m; ++i) scanf("%d %d", &v[i].price, &v[i].avail);
+        sort(v, v + m);
+        int ans = 0;
+        for (int i = 0; n > 0; ++i) {
+            int buy = min(n, v[i].avail);
+            ans += v[i].price * buy;
+            n -= buy;
+        }
+        printf("%d\n", ans);
+    }
     return 0;
 }

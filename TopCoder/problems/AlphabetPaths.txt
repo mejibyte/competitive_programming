@@ -1,0 +1,73 @@
+PROBLEM STATEMENT
+The original Latin alphabet contained the following 21 letters: 
+
+A B C D E F Z H I K L M N O P Q R S T V X
+
+You are given a 2-dimensional matrix of characters represented by the vector <string> letterMaze. The i-th character of the j-th element of letterMaze will represent the character at row i and column j. The matrix will contain each of the 21 letters at least once. It may also contain empty cells marked as '.' (quotes for clarity).
+
+A path is a sequence of matrix elements such that the second element is (horizontally or vertically) adjacent to the first one, the third element is adjacent to the second one, and so on. No element may be repeated on a path. A Latin alphabet path is a path consisting of exactly 21 elements, each containing a different letter of the Latin alphabet. The letters are not required to be in any particular order.
+
+Return the total number of Latin alphabet paths in the matrix described by letterMaze.
+
+
+DEFINITION
+Class:AlphabetPaths
+Method:count
+Parameters:vector <string>
+Returns:long long
+Method signature:long long count(vector <string> letterMaze)
+
+
+NOTES
+-You may assume that for any valid input the return value fits into a long long.
+-Two paths are distinct if for some i their i-th elements have different coordinates. (There may be multiple distinct Latin alphabet paths that contain the letters in the same order.)
+
+
+CONSTRAINTS
+-letterMaze  will contain between 1 and 21 elements, inclusive.
+-Each element of letterMaze  will contain between 1 and 21 characters, inclusive.
+-All elements of letterMaze will contain the same number of characters.
+-Each character in letterMaze  will be '.' or an upper case letter from the alphabet described in the statement.
+-Each letter from the Latin alphabet described in the statement will appear at least once in letterMaze.
+
+
+EXAMPLES
+
+0)
+{"ABCDEFZHIXKLMNOPQRST",
+ "...................V"}
+
+Returns: 2
+
+You can make a valid Latin alphabet path starting at A and going right until reaching the T, then go down to reach V. The opposite path is also a Latin alphabet path.
+
+1)
+{".................VT.",
+ "....................",
+ "ABCDEFZHIXKLMNOPQRS.",
+ "..................S.",
+ ".................VT."}
+
+Returns: 0
+
+
+
+2)
+{"TBCDE.PQRSA", 
+ "FZHIXKLMNOV"}
+
+Returns: 50
+
+
+
+3)
+{"ABCDEF.",
+ "V....Z.",
+ "T....H.",
+ "S....I.",
+ "R....X.",
+ "KLMNOPQ"}
+
+Returns: 4
+
+

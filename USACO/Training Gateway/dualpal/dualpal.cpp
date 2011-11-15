@@ -1,4 +1,7 @@
-// Andrés Mejía
+/*
+    TASK: dualpal
+    LANG: C++
+*/
 using namespace std;
 #include <algorithm>
 #include <iostream>
@@ -32,7 +35,41 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 ////////////////////////// Solution starts below. //////////////////////////////
 
+string toBase(int x, int b) {
+    string ans = "";
+    do {
+        int digit = x % b;
+        ans = char('0' + digit) + ans;
+        x /= b;
+    } while (x > 0);
+    return ans;
+}
+
+bool check(int x) {
+    int cnt = 0;
+    for (int b = 2; b <= 10; ++b) {
+        string s = toBase(x, b);
+        string t = s; reverse(t.begin(), t.end());
+        if (s == t) cnt++;
+        if (cnt >= 2) return true;
+    }
+    return false;
+}
+
 int main(){
+    #ifndef LOCAL
+    freopen("dualpal.in", "r", stdin);
+    freopen("dualpal.out", "w", stdout);
+    #endif
     
-    return 0;
+    int n, s;
+    while (cin >> n >> s) {
+        while (n > 0) {
+            s++;
+            if (check(s)) {
+                cout << s << endl;
+                n--;
+            }
+        }
+    }
 }

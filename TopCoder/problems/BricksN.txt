@@ -1,0 +1,69 @@
+PROBLEM STATEMENT
+NOTE: This problem statement contains images that may not display properly if viewed outside of the applet. 
+
+We have a set of many construction bricks. It contains exactly one base which is simply a special kind of brick of dimensions 1x1xw. We also have a infinite amount of bricks of k different kinds: 1x1x1, 1x1x2, ..., 1x1xk. Formally, for each i between 1 and k, inclusive, we have as many 1x1xi bricks as we need. For simplicity, we will call these bricks "bricks of length i". The following image shows the situation for w=9 and k=3: there is a base of length 9, and three brick types of lengths 1, 2, and 3.
+
+
+We can stack bricks on top of other bricks (including the base) to form different structures. The design of the bricks forces us to place the bricks at integer positions only. To ensure stability, each brick other than the base must rest completely on a surface composed of other bricks or the base. The following image shows a structure that is invalid for four reasons:
+
+
+The height of a structure is the number of layers of bricks it contains. The base is not counted into the height of the structure.
+
+Two structures are different if there is a position where they differ in any way. (There are two ways in which two given structures may differ: First, there may be a position where one structure has a brick and the other does not. Second, there may be a position where both structures have bricks, but the bricks are of different types.)
+
+Given are three ints: w, the length of the base, k, the maximum length of your bricks, and h, the maximum height of your structure. Find the total number of different valid structures you can make. Return the total modulo 1000000007.
+
+For example, the following image shows all 83 different valid structures when w = 3, k = 3 and h = 2.
+
+
+
+DEFINITION
+Class:BricksN
+Method:countStructures
+Parameters:int, int, int
+Returns:int
+Method signature:int countStructures(int w, int h, int k)
+
+
+CONSTRAINTS
+-w and h will each be between 1 and 50, inclusive.
+-k will be between 1 and w, inclusive.
+
+
+EXAMPLES
+
+0)
+3
+1
+3
+
+Returns: 13
+
+The leftmost column in the picture above shows the 13 different structures of height at most 1.
+
+1)
+3
+2
+3
+
+Returns: 83
+
+This is the example from the statement.
+
+2)
+1
+5
+1
+
+Returns: 6
+
+
+
+3)
+10
+10
+3
+
+Returns: 288535435
+
+
