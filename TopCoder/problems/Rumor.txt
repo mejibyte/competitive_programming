@@ -1,0 +1,117 @@
+PROBLEM STATEMENT
+There are N rabbits who like to gossip. They are numbered from 0 to N-1.
+
+There are two rumors. Let's call them A and B. At this moment, each rabbit either knows both rumors or no rumors at all. The rabbits want to spread the rumors to everyone as quickly as possible.
+
+Rabbits are very picky when it comes to spreading rumors. Each rabbit only trusts some of the other rabbits. Moreover, the situation is not necessarily symmetric - there may be rabbits A and B such that A trusts B, but B does not trust A.
+
+At the beginning of each day, each rabbit who knows at least one rumor chooses a rumor X it knows. The rabbit then spends the day spreading rumor X. A rabbit will learn a new rumor if it is spreaded by someone it trusts. Note that a rabbit may learn both rumors in the same day (from two different other rabbits). Also note that a rabbit may spread one rumor and learn the other rumor on the same day.
+
+You are given a string knowledge and a vector <string> graph. The string knowledge has exactly N characters. Character i of knowledge is 'Y' if rabbit i already knows both rumors, or 'N' if it does not know the rumors yet. The vector <string> graph contains N strings with N characters each. Element i of graph describes rabbits who trust rabbit i: character j of element i of graph is 'Y' if rabbit j trusts rabbit i, or 'N' if rabbit j does not trust rabbit i. In other words, graph[i][j] is 'Y' if and only if rabbit i will spread rumors to rabbit j.
+
+Return the minimum number of days needed to spread both rumors so that each of the N rabbits will know both rumors. If it is impossible, return -1.
+
+DEFINITION
+Class:Rumor
+Method:getMinimum
+Parameters:string, vector <string>
+Returns:int
+Method signature:int getMinimum(string knowledge, vector <string> graph)
+
+
+CONSTRAINTS
+-knowledge will contain between 1 and 16 characters, inclusive.
+-Each character of knowledge will be either 'Y' or 'N'.
+-knowledge will contain at least one 'Y' character.
+-graph will contain N elements, where N is the length of knowledge.
+-Each element of graph will contain N characters.
+-Each character of graph will be either 'Y' or 'N'.
+-i-th character of i-th element of graph will be 'N'.
+
+
+EXAMPLES
+
+0)
+"YNN"
+{"NYN"
+,"NNY"
+,"NNN"}
+
+Returns: 3
+
+Initially, there are 3 rabbits. Rabbit 0 knows rumor A and B, and other rabbits know nothing.
+
+One of the optimal ways is as follows.
+
+On day 1, rabbit 0 sends information about rumor A to rabbit 1.
+On day 2, rabbit 1 sends information about rumor A to rabbit 2, and rabbit 0 sends information about rumor B to rabbit 1.
+On day 3, rabbit 1 sends information about rumor B to rabbit 2.
+
+As a result, it takes 3 days.
+
+1)
+"YNNY"
+{"NYYN"
+,"YNNY"
+,"YNNY"
+,"NYYN"}
+
+Returns: 1
+
+One of the optimal ways is as follows.
+
+On day 1, rabbit 0 sends information about rumor A to rabbit 1 and rabbit 2, and rabbit 3 sends information about rumor B to rabbit 1 and rabbit 2.
+
+
+2)
+"YYYY"
+{"NYNN"
+,"YNYN"
+,"NYNY"
+,"NNYN"}
+
+Returns: 0
+
+All rabbits already know the rumors, so no day is required.
+
+3)
+"YYYYYN"
+{"NYYYYN"
+,"YNYYYN"
+,"YYNYYN"
+,"YYYNYN"
+,"YYYYNN"
+,"NNNNNN"}
+
+Returns: -1
+
+It is impossible to make rabbit 5 know the rumors.
+
+4)
+"NNNY"
+{"NNNN"
+,"YNNN"
+,"YNNN"
+,"NYYN"}
+
+Returns: 3
+
+
+
+5)
+ "NNNNNNNYYY"
+{"NYNNYNNYNN"
+,"NNYNYNNNNY"
+,"YYNNNYNNNN"
+,"YNNNYNYNNN"
+,"NNYNNYNNYN"
+,"NNNNYNNNYY"
+,"NYNYNYNNNN"
+,"NNNNNNYNYY"
+,"NNNYNNNYNY"
+,"NYYNNNNYNN"}
+
+
+Returns: 2
+
+

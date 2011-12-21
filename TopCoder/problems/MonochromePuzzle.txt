@@ -1,0 +1,137 @@
+PROBLEM STATEMENT
+Fox Ciel has a NxN square divided into 1x1 cells. Here, N is an even number between 6 and 50, inclusive.
+Rows of the square are numbered 0 to N-1 from top to bottom, and columns of the square are numbered 0 to N-1 from left to right.
+Each cell is either white or black. This board is represented by vector <string> board.
+The j-th character of the i-th element of board is '#' if the cell at j-th column of i-th row is black, and is '.' if the cell is white.
+
+Ciel can perform the following operation repeatedly.
+
+Choose two numbers i, j (0<=i<j<N).
+Swap rows i and j.
+Then, swap columns i and j.
+
+Ciel wants to transform the square into a destination pattern G(N) by using the minimum number of the operations.
+
+The destination pattern G(N) is a NxN square, where the cell at i-th row of j-th column is black if |i-j|=1 or i+j=N-1 or {i,j}={0,N/2-1} or {i,j}={N/2, N-1}, and otherwise the cell is white. (Note that there are two cells that satisfy {i,j}={0,N/2-1}.)
+This is how G(6) and G(8) look like:
+
+         .#.#...#
+         #.#...#.
+ .##..#  .#.#.#..
+ #.#.#.  #.#.#...
+ ##.#..  ...#.#.#
+ ..#.##  ..#.#.#.
+ .#.#.#  .#...#.#
+ #..##.  #...#.#.
+  G(6)     G(8)
+
+Return the minimum number of required operations. If her objective is impossible, return -1.
+
+
+DEFINITION
+Class:MonochromePuzzle
+Method:getMinimum
+Parameters:vector <string>
+Returns:int
+Method signature:int getMinimum(vector <string> board)
+
+
+CONSTRAINTS
+-board will contain between 6 and 50 elements, inclusive.
+-The number of elements in board will be even.
+-Each element of board will contain N characters, where N is the number of elements in board.
+-Each character in each element of board will be either '.' or '#'.
+
+
+EXAMPLES
+
+0)
+{".##.#."
+,"#.##.."
+,"##...#"
+,".#..##"
+,"#..#.#"
+,"..###."}
+
+Returns: 2
+
+One of the optimal solutions:
+
+First, choose (i, j) = (1, 2). Then, choose (i, j) = (4, 5).
+
+1)
+{"###..."
+,".##..."
+,"..#..."
+,"#..###"
+,"##..##"
+,"###..#"}
+
+Returns: -1
+
+It is impossible to transform board to G(6).
+
+2)
+{".#.#...#"
+,"#.#...#."
+,".#.#.#.."
+,"#.#.#..."
+,"...#.#.#"
+,"..#.#.#."
+,".#...#.#"
+,"#...#.#."}
+
+Returns: 0
+
+No operation is required.
+
+3)
+{".#..#....#"
+,"#....#..#."
+,"....###..."
+,"....#.#..#"
+,"#.##......"
+,".##....#.."
+,"..##...#.."
+,".....##.#."
+,".#.....#.#"
+,"#..#....#."}
+
+
+Returns: 2
+
+
+
+4)
+{".##.....#."
+,"#..#.....#"
+,"#..##....."
+,".##..#...."
+,"..#..##..."
+,"...##..#.."
+,"....#..##."
+,".....##..#"
+,"#.....#..#"
+,".#.....##."}
+
+Returns: 5
+
+
+
+5)
+{".......##.#."
+,"......#..#.#"
+,"......#..##."
+,".......##..#"
+,"......#.#..#"
+,".......#.##."
+,".##.#......."
+,"#..#.#......"
+,"#..##......."
+,".##..#......"
+,"#.#..#......"
+,".#.##......."}
+
+Returns: 5
+
+

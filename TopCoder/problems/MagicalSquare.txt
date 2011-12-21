@@ -1,0 +1,89 @@
+PROBLEM STATEMENT
+You are going to fill 9 strings into the cells of a 3x3 square. Rows of the square are numbered 0 to 2 from top to bottom, and columns of the square are numbered 0 to 2 from left to right. Let S[i][j] be the string you'll enter into the cell in row i, column j. The strings S[i][j] do not have to be distinct. It is also allowed to use empty strings.
+
+You are given two vector <string>s rowStrings and columnStrings. For each i, the concatenation of strings in row i must be equal to rowStrings[i]. The same must hold for columns and columnStrings. Formally, the strings in the cells must satisfy the following conditions:
+
+For all 0<=i<=2, S[i][0]+S[i][1]+S[i][2] = rowStrings[i].
+For all 0<=j<=2, S[0][j]+S[1][j]+S[2][j] = columnStrings[j].
+
+Here, '+' represents a string concatenation.
+
+Return the number of ways in which the strings S[i][j] can be chosen so that all conditions are satisfied.
+
+DEFINITION
+Class:MagicalSquare
+Method:getCount
+Parameters:vector <string>, vector <string>
+Returns:long long
+Method signature:long long getCount(vector <string> rowStrings, vector <string> columnStrings)
+
+
+CONSTRAINTS
+-rowStrings and columnStrings will each contain exactly 3 elements.
+-Each element of rowStrings will contain between 0 and 50 characters, inclusive.
+-Each element of columnStrings will contain between 0 and 50 characters, inclusive.
+-rowStrings and columnStrings will contain only lowercase letters ('a'-'z').
+
+
+EXAMPLES
+
+0)
+{"f", "o", "x"}
+
+{"f", "o", "x"}
+
+
+Returns: 1
+
+The only valid way to choose the strings:
+
+ --- --- ---
+| f |   |   |
+ --- --- ---
+|   | o |   |
+ --- --- ---
+|   |   | x |
+ --- --- ---
+
+That is, S[0][0]="f", S[1][1]="o", S[2][2]="x", and all other S[i][j] are empty.
+
+1)
+{"x", "x", "x"}
+{"x", "", "xx"}
+
+Returns: 3
+
+These are the three valid possibilities:
+
+ --- --- ---    --- --- ---    --- --- ---
+| x |   |   |  |   |   | x |  |   |   | x |
+ --- --- ---    --- --- ---    --- --- ---
+|   |   | x |  | x |   |   |  |   |   | x |
+ --- --- ---    --- --- ---    --- --- ---
+|   |   | x |  |   |   | x |  | x |   |   |
+ --- --- ---    --- --- ---    --- --- ---
+
+
+2)
+{"cd", "cd", "cd"}
+{"dvd", "dvd", "dvd"}
+
+Returns: 0
+
+In this case there is no way to satisfy all conditions.
+
+3)
+{"abab", "ab", "abab"}
+{"abab", "ab", "abab"}
+
+Returns: 11
+
+
+
+4)
+{"qwer", "asdf", "zxcv"}
+{"qaz", "wsx", "erdfcv"}
+
+Returns: 1
+
+

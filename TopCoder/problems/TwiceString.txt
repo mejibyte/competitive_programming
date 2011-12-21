@@ -1,0 +1,53 @@
+PROBLEM STATEMENT
+
+You are given a string s.  Return the shortest string which contains s as a contiguous substring twice.
+
+Note that two occurrences of s may overlap. For example, "ababa" contains "aba" twice.
+
+
+DEFINITION
+Class:TwiceString
+Method:getShortest
+Parameters:string
+Returns:string
+Method signature:string getShortest(string s)
+
+
+NOTES
+-The shortest string which contains s as a contiguous substring twice is always unique.
+
+
+CONSTRAINTS
+-s will contain between 1 and 50 characters, inclusive. 
+-Each character in s will be a lowercase letter ('a'-'z').  
+
+
+EXAMPLES
+
+0)
+"aba"
+
+Returns: "ababa"
+
+This is the example shown in the problem statement. 
+
+1)
+"xxxxx"
+
+Returns: "xxxxxx"
+
+
+
+2)
+"topcoder"
+
+Returns: "topcodertopcoder"
+
+
+
+3)
+"abracadabra"
+
+Returns: "abracadabracadabra"
+
+

@@ -1,0 +1,82 @@
+PROBLEM STATEMENT
+NOTE: This problem statement contains images that may not display properly if viewed outside of the applet.
+Let's consider a structure made of unit cubes.
+The base of the structure is a grid of unit squares with n rows and m columns. On each of the unit squares there is a stack of some (possibly zero) unit cubes. Each cube in the structure belongs to one of these stacks of cubes.
+
+
+You are given the left view and front view of this structure.
+One valid structure for n = 4 and m = 5 is shown in the picture below.
+
+
+
+
+
+Note that the left view and the front view always show stacks of unit squares placed on a line. You will be given two vector <int>s heightsOfLeftView and heightsOfFrontView that describe these two views. More precisely:
+
+* heightsOfLeftView[i] will be the height of the tallest stack of cubes in the i-th row
+
+* heightsOfFrontView[j] will be the height of the tallest stack of cubes in the j-th column
+
+For example, for the picture above we would have heightsOfLeftView = {5, 2, 4, 1} and heightsOfFrontView = {5, 2, 4, 0, 1}.
+
+
+Your task is to calculate the number of structures that match heightsOfLeftView and heightsOfFrontView.
+
+Return this value modulo 1,000,000,009 (i.e., 10^9 + 9).
+
+DEFINITION
+Class:AxonometricProjection
+Method:howManyWays
+Parameters:vector <int>, vector <int>
+Returns:int
+Method signature:int howManyWays(vector <int> heightsOfLeftView, vector <int> heightsOfFrontView)
+
+
+CONSTRAINTS
+-heightsOfLeftView will contain between 1 and 50 elements, inclusive.
+-heightsOfFrontView will contain between 1 and 50 elements, inclusive.
+-Each element in heightsOfLeftView will be between 0 and 10,000, inclusive.
+-Each element in heightsOfFrontView will be between 0 and 10,000, inclusive.
+
+
+EXAMPLES
+
+0)
+{1,1}
+{1,1}
+
+Returns: 7
+
+There must be at least one cube in each row and also in each column. There may be at most one cube on each square. There are 7 different structures that match these constraints.
+
+1)
+{50,50,50,50,524}
+{524,524}
+
+Returns: 104060401
+
+The answer is 101^4.
+
+2)
+{1,2,3,4,5,6,7,8,9,10}
+{1,2,3,4,5,6,7,8,9,10,11}
+
+Returns: 0
+
+
+
+3)
+{5,2,4,1}
+{5,2,4,0,1}
+
+Returns: 429287
+
+This is the example from the problem statement.
+
+4)
+{5,2,4,52,24,524}
+{0,4,20,24,500,504,520,524}
+
+Returns: 97065655
+
+

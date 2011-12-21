@@ -1,0 +1,83 @@
+PROBLEM STATEMENT
+Mr. Dengklek is going to compose a long binary string called message. He is given a vector <string> pieces. He will construct the message as a concatenation of exactly K strings called parts. Each part will be an element of pieces chosen uniformly at random. Each element of pieces can be used multiple times. Each part is generated independently of the others. For example, if pieces = {"0", "10", "110"} and K = 5, then one possible message he can construct is "01100100".
+
+Mr. Dengklek has a string he would like to see in the message. You are given this string as a vector <string> goodSubstring. Concatenate all elements of goodSubstring to get the string he would like to see.
+The score is the number of (possibly overlapping) occurrences of goodSubstring as a contiguous substring within the message.
+
+For example, if goodSubstring = {"0", "1"}, the string he would like to see is "01" and the score for the example message from the previous paragraph is 2.
+
+You are given the vector <string> pieces, the vector <string> goodSubstring, and the long long K. Return the expected value of the score of the message that Mr. Dengklek will compose.
+
+
+DEFINITION
+Class:DengklekMessage
+Method:theExpected
+Parameters:vector <string>, vector <string>, long long
+Returns:double
+Method signature:double theExpected(vector <string> pieces, vector <string> goodSubstring, long long K)
+
+
+NOTES
+-The returned value must be accurate to within a relative or absolute error of 1E-9.
+
+
+CONSTRAINTS
+-pieces will contain between 1 and 50 elements, inclusive.
+-Each element of pieces will contain between 1 and 50 characters, inclusive.
+-Each character in pieces will be '0' (zero) or '1' (one).
+-pieces will not contain duplicate elements.
+-goodSubstring will contain between 1 and 10 elements, inclusive.
+-Each element of goodSubstring will contain between 1 and 50 characters, inclusive.
+-Each character in goodSubstring will be '0' (zero) or '1' (one).
+-K will be between 1 and 1,000,000,000,000 (10^12), inclusive.
+
+
+EXAMPLES
+
+0)
+{"0"}
+{"00"}
+10
+
+Returns: 9.0
+
+He will compose the message "0000000000". It contains 9 occurrences of "00".
+
+
+1)
+{"0"}
+{"00"}
+1
+
+Returns: 0.0
+
+This time the message is "0" and it scores nothing.
+
+
+2)
+{"0", "1"}
+{"00"}
+3
+
+Returns: 0.5
+
+There are 8 possible messages that he can compose, each with the same probability: "000", "001", "010", "011", "100", "101", "110", "111". Of them, "000" scores 2, each of "001" and "100" scores 1 and other messages score nothing. The expected score is (2 + 1 + 1) / 8 = 0.5.
+
+
+3)
+{"0", "10", "110"}
+{"0", "1"}
+5
+
+Returns: 2.6666666666666665
+
+The example from the problem statement.
+
+4)
+{"0", "10"}
+{"000101000101010100"}
+526
+
+Returns: 0.25146484375
+
+

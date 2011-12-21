@@ -1,0 +1,71 @@
+PROBLEM STATEMENT
+You and Mr. Dengklek are playing a game called Prime-Composite Game.
+
+Initially, there is a pile consisting of N stones. You and Mr. Dengklek take alternating turns, starting from you. In your turn, you must remove at least 1 and at most K stones from the pile. Additionally, after your move the number of stones in the pile must be a prime number. In Mr. Dengklek's turn, he must remove at least 1 and at most K stones from the pile. Additionally, after his move the number of stones in the pile must be a composite number. The first player who cannot make a valid move loses the game.
+
+You and Mr. Dengklek both play the game optimally. Optimal play is defined as follows: Clearly, one of the players has a strategy that will guarantee him winning the game. If at any turn this player has multiple moves to choose from, he always chooses the one that minimizes the number of turns the game will take. The other player always chooses the move that will maximize the number of turns the game will take. Each player is following these rules and each player knows that the other player is also following these rules.
+
+You are given the ints N and K. Determine the outcome of the game. Let X be the number of turns in the game. If you win, return X, otherwise return -X.
+
+DEFINITION
+Class:PrimeCompositeGame
+Method:theOutcome
+Parameters:int, int
+Returns:int
+Method signature:int theOutcome(int N, int K)
+
+
+NOTES
+-A prime number is a positive number that has exactly two distinct divisors. A composite number is a positive number that has more than two distinct divisors. By definition, 1 is neither prime nor composite.
+
+
+CONSTRAINTS
+-N will be between 1 and 474,747, inclusive.
+-K will be between 1 and N, inclusive.
+
+
+EXAMPLES
+
+0)
+3
+2
+
+Returns: 1
+
+Take a single stone in your first turn, leaving two stones. This ends the game, as Mr. Dengklek now has no valid move.
+
+1)
+58
+1
+
+Returns: 0
+
+The game is already over and you lost, as you have no valid move to make. (The only option is to take a single stone, but 57 is not a prime number.)
+
+2)
+30
+3
+
+Returns: -2
+
+The game will proceed as follows:
+
+You will take 1 stone, leaving 29 stones.
+Mr. Dengklek will take 1 or 2 stones, leaving 28 or 27 stones. In either case, you cannot leave a prime number of stones in your next turn, therefore, you will surely lose.
+
+
+3)
+6
+3
+
+Returns: 1
+
+Taking 1 stone in your first turn would guarantee you to win after your next turn. However, it is better to take 3 stones and win right now.
+
+4)
+526
+58
+
+Returns: 19
+
+

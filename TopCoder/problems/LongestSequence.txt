@@ -1,0 +1,69 @@
+PROBLEM STATEMENT
+Your task is to find the length of the longest sequence of real numbers that satisfies some conditions.
+
+
+You are given a vector <int> C. Each element of C corresponds to one condition.
+
+If C[i] is negative, the condition is:
+"The sum of every consecutive -C[i] terms must be negative."
+
+If C[i] is positive, the condition is:
+"The sum of every consecutive C[i] terms must be positive."
+
+
+You should return the maximal length of a sequence that satisfies all the conditions.
+If there exists an infinitely long sequence that satisfies all the conditions, return -1.
+
+DEFINITION
+Class:LongestSequence
+Method:maxLength
+Parameters:vector <int>
+Returns:int
+Method signature:int maxLength(vector <int> C)
+
+
+CONSTRAINTS
+-C will contain between 1 and 50 elements, inclusive.
+-Each element in C will be between -1,000 and 1,000, inclusive.
+-All elements in C will be pairwise distinct.
+-No element in C will be 0.
+
+
+EXAMPLES
+
+0)
+{-2,3}
+
+Returns: 3
+
+The sequence {2, -3, 2} satisfies all the conditions and its length is 3.
+
+It can be proved that there is no valid sequence with more terms.
+
+1)
+{524}
+
+Returns: -1
+
+Any infinite sequence in which all elements are positive satisfies all the conditions.
+
+2)
+{1, -1}
+
+Returns: 0
+
+No sequence with positive length can satisfy both conditions.
+
+3)
+{11,-7}
+
+Returns: 16
+
+
+
+4)
+{-227,690,590,-524}
+
+Returns: 713
+
+

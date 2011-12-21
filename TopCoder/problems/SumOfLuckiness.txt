@@ -1,0 +1,60 @@
+PROBLEM STATEMENT
+Mr. Dengklek once told you that 4 and 7 are lucky numbers. He also defined the luckiness of a positive integer as the absolute difference between the number of 7s in its decimal representation and the number of 4s in its decimal representation. For example, for each of the numbers 23, 47 and 47714 the luckiness is 0, and for each of the numbers 4474 and 7070 the luckiness is 2.
+
+You are given two ints A and B. Return the sum of luckiness of all integers between A and B, inclusive.
+
+
+DEFINITION
+Class:SumOfLuckiness
+Method:theSum
+Parameters:int, int
+Returns:long long
+Method signature:long long theSum(int A, int B)
+
+
+CONSTRAINTS
+-A will be between 1 and 2,000,000,000, inclusive.
+-B will be between A and 2,000,000,000, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+10
+
+Returns: 2
+
+The luckiness of 4 is 1. The luckiness of 7 is 1. The luckiness of the other numbers is 0. So, the sum of luckiness is 2.
+
+1)
+40
+47
+
+Returns: 8
+
+The luckiness of 40, 41, 42, 43, 45, and 46 is 1. The luckiness of 44 is 2. The luckiness of 47 is 0.
+
+2)
+58
+526
+
+Returns: 231
+
+
+
+3)
+4444
+7777
+
+Returns: 2338
+
+
+
+4)
+585858585
+858585858
+
+Returns: 287481025
+
+
