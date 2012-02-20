@@ -405,6 +405,15 @@ de Fenwick permiten encontrar $ \displaystyle \sum_{k=i}^{j} a_k $ en orden $O(\
 
 % ---------------------------------------------------------------
 \section{Misceláneo}
+
+\subsection{Problema de Josephus}
+
+Hay $n$ personas enumeradas de $0$ a $n - 1$ paradas en un círculo. Un verdugo empieza a contar personas en sentido horario, empezando en la persona $0$. Cuando la cuenta llega a $k$, el verdugo mata a la última persona contada y vuelve a empezar a contar a partir siguiente persona. ¿Quién es el sobreviviente?
+
+Por ejemplo, si $n = 7$ y $k = 3$, el orden en que se eliminan las personas es 2, 5, 1, 6, 4, 0 y 3. El sobreviviente es 3.
+
+\codigofuente{./src/misc/josephus.cpp}
+
 \subsection{Trucos con bits}
 \subsubsection{Iterar sobre los subconjuntos de una máscara}
 
@@ -480,7 +489,7 @@ Consideraciones que podrían ser causa de un Wrong Answer:
   \end{item}
 
   \begin{item}
-    Hay pérdida de precisión al leer variables como \verb_double_ y converterirlas a enteros. Por ejemplo, en C++, \verb_floor(0.29 * 100) == 28_.
+    Hay pérdida de precisión al leer variables como \verb_double_ y convertirlas a enteros. Por ejemplo, en C++, \verb_floor(0.29 * 100) == 28_.
   \end{item}
 
   \begin{item}

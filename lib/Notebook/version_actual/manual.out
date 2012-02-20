@@ -47,19 +47,20 @@
 \BOOKMARK [2][-]{subsection.8.1}{\301rboles de Fenwick \363 Binary indexed trees}{section.8}% 47
 \BOOKMARK [2][-]{subsection.8.2}{Segment tree}{section.8}% 48
 \BOOKMARK [1][-]{section.9}{Miscel\341neo}{}% 49
-\BOOKMARK [2][-]{subsection.9.1}{Trucos con bits}{section.9}% 50
-\BOOKMARK [3][-]{subsubsection.9.1.1}{Iterar sobre los subconjuntos de una m\341scara}{subsection.9.1}% 51
-\BOOKMARK [2][-]{subsection.9.2}{El parser m\341s r\341pido del mundo}{section.9}% 52
-\BOOKMARK [2][-]{subsection.9.3}{Checklist para corregir un Wrong Answer}{section.9}% 53
-\BOOKMARK [2][-]{subsection.9.4}{Redondeo de dobles}{section.9}% 54
-\BOOKMARK [3][-]{subsubsection.9.4.1}{Convertir un doble al entero m\341s cercano}{subsection.9.4}% 55
-\BOOKMARK [3][-]{subsubsection.9.4.2}{Redondear un doble a cierto n\372mero de cifras de precisi\363n}{subsection.9.4}% 56
-\BOOKMARK [1][-]{section.10}{Java}{}% 57
-\BOOKMARK [2][-]{subsection.10.1}{Entrada desde entrada est\341ndar}{section.10}% 58
-\BOOKMARK [2][-]{subsection.10.2}{Entrada desde archivo}{section.10}% 59
-\BOOKMARK [2][-]{subsection.10.3}{Mapas y sets}{section.10}% 60
-\BOOKMARK [2][-]{subsection.10.4}{Colas de prioridad}{section.10}% 61
-\BOOKMARK [1][-]{section.11}{C++}{}% 62
-\BOOKMARK [2][-]{subsection.11.1}{Entrada desde archivo}{section.11}% 63
-\BOOKMARK [2][-]{subsection.11.2}{Strings con caract\351res especiales}{section.11}% 64
-\BOOKMARK [2][-]{subsection.11.3}{Imprimir un doble con cout con cierto n\372mero de cifras de precisi\363n}{section.11}% 65
+\BOOKMARK [2][-]{subsection.9.1}{Problema de Josephus}{section.9}% 50
+\BOOKMARK [2][-]{subsection.9.2}{Trucos con bits}{section.9}% 51
+\BOOKMARK [3][-]{subsubsection.9.2.1}{Iterar sobre los subconjuntos de una m\341scara}{subsection.9.2}% 52
+\BOOKMARK [2][-]{subsection.9.3}{El parser m\341s r\341pido del mundo}{section.9}% 53
+\BOOKMARK [2][-]{subsection.9.4}{Checklist para corregir un Wrong Answer}{section.9}% 54
+\BOOKMARK [2][-]{subsection.9.5}{Redondeo de dobles}{section.9}% 55
+\BOOKMARK [3][-]{subsubsection.9.5.1}{Convertir un doble al entero m\341s cercano}{subsection.9.5}% 56
+\BOOKMARK [3][-]{subsubsection.9.5.2}{Redondear un doble a cierto n\372mero de cifras de precisi\363n}{subsection.9.5}% 57
+\BOOKMARK [1][-]{section.10}{Java}{}% 58
+\BOOKMARK [2][-]{subsection.10.1}{Entrada desde entrada est\341ndar}{section.10}% 59
+\BOOKMARK [2][-]{subsection.10.2}{Entrada desde archivo}{section.10}% 60
+\BOOKMARK [2][-]{subsection.10.3}{Mapas y sets}{section.10}% 61
+\BOOKMARK [2][-]{subsection.10.4}{Colas de prioridad}{section.10}% 62
+\BOOKMARK [1][-]{section.11}{C++}{}% 63
+\BOOKMARK [2][-]{subsection.11.1}{Entrada desde archivo}{section.11}% 64
+\BOOKMARK [2][-]{subsection.11.2}{Strings con caract\351res especiales}{section.11}% 65
+\BOOKMARK [2][-]{subsection.11.3}{Imprimir un doble con cout con cierto n\372mero de cifras de precisi\363n}{section.11}% 66
