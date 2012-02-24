@@ -19,49 +19,51 @@
 \contentsline {subsection}{\numberline {4.6}Puntos de articulaci\IeC {\'o}n}{7}{subsection.4.6}
 \contentsline {subsection}{\numberline {4.7}M\IeC {\'a}ximo flujo: M\IeC {\'e}todo de Ford-Fulkerson, algoritmo de Edmonds-Karp}{8}{subsection.4.7}
 \contentsline {subsection}{\numberline {4.8}M\IeC {\'a}ximo flujo para grafos dispersos usando Ford-Fulkerson}{9}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Componentes fuertemente conexas: Algoritmo de Tarjan}{11}{subsection.4.9}
-\contentsline {subsection}{\numberline {4.10}2-Satisfiability}{11}{subsection.4.10}
-\contentsline {section}{\numberline {5}Programaci\IeC {\'o}n din\IeC {\'a}mica}{11}{section.5}
-\contentsline {subsection}{\numberline {5.1}Longest common subsequence}{11}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Partici\IeC {\'o}n de troncos}{12}{subsection.5.2}
-\contentsline {section}{\numberline {6}Strings}{13}{section.6}
-\contentsline {subsection}{\numberline {6.1}Algoritmo de Knuth-Morris-Pratt (KMP)}{13}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Algoritmo Z}{14}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Algoritmo de Aho-Corasick}{14}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Suffix arrays y longest common prefix}{16}{subsection.6.4}
-\contentsline {section}{\numberline {7}Geometr\IeC {\'\i }a}{18}{section.7}
-\contentsline {subsection}{\numberline {7.1}Identidades trigonom\IeC {\'e}tricas}{18}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}\IeC {\'A}rea de un pol\IeC {\'\i }gono}{18}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Centro de masa de un pol\IeC {\'\i }gono}{18}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Convex hull: Graham Scan}{18}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}Convex hull: Andrew's monotone chain}{19}{subsection.7.5}
-\contentsline {subsection}{\numberline {7.6}M\IeC {\'\i }nima distancia entre un punto y un segmento}{20}{subsection.7.6}
-\contentsline {subsection}{\numberline {7.7}M\IeC {\'\i }nima distancia entre un punto y una recta}{20}{subsection.7.7}
-\contentsline {subsection}{\numberline {7.8}Determinar si un pol\IeC {\'\i }gono es convexo}{20}{subsection.7.8}
-\contentsline {subsection}{\numberline {7.9}Determinar si un punto est\IeC {\'a} dentro de un pol\IeC {\'\i }gono convexo}{21}{subsection.7.9}
-\contentsline {subsection}{\numberline {7.10}Determinar si un punto est\IeC {\'a} dentro de un pol\IeC {\'\i }gono cualquiera}{21}{subsection.7.10}
-\contentsline {subsection}{\numberline {7.11}Hallar la intersecci\IeC {\'o}n de dos rectas}{22}{subsection.7.11}
-\contentsline {subsection}{\numberline {7.12}Hallar la intersecci\IeC {\'o}n de dos segmentos de recta}{22}{subsection.7.12}
-\contentsline {subsection}{\numberline {7.13}Determinar si dos segmentos de recta se intersectan o no}{23}{subsection.7.13}
-\contentsline {subsection}{\numberline {7.14}Centro del c\IeC {\'\i }rculo que pasa por 3 puntos}{24}{subsection.7.14}
-\contentsline {section}{\numberline {8}Estructuras de datos}{24}{section.8}
-\contentsline {subsection}{\numberline {8.1}\IeC {\'A}rboles de Fenwick \IeC {\'o} Binary indexed trees}{24}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Segment tree}{25}{subsection.8.2}
-\contentsline {section}{\numberline {9}Miscel\IeC {\'a}neo}{26}{section.9}
-\contentsline {subsection}{\numberline {9.1}Problema de Josephus}{26}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Trucos con bits}{27}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Iterar sobre los subconjuntos de una m\IeC {\'a}scara}{27}{subsubsection.9.2.1}
-\contentsline {subsection}{\numberline {9.3}El \textit {parser} m\IeC {\'a}s r\IeC {\'a}pido del mundo}{27}{subsection.9.3}
-\contentsline {subsection}{\numberline {9.4}Checklist para corregir un Wrong Answer}{27}{subsection.9.4}
-\contentsline {subsection}{\numberline {9.5}Redondeo de dobles}{28}{subsection.9.5}
-\contentsline {subsubsection}{\numberline {9.5.1}Convertir un doble al entero m\IeC {\'a}s cercano}{28}{subsubsection.9.5.1}
-\contentsline {subsubsection}{\numberline {9.5.2}Redondear un doble a cierto n\IeC {\'u}mero de cifras de precisi\IeC {\'o}n}{29}{subsubsection.9.5.2}
-\contentsline {section}{\numberline {10}Java}{29}{section.10}
-\contentsline {subsection}{\numberline {10.1}Entrada desde entrada est\IeC {\'a}ndar}{29}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Entrada desde archivo}{30}{subsection.10.2}
-\contentsline {subsection}{\numberline {10.3}Mapas y sets}{30}{subsection.10.3}
-\contentsline {subsection}{\numberline {10.4}Colas de prioridad}{31}{subsection.10.4}
-\contentsline {section}{\numberline {11}C++}{32}{section.11}
-\contentsline {subsection}{\numberline {11.1}Entrada desde archivo}{32}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Strings con caract\IeC {\'e}res especiales}{32}{subsection.11.2}
-\contentsline {subsection}{\numberline {11.3}Imprimir un doble con \texttt {cout} con cierto n\IeC {\'u}mero de cifras de precisi\IeC {\'o}n}{33}{subsection.11.3}
+\contentsline {subsection}{\numberline {4.9}Maximum bipartite matching}{11}{subsection.4.9}
+\contentsline {subsubsection}{\numberline {4.9.1}Teorema de K\IeC {\H o}nig}{11}{subsubsection.4.9.1}
+\contentsline {subsection}{\numberline {4.10}Componentes fuertemente conexas: Algoritmo de Tarjan}{12}{subsection.4.10}
+\contentsline {subsection}{\numberline {4.11}2-Satisfiability}{12}{subsection.4.11}
+\contentsline {section}{\numberline {5}Programaci\IeC {\'o}n din\IeC {\'a}mica}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Longest common subsequence}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Partici\IeC {\'o}n de troncos}{13}{subsection.5.2}
+\contentsline {section}{\numberline {6}Strings}{14}{section.6}
+\contentsline {subsection}{\numberline {6.1}Algoritmo de Knuth-Morris-Pratt (KMP)}{14}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Algoritmo Z}{15}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Algoritmo de Aho-Corasick}{15}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Suffix arrays y longest common prefix}{17}{subsection.6.4}
+\contentsline {section}{\numberline {7}Geometr\IeC {\'\i }a}{19}{section.7}
+\contentsline {subsection}{\numberline {7.1}Identidades trigonom\IeC {\'e}tricas}{19}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}\IeC {\'A}rea de un pol\IeC {\'\i }gono}{19}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Centro de masa de un pol\IeC {\'\i }gono}{19}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Convex hull: Graham Scan}{19}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Convex hull: Andrew's monotone chain}{20}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}M\IeC {\'\i }nima distancia entre un punto y un segmento}{21}{subsection.7.6}
+\contentsline {subsection}{\numberline {7.7}M\IeC {\'\i }nima distancia entre un punto y una recta}{21}{subsection.7.7}
+\contentsline {subsection}{\numberline {7.8}Determinar si un pol\IeC {\'\i }gono es convexo}{21}{subsection.7.8}
+\contentsline {subsection}{\numberline {7.9}Determinar si un punto est\IeC {\'a} dentro de un pol\IeC {\'\i }gono convexo}{22}{subsection.7.9}
+\contentsline {subsection}{\numberline {7.10}Determinar si un punto est\IeC {\'a} dentro de un pol\IeC {\'\i }gono cualquiera}{22}{subsection.7.10}
+\contentsline {subsection}{\numberline {7.11}Hallar la intersecci\IeC {\'o}n de dos rectas}{23}{subsection.7.11}
+\contentsline {subsection}{\numberline {7.12}Hallar la intersecci\IeC {\'o}n de dos segmentos de recta}{23}{subsection.7.12}
+\contentsline {subsection}{\numberline {7.13}Determinar si dos segmentos de recta se intersectan o no}{24}{subsection.7.13}
+\contentsline {subsection}{\numberline {7.14}Centro del c\IeC {\'\i }rculo que pasa por 3 puntos}{25}{subsection.7.14}
+\contentsline {section}{\numberline {8}Estructuras de datos}{25}{section.8}
+\contentsline {subsection}{\numberline {8.1}\IeC {\'A}rboles de Fenwick \IeC {\'o} Binary indexed trees}{25}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Segment tree}{26}{subsection.8.2}
+\contentsline {section}{\numberline {9}Miscel\IeC {\'a}neo}{27}{section.9}
+\contentsline {subsection}{\numberline {9.1}Problema de Josephus}{27}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Trucos con bits}{28}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Iterar sobre los subconjuntos de una m\IeC {\'a}scara}{28}{subsubsection.9.2.1}
+\contentsline {subsection}{\numberline {9.3}El \textit {parser} m\IeC {\'a}s r\IeC {\'a}pido del mundo}{28}{subsection.9.3}
+\contentsline {subsection}{\numberline {9.4}Checklist para corregir un Wrong Answer}{28}{subsection.9.4}
+\contentsline {subsection}{\numberline {9.5}Redondeo de dobles}{29}{subsection.9.5}
+\contentsline {subsubsection}{\numberline {9.5.1}Convertir un doble al entero m\IeC {\'a}s cercano}{29}{subsubsection.9.5.1}
+\contentsline {subsubsection}{\numberline {9.5.2}Redondear un doble a cierto n\IeC {\'u}mero de cifras de precisi\IeC {\'o}n}{30}{subsubsection.9.5.2}
+\contentsline {section}{\numberline {10}Java}{30}{section.10}
+\contentsline {subsection}{\numberline {10.1}Entrada desde entrada est\IeC {\'a}ndar}{30}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Entrada desde archivo}{31}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Mapas y sets}{31}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Colas de prioridad}{32}{subsection.10.4}
+\contentsline {section}{\numberline {11}C++}{33}{section.11}
+\contentsline {subsection}{\numberline {11.1}Entrada desde archivo}{33}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Strings con caract\IeC {\'e}res especiales}{33}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Imprimir un doble con \texttt {cout} con cierto n\IeC {\'u}mero de cifras de precisi\IeC {\'o}n}{34}{subsection.11.3}

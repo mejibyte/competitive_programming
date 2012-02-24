@@ -57,8 +57,10 @@ double polarAngle( point p ) {
     if(fabs(x) <= EPS && fabs(y) <= EPS) return -1.0;
     if(fabs(x) <= EPS) return (y > EPS ? 1.0 : 3.0) * acos(0);
     double theta = atan(1.0 * y / x);
-    if(x > EPS) return(y >= -EPS ? theta : (4*acos(0) + theta));
-    return(2 * acos( 0 ) + theta);
+    if(x > EPS)
+      return (y >= -EPS ? theta : (4*acos(0) + theta));
+    else
+      return(2 * acos( 0 ) + theta);
 }
 
 //Point inside polygon

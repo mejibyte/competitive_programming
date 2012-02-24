@@ -192,6 +192,23 @@ es utilizar BFS que lo hace más eficiente en algunos grafos.
 
 \codigofuente{./src/grafos/ford_fulkerson_sparse.cpp}
 
+\subsection{Maximum bipartite matching}
+\codigofuente{./src/grafos/maximum_bipartite_matching.cpp}
+
+\subsubsection{Teorema de Kőnig}
+
+Un \textbf{minimum vertex cover} es un subconjunto de vértices lo más pequeño posible tal que cualquier arista del grafo toque algún vértice del subconjunto.
+
+\textbf{Teorema de Kőnig}. En un grafo bipartito, el tamaño del maximum bipartite matching es igual al tamaño del minimum vertex cover.
+
+\medskip
+
+Para encontrar los nodos que componen el minimum vertex cover, hacer un DFS como el que se usa para encontrar el maximum bipartite matching \footnote{Es decir, un DFS que usa aristas que no están en el matching cuando va de L a R y aristas que sí están en el matching cuando va de R a L.} pero empezando únicamente en los vértices de L que no tienen pareja en el lado R (empezando en los \texttt{i} tales que \texttt{matchL[i] == -1}). Adicionalmente, marcar cuales nodos fueron visitados tanto en L como en R.
+
+El minimum vertex cover estará formado por los nodos de L que no fueron visitados y los nodos de R que sí fueron visitados.
+
+\codigofuente{./src/grafos/konig.cpp}
+
 \subsection{Componentes fuertemente conexas: Algoritmo de Tarjan}
 \label{tarjan}
 \codigofuente{./src/grafos/tarjan.cpp}

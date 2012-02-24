@@ -18,49 +18,51 @@
 \BOOKMARK [2][-]{subsection.4.6}{Puntos de articulaci\363n}{section.4}% 18
 \BOOKMARK [2][-]{subsection.4.7}{M\341ximo flujo: M\351todo de Ford-Fulkerson, algoritmo de Edmonds-Karp}{section.4}% 19
 \BOOKMARK [2][-]{subsection.4.8}{M\341ximo flujo para grafos dispersos usando Ford-Fulkerson}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.9}{Componentes fuertemente conexas: Algoritmo de Tarjan}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.10}{2-Satisfiability}{section.4}% 22
-\BOOKMARK [1][-]{section.5}{Programaci\363n din\341mica}{}% 23
-\BOOKMARK [2][-]{subsection.5.1}{Longest common subsequence}{section.5}% 24
-\BOOKMARK [2][-]{subsection.5.2}{Partici\363n de troncos}{section.5}% 25
-\BOOKMARK [1][-]{section.6}{Strings}{}% 26
-\BOOKMARK [2][-]{subsection.6.1}{Algoritmo de Knuth-Morris-Pratt \(KMP\)}{section.6}% 27
-\BOOKMARK [2][-]{subsection.6.2}{Algoritmo Z}{section.6}% 28
-\BOOKMARK [2][-]{subsection.6.3}{Algoritmo de Aho-Corasick}{section.6}% 29
-\BOOKMARK [2][-]{subsection.6.4}{Suffix arrays y longest common prefix}{section.6}% 30
-\BOOKMARK [1][-]{section.7}{Geometr\355a}{}% 31
-\BOOKMARK [2][-]{subsection.7.1}{Identidades trigonom\351tricas}{section.7}% 32
-\BOOKMARK [2][-]{subsection.7.2}{\301rea de un pol\355gono}{section.7}% 33
-\BOOKMARK [2][-]{subsection.7.3}{Centro de masa de un pol\355gono}{section.7}% 34
-\BOOKMARK [2][-]{subsection.7.4}{Convex hull: Graham Scan}{section.7}% 35
-\BOOKMARK [2][-]{subsection.7.5}{Convex hull: Andrew's monotone chain}{section.7}% 36
-\BOOKMARK [2][-]{subsection.7.6}{M\355nima distancia entre un punto y un segmento}{section.7}% 37
-\BOOKMARK [2][-]{subsection.7.7}{M\355nima distancia entre un punto y una recta}{section.7}% 38
-\BOOKMARK [2][-]{subsection.7.8}{Determinar si un pol\355gono es convexo}{section.7}% 39
-\BOOKMARK [2][-]{subsection.7.9}{Determinar si un punto est\341 dentro de un pol\355gono convexo}{section.7}% 40
-\BOOKMARK [2][-]{subsection.7.10}{Determinar si un punto est\341 dentro de un pol\355gono cualquiera}{section.7}% 41
-\BOOKMARK [2][-]{subsection.7.11}{Hallar la intersecci\363n de dos rectas}{section.7}% 42
-\BOOKMARK [2][-]{subsection.7.12}{Hallar la intersecci\363n de dos segmentos de recta}{section.7}% 43
-\BOOKMARK [2][-]{subsection.7.13}{Determinar si dos segmentos de recta se intersectan o no}{section.7}% 44
-\BOOKMARK [2][-]{subsection.7.14}{Centro del c\355rculo que pasa por 3 puntos}{section.7}% 45
-\BOOKMARK [1][-]{section.8}{Estructuras de datos}{}% 46
-\BOOKMARK [2][-]{subsection.8.1}{\301rboles de Fenwick \363 Binary indexed trees}{section.8}% 47
-\BOOKMARK [2][-]{subsection.8.2}{Segment tree}{section.8}% 48
-\BOOKMARK [1][-]{section.9}{Miscel\341neo}{}% 49
-\BOOKMARK [2][-]{subsection.9.1}{Problema de Josephus}{section.9}% 50
-\BOOKMARK [2][-]{subsection.9.2}{Trucos con bits}{section.9}% 51
-\BOOKMARK [3][-]{subsubsection.9.2.1}{Iterar sobre los subconjuntos de una m\341scara}{subsection.9.2}% 52
-\BOOKMARK [2][-]{subsection.9.3}{El parser m\341s r\341pido del mundo}{section.9}% 53
-\BOOKMARK [2][-]{subsection.9.4}{Checklist para corregir un Wrong Answer}{section.9}% 54
-\BOOKMARK [2][-]{subsection.9.5}{Redondeo de dobles}{section.9}% 55
-\BOOKMARK [3][-]{subsubsection.9.5.1}{Convertir un doble al entero m\341s cercano}{subsection.9.5}% 56
-\BOOKMARK [3][-]{subsubsection.9.5.2}{Redondear un doble a cierto n\372mero de cifras de precisi\363n}{subsection.9.5}% 57
-\BOOKMARK [1][-]{section.10}{Java}{}% 58
-\BOOKMARK [2][-]{subsection.10.1}{Entrada desde entrada est\341ndar}{section.10}% 59
-\BOOKMARK [2][-]{subsection.10.2}{Entrada desde archivo}{section.10}% 60
-\BOOKMARK [2][-]{subsection.10.3}{Mapas y sets}{section.10}% 61
-\BOOKMARK [2][-]{subsection.10.4}{Colas de prioridad}{section.10}% 62
-\BOOKMARK [1][-]{section.11}{C++}{}% 63
-\BOOKMARK [2][-]{subsection.11.1}{Entrada desde archivo}{section.11}% 64
-\BOOKMARK [2][-]{subsection.11.2}{Strings con caract\351res especiales}{section.11}% 65
-\BOOKMARK [2][-]{subsection.11.3}{Imprimir un doble con cout con cierto n\372mero de cifras de precisi\363n}{section.11}% 66
+\BOOKMARK [2][-]{subsection.4.9}{Maximum bipartite matching}{section.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.9.1}{Teorema de Konig}{subsection.4.9}% 22
+\BOOKMARK [2][-]{subsection.4.10}{Componentes fuertemente conexas: Algoritmo de Tarjan}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.11}{2-Satisfiability}{section.4}% 24
+\BOOKMARK [1][-]{section.5}{Programaci\363n din\341mica}{}% 25
+\BOOKMARK [2][-]{subsection.5.1}{Longest common subsequence}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.2}{Partici\363n de troncos}{section.5}% 27
+\BOOKMARK [1][-]{section.6}{Strings}{}% 28
+\BOOKMARK [2][-]{subsection.6.1}{Algoritmo de Knuth-Morris-Pratt \(KMP\)}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.2}{Algoritmo Z}{section.6}% 30
+\BOOKMARK [2][-]{subsection.6.3}{Algoritmo de Aho-Corasick}{section.6}% 31
+\BOOKMARK [2][-]{subsection.6.4}{Suffix arrays y longest common prefix}{section.6}% 32
+\BOOKMARK [1][-]{section.7}{Geometr\355a}{}% 33
+\BOOKMARK [2][-]{subsection.7.1}{Identidades trigonom\351tricas}{section.7}% 34
+\BOOKMARK [2][-]{subsection.7.2}{\301rea de un pol\355gono}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.3}{Centro de masa de un pol\355gono}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.4}{Convex hull: Graham Scan}{section.7}% 37
+\BOOKMARK [2][-]{subsection.7.5}{Convex hull: Andrew's monotone chain}{section.7}% 38
+\BOOKMARK [2][-]{subsection.7.6}{M\355nima distancia entre un punto y un segmento}{section.7}% 39
+\BOOKMARK [2][-]{subsection.7.7}{M\355nima distancia entre un punto y una recta}{section.7}% 40
+\BOOKMARK [2][-]{subsection.7.8}{Determinar si un pol\355gono es convexo}{section.7}% 41
+\BOOKMARK [2][-]{subsection.7.9}{Determinar si un punto est\341 dentro de un pol\355gono convexo}{section.7}% 42
+\BOOKMARK [2][-]{subsection.7.10}{Determinar si un punto est\341 dentro de un pol\355gono cualquiera}{section.7}% 43
+\BOOKMARK [2][-]{subsection.7.11}{Hallar la intersecci\363n de dos rectas}{section.7}% 44
+\BOOKMARK [2][-]{subsection.7.12}{Hallar la intersecci\363n de dos segmentos de recta}{section.7}% 45
+\BOOKMARK [2][-]{subsection.7.13}{Determinar si dos segmentos de recta se intersectan o no}{section.7}% 46
+\BOOKMARK [2][-]{subsection.7.14}{Centro del c\355rculo que pasa por 3 puntos}{section.7}% 47
+\BOOKMARK [1][-]{section.8}{Estructuras de datos}{}% 48
+\BOOKMARK [2][-]{subsection.8.1}{\301rboles de Fenwick \363 Binary indexed trees}{section.8}% 49
+\BOOKMARK [2][-]{subsection.8.2}{Segment tree}{section.8}% 50
+\BOOKMARK [1][-]{section.9}{Miscel\341neo}{}% 51
+\BOOKMARK [2][-]{subsection.9.1}{Problema de Josephus}{section.9}% 52
+\BOOKMARK [2][-]{subsection.9.2}{Trucos con bits}{section.9}% 53
+\BOOKMARK [3][-]{subsubsection.9.2.1}{Iterar sobre los subconjuntos de una m\341scara}{subsection.9.2}% 54
+\BOOKMARK [2][-]{subsection.9.3}{El parser m\341s r\341pido del mundo}{section.9}% 55
+\BOOKMARK [2][-]{subsection.9.4}{Checklist para corregir un Wrong Answer}{section.9}% 56
+\BOOKMARK [2][-]{subsection.9.5}{Redondeo de dobles}{section.9}% 57
+\BOOKMARK [3][-]{subsubsection.9.5.1}{Convertir un doble al entero m\341s cercano}{subsection.9.5}% 58
+\BOOKMARK [3][-]{subsubsection.9.5.2}{Redondear un doble a cierto n\372mero de cifras de precisi\363n}{subsection.9.5}% 59
+\BOOKMARK [1][-]{section.10}{Java}{}% 60
+\BOOKMARK [2][-]{subsection.10.1}{Entrada desde entrada est\341ndar}{section.10}% 61
+\BOOKMARK [2][-]{subsection.10.2}{Entrada desde archivo}{section.10}% 62
+\BOOKMARK [2][-]{subsection.10.3}{Mapas y sets}{section.10}% 63
+\BOOKMARK [2][-]{subsection.10.4}{Colas de prioridad}{section.10}% 64
+\BOOKMARK [1][-]{section.11}{C++}{}% 65
+\BOOKMARK [2][-]{subsection.11.1}{Entrada desde archivo}{section.11}% 66
+\BOOKMARK [2][-]{subsection.11.2}{Strings con caract\351res especiales}{section.11}% 67
+\BOOKMARK [2][-]{subsection.11.3}{Imprimir un doble con cout con cierto n\372mero de cifras de precisi\363n}{section.11}% 68
