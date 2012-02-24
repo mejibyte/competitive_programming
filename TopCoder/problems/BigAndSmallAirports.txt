@@ -1,0 +1,103 @@
+PROBLEM STATEMENT
+
+Consider the following problem:
+
+
+"In the country of Absurdistan there are N airports. Each airport is either big or small. It is known that for each big airport there are at least B flights leaving it, and for each small airport there are at most S flights leaving it. Each flight is bidirectional and connects exactly two airports. No two flights connect the same pair of airports. It is possible to travel from any airport to any other airport using some sequence of flights. Determine the number of big airports. Find all solutions."
+
+
+Let A(N,B,S) be the number of solutions the above task has for a given triple N, B, S. You are given six ints: Nlo, Nhi, Blo, Bhi, Slo and Shi. Your method must compute and return the sum of A(N,B,S) over all N, B, S such that all following constraints hold:
+
+
+Nlo <= N <= Nhi
+Blo <= B <= Bhi
+Slo <= S <= Shi
+S < B
+
+
+DEFINITION
+Class:BigAndSmallAirports
+Method:solve
+Parameters:int, int, int, int, int, int
+Returns:long long
+Method signature:long long solve(int Nlo, int Nhi, int Blo, int Bhi, int Slo, int Shi)
+
+
+NOTES
+-It is possible that all airports in the country are of the same kind (all big or all small).
+
+
+CONSTRAINTS
+-Nhi will be between 1 and 10,000,000, inclusive.
+-Nlo will be between 1 and Nhi, inclusive.
+-Bhi will be between 1 and 200, inclusive.
+-Blo will be between 1 and Bhi, inclusive.
+-Shi will be between 1 and 200, inclusive.
+-Slo will be between 1 and Shi, inclusive.
+
+
+EXAMPLES
+
+0)
+20
+20
+3
+3
+2
+2
+
+Returns: 21
+
+For N=20, B=3, S=2 each number of big airports (from 0 to N, inclusive) is possible. The image below shows one possible network of airports and flights with 3 big airports (squares) and 17 small airports (circles).
+
+
+
+
+
+1)
+1
+1
+10
+10
+2
+2
+
+Returns: 1
+
+In the case N=1, B=10, S=2 there is a single airport. It cannot have 10+ outgoing flights, therefore it has to be small. If the airport is small, all conditions are satisfied. Therefore A(N,B,S)=1.
+
+2)
+10
+10
+8
+8
+3
+3
+
+Returns: 6
+
+
+
+3)
+10
+100
+13
+15
+18
+22
+
+Returns: 0
+
+There are no triples (N,B,S) such that N, B, S lie within the given ranges and B < S. Therefore the answer is the sum of zero values, which equals 0.
+
+4)
+30
+32
+8
+10
+6
+8
+
+Returns: 768
+
+

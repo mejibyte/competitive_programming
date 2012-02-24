@@ -1,0 +1,57 @@
+PROBLEM STATEMENT
+A string is called ugly if it has 3 vowels in a row, or 5 consonants in a row, or both. A string is called nice if it is not ugly.
+You are given a string s, consisting of uppercase letters ('A'-'Z') and question marks ('?'). Return "UGLY" if the string is definitely ugly (that means you cannot substitute letters for question marks so that the string becomes nice), "NICE" if the string is definitely nice, and "42" if it can be either ugly or nice (quotes for clarity only).
+
+DEFINITION
+Class:NiceOrUgly
+Method:describe
+Parameters:string
+Returns:string
+Method signature:string describe(string s)
+
+
+NOTES
+-The letters 'A', 'E', 'I', 'O', 'U' are vowels, and all others are consonants.
+
+
+CONSTRAINTS
+-s will contain between 1 and 50 characters, inclusive.
+-Each character in s will be either '?', or an uppercase letter ('A'-'Z').
+
+
+EXAMPLES
+
+0)
+"HELLOWORLD"
+
+Returns: "NICE"
+
+
+
+1)
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+Returns: "UGLY"
+
+Apparently the English alphabet has 5 consonants in a row.
+
+2)
+"HELLOW?RLD"
+
+Returns: "42"
+
+"HELLOWORLD" is nice, "HELLOWZRLD" is ugly.
+
+3)
+"H??LOWOR??"
+
+Returns: "NICE"
+
+You just can't make it ugly.
+
+4)
+"EE?FFFF"
+
+Returns: "UGLY"
+
+Whatever you put there, it becomes ugly.

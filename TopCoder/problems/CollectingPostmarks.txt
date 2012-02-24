@@ -1,0 +1,64 @@
+PROBLEM STATEMENT
+Your hobby is collecting postmarks.  There is a total of N distinct postmarks, numbered from 0 to N-1.  Their prices are given in the vector <int> prices, where the i-th element (0-indexed) is the price of postmark i.  The price of a postmark is the amount of money you would get for selling it, and the amount of money it would cost you to buy it.  The values of the postmarks are given in the vector <int> values, where the i-th element (0-indexed) is the value of postmark i.  Only one of each postmark exists.
+
+The postmarks you currently have are given in the vector <int> have.  Your goal is to have a postmark collection with a total value of at least K.  You can sell postmarks to get money to buy different postmarks.  Initially, you have no money.  Return the minimum additional amount of money you need to achieve your goal, or -1 if it is impossible.
+
+DEFINITION
+Class:CollectingPostmarks
+Method:amountOfMoney
+Parameters:vector <int>, vector <int>, vector <int>, int
+Returns:int
+Method signature:int amountOfMoney(vector <int> prices, vector <int> have, vector <int> values, int K)
+
+
+CONSTRAINTS
+-N will be between 1 and 32, inclusive. 
+-K will be between 0 and 1,000,000,000, inclusive. 
+-prices will contain exactly N elements. 
+-Each element of prices will be between 1 and 30,000,000, inclusive. 
+-values will contain exactly N elements. 
+-Each element of values will be between 1 and 30,000,000, inclusive. 
+-have will contain between 0 and N elements, inclusive. 
+-All elements of have will be distinct. 
+-Each element of have will be between 0 and N-1, inclusive. 
+
+
+EXAMPLES
+
+0)
+{2,15}
+{}
+{2,21}
+13
+
+Returns: 15
+
+You initially have no postmarks.  You need 15 units of money to buy postmark 1, which has a value of 21.
+
+1)
+{9,18,7,6,18}
+{4,0}
+{12,27,10,10,25}
+67
+
+Returns: 22
+
+2)
+{14,14,12,6}
+{3,2,1}
+{19,23,20,7}
+10
+
+Returns: 0
+
+You already have enough postmarks.
+
+3)
+{43,33,14,31,42,37,17,42,40,20}
+{6}
+{116,71,38,77,87,106,48,107,91,41}
+811
+
+Returns: -1
+
+The total value of all available postmarks is less than 811.
