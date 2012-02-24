@@ -34,12 +34,11 @@ int main(){
     s += '$';
     sgte = s[(i = 0)];
     A();
-    if (i < s.length()-1) ok = false; //No consumi toda la cadena
+    if (i < s.length()-1) ok=false; //No consumí toda la cadena
     if (ok){
       cout << "Accepted\n";
     }else{
       cout << "Not accepted\n";
     }
-    
   }
 }

@@ -11,7 +11,7 @@
 \usepackage{color}
 \usepackage{geometry}
 %Poner la página en landscape
-\geometry{verbose,landscape,letterpaper,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\geometry{verbose,landscape,letterpaper,tmargin=1.5cm,bmargin=2cm,lmargin=1.6cm,rmargin=1.6cm}
 
 \newcommand{\codigofuente}[1]{
 \verbatiminput{#1}
@@ -69,7 +69,7 @@ Imprime todos los divisores de un número (en desorden) en O($\sqrt{n}$).
 Hasta 4294967295 (máximo \textit{unsigned int}) responde instantáneamente. Se puede
 forzar un poco más usando \textit{unsigned long long} pero más allá de $10^{12}$ empieza a
 responder muy lento.
-\codigofuente{./src/number_theory/divisores.cpp}
+\codigofuente{./src/teoria_de_numeros/divisores.cpp}
 
 \subsection{Propiedades modulares}
 
@@ -103,7 +103,8 @@ Fórmulas para combinaciones y permutaciones:
 Tomado de \textit{Matemática discreta y sus aplicaciones}, Kenneth Rosen, 5${}^{\hbox{ta}}$ edición, McGraw-Hill, página 315.
 
 \subsection{Combinaciones, coeficientes binomiales, triángulo de Pascal}
-\emph{Complejidad:} $ O(n^2) $ \\
+\emph{Complejidad:} $ O(n^2) $
+
 $$ \binom{n}{k} = \left\{
   \begin{array}{c l}
     1 & k = 0\\
@@ -231,24 +232,27 @@ El algoritmo es $O(n^3)$, pero optimizable a $O(n^2)$ con una tabla adicional:
 \subsection{Algoritmo de Knuth-Morris-Pratt (KMP)}
 
 Computa el arreglo $border$ que contiene la longitud del borde más largo de todos
-los prefijos de una cadena. \\
+los prefijos de una cadena.
+
 Un borde de una cadena es otra cadena más corta que es a la vez prefijo y sufijo de la original
 (por ejemplo, \textit{aba} es un border de \textit{abacaba} porque es más corta que \textit{abacaba}
-y es al mismo tiempo prefijo y sufijo de \textit{abacaba}. \textit{ab} también es un borde de \textit{abacaba}.
-\textit{abac} no es un borde de \textit{abacaba} porque no es un sufijo). \\
+y es al mismo tiempo prefijo y sufijo de \textit{abacaba}. \textit{a} también es un borde de \textit{abacaba}.
+\textit{abac} no es un borde de \textit{abacaba} porque no es un sufijo).
 
-En el código, \verb_border[i]_ contiene el borde más grande del prefijo de longitud $i$ de $needle$ ($needle$
+\smallskip
+
+En el código, \verb_border[i]_ contiene el borde más grande del prefijo de $needle$ que termina en la posición $i$ ($needle$
 es el patrón que se quiere buscar en la otra cadena). Una ejemplo del arreglo \verb_border_ es: \\
 
 
 \begin{center}
-  \begin{tabular}{| c | c c c c c c c c c c c c c c c | }
+  \begin{tabular}{| c | c c c c c c c c c c c c c c | }
     \hline
-    i & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 \\ [0.5ex]
+    i & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 \\ [0.5ex]
     \hline
     \hline
-    \textit{needle} & a & b & a & c & a & b & a & c & a & b & a & d & a & b & \\
-    \textit{border} & -1 & 0 & 0 & 1 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 0 & 1 & 2 \\
+    \textit{needle} & a & b & a & c & a & b & a & c & a & b & a & d & a & b \\
+    \textit{border} & 0 & 0 & 1 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 0 & 1 & 2 \\
     \hline
   \end{tabular}
 \end{center}

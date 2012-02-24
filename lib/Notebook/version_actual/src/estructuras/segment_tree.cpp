@@ -65,7 +65,7 @@ int SegmentTree::query(int node, int node_left, int node_right,
   if (ans_left == -1) return ans_right;
   if (ans_right == -1) return ans_left;
 
-  return (arr[ans_left] <= arr[ans_right] ? ans_left : ans_right);
+  return(arr[ans_left] <= arr[ans_right] ? ans_left : ans_right);
 }
 
 void SegmentTree::update(int node, int node_left, int node_right,

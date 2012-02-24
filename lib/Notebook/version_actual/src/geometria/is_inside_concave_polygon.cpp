@@ -8,8 +8,9 @@ struct P {
 };
 
 // Polar angle
-// Returns an angle in the range [0, 2*Pi) of a given Cartesian point.
-// If the point is (0,0), -1.0 is returned.
+// Returns an angle in the range [0, 2*Pi) of a given
+// Cartesian point. If the point is (0,0), -1.0 is returned.
+
 // REQUIRES:
 // include math.h
 // define EPS 0.000000001, or your choice
@@ -19,8 +20,10 @@ double polarAngle( P p )
   if(fabs(p.x) <= EPS && fabs(p.y) <= EPS) return -1.0;
   if(fabs(p.x) <= EPS) return (p.y > EPS ? 1.0 : 3.0) * acos(0);
   double theta = atan(1.0 * p.y / p.x);
-  if(p.x > EPS) return(p.y >= -EPS ? theta : (4*acos(0) + theta));
-  return(2 * acos( 0 ) + theta);
+  if(p.x > EPS)
+    return (p.y >= -EPS ? theta : (4*acos(0) + theta));
+  else
+    return(2 * acos( 0 ) + theta);
 }
 
 //Point inside polygon
