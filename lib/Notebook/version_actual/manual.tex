@@ -1,4 +1,4 @@
-\documentclass[10pt,letterpaper,twocolumn,twosided]{article}
+\documentclass[10pt,letterpaper,twocolumn]{article}
 %\documentclass[10pt,letterpaper]{article}
 % ---------------------------------------------------------------
 \usepackage[utf8]{inputenc}
@@ -31,8 +31,6 @@
 
 % ---------------------------------------------------------------
 \tableofcontents
-% \lstlistoflistings
-\lstloadlanguages{C++}
 % ---------------------------------------------------------------
 \section{Plantilla}
 \codigofuente{./src/template.cpp}
@@ -40,8 +38,7 @@
 \section{Teoría de números}
 % ---------------------------------------------------------------
 \subsection{Big mod}
-%\input{./src/number_theory/bigmod}%.tex
-\codigofuente{./src/number_theory/bigmod.cpp}
+\codigofuente{./src/teoria_de_numeros/bigmod.cpp}
 
 \subsection{Criba de Eratóstenes}
 \small
@@ -65,7 +62,7 @@ Marca los números primos en un arreglo. Algunos tiempos de ejecución:
     \hline
   \end{tabular}
 \end{center}
-\codigofuente{./src/number_theory/criba.cpp}
+\codigofuente{./src/teoria_de_numeros/criba.cpp}
 
 \subsection{Divisores de un número}
 Imprime todos los divisores de un número (en desorden) en O($\sqrt{n}$).
@@ -107,11 +104,11 @@ Tomado de \textit{Matemática discreta y sus aplicaciones}, Kenneth Rosen, 5${}^
 
 \subsection{Combinaciones, coeficientes binomiales, triángulo de Pascal}
 \emph{Complejidad:} $ O(n^2) $ \\
-$$ {n \choose k} = \left\{
+$$ \binom{n}{k} = \left\{
   \begin{array}{c l}
     1 & k = 0\\
     1 & n = k\\
-    \displaystyle {n - 1 \choose k - 1} + {n - 1 \choose k} & \mbox{en otro caso}\\
+    \displaystyle \binom{n - 1}{k - 1} + \binom{n - 1}{k} & \mbox{en otro caso}\\
   \end{array}
 \right.
 $$
@@ -119,7 +116,7 @@ $$
 \codigofuente{./src/combinatoria/pascal_triangle.cpp}
 
 \bigskip
-\textbf{Nota:} $ \displaystyle {n \choose k }  $ está indefinido en el código anterior si $ n > k$. ¡La tabla puede estar llena con cualquier basura del compilador!
+\textbf{Nota:} $ \binom{n}{k} $ está indefinido en el código anterior si $ n > k$. ¡La tabla puede estar llena con cualquier basura del compilador!
 
 \subsection{Permutaciones con elementos indistinguibles}
 El número de permutaciones \underline{diferentes} de $n$ objetos, donde hay $n_{1}$ objetos indistinguibles de tipo 1,
@@ -153,7 +150,6 @@ $$
 \section{Grafos}
 \subsection{Algoritmo de Dijkstra}
 El peso de todas las aristas debe ser no negativo.
-\\
 \codigofuente{./src/grafos/dijkstra.cpp}
 
 \subsection{Minimum spanning tree: Algoritmo de Prim}
