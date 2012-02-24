@@ -242,8 +242,7 @@ y es al mismo tiempo prefijo y sufijo de \textit{abacaba}. \textit{a} también e
 \smallskip
 
 En el código, \verb_border[i]_ contiene el borde más grande del prefijo de $needle$ que termina en la posición $i$ ($needle$
-es el patrón que se quiere buscar en la otra cadena). Una ejemplo del arreglo \verb_border_ es: \\
-
+es el patrón que se quiere buscar en la otra cadena). Una ejemplo del arreglo \verb_border_ es:
 
 \begin{center}
   \begin{tabular}{| c | c c c c c c c c c c c c c c | }
@@ -262,6 +261,9 @@ es el patrón que se quiere buscar en la otra cadena). Una ejemplo del arreglo \
 \codigofuente{./src/strings/kmp.cpp}
 
 \subsection{Algoritmo Z}
+
+\texttt{Z[i] = longitud del prefijo propio más largo de S[i, n) que \\
+también es prefijo de S[0, n).}
 
 \begin{center}
   \begin{tabular}{| c | c c c c c c c c c c c c c | }
@@ -282,10 +284,14 @@ es el patrón que se quiere buscar en la otra cadena). Una ejemplo del arreglo \
 Sirve para buscar muchos patrones en una cadena. Por ejemplo,
 dada la cadena $ahishers$ y los patrones $\{he, she, hers, his\}$,
 encuentra que $his$ aparece en la posición 1, $he$ aparece en la posición 4,
-$she$ aparece en la posición 3 y $hers$ aparece en la posición 4. \\
+$she$ aparece en la posición 3 y $hers$ aparece en la posición 4.
+
+\smallskip
 
 Complejidad: $O(n + m)$ donde $n$ es la longitud de la cadena en la que hay que buscar
-y $m$ es la suma de las longitudes de todos los patrones. \\
+y $m$ es la suma de las longitudes de todos los patrones.
+
+\smallskip
 
 \codigofuente{./src/strings/aho-corasick.cpp}
 \subsection{Suffix arrays y longest common prefix}
@@ -301,32 +307,34 @@ $$ \tan(\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha 
 
 
 \subsection{Área de un polígono}
-Si P es un polígono simple (no se intersecta a sí mismo) su área está dada por: \\
+Si P es un polígono simple (no se intersecta a sí mismo) su área está dada por:
 
-$ A(P) = \frac{1}{2} \displaystyle\sum_{i=0}^{n-1} (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $ \\
+$$ A(P) = \frac{1}{2} \displaystyle\sum_{i=0}^{n-1} (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $$
+
 \bigskip
 \codigofuente{./src/geometria/polygon_area.cpp}
 
 \subsection{Centro de masa de un polígono}
-Si P es un polígono simple (no se intersecta a sí mismo) su centro de masa está dado por: \\
+Si P es un polígono simple (no se intersecta a sí mismo) su centro de masa está dado por:
 
-$ \displaystyle\bar{C}_{x} = \frac{ \displaystyle\iint_{R} x \, dA }{M} = \frac{1}{6M}\sum_{i=1}^{n} (y_{i+1} - y_{i}) (x_{i+1}^2 + x_{i+1} \cdot x_{i} + x_{i}^2) $
 
-\medskip
-
-$\displaystyle\bar{C}_{y} = \frac{ \displaystyle\iint_{R} y \, dA }{M} = \frac{1}{6M} \sum_{i=1}^{n} (x_{i} - x_{i+1}) (y_{i+1}^2 + y_{i+1} \cdot y_{i} + y_{i}^2)$
+$$ \displaystyle\bar{C}_{x} = \frac{ \displaystyle\iint_{R} x \, dA }{M} = \frac{1}{6M}\sum_{i=1}^{n} (y_{i+1} - y_{i}) (x_{i+1}^2 + x_{i+1} \cdot x_{i} + x_{i}^2) $$
 
 \medskip
 
-Donde $ M $ es el área del polígono. \\
+$$ \displaystyle\bar{C}_{y} = \frac{ \displaystyle\iint_{R} y \, dA }{M} = \frac{1}{6M} \sum_{i=1}^{n} (x_{i} - x_{i+1}) (y_{i+1}^2 + y_{i+1} \cdot y_{i} + y_{i}^2) $$
+
+\medskip
+
+Donde $ M $ es el área del polígono.
 
 Otra posible fórmula equivalente:
 
-$ \displaystyle\bar{C}_{x} = \frac{1}{6A} \sum_{i=0}^{n-1} (x_{i} + x_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $
+$$ \displaystyle\bar{C}_{x} = \frac{1}{6A} \sum_{i=0}^{n-1} (x_{i} + x_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $$
 
 \medskip
 
-$ \displaystyle\bar{C}_{y} = \frac{1}{6A} \sum_{i=0}^{n-1} (y_{i} + y_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $
+$$ \displaystyle\bar{C}_{y} = \frac{1}{6A} \sum_{i=0}^{n-1} (y_{i} + y_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $$
 
 
 \subsection{Convex hull: Graham Scan}
@@ -617,7 +625,7 @@ Programa de ejemplo:
 La salida de este programa es: \\
 \bigskip
 \ttfamily
-\fbox{\parbox{2.0in}{
+\fbox{\parbox{5.0cm}{
     Maps\\
     m.size() = 1\\
     465\\
@@ -629,10 +637,10 @@ La salida de este programa es: \\
     54\\
     3576\\
     1000000007\\
-    s.size() = 0\\
+    s.size() = 0
   }
 }
-\\ \normalfont\normalsize
+\normalfont\normalsize
 \bigskip
 
 Si quiere usarse una clase propia como llave del mapa o como elemento del set, la clase debe implementar
@@ -644,20 +652,30 @@ un HashMap ó HashSet hay más complicaciones.\\
 
 \subsection{Colas de prioridad}
 \label{colas_de_prioridad_java}
-Hay que implementar unos métodos. Veamos un ejemplo: \\
-\codigofuente{./src/java/priority_queue.java}\\
-La salida de este programa es: \\
+Hay que implementar unos métodos. Veamos un ejemplo:
+
+\smallskip
+
+\codigofuente{./src/java/priority_queue.java}
+
+\smallskip
+
+La salida de este programa es:
+
+\smallskip
 
 \ttfamily
-\fbox{\parbox{2.0in}{
+\fbox{\parbox{5.0cm}{
     peso = 0, destino = 12\\
     peso = 0, destino = 8\\
     peso = 0, destino = 13\\
     peso = 3, destino = 7\\
-    peso = 1876, destino = 4\\
+    peso = 1876, destino = 4
   }
 }
- \normalfont\normalsize
+\normalfont\normalsize
+
+\medskip
 
 Vemos que la función de comparación que definimos no tiene en cuenta \texttt{destino},
 por eso no desempata cuando dos \texttt{Items} tienen el mismo \texttt{peso} si no que escoge
