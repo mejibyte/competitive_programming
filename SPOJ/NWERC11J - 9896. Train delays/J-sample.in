@@ -1,0 +1,20 @@
+3
+Hamburg Bremen
+3
+Hamburg Bremen 15 68 10 5
+Hamburg Bremen 46 55 50 60
+Bremen Frankfurt 14 226 10 120
+Amsterdam Rotterdam
+1
+Amsterdam Utrecht 10 22 5 10
+BremenVegesack Utrecht
+9
+BremenVegesack BremenHbf 15 10 0 1
+BremenVegesack BremenHbf 45 10 0 1
+BremenVegesack Leer 23 140 10 15
+BremenHbf Osnabruck 44 51 60 70
+Osnabruck Amersfoort 55 147 38 40
+Amersfoort Utrecht 24 15 30 15
+Amersfoort Utrecht 54 15 10 35
+Leer Groningen 45 140 5 10
+Groningen Amersfoort 46 96 10 20
