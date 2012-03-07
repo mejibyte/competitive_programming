@@ -1,0 +1,84 @@
+PROBLEM STATEMENT
+Elly's favourite number is n. She also has a list of distinct positive integers. We will call these integers special. She would like to know in how many ways she can represent n as a product of some pairwise relatively prime special integers.
+
+You are given the long long n and a vector <string> special. Concatenate the elements of special to obtain a space-separated list of Elly's special integers.
+Return the number of ways in which the desired product can be formed.
+
+
+DEFINITION
+Class:EllysNumbers
+Method:getSubsets
+Parameters:long long, vector <string>
+Returns:long long
+Method signature:long long getSubsets(long long n, vector <string> special)
+
+
+NOTES
+-When forming the product, the order of the special integers does not matter.
+-There may be pairs of special integers that are not relatively prime. This just means that each valid product may contain at most one of those two special integers.
+-You may assume that for each valid input the correct output fits into a long long.
+-Two positive integers are relatively prime if the only positive integer that divides both of them is 1. For example (5, 7) and (6, 35) are relatively prime, while (12, 18) and (7, 42) are not.
+
+
+CONSTRAINTS
+-n will be between 2 and 10^18, inclusive.
+-Each special integer will be between 1 and 10^9, inclusive.
+-All special integers will be distinct.
+-The number of special integers will be between 1 and 500, inclusive.
+-special will contain between 1 and 50 elements, inclusive.
+-Each element of special will contain between 1 and 50 characters, inclusive.
+-Each character in each element of special will be either a digit or a space ('0'-'9', ' ').
+-The concatenation of elements of special will represent a valid single-space separated list of integers (with no leading or trailing spaces). Each special integer will be written with no leading zeros.
+
+
+EXAMPLES
+
+0)
+12
+{"4 2 5 6 3"}
+
+Returns: 1
+
+There are two ways to represent 12 as a product of special integers: 3*4 and 2*6.
+Only the first way is valid because 2 and 6 are not relatively prime.
+
+1)
+42
+{"1 2 3 4 5 6 7 13 14 21 42"}
+
+Returns: 10
+
+Forty-two can be represented as 2*3*7, 1*2*3*7, 2*21, 1*2*21, 3*14, 1*3*14, 6*7, 1*6*7, 42 and 1*42. All of those products contain only relatively prime special numbers, so the answer is 10.
+
+2)
+1337
+{"1 13 42 666 2674"}
+
+Returns: 0
+
+Sometimes it is impossible to represent n as a product of special integers.
+
+3)
+1073741824
+{"1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 1",
+ "6384 32768 65536 131072 262144 524288 1048576 2097",
+ "152 4194304 8388608 16777216 33554432 67108864 134",
+ "217728 268435456 536870912"}
+
+Returns: 0
+
+Although n can be represented in many ways, none of them is using only relatively prime special integers.
+
+4)
+7420738134810
+{"435 625199055 4199 33263 17 222870 284870433 72093",
+ "2379 7 11 31 247110827 23 1771 81809 851968487 13 ", 
+ "476379795 1001 5 435274114 38264554 7429 239906525",
+ " 3 227183706 887045414 606786670 3795 797605175 29",
+ " 30 747186719 19 2 562347843 74 2294 588002688 743",
+ "6429 703 591740547 36657492 37 444178205 1002001 2",
+ "17626404"}
+
+Returns: 110
+
+Don't forget to concatenate the elements of special.

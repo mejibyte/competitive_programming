@@ -1,0 +1,95 @@
+PROBLEM STATEMENT
+Fox Jiro and Eel Saburo are good friends. They work in the same company as partners.
+Currently, they have totalWork units of work that needs to be done.
+The work can be divided arbitrarily, even into pieces containing a non-integer number of units.
+
+Jiro and Saburo will not be doing the work themselves.
+They have N employees, numbered 0 through N-1.
+Each employee has two parameters:
+
+The ability a[i]: the number of units of work he or she can do in one hour.
+The pay p[i]: the amount (in yen) he or she has to be paid for each unit of work done.
+
+Jiro and Saburo have to select exactly K of their employees to do the work.
+Due to the local laws, they are not allowed to divide the work among the employees arbitrarily:
+Each of the K employees must work for exactly the same time.
+(Note that different employees may make different amounts of work in that time.)
+
+Additionally, all the work has to be done on a single machine.
+Jiro and Saburo do not own such a machine, but they can rent one.
+The machine can be rented for an arbitrary (possibly also non-integer) number of seconds, and the rent is 1 yen per second.
+(Note that the employees will have to use the machine sequentially, i.e., one after another.)
+
+You are given the int K, the int totalWork, the vector <int> a, and the vector <int> p.
+Find and return the smallest amount for which Jiro and Saburo can get all the work done. (Note that the total amount consists of two parts: the money paid to the selected employees, and the money paid for renting the machine.)
+
+DEFINITION
+Class:FoxAndBusiness
+Method:minimumCost
+Parameters:int, int, vector <int>, vector <int>
+Returns:double
+Method signature:double minimumCost(int K, int totalWork, vector <int> a, vector <int> p)
+
+
+NOTES
+-The returned value must be accurate to within a relative or absolute error of 1e-9.
+
+
+CONSTRAINTS
+-N will be between 1 and 50, inclusive.
+-a and p will each contain exactly N elements.
+-Each element of a will be between 1 and 100,000, inclusive.
+-Each element of p will be between 1 and 100,000, inclusive.
+-K will be between 1 and N, inclusive.
+-totalWork will be between 1 and 100,000, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+10
+{10}
+{20}
+
+Returns: 3800.0
+
+We have to select the only employee.
+For 10 units of work we have to pay him 10 * 20 = 200 yen.
+The work will take him 10/10 = 1 hour.
+We need to rent the machine for 1 hour = 3600 seconds, this will cost 3600 yen.
+The total amount is 200 + 3600 = 3800 yen.
+
+1)
+1
+100
+{50, 60}
+{1000, 2000}
+
+Returns: 107200.0
+
+Employee 0 is the better choice.
+
+2)
+2
+300
+{10, 20, 47}
+{15, 20, 98765}
+
+Returns: 77500.0
+
+Employee 2 is the fastest worker, but she is way too expensive.
+The optimal solution is to select employees 0 and 1.
+Out of the 300 units of work, employee 0 will get 100 and employee 1 will get 200.
+This way, each of them will work for exactly 10 hours.
+The total we have to pay: 100*15 yen to employee 0, 200*20 yen to employee 1, and 72000 yen for renting the machine for 20 hours.
+
+3)
+4
+1000
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+{20, 30, 40, 58, 60, 70, 80, 90, 100, 150}
+
+Returns: 531764.705882353
+
+

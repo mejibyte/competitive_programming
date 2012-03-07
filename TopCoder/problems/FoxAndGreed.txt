@@ -1,0 +1,88 @@
+PROBLEM STATEMENT
+Fox Jiro and Eel Saburo are good friends. One day Jiro gives Saburo the following problem:
+
+You are given a rectangular grid. It is H cells high and W cells wide. Each cell of the grid contains a non-negative integer which is between 0 and S, inclusive. The top-left cell of the grid always contains 0.
+
+First you are on the top-left cell of the grid. You move in steps. In each step, you can go either down or right to the immediately adjacent cell. Your path terminates when you reach the bottom-right cell of the grid. Let K be the sum of integers contained in the cells which you visited (including the bottom-right cell). What is the maximum possible value of K?
+
+This is a well-known classical problem solvable by dynamic programming. But Saburo doesn't know the clever solution. He found the following greedy approach to this problem:
+
+
+If he is in the rightmost column, he takes a step down. If he is in the bottommost row, he takes a step right.
+Otherwise, he goes to the cell which contains the bigger integer. If two adjacent cells have same integer, he goes to the right cell.
+
+
+Jiro is interested in Saburo's greedy approach. He calls a grid p-greedy if the sum of integers visited by the greedy algorithm is equal to p.
+
+You are given the ints H, W, and S.
+Let X be the number of different S-greedy grids with the given dimensions and values.
+Return the value (X modulo 10,007).
+
+DEFINITION
+Class:FoxAndGreed
+Method:count
+Parameters:int, int, int
+Returns:int
+Method signature:int count(int H, int W, int S)
+
+
+CONSTRAINTS
+-H will be between 1 and 2500, inclusive.
+-W will be between 1 and 2500, inclusive.
+-S will be between 0 and 100, inclusive.
+
+
+EXAMPLES
+
+0)
+2
+2
+1
+
+Returns: 4
+
+These are the 4 grids:
+
+01  01  00  00   
+00  10  10  01
+
+
+1)
+2
+2
+2
+
+Returns: 9
+
+These are the 9 grids:
+
+02  02  02  01  01  00  00  01  00
+00  10  20  01  11  11  20  20  02
+
+
+2)
+2
+2
+0
+
+Returns: 1
+
+
+
+3)
+47
+58
+100
+
+Returns: 1301
+
+
+
+4)
+1234
+2345
+97
+
+Returns: 8894
+
+

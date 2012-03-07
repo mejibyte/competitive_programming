@@ -1,0 +1,79 @@
+PROBLEM STATEMENT
+A palindrome partition is the partitioning of a string such that each separate substring is a palindrome.
+For example, the string "ABACABA" could be partitioned in several different ways, such as
+{"A","B","A","C","A","B","A"},
+{"A","BACAB","A"},
+{"ABA","C","ABA"}, or
+{"ABACABA"}, among others.
+
+You are given a vector <string> s. s is split for convenience only, so you should concatenate all of its elements in order and treat it as a single string. Return the minimum possible number of substrings in a palindrome partition of s.
+
+
+DEFINITION
+Class:PalindromePartition
+Method:partition
+Parameters:vector <string>
+Returns:int
+Method signature:int partition(vector <string> s)
+
+
+CONSTRAINTS
+-s will contain between 1 and 50 elements, inclusive. 
+-Each element of s will contain between 1 and 50 characters, inclusive. 
+-Every character in every element of s will be an uppercase letter ('A'-'Z'). 
+
+
+EXAMPLES
+
+0)
+{"AAAA"}
+
+Returns: 1
+
+The string is already a palindrome.
+
+1)
+{"ABCDEFGH"}
+
+Returns: 8
+
+No palindrome of length greater than 1 can be obtained from a string where all the characters are different.In this case the palindrome partition consists of substrings that are each one character long: {"A","B","C","D","E","F","G","H"}
+
+2)
+{"QWERTY","TREWQWERT"}
+
+Returns: 5
+
+The best partition would be {"QWERTYTREWQ","W","E","R","T"}
+
+3)
+{"BBCDDECAECBDABADDCEBACCCBDCAABDBADD"}
+
+Returns: 22
+
+4)
+{"GKTQWLBWOGQCGERTMYHENNMGUNCAIRFDTPGZFRSHTEAKUGBAIJ",
+"BLMJJGQYQRRSASFRMRDCUSEVUJYUXGQEZKRLGKVCGFAFVGGPFA",
+"TRRCIACXCMLWOUHJNZSKXYCBPUMNLMEMWBGWTWBAKUBWICDQCB",
+"SMLRETHSDQQSYGWOOXERMRLXRPFZMPBINEFSFPOAHGQXXSTHBP",
+"HYDRLSLYQSDKSHTRZRYBJNVMLVGBZBQVZKPZHUVGDQUKXCMNQL",
+"UMKPXWCNCNUKJWFAGKKMUHHMWSCPYTGADEXMBLSGJIXOUNZYJS",
+"UWLIUAUPILVXVTDKQBETPLVPSMSZMQBTBQKEKJTCFXEYPCULBZ",
+"MSZVBLBVJAXRGFLJNYAUSJZBHIUVAODPOUJGNZNBFUOWTVSEBK",
+"PVPNMRYZVVNXNYHYGXOHGFFZXHFGHBQPFFCOEEDHEHWRJVYMFB",
+"HJYENRLFBEEPCGBWVNAUGCJPKYMRDHAHQGXMRMTCREYEUJIZDJ",
+"PKATAIKXGVURLLNXAKQMOSDXTWHNKYICFSOAYIYOQCELIKPGVY",
+"QEPXOVKMNUSILPOZFEYPZZEFYVTMIEKVGOVWSOFNWOUZLUBJVZ",
+"YKGECOBOSBCQKLKDFYINFGXWGYDMSPLPAFKCDEVVLUDKEZKUUS",
+"YFXORCWLCPCFNSFSXTPYYIENMINHWYSAYCMELEKBVVJKXLUWAZ",
+"MIKDHLAEYYTMIVOMQLYLUJQAHERLBSYSIPNXGTMRNGITXKVVSN",
+"FUAJSWGDITKRQVFSBRPAKPXGIOYESLRFOKEEZCDRRYIHYBXKYZ",
+"YAHPHSREYWYPZBREMDIJOXYZKIOHSBRVCQKJPATIPIDQVISHFV",
+"MIQRPJIVZFNUWRUDTNEKGHOSSSVAYMSBXPCMMCWZPQXKRNBXKP",
+"DTERSIZDKVFWNVATGPVNXFQDXNMSVOCGBRXRZSCAIENECIAIBZ",
+"EPLGCMGLAEGXMYENDYHQZOEEJLFCZVZIJPLXYHFCJGNABFHIYN",
+"WDMVASMIOSUUFCSLDIWDQFBTZEDNUXTZUJHYNJYUACGQJKTJSU",
+"MPBHUYYXXISSHJLTXYYLHLMJXUTBJDOWFFNLSPZWJAQYQEDZQW",
+"EXGGAWFQHRWABGJMSNIYQAKYTOGJKWTSROARTBLOMNVRUZZYWD"}
+
+Returns: 1013

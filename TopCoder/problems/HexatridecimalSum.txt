@@ -1,0 +1,64 @@
+PROBLEM STATEMENT
+Hexatridecimal notation is base 36 notation.  The digits are '0' to '9' (with values 0 to 9) and 'A' to 'Z' (with values 10 to 35).
+
+You are given a vector <string> numbers, where each element represents a positive integer in hexatridecimal notation.  You must select exactly k digits (from the set of all digits - '0' to '9' and 'A' to 'Z') and replace all of their occurrences in all of the numbers with 'Z'.  Then, calculate the sum of all the numbers.
+
+Return the maximal possible sum you can get.  The return value must be in hexatridecimal format with no leading zeroes.
+
+DEFINITION
+Class:HexatridecimalSum
+Method:maximizeSum
+Parameters:vector <string>, int
+Returns:string
+Method signature:string maximizeSum(vector <string> numbers, int k)
+
+
+CONSTRAINTS
+-numbers will contain between 1 and 50 elements, inclusive.
+-Each element of numbers will contain between 1 and 50 characters, inclusive.
+-Each element of numbers will contain only characters '0' to '9' and 'A' to 'Z'.
+-Each element of numbers will not start with '0'.
+-k will be between 0 and 36, inclusive.
+
+
+EXAMPLES
+
+0)
+{"HELLO"}
+2
+
+Returns: "ZZLLO"
+
+It is optimal to change the two most significant digits in the given number.
+
+1)
+{"500", "POINTS", "FOR", "THIS", "PROBLEM"}
+5
+
+Returns: "1100TC85"
+
+
+
+2)
+{"TO", "BE", "OR", "NOT", "TO", "BE"}
+0
+
+Returns: "QNO"
+
+k = 0 means that you're not allowed to change any digits, so the answer is the sum of the given numbers.
+
+3)
+{"KEQUALS36"}
+36
+
+Returns: "ZZZZZZZZZ"
+
+k = 36 means that you have to replace all the letters with 'Z'.
+
+4)
+{"GOOD", "LUCK", "AND", "HAVE", "FUN"}
+7
+
+Returns: "31YUB"
+
+
