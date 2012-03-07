@@ -71,6 +71,12 @@ forzar un poco más usando \textit{unsigned long long} pero más allá de $10^{1
 responder muy lento.
 \codigofuente{./src/teoria_de_numeros/divisores.cpp}
 
+Si sólo se requiere contar los divisores, usando la criba de Eratóstenes se puede usar esta propiedad:
+\begin{quote}
+Si la descomposición prima de $n > 1$ es $$n = p_0^{e_0} \times p_1^{e_1} \times \cdots \times p_{n}^{e_n}$$ entonces el número de divisores (positivos) de $n$ es $$(e_0 + 1) \times (e_1 + 1) \times \cdots \times (e_n + 1).$$
+\end{quote}
+
+
 \subsection{Propiedades modulares y algunas identidades}
 
 \begin{itemize}
