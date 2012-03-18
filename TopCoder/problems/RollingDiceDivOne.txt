@@ -1,0 +1,66 @@
+PROBLEM STATEMENT
+Byteasar is playing a tabletop role-playing game with his friends. To determine the effectiveness of their heroes' actions the players use a rather unique set of dice. The i-th (0-based) die has dice[i] faces. They are numbered from 1 to dice[i] and the face number k shows k pips. When a die is cast, every face has equal probability to come out on top.
+
+
+Byteasar's hero is now trying to unlock a safe containing treasure.
+In order to see if he succeeds, Byteasar has to guess a number M and then to roll all the dice.
+The safe will open if and only if M is precisely equal to the total number of pips on the topmost faces of all the dice.
+Obviously, the best strategy for Byteasar is to set M equal to the most probable outcome of the dice roll.
+
+
+You are given the vector <int> dice. Return the value M such that the probability of the total number of pips being M is the highest possible. If there are multiple such values of M, return the smallest one.
+
+DEFINITION
+Class:RollingDiceDivOne
+Method:mostLikely
+Parameters:vector <int>
+Returns:long long
+Method signature:long long mostLikely(vector <int> dice)
+
+
+NOTES
+-Please note that a die can have as few as one or two faces.
+
+
+CONSTRAINTS
+-dice will contain between 1 and 50 elements, inclusive.
+-Each element of dice will be between 1 and 109, inclusive.
+
+
+EXAMPLES
+
+0)
+{6, 6, 8}
+
+Returns: 11
+
+The probability that the total number of pips on topmost faces of the three dice will be 11 is equal to 1/9.
+
+1)
+{10}
+
+Returns: 1
+
+You should return the minimum possible answer.
+
+2)
+{2, 3, 4, 5}
+
+Returns: 9
+
+
+
+3)
+{1, 10, 1}
+
+Returns: 3
+
+
+
+4)
+{382828264, 942663792, 291832707, 887961277, 546603677, 545185615, 146267547, 6938117, 167567032, 84232402,
+700781193, 452172304, 816532384, 951089120, 448136091, 280899512, 256093435, 39595226, 631504901, 154772240}
+
+Returns: 4366828428
+
+

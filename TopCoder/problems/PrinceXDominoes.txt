@@ -1,0 +1,97 @@
+PROBLEM STATEMENT
+NOTE: This problem statement contains images that may not display properly if viewed outside of the applet.
+
+Ivy is the little princess of the Kingdom of Ducks, where slimes and ducks live in peace and harmony.
+
+Today, the king gave Ivy several dominoes as presents. Each domino is a rectangle that consist of two numbers, both between 0 and M-1, inclusive. One number is written in red and the other one in black. For example, the following picture shows all possible domino types with M=3.
+
+
+
+The king would like to arrange a big circular sequence of dominoes for Ivy, and he asks you for your help. A circular sequence of dominoes is a sequence of N dominoes such that the number written in red on the i-th domino is equal to the number written in black on the ((i+1) modulo N)-th domino (zero-based indexing). For example, this picture shows an example of a circular sequence of dominoes with N=4 elements.
+
+
+
+Notice that the number written in red on the last domino must be equal to the number written in black on the first domino.
+
+You are given the dominoes that Ivy has as a vector <string> dominoes, consisting of exactly M elements. More precisely, the character dominoes[i][j] encodes how many dominoes with a red number i and a black number j Ivy has. The characters in dominoes are to be interpreted as follows:
+
+'.' - Ivy has no such domino.
+'A' - 'Z' - Ivy has X dominoes of that type, where 'A' means X=1, 'B' means X=2, and so on.
+
+
+If Ivy owns at least one domino of a particular domino type, that domino type is said to be available. The circular sequence of dominoes that you will create must contain at least one domino from each of the available domino types. Each domino that Ivy has can be included at most once in this sequence. Return the maximum number N of dominoes in a circular sequence of dominoes that you can construct for Ivy, or -1 if no such sequence exists.
+
+DEFINITION
+Class:PrinceXDominoes
+Method:play
+Parameters:vector <string>
+Returns:int
+Method signature:int play(vector <string> dominoes)
+
+
+CONSTRAINTS
+-dominoes will contain between 2 and 30 elements, inclusive.
+-Each element of dominoes will contain exactly M characters, where M is the number of elements in dominoes.
+-Each character in each element of dominoes will either be a period ('.') or an uppercase letter ('A'-'Z').
+-For all numbers X between 0 and M-1, inclusive, Ivy will have at least one domino on which the number X is written in red.
+-For all numbers X between 0 and M-1, inclusive, Ivy will have at least one domino on which the number X is written in black.
+
+
+EXAMPLES
+
+0)
+{".A."
+,"..B"
+,"A.A"}
+
+Returns: 4
+
+Corresponds to the sequence shown in the second picture above.
+
+1)
+{"A.."
+,".B."
+,"..C"}
+
+Returns: -1
+
+It is not possible to use all of the three available
+domino types in a single circular sequence of dominoes.
+
+2)
+{"ZZ"
+,"ZZ"}
+
+Returns: 104
+
+Sometimes, it is possible to use all the dominoes Ivy has.
+
+3)
+{"THIS.SRM"
+,"IS.SPONS"
+,"ORED.BY."
+,"CITI.THA"
+,"NKS.FOR."
+,"PARTICIP"
+,"ATING.DO"
+,"LPHINIGL"}
+
+Returns: 612
+
+
+
+4)
+{"A.A.A.A.A."
+,"DOLPHINIGL"
+,"A.Z.X.D.F."
+,"IVANMETELS"
+,"T.W.W.X.M."
+,"RNGRNGRNGR"
+,"W.S.C.E.F."
+,"FUSHARFUSH"
+,"A.B.C.D.E."
+,"CITICITICI"}
+
+Returns: -1
+
+

@@ -1,0 +1,76 @@
+PROBLEM STATEMENT
+Warning: This problem statement contains superscripts and/or subscripts. It may not display properly outside of the applet.
+
+In this problem we will consider binary polynomials. A binary polynomial P of degree n, where n is a nonnegative integer, is given by a sequence of coefficients: n+1 zeroes and ones a[0], a[1], ..., a[n], where a[n] = 1. They represent the following:
+
+P(x) = a[0] * x0 + a[1] * x1 + ... + a[n] * xn
+
+Binary polynomials can be evaluated in points 0, 1 and multiplied by each other just like ordinary polynomials, with one exception: all calculations take place modulo 2. For example, we assume that (x + x3) * (1 + x2) = x + 2 * x3 + x5 = x + x5. Since we can multiply binary polynomials, we can also raise them to positive integer powers; for example, if P = 1 * x0 + 0 * x1 + 1 * x2 and m = 3, then Pm = 1 * x0 + 0 * x1 + 1 * x2 + 0 * x3 + 1 * x4 + 0 * x5 + 1 * x6.
+
+
+You are given integers m, k and a binary polynomial P as the array a of its coefficients. Return the coefficient that stands by xk in the binary polynomial Pm.
+
+DEFINITION
+Class:BinaryPolynomialDivOne
+Method:findCoefficient
+Parameters:vector <int>, long long, long long
+Returns:int
+Method signature:int findCoefficient(vector <int> a, long long m, long long k)
+
+
+CONSTRAINTS
+-The degree of P will be between 0 and 49, inclusive.
+-a will contain exactly n+1 elements, where n is the degree of P.
+-Each element of a will be either 0 (zero) or 1 (one).
+-a[n] will be equal to 1 (one).
+-m will be between 1 and 1016, inclusive.
+-k will be between 0 and n * m, inclusive.
+
+
+EXAMPLES
+
+0)
+{1, 0, 1}
+3
+4
+
+Returns: 1
+
+This corresponds to the example from the problem statement. Pm equals 1 + x2 + x4 + x6. The coefficient by x4 is hence 1.
+
+1)
+{1, 0, 1}
+3
+5
+
+Returns: 0
+
+This is the same polynomial as in the previous example.
+
+2)
+{0, 0, 1, 1, 0, 1}
+7
+15
+
+Returns: 1
+
+
+
+3)
+{1}
+1
+0
+
+Returns: 1
+
+
+
+4)
+{1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0,
+ 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1}
+2229508454872453
+96130299655104846
+
+Returns: 1
+
+

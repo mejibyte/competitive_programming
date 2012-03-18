@@ -1,0 +1,75 @@
+PROBLEM STATEMENT
+Mr. Dengklek lives in the Kingdom of Ducks, where humans and ducks live together in peace and harmony. There are K types of ducks in the kingdom, conveniently numbered 1 through K. The kingdom is very large, so it is assumed that there is an unlimited number of ducks of each type.
+
+Mr. Dengklek has a rectangular farm that can be represented with a grid that is divided into N rows and M columns (so there are N*M cells). He would like to place exactly one duck on each cell in the farm. Any such placement is called a duck formation. Some of the duck formations are beautiful.
+The beauty of a formation only depends on the duck types used in the formation: we say that two rows of a formation are similar if for each X between 1 and K, inclusive, they contain the same number of ducks of type X. A duck formation is beautiful if it does not contain any pair of similar rows. In other words, if there are two similar rows (not necessarily adjacent ones), the formation is not beautiful.
+
+You are given the ints N, M, and K. Return the number of different beautiful duck formations that Mr. Dengklek can make, modulo 1,000,000,007. Two formations are different if there is a cell such that the type of the duck in that cell in one formation is different from the type used in the other formation.
+
+DEFINITION
+Class:DengklekCountingFormations
+Method:numFormations
+Parameters:int, int, int
+Returns:int
+Method signature:int numFormations(int N, int M, int K)
+
+
+CONSTRAINTS
+-N will be between 1 and 10, inclusive.
+-M will be between 1 and 50, inclusive.
+-K will be between 1 and 100, inclusive.
+
+
+EXAMPLES
+
+0)
+2
+2
+2
+
+Returns: 10
+
+These are the 10 beautiful duck formations:
+
+1 1    1 1    1 1    1 2    1 2
+1 2    2 1    2 2    1 1    2 2
+
+2 1    2 1    2 2    2 2    2 2
+1 1    2 2    1 1    1 2    2 1
+
+
+1)
+1
+1
+58
+
+Returns: 58
+
+Mr. Dengklek can place a duck of any type in the single cell.
+
+2)
+5
+3
+2
+
+Returns: 0
+
+
+
+3)
+3
+5
+7
+
+Returns: 894953467
+
+
+
+4)
+7
+47
+74
+
+Returns: 778075142
+
+

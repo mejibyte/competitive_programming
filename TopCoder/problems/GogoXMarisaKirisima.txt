@@ -1,0 +1,64 @@
+PROBLEM STATEMENT
+Like all other software engineers, Gogo likes to "read" virtual novels. In particular, he's currently "reading" a novel titled Touhou, with Marisa Kirisima as its main protagonist. There are N stages in Touhou, numbered 0 through N-1. A playthrough of the novel always starts at the stage 0. The playthrough then may visit some other stages, based on the player's choices (a stage may be visited multiple times). A playthrough is successful if it terminates at the stage N-1.
+
+In each stage, Gogo can either finish the playthrough or choose one of the available options that advance Marisa to other stages. You are given a vector <string> choices. If there is a choice that advances Marisa from stage i to stage j, choices[i][j] will be 'Y', otherwise it will be 'N'. For each pair of different stages i, j the game contains at most one such choice. While it may be possible to re-enter the same stage after a sequence of choices is made, there will never be an option that would let Marisa directly stay at the same stage (i.e., a self-loop).
+
+Gogo wants to make as many successful playthroughs as possible, one after another. However, there is an additional constraint: Each playthrough must contain at least one choice Gogo never made in any of the previous playthroughs.
+
+Return the maximum number of successful playthroughs that Gogo can play. If there are no such playthrough, return 0.
+
+DEFINITION
+Class:GogoXMarisaKirisima
+Method:solve
+Parameters:vector <string>
+Returns:int
+Method signature:int solve(vector <string> choices)
+
+
+CONSTRAINTS
+-choices will contain between 2 and 50 elements, inclusive.
+-Each element of choices will contain N characters, where N is the number of elements in choices.
+-Each character in choices will be either 'Y', or 'N'.
+-For each i, choices[i][i] will be 'N'.
+
+
+EXAMPLES
+
+0)
+{"NYN"
+,"YNY"
+,"NNN"}
+
+Returns: 2
+
+For example, he can perform the following two playthroughs (in the given order):
+0 -> 1 -> 2
+0 -> 1 -> 0 -> 1 -> 2
+In the first playthrough, both choices (0->1 and 1->2) have never been made before. In the second playthrough, the choice 1->0 has never been made before. Note that the order of playing the playthroughs is important. Should Gogo start by performing the second playthrough, the first playthrough would then be invalid, as it would not contain any new choices.
+
+1)
+{"NNY"
+,"YNY"
+,"YNN"}
+
+Returns: 2
+
+
+
+2)
+{"NN"
+,"NN"}
+
+Returns: 0
+
+
+
+3)
+{"NYYY"
+,"NNNY"
+,"NNNY"
+,"NNNN"}
+
+Returns: 3
+
+

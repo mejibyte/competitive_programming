@@ -1,0 +1,81 @@
+PROBLEM STATEMENT
+Mr. Dengklek lives in the Kingdom of Ducks, where humans and ducks live together in peace and harmony.
+
+There are N duck houses in the kingdom, conveniently numbered 1 through N. Currently, there are no roads between the houses. The king assigned Mr. Dengklek to build exactly M bidirectional roads, each connecting a pair of houses.
+
+The king imposed two rules on Mr. Dengklek:
+
+Let A and B be two different houses. Mr. Dengklek may build roads connecting these two houses if and only if 0 < |A-B| <= K. After the road is built, both house number A and house number B are said to be incident to the road. For each such pair of houses Mr. Dengklek may build multiple roads, each connecting the two houses.
+Each house must be incident to an even number of roads. (Zero is also an even number.)
+
+You are given the ints N, M, and K. Return the number of different ways Mr. Dengklek can build the roads, modulo 1,000,000,007. Two ways are different if there are two houses that are connected by a different number of roads.
+
+DEFINITION
+Class:DengklekBuildingRoads
+Method:numWays
+Parameters:int, int, int
+Returns:int
+Method signature:int numWays(int N, int M, int K)
+
+
+NOTES
+-The houses are not required to be connected. There may be pairs of houses such that it is impossible to travel from one to another by only using the roads.
+-The roads are allowed to cross arbitrarily. (If two roads cross, the crossing is built using bridges, so that each road only connects the two houses at its ends.)
+
+
+CONSTRAINTS
+-N will be between 1 and 30, inclusive.
+-M will be between 0 and 30, inclusive.
+-K will be between 1 and 8, inclusive.
+
+
+EXAMPLES
+
+0)
+3
+4
+1
+
+Returns: 3
+
+These are the three ways to build the roads:
+
+
+
+1)
+4
+3
+3
+
+Returns: 4
+
+These are the four ways to build the roads:
+
+
+
+2)
+2
+1
+1
+
+Returns: 0
+
+It is impossible to make each house incident to an even number of roads if there is only one road.
+
+3)
+5
+0
+3
+
+Returns: 1
+
+
+
+4)
+10
+20
+5
+
+Returns: 26964424
+
+

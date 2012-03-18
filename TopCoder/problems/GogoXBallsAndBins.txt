@@ -1,0 +1,71 @@
+PROBLEM STATEMENT
+Like all other software engineers, Gogo likes to play with bins and balls. He has N bins, numbered 0 through N-1. Yesterday, Gogo distributed all his balls into the bins, placing S[0] balls into bin 0, S[1] balls into bin 1, and so on. No two bins contained the same number of balls. It is possible that one of the bins contained zero balls.
+
+This morning, Gogo attended a lecture about sorting. After he got home, he decided to rearrange the balls in his bins into sorted order. More precisely, he wanted to reach a state with T[0] balls in bin 0, T[1] balls in bin 1, and so on, such that the following two conditions are met:
+
+ T is a permutation of S 
+ T is sorted in ascending order 
+
+When rearranging the balls, Gogo always moves them one ball at a time. In other words, in each move Gogo takes a single ball from one bin and places it into another bin. Gogo is very smart, so he always uses the smallest possible number of moves.
+
+For example, when rearranging S = {2, 5, 0} to T = {0, 2, 5}, Gogo will make exactly 5 moves. One way of changing S to T in 5 moves: first Gogo will move 3 balls from bin 1 to bin 2, and then he will move 2 balls from bin 0 to bin 2.
+
+You are given the vector <int> T and an int moves.
+We are interested in all possible initial configurations S such that Gogo would produce the final configuration T, and in doing so he would move a ball exactly moves times. Let C be the number of such configurations S. Since C may be very big, your method must compute and return the value (C modulo 1,000,000,009).
+
+DEFINITION
+Class:GogoXBallsAndBins
+Method:solve
+Parameters:vector <int>, int
+Returns:int
+Method signature:int solve(vector <int> T, int moves)
+
+
+CONSTRAINTS
+-T will contain between 2 and 50 elements, inclusive.
+-Each element of T will be between 0 and 50, inclusive.
+-T will be given in a strictly ascending order. Note that this implies that all the elements of T will be distinct.
+-moves will be between 0 and 650, inclusive
+
+
+EXAMPLES
+
+0)
+{1, 2, 3}
+1
+
+Returns: 2
+
+There are six different configurations S that produce T = {1, 2, 3}. Out of these six, two have the property that Gogo will produce T by moving exactly one ball. These two configurations are S = {1, 3, 2} and S = {2, 1, 3}.
+
+1)
+{1, 2, 3}
+2
+
+Returns: 3
+
+
+
+2)
+{1, 2, 3}
+3
+
+Returns: 0
+
+
+
+3)
+{1, 2, 3}
+0
+
+Returns: 1
+
+
+
+4)
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}
+64
+
+Returns: 625702391
+
+
