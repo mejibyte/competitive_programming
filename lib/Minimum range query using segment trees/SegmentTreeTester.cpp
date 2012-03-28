@@ -19,7 +19,7 @@ void check_query_correctness(int u, int v){
   int q = t.query(u, v);
   printf("Range [%d, %d]:\n", u, v);
   printf("     Tree query: index = %d, element = %d\n", q, t.arr[q]);
-  printf("   Lineal query: index = %d, element = %d\n", index, t.arr[index]);
+  printf("   Linear query: index = %d, element = %d\n", index, t.arr[index]);
   assert(index == q);
   printf("      SUCCESS\n");
 }
