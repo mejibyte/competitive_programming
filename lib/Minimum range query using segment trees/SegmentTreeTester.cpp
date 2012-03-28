@@ -46,7 +46,7 @@ void check_random_updates(int times = 100){
   while (times--){
     int where = random() % t.n, what = random() * (random() % 2 ? -1 : 1);
     check_update_correctness(where, what);
-    //after an update, check some random queries to see if everyting remains fine.
+    //after an update, check some random queries to see if everything remains fine.
     check_random_queries();
   }
 }
