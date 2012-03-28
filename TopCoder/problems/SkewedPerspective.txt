@@ -1,0 +1,73 @@
+PROBLEM STATEMENT
+NOTE: This problem statement contains images that may not display properly if viewed outside of the applet.
+
+Cat Taro has the following building blocks: unit cubes of different colors (none of them black) and black rectangular prisms with dimensions 2x1x1. The number of cubes of each color is given as a vector <int> cubes. For example, if Taro has 5 red cubes, 1 yellow cube, and 2 blue cubes, then cubes={5,1,2}. The number of black prisms is given by int B.
+
+Taro is using the blocks to build w adjacent towers of blocks (some possibly empty), as shown on the right side of the picture below. Taro will always place the rectangular prisms vertically. In other words, each prism will look like two black unit cubes placed one on top of the other. Taro is not required to use all of the blocks when building the towers. However, he must use at least one block (a cube or a prism).
+
+ 
+
+Rabbit Hanako is looking at Taro's towers from the left side of the room. To him, the towers seem as a single tower, as shown on the left side of the picture above. More precisely, at each height i Hanako sees the color of the block at height i in the leftmost tower that has such a block.
+Hanako's view can be described as a sequence of colors, giving the colors of each 1x1 square seen by Hanako in the order from bottom to top.
+
+Taro and Hanako now wonder how many different non-empty views can Hanako see.
+(Two views are different if either their heights differ, or for some height the colors seen at that height differ.)
+You are given the vector <int> cubes, the int B, and the int w.
+Return the number of different non-empty views modulo 1,000,000,007 (10^9 + 7).
+
+DEFINITION
+Class:SkewedPerspective
+Method:countThem
+Parameters:vector <int>, int, int
+Returns:int
+Method signature:int countThem(vector <int> cubes, int B, int w)
+
+
+CONSTRAINTS
+-w will be between 1 and 8, inclusive.
+-cubes will contain between 0 and 50 elements, inclusive.
+-Each element of cubes will be between 1 and 50, inclusive.
+-The total sum of the elements of cubes will be between 0 and 50, inclusive.
+-B will be between 0 and 10, inclusive.
+
+
+EXAMPLES
+
+0)
+{1,1}
+1
+2
+
+Returns: 19
+
+The 19 possible views are:
+
+
+1)
+{1}
+3
+2
+
+Returns: 19
+
+The 19 possible views are:
+
+
+2)
+{}
+5
+5
+
+Returns: 5
+
+As we only have black prisms, each possible view will only contain black squares.
+The five possible views have heights 2, 4, 6, 8, and 10.
+
+3)
+{7,7,7}
+0
+8
+
+Returns: 301226488
+
+
