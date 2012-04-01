@@ -1,0 +1,72 @@
+PROBLEM STATEMENT
+A positive common fraction is a fraction of the form A/B, where A and B are positive integers.
+An irreducible fraction is a positive common fraction such that A and B are relatively prime. (In other words, the only positive integer that divides both A and B is 1.)
+Elly recently invented the factor fractions: A factor fraction is an irreducible fraction such that the product A*B is a factorial number (see Notes for definition). We will only be interested in factor fractions that lie strictly between 0 and 1. (That is, A must be strictly smaller than B.)
+
+Examples:
+
+2/3, 4/6, 4/7, 7/7, 6/1, 42/49 are six positive common fractions
+Out of those six, the following three are irreducible: 2/3, 4/7, 6/1.
+The fraction 2/3 is a factor fraction, because 2*3 = 6 and that is a factorial number.
+The fraction 4/7 is not a factor fraction, because 4*7 = 28 and that is not a factorial number.
+The fraction 6/1 is a factor fraction, because 6*1 = 6 and that is a factorial number. However, as 6/1 does not lie strictly between 0 and 1, we are not interested in this fraction.
+Note that 4/6 is not a factor fraction. (We do have 4*6=24, but a factor fraction has to be irreducible.)
+
+
+
+You are given an int N.
+Compute and return the number of factor fractions A/B such that 0 < A/B < 1 and A*B is one of the factorial numbers from 1! to N! (inclusive).
+
+DEFINITION
+Class:EllysFractions
+Method:getCount
+Parameters:int
+Returns:long long
+Method signature:long long getCount(int N)
+
+
+NOTES
+-The factorial of X, denoted X!, is the product of the first X positive integers. For example, 6! is 1*2*3*4*5*6 = 720. The factorial numbers are the numbers of the form X! for positive integer X. The smallest few: 1, 2, 6, 24, 120, 720, ...
+-The answer will always fit in a 64-bit signed integer.
+
+
+CONSTRAINTS
+-N will be between 1 and 250, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+
+Returns: 0
+
+We are interested in factor fractions such that A*B = 1. The only positive common fraction with this property is the fraction 1/1. However, this fraction is not strictly between 0 and 1.
+
+1)
+2
+
+Returns: 1
+
+Here the only valid factor fraction is 1/2.
+
+2)
+3
+
+Returns: 3
+
+The three fractions are 1/2, 1/6, and 2/3. (We have 1*2 = 2! and 1*6 = 2*3 = 3!.)
+
+3)
+5
+
+Returns: 9
+
+
+
+4)
+100
+
+Returns: 177431885
+
+Plenty of fractions here.
