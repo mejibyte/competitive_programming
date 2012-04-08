@@ -1,0 +1,75 @@
+PROBLEM STATEMENT
+You used to worry about your popularity with the troops, but not anymore. Your priority is their safety. You are the commander of N soldiers. Each soldier has an assignment to visit a different fort. They all leave fort 0 at the same time and travel through the streets of the city at the same time until each reaches his assigned destination. This is very risky and you would want each soldier to to reach his fort as soon as possible. It is also very dangerous to go alone, thus as a secondary objective, you must minimize the number of soldiers that are exposed to risk by going over at least one street alone.
+
+There are T locations, where T >= N+1. The locations are numbered 0 to T-1. Location 0 is the fort where all soldiers start at time 0. For each i between 1 and N, inclusive, location i is the destination fort for one of the soldiers.
+The remaining locations have no specific meaning. Some pairs of locations are connected by bidirectional streets. The streets are given as a vector <string> streets. If there is no street connecting locations i and j, streets[i][j] will be '-' (quotes for clarity). Otherwise, streets[i][j] will be a digit between '1' and '9', inclusive. The digit represents the number of minutes it takes any soldier to walk along the street in either direction.
+
+All soldiers can move at the same time, and multiple soldiers can move along the same street. If a group of soldiers reaches a fort that is the destination for one of them, that soldier enters the fort in zero time and the remaining ones keep on walking to other locations.
+
+A soldier is safe if at each moment of his walk through the city he is accompanied by at least one other soldier.
+A soldier is endangered if he is not safe, i.e., if he walks alone for some time. Remember that the primary requirement is that each soldier must use one of the (possibly many) fastest paths to his destination fort. Given this requirement, you want to choose the paths in such a way that the number of soldiers in danger is minimized. Return the smallest possible number of endangered soldiers.
+
+DEFINITION
+Class:SafeReturn
+Method:minRisk
+Parameters:int, vector <string>
+Returns:int
+Method signature:int minRisk(int N, vector <string> streets)
+
+
+CONSTRAINTS
+-N will be between 1 and 49, inclusive.
+-streets will contain T elements, where T is between N+1 and 50, inclusive.
+-Each element of streets will contain T characters.
+-Each character in each element of streets will either be '-', or one of '1'-'9'.
+-For each i, streets[i][i] will be '-'.
+-For each pair (i,j), streets[i][j] will be equal to streets[j][i].
+-For each  1 <= i <= N, there will always be at least one way of reaching location i from location 0 by using one or more streets.
+
+
+EXAMPLES
+
+0)
+3
+{"-234",
+ "2---",
+ "3---",
+ "4---"}
+
+Returns: 3
+
+There are 3 soldiers assigned to 3 forts and 3 direct connections going from the starting fort to each of them. It is not possible for a soldier to accompany any other without losing the opportunity to reach his own fort in the minimum time possible.
+
+1)
+2
+{"-12",
+ "1-1",
+ "21-"}
+
+Returns: 1
+
+The minimum time after which soldier #1 can reach fort is 1 minute and the minimum time for soldier #2 is 2 minutes. It is possible for soldier #2 to first drop soldier #1 off in his assigned fort before reaching his own one and both soldiers still reach their assigned fort in the minimum time.
+
+
+2)
+3
+{"-----7",
+ "--1---",
+ "-1-5--",
+ "--5-1-",
+ "---1-3",
+ "7---3-"}
+
+Returns: 1
+
+
+
+3)
+2
+{"-11",
+ "1-1",
+ "11-"}
+
+Returns: 2
+
+

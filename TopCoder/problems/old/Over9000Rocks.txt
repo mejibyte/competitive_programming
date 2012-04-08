@@ -1,0 +1,73 @@
+PROBLEM STATEMENT
+You used to have only 30 rocks, but now you have plenty of them. In fact, we will assume that you have a potentially infinite supply of rocks. You would like to show that you own over 9000 rocks.
+You have a set of boxes. You will choose a subset of those boxes and fill them with rocks so that the total number of rocks will be over 9000. Each box has a lower and an upper bound on the number of rocks it may contain.
+
+You are given the vector <int>s lowerBound and upperBound. For each i, the values lowerBound[i] and upperBound[i] have the following meaning: If you decide to use box i, the number of rocks you may put inside the box must be between lowerBound[i] and upperBound[i], inclusive.
+
+X is a positive integer that has two properties:
+
+X is over 9000.
+It is possible to select some of the boxes and fill them with appropriate numbers of rocks in such a way that the total number of rocks used is exactly X.
+
+Compute and return the number of possible values of X.
+
+DEFINITION
+Class:Over9000Rocks
+Method:countPossibilities
+Parameters:vector <int>, vector <int>
+Returns:int
+Method signature:int countPossibilities(vector <int> lowerBound, vector <int> upperBound)
+
+
+CONSTRAINTS
+-lowerBound will contain between 1 and 15, elements, inclusive.
+-upperBound will contain the same number of elements as lowerBound.
+-Each element of lowerBound will be between 1 and 1,000,000 (10^6), inclusive.
+-Each element i of upperBound will be between lowerBound[i] and 1,000,000 (10^6), inclusive.
+
+
+EXAMPLES
+
+0)
+{9000}
+{9001}
+
+Returns: 1
+
+You can place 9000 or 9001 rocks in the single box. Of the allowed values, only 9001 is over 9000.
+
+1)
+{9000, 1, 10}
+{9000, 2, 20}
+
+Returns: 15
+
+You have to choose box 0 and at least one other box, otherwise you have no chance of placing over 9000 rocks.
+If you only choose boxes 0 and 1, you can place 9001 or 9002 rocks.
+If you only choose boxes 0 and 2, you can place between 9010 and 9020 rocks, inclusive.
+If you choose all three boxes, you can place between 9011 and 9022 rocks, inclusive.
+Hence all possible values of X are 9001, 9002, and everything from 9010 to 9022, inclusive.
+
+2)
+{1001, 2001, 3001, 3001}
+{1003, 2003, 3003, 3003}
+
+Returns: 9
+
+
+
+3)
+{9000,90000,1,10}
+{9000,90000,3,15}
+
+Returns: 38
+
+
+
+4)
+{1,1,1,1,1,1}
+{3,4,5,6,7,8}
+
+Returns: 0
+
+
