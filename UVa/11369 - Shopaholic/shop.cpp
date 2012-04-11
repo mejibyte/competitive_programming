@@ -34,6 +34,17 @@ int cmp(double x, double y = 0, double tol = EPS) {
 ////////////////////////// Solution starts below. //////////////////////////////
 
 int main(){
-    
+    int runs; cin >> runs;
+    while (runs--) {
+        int n; cin >> n;
+        vector<int> prices(n);
+        for (int i = 0; i < n; ++i) cin >> prices[i];
+        sort(prices.begin(), prices.end(), greater<int>());
+        int ans = 0;
+        for (int i = 2; i < n; i += 3) {
+            ans += prices[i];
+        }
+        cout << ans << endl;
+    }
     return 0;
 }

@@ -10,7 +10,6 @@ using namespace std;
 #include <climits>
 #include <cstdlib>
 #include <cstring>
-#include <bitset>
 #include <string>
 #include <cstdio>
 #include <vector>
@@ -34,6 +33,20 @@ int cmp(double x, double y = 0, double tol = EPS) {
 ////////////////////////// Solution starts below. //////////////////////////////
 
 int main(){
-    
+    int runs; cin >> runs;
+    while (runs--) {
+        int n; cin >> n;
+        vector<int> grades(n);
+        int sum = 0;
+        for (int i = 0; i < n; ++i) {
+            cin >> grades[i];
+            sum += grades[i];
+        }
+        int above = 0;
+        for (int i = 0; i < n; ++i) {
+            if (n * grades[i] > sum) above++;
+        }
+        printf("%.3lf%%\n", 100.0 * above / n);
+    }
     return 0;
 }

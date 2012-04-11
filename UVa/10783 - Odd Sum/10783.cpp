@@ -10,7 +10,6 @@ using namespace std;
 #include <climits>
 #include <cstdlib>
 #include <cstring>
-#include <bitset>
 #include <string>
 #include <cstdio>
 #include <vector>
@@ -33,7 +32,26 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 ////////////////////////// Solution starts below. //////////////////////////////
 
+int fast(int a, int b) {
+    int p = a / 2;
+    int q = (b - 1) / 2;
+    return (q - p + 1) * (q + p + 1);
+}
+
 int main(){
-    
+    int runs; cin >> runs;
+    for (int run = 1; run <= runs; ++run) {
+        int a, b; cin >> a >> b;
+        int ans = 0;
+        for (int i = a; i <= b; ++i) {
+            if (i & 1) ans += i;
+        }
+        
+        // or alternatively use the closed formula
+        int alternative = fast(a, b);
+        assert(alternative == ans);
+        
+        cout << "Case " << run << ": " << ans << endl;
+    }
     return 0;
 }

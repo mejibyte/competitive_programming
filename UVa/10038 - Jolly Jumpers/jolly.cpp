@@ -10,7 +10,6 @@ using namespace std;
 #include <climits>
 #include <cstdlib>
 #include <cstring>
-#include <bitset>
 #include <string>
 #include <cstdio>
 #include <vector>
@@ -33,7 +32,27 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 ////////////////////////// Solution starts below. //////////////////////////////
 
+#include <bitset>
+
+const int MAXN = 3005;
+bitset<MAXN> seen;
+
 int main(){
-    
+    int n;
+    while (cin >> n) {
+        seen.reset();
+        int u; cin >> u;
+        for (int i = 1; i < n; ++i) {
+            int v; cin >> v;
+            int diff = abs(u - v);
+            if (diff < MAXN) seen[diff] = true;
+            u = v;
+        }
+        bool jolly = true;
+        for (int i = 1; i <= n - 1; ++i) {
+            jolly &= seen[i];
+        }
+        cout << (jolly ? "Jolly" : "Not jolly") << endl;
+    }
     return 0;
 }

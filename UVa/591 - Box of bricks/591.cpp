@@ -10,7 +10,6 @@ using namespace std;
 #include <climits>
 #include <cstdlib>
 #include <cstring>
-#include <bitset>
 #include <string>
 #include <cstdio>
 #include <vector>
@@ -34,6 +33,21 @@ int cmp(double x, double y = 0, double tol = EPS) {
 ////////////////////////// Solution starts below. //////////////////////////////
 
 int main(){
-    
+    int n, run = 1;
+    while (scanf("%d", &n) == 1 and n > 0) {
+        vector<int> height(n);
+        int average = 0;
+        for (int i = 0; i < n; ++i) {
+            scanf("%d", &height[i]);
+            average += height[i];
+        }
+        assert(average % n == 0);
+        average /= n;
+        int ans = 0;
+        for (int i = 0; i < n; ++i) {
+            if (height[i] > average) ans += height[i] - average;
+        }
+        printf("Set #%d\nThe minimum number of moves is %d.\n\n", run++, ans);
+    }
     return 0;
 }

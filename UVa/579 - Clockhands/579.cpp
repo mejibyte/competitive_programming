@@ -10,7 +10,6 @@ using namespace std;
 #include <climits>
 #include <cstdlib>
 #include <cstring>
-#include <bitset>
 #include <string>
 #include <cstdio>
 #include <vector>
@@ -34,6 +33,15 @@ int cmp(double x, double y = 0, double tol = EPS) {
 ////////////////////////// Solution starts below. //////////////////////////////
 
 int main(){
-    
+    int hour, minute;
+    while (scanf("%d:%d", &hour, &minute) == 2) {
+        if (hour == 0 and minute == 0) break;
+        if (hour == 12) hour = 0;
+        double angle1 = 30 * hour + minute * 0.5;
+        double angle2 = minute * 6;
+        double answer = abs(angle1 - angle2);
+        if (answer > 180) answer = 360 - answer;
+        printf("%.3lf\n", answer);
+    }
     return 0;
 }

@@ -1,3 +1,4 @@
+// Andrés Mejía
 using namespace std;
 #include <algorithm>
 #include <iostream>
@@ -20,28 +21,23 @@ using namespace std;
 #include <map>
 #include <set>
 
+////////////// Prewritten code follows. Look down for solution. ////////////////
 #define foreach(x, v) for (typeof (v).begin() x=(v).begin(); x !=(v).end(); ++x)
 #define For(i, a, b) for (int i=(a); i<(b); ++i)
-#define D(x) cout << #x " is " << x << endl
+#define D(x) cout << #x " is " << (x) << endl
 
-int f(int n) {
-    int ans = 0;
-    while (n > 1) {
-        ans++;
-        if (n % 2 == 0) n = n / 2;
-        else n = 3 * n + 1;
-    }
-    return ans + 1;
+const double EPS = 1e-9;
+int cmp(double x, double y = 0, double tol = EPS) {
+    return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
 }
+////////////////////////// Solution starts below. //////////////////////////////
 
 int main(){
-    int a, b;
-    while (cin >> a >> b) {
-        int ans = -1;        
-        for (int i = min(a, b); i <= max(a, b); ++i) {
-            ans = max(ans, f(i));
-        }
-        printf("%d %d %d\n", a, b, ans);
+    long long n;
+    while (cin >> n) {
+        if (n == 0) break;
+        long long root = sqrt(n);
+        cout << (root * root == n ? "yes" : "no") << endl;
     }
     return 0;
 }

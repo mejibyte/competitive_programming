@@ -33,7 +33,36 @@ int cmp(double x, double y = 0, double tol = EPS) {
 }
 ////////////////////////// Solution starts below. //////////////////////////////
 
+const int MAXS = 10005 * 10;
+
+int g[MAXS][10];
+bitset<MAXS> finish;
+
 int main(){
-    
+    int runs; cin >> runs;
+    while (runs--) {
+        int m; cin >> m;
+        memset(g[0], -1, sizeof g[0]);
+        int states = 1;
+        finish.reset();
+        bool valid = true;
+        while (m--) {
+            string s; cin >> s;
+            int cur = 0; // root
+            for (int i = 0; i < s.size(); ++i) {
+                int next = (s[i] - '0');
+                if (g[cur][next] == -1) {
+                    g[cur][next] = states;
+                    memset(g[states], -1, sizeof g[states]);
+                    states++;
+                }
+                cur = g[cur][next];
+                if (finish[cur]) valid = false;
+            }
+            if (cur != states - 1) valid = false;
+            finish[cur] = true;
+        }
+        cout << (valid ? "YES" : "NO") << endl;
+    }
     return 0;
 }
