@@ -22,7 +22,7 @@ using namespace std;
 
 #define foreach(x, v) for (typeof (v).begin() x=(v).begin(); x !=(v).end(); ++x)
 #define For(i, a, b) for (int i=(a); i<(b); ++i)
-#define D(x) cout << #x " is " << x << endl
+#define D(x) cout << #x " is " << (x) << endl
 
 class KingSort {
   public:
@@ -46,48 +46,8 @@ class KingSort {
 
 };
 
-int parse(string s) {
-    string prefix[] = {"X", "XX", "XXX", "XL", "L"};
-    int ans = 0;
-    for (int i = 5; i >= 1; --i) {
-        string p = string(prefix[i - 1]);
-        int where = s.find(p);
-        if (where == 0) {
-            ans += i * 10;
-            s = s.substr(p.size());
-            break;
-        }
-    }
-    
-    string suffix[] = {"I" , "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
-    for (int i = 1; i <= 10; ++i) {
-        if (s == string(suffix[i - 1])) {
-            ans += i;
-            break;
-        }
-    }
-    return ans;
-}
-
-bool comp(pair<string, string> a, pair<string, string> b) {
-    if (a.first != b.first) return a.first < b.first;
-    return parse(a.second) < parse(b.second);
-}
-
 vector <string> KingSort::getSortedList(vector <string> kings) {
-    vector< pair<string, string> > v;
-    for (int i = 0; i < kings.size(); ++i) {
-        stringstream sin(kings[i]);
-        string name, num;
-        sin >> name >> num;
-        v.push_back( make_pair(name, num) );
-    }
-    sort(v.begin(), v.end(), comp);
-    vector<string> ans;
-    foreach(p, v) {
-        ans.push_back( p->first + " " + p->second );
-    }
-    return ans;
+  
 }
 
 // BEGIN CUT HERE

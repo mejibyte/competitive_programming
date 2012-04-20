@@ -52,50 +52,53 @@ class GogoXMarisaKirisima {
 
 };
 
+
 #include <bitset>
 
-bitset<55> visited;
-vector<int> g[55];
+const int MAXN = 55;
+bitset<MAXN> reach, end;
+vector<string> choices;
+bool used[MAXN][MAXN];
 
-bool reach[55][55];
-
-void sort(int u, vector<int> &out) {
-    if (visited[u]) return;
-    visited[u] = true;
-    foreach(v, g[u]) sort(*v, out);
-    out.push_back(u);
+void forward(int u) {
+    if (reach[u]) return;
+    reach[u] = true;
+    for (int v = 0; v < choices.size(); ++v) {
+        if (choices[u][v] == 'Y' and !reach[v]) {
+            used[u][v] = true;
+            forward(v);
+        }
+    }
 }
 
-int GogoXMarisaKirisima::solve(vector <string> choices) {
-    int n = choices.size();
-    visited.reset();
+void backward(int u) {
+    if (end[u]) return;
+    end[u] = true;
+    for (int v = 0; v < choices.size(); ++v) {
+        if (choices[v][u] == 'Y') backward(v);
+    }
+}
+ 
+int GogoXMarisaKirisima::solve(vector <string> c) {
+    reach.reset(), end.reset();
+    memset(used, 0, sizeof used);
     
-    memset(reach, 0, sizeof reach);
+    choices = c;
+    int n = choices.size();
+    
+    forward(0);
+    if (!reach[n - 1]) return 0;
+    backward(n - 1);
+    
+    int ans = 1;
     for (int i = 0; i < n; ++i) {
-        g[i].clear();
         for (int j = 0; j < n; ++j) {
-            if (choices[i][j] == 'Y') {
-                g[i].push_back(j);
-                reach[i][j] = true;
+            if (i != j and choices[i][j] == 'Y' and !used[i][j] and reach[i] and end[j]) {
+                ans++;
             }
         }
-        reach[i][i] = true;
     }
-    
-    for (int k = 0; k < n; ++k)
-        for (int i = 0; i < n; ++i)
-            for (int j = 0; j < n; ++j)
-                reach[i][j] |= reach[i][k] and reach[k][i];
-    
-    vector<int> sorted;
-    sort(0, sorted);
-    reverse(sorted.begin(), sorted.end());
-    
-    if (!reach[0][n - 1]) return 0;
-    
-    
-    return 0;
-    
+    return ans;
 }
 
 // BEGIN CUT HERE

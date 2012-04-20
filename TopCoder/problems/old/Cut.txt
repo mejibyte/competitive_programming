@@ -1,0 +1,68 @@
+PROBLEM STATEMENT
+Fox Ciel wants to eat eels as a celebration of this year's end.
+
+Initially, Ciel has some eels of various lengths. She only likes to eat eels of length exactly 10, no more, no less.
+Before she eats, she may cut the eels to prepare pieces of desired length. However, she only has the time to make at most maxCuts cuts. A single cut looks as follows:
+
+Fox Ciel chooses one of the eels. Let its length be x. She can only choose an eel of length greater than 1.
+She chooses an integer y such that 0 < y < x.
+She cuts the eel into two pieces so that one of them measures exactly y.
+In other words, instead of one eel of length x she now has two eels of lengths y and (x-y), respectively.
+
+
+You are given a vector <int> eelLengths. Each element of eelLengths is the length of one of the eels Ciel has at the beginning.
+You are also given the int maxCuts.
+Return the maximum number of eels of length exactly 10 she can produce.
+
+DEFINITION
+Class:Cut
+Method:getMaximum
+Parameters:vector <int>, int
+Returns:int
+Method signature:int getMaximum(vector <int> eelLengths, int maxCuts)
+
+
+CONSTRAINTS
+-eelLengths will contain between 1 and 50 elements, inclusive.
+-Each element of eelLengths will be between 1 and 1,000, inclusive.
+-maxCuts will be between 1 and 1,000, inclusive.
+
+
+EXAMPLES
+
+0)
+{13, 20, 13}
+2
+
+Returns: 3
+
+One optimal solution looks as follows:
+
+First, cut eel 0 into two pieces of lengths 10 and 3. Next, cut eel 1 into two equal parts of length 10 each. This produces a total of 3 eels whose length is 10.
+
+
+
+1)
+{5, 5, 5, 5}
+2
+
+Returns: 0
+
+There are four eels whose length is 5.
+As you cannot combine eels, it is impossible to make an eel of length 10.
+
+2)
+{34, 10, 48}
+4
+
+Returns: 5
+
+She already has one eel of length 10. By cutting the other two eels she can produce four more eels of the desired length.
+
+3)
+{30, 50, 30, 50}
+350
+
+Returns: 16
+
+She may cut eels at most 350 times, but in this case she doesn't have to cut them so many times.

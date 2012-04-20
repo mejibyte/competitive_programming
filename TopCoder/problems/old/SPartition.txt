@@ -1,0 +1,83 @@
+PROBLEM STATEMENT
+You are given a string of even length. You want to color each of its letters red or blue so that the red subsequence equals the blue subsequence. Count the number of ways in which this can be done.
+
+
+Formally, you are given a string s. Let n be its length. You may assume that n is even and that each character in s is either 'o' or 'x'. Your method must return the number of pairs of sequences (X, Y) that satisfy the following criteria:
+
+X = (x[0], ..., x[n/2-1]) such that x[0] < x[1] < ... < x[n/2-1].
+Y = (y[0], ..., y[n/2-1]) such that y[0] < y[1] < ... < y[n/2-1].
+{x[0], ..., x[n/2-1], y[0], ..., y[n/2-1]} = {0,1,...,n-1}. That is, each of the values 0 through n-1 is present either in X or in Y.
+For each k such that 0 <= k < n/2 we have s[x[k]] = s[y[k]].
+
+
+DEFINITION
+Class:SPartition
+Method:getCount
+Parameters:string
+Returns:long long
+Method signature:long long getCount(string s)
+
+
+NOTES
+-You may assume that the return value always fits into a long long.
+
+
+CONSTRAINTS
+-s will contain between 2 and 40 characters, inclusive.
+-The number of characters in s will be even.
+-Each character of s will be either 'o' or 'x'.
+
+
+EXAMPLES
+
+0)
+"oxox"
+
+Returns: 2
+
+There are two ways to choose the pair of sequences:
+
+(x[0], x[1]) = (0, 1), (y[0], y[1]) = (2, 3)
+(x[0], x[1]) = (2, 3), (y[0], y[1]) = (0, 1)
+
+
+1)
+"oooxxx"
+
+Returns: 0
+
+It is possible that there is no valid pair of sequences.
+
+2)
+"xoxxox"
+
+Returns: 4
+
+The four valid pairs of sequences look as follows:
+
+(x[0], x[1], x[2]) = (0, 1, 2), (y[0], y[1], y[2]) = (3, 4, 5)
+(x[0], x[1], x[2]) = (3, 4, 5), (y[0], y[1], y[2]) = (0, 1, 2)
+(x[0], x[1], x[2]) = (0, 1, 3), (y[0], y[1], y[2]) = (2, 4, 5)
+(x[0], x[1], x[2]) = (2, 4, 5), (y[0], y[1], y[2]) = (0, 1, 3)
+
+
+3)
+"xo"
+
+Returns: 0
+
+
+
+4)
+"ooooxoox"
+
+Returns: 8
+
+
+
+5)
+"ooxxoxox"
+
+Returns: 8
+
+
