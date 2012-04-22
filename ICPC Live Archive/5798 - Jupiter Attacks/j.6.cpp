@@ -1,3 +1,5 @@
+// This is our code from our competition day. I've fixed and now it passes.
+
 //Equipo Poncho, carriel y ruana
 // Sala Tayrona, maquina 140
 using namespace std;
@@ -38,13 +40,12 @@ int B, mod;
 
 
 int bigmod(int b, int p) {
-    int mask = 1;
     int pow2 = b % mod;
     int r = 1;
-    while (mask) {
-        if (p & mask) r = (1LL * r * pow2) % mod;
+    while (p > 0) {
+        if (p & 1) r = (1LL * r * pow2) % mod;
         pow2 = (1LL * pow2 * pow2) % mod;
-        mask <<= 1;
+        p >>= 1;
     }
     return r;
 }
@@ -96,15 +97,11 @@ void SegmentTree::print(int node, int node_left, int node_right) {
 int SegmentTree::query(int node, int node_left, int node_right, int query_left, int query_right) const {
     //printf("Node is (%d, [%d, %d]), query is (%d, %d)\n", node, node_left, node_right, query_left, query_right);
     if (node_right < query_left || query_right < node_left) return 0;
-    if (query_left == node_left && node_right == query_right) {
+    if (query_left <= node_left && node_right <= query_right) {
         //dprintf("Query is the same as node (id=%d, [%d, %d]). Returning %lld\n", node, node_left, node_right, tree[node]);
         return tree[node];
     }
-    
-    if (node_left == node_right) {
-        return tree[node];    
-    }
-    
+
     int half = (node_left + node_right) / 2;
     
     int ans_left = query(2 * node + 1, node_left, half, query_left, query_right);

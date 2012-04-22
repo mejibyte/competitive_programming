@@ -22,3 +22,5 @@ q.times do
     puts "#{from} #{to}"
   end
 end
+
+puts "0 0 0 0"

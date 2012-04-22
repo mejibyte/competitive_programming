@@ -4,7 +4,7 @@
   system "ruby gen.rb > rand.in"
   system "./bruteforce < rand.in > right.out"
   exit -1 unless $?.success?
-  system "./jupiter.4 < rand.in > wrong.out"
+  system "./j.6 < rand.in > wrong.out"
   system "diff right.out wrong.out"
   unless $?.success?
     puts
