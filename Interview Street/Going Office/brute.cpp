@@ -62,6 +62,7 @@ void dijkstra(int start, vector<int> &d, pair<int, int> blocked) {
         for (int k = 0; k < g[u].size(); ++k) {
             int v = g[u][k].to, w_extra = g[u][k].weight;
             if (u == blocked.first and v == blocked.second) continue;
+            if (u == blocked.second and v == blocked.first) continue;
             if (w + w_extra < d[v]) {
                 d[v] = w + w_extra;
                 q.push(Edge(v, d[v]));
