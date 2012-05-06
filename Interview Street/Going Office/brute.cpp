@@ -48,11 +48,10 @@ const int MAXN = 200005;
 
 vector<Edge> g[MAXN]; // Normal graph
 vector<int> distance_to, distance_from, previous;
+const int oo = 1 << 30;
 
-void dijkstra(int start, vector<int> &d, vector<int> &p) {
-    const int oo = 1 << 30;
+void dijkstra(int start, vector<int> &d, pair<int, int> blocked) {
     d.assign(N, oo);
-    p.assign(N, -1);
     priority_queue<Edge> q;
     d[start] = 0;
     q.push(Edge(start, 0));
@@ -62,8 +61,8 @@ void dijkstra(int start, vector<int> &d, vector<int> &p) {
         if (w > d[u]) continue;
         for (int k = 0; k < g[u].size(); ++k) {
             int v = g[u][k].to, w_extra = g[u][k].weight;
+            if (u == blocked.first and v == blocked.second) continue;
             if (w + w_extra < d[v]) {
-                p[v] = u;
                 d[v] = w + w_extra;
                 q.push(Edge(v, d[v]));
             }
@@ -83,25 +82,18 @@ int main(){
     
     int source, sink;
     cin >> source >> sink;
-    
-    dijkstra(sink, distance_from, previous);
-    dijkstra(source, distance_to, previous);
-    
-    // distance_from[u] = Distance from u to sink
-    // distance_to[u] = Distance form source to u
-    // previous[u] = previous of node u in shortest path from source to u
-    
+
     int Q;
     cin >> Q;
     for (int q = 0; q < Q; ++q) {
         int u, v;
         cin >> u >> v;
         // output shortest path when edge u, v is blocked.
-        if (previous[v] != u) { // edge doesn't belong to the shortest path, so blocking it changes nothing.
-            cout << distance_to[sink] << endl;
-        } else {
-            cout << "hold on" << endl;
-        }
+        dijkstra(source, distance_to, make_pair(u, v));
+        int ans = distance_to[sink];
+
+        if (ans == oo) cout << "Infinity" << endl;
+        else cout << distance_to[sink] << endl;
     }
     
     return 0;
