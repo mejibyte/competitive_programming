@@ -1,0 +1,63 @@
+PROBLEM STATEMENT
+In a jail, some pairs of prisoners are chained together to make it more difficult for them to escape. A group of rebels has decided to escape, and one important part of their plan involves pressing two distant buttons simultaneously. They must determine the two prisoners best suited for this task.
+Given the configuration of chains between prisoners, return the maximum distance that can be achieved between two prisoners. If there is no limit to that distance, return -1. You will be given a vector <string> chain, where the ith character of the jth element represents the length of the chain between prisoners i and j:
+'0'-'9': Distances 0 to 9 feet, in order.
+'a'-'z': Distances 10 to 35 feet, in order.
+'A'-'Z': Distances 36 to 61 feet, in order.
+' ': Space means there is no chain between that pair of prisoners.
+
+DEFINITION
+Class:EscapingJail
+Method:getMaxDistance
+Parameters:vector <string>
+Returns:int
+Method signature:int getMaxDistance(vector <string> chain)
+
+
+CONSTRAINTS
+-chain will have between 2 and 50 elements, inclusive.
+-Each element of chain will have exactly N characters, where N is the number of elements of chain.
+-Character i of element j of chain and character j of element i of chain will be equal.
+-Character i of element i of chain will be '0'.
+-Each character of each element of chain will be a digit ('0'-'9'), an uppercase letter ('A'-'Z'), a lowercase letter ('a'-'z') or a space ' '.
+
+
+EXAMPLES
+
+0)
+{"0568",
+ "5094",
+ "6903",
+ "8430"}
+
+Returns: 8
+
+Prisoners 1 and 2 are chained with length 9.  However, they are both also chained to prisoner 3 with chains of length 3 and 4 respectively, so they cannot stand more than 7 feet apart.  Prisoners 0 and 3, on the other hand, can stand 8 feet apart without trouble.
+
+1)
+{"0 ",
+ " 0"}
+
+Returns: -1
+
+Both prisoners are completely unchained, so there is no limit to the distance they can achieve.
+
+2)
+{"0AxHH190",
+ "A00f3AAA",
+ "x00     ",
+ "Hf 0  x ",
+ "H3  0   ",
+ "1A   0  ",
+ "9A x  0Z",
+ "0A    Z0"}
+
+Returns: 43
+
+3)
+{"00",
+ "00"}
+
+Returns: 0
+
+They are not going too far.

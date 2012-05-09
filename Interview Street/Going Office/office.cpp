@@ -112,8 +112,8 @@ void precompute(int source, int sink, map< pair<int, int>, int > &ans){
                 const Edge &e = g[u][k];
                 
                 if (u == start and e.to == avoid) continue;
-                
                 if (previous[e.to] != u) continue;
+                
                 visited[e.to] = true;
                 q.push(e.to);
                 seen.push_back(e.to);

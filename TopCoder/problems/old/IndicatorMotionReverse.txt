@@ -1,0 +1,75 @@
+PROBLEM STATEMENT
+The first thing you have to do is to concatenate all elements of actions into one long string, and that will be your input string.
+In this problem, you will write a program that controls the actions of a progress indicator. The indicator is a single bar character in the middle of the screen with one of 4 states: '|', '/', '-', and '\'. From now on, we will refer to '\' as 'N', for programming convenience. The program is a sequence of instructions in the form:
+<instr> <secs>
+where <instr> represents one of 4 possible actions, and <secs> is the action's duration in seconds. The action is performed once each second. The 4 possible actions are:
+'L': Spin left.  If the bar is in state '|', it goes to 'N'.  State 'N' goes to '-', '-' goes to '/', and '/' goes to '|'.
+'R': Spin right.  This is the exact opposite of 'L': 'N' goes to '|', '|' goes to '/', '/' goes to '-', and '-' goes to 'N'.
+'S': Stay.  The bar remains in its current state.
+'F': Flip.  The bar is rotated 90 degrees: '|' becomes '-', '-' becomes '|', '/' becomes 'N', and 'N' becomes '/'.
+So, the sequence "F03L02" and the starting state of '-' leads to the following sequence: "-|-|N-".
+Given a vector <string> actions representing a sequence of actions, return the shortest program that leads to that sequence. The first character of the sequence is the starting state, so your program should run for K-1 seconds where K is the length of the given sequence. If there are multiple shortest programs that produce the given sequence, return the lexicographically first among them. If the return string has more than 100 characters, return only the first 97 followed by "..." (see last example for clarification).
+
+DEFINITION
+Class:IndicatorMotionReverse
+Method:getMinProgram
+Parameters:vector <string>
+Returns:string
+Method signature:string getMinProgram(vector <string> actions)
+
+
+NOTES
+-You can't make an action last more than 99 seconds with a single instruction, but you can use the same instruction multiple times consecutively (see example 2 for further clarification).
+-If two programs have the same size, the one that comes earlier lexicographically is the one with the lower ASCII value in the first position at which they differ.
+
+
+CONSTRAINTS
+-actions will have between 1 and 50 elements, inclusive.
+-Each element in actions will have between 1 and 50 characters, inclusive.
+-Each character of each element of actions will be one of '|', 'N', '-' or '/'.
+
+
+EXAMPLES
+
+0)
+{"-|-|/-/|//////-/"}
+
+Returns: "F03R02L02R01S05R01L01"
+
+The actions needed after the first '-', which is the starting state, are:
+
+-|-|/-/|//////-/
+.FFFRRLLRSSSSSRL
+
+which can be optimally represented using the syntax above.
+
+1)
+{"N"}
+
+Returns: ""
+
+Sometimes you need an empty program.
+
+2)
+{"||||||||||||||||||||||||||||||||||||||||||||||||||",
+ "||||||||||||||||||||||||||||||||||||||||||||||||||",
+ "||||||||||||||||||||||||||||||||||||||||||||||||||"}
+
+Returns: "S50S99"
+
+Here you need 149 stays and it is necessary to break them into 2 'S' instructions. The lexicographically first way to do this is S50S99.
+
+3)
+{"N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N",
+ "-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N"}
+
+Returns: "L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L01R01L..."
+
+In this case the output program has 400 instructions, which is 3x400=1200 characters. Remember to return only the first 97 followed by "...".

@@ -1,0 +1,41 @@
+PROBLEM STATEMENT
+A positive integer is called a palindrome if it reads the same forward and backward.  Integers containing leading zeros are not valid.  For example, 12321 is a palindrome, but 123210 is not.  You are given an int K.  Return the K-th palindrome, where the 0th palindrome is 1, the 1st palindrome is 2, etc.
+
+DEFINITION
+Class:IntegerPalindrome
+Method:findByIndex
+Parameters:int
+Returns:long long
+Method signature:long long findByIndex(int K)
+
+
+CONSTRAINTS
+-K will be between 0 and 1000000000 (109), inclusive
+
+
+EXAMPLES
+
+0)
+8
+
+Returns: 9
+
+1)
+9
+
+Returns: 11
+
+2)
+19
+
+Returns: 111
+
+3)
+235
+
+Returns: 13731
+
+4)
+23746
+
+Returns: 137484731

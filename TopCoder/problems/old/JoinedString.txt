@@ -1,0 +1,51 @@
+PROBLEM STATEMENT
+You are given a vector <string> words.  Return the shortest string that contains all the words as substrings. If there are several possible answers, return the one that comes first lexicographically.
+
+
+DEFINITION
+Class:JoinedString
+Method:joinWords
+Parameters:vector <string>
+Returns:string
+Method signature:string joinWords(vector <string> words)
+
+
+CONSTRAINTS
+-words will contain between 1 and 12 elements, inclusive.
+-Each element of words will contain between 1 and 50 characters, inclusive.
+-Each element of words will consist of only uppercase letters ('A'-'Z').
+
+
+EXAMPLES
+
+0)
+{"BAB", "ABA"}
+
+Returns: "ABAB"
+
+There are two strings of length 4 that contain both given words: "ABAB" and "BABA".  "ABAB" comes earlier lexicographically.
+
+1)
+{"ABABA", "AKAKA", "AKABAS", "ABAKA"}
+
+Returns: "ABABAKAKABAS"
+
+2)
+{"AAA","BBB", "CCC", "ABC", "BCA", "CAB"}
+
+Returns: "AAABBBCABCCC"
+
+3)
+{"OFG", "SDOFGJTILM", "KBWNF", "YAAPO", "AWX", "VSEAWX", "DOFGJTIL", "YAA"}
+
+Returns: "KBWNFSDOFGJTILMVSEAWXYAAPO"
+
+4)
+{"NVCSKFLNVS", "HUFSPMRI", "FLNV", "KMQD", "RPJK", "NVSQORP", "UFSPMR", "AIHUFSPMRI"}
+
+Returns: "AIHUFSPMRINVCSKFLNVSQORPJKMQD"
+
+5)
+{"STRING", "RING"}
+
+Returns: "STRING"

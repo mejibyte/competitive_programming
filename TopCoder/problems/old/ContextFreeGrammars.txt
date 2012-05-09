@@ -1,0 +1,155 @@
+PROBLEM STATEMENT
+A context free grammar is a set of words represented by a set of derivation rules, each written 
+as
+<nonterminal> ::= <expression> 
+where <nonterminal> is a symbol, and <expression> is a non-empty sequence of symbols (terminals and/or nonterminals) that represents a possible substitution for <nonterminal>. Symbols that never appear on the left side of a rule are called terminals.
+If you have several rules for the same nonterminal:
+<nonterminal> ::= <expr0>
+<nonterminal> ::= <expr1>
+...
+<nonterminal> ::= <exprn>
+it is also possible to write them in a single line, separated by pipes:
+<nonterminal> ::= <expr0> | <expr1> | ... | 
+<exprn>
+There is a special nonterminal called a seed. Sequences of terminals that can be derived from the seed are the words that belong to the set described by the grammar.
+In this problem we will use uppercase letters exclusively for nonterminals and lowercase 
+letters for terminals.
+For example, this specification:
+A ::= BD
+B ::= bB | b | Bb
+D ::= dD
+D ::= d
+
+with A as the seed represents the set of words that have one or more b's followed 
+by one or more d's (bd, bbd, bddd, bbbddd, etc.).
+A parsing tree in this context is a tree whose root node is the seed.  The children of each nonterminal node are the symbols of the expression derived from that nonterminal using one of the derivation rules.  These children are ordered from left to right. If read in that order, the leaves of a parsing tree form the parsed word. A terminal node is further to the left than another one if the path that leads to it from the first common ancestor begins with a branch that is further to the left in the rule used.
+
+The parsing tree for the string bdd in the above specification is:
+
+   A
+  / \
+ B   D
+ |  / \
+ b d   D
+       |
+       d
+
+Now, in this case this is the only possible parsing tree for that string, but the string bbd 
+has two parsing trees:
+
+     A
+    / \
+   B   D
+  / \  |
+ b   B d
+     |  
+     b
+
+and
+
+     A
+    / \
+   B   D
+  / \  |
+ B   b d
+ |  
+ b
+
+To avoid having infinite parsing trees, no expression on the right side of a rule will be just one nonterminal.
+You are given the set of rules as a vector <string>, where each element is formatted as described above, along with a seed and a word.  Return the number of distinct parsing trees for the given word. If there are more than 1000000000 (109) parsing trees, return -1.
+
+DEFINITION
+Class:ContextFreeGrammars
+Method:countParsingTrees
+Parameters:vector <string>, char, string
+Returns:int
+Method signature:int countParsingTrees(vector <string> rules, char seed, string word)
+
+
+NOTES
+-Two parsing trees are considered different if they have different tree structures, or if they have the same structure, but at least one node used a different rule to derive its children than the corresponding node in the other tree.
+-According to the above note, if there are multiple equal rules (same nonterminal and same expression), there can be trees that are different even though have the same exact nodes and structure.  See example 3 for further clarification.
+-All uppercase letters are considered nonterminals even if they do not appear on the left side of any rule.
+-When multiple expressions separated by pipes appear in a single line, each one still counts as a distinct rule (see example 5).
+
+
+CONSTRAINTS
+-word will contain between 1 and 35 characters, inclusive.
+-Each character of word will be a lowercase letter ('a'-'z').
+-seed will be an uppercase letter ('A'-'Z').
+-rules will contain between 1 and 50 elements, inclusive.
+-Each element of rules will contain between 1 and 50 characters, inclusive.
+-Each element of rules will start with an uppercase letter, followed by " ::= ", followed by a list of one or more expressions separated by " | ", where each expression is a non-empty sequence of lowercase and uppercase letters ('a'-'z' and 'A'-'Z').
+-No expression on the right side of a rule will be just one uppercase letter.
+
+
+EXAMPLES
+
+0)
+{"A ::= BD",
+ "B ::= bB | b | Bb",
+ "D ::= dD",
+ "D ::= d"}
+'A'
+"bdd"
+
+Returns: 1
+
+The first example from the problem statement.
+
+1)
+{"A ::= BD",
+ "B ::= bB | b | Bb",
+ "D ::= dD",
+ "D ::= d"}
+'A'
+"bbd"
+
+Returns: 2
+
+The second example from the problem statement.
+
+2)
+{"A ::= BD",
+ "B ::= bB | b | Bb",
+ "D ::= dD",
+ "D ::= d"}
+'A'
+"ddbb"
+
+Returns: 0
+
+This string does not belong to the represented set, so there is no parsing tree.
+
+3)
+{"B ::= topcoder | topcoder",
+ "B ::= topcoder"}
+'B'
+"topcoder"
+
+Returns: 3
+
+Here, there are 3 trees that look the same (B as the root and 8 leaves with the "topcoder" letters),
+but you can make a tree with each one of the 3 different rules, so all those trees are considered different.
+
+4)
+{"A ::= BCD",
+ "Z ::= z",
+ "B ::= Cz | Dz | Zz",
+ "C ::= Bz | Dz",
+ "D ::= Cz | Bz"}
+'X'
+"zzz"
+
+Returns: 0
+
+Every uppercase letter is a nonterminal, even though it has no associated rule.
+
+5)
+{"B ::= bB | bB | bB | bB | b" }
+'B'
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+
+Returns: -1
+
+Here, the first 29 b's can be derived by processing a "B ::= bB" rule 29 times, each time picking one of the four rules that do that. The result is 429 = 288230376151711744, which is much greater than 109, so you must return -1.

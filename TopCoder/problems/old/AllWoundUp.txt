@@ -1,0 +1,100 @@
+PROBLEM STATEMENT
+Given a closed path in the plane (which may intersect itself or even retrace 
+itself), each point that is not on the path has a unique "winding number" that
+tells how many times the path winds around that point. As the path is traced
+out, the direction from the point to the path changes continuously and after the
+path has been completed the total change is an
+integral number of complete rotations. A negative result indicates that the
+path wound around the point in a clockwise direction.
+
+For example in the following diagram where paths are straight line segments from number to number, 
+ For the path 13421 the winding number of P is 1
+         For the path 13421231 the winding number of P is 0  (+1 + -1 = 0)
+         For the path 124312431 the winding number of P is -2
+         For the path 421234 the winding number of P is 0
+
+        1               2
+                  P
+                  3      4
+
+We are interested in the winding numbers for the points along the x axis. We are given the vertices 
+of a piecewise linear closed path in the order in which
+the path is traced (the final segment is the one from the last given vertex to
+the first given vertex). Create a class AllWoundUp that contains a method 
+maxWind that is given the vertices in
+vector <int>s x and y and that returns the largest non-negative
+winding number among all the points on the x axis (that are not on the path). 
+
+
+
+DEFINITION
+Class:AllWoundUp
+Method:maxWind
+Parameters:vector <int>, vector <int>
+Returns:int
+Method signature:int maxWind(vector <int> x, vector <int> y)
+
+
+CONSTRAINTS
+-x contains between 1 and 50 elements, inclusive.
+-y contains the same number of elements as x.
+-Each element of x and of y is between -1000 and 1000, inclusive.
+
+
+EXAMPLES
+
+0)
+{1,4}
+{-2,9}
+
+Returns: 0
+
+
+
+   This closed path has 2 segments that retrace each other. All points in the
+   plane that are not on the path have a winding number of 0.
+
+
+
+
+
+
+
+1)
+{1,1,3,3}
+{-1,0,0,1}
+
+Returns: 0
+
+
+
+   This closed path has one region (inside the triangle (2,0),(3,0),(3,1)) in 
+   which all the points have a winding number of 1, 
+   and another triangular region with a winding number of
+   -1. But no point on the x axis is in either of these regions.
+
+2)
+{0,1,1,0,2}
+{1,-1,1,-1,1}
+
+Returns: 2
+
+
+
+   This path, in addition to its exterior, has 4 regions with a winding number of 1,
+   and 1 region with a winding number of 2. The section of the x axis between 1/2 and
+   1 is in that region.
+
+3)
+{   0,1000, 500,   0,1000, 500, 500,1000,   0, 500,1000, 0}   
+ 
+ {-100,-100, 100,-100,-100, 100, 100,-100,-100, 100,-100,-100}
+
+Returns: 0
+
+
+
+   This path winds around its interior region 2 times counterclockwise, but 
+   then backtracks winding around its interior region 2 times clockwise. As a
+   result both its exterior and its one interior region have winding number 0.
+ 

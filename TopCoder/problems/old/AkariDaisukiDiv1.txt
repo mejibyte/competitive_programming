@@ -1,0 +1,121 @@
+PROBLEM STATEMENT
+
+Consider the following function:
+f(X) = Waai + X + Akari + X + Daisuki
+Here, X is a string and + denotes string concatenation.
+Waai, Akari and Daisuki are constant non-empty strings.
+
+
+
+You are given 5 strings Waai, Akari, Daisuki, S and F, and a  int k. 
+Compute how many times F occurs in f^k(S) as its substring. (The notation f^k(S) means that f is applied to S exactly k times in a row. See Notes for a formal definition.) Since the number can be quite large, compute the number modulo 1,000,000,007.
+
+
+DEFINITION
+Class:AkariDaisukiDiv1
+Method:countF
+Parameters:string, string, string, string, string, int
+Returns:int
+Method signature:int countF(string Waai, string Akari, string Daisuki, string S, string F, int k)
+
+
+NOTES
+-Formally, we have f^1(X)=f(X) and for k greater than one we have f^k(X)=f(f^(k-1)(X)).
+-String A is substring of B if A can be obtained by erasing some (possibly zero) characters from the beginning of B and some (possibly zero) characters from the end of B.
+
+
+CONSTRAINTS
+-Waai, Akari, Daisuki, S, and F will contain between 1 and 50 characters, inclusive.
+-Each character of Waai, Akari, Daisuki, S, and F will be a lowercase letter ('a'-'z').
+-k will be between 1 and 10,000,000, inclusive.
+
+
+EXAMPLES
+
+0)
+"a"
+"b"
+"c"
+"x"
+"axb"
+2
+
+Returns: 2
+
+S = "x",
+f(S) = "axbxc",
+f^2(S) = f("axbxc") = "aaxbxcbaxbxcc".
+This string contains the substring "axb" twice.
+
+1)
+"a"
+"b"
+"c"
+"x"
+"abcdefghij"
+1
+
+Returns: 0
+
+The answer can be zero.
+
+2)
+"a"
+"a"
+"a"
+"b"
+"aba"
+2
+
+Returns: 4
+
+S = "b",
+f(S) = "ababa",
+f^2(S) = f("ababa") = "aababaaababaa".
+This string contains the substring "aba" four times. You must count overlapping substrings.
+
+3)
+"a"
+"b"
+"c"
+"d"
+"baadbdcbadbdccccbaaaadbdcbadbdccbaadbdcba"
+58
+
+Returns: 191690599
+
+
+
+4)
+"a"
+"x"
+"y"
+"b"
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+49
+
+Returns: 1
+
+
+
+5)
+"waai"
+"akari"
+"daisuki"
+"usushio"
+"id"
+10000000
+
+Returns: 127859200
+
+
+
+6)
+"vfsebgjfyfgerkqlr"
+"ezbiwls"
+"kjerx"
+"jbmjvaawoxycfndukrjfg"
+"bgjfyfgerkqlrvfsebgjfyfgerkqlrvfsebgjfyfgerkqlrvfs"
+1575724
+
+Returns: 483599313
