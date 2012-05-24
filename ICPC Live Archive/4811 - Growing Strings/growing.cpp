@@ -13,7 +13,7 @@ using namespace std;
 
 #define D(x) cerr << #x " = " << (x) << endl
 
-namespace Aho {
+namespace Aho { // Aho-Corasick's algorithm
     const int MAXN = 1000005;
     map<char, int> g[MAXN];
     int f[MAXN]; // failure
