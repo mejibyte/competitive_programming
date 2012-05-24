@@ -12,6 +12,7 @@ using namespace std;
 #include <string>
 #include <cstdio>
 #include <vector>
+#include <bitset>
 #include <cmath>
 #include <queue>
 #include <deque>
@@ -46,65 +47,26 @@ class RollingDiceDivOne {
 
 };
 
-vector <int> dice;
-
-
-
-long long RollingDiceDivOne::mostLikely(vector <int> _dice) {
-    dice = _dice;
-    sort(dice.begin(), dice.end(), greater<int>());
-    
+long long RollingDiceDivOne::mostLikely(vector <int> dice) {
     int n = dice.size();
-    for (int i = 0; i < n; ++i) dice[i]--;
-    long long sum = accumulate(dice.begin(), dice.end(), 0);
-    
-    if (sum <= 20) {
-        static int ways[51][21];
-        memset(ways, 0, sizeof ways);
-        ways[0][0] = 1;
-        for (int i = 1; i <= n; ++i) {
-            for (int s = 0; s <= sum; ++s) {
-                for (int k = 0; k <= s and k <= dice[i - 1]; ++k) {
-                    ways[i][s] += ways[i - 1][s - k];
-                }
-            }
+    sort(dice.begin(), dice.end(), greater<int>());
+    long long l = 0, r = dice[0] - 1;
+    for (int i = 1; i < n; ++i) {
+        l += dice[i] - 1;
+        if (l > r) {
+            long long p = r + (l - r) / 2;
+            long long q = r + (l - r + 1) / 2;
+            l = p;
+            r = q;
         }
-        
-        for (int i = 0; i <= n; ++i) {
-            printf("dice[%2d] = %4d: ", i, i > 0 ? dice[i - 1] : 0);
-            for (int s = 0; s <= sum; ++s) {
-                printf("%4d ", ways[i][s]);
-            }
-            puts("");
-        }
-    }
-    
-    int l = 0, r = 0, s = 0;
-    for (int i = 0; i < n; ++i) {
-        if (dice[i] + 1 >= s + 1) {
-            l = s;
-            r = dice[i];
-        } else if (dice[i] + 1 <= r - l + 1) {
-            l += dice[i];
-        } else {
-            int leftover = (dice[i] + 1) - (r - l + 1);
-            if (leftover % 2 == 0) {
-                r += leftover / 2;
-                l = r;
-            } else {
-                r += leftover / 2 + 1;
-                l = r - 1;
-            }
-        }
-        s += dice[i];
     }
     return l + n;
 }
 
 // BEGIN CUT HERE
 int main(){
-    RollingDiceDivOne ___test;
-    ___test.run_test(-1);
+    RollingDiceDivOne test;
+    test.run_test(-1);
     return 0;
 }
 // END CUT HERE
