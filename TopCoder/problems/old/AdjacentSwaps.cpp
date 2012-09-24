@@ -12,6 +12,7 @@ using namespace std;
 #include <string>
 #include <cstdio>
 #include <vector>
+#include <bitset>
 #include <cmath>
 #include <queue>
 #include <deque>
@@ -22,7 +23,7 @@ using namespace std;
 
 #define foreach(x, v) for (typeof (v).begin() x=(v).begin(); x !=(v).end(); ++x)
 #define For(i, a, b) for (int i=(a); i<(b); ++i)
-#define D(x) cout << #x " is " << x << endl
+#define D(x) cout << #x " is " << (x) << endl
 
 class AdjacentSwaps {
   public:
@@ -45,14 +46,91 @@ class AdjacentSwaps {
 
 };
 
-int AdjacentSwaps::theCount(vector <int> p) {
-  
+vector<int> p;
+const int MAXN = 55;
+const int mod = (int)(1e9 + 7);
+int choose[MAXN][MAXN];
+int memo[MAXN][MAXN];
+int mix[MAXN][MAXN];
+
+int ways(int i, int j) {
+    if (i == j) return 1;
+    if (memo[i][j] != -1) return memo[i][j];
+    
+    int ans = 0;
+    for (int last = i; last + 1 <= j; ++last) {
+        vector<int> t = p;
+        // sort t[i, last]
+        sort(t.begin() + i, t.begin() + last + 1);
+        // sort t[last + 1, j]
+        sort(t.begin() + last + 1, t.begin() + j + 1);
+        swap(t[last], t[last + 1]);
+        bool sorted = true;
+        for (int k = i; k + 1 <= j; ++k) {
+            if (t[k] > t[k + 1]) {
+                sorted = false;
+                break;
+            }
+        }
+        if (sorted) {
+            int l = ways(i, last);
+            int r = ways(last + 1, j);
+            
+            int a = last - i, b = j - last - 1;
+            int m = choose[a + b][a];
+            
+            long long add = 1LL * l * r % mod;
+            add = add * m % mod;
+            ans += add;
+            ans %= mod;
+        }
+    }
+    
+    return memo[i][j] = ans;
+}
+
+int AdjacentSwaps::theCount(vector <int> _p) {
+    p = _p;
+    for (int i = 0; i < MAXN; ++i) mix[i][0] = mix[0][i] = 1;
+    for (int i = 1; i < MAXN; ++i) {
+        for (int j = 1; j < MAXN; ++j) {
+            mix[i][j] = (mix[i - 1][j] + mix[i][j - 1]) % mod;
+        }
+    }
+    
+    for (int i = 0; i < MAXN; ++i) {
+        for (int j = 0; j < MAXN; ++j) {
+            if (i == 0 and j == 0) choose[i][j] = 1;
+            else {
+                choose[i][j] = 0;
+                if (i - 1 >= 0) {
+                    choose[i][j] += choose[i - 1][j];
+                    if (j - 1 >= 0) {
+                        choose[i][j] += choose[i - 1][j - 1];
+                        choose[i][j] %= mod;
+                    }
+                }
+            }
+        }
+    }
+    
+    for (int i = 0; i < MAXN; ++i) {
+        for (int j = 0; j < MAXN; ++j) {
+            if (i + j < MAXN) {
+                assert(choose[i + j][i] == choose[i + j][j]);
+                assert(choose[i + j][i] == mix[i][j]);
+            }
+        }
+    }
+    
+    memset(memo, -1, sizeof memo);
+    return ways(0, p.size() - 1);
 }
 
 // BEGIN CUT HERE
 int main(){
-    AdjacentSwaps ___test;
-    ___test.run_test(-1);
+    AdjacentSwaps test;
+    test.run_test(-1);
     return 0;
 }
 // END CUT HERE

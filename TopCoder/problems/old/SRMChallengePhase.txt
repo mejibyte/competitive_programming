@@ -1,0 +1,88 @@
+PROBLEM STATEMENT
+Mr. Dengklek introduced you to an online programming contest called SRM (Special Round Match)!
+
+You are now in the challenge phase of the contest. There are N coders in the contest, conveniently numbered 0 through N-1. In this phase, each coder is given an opportunity to make challenge attempts against another coders. Each challenge attempt can be successful or unsuccessful. In case a challenge attempt against some coder X is successful, it is said that coder X is successfully challenged. A coder may not attempt a challenge against him/herself.
+
+After the challenge phase is over, you remember this information:
+
+The information about challenge attempts is given in vector <string> codersAttempted. Concatenate all its elements to obtain a single string. This string will contain N characters. If the i-th (0-indexed) character is 'Y', the i-th coder attempted exactly one challenge (which could be successful or unsuccessful). Otherwise, the i-th coder didn't attempt any challenges. No coders attempted two or more challenges.
+The information about successful challenges is given in vector <string> codersChallenged. Concatenate all its elements to obtain a single string. This string will contain N characters. If the i-th (0-indexed) character is 'Y', the i-th coder was successfully challenged exactly once. Otherwise, the i-th coder was never successfully challenged. No coder was successfully challenged two or more times.
+As soon as a coder had been succesfully challenged, the coder became upset and stopped making any challenge attempts.
+Each coder could be unsuccessfully challenged arbitrary many times. Some of the unsuccessful challenges against a coder could be made after the coder had been successfully challenged.
+
+
+There were no two simultaneous challenge attempts during the challenge phase, so it can be represented as a chronologically ordered sequence of challenge attempts. Unfortunately, you forgot how exactly the challenge phase happened. Return the number of different possible sequences of challenge attempts that are consistent with the information that you remember, modulo 1,000,000,007. The information that you remember may be inaccurate, so if there are no such sequences, return 0. See examples for additional clarification.
+
+DEFINITION
+Class:SRMChallengePhase
+Method:countWays
+Parameters:vector <string>, vector <string>
+Returns:int
+Method signature:int countWays(vector <string> codersAttempted, vector <string> codersChallenged)
+
+
+CONSTRAINTS
+-codersAttempted and codersChallenged will each contain between 1 and 50 elements, inclusive.
+-Each element of codersAttempted and codersChallenged will contain between 1 and 50 characters, inclusive.
+-The total number of characters in codersAttempted and codersChallenged will be the same.
+-Each character in both codersAttempted and codersChallenged will be 'Y' or 'N'.
+
+
+EXAMPLES
+
+0)
+{"YY"}
+{"NY"}
+
+Returns: 1
+
+The only valid sequence of challenge attempts is:
+
+Coder 1 unsuccessfully challenged coder 0, then coder 0 sucessfully challenged coder 1.
+
+
+1)
+{"YY", "NN"}
+{"N", "NYY"}
+
+Returns: 4
+
+Here are the four possible sequences:
+
+Coder 0 successfully challenged coder 2, then coder 1 successfully challenged coder 3.
+Coder 0 successfully challenged coder 3, then coder 1 successfully challenged coder 2.
+Coder 1 successfully challenged coder 2, then coder 0 successfully challenged coder 3.
+Coder 1 successfully challenged coder 3, then coder 0 successfully challenged coder 2. 
+
+
+2)
+{"YNNN"}
+{"NYY", "Y"}
+
+Returns: 0
+
+The number of coders that were successfully challenged is greater than the number of attempts. It is impossible.
+
+3)
+{"N"}
+{"N"}
+
+Returns: 1
+
+
+
+4)
+{"YYY"}
+{"NNY"}
+
+Returns: 24
+
+
+
+5)
+{"YY", "N", "YYYY", "NN", "YYYYY"}
+{"N", "YYYYY", "N", "Y", "N", "YYYY", "N"}
+
+Returns: 807026001
+
+

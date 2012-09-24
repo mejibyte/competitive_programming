@@ -1,0 +1,102 @@
+PROBLEM STATEMENT
+Eel Takahashikun is playing a simple game on a rectangular board.
+
+
+The rectangular board is divided into H x W unit squares. Each unit square contains a 0 or a 1. In each operation, Takahashikun chooses a shortest path along edges of unit squares from the upper-left corner to the lower-right corner, and flips the numbers in all unit squares that are below the chosen path (i.e., changes all 0s into 1s and vice versa).
+
+
+For example, the following picture shows a valid operation. The squares below the chosen path are highlighted in green.
+
+
+
+
+
+The operation in the following picture is invalid because the path is not shortest.
+
+
+
+
+
+You are given the initial state of the board in vector <string> board. The j-th character of the i-th element is the number written in the unit square at row i, column j. Rows are numbered from top to bottom, and columns are numbered from left to right. Return the minimal number of iterations required to change all numbers to 0s.
+
+
+DEFINITION
+Class:FlipGame
+Method:minOperations
+Parameters:vector <string>
+Returns:int
+Method signature:int minOperations(vector <string> board)
+
+
+NOTES
+-It is always possible to change all numbers to 0s by a finite number of operations.
+
+
+CONSTRAINTS
+-board will contain between 1 and 50 elements, inclusive.
+-Each element of board will contain between 1 and 50 characters, inclusive.
+-Each element of board will contain the same number of characters.
+-Each character in board will be '0' or '1'.
+
+
+EXAMPLES
+
+0)
+{"1000",
+ "1110",
+ "1111"}
+
+Returns: 1
+
+Takahashikun can flip all 1s in one operation.
+
+
+1)
+{"1111",
+ "1111",
+ "1111"}
+
+Returns: 1
+
+
+
+2)
+{"00",
+ "00",
+ "00"}
+
+Returns: 0
+
+
+
+3)
+{"00000000",
+ "00100000",
+ "01000000",
+ "00001000",
+ "00000000"}
+
+Returns: 4
+
+
+
+4)
+{"000000000000001100000000000000",
+ "000000000000011110000000000000",
+ "000000000000111111000000000000",
+ "000000000001111111100000000000",
+ "000000000011111111110000000000",
+ "000000000111111111111000000000",
+ "000000001100111111001100000000",
+ "000000011000011110000110000000",
+ "000000111100111111001111000000",
+ "000001111111111111111111100000",
+ "000011111111111111111111110000",
+ "000111111111000000111111111000",
+ "001111111111100001111111111100",
+ "011111111111110011111111111110",
+ "111111111111111111111111111111"}
+
+Returns: 29
+
+

@@ -1,0 +1,77 @@
+PROBLEM STATEMENT
+A sequence of positive integers is called a 'Fibonacci sequence' if each element of the sequence, except the first and the second elements, is the sum of its two direct previous elements. For example, the sequence (1, 1, 2, 3, 5, 8) is a Fibonacci sequence, as well as (4, 2, 6, 8, 14, 22). By convention, every sequence containing 0, 1, or 2 elements is considered to be a Fibonacci sequence.
+
+There is a collection of positive integers represented by vector <int> S. Ash and Elsh would like to create a new sequence as follows:
+
+Ash will pick some integers (possibly none or all) from S to form a subsequence of a Fibonacci sequence. The elements in Ash's subsequence don't have to follow in the same relative order as in S.
+Elsh will then perform the same action with the remaining integers of S.
+The resulting sequence will be Ash's subsequence concatenated with Elsh's subsequence, in that order.
+
+The whole process must be organized in such way that the resulting sequence is sorted in ascending order. In addition, they would like to create the new sequence with as many elements as possible.
+
+Return the maximum possible number of integers that could be in the resulting sequence.
+
+DEFINITION
+Class:SubFibonacci
+Method:maxElements
+Parameters:vector <int>
+Returns:int
+Method signature:int maxElements(vector <int> S)
+
+
+NOTES
+-A subsequence of a sequence is the result of removing some elements (possibly none or all) from the sequence, without changing the order of remaining elements.
+
+
+CONSTRAINTS
+-S will contain between 1 and 50 elements, inclusive.
+-Each element of S will be between 1 and 100,000,000, inclusive.
+-All elements of S will be distinct.
+
+
+EXAMPLES
+
+0)
+{8, 1, 20, 3, 10}
+
+Returns: 5
+
+One possible solution is:
+
+Ash picks (1, 3, 8), which is a subsequence of (1, 1, 2, 3, 5, 8, 13).
+Elsh picks (10, 20).
+
+The resulting sequence is (1, 3, 8, 10, 20), containing 5 elements.
+
+1)
+{19, 47, 50, 58, 77, 99}
+
+Returns: 4
+
+They can create a sorted sequence containing any 4 integers from S.
+
+2)
+{512}
+
+Returns: 1
+
+One possible solution is:
+
+Ash picks (512).
+Elsh picks the empty sequence, ().
+
+The resulting sequence is (512), containing 1 element.
+
+3)
+{3, 5, 7, 10, 13, 15, 20, 90}
+
+Returns: 7
+
+
+
+4)
+{1, 2, 3, 5, 8, 13, 21, 34, 55, 89}
+
+Returns: 10
+
+

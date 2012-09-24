@@ -1,0 +1,65 @@
+PROBLEM STATEMENT
+In a normal election, one expects the percentages received by each of the candidates to sum to exactly 100 percent.  There are two ways this might not be the case: if the election is fraudulent, or if the reported percentages are rounded.
+For example, in an election with 3 voters and 3 candidates, if each voter chooses a different candidate the final percentages would be reported as 33, 33, 33, which only sum to 99.  Conversely, in an election with 7 voters and 3 candidates, if the candidates receive 2, 2, and 3 votes, respectively, the final percentages would be reported as 29, 29, and 43, which sum to 101.
+The ministry of voting wants you to help them determine if an election was run fairly or not.  You'll be given a vector <int> percentages, giving the percentage of the vote that went to each candidate, rounded to the nearest whole number (in the case a number lies halfway between 2 consecutive integers, it will be rounded up).  If the election could be legitimate, return the minimum number of voters that could have participated in this election.  If the election is definitely fraudulent, return -1.
+
+DEFINITION
+Class:ElectionFraudDiv1
+Method:MinimumVoters
+Parameters:vector <int>
+Returns:int
+Method signature:int MinimumVoters(vector <int> percentages)
+
+
+NOTES
+-You may assume that whenever the election may be legitimate, the smallest possible number of voters will fit into a int.
+
+
+CONSTRAINTS
+-percentages will contain between 1 and 50 elements, inclusive.
+-Each element of percentages will be between 0 and 100, inclusive.
+
+
+EXAMPLES
+
+0)
+{33, 33, 33}
+
+Returns: 3
+
+The first example from the problem statement.
+
+1)
+{29, 29, 43}
+
+Returns: 7
+
+The second example from the problem statement.
+
+2)
+{12, 12, 12, 12, 12, 12, 12, 12}
+
+Returns: -1
+
+These results are impossible.
+
+3)
+{13, 13, 13, 13, 13, 13, 13, 13}
+
+Returns: 8
+
+
+
+4)
+{0, 1, 100}
+
+Returns: 200
+
+The only possibility is that the candidates received 0, 1, and 199 votes, respectively.
+
+5)
+{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4}
+
+Returns: 97
+
+

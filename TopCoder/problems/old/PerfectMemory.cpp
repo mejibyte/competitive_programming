@@ -53,7 +53,7 @@ double memo[MAXN][MAXN];
 double f(int c, int n) {
     if (c == 0 and n == 0) return 0.0;
     
-    if (n < c) return 0.0; // bad!
+    if (n < c) return 1e100; // bad!
     
     if (memo[c][n] > -0.5) {
         return memo[c][n];

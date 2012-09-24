@@ -12,6 +12,7 @@ using namespace std;
 #include <string>
 #include <cstdio>
 #include <vector>
+#include <bitset>
 #include <cmath>
 #include <queue>
 #include <deque>
@@ -22,7 +23,7 @@ using namespace std;
 
 #define foreach(x, v) for (typeof (v).begin() x=(v).begin(); x !=(v).end(); ++x)
 #define For(i, a, b) for (int i=(a); i<(b); ++i)
-#define D(x) cout << #x " is " << x << endl
+#define D(x) cout << #x " is " << (x) << endl
 
 class RangeSquaredSubsets {
   public:
@@ -51,8 +52,8 @@ long long RangeSquaredSubsets::countSubsets(int nlow, int nhigh, vector <int> x,
 
 // BEGIN CUT HERE
 int main(){
-    RangeSquaredSubsets ___test;
-    ___test.run_test(-1);
+    RangeSquaredSubsets test;
+    test.run_test(-1);
     return 0;
 }
 // END CUT HERE

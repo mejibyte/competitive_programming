@@ -1,6 +1,6 @@
 PROBLEM STATEMENT
 
-Given a real number n, a set of points P in the XY plane is called n-squared if it is not empty and there exists a square of side n in the XY plane with its sides parallel to the axes such that a point is in P if and only if it is contained within the square. A point lying on a side or a vertex of the square is considered to be contained in it.
+Given a real number n, a set of points P in the XY plane is called n-squared if it is not empty and there exists a square of side n in the XY plane with its sides parallel to the axes such that a point from the given set of points is in P if and only if it is contained within the square. A point lying on a side or a vertex of the square is considered to be contained in it.
 
 You will be given two ints nlow and nhigh. You will also be given two vector <int>s x and y such that the coordinates of point i are (x[i],y[i]). Return the number of subsets of the input set described by x and y that are n-squared for some n between nlow and nhigh, inclusive.
 
