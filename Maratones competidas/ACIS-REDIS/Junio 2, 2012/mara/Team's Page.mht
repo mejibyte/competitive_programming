@@ -1,0 +1,2224 @@
+From: <Guardado por Windows Internet Explorer 8>
+Subject: Team's Page
+Date: Sat, 2 Jun 2012 18:28:20 -0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CD40ED.7C7B13C0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://acm.javeriana.edu.co/boca/team/score.php
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- BOCA boca-1.4.2. Copyright (c) 2003-2011 Cassio Polpo de Campos     =
+                          --><!-- http://www.ime.usp.br/~cassio/boca     =
+                                                   --><!-- It may be =
+distributed under the terms of the Q Public License version 1.0. A copy =
+of the  --><!-- license can be found with this software or at =
+http://www.opensource.org/licenses/qtpl.php --><HTML><HEAD><TITLE>Team's =
+Page</TITLE>
+<META content=3D"text/html; charset=3Dutf-8" =
+http-equiv=3DContent-Type><LINK=20
+rel=3Dstylesheet type=3Dtext/css =
+href=3D"http://acm.javeriana.edu.co/boca/Css.php">
+<SCRIPT language=3Djavascript=20
+src=3D"http://acm.javeriana.edu.co/boca/reload.js"></SCRIPT>
+
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.18702"></HEAD>
+<BODY onunload=3DParar() onload=3DComecar()>
+<TABLE border=3D1 width=3D"100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=3D#aaaaee noWrap align=3Dmiddle><IMG alt=3D""=20
+      =
+src=3D"http://acm.javeriana.edu.co/boca/images/smallballoontransp.png"><F=
+ONT=20
+      color=3D#000000>BOCA</FONT></TD>
+    <TD bgColor=3D#aaaaee width=3D"99%">Username: Ultimatum - =
+Universidad EAFIT=20
+      (site=3D1) <IMG alt=3D""=20
+      =
+src=3D"http://acm.javeriana.edu.co/boca/balloon.php?color=3DFF00FF" =
+width=3D10>=20
+      <IMG alt=3D""=20
+      =
+src=3D"http://acm.javeriana.edu.co/boca/balloon.php?color=3DFFFF00" =
+width=3D10>=20
+      <IMG alt=3D""=20
+      =
+src=3D"http://acm.javeriana.edu.co/boca/balloon.php?color=3DB40404" =
+width=3D10>=20
+      <IMG alt=3D""=20
+      =
+src=3D"http://acm.javeriana.edu.co/boca/balloon.php?color=3DFFFF00" =
+width=3D10>=20
+      <IMG alt=3D""=20
+      =
+src=3D"http://acm.javeriana.edu.co/boca/balloon.php?color=3D008000" =
+width=3D10>=20
+      <IMG alt=3D""=20
+      =
+src=3D"http://acm.javeriana.edu.co/boca/balloon.php?color=3D20B2AA" =
+width=3D10>=20
+    </TD>
+    <TD bgColor=3D#aaaaee noWrap align=3Dmiddle>&nbsp;contest not=20
+  running&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE border=3D0 width=3D"100%" align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/team/problem.php">Problems</A></=
+TD>
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/team/run.php">Runs</A></TD>
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/team/score.php">Score</A></TD>
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/team/clar.php">Clarifications</A=
+></TD>
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/team/task.php">Tasks</A></TD>
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/team/files.php">Backups</A></TD>=
+
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/team/option.php">Options</A></TD=
+>
+    <TD width=3D"12%" align=3Dmiddle><A style=3D"FONT-WEIGHT: bold" =
+class=3Dmenu=20
+      =
+href=3D"http://acm.javeriana.edu.co/boca/index.php">Logout</A></TD></TR><=
+/TBODY></TABLE><BR>
+<CENTER>Scoreboard frozen</CENTER>
+<SCRIPT language=3DJavaScript=20
+src=3D"http://acm.javeriana.edu.co/maratones/boca/hide.js"></SCRIPT>
+<BR>
+<TABLE id=3Dmyscoretable border=3D1 width=3D"100%">
+  <TBODY>
+  <TR>
+    <TD><B>#</B></TD>
+    <TD><B>User</B></TD>
+    <TD><B>Name</B></TD>
+    <TD noWrap><B>A &nbsp;</B></TD>
+    <TD noWrap><B>B &nbsp;</B></TD>
+    <TD noWrap><B>C &nbsp;</B></TD>
+    <TD noWrap><B>D &nbsp;</B></TD>
+    <TD noWrap><B>E &nbsp;</B></TD>
+    <TD noWrap><B>F &nbsp;</B></TD>
+    <TD noWrap><B>G &nbsp;</B></TD>
+    <TD noWrap><B>H &nbsp;</B></TD>
+    <TD><B>Total</B></TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>1</TD>
+    <TD noWrap>Ultimatum/1=20
+    <TD>Ultimatum - Universidad EAFIT</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/8</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3D20B=
+2AA"=20
+      width=3D18><FONT size=3D-2>2/276</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/181</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>2/95</FONT> </TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>6/-</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3D008=
+000"=20
+      width=3D18><FONT size=3D-2>3/258</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/41</FONT> </TD>
+    <TD noWrap>6 (939)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>2</TD>
+    <TD noWrap>UTP - Forte III/1=20
+    <TD>UTP - Forte III - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/22</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3D20B=
+2AA"=20
+      width=3D18><FONT size=3D-2>1/173</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>1/72</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>2/200</FONT> </TD>
+    <TD noWrap>4 (487)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>3</TD>
+    <TD noWrap>UTP - Forte I/1=20
+    <TD>UTP - Forte I - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/8</FONT> </TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>3/-</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3D20B=
+2AA"=20
+      width=3D18><FONT size=3D-2>3/205</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>2/155</FONT> </TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>2/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/83</FONT> </TD>
+    <TD noWrap>4 (511)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>4</TD>
+    <TD noWrap>UN-04/1=20
+    <TD>UN-04 - Universidad Nacional de Colombia</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>2/43</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3D20B=
+2AA"=20
+      width=3D18><FONT size=3D-2>1/278</FONT> </TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>2/-</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>1/212</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/134</FONT> </TD>
+    <TD noWrap>4 (687)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>5</TD>
+    <TD noWrap>UTP - Forte II/1=20
+    <TD>UTP - Forte II - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/20</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>1/117</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/176</FONT> </TD>
+    <TD noWrap>3 (313)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>6</TD>
+    <TD noWrap>Team1/1=20
+    <TD>Escuela Colombiana de Ingenier=C3=ADa</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/88</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>1/63</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/180</FONT> </TD>
+    <TD noWrap>3 (331)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>7</TD>
+    <TD noWrap>Turistas-UN/1=20
+    <TD>Turistas-UN - Universidad Nacional de Colombia</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/74</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>1/224</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/116</FONT> </TD>
+    <TD noWrap>3 (414)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>8</TD>
+    <TD noWrap>Bingo/1=20
+    <TD>Bingo - Pontificia Universidad Javeriana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/43</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3D20B=
+2AA"=20
+      width=3D18><FONT size=3D-2>1/284</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/111</FONT> </TD>
+    <TD noWrap>3 (438)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>9</TD>
+    <TD noWrap>UV-FarfallaVendetta/1=20
+    <TD>UV-FarfallaVendetta - Universidad del Valle</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/67</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DB40=
+404"=20
+      width=3D18><FONT size=3D-2>1/161</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/212</FONT> </TD>
+    <TD noWrap>3 (440)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>10</TD>
+    <TD noWrap>UN-07/1=20
+    <TD>UN-07 - Universidad Nacional de Colombia</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/21</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>3/-</FONT> </TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>3/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/64</FONT> </TD>
+    <TD noWrap>2 (85)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>11</TD>
+    <TD noWrap>NanoCode/1=20
+    <TD>NanoCode - Pontificia Universidad Javeriana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/41</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/92</FONT> </TD>
+    <TD noWrap>2 (133)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>12</TD>
+    <TD noWrap>UV-StackOverlone/1=20
+    <TD>UV-StackOverlone - Universidad del Valle</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/53</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/86</FONT> </TD>
+    <TD noWrap>2 (139)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>13</TD>
+    <TD noWrap>WTF/1=20
+    <TD>WTF - Universidad Sergio Arboleda</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/29</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>2/92</FONT> </TD>
+    <TD noWrap>2 (141)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>14</TD>
+    <TD noWrap>UN-Sigma/1=20
+    <TD>UN-Sigma - Universidad Nacional de Colombia</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/53</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/102</FONT> </TD>
+    <TD noWrap>2 (155)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>15</TD>
+    <TD noWrap>Poli-1/1=20
+    <TD>Poli-1 - Polit=C3=A9cnico Grancolombiano</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/35</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>3/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>2/103</FONT> </TD>
+    <TD noWrap>2 (158)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>16</TD>
+    <TD noWrap>ZDT/1=20
+    <TD>ZDT - Universidad Central</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/49</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/116</FONT> </TD>
+    <TD noWrap>2 (165)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>17</TD>
+    <TD noWrap>algUNequipo/1=20
+    <TD>algUNequipo - Universidad Nacional de Colombia</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/55</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/131</FONT> </TD>
+    <TD noWrap>2 (186)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>18</TD>
+    <TD noWrap>Hitman/1=20
+    <TD>Hitman - Pontificia Universidad Javeriana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/51</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/143</FONT> </TD>
+    <TD noWrap>2 (194)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>19</TD>
+    <TD noWrap>Team Solo Code/1=20
+    <TD>Team Solo Code - Pontificia Universidad Javeriana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/29</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>2/157</FONT> </TD>
+    <TD noWrap>2 (206)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>20</TD>
+    <TD noWrap>A.W.E.S.O.M.O/1=20
+    <TD>A.W.E.S.O.M.O - Pontificia Universidad Javeriana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/90</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/155</FONT> </TD>
+    <TD noWrap>2 (245)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>21</TD>
+    <TD noWrap>UV-CodeHunters/1=20
+    <TD>UV-CodeHunters - Universidad del Valle</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/100</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>2/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/155</FONT> </TD>
+    <TD noWrap>2 (255)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>22</TD>
+    <TD noWrap>UN-Omicron/1=20
+    <TD>UN-Omicron - Universidad Nacional de Colombia</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/38</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>3/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/219</FONT> </TD>
+    <TD noWrap>2 (257)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>23</TD>
+    <TD noWrap>Team2/1=20
+    <TD>Universidad Distrital</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/104</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/191</FONT> </TD>
+    <TD noWrap>2 (295)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>24</TD>
+    <TD noWrap>Victor Padilla/1=20
+    <TD>Victor Padilla - Usuarios de pr=C3=A1ctica</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/51</FONT> </TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>2/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/248</FONT> </TD>
+    <TD noWrap>2 (299)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>25</TD>
+    <TD noWrap>Epis...que/1=20
+    <TD>Epis...que - Pontificia Universidad Javeriana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/73</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/242</FONT> </TD>
+    <TD noWrap>2 (315)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>26</TD>
+    <TD noWrap>Devisers/1=20
+    <TD>Devisers - Universidad del Cauca</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/92</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/226</FONT> </TD>
+    <TD noWrap>2 (318)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>27</TD>
+    <TD noWrap>Chronicles/1=20
+    <TD>Chronicles - Pontificia Universidad Javeriana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/116</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>1/207</FONT> </TD>
+    <TD noWrap>2 (323)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>28</TD>
+    <TD noWrap>Poli-2/1=20
+    <TD>Poli-2 - Polit=C3=A9cnico Grancolombiano</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>2/117</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>3/230</FONT> </TD>
+    <TD noWrap>2 (407)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>29</TD>
+    <TD noWrap>UTP - Forte IV/1=20
+    <TD>UTP - Forte IV - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>2/148</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFFF=
+F00"=20
+      width=3D18><FONT size=3D-2>3/269</FONT> </TD>
+    <TD noWrap>2 (477)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>30</TD>
+    <TD noWrap>uceva01/1=20
+    <TD>uceva01 - Unidad Central del Valle del Cauca</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/95</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (95)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>31</TD>
+    <TD noWrap>UN-Googlers/1=20
+    <TD>UN-Googlers - Universidad Nacional de Colombia</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/123</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (123)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>32</TD>
+    <TD noWrap>UTP - Merge II/1=20
+    <TD>UTP - Merge II - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/124</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (124)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>33</TD>
+    <TD noWrap>404 Not Found/1=20
+    <TD>404 Not Found - Universidad EAFIT</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/133</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (133)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>34</TD>
+    <TD noWrap>UCNULL03/1=20
+    <TD>UCNULL03 - Universidad Central</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/193</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (193)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>35</TD>
+    <TD noWrap>UTP - Merge IV/1=20
+    <TD>UTP - Merge IV - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>1/206</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (206)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>36</TD>
+    <TD noWrap>UTP - Merge III/1=20
+    <TD>UTP - Merge III - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>4/151</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (211)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>37</TD>
+    <TD noWrap>UFPSO_01/1=20
+    <TD>UFPSO_01 - Universidad Francisco de Paula Santander =
+Oca=C3=B1a</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>3/213</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (253)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>38</TD>
+    <TD noWrap>Team6/1=20
+    <TD>Universidad Pontificia Bolivariana</TD>
+    <TD noWrap><IMG alt=3D:=20
+      =
+src=3D"http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=3DFF0=
+0FF"=20
+      width=3D18><FONT size=3D-2>7/269</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>1 (389)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>39</TD>
+    <TD noWrap>UTP - Merge I/1=20
+    <TD>UTP - Merge I - Universidad Tecnol=C3=B3gica de Pereira</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>1/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>40</TD>
+    <TD noWrap>K-Demy_GeHolA/1=20
+    <TD>K-Demy_GeHolA - Instituto T=C3=A9cnico Central</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>41</TD>
+    <TD noWrap>K-Demy_JEA/1=20
+    <TD>K-Demy_JEA - Instituto T=C3=A9cnico Central</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>42</TD>
+    <TD noWrap>K-Demy_DHS/1=20
+    <TD>K-Demy_DHS - Instituto T=C3=A9cnico Central</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>4/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>43</TD>
+    <TD noWrap>Mighty-code/1=20
+    <TD>Mighty-code - Universidad Icesi</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>4/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;<FONT size=3D-2>2/-</FONT> </TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>44</TD>
+    <TD noWrap>CodeRangers/1=20
+    <TD>CodeRangers - Universidad Icesi</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>45</TD>
+    <TD noWrap>compile_team/1=20
+    <TD>compile_team - Universidad Minuto de Dios</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR>
+  <TR class=3Dsitegroup1>
+    <TD>46</TD>
+    <TD noWrap>Angela Villota/1=20
+    <TD>Angela Villota - Usuarios de pr=C3=A1ctica</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>&nbsp;&nbsp;</TD>
+    <TD noWrap>0 (0)</TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/boca/images/smallballoontransp.png
+
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAASCAYAAABvqT8MAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1gcDDiUatyki+wAAAOdJREFUKM+N0rFKA0EUBdCzWZWI
+ZVCEGMTKRrCz9g8EYcGAjW3AL7DZcr8pfyCsnWBlYWElgkZELUxsBpkszrq3GXjv3rnvzR2WsYM3
+3IbzGWMJHOIalxhgO9S/MEUvJp/jBuUfF50Gt4u4+BLIWwn3cXD6xRy5dryL5prj+x9BFgsWHci9
+piBrEUyaO8ywnyCv4h6bcfEqscNJCG/YbKzjDnVUG+IJ/dScG/jAWiB/YqXtJXI8YBev4Xu0YoDH
+8BqzDkGCUYdMlsLJcBREi6Io0uK6rrOyLA+wh2OcdXarqioP5FGz9wM6DDFbphDVtQAAAABJRU5E
+rkJggg==
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/boca/balloon.php?color=FF00FF
+
+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
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/boca/balloon.php?color=FFFF00
+
+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
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/boca/balloon.php?color=B40404
+
+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
+LpEGxu8AAAAASUVORK5CYII=
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/boca/balloon.php?color=008000
+
+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
+AABJRU5ErkJggg==
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/boca/balloon.php?color=20B2AA
+
+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
+AAAAAElFTkSuQmCC
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=FF00FF
+
+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
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=20B2AA
+
+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
+AAAAAElFTkSuQmCC
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=FFFF00
+
+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
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=B40404
+
+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
+LpEGxu8AAAAASUVORK5CYII=
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://acm.javeriana.edu.co/maratones/boca/balloon.php?color=008000
+
+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
+AABJRU5ErkJggg==
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://acm.javeriana.edu.co/boca/Css.php
+
+DIV.menu {
+	BACKGROUND-COLOR: #e0e0d0; layer-background-color: #e0e0d0
+}
+DIV.menudown {
+	BORDER-BOTTOM: white 1px solid; BORDER-LEFT: #555555 1px solid; =
+BACKGROUND-COLOR: #dfdfdf; BORDER-TOP: #555555 2px solid; BORDER-RIGHT: =
+white 1px solid
+}
+DIV.fname {
+	Z-INDEX: 100; BORDER-BOTTOM: 0px; POSITION: absolute; BORDER-LEFT: 0px; =
+BACKGROUND-COLOR: #dfdfdf; HEIGHT: 19px; VISIBILITY: hidden; BORDER-TOP: =
+0px; TOP: 0px; BORDER-RIGHT: 0px; LEFT: 0px; layer-background-color: =
+#dfdfdf
+}
+DIV.dir {
+	Z-INDEX: 100; BORDER-BOTTOM: 0px; POSITION: absolute; BORDER-LEFT: 0px; =
+BACKGROUND-COLOR: #e0e0d0; HEIGHT: 19px; VISIBILITY: hidden; BORDER-TOP: =
+0px; TOP: 0px; BORDER-RIGHT: 0px; LEFT: 0px; layer-background-color: =
+#e0e0d0
+}
+A {
+	FONT-FAMILY: "Courier New", Courier, mono; COLOR: #000000; FONT-SIZE: =
+12pt
+}
+A.header {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12pt
+}
+A.menu {
+	BORDER-BOTTOM: #e0e0d0 1px solid; BORDER-LEFT: #e0e0d0 1px solid; =
+FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12pt; =
+BORDER-TOP: #e0e0d0 1px solid; BORDER-RIGHT: #e0e0d0 1px solid; =
+TEXT-DECORATION: none
+}
+A.menu:hover {
+	BORDER-BOTTOM: #555555 1px solid; BORDER-LEFT: white 1px solid; =
+BACKGROUND-COLOR: #dfdfdf; BORDER-TOP: white 1px solid; BORDER-RIGHT: =
+#555555 1px solid
+}
+A.user {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12pt
+}
+A.user:hover {
+	FONT-WEIGHT: bolder
+}
+A.disabled {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #bfbfbf; =
+FONT-SIZE: 12pt; TEXT-DECORATION: none
+}
+A.form {
+	BACKGROUND-COLOR: #dfdfdf; FONT-FAMILY: Verdana, Arial, Helvetica, =
+sans-serif; FONT-SIZE: 12pt
+}
+BODY {
+	BACKGROUND-COLOR: #e0e0d0; FONT-FAMILY: "Courier new", monospace; =
+COLOR: #000000; FONT-SIZE: 12pt
+}
+BODY.cline {
+	BACKGROUND-COLOR: #000000; COLOR: #ffffff
+}
+TABLE {
+	FONT-FAMILY: "Courier New", Courier, mono; FONT-SIZE: 12pt
+}
+TABLE.form {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12pt
+}
+FORM {
+	FONT-SIZE: 12pt
+}
+FORM.alt {
+	MARGIN-TOP: 5px; FONT-SIZE: 12pt
+}
+FORM.fname {
+	MARGIN: 0px; FONT-SIZE: 12pt
+}
+INPUT.fname {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #dfdfdf; =
+FONT-FAMILY: "Courier New", Courier, mono; FONT-SIZE: 12pt; BORDER-TOP: =
+0px; BORDER-RIGHT: 0px
+}
+FORM.dir {
+	MARGIN: 0px; FONT-SIZE: 12pt
+}
+INPUT.dir {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #e0e0d0; =
+FONT-FAMILY: "Courier New", Courier, mono; FONT-SIZE: 12pt; BORDER-TOP: =
+0px; BORDER-RIGHT: 0px
+}
+INPUT.checkbox {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: =
+medium none; BORDER-RIGHT: medium none
+}
+INPUT {
+	BORDER-BOTTOM: #555555 1px solid; BORDER-LEFT: #555555 1px solid; =
+FONT-SIZE: 12pt; BORDER-TOP: #555555 1px solid; BORDER-RIGHT: #555555 =
+1px solid
+}
+INPUT.cline {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #000000; =
+FONT-FAMILY: "Courier new", monospace; COLOR: #ffffff; FONT-SIZE: 12pt; =
+BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+TEXTAREA {
+	BORDER-BOTTOM: #555555 1px solid; BORDER-LEFT: #555555 1px solid; =
+BORDER-TOP: #555555 1px solid; BORDER-RIGHT: #555555 1px solid
+}
+TEXTAREA.edit {
+	BACKGROUND-COLOR: #efefef; FONT-FAMILY: "Courier New", Courier, mono; =
+FONT-SIZE: 10pt
+}
+SELECT {
+	FONT-SIZE: 12pt
+}
+P.link A:hover {
+	BACKGROUND-COLOR: #2b2e21; COLOR: #fff
+}
+P.link A:link SPAN {
+	DISPLAY: none
+}
+P.link A:visited SPAN {
+	DISPLAY: none
+}
+P.link A:hover SPAN {
+	BORDER-BOTTOM: #c0c0c0 1px solid; POSITION: absolute; TEXT-ALIGN: left; =
+BORDER-LEFT: #c0c0c0 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: =
+beige; MARGIN: 15px 0px 0px 20px; PADDING-LEFT: 10px; PADDING-RIGHT: =
+10px; DISPLAY: block; FONT: 10px/12px verdana; MAX-WIDTH: 220px; COLOR: =
+#000; BORDER-TOP: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid; =
+PADDING-TOP: 2px
+}
+TABLE.sitehide1 .sitegroup1 {
+	DISPLAY: none
+}
+TABLE.sitehide2 .sitegroup2 {
+	DISPLAY: none
+}
+TABLE.sitehide3 .sitegroup3 {
+	DISPLAY: none
+}
+TABLE.sitehide4 .sitegroup4 {
+	DISPLAY: none
+}
+TABLE.sitehide5 .sitegroup5 {
+	DISPLAY: none
+}
+TABLE.sitehide6 .sitegroup6 {
+	DISPLAY: none
+}
+TABLE.sitehide7 .sitegroup7 {
+	DISPLAY: none
+}
+TABLE.sitehide8 .sitegroup8 {
+	DISPLAY: none
+}
+TABLE.sitehide9 .sitegroup9 {
+	DISPLAY: none
+}
+TABLE.sitehide10 .sitegroup10 {
+	DISPLAY: none
+}
+TABLE.sitehide11 .sitegroup11 {
+	DISPLAY: none
+}
+TABLE.sitehide12 .sitegroup12 {
+	DISPLAY: none
+}
+TABLE.sitehide13 .sitegroup13 {
+	DISPLAY: none
+}
+TABLE.sitehide14 .sitegroup14 {
+	DISPLAY: none
+}
+TABLE.sitehide15 .sitegroup15 {
+	DISPLAY: none
+}
+TABLE.sitehide16 .sitegroup16 {
+	DISPLAY: none
+}
+TABLE.sitehide17 .sitegroup17 {
+	DISPLAY: none
+}
+TABLE.sitehide18 .sitegroup18 {
+	DISPLAY: none
+}
+TABLE.sitehide19 .sitegroup19 {
+	DISPLAY: none
+}
+TABLE.sitehide20 .sitegroup20 {
+	DISPLAY: none
+}
+TABLE.sitehide21 .sitegroup21 {
+	DISPLAY: none
+}
+TABLE.sitehide22 .sitegroup22 {
+	DISPLAY: none
+}
+TABLE.sitehide23 .sitegroup23 {
+	DISPLAY: none
+}
+TABLE.sitehide24 .sitegroup24 {
+	DISPLAY: none
+}
+TABLE.sitehide25 .sitegroup25 {
+	DISPLAY: none
+}
+TABLE.sitehide26 .sitegroup26 {
+	DISPLAY: none
+}
+TABLE.sitehide27 .sitegroup27 {
+	DISPLAY: none
+}
+TABLE.sitehide28 .sitegroup28 {
+	DISPLAY: none
+}
+TABLE.sitehide29 .sitegroup29 {
+	DISPLAY: none
+}
+TABLE.sitehide30 .sitegroup30 {
+	DISPLAY: none
+}
+TABLE.sitehide31 .sitegroup31 {
+	DISPLAY: none
+}
+TABLE.sitehide32 .sitegroup32 {
+	DISPLAY: none
+}
+TABLE.sitehide33 .sitegroup33 {
+	DISPLAY: none
+}
+TABLE.sitehide34 .sitegroup34 {
+	DISPLAY: none
+}
+TABLE.sitehide35 .sitegroup35 {
+	DISPLAY: none
+}
+TABLE.sitehide36 .sitegroup36 {
+	DISPLAY: none
+}
+TABLE.sitehide37 .sitegroup37 {
+	DISPLAY: none
+}
+TABLE.sitehide38 .sitegroup38 {
+	DISPLAY: none
+}
+TABLE.sitehide39 .sitegroup39 {
+	DISPLAY: none
+}
+TABLE.sitehide40 .sitegroup40 {
+	DISPLAY: none
+}
+TABLE.sitehide41 .sitegroup41 {
+	DISPLAY: none
+}
+TABLE.sitehide42 .sitegroup42 {
+	DISPLAY: none
+}
+TABLE.sitehide43 .sitegroup43 {
+	DISPLAY: none
+}
+TABLE.sitehide44 .sitegroup44 {
+	DISPLAY: none
+}
+TABLE.sitehide45 .sitegroup45 {
+	DISPLAY: none
+}
+TABLE.sitehide46 .sitegroup46 {
+	DISPLAY: none
+}
+TABLE.sitehide47 .sitegroup47 {
+	DISPLAY: none
+}
+TABLE.sitehide48 .sitegroup48 {
+	DISPLAY: none
+}
+TABLE.sitehide49 .sitegroup49 {
+	DISPLAY: none
+}
+TABLE.sitehide50 .sitegroup50 {
+	DISPLAY: none
+}
+TABLE.sitehide51 .sitegroup51 {
+	DISPLAY: none
+}
+TABLE.sitehide52 .sitegroup52 {
+	DISPLAY: none
+}
+TABLE.sitehide53 .sitegroup53 {
+	DISPLAY: none
+}
+TABLE.sitehide54 .sitegroup54 {
+	DISPLAY: none
+}
+TABLE.sitehide55 .sitegroup55 {
+	DISPLAY: none
+}
+TABLE.sitehide56 .sitegroup56 {
+	DISPLAY: none
+}
+TABLE.sitehide57 .sitegroup57 {
+	DISPLAY: none
+}
+TABLE.sitehide58 .sitegroup58 {
+	DISPLAY: none
+}
+TABLE.sitehide59 .sitegroup59 {
+	DISPLAY: none
+}
+TABLE.sitehide60 .sitegroup60 {
+	DISPLAY: none
+}
+TABLE.sitehide61 .sitegroup61 {
+	DISPLAY: none
+}
+TABLE.sitehide62 .sitegroup62 {
+	DISPLAY: none
+}
+TABLE.sitehide63 .sitegroup63 {
+	DISPLAY: none
+}
+TABLE.sitehide64 .sitegroup64 {
+	DISPLAY: none
+}
+TABLE.sitehide65 .sitegroup65 {
+	DISPLAY: none
+}
+TABLE.sitehide66 .sitegroup66 {
+	DISPLAY: none
+}
+TABLE.sitehide67 .sitegroup67 {
+	DISPLAY: none
+}
+TABLE.sitehide68 .sitegroup68 {
+	DISPLAY: none
+}
+TABLE.sitehide69 .sitegroup69 {
+	DISPLAY: none
+}
+TABLE.sitehide70 .sitegroup70 {
+	DISPLAY: none
+}
+TABLE.sitehide71 .sitegroup71 {
+	DISPLAY: none
+}
+TABLE.sitehide72 .sitegroup72 {
+	DISPLAY: none
+}
+TABLE.sitehide73 .sitegroup73 {
+	DISPLAY: none
+}
+TABLE.sitehide74 .sitegroup74 {
+	DISPLAY: none
+}
+TABLE.sitehide75 .sitegroup75 {
+	DISPLAY: none
+}
+TABLE.sitehide76 .sitegroup76 {
+	DISPLAY: none
+}
+TABLE.sitehide77 .sitegroup77 {
+	DISPLAY: none
+}
+TABLE.sitehide78 .sitegroup78 {
+	DISPLAY: none
+}
+TABLE.sitehide79 .sitegroup79 {
+	DISPLAY: none
+}
+TABLE.sitehide80 .sitegroup80 {
+	DISPLAY: none
+}
+TABLE.sitehide81 .sitegroup81 {
+	DISPLAY: none
+}
+TABLE.sitehide82 .sitegroup82 {
+	DISPLAY: none
+}
+TABLE.sitehide83 .sitegroup83 {
+	DISPLAY: none
+}
+TABLE.sitehide84 .sitegroup84 {
+	DISPLAY: none
+}
+TABLE.sitehide85 .sitegroup85 {
+	DISPLAY: none
+}
+TABLE.sitehide86 .sitegroup86 {
+	DISPLAY: none
+}
+TABLE.sitehide87 .sitegroup87 {
+	DISPLAY: none
+}
+TABLE.sitehide88 .sitegroup88 {
+	DISPLAY: none
+}
+TABLE.sitehide89 .sitegroup89 {
+	DISPLAY: none
+}
+TABLE.sitehide90 .sitegroup90 {
+	DISPLAY: none
+}
+TABLE.sitehide91 .sitegroup91 {
+	DISPLAY: none
+}
+TABLE.sitehide92 .sitegroup92 {
+	DISPLAY: none
+}
+TABLE.sitehide93 .sitegroup93 {
+	DISPLAY: none
+}
+TABLE.sitehide94 .sitegroup94 {
+	DISPLAY: none
+}
+TABLE.sitehide95 .sitegroup95 {
+	DISPLAY: none
+}
+TABLE.sitehide96 .sitegroup96 {
+	DISPLAY: none
+}
+TABLE.sitehide97 .sitegroup97 {
+	DISPLAY: none
+}
+TABLE.sitehide98 .sitegroup98 {
+	DISPLAY: none
+}
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://acm.javeriana.edu.co/boca/reload.js
+
+/*///////////////////////////////////////////////////////////////////////=
+//////////////////=0A=
+//BOCA Online Contest Administrator. Copyright (c) 2003-2004 Cassio =
+Polpo de Campos.=0A=
+//It may be distributed under the terms of the Q Public License version =
+1.0. A copy of the=0A=
+//license can be found with this software or at =
+http://www.opensource.org/licenses/qtpl.php=0A=
+//=0A=
+//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, =
+EXPRESS OR IMPLIED,=0A=
+//INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, =
+FITNESS FOR A PARTICULAR=0A=
+//PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL =
+THE COPYRIGHT HOLDER=0A=
+//OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY =
+SPECIAL INDIRECT OR=0A=
+//CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS =
+OF USE, DATA OR=0A=
+//PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER =
+TORTIOUS ACTION, ARISING=0A=
+//OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.=0A=
+/////////////////////////////////////////////////////////////////////////=
+//////////////////=0A=
+*/=0A=
+var msg =3D 0;=0A=
+var rld  =3D 0;=0A=
+var selecionando =3D 0;=0A=
+var seg =3D 120;=0A=
+function recarregar() {=0A=
+	if (rld) {=0A=
+		clearTimeout(rld);=0A=
+        	rld  =3D 0;=0A=
+        }=0A=
+        if ((document.form1 && document.form1.message && =
+document.form1.message.value) ||=0A=
+            (document.form1 && document.form1.sourcefile && =
+document.form1.sourcefile.value) ||=0A=
+            (document.form1 && document.form1.answer && =
+document.form1.answer.value) ||=0A=
+            (document.form2 && document.form2.answer && =
+document.form2.answer.value) ||=0A=
+            (document.form2 && document.form2.message && =
+document.form2.message.value) ||=0A=
+            (document.form2 && document.form2.sourcefile && =
+document.form2.sourcefile.value) ||=0A=
+            selecionando =3D=3D 1) {=0A=
+                if (msg<5) {=0A=
+			msg++;=0A=
+		}=0A=
+		else {=0A=
+alert("This page tried to reload, but it seems that you are filling\nthe =
+form. To update, click on Reload button in your\nbrowser. This message =
+will not be displayed again.");=0A=
+                }=0A=
+        } else=0A=
+                document.location.reload();=0A=
+        rld =3D setTimeout("recarregar()", seg * 1000);=0A=
+}=0A=
+function Comecar() {=0A=
+	rld =3D setTimeout("recarregar()", seg * 1000);=0A=
+}=0A=
+function Parar() {=0A=
+	if (rld) {=0A=
+		clearTimeout(rld);=0A=
+		rld  =3D 0;=0A=
+	}=0A=
+}=0A=
+function Arquivo() {=0A=
+	selecionando =3D 1;=0A=
+}=0A=
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://acm.javeriana.edu.co/maratones/boca/hide.js
+
+var modifyClassName =3D function (elem, add, string) {=0A=
+var s =3D (elem.className) ? elem.className : "";=0A=
+var a =3D s.split(" ");=0A=
+if (add) {=0A=
+  for (var i=3D0; i<a.length; i++) {=0A=
+      if (a[i] =3D=3D string) {=0A=
+          return;=0A=
+          }=0A=
+      }=0A=
+  s +=3D " " + string;=0A=
+  }=0A=
+else {=0A=
+    s =3D "";=0A=
+    for (var i=3D0; i<a.length; i++) {=0A=
+        if (a[i] !=3D string)=0A=
+            s +=3D a[i] + " "; =0A=
+        }=0A=
+    }=0A=
+elem.className =3D s;=0A=
+}=0A=
+function toggleGroup(n) {=0A=
+    //alert(n);=0A=
+    var currentClass =3D document.getElementById("myscoretable");=0A=
+    for (var i=3D1; i<20; i++) {=0A=
+      modifyClassName(currentClass,true,"sitehide"+i);=0A=
+    }=0A=
+    modifyClassName(currentClass,false,"sitehide"+n);=0A=
+}=0A=
+
+------=_NextPart_000_0000_01CD40ED.7C7B13C0--

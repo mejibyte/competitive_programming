@@ -1,0 +1,7 @@
+Case 1: It is possible to separate the two groups of vendors.
+
+Case 2: It is not possible to separate the two groups of vendors.
+
+Case 3: It is not possible to separate the two groups of vendors.
+
+Case 4: It is possible to separate the two groups of vendors.

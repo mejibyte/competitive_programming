@@ -1,0 +1,113 @@
+miles yards feet
+5280 feet = 1 miles
+3 feet = 1 yards
+km m cm
+1000 m = 1 km
+0.01 m = 1 cm
+1 feet = 30.48 cm
+2 miles 1 feet
+0.0833 feet
+
+furlongs fathoms
+1 furlongs = 110 fathoms
+feet inches
+12 inches = 1 feet
+1 fathoms = 6 feet
+1 furlongs
+0.5 furlongs 0.25 fathoms
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+1000 m
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+1200 m
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+1500 m
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+1600 m
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+1499 m
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+200 m
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+800 m
+
+m cm mm
+1 m = 100 cm
+1 m = 1000 mm
+km
+1 km = 1000 m
+500 m
+
+a b c d e
+1 a = 2 b
+2 b = 2 c
+2 c = 3 d
+4 d = 7 e
+f g h
+23 f = 45 g
+46 g = 56 h
+2 a = 0.02 g
+1 a 2 b 3 c 4 d 5 e
+1 a 4 b 3 c 5 d 5 e
+1 a 45 b 45 c 4 d 5 e
+1 a 2 b 23 c 3 d 5 e
+2 a 3 b 4 c 4 d 5 e
+23445 a 3 b 4 c 4 d 5 e
+
+miles yards feet
+5280 feet = 1 miles
+3 feet = 1 yards
+m km cm
+1000 m = 1 km
+0.01 m = 1 cm
+1 feet = 30.48 cm
+2 miles 1 feet
+0.0833 feet
+
+a b c d e
+1 a = 1000000000 b
+1 b = 1000000000 c
+1 c = 1000000000 d
+1 d = 1000000000 e
+f g h i j
+1 f = 1000000000 g
+1 g = 1000000000 h
+1 h = 1000000000 i
+1 i = 1000000000 j
+1 a = 1 f
+1000000000 a
+

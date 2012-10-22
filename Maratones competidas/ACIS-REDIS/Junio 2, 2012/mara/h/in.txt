@@ -1,0 +1,22 @@
+RDDR
+Speedy M 0101
+Jumper F 0101
+Slowpoke M 1101
+Terror F 1100
+Shadow F 1001
+***
+Frisky 0101
+Sleepy 1101
+***
+R
+A M 0
+B F 0
+***
+Hijo 0
+***
+R
+A M 0
+B F 0
+***
+Hijo 1
+***
