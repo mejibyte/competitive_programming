@@ -1,0 +1,74 @@
+PROBLEM STATEMENT
+John has some sticks of various lengths. You are given a vector <int> sticks, where each element is the length of a single stick.
+
+
+He is allowed to perform at most C cuts. With each cut, he chooses one of his sticks and divides it into exactly two sticks of arbitrary positive lengths (the sum of their lengths must equal the length of the original stick). Each of these sticks can then be chosen again when making subsequent cuts.
+
+
+After he performs all his cuts, he sorts the sticks in non-increasing order by length and chooses the K-th (1-based) stick. Return the maximal possible length of the stick he chooses. Note that he must perform at least as many cuts as are required to end up with K or more sticks.
+
+DEFINITION
+Class:CutSticks
+Method:maxKth
+Parameters:vector <int>, int, int
+Returns:double
+Method signature:double maxKth(vector <int> sticks, int C, int K)
+
+
+NOTES
+-Your return value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-sticks will contain between 1 and 50 elements, inclusive.
+-Each element of sticks will be between 1 and 1,000,000,000, inclusive.
+-C will be between 1 and 1,000,000,000, inclusive.
+-K will be between 1 and n + C, inclusive, where n is the number of elements in sticks.
+
+
+EXAMPLES
+
+0)
+{5, 8}
+1
+1
+
+Returns: 8.0
+
+John can make at most one cut.  He should either cut the stick of length 5 (it doesn't matter where) or not make any cuts at all.  If he makes no cuts, then after he sorts the sticks, they will be in the following order: {8, 5}.  He chooses the 1st stick, which has length 8.
+
+1)
+{5, 8}
+1
+2
+
+Returns: 5.0
+
+Again, the easiest thing to do here is not make any cuts.
+
+2)
+{5, 8}
+1
+3
+
+Returns: 4.0
+
+John has 2 sticks and he can make at most one cut.  In this case, since K is 3, he is required to make a cut so he can end up with 3 sticks.  He should cut the longest stick into two equal sticks of length 4.  After he sorts the sticks, they will be in the following order: {5, 4, 4}.  He will choose the 3rd stick, which has length 4.
+
+3)
+{1000000000, 1000000000, 1}
+2
+5
+
+Returns: 1.0
+
+
+
+4)
+{76, 594, 17, 6984, 26, 57, 9, 876, 5816, 73, 969, 527, 49}
+789
+456
+
+Returns: 34.92
+
+

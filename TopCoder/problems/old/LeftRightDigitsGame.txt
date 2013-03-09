@@ -1,0 +1,50 @@
+PROBLEM STATEMENT
+You are playing a solitaire game called Left-Right Digits Game. This game uses a deck of N cards. Each card has a single digit written on it. These digits are given as characters in the string digits. More precisely, the i-th character of digits is the digit written on the i-th card from the top of the deck (both indices are 0-based).
+
+The game is played as follows. First, you place the topmost card (whose digit is the 0-th character of digits) on the table. Then, you pick the cards one-by-one from the top of the deck. For each card, you have to place it either to the left or to the right of all cards that are already on the table.
+
+After all of the cards have been placed on the table, they now form an N-digit number. This number must not have leading zeros; i.e., the leftmost card on the table must not be a '0'. The goal of the game is to make this N-digit number as small as possible.
+
+Return the smallest possible resulting number you can achieve in this game as a string.
+
+DEFINITION
+Class:LeftRightDigitsGame
+Method:minNumber
+Parameters:string
+Returns:string
+Method signature:string minNumber(string digits)
+
+
+CONSTRAINTS
+-digits will contain between 1 and 50 characters, inclusive.
+-Each character of digits will be between '0' and '9', inclusive.
+-digits will contain at least one character that is not '0'.
+
+
+EXAMPLES
+
+0)
+"565"
+
+Returns: "556"
+
+The solution is as follows.
+
+Place the first card on the table.
+Place the second card to the right of all cards on the table.
+Place the last card to the left of all cards on the table.
+
+
+1)
+"9876543210"
+
+Returns: "1234567890"
+
+The resulting number cannot have leading zeros.
+
+2)
+"8016352"
+
+Returns: "1086352"
+
+

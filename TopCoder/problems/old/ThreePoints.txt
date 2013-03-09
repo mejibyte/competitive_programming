@@ -1,0 +1,96 @@
+PROBLEM STATEMENT
+There is a two-dimensional infinite plane. Toastman painted N of the grid points in the plane black. These grid points are numbered 0 through N-1. The coordinates of point i are (x[i],y[i]). They are chosen in such a way that no two points share the same x-coordinate and no two points share the same y-coordinate.
+
+
+Toastwoman wants to color three of these N points: some point r will be red, some point g green, and some point b blue. She thinks a coloring is beautiful if x[r] < x[g] < x[b] and at the same time y[r] < y[b] < y[g]. (Note that the order of colors for the y-coordinate is not the same as the order for the x-coordinate.)
+
+
+In order to have a large set of points, we will generate one using a pseudorandom generator. You will be given the int N specifying the number of points, and eight ints: xzero, xmul, xadd, xmod, yzero, ymul, yadd, and ymod. Generate the coordinates of the points in the following way:
+
+x[0] = xzero
+For each i between 1 and N-1, inclusive, x[i] = (x[i-1] * xmul + xadd) % xmod
+y[0] = yzero
+For each i between 1 and N-1, inclusive, y[i] = (y[i-1] * ymul + yadd) % ymod
+
+Return the number of beautiful colorings for the set of points generated using the above procedure.
+
+DEFINITION
+Class:ThreePoints
+Method:countColoring
+Parameters:int, int, int, int, int, int, int, int, int
+Returns:long long
+Method signature:long long countColoring(int N, int xzero, int xmul, int xadd, int xmod, int yzero, int ymul, int yadd, int ymod)
+
+
+NOTES
+-There is a solution that does not use any properties of the pseudorandom generator. This solution would solve any set of N points within the time limit.
+
+
+CONSTRAINTS
+-N will be between 3 and 300,000, inclusive.
+-xmod and ymod will be between N and 1,000,000,000, inclusive.
+-xzero, xmul and xadd will be between 0 and xmod - 1, inclusive.
+-yzero, ymul and yadd will be between 0 and ymod - 1, inclusive.
+-No two points will have the same x-coordinate.
+-No two points will have the same y-coordinate.
+
+
+EXAMPLES
+
+0)
+9
+3
+8
+6
+11
+5
+7
+8
+11
+
+Returns: 8
+
+There are 9 points. The coordinates of points are (3, 5), (8, 10), (4, 1), (5, 4), (2, 3), (0, 7), (6, 2), (10, 0), and (9, 8).
+There are 8 beautiful coloring.
+
+
+
+
+1)
+4
+9
+6
+8
+10
+4
+8
+5
+10
+
+Returns: 2
+
+2)
+20
+30
+3
+71
+100
+78
+12
+50
+100
+
+Returns: 263
+
+3)
+300000
+99097861
+102766912
+95284952
+123456789
+443104491
+971853214
+569775557
+987654321
+
+Returns: 749410681185726

@@ -1,0 +1,88 @@
+PROBLEM STATEMENT
+We have n straight lines drawn in the Cartesian plane each described by two distinct points (x1[i], y1[i]) and (x2[i], y2[i]) lying on it. A center of symmetry is such a point that under a symmetry centered at this point the given configuration of lines goes into itself (i.e., the image of every given line under this symmetry is again one of the given lines). Return the number of centers of symmetry that the given system of lines has. Return -1 if there are infinitely many centers of symmetry.
+
+DEFINITION
+Class:CentersOfSymmetry
+Method:lineConfigurations
+Parameters:vector <int>, vector <int>, vector <int>, vector <int>
+Returns:int
+Method signature:int lineConfigurations(vector <int> x1, vector <int> y1, vector <int> x2, vector <int> y2)
+
+
+NOTES
+-A symmetry centered at point X works as follows. The image of a point A is such a point B that X is the midpoint of the line segment AB (note that if A = X, then also B = X). The image of a line is the union of images of all points on this line.
+
+
+CONSTRAINTS
+-x1 will contain between 1 and 50 elements, inclusive.
+-x1, y1, x2, y2 will all contain the same number of elements.
+-All the elements of x1, y1, x2 and y2 will be between -50 and 50, inclusive.
+-For each i either x1[i] and x2[i] or y1[i] and y2[i] will be distinct (i.e., two points defining a line will be distinct).
+-All the lines defined by (x1[i], y1[i]) and (x2[i], y2[i]) will be distinct.
+
+
+EXAMPLES
+
+0)
+{0, 0}
+{0, 0}
+{1, -1}
+{1, 1}
+
+Returns: 1
+
+A configuration of two intersecting lines has a single center of symmetry - their intersection point.
+
+1)
+{0, 0, 0, 0, 0, 0, 0, 0, 0}
+{0, 0, 0, 0, 0, 0, 0, 0, 0}
+{1, 1, 1, 1, 1, 1, 1, 1, 1}
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+Returns: 1
+
+All the lines pass through the origin.
+
+2)
+{0, 1, 2}
+{0, 1, -1}
+{1, 2, 0}
+{1, -1, 0}
+
+Returns: 0
+
+
+
+3)
+{-10, 10}
+{10, -10}
+{-10, 10}
+{-10, 10}
+
+Returns: -1
+
+Two parallel lines produce infinitely many centers of symmetry.
+
+4)
+{-50, -50, -50, -50}
+{-50, -49, -48, -46}
+{50, 49, 48, 46}
+{50, 50, 50, 50}
+
+Returns: 0
+
+4 parallel lines with no centers of symmetry.
+
+5)
+{10, -35, -8, 7, -5, -8, -9, -50, -17, -18, -17, -26, -5, 23, 18, -7, -8, -6,
+ -8, -12, 22, -7, 17, -48, -6, -16, -12, -14, 13, 30, 11, 17, -3, -5, -27, -30}
+{-27, -25, -17, -26, -3, -19, -20, -33, -22, -21, -23, -38, -2, -32, -27, -8, -2, -5,
+ -21, -7, -15, -15, -5, -27, 0, -19, -25, 1, -22, -11, -13, -38, -1, -6, -17, -32}
+{16, -32, -11, 11, -3, -9, -8, -45, -16, -15, -19, -29, -2, 20, 24, -1, 4, -7,
+ -5, -13, 16, -9, 29, -43, 2, -17, -15, -15, 17, 24, 23, 14, -7, -3, -24, -33}
+{-35, -23, -26, -32, -3, -21, -18, -30, -20, -15, -27, -42, -5, -28, -35, 2, -5, -6,
+ -15, -7, -13, -19, -9, -24, -12, -21, -34, 1, -28, -9, -17, -34, -9, 0, -15, -36}
+
+Returns: 1
+
+

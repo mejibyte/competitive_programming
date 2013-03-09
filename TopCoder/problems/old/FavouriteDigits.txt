@@ -1,0 +1,103 @@
+PROBLEM STATEMENT
+
+Tetka Rapotacka just heard a juicy rumor about one of her neighbors: poor Jachym has lost N kacky (their local monetary unit) on a slot machine yesterday.
+Tetka Rapotacka now plans to share this rumor with everyone, including Tetka Klepetacka.
+Tetka Rapotacka has two favourite digits: digit1 and digit2.
+She only likes numbers that contain at least count1 occurrences of digit1 and at least count2 occurrences of digit2.
+When gossiping, she only uses numbers she likes.
+So if she does not like the number N, she will increase it until she finds a number that she likes.
+
+
+You are given the long long N and the four ints digit1, count1, digit2, and count2.
+Return the smallest integer that is greater than or equal to N, contains at least count1 occurrences of digit digit1, and at least count2 occurrences of digit digit2.
+
+
+DEFINITION
+Class:FavouriteDigits
+Method:findNext
+Parameters:long long, int, int, int, int
+Returns:long long
+Method signature:long long findNext(long long N, int digit1, int count1, int digit2, int count2)
+
+
+NOTES
+-The constraints guarantee that the return value will always fit into a long long.
+
+
+CONSTRAINTS
+-N will be between 1 and 10^15 - 1, inclusive.
+-digit1 will be between 0 and 9, inclusive.
+-digit2 will be between 0 and 9, inclusive.
+-digit1 and digit2 will not be equal.
+-count1 will be at least 0.
+-count2 will be at least 0.
+-count1+count2 will be at most 15.
+
+
+EXAMPLES
+
+0)
+47
+1
+0
+2
+0
+
+Returns: 47
+
+As count1=0 and count2=0, Tetka Rapotacka likes all numbers.
+
+1)
+47
+5
+0
+9
+1
+
+Returns: 49
+
+The number has to contain the digit 9. The next number that contains this digit is 49.
+
+2)
+47
+5
+0
+3
+1
+
+Returns: 53
+
+
+
+3)
+47
+2
+1
+0
+2
+
+Returns: 200
+
+The correct return value may have more digits than N.
+
+4)
+123456789012345
+1
+2
+2
+4
+
+Returns: 123456789012422
+
+
+
+5)
+92
+1
+1
+0
+0
+
+Returns: 100
+
+

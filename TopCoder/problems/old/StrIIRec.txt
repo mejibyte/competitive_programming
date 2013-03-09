@@ -1,0 +1,74 @@
+PROBLEM STATEMENT
+For a given string S of length n an inversion is a pair of integers (i, j) such that 0 <= i < j <= n-1 and S[i] > S[j]. (That is, the character at 0-based index i is greater than the character at 0-based index j.) For example, the string "abcab" has 3 inversions: (1, 3), (2, 3), and (2, 4).
+
+Given are ints n and minInv, and a string minStr.
+We will consider all strings that are permutations of the first n lowercase English letters.
+That is, these strings have length n and contain each of the first n letters exactly once.
+Out of these strings, return the lexicographically smallest string R with the following two properties:
+
+The number of inversions in R is at least minInv.
+The string R is not lexicographically smaller than minStr.
+
+If there is no such string, return an empty string instead.
+
+
+DEFINITION
+Class:StrIIRec
+Method:recovstr
+Parameters:int, int, string
+Returns:string
+Method signature:string recovstr(int n, int minInv, string minStr)
+
+
+NOTES
+-A string A is lexicographically smaller than a string B if A is a prefix of B or A contains a smaller character at the first position where the strings differ.
+
+
+CONSTRAINTS
+-n will be between 1 and 20, inclusive.
+-minInv will be between 0 and n*(n-1)/2, inclusive.
+-minStr will contain between 1 and n characters, inclusive.
+-Each character in minStr will be one of the first n lowercase Latin letters.
+-All characters in minStr will be unique.
+
+
+EXAMPLES
+
+0)
+2
+1
+"ab"
+
+Returns: "ba"
+
+You must find the lexicographically smallest string that has at least 1 inversion and is not lexicographically smaller than "ab".
+
+1)
+9
+1
+"efcdgab"
+
+Returns: "efcdgabhi"
+
+2)
+11
+55
+"debgikjfc"
+
+Returns: "kjihgfedcba"
+
+"kjihgfedcba" is the only string that has at least 55 inversions.
+
+3)
+15
+0
+"e"
+
+Returns: "eabcdfghijklmno"
+
+4)
+9
+20
+"fcdebiha"
+
+Returns: "fcdehigba"

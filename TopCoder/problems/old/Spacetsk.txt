@@ -1,0 +1,104 @@
+PROBLEM STATEMENT
+The spaceport is a horizontal segment of length L.
+We are planning to launch a rocket from the spaceport.
+The rocket must fly in a straight line.
+The line does not have to be orthogonal to the spaceport, but it must lie in the vertical plane that contains the spaceport.
+The line is not allowed to be strictly horizontal.
+
+
+Each point in the vertical plane has two coordinates:
+the x-coordinate is the horizontal distance from the left end of the spaceport, and the y-coordinate is the altitude above the spaceport.
+Points for with both coordinates are integers are called grid points.
+
+
+The rocket has to be launched from a grid point on the spaceport.
+Moreover, after the launch the rocket must send exactly K signals.
+A signal can only be sent when the rocket is at a grid point above the spaceport, and its altitude does not exceed H.
+
+
+Formally:
+The rocket starts from one of the points (x,0), where 0 <= x <= L and x is an integer.
+The rocket may send a signal if it is at one of the points (x,y), where 0 <= x <= L, 0 <= y <= H, and x and y are both integers.
+The rocket may only send at most one signal at each grid point it passes through.
+
+
+
+
+
+The picture above shows two different test cases.
+The grid on the left corresponds to L=9, H=7, and K=2.
+Each of the five colors shows one pair of signals you could observe during the launch.
+The small grids on the right show all four possibilities for L=1, H=1, and K=2.
+
+
+You are given the ints L, H, and K.
+Count how many different sets of signals are possible during the launch.
+Return the answer modulo 1,000,000,007.
+
+DEFINITION
+Class:Spacetsk
+Method:countsets
+Parameters:int, int, int
+Returns:int
+Method signature:int countsets(int L, int H, int K)
+
+
+CONSTRAINTS
+-L will be between 1 and 2000, inclusive.
+-H will be between 1 and 2000, inclusive.
+-K will be between 1 and 2000, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+1
+2
+
+Returns: 4
+
+Example from the statement.
+
+1)
+1
+1
+1
+
+Returns: 4
+
+
+
+2)
+2
+2
+1
+
+Returns: 9
+
+
+
+3)
+2
+2
+2
+
+Returns: 23
+
+
+
+4)
+5
+5
+3
+
+Returns: 202
+
+
+
+5)
+561
+394
+20
+
+Returns: 786097180

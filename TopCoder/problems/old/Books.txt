@@ -1,0 +1,85 @@
+PROBLEM STATEMENT
+
+
+Librarians prefer mental exertion to manual labor. When a librarian
+confronts a disordered shelf of books, he restores it to order using the
+smallest possible number of moves. With each move, he takes out a book and
+reinserts it so that neighboring books slide right and left as necessary.
+
+
+
+You are given a vector <string> containing the titles of a shelf's worth of
+books in their current order. Return the minimum number of
+moves required to sort them by case-sensitive lexical order of their titles.
+
+
+
+DEFINITION
+Class:Books
+Method:sortMoves
+Parameters:vector <string>
+Returns:int
+Method signature:int sortMoves(vector <string> titles)
+
+
+NOTES
+-The standard string comparators of C++, Java, C#, and VB.Net perform case-sensitive lexical comparison.
+-Do not strip any blank character from any title.
+
+
+CONSTRAINTS
+-titles contains between 1 and 20 elements, inclusive.
+-Each element of titles will contain between 1 and 50 characters, inclusive.
+-Each character of each element of titles will be a letter ('a'-'z' or 'A'-'Z') or a space (' ').
+
+
+EXAMPLES
+
+0)
+{"Algorithms", "Purely Functional Data Structures",
+"Intro to C", "Automata and Computability"}
+
+Returns: 2
+
+We can sort these books by first removing "Intro to C" and placing it at the end of the shelf, and then by removing "Purely Functional Data Structures" and placing it at the end.
+
+1)
+{"the fellowship of the ring",
+"the return of the king",
+"The two towers"}
+
+Returns: 1
+
+Remember that uppercase letters sort before lowercase ones in this problem.
+
+2)
+{"Basic Engineering Circuit Analysis", "A Course in Combinatorics",
+"Artificial Intelligence", "Asimovs Guide to Shakespeare",
+"The Nature of Space and Time", "A Time for Trumpets",
+"Essentials of Artificial Intelligence", "Life by the Numbers",
+"Cognitive Psychology", "ColdFusion"}
+
+Returns: 5
+
+I could sort this section of my bookshelf in only 5 moves, but computer scientists are even lazier than librarians.
+
+3)
+{"A", "B", "A", "A", "B"}
+
+Returns: 1
+
+Observe that there are three copies of the "A" book, and two of the "B" book.  Since the three "A" books are indistinguishable, we can sort these books by simply removing the first of the two "B" books and then putting it at the end.
+
+4)
+{"This Book Has No Title", " This Book Does Have A Title"}
+
+Returns: 1
+
+The blank character in the title affects its lexical order.
+
+5)
+{"What Is The", "What Is The ", "What Is The Title Of This Book"}
+
+Returns: 0
+
+These books are already in order.
