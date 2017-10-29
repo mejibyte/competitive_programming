@@ -1,5 +1,4 @@
 // Andrés Mejía
-using namespace std;
 #include <algorithm>
 #include <iostream>
 #include <iterator>
@@ -21,6 +20,7 @@ using namespace std;
 #include <list>
 #include <map>
 #include <set>
+using namespace std;
 
 ////////////// Prewritten code follows. Look down for solution. ////////////////
 #define foreach(x, v) for (typeof (v).begin() x=(v).begin(); x !=(v).end(); ++x)
@@ -34,6 +34,6 @@ int cmp(double x, double y = 0, double tol = EPS) {
 ////////////////////////// Solution starts below. //////////////////////////////
 
 int main(){
-    
+
     return 0;
 }
