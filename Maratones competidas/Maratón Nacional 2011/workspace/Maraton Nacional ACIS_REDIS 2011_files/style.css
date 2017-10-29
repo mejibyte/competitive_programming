@@ -1,0 +1,50 @@
+
+
+body
+{
+	font-family: Arial, Helvetica;
+	font-size: 9px;	
+	background-color: EEEEEE;
+}
+
+.calTable{
+	background-color: ffffff;
+	margin: 3;
+	padding-rigth: 10;
+
+	border-style: solid;
+	border-width: 1;
+}
+
+th {
+	font-weight: bold;
+	font-size: 18;
+	border-bottom: 1px solid #333;
+}
+
+td {
+	text-align: center;
+	padding-right: 10;
+	padding-left: 10;
+	border-bottom: 1px solid #333;
+     font-size: 12;
+}
+
+.teamName{
+	font-weight: bold;
+     text-align: left;
+}
+
+.par {
+	background-color: BBBBBB;
+}
+
+.impar {
+	background-color: DDDDEE;
+}
+
+.problema {
+	font-weight: bold;
+	font-size: 12;
+	border-bottom: 3px solid #333;
+}

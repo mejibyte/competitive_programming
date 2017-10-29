@@ -1,0 +1,12 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.equinox.security.ui,1.0.0.v20080603-1810,org.eclipse.equinox.security.ui,1234555897541
+stopped,bundle,org.eclipse.cdt,5.0.1.200809120802,org.eclipse.cdt,1234555897541
+stopped,bundle,org.eclipse.cdt.doc.user,5.0.1.200809120802,org.eclipse.cdt.doc.user,1234555897541
+stopped,bundle,org.eclipse.ui.cheatsheets,3.3.101.v20080702_34x,org.eclipse.ui.cheatsheets,1234555897541
+stopped,bundle,org.eclipse.help.ui,3.3.101.M20080715_34x,org.eclipse.help.ui,1234555897557
+stopped,bundle,org.eclipse.jsch.ui,1.1.100.I20080415,org.eclipse.jsch.ui,1234555897557
+stopped,bundle,org.eclipse.mylyn.monitor.ui,3.0.2.v20080918-1100-e3x,org.eclipse.mylyn.monitor.ui,1234555897573
+stopped,bundle,org.eclipse.ui.browser,3.2.201.v20080708_34x,org.eclipse.ui.browser,1234555897573
+stopped,bundle,org.eclipse.ui.console,3.3.0.v20080529-1300,org.eclipse.ui.console,1234555897573
+stopped,bundle,org.eclipse.ui.editors,3.4.0.v20080603-2000,org.eclipse.ui.editors,1234555897588
+stopped,bundle,org.eclipse.ui.navigator.resources,3.3.101.M20080910-0800,org.eclipse.ui.navigator.resources,1234555897588

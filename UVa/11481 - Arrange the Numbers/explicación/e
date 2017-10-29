@@ -1,0 +1,25 @@
+\documentclass[10pt,letterpaper]{article}
+
+%---------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amsmath}
+%\usepackage{color}
+%---------------------------------------------------------------
+
+\setlength{\topmargin}{-1.0in}
+\setlength{\textheight}{9.5in} 
+\setlength{\evensidemargin}{0.0in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\textwidth}{6.5in} 
+
+\begin{document}
+
+\emph{Explicación:} La respuesta es 
+$$
+m \choose{k} \times \displaystyle \sum_{i=0}^{m-k} (-1)^{i}  m - k \choose{i} (n-k-i)!
+$$
+
+\end{document}

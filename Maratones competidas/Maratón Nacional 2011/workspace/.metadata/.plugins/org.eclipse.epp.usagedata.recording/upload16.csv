@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.search,3.4.1.r341_v20080813-0800,org.eclipse.search,1234544911430
+opened,editor,org.eclipse.cdt.ui,5.0.1.200809120802,org.eclipse.cdt.ui.editor.CEditor,1234544912820
+started,bundle,org.eclipse.cdt.debug.core,5.0.1.200809120802,org.eclipse.cdt.debug.core,1234544913008
+started,bundle,org.eclipse.cdt.debug.ui,5.0.1.200809120802,org.eclipse.cdt.debug.ui,1234544913008
+activated,editor,org.eclipse.cdt.ui,5.0.1.200809120802,org.eclipse.cdt.ui.editor.CEditor,1234544913070
+executed,command,org.eclipse.ui.ide,3.4.1.M20080903-2000,org.eclipse.ui.project.buildAll,1234544930055
+activated,view,org.eclipse.ui.console,3.3.0.v20080529-1300,org.eclipse.ui.console.ConsoleView,1234544932445
+activated,view,org.eclipse.ui.navigator.resources,3.3.101.M20080910-0800,org.eclipse.ui.navigator.ProjectExplorer,1234544939883
+no handler,command,org.eclipse.ui,3.4.1.M20080910-0800,org.eclipse.ui.edit.cut,1234544941352
+started,bundle,org.eclipse.ltk.ui.refactoring,3.4.1.r341_v20080716-0800,org.eclipse.ltk.ui.refactoring,1234544942008
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1234544942180
+closed,editor,org.eclipse.cdt.ui,5.0.1.200809120802,org.eclipse.cdt.ui.editor.CEditor,1234544945399
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1234544945508
+executed,command,org.eclipse.ltk.ui.refactoring,3.4.1.r341_v20080716-0800,org.eclipse.ltk.ui.refactoring.commands.deleteResources,1234544945508
+executed,command,org.eclipse.ui,3.4.1.M20080910-0800,org.eclipse.ui.edit.delete,1234544945508
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1234544949445
+started,bundle,org.eclipse.ecf.filetransfer,2.0.0.v20080611-1715,org.eclipse.ecf.filetransfer,1234544953508
+started,bundle,org.eclipse.ecf.provider.filetransfer,2.0.0.v20080611-1715,org.eclipse.ecf.provider.filetransfer,1234544953524
+started,bundle,org.eclipse.ecf.identity,2.0.0.v20080611-1715,org.eclipse.ecf.identity,1234544953524
+started,bundle,org.eclipse.ecf,2.0.0.v20080611-1715,org.eclipse.ecf,1234544953570
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1234544985649
+executed,command,org.eclipse.equinox.p2.ui.sdk,1.0.1.R34x_v20080818,org.eclipse.equinox.p2.ui.sdk.update,1234544985664
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1234544985914
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1234544988227
+started,bundle,org.eclipse.mylyn.ide.ant,3.0.2.v20080918-1100-e3x,org.eclipse.mylyn.ide.ant,1234544988258
