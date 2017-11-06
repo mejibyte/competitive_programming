@@ -25,7 +25,7 @@ using namespace std;
 ////////////// Prewritten code follows. Look down for solution. ////////////////
 #define foreach(x, v) for (typeof (v).begin() x=(v).begin(); x !=(v).end(); ++x)
 #define For(i, a, b) for (int i=(a); i<(b); ++i)
-#define D(x) cout << #x " is " << (x) << endl
+#define D(x) cerr << #x " is " << (x) << endl
 
 const double EPS = 1e-9;
 int cmp(double x, double y = 0, double tol = EPS) {
