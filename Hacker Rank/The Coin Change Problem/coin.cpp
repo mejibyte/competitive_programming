@@ -37,7 +37,7 @@ int cmp(double x, double y = 0, double tol = EPS) {
 const int MAXC = 55;
 const int MAXM = 255;
 
-long long dp[MAXC][MAXN];
+long long dp[MAXC][MAXM];
 
 int main(){
   int want;
