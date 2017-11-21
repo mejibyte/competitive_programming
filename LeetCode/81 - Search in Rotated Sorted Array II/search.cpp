@@ -35,19 +35,19 @@ int cmp(double x, double y = 0, double tol = EPS) {
 
 class Solution {
 public:
-    int search(const vector<int>& nums, int target) {
-      if (nums.size() == 0) return -1;
+    bool search(const vector<int>& nums, int target) {
+      if (nums.size() == 0) return false;
       int min = find_min(nums, 0, nums.size() - 1);
       // Search target in the two sorted arrays: a[0, min-1] and a[min, n-1].
       if (0 <= min-1) {
         pair<bool, int> x = binary_search(nums, target, 0, min - 1);
-        if (x.first) return x.second;
+        if (x.first) return true;
       }
       if (min <= nums.size() - 1) {
         pair<bool, int> x = binary_search(nums, target, min, nums.size() - 1);
-        if (x.first) return x.second;
+        if (x.first) return true;
       }
-      return -1;
+      return false;
     }
 private:
   // Recursive implementation of binary search.

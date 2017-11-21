@@ -35,34 +35,6 @@ int cmp(double x, double y = 0, double tol = EPS) {
 
 class Solution {
 public:
-    int search(const vector<int>& nums, int target) {
-      if (nums.size() == 0) return -1;
-      int min = find_min(nums, 0, nums.size() - 1);
-      // Search target in the two sorted arrays: a[0, min-1] and a[min, n-1].
-      if (0 <= min-1) {
-        pair<bool, int> x = binary_search(nums, target, 0, min - 1);
-        if (x.first) return x.second;
-      }
-      if (min <= nums.size() - 1) {
-        pair<bool, int> x = binary_search(nums, target, min, nums.size() - 1);
-        if (x.first) return x.second;
-      }
-      return -1;
-    }
-private:
-  // Recursive implementation of binary search.
-  pair<bool, int> binary_search(const vector<int>& array, int target, int l, int r) {
-    assert(l <= r);
-    if (l == r) {
-      return array[l] == target ? make_pair(true, l) : make_pair(false, -1);
-    }
-    int left_length = (r - l + 1) / 2;
-    assert(left_length >= 1);
-    int candidate = array[l + left_length - 1];
-    if (target <= candidate) return binary_search(array, target, l, l + left_length - 1);
-    return binary_search(array, target, l + left_length, r);
-  }
-
   // Returns index of the min element in the given rotated sorted array.
   // l and r are the indexes where the min element is guaranteed to be
   // (so the first call should be find_min(array, 0, array.size()-1)).
@@ -98,10 +70,14 @@ private:
     }
     return find_min(array, l, r - 1);
   }
+
+  int findMin(const vector<int>& nums) {
+    return nums[find_min(nums, 0, nums.size() - 1)];
+  }
 };
 
 int main(){
     Solution s;
-    cout << s.search({2, 4, 5, 6, 7, 7, 1, 1, 1, 1, 1, 2, 2}, 1) << endl;
+    cout << s.findMin({2, 4, 5, 6, 7, 7, 1, 1, 1, 1, 1, 2, 2}) << endl;
     return 0;
 }
