@@ -37,15 +37,15 @@ struct Tree {
   Tree(int n) : n(n), t(2*n, 0), p(n, false) {}
 
   int n;
-  vector<int> t, p, d;
+  vector<int> t, p;
 
   // Overwrites all elements in range [l, r] to be value.
   void set(int l, int r, int value) {
     l += n, r += n;
     push(l), push(r);
-    for (; l <= r and l > 0 and r > 0; l >>= 1, r >>= 1) {
-      if (l % 2 == 1) overwrite(l++, value);
-      if (r % 2 == 0) overwrite(r--, value);
+    for (; l <= r; l >>= 1, r >>= 1) {
+      if (l & 1) overwrite(l++, value);
+      if (~r & 1) overwrite(r--, value);
     }
   }
 
