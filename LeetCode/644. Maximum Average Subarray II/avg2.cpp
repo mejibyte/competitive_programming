@@ -17,12 +17,12 @@ public:
     bool works(const vector<int> &a, int k, double mid) {
         int n = a.size();
 
-        vector<double> least(n);
+        vector<double> least(n+1, 0.0);
         double sum = 0.0;
         for (int i = 0; i < n; ++i) {
             sum += a[i] - mid;
-            least[i] = min(sum, 0.0);
-            if (i-1 >= 0) least[i] = min(least[i], least[i-1]);
+            least[i+1] = min(least[i+1], sum);
+            least[i+1] = min(least[i+1], least[i]);
         }
 
         sum = 0.0;
@@ -30,7 +30,7 @@ public:
             sum += a[q] - mid;
             int p = q-k+1;
             if (p < 0) continue;
-            if (sum - (p-1 >= 0 ? least[p-1] : 0) >= 0) {
+            if (sum - least[p] >= 0) {
                 return true;
             }
         }
