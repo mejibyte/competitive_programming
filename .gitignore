@@ -8,3 +8,4 @@ eclipse
 *.class
 Library
 Notebook
+*.dSYM
