@@ -75,19 +75,6 @@
     }
     stringstream sin(pattern);
 
-    // string t = "";
-    // for (int i = 0; i <= pattern.size(); ++i) {
-    //   if (i >= pattern.size() || pattern[i] == '*') {
-    //     if (t.size() > 0) {
-    //       tokens.push_back(t);
-    //     }
-    //     t = "";
-    //   } else {
-    //     t += pattern[i];
-    //   }
-    // }
-    // if (tokens.size() == 0) return "yes";
-
     int from = 0;
     for (string token; sin >> token; ) {
       int end = kmp(token, text.c_str() + from, text.size() - from);
