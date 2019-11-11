@@ -44,7 +44,7 @@ public:
         assert(n >= 1);
 
         vector<int> sum(n+1);
-        sum[0] = a[0];
+        sum[0] = 0;
         for (int i = 0; i < n; ++i) {
             sum[i+1] = sum[i] + a[i];
         }
