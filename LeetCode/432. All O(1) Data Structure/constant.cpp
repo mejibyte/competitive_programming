@@ -1,3 +1,5 @@
+// Everything O(1)
+// Follow up: how to write this more elegantly? Still lots of corner cases.
 #include <algorithm>
 #include <iostream>
 #include <iterator>
@@ -26,7 +28,15 @@ using namespace std;
 typedef string Key;
 typedef int Value;
 
+
 class AllOne {
+  struct Bucket {
+    int value;
+    unordered_set<string> keys;
+
+    Bucket(int value) : value(value) {}
+  };
+
 public:
     /** Initialize your data structure here. */
     AllOne() {
@@ -35,27 +45,59 @@ public:
 
     /** Inserts a new key <Key> with value 1. Or increments an existing key by 1. */
     void inc(string key) {
-      int oldFreq = 0;
-      if (bucket.count(key) > 0) {
-        // Delete old version.
-        oldFreq = bucket[key]->value;
-        erase(key);
+      if (bucket.count(key) == 0) {
+        // Just insert at the beginning and carry on.
+        insertInc(buckets.begin(), key, 1);
+      } else {
+        // Insert at next one, and delete from previous.
+        insertInc(next(bucket[key]), key, bucket[key]->value + 1);
+
+        // Delete from previous bucket.
+        assert(bucket[key] != buckets.begin());
+        erase(prev(bucket[key]), key);
       }
     }
 
-
-    /** Decrements an existing key by 1. If Key's value is 1, remove it from the data structure. */
-    // O(log n)
-    void dec(string key) {
-
+    void insertInc(list<Bucket>::iterator at, const string& key, int f) {
+        if (at == buckets.end() or at->value != f) {
+          at = buckets.insert(at, Bucket(f));
+        }
+        at->keys.insert(key);
+        bucket[key] = at;
     }
 
-    // Precondition: key has been inserted before.
-    void erase(const string& key) {
-      assert(bucket.count(key) > 0);
-      bucket[key]->keys.erase(key);
-      if (bucket[key]->keys.size() == 0) {
-        buckets.erase(bucket[key]);
+    /** Decrements an existing key by 1. If Key's value is 1, remove it from the data structure. */
+    void dec(string key) {
+      if (bucket.count(key) == 0) return; // nothing to do
+
+      if (bucket[key]->value == 1) {
+        // Just delete from existing bucket.
+        erase(bucket[key], key);
+        // Delete from main data structure.
+        bucket.erase(key);
+      } else {
+        // Insert into previous one, then delete from existing one.
+        if (bucket[key] == buckets.begin() or prev(bucket[key])->value != bucket[key]->value - 1) {
+          // Make sure previous bucket exists.
+          buckets.insert(bucket[key], Bucket(bucket[key]->value - 1));
+        }
+        assert(bucket[key] != buckets.begin() and prev(bucket[key])->value == bucket[key]->value - 1);
+        auto at = prev(bucket[key]);
+        at->keys.insert(key);
+
+        // Delete from current one.
+        erase(bucket[key], key);
+
+        // Update main data structure.
+        bucket[key] = at;
+      }
+    }
+
+    void erase(list<Bucket>::iterator b, const string& key) {
+      assert(b->keys.count(key) > 0);
+      b->keys.erase(key);
+      if (b->keys.size() == 0) {
+        buckets.erase(b);
       }
     }
 
@@ -70,11 +112,6 @@ public:
       if (buckets.size() > 0) return *buckets.begin()->keys.begin();
       return "";
     }
-
-    struct Bucket {
-      int value;
-      unordered_set<string> keys;
-    };
 
     list<Bucket> buckets;
     unordered_map<Key, list<Bucket>::iterator> bucket;
@@ -172,7 +209,7 @@ void case3() {
 }
 
 int main() {
-  //case1();
+  case1();
   case2();
   //case3();
 
