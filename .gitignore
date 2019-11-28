@@ -9,3 +9,4 @@ eclipse
 Library
 Notebook
 *.dSYM
+*.bin
