@@ -4,8 +4,8 @@ end
 
 srand(0x20210906)
 
-n = 1 * 10000
-q = 1 * 10000
+n = 1 * 30
+q = 1 * 30
 printf("%d %d\n", n, q)
 
 puts n.times.map { random(1, 10**9).to_s }.join(" ")
